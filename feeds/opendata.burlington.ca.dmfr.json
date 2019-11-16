@@ -1,0 +1,49 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dpxq-burlingtontransit",
+      "urls": {
+        "static_current": "http://opendata.burlington.ca/gtfs-rt/GTFS_Data.zip"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-dpxq-burlingtontransit"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-burt~rt",
+      "urls": {
+        "realtime_alerts": "http://opendata.burlington.ca/gtfs-rt/GTFS_ServiceAlerts.pb",
+        "realtime_trip_updates": "http://opendata.burlington.ca/gtfs-rt/GTFS_TripUpdates.pb",
+        "realtime_vehicle_positions": "http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-dpxq-burlingtontransit",
+      "associated_feeds": [
+        "f-dpxq-burlingtontransit"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

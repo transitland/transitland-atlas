@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs-rt",
+      "id": "f-nanaimo~rt",
+      "urls": {
+        "realtime_alerts": "https://nanaimo.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
+        "realtime_trip_updates": "https://nanaimo.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_vehicle_positions": "https://nanaimo.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-c0z-bctransit~rdntransitsystem",
+      "associated_feeds": [
+        "f-c0z-bctransit~rdntransitsystem"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

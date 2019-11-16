@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.1.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-drt-mbta",
+      "urls": {
+        "static_current": "https://cdn.mbta.com/MBTA_GTFS.zip"
+      },
+      "license": {
+        "url": "https://www.mass.gov/files/documents/2017/10/27/develop_license_agree_0.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "You shall: Clearly acknowledge MassDOT as the provider of the Data"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-mbta~rt",
+      "urls": {
+        "realtime_alerts": "https://cdn.mbta.com/realtime/Alerts.pb",
+        "realtime_trip_updates": "https://cdn.mbta.com/realtime/TripUpdates.pb",
+        "realtime_vehicle_positions": "https://cdn.mbta.com/realtime/VehiclePositions.pb"
+      },
+      "license": {
+        "url": "https://www.mass.gov/files/documents/2017/10/27/develop_license_agree_0.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "You shall: Clearly acknowledge MassDOT as the provider of the Data"
+      },
+      "feed_namespace_id": "o-drt-mbta",
+      "associated_feeds": [
+        "f-drt-mbta"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

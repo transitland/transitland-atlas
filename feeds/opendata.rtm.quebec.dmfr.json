@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs-rt",
+      "id": "f-rtm~rt",
+      "urls": {
+        "realtime_alerts": "http://opendata.rtm.quebec:2539/ServiceGTFSR/Alert.pb?token={RTM_API_KEY}",
+        "realtime_trip_updates": "http://opendata.rtm.quebec:2539/ServiceGTFSR/TripUpdate.pb?token={RTM_API_KEY}",
+        "realtime_vehicle_positions": "http://opendata.rtm.quebec:2539/ServiceGTFSR/VehiclePosition.pb?token={RTM_API_KEY}"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-f25-exo~réseaudetransportmétropolitain",
+      "associated_feeds": [
+        "f-f25-agencemtropolitainedetransport"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dr5x-wwwnicebuscom",
+      "urls": {
+        "static_current": "http://www.nicebus.com/getattachment/Passenger-Information/App-Developers/NICE_GTFS_217.zip.aspx"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": "http://www.nicebus.com/NiceBus/media/NiceBus-Images/131030_Legal-Agreements.pdf",
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-dr5x-nassauinter~countyexpress"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-dr5x-nassauinter~countyexpress",
+      "urls": {
+        "static_current": "http://www.nicebus.com/getattachment/Passenger-Information/App-Developers/NICE_GTFS_317.zip.aspx"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-dr5x-nassauinter~countyexpress"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-nice~rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://nicebus.com/downloads/gtfs/NYC_NICE.proto"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-dr5x-nassauinter~countyexpress",
+      "associated_feeds": [
+        "f-dr5x-wwwnicebuscom",
+        "f-dr5x-nassauinter~countyexpress"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

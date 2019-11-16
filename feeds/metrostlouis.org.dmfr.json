@@ -1,0 +1,72 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-9yzg-metrostlouis",
+      "urls": {
+        "static_current": "http://metrostlouis.org/Transit/google_transit.zip"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-9yzg-metrostlouis"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-saintlouis~rt",
+      "urls": {
+        "realtime_trip_updates": "http://www.metrostlouis.org/RealTimeData/StlRealTimeTrips.pb",
+        "realtime_vehicle_positions": "http://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-9yzg-metrostlouis",
+      "associated_feeds": [
+        "f-saintlouis~green~rt",
+        "f-9yzg-metrostlouis"
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-saintlouis~green~rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://www.metrostlouis.org/RealTimeData/StlRealTimeGLVehicle.pb"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-9yzg-metrostlouis",
+      "associated_feeds": [
+        "f-saintlouis~rt",
+        "f-9yzg-metrostlouis"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

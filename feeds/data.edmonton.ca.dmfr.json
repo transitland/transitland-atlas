@@ -1,0 +1,49 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-c3x-edmontontransitsystem",
+      "urls": {
+        "static_current": "https://data.edmonton.ca/download/gzhc-5ss6/application/zip"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-c3x-edmontontransitsystem"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-ets~rt",
+      "urls": {
+        "realtime_alerts": "https://data.edmonton.ca/download/rqaa-jae6/application/octet-stream",
+        "realtime_trip_updates": "https://data.edmonton.ca/download/uzpc-8bnm/application/octet-stream",
+        "realtime_vehicle_positions": "https://data.edmonton.ca/download/7qed-k2fc/application/octet-stream"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-c3x-edmontontransitsystem",
+      "associated_feeds": [
+        "f-c3x-edmontontransitsystem"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

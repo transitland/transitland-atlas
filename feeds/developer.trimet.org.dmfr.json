@@ -1,0 +1,49 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-c20-trimet",
+      "urls": {
+        "static_current": "http://developer.trimet.org/schedule/gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": "http://developer.trimet.org/terms_of_use.shtml",
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-trimet~rt",
+      "urls": {
+        "realtime_alerts": "http://developer.trimet.org/ws/V1/FeedSpecAlerts&appID={TRIMET_API_KEY}",
+        "realtime_trip_updates": "http://developer.trimet.org/ws/V1/TripUpdate&appID={TRIMET_API_KEY}",
+        "realtime_vehicle_positions": "http://developer.trimet.org/ws/gtfs/VehiclePositions&appID={TRIMET_API_KEY}"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "authorization": {"type":"query_param","info_url":"https://developer.trimet.org/GTFS.shtml","param_name":"appID"},
+      "feed_namespace_id": "o-c20-trimet",
+      "associated_feeds": [
+        "f-c20-trimet"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

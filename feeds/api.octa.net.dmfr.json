@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs-rt",
+      "id": "f-octa~rt",
+      "urls": {
+        "realtime_alerts": "http://api.octa.net/GTFSRealTime/protoBuf/servicealerts.aspx",
+        "realtime_trip_updates": "http://api.octa.net/GTFSRealTime/protoBuf/tripupdates.aspx",
+        "realtime_vehicle_positions": "http://api.octa.net/GTFSRealTime/protoBuf/VehiclePositions.aspx"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-9mu-orangecountytransportationauthority",
+      "associated_feeds": [
+        "f-9mu-orangecountytransportationauthority"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

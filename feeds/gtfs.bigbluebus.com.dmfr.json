@@ -1,0 +1,49 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-9q5c-bigbluebus",
+      "urls": {
+        "static_current": "http://gtfs.bigbluebus.com/current.zip"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": "http://gtfs.bigbluebus.com/terms-and-conditions",
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-9q5c-bigbluebus"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-bigbluebus~rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs.bigbluebus.com/alerts.bin",
+        "realtime_trip_updates": "http://gtfs.bigbluebus.com/tripupdates.bin",
+        "realtime_vehicle_positions": "http://gtfs.bigbluebus.com/vehiclepositions.bin"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-9q5c-bigbluebus",
+      "associated_feeds": [
+        "f-9q5c-bigbluebus"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

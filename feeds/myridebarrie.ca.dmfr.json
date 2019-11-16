@@ -1,0 +1,49 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dpzk-barrietransit",
+      "urls": {
+        "static_current": "http://www.myridebarrie.ca/gtfs/Google_transit.zip"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": "http://www.barrie.ca/Living/Getting%20Around/BarrieTransit/Pages/Barrie-GTFS.aspx",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-dpzk-barrietransit"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-barrie~rt",
+      "urls": {
+        "realtime_alerts": "http://www.myridebarrie.ca/gtfs/GTFS_ServiceAlerts.pb",
+        "realtime_trip_updates": "http://www.myridebarrie.ca/gtfs/GTFS_TripUpdates.pb",
+        "realtime_vehicle_positions": "http://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb"
+      },
+      "license": {
+        "spdx_identifier": null,
+        "url": null,
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "commercial_use_allowed": null,
+        "share_alike_optional": null,
+        "attribution_text": null,
+        "attribution_instructions": null
+      },
+      "feed_namespace_id": "o-dpzk-barrietransit",
+      "associated_feeds": [
+        "f-dpzk-barrietransit"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}
