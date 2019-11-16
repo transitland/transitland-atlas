@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -8,15 +8,11 @@
         "static_current": "http://gtfs.halifax.ca/static/google_transit.zip"
       },
       "license": {
-        "spdx_identifier": null,
         "url": "http://www.halifax.ca/opendata/OD_TermsOfUse.php",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribute": "yes",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": "Contains information licenced under the Open Government Licence — Halifax.",
-        "attribution_instructions": null
+        "attribution_text": "Contains information licenced under the Open Government Licence — Halifax."
       },
       "feed_namespace_id": "o-dxfy-halifaxtransit~hrm"
     },
@@ -28,22 +24,11 @@
         "realtime_trip_updates": "http://gtfs.halifax.ca/realtime/TripUpdate/TripUpdates.pb",
         "realtime_vehicle_positions": "http://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb"
       },
-      "license": {
-        "spdx_identifier": null,
-        "url": null,
-        "use_without_attribution": "unknown",
-        "create_derived_product": "unknown",
-        "redistribute": "unknown",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": null,
-        "attribution_instructions": null
-      },
       "feed_namespace_id": "o-dxfy-halifaxtransit~hrm",
       "associated_feeds": [
         "f-dxfy-halifaxtransit~hrm"
       ]
     }
   ],
-  "license_spdx_identifier": "CC0-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -8,15 +8,10 @@
         "static_current": "https://www.cttransit.com/sites/default/files/gtfs/googlect_transit.zip"
       },
       "license": {
-        "spdx_identifier": null,
         "url": "https://www.cttransit.com/about/developers/terms-of-use",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": null,
-        "attribution_instructions": null
+        "redistribute": "yes"
       }
     },
     {
@@ -26,15 +21,10 @@
         "static_current": "http://www.cttransit.com/uploads_GTFS/googleme_transit.zip"
       },
       "license": {
-        "spdx_identifier": null,
         "url": "http://www.cttransit.com/about/developers/gtfsdata/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": null,
-        "attribution_instructions": null
+        "redistribute": "yes"
       }
     },
     {
@@ -44,18 +34,26 @@
         "static_current": "http://www.cttransit.com/uploads_GTFS/googlestam_transit.zip"
       },
       "license": {
-        "spdx_identifier": null,
         "url": "http://www.cttransit.com/about/developers/gtfsdata/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": null,
-        "attribution_instructions": null
+        "redistribute": "yes"
       },
       "feed_namespace_id": "o-dr79-cttransit~stamford"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-cttransithartford~rt",
+      "urls": {
+        "realtime_alerts": "http://65.213.12.244/realtimefeed/alert/alerts.pb",
+        "realtime_trip_updates": "http://65.213.12.244/realtimefeed/tripupdate/tripupdates.pb",
+        "realtime_vehicle_positions": "http://65.213.12.244/realtimefeed/vehicle/vehiclepositions.pb"
+      },
+      "feed_namespace_id": "o-drk-cttransit~hartford",
+      "associated_feeds": [
+        "f-drk-cttransit~hartford"
+      ]
     }
   ],
-  "license_spdx_identifier": "CC0-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

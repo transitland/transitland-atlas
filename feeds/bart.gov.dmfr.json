@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -8,18 +8,26 @@
         "static_current": "http://www.bart.gov/dev/schedules/google_transit.zip"
       },
       "license": {
-        "spdx_identifier": null,
         "url": "http://www.bart.gov/schedules/developers/developer-license-agreement",
         "use_without_attribution": "yes",
         "create_derived_product": "unknown",
-        "redistribute": "yes",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": null,
-        "attribution_instructions": null
+        "redistribute": "yes"
       },
       "feed_namespace_id": "o-9q9-bart"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-bart~rt",
+      "urls": {
+        "realtime_alerts": "http://api.bart.gov/gtfsrt/alerts.aspx",
+        "realtime_trip_updates": "http://api.bart.gov/gtfsrt/tripupdate.aspx",
+        "realtime_vehicle_positions": "http://api.bart.gov/gtfsrt/alerts.aspx"
+      },
+      "feed_namespace_id": "o-9q9-bart",
+      "associated_feeds": [
+        "f-9q9-bart"
+      ]
     }
   ],
-  "license_spdx_identifier": "CC0-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -8,15 +8,11 @@
         "static_current": "http://developers.cata.org/gtfsdownload.ashx?key=5b4690ed-0a69-4320-897b-7d92def4b96f&data=base"
       },
       "license": {
-        "spdx_identifier": null,
         "url": "https://www.cata.org/Portals/0/CATAGTFSLicenseAgreement20150323.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "unknown",
         "redistribute": "no",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": "See agreement for details.",
-        "attribution_instructions": null
+        "attribution_text": "See agreement for details."
       },
       "feed_namespace_id": "o-dpeg-capitalareatransportationauthority"
     },
@@ -28,22 +24,11 @@
         "realtime_trip_updates": "http://developers.cata.org/gtfsrt/tripupdate/tripupdates.pb",
         "realtime_vehicle_positions": "http://developers.cata.org/gtfsrt/vehicle/vehiclepositions.pb"
       },
-      "license": {
-        "spdx_identifier": null,
-        "url": null,
-        "use_without_attribution": "unknown",
-        "create_derived_product": "unknown",
-        "redistribute": "unknown",
-        "commercial_use_allowed": null,
-        "share_alike_optional": null,
-        "attribution_text": null,
-        "attribution_instructions": null
-      },
       "feed_namespace_id": "o-dpeg-capitalareatransportationauthority",
       "associated_feeds": [
         "f-dpeg-capitalareatransportationauthority"
       ]
     }
   ],
-  "license_spdx_identifier": "CC0-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
