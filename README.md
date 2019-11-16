@@ -18,7 +18,11 @@ For future addition:
 - [GBFS](https://github.com/NABSA/gbfs)
 - [MDS](https://github.com/openmobilityfoundation/mobility-data-specification)
 
+TODO: document two- and three-component Onestop IDs
+
 ## Operators
+
+TODO
 
 ## Stations
 
