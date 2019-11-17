@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-c28-nstranslinkca",
+      "urls": {
+        "static_current": "http://gtfs.translink.ca/static/latest"
+      },
+      "license": {
+        "url": "https://developer.translink.ca/ServicesGtfs/GtfsData",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Route and arrival data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service.",
+        "attribution_instructions": "You must, unless otherwise agreed to by TransLink in writing, at all times present and identify the Data with the following legend, prominently displayed"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-translink~rt",
+      "urls": {
+        "realtime_trip_updates": "https://gtfs.translink.ca/v2/gtfsrealtime?apikey={TRANSLINK_API_KEY}",
+        "realtime_vehicle_positions": "https://gtfs.translink.ca/v2/gtfsposition?apikey={TRANSLINK_API_KEY}",
+        "realtime_alerts": "https://gtfs.translink.ca/v2/gtfsalerts?apikey={TRANSLINK_API_KEY}"
+      },
+      "license": {
+        "url": "https://developer.translink.ca/Home/TermsOfUse",
+        "redistribution_allowed": "yes",
+        "attribution_text": "Some of the data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service."
+      },
+      "feed_namespace_id": "o-c28-translink",
+      "associated_feeds": [
+        "f-c28-nstranslinkca"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
