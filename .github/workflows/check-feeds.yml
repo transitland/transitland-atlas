@@ -1,0 +1,9 @@
+name: Check Feeds
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Try to validate feeds
+      run: cd scripts && python validate-feeds.py
