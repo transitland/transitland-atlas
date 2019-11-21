@@ -5,6 +5,7 @@ import sqlite3
 
 db_filename = 'feed-validation.db'
 os.system(f"rm -f {db_filename}")
+# TODO: source gotransit binary from GH release
 sync_command = f"./gotransit dmfr sync -dburl=sqlite3://{db_filename} ../feeds/*.dmfr.json"
 sync_log = subprocess.check_output(sync_command, shell=True)
 
