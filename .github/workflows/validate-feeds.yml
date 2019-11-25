@@ -9,6 +9,7 @@ jobs:
       with:
         python-version: '3.x'
         architecture: 'x64'
-    # TODO: source gotransit
+    - name: "TODO: source gotransit from its repo, rather than this hack"
+      run: export PATH=$PATH:$(pwd)
     - name: Try to validate feeds
       run: cd scripts && python validate-feeds.py
