@@ -9,6 +9,6 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: '3.x'
-    # TODO: source gotransit from its repo, rather than this hack
+    # TODO: source gotransit from its repo, rather than hacking PATH
     - name: Try to validate feeds
       run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
