@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-gc-rail~delivery~group~planar~gtfs",
+      "urls": {
+        "static_current": "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/gb-rail-latest.zip"
+      },
+      "license": {
+        "url": "http://data.atoc.org/licence-restrictions",
+        "use_without_attribution": "no",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown",
+        "attribution_text": "Source: RSP",
+        "attribution_instructions": "This licence is subject to all users being made aware that RSP is the source of the data, either through the inclusion of a conspicuous clickable hyperlink to the Rail Delivery Group website at www.raildeliverygroup.com or by including at least one of the following statements on your website or application: \"Timetable/Fares/London Terminals data under licence from RSP\"; \"Timetable/Fares/London Terminals data: RSP\"; or \"Source: RSP\"."
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-eurostar",
+      "url": "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/eurostar.zip",
+      "license": {
+        "url": "https://planar.network/projects/feeds"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-gb~bus~planar",
+      "url": "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/gb-bus-latest.zip",
+      "license": {
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "create_derived_product": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "acknowledge the source of the Information in your product or application by including or linking to any attribution statement specified by the Information Provider(s) and, where possible, provide a link to this licence",
+        "attribution_text": "Contains public sector information licensed under the Open Government Licence v3.0."
+
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
