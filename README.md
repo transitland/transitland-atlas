@@ -18,11 +18,13 @@ For future addition:
 - [GBFS](https://github.com/NABSA/gbfs)
 - [MDS](https://github.com/openmobilityfoundation/mobility-data-specification)
 
+TODO: document how to add a new feed
+
 TODO: document two- and three-component Onestop IDs
 
 ## Operators
 
-TODO
+TODO: copy over from Tlv1
 
 ## Stations
 
