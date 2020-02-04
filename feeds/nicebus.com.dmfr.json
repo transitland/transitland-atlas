@@ -5,7 +5,7 @@
       "spec": "gtfs",
       "id": "f-dr5x-wwwnicebuscom",
       "urls": {
-        "static_current": "http://www.nicebus.com/getattachment/Passenger-Information/App-Developers/NICE_GTFS_217.zip.aspx"
+        "static_current": "https://www.nicebus.com/NICE/media/assets/NICE_GTFS.zip"
       },
       "license": {
         "url": "http://www.nicebus.com/NiceBus/media/NiceBus-Images/131030_Legal-Agreements.pdf"
@@ -13,23 +13,14 @@
       "feed_namespace_id": "o-dr5x-nassauinter~countyexpress"
     },
     {
-      "spec": "gtfs",
-      "id": "f-dr5x-nassauinter~countyexpress",
-      "urls": {
-        "static_current": "http://www.nicebus.com/getattachment/Passenger-Information/App-Developers/NICE_GTFS_317.zip.aspx"
-      },
-      "feed_namespace_id": "o-dr5x-nassauinter~countyexpress"
-    },
-    {
       "spec": "gtfs-rt",
       "id": "f-nice~rt",
       "urls": {
-        "realtime_vehicle_positions": "http://nicebus.com/downloads/gtfs/NYC_NICE.proto"
+        "realtime_alerts": "http://nicebus.com/downloads/gtfs/NYC_NICE.proto"
       },
       "feed_namespace_id": "o-dr5x-nassauinter~countyexpress",
       "associated_feeds": [
-        "f-dr5x-wwwnicebuscom",
-        "f-dr5x-nassauinter~countyexpress"
+        "f-dr5x-wwwnicebuscom"
       ]
     }
   ],
