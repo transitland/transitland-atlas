@@ -1,12 +1,30 @@
 {
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
-  "feeds": [
-    {
+  "feeds": [{
       "spec": "gtfs",
       "id": "f-dn6-regionaltransportationauthorityofmiddletennessee~nashville",
       "urls": {
         "static_current": "http://www.nashvillemta.org/GoogleExport/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.nashvillemta.org/Nashville-MTA-Developer-Data-Request.asp"
       }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-nashvillemta~rt",
+      "urls": {
+        "realtime_alerts": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/alert/alerts.pb",
+        "realtime_trip_updates": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/tripupdate/tripupdates.pb",
+        "realtime_vehicle_positions": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb"
+      },
+      "license": {
+        "url": "https://www.nashvillemta.org/Nashville-MTA-Developer-Data-Request.asp"
+      },
+      "feed_namespace_id": "o-dn6-nashvillemetropolitantransitauthority",
+      "associated_feeds": [
+        "f-dn6-regionaltransportationauthorityofmiddletennessee~nashville"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
