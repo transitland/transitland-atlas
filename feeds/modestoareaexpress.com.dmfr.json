@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-modestoareaexpress",
+      "url": "https://www.modestoareaexpress.com/preview-gtfs.zip"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-modestoareaexpress~rt",
+      "urls": {
+        "realtime_trip_updates": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
