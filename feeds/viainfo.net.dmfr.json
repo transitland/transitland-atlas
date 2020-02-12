@@ -15,6 +15,18 @@
         "attribution_text": "Data provided by VIA"
       },
       "feed_namespace_id": "o-9v1z-viametropolitantransit"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-via~rt",
+      "urls": {
+        "realtime_trip_updates": "http://gtfs.viainfo.net/tripupdate/tripupdates.pb",
+        "realtime_vehicle_positions": "http://gtfs.viainfo.net/vehicle/vehiclepositions.pb"
+      },
+      "feed_namespace_id": "o-9v1z-viametropolitantransit",
+      "associated_feeds": [
+        "f-9v1z-viametropolitantransit"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
