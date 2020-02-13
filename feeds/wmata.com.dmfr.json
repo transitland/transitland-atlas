@@ -1,0 +1,72 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dqc-wmata~bus",
+      "urls": {
+        "static_current": "https://api.wmata.com/gtfs/bus-gtfs-static.zip"
+      },
+      "license": {
+        "url": "http://www.wmata.com/rider_tools/license_agreement.cfm",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "api_key",
+        "info_url": "https://developer.wmata.com/"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-dqc-wmata~rail",
+      "urls": {
+        "static_current": "https://api.wmata.com/gtfs/rail-gtfs-static.zip"
+      },
+      "license": {
+        "url": "http://www.wmata.com/rider_tools/license_agreement.cfm",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "api_key",
+        "info_url": "https://developer.wmata.com/"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-wmata~bus~rt",
+      "urls": {
+        "realtime_alerts": "https://api.wmata.com/gtfs/bus-gtfsrt-alerts.pb",
+        "realtime_trip_updates": "https://api.wmata.com/gtfs/bus-gtfsrt-tripupdates.pb",
+        "realtime_vehicle_positions": "https://api.wmata.com/gtfs/bus-gtfsrt-vehiclepositions.pb"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "api_key",
+        "info_url": "https://developer.wmata.com/"
+      },
+      "associated_feeds": ["f-dqc-wmata~bus"]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-wmata~rail~rt",
+      "urls": {
+        "realtime_alerts": "https://api.wmata.com/gtfs/rail-gtfsrt-alerts.pb",
+        "realtime_trip_updates": "https://api.wmata.com/gtfs/rail-gtfsrt-tripupdates.pb",
+        "realtime_vehicle_positions": "https://api.wmata.com/gtfs/rail-gtfsrt-vehiclepositions.pb"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "api_key",
+        "info_url": "https://developer.wmata.com/"
+      },
+      "associated_feeds": ["f-dqc-wmata~rail"]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

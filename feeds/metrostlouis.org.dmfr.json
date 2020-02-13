@@ -5,34 +5,29 @@
       "spec": "gtfs",
       "id": "f-9yzg-metrostlouis",
       "urls": {
-        "static_current": "http://metrostlouis.org/Transit/google_transit.zip"
+        "static_current": "https://metrostlouis.org/Transit/google_transit.zip"
       },
-      "feed_namespace_id": "o-9yzg-metrostlouis"
+      "feed_namespace_id": "o-9yzg-metrostlouis",
+      "license": {
+        "url": "https://www.metrostlouis.org/developer-resources/"
+      }
     },
     {
       "spec": "gtfs-rt",
       "id": "f-saintlouis~rt",
       "urls": {
-        "realtime_trip_updates": "http://www.metrostlouis.org/RealTimeData/StlRealTimeTrips.pb",
-        "realtime_vehicle_positions": "http://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb"
+        "realtime_trip_updates": "https://www.metrostlouis.org/RealTimeData/StlRealTimeTrips.pb",
+        "realtime_vehicle_positions": "https://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb",
+        "realtime_alerts": "https://www.metrostlouis.org/RealTimeData/StlRealTimeAlerts.pb"
       },
       "feed_namespace_id": "o-9yzg-metrostlouis",
       "associated_feeds": [
         "f-saintlouis~green~rt",
         "f-9yzg-metrostlouis"
-      ]
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-saintlouis~green~rt",
-      "urls": {
-        "realtime_vehicle_positions": "http://www.metrostlouis.org/RealTimeData/StlRealTimeGLVehicle.pb"
-      },
-      "feed_namespace_id": "o-9yzg-metrostlouis",
-      "associated_feeds": [
-        "f-saintlouis~rt",
-        "f-9yzg-metrostlouis"
-      ]
+      ],
+      "license": {
+        "url": "https://www.metrostlouis.org/developer-resources/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

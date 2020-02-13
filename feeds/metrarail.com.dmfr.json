@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dp3-metra",
+      "urls": {
+        "static_current": "https://gtfsapi.metrarail.com/gtfs/raw/schedule.zip"
+      },
+      "license": {
+        "url": "https://metrarail.com/developers",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-dp3-metra",
+      "authorization": {
+        "info_url": "https://metrarail.com/developers",
+        "type": "basic_auth"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-metra~rt",
+      "urls": {
+        "realtime_alerts": "https://gtfsapi.metrarail.com/gtfs/raw/alerts.dat",
+        "realtime_trip_updates": "https://gtfsapi.metrarail.com/gtfs/raw/tripUpdates.dat",
+        "realtime_vehicle_positions": "https://gtfsapi.metrarail.com/gtfs/raw/positionUpdates.dat"
+      },
+      "feed_namespace_id": "o-dp3-metra",
+      "associated_feeds": [
+        "f-dp3-metra"
+      ],
+      "authorization": {
+        "info_url": "https://metrarail.com/developers",
+        "type": "basic_auth"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

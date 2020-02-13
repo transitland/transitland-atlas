@@ -3,6 +3,14 @@
   "feeds": [
     {
       "spec": "gtfs",
+      "id": "f-9r88-rogue~valley~transportation~district",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/rvtd-or-us/rvtd-or-us.zip"
+      },
+      "feed_namespace_id": "o-9r88-rogue~valley~transportation~district"
+    },
+    {
+      "spec": "gtfs",
       "id": "f-dr5r-path~nj~us",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/path-nj-us/path-nj-us.zip"
@@ -301,19 +309,7 @@
       },
       "feed_namespace_id": "o-dnjj-clemsonareatransit"
     },
-    {
-      "spec": "gtfs",
-      "id": "f-dp0w-connecttransit~il~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/connecttransit-il-us/connecttransit-il-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "feed_namespace_id": "o-dp0w-connecttransit"
-    },
+ 
     {
       "spec": "gtfs",
       "id": "f-9qh2s-corona~ca~us",
@@ -443,19 +439,6 @@
         "redistribute": "yes"
       },
       "feed_namespace_id": "o-9qc-eldoradotransit"
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9w-elevatedtransit~ut~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/elevatedtransit-ut-us/elevatedtransit-ut-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "feed_namespace_id": "o-9w-elevatedtransit"
     },
     {
       "spec": "gtfs",
@@ -631,7 +614,7 @@
       "spec": "gtfs",
       "id": "f-9qb-laketransit~ca~us",
       "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/lakecounty-oh-us/lakecounty-oh-us.zip"
+        "static_current": "http://data.trilliumtransit.com/gtfs/laketransit-ca-us/laketransit-ca-us.zip"
       },
       "license": {
         "use_without_attribution": "yes",
@@ -665,18 +648,6 @@
         "redistribute": "yes"
       },
       "feed_namespace_id": "o-c26-linktransit"
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9qd-madera~ca~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/madera-ca-us/madera-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
     },
     {
       "spec": "gtfs",
@@ -1018,6 +989,14 @@
     },
     {
       "spec": "gtfs",
+      "id": "f-trivalley~vt~us",
+      "url": "http://data.trilliumtransit.com/gtfs/trivalleytransit-vt-us/trivalleytransit-vt-us.zip",
+      "license": {
+        "url": "http://vermont-gtfs.org/"
+      }
+    },
+    {
+      "spec": "gtfs",
       "id": "f-9qd-stanislaus~ca~us",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/stanislaus-ca-us/stanislaus-ca-us.zip"
@@ -1078,19 +1057,6 @@
         "redistribute": "yes"
       },
       "feed_namespace_id": "o-drs-thebusmarblevalleymetroaltransitdistrict"
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9r0-trinity~ca~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/trinity-ca-us/trinity-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "feed_namespace_id": "o-9r0-trinitytransit"
     },
     {
       "spec": "gtfs",
@@ -1370,14 +1336,6 @@
         "static_current": "http://data.trilliumtransit.com/gtfs/cityandboroughofjuneau-ak-us/cityandboroughofjuneau-ak-us.zip"
       },
       "feed_namespace_id": "o-c427-capitaltransit"
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9q9p3-datatrilliumtransitcom",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/bigbear-ca-us/bigbear-ca-us.zip"
-      },
-      "feed_namespace_id": "o-9q9p3-beartransit~ucberkeleyshuttle"
     },
     {
       "spec": "gtfs",
@@ -2064,6 +2022,26 @@
         "static_current": "http://data.trilliumtransit.com/gtfs/eriemta-pa-us/eriemta-pa-us.zip"
       },
       "feed_namespace_id": "o-dprp-eriemetropolitantransitauthority"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-corridorrides",
+      "url": "http://data.trilliumtransit.com/gtfs/corridorrides-ia-us/corridorrides-ia-us.zip"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-gtrans~ca~us",
+      "url": "http://data.trilliumtransit.com/gtfs/gtrans-ca-us/gtrans-ca-us.zip"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-morongo~basin",
+      "url": "http://data.trilliumtransit.com/gtfs/morongobasin-ca-us/morongobasin-ca-us.zip"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-madera~county~connection",
+      "url": "http://data.trilliumtransit.com/gtfs/maderactc-ca-us/maderactc-ca-us.zip"
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

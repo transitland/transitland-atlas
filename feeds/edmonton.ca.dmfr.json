@@ -7,15 +7,21 @@
       "urls": {
         "static_current": "https://data.edmonton.ca/download/gzhc-5ss6/application/zip"
       },
+      "license": {
+        "url": "https://www.edmonton.ca/transportation/Web-version2.1-OpenDataAgreement.pdf"
+      },
       "feed_namespace_id": "o-c3x-edmontontransitsystem"
     },
     {
       "spec": "gtfs-rt",
       "id": "f-ets~rt",
       "urls": {
-        "realtime_alerts": "https://data.edmonton.ca/download/rqaa-jae6/application/octet-stream",
-        "realtime_trip_updates": "https://data.edmonton.ca/download/uzpc-8bnm/application/octet-stream",
-        "realtime_vehicle_positions": "https://data.edmonton.ca/download/7qed-k2fc/application/octet-stream"
+        "realtime_alerts": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Alert/Alerts.pb",
+        "realtime_trip_updates": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "realtime_vehicle_positions": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
+      },
+      "license": {
+        "url": "https://www.edmonton.ca/transportation/Web-version2.1-OpenDataAgreement.pdf"
       },
       "feed_namespace_id": "o-c3x-edmontontransitsystem",
       "associated_feeds": [
