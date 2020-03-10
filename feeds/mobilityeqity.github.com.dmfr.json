@@ -1,9 +1,12 @@
 {
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
-  "feeds": [{
+  "feeds": [
+    {
       "spec": "gtfs",
       "id": "f-hartford~county~md",
-      "url": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
+      },
       "license": {
         "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
         "use_without_attribution": "no",
@@ -17,7 +20,9 @@
     {
       "spec": "gtfs",
       "id": "f-st~marys~md",
-      "url": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
+      },
       "license": {
         "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
         "use_without_attribution": "no",
