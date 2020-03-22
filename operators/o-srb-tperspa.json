@@ -8,9 +8,18 @@
   "name": "Trasporto Passeggeri Emilia-Romagna",
   "short_name": "TPER",
   "website": "http://www.tper.it",
-  "associated_feed_ids": [
-    "f-srb-tperspa~ferrara",
-    "f-srbj1-tperspa~blq~aeroporto",
-    "f-srb-tperspa~bologna"
+  "associated_feeds": [
+    {
+      "feed_onestop_id": "f-srbj1-tperspa~blq~aeroporto",
+      "gtfs_agency_id": "TPERBO"
+    },
+    {
+      "feed_onestop_id": "f-srb-tperspa~ferrara",
+      "gtfs_agency_id": "TPERFE"
+    },
+    {
+      "feed_onestop_id": "f-srb-tperspa~bologna",
+      "gtfs_agency_id": "TPERBO"
+    }
   ]
 }

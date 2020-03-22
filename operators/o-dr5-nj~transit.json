@@ -8,8 +8,14 @@
   "name": "New Jersey Transit",
   "short_name": "NJ Transit",
   "website": "http://www.njtransit.com/",
-  "associated_feed_ids": [
-    "f-dr5-nj~transit~bus",
-    "f-dr5-nj~transit~rail"
+  "associated_feeds": [
+    {
+      "feed_onestop_id": "f-dr5-nj~transit~rail",
+      "gtfs_agency_id": "NJT"
+    },
+    {
+      "feed_onestop_id": "f-dr5-nj~transit~bus",
+      "gtfs_agency_id": "NJB"
+    }
   ]
 }
