@@ -1,6 +1,6 @@
 # Transitland Atlas
 
-An open catalog of transit/mobility data feeds, operators, and stations.
+An open catalog of transit/mobility data feeds and operators.
 
 This catalog is used to power the canonical [Transitland](https://transit.land) platform, is available for distributed used of the [Gotransit](https://github.com/interline-io/gotransit) tooling, and is open to use as a "crosswalk" within other transportation data systems.
 
@@ -25,10 +25,6 @@ TODO: document two- and three-component Onestop IDs
 ## Operators
 
 TODO: copy over from Tlv1
-
-## Stations
-
-_Under development._
 
 ## License
 
