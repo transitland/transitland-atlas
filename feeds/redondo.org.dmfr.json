@@ -1,10 +1,12 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": [
     {
       "spec": "gtfs",
       "id": "f-redondo~beach~cities~transit",
-      "url": "https://www.redondo.org/civicax/filebank/blobdload.aspx?BlobID=33555",
+      "urls": {
+        "static_current": "https://www.redondo.org/civicax/filebank/blobdload.aspx?BlobID=33555"
+      },
       "license": {
         "url": "https://www.redondo.org/depts/recreation/transit/trip_planner/gtfs_data.asp",
         "commercial_use_allowed": "yes",

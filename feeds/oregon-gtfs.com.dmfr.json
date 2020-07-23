@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.1.2.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -159,13 +159,17 @@
     {
       "spec": "gtfs",
       "id": "f-klamath~shuttle~or~us",
-      "url": "https://oregon-gtfs.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip",
+      "urls": {
+        "static_current": "https://oregon-gtfs.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
+      },
       "feed_namespace_id": "o-9r9-klamathshuttle"
     },
     {
       "spec": "gtfs",
       "id": "f-pendleton~or~us",
-      "url": "https://oregon-gtfs.com/gtfs_data/pendleton-or-us/pendleton-or-us.zip"
+      "urls": {
+        "static_current": "https://oregon-gtfs.com/gtfs_data/pendleton-or-us/pendleton-or-us.zip"
+      }
     },
     {
       "spec": "gtfs",
@@ -204,19 +208,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb-eugenetocoosbay~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/eugenetocoosbay-or-us/eugenetocoosbay-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "feed_namespace_id": "o-9rb-eugenetocoosbay"
     },
     {
       "spec": "gtfs",
@@ -433,19 +424,6 @@
         "redistribute": "yes"
       },
       "feed_namespace_id": "o-9r8m-u~trans"
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb-valleyretriever~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/valleyretriever-or-us/valleyretriever-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "feed_namespace_id": "o-9rb-valleyretriever"
     },
     {
       "spec": "gtfs",
