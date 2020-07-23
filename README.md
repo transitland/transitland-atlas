@@ -30,7 +30,11 @@ For future addition:
 
 ## Operators
 
-We are currently in the process of migrating operator records from Transitland v1 into the Atlas repository: [pull request #43](https://github.com/transitland/transitland-atlas/pull/43)
+TODO: describe the new operator records (as JSON files)
+
+TODO: give a checklist for creating a new operator record
+
+TODO: link to operator listings on Transitland v2 website
 
 ## How to Add a New Feed
 
