@@ -1,0 +1,1 @@
+# TODO: script to validate operators against a JSON Schema and ensure no duplicate Onestop IDs
