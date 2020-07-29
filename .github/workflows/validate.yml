@@ -1,4 +1,4 @@
-name: Validate Feeds
+name: Validate
 on: [push, pull_request]
 jobs:
   build:
@@ -9,6 +9,10 @@ jobs:
     - uses: actions/setup-python@v1
       with:
         python-version: '3.x'
+    - name: Install dependencies
+      run: brew install jq pipenv
     # TODO: source gotransit from its repo, rather than hacking PATH
-    - name: Try to validate feeds
+    - name: Validate feeds
       run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
+    - name: Validate operators
+      run: cd scripts && ./validate-operators.sh
