@@ -10,7 +10,9 @@ jobs:
       with:
         python-version: '3.6'
     - name: Install dependencies
-      run: brew install jq pipenv
+      run: |
+        brew install jq pipenv
+        cd scripts && pipenv install
     # TODO: source gotransit from its repo, rather than hacking PATH
     - name: Validate feeds
       run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
