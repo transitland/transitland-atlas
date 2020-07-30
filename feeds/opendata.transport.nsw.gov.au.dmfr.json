@@ -5,7 +5,8 @@
       "spec": "gtfs",
       "id": "f-r6-nswtrainlink~sydneytrains~buswayswesternsydney~interlinebus",
       "urls": {
-        "static_current": "https://opendata.transport.nsw.gov.au/sites/default/files/resources/full_greater_sydney_gtfs_static_0.zip"
+        "static_current": "https://api.transport.nsw.gov.au/v1/publictransport/timetables/complete/gtfs",
+        "static_historic": ["https://opendata.transport.nsw.gov.au/sites/default/files/resources/full_greater_sydney_gtfs_static_0.zip"]
       },
       "license": {
         "url": "https://creativecommons.org/licenses/by/4.0/",
@@ -13,6 +14,11 @@
         "create_derived_product": "yes",
         "redistribute": "yes",
         "attribution_text": "Transport for NSW"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://opendata.transport.nsw.gov.au/get-started"
       }
     }
   ],
