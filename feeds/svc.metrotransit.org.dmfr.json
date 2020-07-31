@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-9zv-twin~cities~minnesota",
+      "urls": {
+        "static_current": "https://svc.metrotransit.org/mtgtfs/gtfs.zip"
+        "static_planned": "http://svc.metrotransit.org/mtgtfs/next/gtfs.zip"
+      },
+      "languages": ["en-US"],
+      "license": {
+        "url": "https://svc.metrotransit.org",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-twin~cities~minnesota~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://svc.metrotransit.org/mtgtfs/vehiclepositions.pb",
+        "realtime_trip_updates": "https://svc.metrotransit.org/mtgtfs/tripupdates.pb",
+        "realtime_alerts": "https://svc.metrotransit.org/mtgtfs/alerts.pb"
+      },
+      "feed_namespace_id": "o-9zv-metro",
+      "associated_feeds": [
+        "f-9zv-twin~cities~minnesota"
+      ],
+      "languages": ["en-US"],
+      "license": {
+        "url": "https://svc.metrotransit.org",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
