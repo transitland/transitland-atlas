@@ -3,11 +3,40 @@
   "feeds": [
     {
       "spec": "gtfs",
-      "id": "f-dq-mtamaryland",
+      "id": "f-dq-mtamaryland~bus",
       "urls": {
-        "static_current": "http://mta.maryland.gov/_googletransit/latest/google_transit.zip"
+        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_localbus.zip"
       }
-    }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-dq-mtamaryland~raillink",
+      "urls": {
+        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_lightrail.zip"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-dq-mtamaryland~subwaylink",
+      "urls": {
+        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_metro.zip"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-dq-mtamaryland~marc",
+      "urls": {
+        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_marc.zip"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-dq-mtamaryland~commuterbus",
+      "urls": {
+        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_commuterbus.zip"
+      }
+    }        
+
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
