@@ -16,8 +16,6 @@ for log_line in sync_log.splitlines():
   if log_line.find("updated feed") > -1:
     print(f"ERROR: duplicate feed found at: {log_line}")
     fail_the_build = True
-    
-
 db_conn = sqlite3.connect(db_filename)
 c = db_conn.cursor()
 
