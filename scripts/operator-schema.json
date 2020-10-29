@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Transitland Atlas operator schema",
+  "type": "object",
+  "properties": {
+    "onestop_id": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "short_name": {
+      "type": ["string", "null"]
+    },
+    "website": {
+      "type": ["string", "null"]
+    },
+    "associated_feeds": {
+      "type": "array"
+    }
+  }
+}
