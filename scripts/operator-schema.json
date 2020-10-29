@@ -7,7 +7,18 @@
       "type": "string"
     },
     "tags": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "us_ntd_id": {
+          "type": ["string", "array"]
+        },
+        "omd_provider_id": {
+          "type": ["string", "array"]
+        },
+        "wikidata_id": {
+          "type": ["string", "array"]
+        }
+      }
     },
     "name": {
       "type": "string"
