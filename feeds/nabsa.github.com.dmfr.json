@@ -1,0 +1,2036 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "id": "f-adcb~bikeshare~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://api-core.bikeshare.ae/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-careem~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://dubai.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+      }
+    },
+    {
+      "id": "f-ecobici~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://buenosaires.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+      }
+    },
+    {
+      "id": "f-mibicitubici~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://www.mibicitubici.gob.ar/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-movo~buenos~aires~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.movo.me/buenosaires"
+      }
+    },
+    {
+      "id": "f-nextbike~austria~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_at/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~klagenfurt~austria~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ka/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~nieder\u00f6sterreich~austria~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_la/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~tirol~austria~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ta/gbfs.json"
+      }
+    },
+    {
+      "id": "f-stadtrad~innsbruck~austria~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_si/gbfs.json"
+      }
+    },
+    {
+      "id": "f-monash~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://monashbikeshare.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-greenbike~aruba~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://aru.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bl~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bj/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sarajevo~bosnia~and~herzegovina~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ba/gbfs.json"
+      }
+    },
+    {
+      "id": "f-zenica~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bz/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bike~ita\u00fa~-~pernambuco~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://rec.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bike~ita\u00fa~-~poa~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://poa.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bike~ita\u00fa~-~rio~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://riodejaneiro.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bike~ita\u00fa~-~riviera~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://riviera.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bike~ita\u00fa~-~salvador~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://salvador.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bike~ita\u00fa~-~sampa~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://saopaulo.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bike~vv~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://vilavelha.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bike~share~toronto~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://tor.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bixi-montreal~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://api-core.bixi.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-hopr~ottawa~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/6/"
+      }
+    },
+    {
+      "id": "f-hopr~vancouver~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/13/"
+      }
+    },
+    {
+      "id": "f-mobi~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://vancouver-gbfs.smoove.pro/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~jawl~properties~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ca/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sobi~hamilton~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://hamilton.socialbicycles.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~switzerland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ch/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bike~ita\u00fa~-~santiago~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://santiago.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+      }
+    },
+    {
+      "id": "f-movo~vitacura~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.movo.me/vitacura"
+      }
+    },
+    {
+      "id": "f-voom~bogot\u00e1~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.movo.me/bogota"
+      }
+    },
+    {
+      "id": "f-voom~medell\u00edn~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.movo.me/medellin"
+      }
+    },
+    {
+      "id": "f-nextbike~cyprus~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cy/gbfs.json"
+      }
+    },
+    {
+      "id": "f-velespeed~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://nicosia.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-nextbike~hav\u00ed\u0159ov~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_th/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~ostrava~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_to/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~prostejov~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cz/gbfs.json"
+      }
+    },
+    {
+      "id": "f-airbus~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ab/gbfs.json"
+      }
+    },
+    {
+      "id": "f-berlin-buch~campus~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bonn~nextbike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bf/gbfs.json"
+      }
+    },
+    {
+      "id": "f-frelo~freiburg~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_df/gbfs.json"
+      }
+    },
+    {
+      "id": "f-graben~-~ready4green~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_da/gbfs.json"
+      }
+    },
+    {
+      "id": "f-kvb~rad~germany~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_kg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-kvv.nextbike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_fg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-metropolradruhr~germany~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_mr/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~berlin~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bn/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~d\u00fcsseldorf~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dd/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~erfurt~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ef/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~frankfurt~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ff/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~germany~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_de/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~gie\u00dfen~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ng/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~hannover~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dh/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~kassel~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dk/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~lahr~(pedelecs)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_lr/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~leipzig~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_le/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~lippstadt~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_li/gbfs.json"
+      }
+    },
+    {
+      "id": "f-potsdam~rad~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dc/gbfs.json"
+      }
+    },
+    {
+      "id": "f-rvk~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dr/gbfs.json"
+      }
+    },
+    {
+      "id": "f-santander~nextbike~m\u00f6nchengladbach~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sn/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sap~walldorf~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ds/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sprottenflotte~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sf/gbfs.json"
+      }
+    },
+    {
+      "id": "f-swa~rad~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ag/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sz-bike~germany~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sz/gbfs.json"
+      }
+    },
+    {
+      "id": "f-usedomrad~germany~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ur/gbfs.json"
+      }
+    },
+    {
+      "id": "f-vag_rad~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dv/gbfs.json"
+      }
+    },
+    {
+      "id": "f-vrnnextbike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vn/gbfs.json"
+      }
+    },
+    {
+      "id": "f-wk-bike~(bremen)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_wk/gbfs.json"
+      }
+    },
+    {
+      "id": "f-wupsirad~leverkusen~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_dw/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bicing~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://barcelona.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bicimad~(unofficial)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bici.madrid/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bilbaobizi~(bilbao)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bo/gbfs.json"
+      }
+    },
+    {
+      "id": "f-ibizi~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ei/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lovesharing~(canary~islands)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ls/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sitycleta~(las~palmas)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_el/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bicloo~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/nantes/gbfs.json"
+      }
+    },
+    {
+      "id": "f-c-v\u00e9lo~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://clermont-gbfs.klervi.net/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-cristolib~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/creteil/gbfs.json"
+      }
+    },
+    {
+      "id": "f-cy'clic~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/rouen/gbfs.json"
+      }
+    },
+    {
+      "id": "f-le~v\u00e9lo~star~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://eu.ftp.opendatasoft.com/star/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lev\u00e9lo~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/marseille/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lib\u00e9lo~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://valence.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lam~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/amiens/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lhop~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/strasbourg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lib'~metropole~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://velib-metropole-opendata.smoove.pro/opendata/Velib_Metropole/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9livert~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://saint-etienne-gbfs.klervi.net/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lo'v~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/lyon/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lo2~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/cergy-pontoise/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9loc\u00e9o~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://vannes-gbfs.klervi.net/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9locit\u00e9~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/mulhouse/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lomagg'~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/montpellier/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lopop~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://avignon-gbfs.klervi.net/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9lostan'lib~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/nancy/gbfs.json"
+      }
+    },
+    {
+      "id": "f-v\u00e9l\u00f4toulouse~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://transport.data.gouv.fr/gbfs/toulouse/gbfs.json"
+      }
+    },
+    {
+      "id": "f-belfastbikes~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bu/gbfs.json"
+      }
+    },
+    {
+      "id": "f-beryl~-~bcp~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://gbfs.basis-pdn.bike/BCP/gbfs.json"
+      }
+    },
+    {
+      "id": "f-beryl~-~hereford~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://gbfs.basis-pdn.bike/Hereford/gbfs.json"
+      }
+    },
+    {
+      "id": "f-beryl~-~london~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://gbfs.basis-pdn.bike/London/gbfs.json"
+      }
+    },
+    {
+      "id": "f-beryl~-~norwich~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://gbfs.basis-pdn.bike/Norwich/gbfs.json"
+      }
+    },
+    {
+      "id": "f-beryl~-~watford~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://gbfs.basis-pdn.bike/Watford/gbfs.json"
+      }
+    },
+    {
+      "id": "f-co-bikes~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_eu/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~cardiff~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uc/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~glasgow~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~uk~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uk/gbfs.json"
+      }
+    },
+    {
+      "id": "f-santander~cycles~-~brunel~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ub/gbfs.json"
+      }
+    },
+    {
+      "id": "f-santander~cycles~-~milton~keynes~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ku/gbfs.json"
+      }
+    },
+    {
+      "id": "f-santander~cycles~-~swansea~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uu/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~drni\u0161~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gd/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~gospi\u0107~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~ivani\u0107-grad~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ig/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~karlovac~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_kc/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~makarska~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ma/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~metkovi\u0107~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cm/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~\u0161ibenik~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bc/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~sisak~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~slavonski~brod~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~split~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gt/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~velika~gorica~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~vukovar~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vu/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grad~zadar~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_zd/gbfs.json"
+      }
+    },
+    {
+      "id": "f-jastrebarsko~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cj/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~croatia~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_hr/gbfs.json"
+      }
+    },
+    {
+      "id": "f-op\u0107ina~brinje~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_br/gbfs.json"
+      }
+    },
+    {
+      "id": "f-op\u0107ina~dugopolje~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_od/gbfs.json"
+      }
+    },
+    {
+      "id": "f-op\u0107ina~pitoma\u010da~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_se/gbfs.json"
+      }
+    },
+    {
+      "id": "f-porec~bike~share~(croatia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cv/gbfs.json"
+      }
+    },
+    {
+      "id": "f-chartered~bike~(bhopal~-~india)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bi/gbfs.json"
+      }
+    },
+    {
+      "id": "f-chartered~bike~(ranchi~-~india)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ir/gbfs.json"
+      }
+    },
+    {
+      "id": "f-smartbike~(chennai~-~india)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ic/gbfs.json"
+      }
+    },
+    {
+      "id": "f-smartbike~(hyderabad~-~india)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_hi/gbfs.json"
+      }
+    },
+    {
+      "id": "f-smartbike~(new~delhi~-~india)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_in/gbfs.json"
+      }
+    },
+    {
+      "id": "f-smartbike~(vijayawada~-~india)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vi/gbfs.json"
+      }
+    },
+    {
+      "id": "f-verona~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.urbansharing.com/bikeverona.it/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bike4all~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bl/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sixt~latvia~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_lv/gbfs.json"
+      }
+    },
+    {
+      "id": "f-monabike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://monaco.publicbikesystem.net/ube/gbfs/v1/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~malta~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_mt/gbfs.json"
+      }
+    },
+    {
+      "id": "f-mibici~guadalajara~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://guad.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-movo~guadalajara~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.movo.me/guadalajara"
+      }
+    },
+    {
+      "id": "f-cykl~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://www.cykl.nl/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~dordrecht~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nd/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~maastricht~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nl/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bergen~city~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.urbansharing.com/bergenbysykkel.no/gbfs.json"
+      }
+    },
+    {
+      "id": "f-oslo~city~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.urbansharing.com/oslobysykkel.no/gbfs.json"
+      }
+    },
+    {
+      "id": "f-trondheim~city~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.urbansharing.com/trondheimbysykkel.no/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~new~zealand~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nz/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bike_s~srm~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sp/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grm~grodzisk~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_gp/gbfs.json"
+      }
+    },
+    {
+      "id": "f-kajteroz~-~chorzowski~rower~miejski~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pv/gbfs.json"
+      }
+    },
+    {
+      "id": "f-ko\u0142obrzeski~rower~miejski~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_kr/gbfs.json"
+      }
+    },
+    {
+      "id": "f-ko\u0142o~marek~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_mk/gbfs.json"
+      }
+    },
+    {
+      "id": "f-komornicki~system~rowerowy~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pa/gbfs.json"
+      }
+    },
+    {
+      "id": "f-koni\u0144ski~rower~miejski~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pn/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lrm~lublin~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ln/gbfs.json"
+      }
+    },
+    {
+      "id": "f-piaseczy\u0144ski~rower~miejski~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pi/gbfs.json"
+      }
+    },
+    {
+      "id": "f-prm~poznan~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-rower~miejski~szamotu\u0142y~poland~(rms)~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_rm/gbfs.json"
+      }
+    },
+    {
+      "id": "f-rower~miejski~w~ostrowie~wielkopolskim~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_po/gbfs.json"
+      }
+    },
+    {
+      "id": "f-rowerowe~\u0142\u00f3dzkie~poland~(rl)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pw/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sosnowiecki~rower~miejski~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pr/gbfs.json"
+      }
+    },
+    {
+      "id": "f-system~legnicki~rower~miejski~(slrm)~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_mp/gbfs.json"
+      }
+    },
+    {
+      "id": "f-system~roweru~gminnego~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-tarnowski~rower~miejski~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_tn/gbfs.json"
+      }
+    },
+    {
+      "id": "f-veturilo~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_vp/gbfs.json"
+      }
+    },
+    {
+      "id": "f-wrm~nextbike~poland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pl/gbfs.json"
+      }
+    },
+    {
+      "id": "f-ibike~(~saudi~arabia~)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_sa/gbfs.json"
+      }
+    },
+    {
+      "id": "f-~just~eat~cycles~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.urbansharing.com/edinburghcyclehire.com/gbfs.json"
+      }
+    },
+    {
+      "id": "f-styr~&~st\u00e4ll~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_zg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nomagobikes~(slovenia)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_cn/gbfs.json"
+      }
+    },
+    {
+      "id": "f-arriva~nitra~slovakia~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_as/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bikekia~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ak/gbfs.json"
+      }
+    },
+    {
+      "id": "f-ordu~bisikletli~turkey~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_ot/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~(ukraine)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nu/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nextbike~vinnitsa~(ukraine)~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_uv/gbfs.json"
+      }
+    },
+    {
+      "id": "f-arborbike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_arborbike/gbfs.json"
+      }
+    },
+    {
+      "id": "f-austin~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_austin/gbfs.json"
+      }
+    },
+    {
+      "id": "f-austin~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/atxb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-austin~scooter~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/atxs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-aventura~bcycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_aventura/gbfs.json"
+      }
+    },
+    {
+      "id": "f-battle~creek~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_battlecreek/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bay~wheels~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.baywheels.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bike~chattanooga~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://chat.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bikelnk~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_bikelnk/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bikeshare~kona~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://kona.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-biketown~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.biketownpdx.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-biki~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://hon.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-bird~chicago~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://mds.bird.co/gbfs/chicago/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bird~louisville~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://mds.bird.co/gbfs/louisville/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bishop~ranch~britebikes~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://britebikes.socialbicycles.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-blue~bikes~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bluebikes.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-boise~green~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://boise.greenbike.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bolt~baltimore~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://www.bolt.miami/bolt2/bal/gbfs/en/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bolt~los~angeles~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://www.bolt.miami/bolt2/la/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bolt~louisville~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://www.bolt.miami/bolt2/lou/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-boulder~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_boulder/gbfs.json"
+      }
+    },
+    {
+      "id": "f-breeze~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://santamonicabikeshare.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-broward~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_broward/gbfs.json"
+      }
+    },
+    {
+      "id": "f-bublr~bikes~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_bublr/gbfs.json"
+      }
+    },
+    {
+      "id": "f-capital~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.capitalbikeshare.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-charlotte~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_charlotte/gbfs.json"
+      }
+    },
+    {
+      "id": "f-cincy~red~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_cincyredbike/gbfs.json"
+      }
+    },
+    {
+      "id": "f-citi~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.citibikenyc.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-clarksville~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_clarksville/gbfs.json"
+      }
+    },
+    {
+      "id": "f-clemson~bikeshare~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_clemson/gbfs.json"
+      }
+    },
+    {
+      "id": "f-clevr~mobility~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://portal.clevrmobility.com/api/gbfs/oakland/en/discovery/"
+      }
+    },
+    {
+      "id": "f-coast~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://coast.socialbicycles.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-cogo~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.cogobikeshare.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-columbia~county~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_columbiacounty/gbfs.json"
+      }
+    },
+    {
+      "id": "f-columbike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_columbike/gbfs.json"
+      }
+    },
+    {
+      "id": "f-denver~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_denver/gbfs.json"
+      }
+    },
+    {
+      "id": "f-denver~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/denb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-des~moines~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_desmoines/gbfs.json"
+      }
+    },
+    {
+      "id": "f-divvy~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.divvybikes.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-el~paso~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_elpaso/gbfs.json"
+      }
+    },
+    {
+      "id": "f-explore~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_memphis/gbfs.json"
+      }
+    },
+    {
+      "id": "f-fort~worth~bike~sharing~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_fortworth/gbfs.json"
+      }
+    },
+    {
+      "id": "f-great~rides~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_greatrides/gbfs.json"
+      }
+    },
+    {
+      "id": "f-greenbike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_greenbikeslc/gbfs.json"
+      }
+    },
+    {
+      "id": "f-greenville~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_greenville/gbfs.json"
+      }
+    },
+    {
+      "id": "f-grid~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://grid.socialbicycles.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-healthy~ride~pittsburgh~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_pp/gbfs.json"
+      }
+    },
+    {
+      "id": "f-heartland~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_heartland/gbfs.json"
+      }
+    },
+    {
+      "id": "f-hopr~freemont~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/16/"
+      }
+    },
+    {
+      "id": "f-hopr~los~angeles~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/10/"
+      }
+    },
+    {
+      "id": "f-hopr~miami~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/11/"
+      }
+    },
+    {
+      "id": "f-hopr~orlando~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/12/"
+      }
+    },
+    {
+      "id": "f-hopr~santa~barbara~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/5/"
+      }
+    },
+    {
+      "id": "f-hopr~tampa~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.hopr.city/api/gbfs/8/"
+      }
+    },
+    {
+      "id": "f-houston~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_houston/gbfs.json"
+      }
+    },
+    {
+      "id": "f-hubway~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.thehubway.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-indego~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_indego/gbfs.json"
+      }
+    },
+    {
+      "id": "f-indy~-~pacers~bikeshare~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_pacersbikeshare/gbfs.json"
+      }
+    },
+    {
+      "id": "f-jackson~county~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_jacksoncounty/gbfs.json"
+      }
+    },
+    {
+      "id": "f-jerseybike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_nj/gbfs.json"
+      }
+    },
+    {
+      "id": "f-jump~baltimore~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/balts/gbfs.json"
+      }
+    },
+    {
+      "id": "f-kansas~city~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_kc/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~arlington~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/arlington/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~baltimore~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/baltimore/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~chicago~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/chicago/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~detroit~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/detroit/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~los~angeles~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/los_angeles/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~louisville~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/louisville/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~new~york~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/new_york/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~oakland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/oakland/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~portland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/portland/gbfs.json"
+      }
+    },
+    {
+      "id": "f-lime~washington~dc~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://data.lime.bike/api/partners/v1/gbfs/washington_dc/gbfs.json"
+      }
+    },
+    {
+      "id": "f-link~dayton~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_linkdayton/gbfs.json"
+      }
+    },
+    {
+      "id": "f-los~angeles~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/laxb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-los~angeles~scooter~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/laxs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-louvelo~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://lou.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-lyft~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://s3.amazonaws.com/lyft-lastmile-production-iad/lbs/dca/gbfs.json"
+      }
+    },
+    {
+      "id": "f-madison~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_madison/gbfs.json"
+      }
+    },
+    {
+      "id": "f-mcallen~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_mcallen/gbfs.json"
+      }
+    },
+    {
+      "id": "f-metro~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_lametro/gbfs.json"
+      }
+    },
+    {
+      "id": "f-mogo~detroit~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://det.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-nashville~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_nashville/gbfs.json"
+      }
+    },
+    {
+      "id": "f-new~york~city~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/nycb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-nice~ride~minnesota~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.niceridemn.com/gbfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-okc~spokies~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_spokies/gbfs.json"
+      }
+    },
+    {
+      "id": "f-rapid~city~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_rapidcity/gbfs.json"
+      }
+    },
+    {
+      "id": "f-reddy~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://reddybikeshare.socialbicycles.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-relay~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://relaybikeshare.socialbicycles.com/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-rtc~bike~share~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_rtcbikeshare/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sacramento~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/sacb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-sacramento~scooter~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/sacs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-san~antonio~b-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_sanantonio/gbfs.json"
+      }
+    },
+    {
+      "id": "f-san~diego~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/sdb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-san~diego~scooter~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/sds/gbfs.json"
+      }
+    },
+    {
+      "id": "f-san~francisco~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/sfb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-san~francisco~scooter~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/sfs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-santa~cruz~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/scb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-savannah~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_catbike/gbfs.json"
+      }
+    },
+    {
+      "id": "f-seattle~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/seab/gbfs.json"
+      }
+    },
+    {
+      "id": "f-spartanburg~bcycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_spartanburg/gbfs.json"
+      }
+    },
+    {
+      "id": "f-spin~baltimore~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://web.spin.pm/api/gbfs/v1/baltimore/gbfs.json"
+      }
+    },
+    {
+      "id": "f-spin~chicago~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.spin.pm/api/gbfs/v1/chicago_territory/gbfs"
+      }
+    },
+    {
+      "id": "f-spin~detroit~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://web.spin.pm/api/gbfs/v1/detroit/gbfs"
+      }
+    },
+    {
+      "id": "f-spin~louisville~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://web.spin.pm/api/gbfs/v1/louisville/gbfs"
+      }
+    },
+    {
+      "id": "f-spin~portland~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://web.spin.pm/api/gbfs/v1/portland/gbfs"
+      }
+    },
+    {
+      "id": "f-spin~providence~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://web.spin.pm/api/gbfs/v1/providence/gbfs"
+      }
+    },
+    {
+      "id": "f-spin~washington~dc~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://web.spin.pm/api/gbfs/v1/washington_dc/gbfs"
+      }
+    },
+    {
+      "id": "f-start~bike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com/bcycle_startbike/gbfs.json"
+      }
+    },
+    {
+      "id": "f-tampa~scooter~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/tpas/gbfs.json"
+      }
+    },
+    {
+      "id": "f-topeka~metro~bikes~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://topekametrobikes.org/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-tugo~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://tuc.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    },
+    {
+      "id": "f-ubike~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "http://ubike.virginia.edu/opendata/gbfs.json"
+      }
+    },
+    {
+      "id": "f-washington~dc~bike~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/dcb/gbfs.json"
+      }
+    },
+    {
+      "id": "f-washington~dc~scooter~jump~system~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.uber.com/v1/dcs/gbfs.json"
+      }
+    },
+    {
+      "id": "f-we-cycle~gbfs",
+      "spec": "gbfs",
+      "urls": {
+        "gbfs_auto_discovery": "https://asp.publicbikesystem.net/ube/gbfs/v1/"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

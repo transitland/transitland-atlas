@@ -17,8 +17,8 @@ for row in list(cr):
     }
     feeds.append(feed)
 dmfr = {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.2.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": feeds,
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
-print(json.dumps(dmfr))
+print(json.dumps(dmfr, indent=2, sort_keys=True))
