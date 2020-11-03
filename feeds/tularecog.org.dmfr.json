@@ -1,11 +1,12 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.2.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": [
     {
       "spec": "gtfs",
       "id": "f-tulare~time",
       "urls": {
-        "static_current": "http://www.tularecog.org/googletransit/TIME/google_transit.zip"
+        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gis-project-and-data/gtfs-data-as-of-june-19-2020/time-tulare-intermodal-express-gtfs/",
+        "static_historic": ["http://www.tularecog.org/googletransit/TIME/google_transit.zip"]
       }
     },
     {
@@ -19,7 +20,8 @@
       "spec": "gtfs",
       "id": "f-tulare~dart",
       "urls": {
-        "static_current": "http://www.tularecog.org/googletransit/DART/google_transit.zip"
+        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gis-project-and-data/gtfs-data-as-of-june-19-2020/dart-dinuba-area-regional-transit-gtfs/",
+        "static_historic": ["http://www.tularecog.org/googletransit/DART/google_transit.zip"]
       }
     }
   ],

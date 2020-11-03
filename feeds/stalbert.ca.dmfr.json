@@ -1,13 +1,21 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.2.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": [
     {
       "spec": "gtfs",
       "id": "f-c3x1-stalberttransit",
       "urls": {
-        "static_current": "http://stalbert.ca/uploads/files-zip/google_transit.zip"
+        "static_current": "https://stalbert.ca/site/assets/files/3840/google_transit.zip"
       },
-      "feed_namespace_id": "o-c3x1-stalberttransit"
+      "feed_namespace_id": "o-c3x1-stalberttransit",
+      "license": {
+        "url": "https://stalbert.ca/city/transit/tools/open-data-gtfs/",
+        "use_without_attribution": "no",
+        "commercial_use_allowed": "yes",
+        "redistribution_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Route and arrival data used in this product or service is provided by permission of the City of St. Albert. The City of St. Albert assumes no responsibility for the accuracy or currency of the Data used in this product or service."
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

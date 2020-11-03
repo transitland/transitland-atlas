@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [{
+      "spec": "gtfs",
+      "id": "f-dr5-nj~transit~bus",
+      "urls": {
+        "static_current": "https://www.njtransit.com/bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "feed_namespace_id": "o-dr5-nj~transit"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-dr5-nj~transit~rail",
+      "urls": {
+        "static_current": "https://www.njtransit.com/rail_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "feed_namespace_id": "o-dr5-nj~transit"
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

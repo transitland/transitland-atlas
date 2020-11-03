@@ -1,0 +1,23 @@
+name: Validate
+on: [push, pull_request]
+jobs:
+  build:
+    # TODO: switch to Ubuntu, after switching Gotransit versions
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.6'
+    - uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12.x'
+    - name: Install dependencies
+      run: |
+        brew install jq pipenv
+        cd scripts && pipenv install
+    # TODO: source gotransit from its repo, rather than hacking PATH
+    - name: Validate feeds
+      run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
+    - name: Validate operators
+      run: cd scripts && ./validate-operators.sh

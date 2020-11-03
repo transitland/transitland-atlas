@@ -1,11 +1,12 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.2.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": [
     {
       "spec": "gtfs",
       "id": "f-visalia",
       "urls": {
-        "static_current": "https://visaliatransit.info/gtfs"
+        "static_current": "https://visaliatransit.info/gtfs",
+        "static_historic": ["http://www.tularecog.org/googletransit/VT/google_transit.zip"]
       }
     }
   ],
