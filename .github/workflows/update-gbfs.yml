@@ -1,7 +1,8 @@
 name: Update GBFS
-schedule:
-  # - cron:  '0 10 * * *'
-  - cron:  '40 * * * *'
+on:
+  schedule:
+    # - cron:  '0 10 * * *'
+    - cron:  '40 * * * *'
 jobs:
   scheduled:
     runs-on: ubuntu-latest
