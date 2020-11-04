@@ -1,8 +1,8 @@
 name: Update GBFS
 on:
+  workflow_dispatch:
   schedule:
-    # - cron:  '0 10 * * *'
-    - cron:  '*/5 * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   scheduled:
     runs-on: ubuntu-latest
