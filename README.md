@@ -22,10 +22,10 @@ Currently includes:
 
 - [GTFS](https://gtfs.org/reference/static)
 - [GTFS Realtime](https://gtfs.org/reference/realtime/v2/)
+- [GBFS](https://github.com/NABSA/gbfs) - automatically synchronized from https://github.com/NABSA/gbfs/blob/master/systems.csv
 
 For future addition:
 
-- [GBFS](https://github.com/NABSA/gbfs) - see [pull request #41](https://github.com/transitland/transitland-atlas/pull/41)
 - [MDS](https://github.com/openmobilityfoundation/mobility-data-specification)
 
 ## Operators
