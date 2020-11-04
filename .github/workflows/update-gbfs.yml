@@ -20,5 +20,5 @@ jobs:
         git config user.email "info@interline.io"
         git add -A
         timestamp=$(date -u)
-        git commit -m "Latest data: ${timestamp}" || exit 0
+        git commit -m "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at ${timestamp}" || exit 0
         git push
