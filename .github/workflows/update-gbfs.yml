@@ -17,7 +17,7 @@ jobs:
         cd scripts && pipenv install
     - name: Fetch latest data
       run: |-
-        python scripts/convert-gbfs-csv-to-dmfr.py > feeds/nabsa.github.com.dmfr.json
+        cd scripts && pipenv run python convert-gbfs-csv-to-dmfr.py > feeds/nabsa.github.com.dmfr.json
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated Bot"
