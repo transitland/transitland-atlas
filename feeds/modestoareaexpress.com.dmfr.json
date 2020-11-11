@@ -3,16 +3,21 @@
   "feeds": [
     {
       "spec": "gtfs",
-      "id": "f-modestoareaexpress",
+      "id": "f-9q9-modesto~ca~us",
       "urls": {
-        "static_current": "https://www.modestoareaexpress.com/preview-gtfs.zip"
-      }
+        "static_current": "https://www.modestoareaexpress.com/preview-gtfs.zip",
+        "static_historic": ["http://data.trilliumtransit.com/gtfs/modesto-ca-us/modesto-ca-us.zip"]
+      },
+      "feed_namespace_id": "o-9q9-modestoareaexpress"
     },
     {
       "spec": "gtfs-rt",
       "id": "f-modestoareaexpress~rt",
+      "associated_feeds": ["f-9q9-modesto~ca~us"],
       "urls": {
-        "realtime_trip_updates": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate"
+        "realtime_trip_updates": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate",
+        "realtime_vehicle_positions": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_alerts": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
       }
     }
   ],
