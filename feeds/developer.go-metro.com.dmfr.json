@@ -2,6 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": [
     {
+      "spec": "gtfs",
+      "id": "f-dngy-southwestohioregionaltransitauthority",
+      "urls": {
+        "static_current": "https://www.go-metro.com/uploads/GTFS/google_transit_info.zip"
+      },
+      "license": {
+        "url": "https://www.go-metro.com/about-metro/developer-data",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-dngy-southwestohioregionaltransitauthority"
+    },
+    {
       "spec": "gtfs-rt",
       "id": "f-cincinnatimetro~rt",
       "urls": {
