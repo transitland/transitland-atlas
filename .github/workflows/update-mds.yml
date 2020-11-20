@@ -1,0 +1,28 @@
+name: Update MDS
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 * * * *'
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.6'
+    - name: Install dependencies
+      run: |
+        pip install pipenv
+        cd scripts && pipenv install
+    - name: Fetch latest data
+      run: |-
+        cd scripts && pipenv run python convert-mds-csv-to-dmfr.py > ../feeds/openmobilityfoundation.github.com.dmfr.json
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated Bot"
+        git config user.email "info@interline.io"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Updated MDS feeds from https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/providers.csv at ${timestamp}" || exit 0
+        git push
