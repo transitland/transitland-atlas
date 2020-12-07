@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dpz-durhamregiontransit",
+      "urls": {
+        "static_current": "https://maps.durham.ca/OpenDataGTFS/GTFS_Durham_TXT.zip"
+      },
+      "license": {
+        "url": "http://www.durham.ca/departments/corpservices/it/GIS/OpenDataLicenceAgreement.pdf"
+      },
+      "feed_namespace_id": "o-dpz-durhamregiontransit"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-dpz-durhamregiontransit~rt",
+      "urls": {
+        "realtime_alerts": "https://maps.durham.ca/OpenDataGTFS/alerts.pb",
+        "realtime_vehicle_positions": "https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions",
+        "realtime_trip_updates": "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates"
+      },
+      "license": {
+        "url": "http://www.durham.ca/departments/corpservices/it/GIS/OpenDataLicenceAgreement.pdf"
+      },
+      "associated_feeds": ["f-dpz-durhamregiontransit"]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
