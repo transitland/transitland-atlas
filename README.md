@@ -43,7 +43,7 @@ TODO: link to operator listings on Transitland v2 website
 6. GitHub Actions (continuous integration service) will run a basic validation check on your PR and report any errors.
 7. A moderator will review and comment on your PR. If you don't get a response shortly, feel free to ping us at [hello@transit.land](mailto:hello@transit.land)
 
-For more information on what can go into a DMFR file, see the [DMFR documentation](For more information on the available fields, see the [DMFR documentation](https://github.com/transitland/distributed-mobility-feed-registry).
+For more information on what can go into a DMFR file, see the [DMFR documentation](https://github.com/transitland/distributed-mobility-feed-registry).
 
 ## Onestop IDs
 
