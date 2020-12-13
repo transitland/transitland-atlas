@@ -5,7 +5,8 @@ on:
     - cron: '0 * * * *'
 jobs:
   scheduled:
-    runs-on: ubuntu-latest
+    # TODO: switch to Ubuntu, after switching Gotransit versions
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v1
@@ -18,6 +19,8 @@ jobs:
     - name: Fetch latest data
       run: |-
         cd scripts && pipenv run python convert-gbfs-csv-to-dmfr.py > ../feeds/nabsa.github.com.dmfr.json
+    - name: Validate feeds
+      run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated Bot"
