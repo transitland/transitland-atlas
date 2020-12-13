@@ -7,7 +7,7 @@ decoded_content = r.content.decode('utf-8')
 cr = csv.DictReader(decoded_content.splitlines(), delimiter=',')
 feeds = []
 for row in list(cr):
-    name = row['Name'].lower().replace(' ', '~')
+    name = row['Name'].lower().replace(' ', '~').replace('-', '~')
     feed = {
       'spec': 'gbfs',
       'id': f"f-{name}~gbfs",
