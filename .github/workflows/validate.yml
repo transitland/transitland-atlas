@@ -2,8 +2,7 @@ name: Validate
 on: [push, pull_request]
 jobs:
   build:
-    # TODO: switch to Ubuntu, after switching Gotransit versions
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v1
@@ -14,9 +13,12 @@ jobs:
         node-version: '12.x'
     - name: Install dependencies
       run: |
-        brew install jq pipenv
+        pip install pipenv
         cd scripts && pipenv install
-    # TODO: source gotransit from its repo, rather than hacking PATH
+    - name: Install transitland-lib
+      run: |
+        wget -O scripts/transitland https://github.com/interline-io/transitland-lib/releases/download/v0.7.1/transitland-linux
+        chmod +x scripts/transitland
     - name: Validate feeds
       run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
     - name: Validate operators
