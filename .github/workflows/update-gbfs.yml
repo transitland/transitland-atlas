@@ -5,8 +5,7 @@ on:
     - cron: '0 * * * *'
 jobs:
   scheduled:
-    # TODO: switch to Ubuntu, after switching Gotransit versions
-    runs-on: macos-latest
+    runs-on: linux-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v1
@@ -16,11 +15,16 @@ jobs:
       run: |
         pip install pipenv
         cd scripts && pipenv install
+    - name: Install transitland-lib
+      run: |
+        wget -O transitland https://github.com/interline-io/transitland-lib/releases/download/v0.7.1/transitland-linux
+        chmod +x transitland
+        mv transitland ./scripts
     - name: Fetch latest data
       run: |-
         cd scripts && pipenv run python convert-gbfs-csv-to-dmfr.py > ../feeds/nabsa.github.com.dmfr.json
     - name: Validate feeds
-      run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
+      run: cd scripts && python validate-feeds.py
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated Bot"
