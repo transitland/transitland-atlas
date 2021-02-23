@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-santee~wateree~rta",
+      "urls": {
+        "static_current": "https://santeebus.com/gtfs"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-santee~wateree~rta~rt",
+      "urls": {
+        "realtime_alerts": "https://santeebus.com/gtfs-rt/alerts",
+        "realtime_vehicle_positions": "https://santeebus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://santeebus.com/gtfs-rt/tripupdates"
+      },
+      "associated_feeds": ["f-santee~wateree~rta"]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
