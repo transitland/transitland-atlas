@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-presidigo~ca~us",
+      "urls": {
+        "static_current": "https://presidiobus.com/gtfs"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-presidigo~ca~us~rt",
+      "urls": {
+        "realtime_alerts": "https://presidiobus.com/gtfs-rt/alerts",
+        "realtime_vehicle_positions": "https://presidiobus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://presidiobus.com/gtfs-rt/tripupdates"
+      },
+      "associated_feeds": ["f-presidigo~ca~us"]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
