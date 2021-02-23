@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dnjq-greenlink",
+      "urls": {
+        "static_current": "https://trackgreenlink.com/gtfs"
+      },
+      "feed_namespace_id": "o-dnjq-greenlink"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-dnjq-greenlink~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://trackgreenlink.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://trackgreenlink.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://trackgreenlink.com/gtfs-rt/alerts" 
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
