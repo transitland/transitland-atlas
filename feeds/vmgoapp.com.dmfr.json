@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dnx-roanoke~va~us",
+      "urls": {
+        "static_current": "https://vmgoapp.com/gtfs"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-dnx-roanoke~va~us~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://vmgoapp.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://vmgoapp.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://vmgoapp.com/gtfs-rt/alerts"
+      },
+      "associated_feeds": ["f-dnx-roanoke~va~us"]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
