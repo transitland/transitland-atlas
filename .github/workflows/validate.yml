@@ -17,9 +17,10 @@ jobs:
         cd scripts && pipenv install
     - name: Install transitland-lib
       run: |
-        wget -O scripts/transitland https://github.com/interline-io/transitland-lib/releases/download/v0.7.1/transitland-linux
-        chmod +x scripts/transitland
+        wget https://github.com/interline-io/transitland-lib/releases/download/v0.8.1/transitland-linux -O transitland
+        chmod a+rx transitland
+        sudo mv transitland /usr/local/bin
     - name: Validate feeds
-      run: cd scripts && PATH=$PATH:$(pwd) python validate-feeds.py
+      run: cd scripts && python validate-feeds.py
     - name: Validate operators
       run: cd scripts && ./validate-operators.sh
