@@ -1,0 +1,25 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-9q5c-cityofcommercemunicipalbuslines",
+      "urls": {
+        "static_current": "https://citycommbus.com/gtfs"
+      },
+      "feed_namespace_id": "o-9q5c-cityofcommercemunicipalbuslines"
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9q5c-cityofcommercemunicipalbuslines~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://citycommbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://citycommbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://citycommbus.com/gtfs-rt/alerts"
+      },
+      "associated_feeds": ["f-9q5c-cityofcommercemunicipalbuslines"],
+      "feed_namespace_id": "o-9q5c-cityofcommercemunicipalbuslines"
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
