@@ -19,6 +19,7 @@ for fn in glob.glob("operators/*.json"):
 
 updated_feeds = {}
 updated_operators = {}
+new_operators = set()
 with open(sys.argv[1]) as f:
     reader = csv.DictReader(f)
     for row in reader:
@@ -36,6 +37,8 @@ with open(sys.argv[1]) as f:
                     "gtfs_agency_id": row["gtfs_agency_id"],
                 }]
             }
+            new_operators.add(osid)
+
         updated_operator = False
         # for key,key2 in {'agency_name':'name'}.items():
         #     v = row.get(key)
@@ -113,6 +116,13 @@ for fn in glob.glob("feeds/*.dmfr.json"):
     if updated:
         with open(fn, 'w', encoding="utf-8") as ff:
             json.dump(d, ff, indent=2, ensure_ascii=False)
+
+for new_operator in new_operators:
+    operator = updated_operators.get(new_operator)
+    if operator:
+        fn = "operators/{}.json".format(new_operator )
+        with open(fn, 'w', encoding="utf-8") as ff:
+            json.dump(operator, ff, indent=2, ensure_ascii=False)
 
 for fn in glob.glob("operators/*.json"):
     d = {}
