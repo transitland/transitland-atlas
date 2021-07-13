@@ -1,6 +1,7 @@
 {
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
-  "feeds": [{
+  "feeds": [
+    {
       "spec": "gtfs",
       "id": "f-c20-trimet",
       "urls": {
@@ -8,6 +9,10 @@
       },
       "license": {
         "url": "http://developer.trimet.org/terms_of_use.shtml"
+      },
+      "tags": {
+        "feed_id": "TriMet",
+        "gtfs_data_exchange": " Portland Aerial Tram"
       }
     },
     {
@@ -26,7 +31,10 @@
       "feed_namespace_id": "o-c20-trimet",
       "associated_feeds": [
         "f-c20-trimet"
-      ]
+      ],
+      "tags": {
+        "notes": "Requires API key."
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

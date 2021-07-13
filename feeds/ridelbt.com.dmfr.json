@@ -6,9 +6,15 @@
       "id": "f-9q5b-longbeachtransit",
       "urls": {
         "static_current": "https://lbtransit.box.com/shared/static/aoyeskwmsa9g7pyg78q3xuioi0lgqe4f.zip",
-        "static_historic": ["https://lbtransit.box.com/shared/static/a29r6bewfz8xnxjyd9w16orcz4d0zect.zip"]
+        "static_historic": [
+          "https://lbtransit.box.com/shared/static/a29r6bewfz8xnxjyd9w16orcz4d0zect.zip"
+        ]
       },
-      "feed_namespace_id": "o-9q5b-longbeachtransit"
+      "feed_namespace_id": "o-9q5b-longbeachtransit",
+      "tags": {
+        "unstable_url": "true",
+        "gtfs_data_exchange": "long-beach-transit"
+      }
     },
     {
       "spec": "gtfs-rt",
@@ -18,7 +24,9 @@
         "realtime_trip_updates": "http://206.128.158.171/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
         "realtime_vehicle_positions": "http://206.128.158.171/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
       },
-      "associated_feeds": ["f-9q5b-longbeachtransit"]
+      "associated_feeds": [
+        "f-9q5b-longbeachtransit"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
