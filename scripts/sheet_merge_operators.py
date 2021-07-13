@@ -19,10 +19,9 @@ for fn in glob.glob("operators/*.json"):
 
 updated_feeds = {}
 updated_operators = {}
-with open(sys.ARGV[1]) as f:
+with open(sys.argv[1]) as f:
     reader = csv.DictReader(f)
     for row in reader:
-        continue
         ######## operators
         osid = row['onestop_id']
         fsid = row['feed_onestop_id']
@@ -111,10 +110,9 @@ for fn in glob.glob("feeds/*.dmfr.json"):
         else:
             f2.append(feed)
     d['feeds'] = f2
-
-    # if updated:
-    #     with open(fn, 'w') as ff:
-    #         json.dump(d, ff, indent=2)
+    if updated:
+        with open(fn, 'w', encoding="utf-8") as ff:
+            json.dump(d, ff, indent=2, ensure_ascii=False)
 
 for fn in glob.glob("operators/*.json"):
     d = {}
@@ -122,6 +120,6 @@ for fn in glob.glob("operators/*.json"):
         d = json.load(ff)
     osid = d['onestop_id']
     if updated_operators.get(osid):
-        with open(fn, 'w') as ff:
-            json.dump(updated_operators[osid], ff, indent=2)
+        with open(fn, 'w', encoding="utf-8") as ff:
+            json.dump(updated_operators[osid], ff, indent=2, ensure_ascii=False)
 
