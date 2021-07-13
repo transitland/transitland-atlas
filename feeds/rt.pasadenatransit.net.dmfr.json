@@ -7,7 +7,10 @@
       "urls": {
         "static_current": "http://rt.pasadenatransit.net/rtt/public/utility/gtfs.aspx"
       },
-      "feed_namespace_id": "o-9q5f-pasadenatransit"
+      "feed_namespace_id": "o-9q5f-pasadenatransit",
+      "license": {
+        "url": "https://www.cityofpasadena.net/pasadena-transit/real-time-applications/"
+      }
     },
     {
       "spec": "gtfs-rt",
@@ -16,7 +19,9 @@
         "realtime_trip_updates": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/alert"
       },
-      "associated_feeds": ["f-9q5f-pasadenatransit"]
+      "associated_feeds": [
+        "f-9q5f-pasadenatransit"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
