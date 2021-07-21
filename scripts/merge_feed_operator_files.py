@@ -53,7 +53,7 @@ def filter_empty(d):
 
 
 single_feed_items = set(operator_file_matches_single_feed.keys()) | set(operator_file_matches.keys())
-# single_feed_items = set(["feeds/vta.org.dmfr.json"])
+single_feed_items = set([])
 for feed_path in single_feed_items:
     osids = operator_file_matches_single_feed[feed_path]
     print("single file and feed match:", feed_path, osids)    
@@ -89,13 +89,12 @@ for feed_path in single_feed_items:
 
     with open(feed_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-        
-    
-# for k,v in operator_multiple_files.items():
-#     print("multiple matches:", k, v)
 
-# for k,v in operator_no_file.items():
-#     print("no file:", k, v)
+for k,v in operator_multiple_files.items():
+    print("multiple matches:", k, v)
 
-# for k,v in operator_no_feed.items():
-#     print("no feed:", k, v)
+for k,v in operator_no_file.items():
+    print("no file:", k, v)
+
+for k,v in operator_no_feed.items():
+    print("no feed:", k, v)
