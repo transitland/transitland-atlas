@@ -26,24 +26,24 @@ for fn in glob.glob("operators/*.json"):
     operator = data
     osid = operator.get('onestop_id')
     operators[osid] = operator
-    ofsids = set(i.get('feed_onestop_id') for i in operator.get('associated_feeds',[]))
-    fsids = set(feed_files.get(i) for i in ofsids)
+    fsids = set(i.get('feed_onestop_id') for i in operator.get('associated_feeds',[]))
+    files = set(feed_files.get(i) for i in fsids)
     if None in fsids:
         operator_no_feed[osid] = osid
-    elif len(fsids) > 1:
+    elif len(files) > 1:
         # print(fn)
         # print("\toperator:", operator["onestop_id"])
         # print("\t\tfeeds in files:", fsids)
         operator_multiple_files[osid].add(osid)
-    elif len(fsids) == 1 and len(ofsids) == 1:
+    elif len(files) == 1 and len(fsids) == 1:
         # operator appears in exactly 1 feed file and has single feed
         fsid = list(fsids)[0]
         operator_file_matches_single_feed[fsid].add(osid)
-    elif len(fsids) == 1:
+    elif len(files) == 1:
         # operator appears in exactly 1 feed file
         fsid = list(fsids)[0]
         operator_file_matches[fsid].add(osid)
-    elif len(fsids) == 0:
+    elif len(files) == 0:
         operator_no_file[osid] = osid
 
 def filter_empty(d):
@@ -54,46 +54,47 @@ def filter_empty(d):
     return a
 
 
-# single_feed_items = set(operator_file_matches_single_feed.keys()) | set(operator_file_matches.keys())
-single_feed_items = set(["feeds/vta.org.dmfr.json"])
-for k in single_feed_items:
+single_feed_items = set(operator_file_matches_single_feed.keys()) | set(operator_file_matches.keys())
+# single_feed_items = set(["feeds/vta.org.dmfr.json"])
+for feed_path in single_feed_items:
     data = {}
-    with open(k, encoding="utf-8") as f:
+    with open(feed_path, encoding="utf-8") as f:
         data = json.load(f)
 
-    v = operator_file_matches_single_feed[k]
-    print("single feed match:", k, v)
-    feed_operators = collections.defaultdict(list)
-    for osid in v:
-        operator = operators[osid]
-        fsids = [i.get("feed_onestop_id") for i in operator["associated_feeds"]]
-        oifs = [{"gtfs_agency_id": i.get("gtfs_agency_id")} for i in operator["associated_feeds"] if i.get("gtfs_agency_id")]
-        if len(set(fsids)) != 1:
-            raise Exception("more than one oif")
-        operator['associated_feeds'] = oifs
-        feed_operators[fsids[0]].append(filter_empty(operator))
-
-    # preserve order
+    # process this way to preserve order
     for feed in data.get('feeds'):
-        ops = feed_operators.get(feed["id"])
-        if ops:
-            feed["operators"] = ops
+        fsid = feed["id"]
+        osids = operator_file_matches_single_feed[fsid]
+        print("single feed match:", fsid, osids)    
+        feed_operators = collections.defaultdict(list)
+        for osid in osids:
+            operator = operators[osid]
+            fsids = [i.get("feed_onestop_id") for i in operator["associated_feeds"]]
+            oifs = [{"gtfs_agency_id": i.get("gtfs_agency_id")} for i in operator["associated_feeds"] if i.get("gtfs_agency_id")]
+            if len(set(fsids)) != 1:
+                raise Exception("more than one unique oif")
+            operator['associated_feeds'] = oifs
+            if not feed.get("operators"):
+                feed["operators"] = []
+            feed["operators"].append(filter_empty(operator))
+            os.unlink(os.path.join("operators", osid+".json"))
+
     
-    filematches = operator_file_matches.get(k)
+    filematches = operator_file_matches.get(feed_path)
     if filematches:
         data["operators"] = [filter_empty(operators.get(i)) for i in filematches]
+        for i in filematches:
+            os.unlink(os.path.join("operators", i+".json"))
 
-    with open(k, "w", encoding="utf-8") as f:
+    with open(feed_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         
-for k,v in operator_file_matches.items():
-    print("single file match:", k, v)
+    
+# for k,v in operator_multiple_files.items():
+#     print("multiple matches:", k, v)
 
-for k,v in operator_multiple_files.items():
-    print("multiple matches:", k, v)
+# for k,v in operator_no_file.items():
+#     print("no file:", k, v)
 
-for k,v in operator_no_file.items():
-    print("no file:", k, v)
-
-for k,v in operator_no_feed.items():
-    print("no feed:", k, v)
+# for k,v in operator_no_feed.items():
+#     print("no feed:", k, v)
