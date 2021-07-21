@@ -7,7 +7,28 @@
       "urls": {
         "static_current": "https://business.wsdot.wa.gov/Transit/csv_files/wsf/google_transit.zip"
       },
-      "feed_namespace_id": "o-c28-washingtonstateferries"
+      "feed_namespace_id": "o-c28-washingtonstateferries",
+      "operators": [
+        {
+          "onestop_id": "o-c28-washingtonstateferries",
+          "tags": {
+            "us_ntd_id": "00035",
+            "wikidata_id": "Q3500373"
+          },
+          "name": "Washington State Ferries",
+          "short_name": "WSF",
+          "website": "http://www.wsdot.wa.gov/ferries/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c28-washingtonstateferries",
+              "gtfs_agency_id": "WSF"
+            },
+            {
+              "feed_onestop_id": "f-wsf~rt"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",

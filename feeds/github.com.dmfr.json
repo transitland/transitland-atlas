@@ -64,7 +64,29 @@
       "feed_namespace_id": "o-dr4-septa",
       "tags": {
         "gtfs_data_exchange": "septa"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr4-septa",
+          "tags": {
+            "us_ntd_id": "30019",
+            "wikidata_id": "Q2037863",
+            "omd_provider_id": "septa"
+          },
+          "name": "Southeastern Pennsylvania Transportation Authority",
+          "short_name": "SEPTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dr4-septa~rail",
+              "gtfs_agency_id": "SEPTA"
+            },
+            {
+              "feed_onestop_id": "f-dr4-septa~bus",
+              "gtfs_agency_id": ""
+            }
+          ]
+        }
+      ]      
     },
     {
       "spec": "gtfs",
@@ -523,30 +545,27 @@
         "redistribute": "yes",
         "attribution_text": "Le présent service intègre les données ouvertes fournies par la Régie intermunicipale de transport des Collines (RITC - Transcollines). Transcollines n’est pas responsable de l’exactitude de l’information générée par cette application. Dernière mise à jour : AAAA-MM-JJ."
       },
-      "feed_namespace_id": "o-f244-RITC~Transcollines"
-    }
-  ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": [
-    {
-      "onestop_id": "o-dr4-septa",
-      "tags": {
-        "us_ntd_id": "30019",
-        "wikidata_id": "Q2037863",
-        "omd_provider_id": "septa"
-      },
-      "name": "Southeastern Pennsylvania Transportation Authority",
-      "short_name": "SEPTA",
-      "associated_feeds": [
+      "feed_namespace_id": "o-f244-RITC~Transcollines",
+      "operators": [
         {
-          "feed_onestop_id": "f-dr4-septa~rail",
-          "gtfs_agency_id": "SEPTA"
-        },
-        {
-          "feed_onestop_id": "f-dr4-septa~bus",
-          "gtfs_agency_id": ""
+          "onestop_id": "o-f244-RITC~Transcollines",
+          "tags": {},
+          "name": "Régie intermunicipale de transport des Collines",
+          "short_name": "Transcollines",
+          "website": "http://transcollines.ca",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-f244-RITC~Transcollines",
+              "gtfs_agency_id": "Transcollines"
+            },
+            {
+              "feed_onestop_id": "f-f244-RITC~Transcollines~RT",
+              "gtfs_agency_id": ""
+            }
+          ]
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

@@ -4,7 +4,7 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~bus",
-      "feed_namespace_id":"o-dqc-marylandtransitadministration",
+      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_localbus.zip"
       }
@@ -12,7 +12,7 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~raillink",
-      "feed_namespace_id":"o-dqc-marylandtransitadministration",
+      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_lightrail.zip"
       }
@@ -20,7 +20,7 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~subwaylink",
-      "feed_namespace_id":"o-dqc-marylandtransitadministration",
+      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_metro.zip"
       }
@@ -28,7 +28,7 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~marc",
-      "feed_namespace_id":"o-dqc-marylandtransitadministration",
+      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_marc.zip"
       }
@@ -36,12 +36,48 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~commuterbus",
-      "feed_namespace_id":"o-dqc-marylandtransitadministration",
+      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_commuterbus.zip"
       }
-    }        
-
+    }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-dqc-marylandtransitadministration",
+      "tags": {
+        "us_ntd_id": "30034",
+        "wikidata_id": "Q1863801"
+      },
+      "name": "Maryland Transit Administration",
+      "short_name": "MTA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dq-mtamaryland~subwaylink",
+          "gtfs_agency_id": ""
+        },
+        {
+          "feed_onestop_id": "f-mtamaryland~rt",
+          "gtfs_agency_id": ""
+        },
+        {
+          "feed_onestop_id": "f-dq-mtamaryland~marc",
+          "gtfs_agency_id": ""
+        },
+        {
+          "feed_onestop_id": "f-dq-mtamaryland~commuterbus",
+          "gtfs_agency_id": ""
+        },
+        {
+          "feed_onestop_id": "f-dq-mtamaryland~raillink",
+          "gtfs_agency_id": ""
+        },
+        {
+          "feed_onestop_id": "f-dq-mtamaryland~bus",
+          "gtfs_agency_id": ""
+        }
+      ]
+    }
+  ]
 }
