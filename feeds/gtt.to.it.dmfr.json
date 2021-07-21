@@ -6,7 +6,52 @@
       "id": "f-u0j-torino",
       "urls": {
         "static_current": "http://www.gtt.to.it/open_data/gtt_gtfs.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0j-gruppotorinesetrasporti",
+          "name": "GTT Servizio Ferroviario",
+          "short_name": "GTT",
+          "website": "http://www.gtt.to.it/cms/percorari/ferrovie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "F"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j2-gruppotorinesetrasporti",
+          "name": "GTT Servizio Urbano",
+          "short_name": "GTT",
+          "website": "http://www.gtt.to.it/cms/percorari/urbano",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "U"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j-gttservizioextraurbano",
+          "name": "GTT servizio extraurbano",
+          "short_name": "GTT",
+          "website": "http://www.gtt.to.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GTT_E"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j2-gttservizituristici",
+          "name": "GTT Servizi Turistici",
+          "website": "http://www.gtt.to.it/cms/turismo",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "T"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

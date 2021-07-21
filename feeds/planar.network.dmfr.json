@@ -14,7 +14,33 @@
         "redistribute": "unknown",
         "attribution_text": "Source: RSP",
         "attribution_instructions": "This licence is subject to all users being made aware that RSP is the source of the data, either through the inclusion of a conspicuous clickable hyperlink to the Rail Delivery Group website at www.raildeliverygroup.com or by including at least one of the following statements on your website or application: \"Timetable/Fares/London Terminals data under licence from RSP\"; \"Timetable/Fares/London Terminals data: RSP\"; or \"Source: RSP\"."
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gcpv-londonoverground",
+          "name": "London Overground",
+          "website": "https://www.tfl.gov.uk/overground",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcpv-londonunderground",
+          "tags": {
+            "wikidata_id": "Q682520"
+          },
+          "name": "London Underground",
+          "short_name": "Tube",
+          "website": "https://tube.tfl.gov.uk/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LT"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",

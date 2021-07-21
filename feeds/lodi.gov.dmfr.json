@@ -1,16 +1,29 @@
 {
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
-  "feeds": [{
-    "spec": "gtfs",
-    "id": "f-9qcbb-cityofloditransit~grapeline",
-    "urls": {
-      "static_current": "https://www.lodi.gov/DocumentCenter/View/2453/lodi_gtfs-ZIP",
-      "static_historic": [
-        "http://www.lodi.gov/transit/GTFS/lodi_GTFS.zip",
-        "http://www.mjcaction.com/MJC_GTFS_Public/lodi_google_transit.zip"
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-9qcbb-cityofloditransit~grapeline",
+      "urls": {
+        "static_current": "https://www.lodi.gov/DocumentCenter/View/2453/lodi_gtfs-ZIP",
+        "static_historic": [
+          "http://www.lodi.gov/transit/GTFS/lodi_GTFS.zip",
+          "http://www.mjcaction.com/MJC_GTFS_Public/lodi_google_transit.zip"
+        ]
+      },
+      "feed_namespace_id": "o-9qcbb-cityofloditransit~grapeline",
+      "operators": [
+        {
+          "onestop_id": "o-9qcbb-cityofloditransit~grapeline",
+          "tags": {
+            "us_ntd_id": "90175"
+          },
+          "name": "City of Lodi Transit",
+          "short_name": "GrapeLine",
+          "website": "http://www.lodi.gov/transit"
+        }
       ]
-    },
-    "feed_namespace_id": "o-9qcbb-cityofloditransit~grapeline"
-  }],
+    }
+  ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

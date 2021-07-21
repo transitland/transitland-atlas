@@ -7,7 +7,19 @@
       "urls": {
         "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/ATTG/dbus/google_transit.zip"
       },
-      "feed_namespace_id": "o-ezww-dbus"
+      "feed_namespace_id": "o-ezww-dbus",
+      "operators": [
+        {
+          "onestop_id": "o-ezww-dbus",
+          "name": "dBUS",
+          "website": "http://www.dbus.es",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "100"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -18,7 +30,14 @@
       "feed_namespace_id": "o-ezty-metrobilbao",
       "tags": {
         "gtfs_data_exchange": "metro-bilbao"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ezty-metrobilbao",
+          "name": "Metro Bilbao",
+          "website": "http://www.metrobilbao.com"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -26,7 +45,19 @@
       "urls": {
         "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/Euskotren/google_transit.zip"
       },
-      "feed_namespace_id": "o-ezw-euskotren"
+      "feed_namespace_id": "o-ezw-euskotren",
+      "operators": [
+        {
+          "onestop_id": "o-ezw-euskotren",
+          "name": "Euskotren",
+          "website": "http://www.euskotren.es/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "21"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -34,7 +65,19 @@
       "urls": {
         "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/FunicularArtxanda/google_transit.zip"
       },
-      "feed_namespace_id": "o-eztyjm-funiculardeartxanda"
+      "feed_namespace_id": "o-eztyjm-funiculardeartxanda",
+      "operators": [
+        {
+          "onestop_id": "o-eztyjm-funiculardeartxanda",
+          "name": "Funicular de Artxanda",
+          "website": "http://www.bilbao.net/cs/Satellite/funicularArtxanda/Inicio/es/100001096/Home",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "A1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

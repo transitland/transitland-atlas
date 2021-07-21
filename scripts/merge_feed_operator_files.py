@@ -28,7 +28,7 @@ for fn in glob.glob("operators/*.json"):
     operators[osid] = operator
     fsids = set(i.get('feed_onestop_id') for i in operator.get('associated_feeds',[]))
     files = set(feed_files.get(i) for i in fsids)
-    if None in fsids:
+    if None in files or None in fsids:
         operator_no_feed[osid] = osid
     elif len(files) > 1:
         # print(fn)
@@ -37,12 +37,10 @@ for fn in glob.glob("operators/*.json"):
         operator_multiple_files[osid].add(osid)
     elif len(files) == 1 and len(fsids) == 1:
         # operator appears in exactly 1 feed file and has single feed
-        fsid = list(fsids)[0]
-        operator_file_matches_single_feed[fsid].add(osid)
+        operator_file_matches_single_feed[list(files)[0]].add(osid)
     elif len(files) == 1:
         # operator appears in exactly 1 feed file
-        fsid = list(fsids)[0]
-        operator_file_matches[fsid].add(osid)
+        operator_file_matches[list(files)[0]].add(osid)
     elif len(files) == 0:
         operator_no_file[osid] = osid
 
@@ -57,6 +55,9 @@ def filter_empty(d):
 single_feed_items = set(operator_file_matches_single_feed.keys()) | set(operator_file_matches.keys())
 # single_feed_items = set(["feeds/vta.org.dmfr.json"])
 for feed_path in single_feed_items:
+    osids = operator_file_matches_single_feed[feed_path]
+    print("single file and feed match:", feed_path, osids)    
+
     data = {}
     with open(feed_path, encoding="utf-8") as f:
         data = json.load(f)
@@ -64,13 +65,13 @@ for feed_path in single_feed_items:
     # process this way to preserve order
     for feed in data.get('feeds'):
         fsid = feed["id"]
-        osids = operator_file_matches_single_feed[fsid]
-        print("single feed match:", fsid, osids)    
         feed_operators = collections.defaultdict(list)
         for osid in osids:
             operator = operators[osid]
             fsids = [i.get("feed_onestop_id") for i in operator["associated_feeds"]]
             oifs = [{"gtfs_agency_id": i.get("gtfs_agency_id")} for i in operator["associated_feeds"] if i.get("gtfs_agency_id")]
+            if fsid not in fsids:
+                continue
             if len(set(fsids)) != 1:
                 raise Exception("more than one unique oif")
             operator['associated_feeds'] = oifs
@@ -78,10 +79,10 @@ for feed_path in single_feed_items:
                 feed["operators"] = []
             feed["operators"].append(filter_empty(operator))
             os.unlink(os.path.join("operators", osid+".json"))
-
     
     filematches = operator_file_matches.get(feed_path)
     if filematches:
+        print("single file match:", feed_path, filematches)    
         data["operators"] = [filter_empty(operators.get(i)) for i in filematches]
         for i in filematches:
             os.unlink(os.path.join("operators", i+".json"))

@@ -13,7 +13,20 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-udb-tampereenjoukkoliikenne"
+      "feed_namespace_id": "o-udb-tampereenjoukkoliikenne",
+      "operators": [
+        {
+          "onestop_id": "o-udb-tampereenjoukkoliikenne",
+          "name": "Tampereen joukkoliikenne",
+          "short_name": "NYSSE",
+          "website": "http://joukkoliikenne.tampere.fi/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "JOLI"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

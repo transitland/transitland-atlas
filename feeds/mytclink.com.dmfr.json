@@ -6,7 +6,21 @@
       "id": "f-tricounty~link~sc~us",
       "urls": {
         "static_current": "https://mytclink.com/gtfs"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djz-tricountylink",
+          "name": "TriCounty Link",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "161"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40206"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -16,7 +30,9 @@
         "realtime_trip_updates": "https://mytclink.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://mytclink.com/gtfs-rt/alerts"
       },
-      "associated_feeds": ["f-tricounty~link~sc~us"]
+      "associated_feeds": [
+        "f-tricounty~link~sc~us"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

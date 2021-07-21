@@ -12,7 +12,20 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-u-nmbs~sncb"
+      "feed_namespace_id": "o-u-nmbs~sncb",
+      "operators": [
+        {
+          "onestop_id": "o-u-nmbs~sncb",
+          "name": "Nationale Maatschappij der Belgische Spoorwegen/Société nationale des chemins de fer belges",
+          "short_name": "NMBS/SNCB",
+          "website": "http://www.belgianrail.be/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -26,7 +39,15 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-u151-stib"
+      "feed_namespace_id": "o-u151-stib",
+      "operators": [
+        {
+          "onestop_id": "o-u151-stib",
+          "name": "Société des Transports Intercommunaux de Bruxelles/Maatschappij voor het Intercommunaal Vervoer te Brussel",
+          "short_name": "STIB/MIVB",
+          "website": "http://www.stib.be/"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -34,7 +55,20 @@
       "urls": {
         "static_current": "http://gtfs.irail.be/tec/tec-gtfs.zip"
       },
-      "feed_namespace_id": "o-u0g-tec"
+      "feed_namespace_id": "o-u0g-tec",
+      "operators": [
+        {
+          "onestop_id": "o-u0g-tec",
+          "name": "Transport en Commun",
+          "short_name": "TEC",
+          "website": "http://www.infotec.be",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TEC"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -45,7 +79,19 @@
       "feed_namespace_id": "o-u1-delijn",
       "tags": {
         "gtfs_data_exchange": "de-lijn"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u1-delijn",
+          "name": "De Lijn",
+          "website": "http://www.delijn.be",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

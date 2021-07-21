@@ -12,7 +12,92 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribute": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9g3q-corredoresconcesionados",
+          "name": "Corredores Concesionados",
+          "website": "http://www.semovi.df.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3r-ferrocarrilessuburbanos",
+          "name": "Ferrocarriles Suburbanos",
+          "website": "http://www.fsuburbanos.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SUB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3w-metrobs",
+          "name": "Metrobús",
+          "website": "http://www.metrobus.df.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3q-nochebscorredoresconcesionados",
+          "name": "NOCHEBÚS Corredores concesionados",
+          "website": "http://www.semovi.df.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NCC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3q-rtpregresaseguroacasa",
+          "name": "RTP Regresa seguro a casa",
+          "website": "http://www.rtp.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RTP_ESP"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3q-serviciodetransporteselctricos",
+          "name": "Servicio de Transportes Eléctricos",
+          "short_name": "STE",
+          "website": "http://www.ste.df.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "STE"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3w-sistemadetransportecolectivometro",
+          "name": "Sistema de Transporte Colectivo - Metro",
+          "short_name": "STC",
+          "website": "http://www.metro.df.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "METRO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3-reddetransportedepasajeros",
+          "name": "Red de Transporte de Pasajeros",
+          "short_name": "RTP",
+          "website": "http://www.rtp.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RTP"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -23,7 +108,23 @@
       "feed_namespace_id": "o-dr7-westchestercountybee~linesystem",
       "tags": {
         "unstable_url": "true"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7-westchestercountybee~linesystem",
+          "tags": {
+            "us_ntd_id": "20076",
+            "wikidata_id": "Q4879491"
+          },
+          "name": "Westchester County Bee-Line System",
+          "website": "http://transportation.westchestergov.com/bee-line-bus",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WCDOT"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -31,7 +132,20 @@
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-nysdot/public/TappanZee_Express.zip"
       },
-      "feed_namespace_id": "o-dr73-tappanzeeexpress"
+      "feed_namespace_id": "o-dr73-tappanzeeexpress",
+      "operators": [
+        {
+          "onestop_id": "o-dr73-tappanzeeexpress",
+          "name": "TappanZee Express",
+          "short_name": "TZx",
+          "website": "http://www.rocklandbus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TZEXpress-Rockland-ny-us"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -39,7 +153,19 @@
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/UCAT_Ulster_County_Area_Transit.zip"
       },
-      "feed_namespace_id": "o-dr7-ulstercountyareatransit"
+      "feed_namespace_id": "o-dr7-ulstercountyareatransit",
+      "operators": [
+        {
+          "onestop_id": "o-dr7-ulstercountyareatransit",
+          "tags": {
+            "us_ntd_id": "20178",
+            "wikidata_id": "Q7879947"
+          },
+          "name": "Ulster County Area Transit",
+          "short_name": "UCAT",
+          "website": "http://ulstercountyny.gov/ucat/ulster-county-area-transit"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -57,7 +183,22 @@
       "id": "f-omaha~metro",
       "urls": {
         "static_current": "https://s3.amazonaws.com/omaha-metro/TrapezeExport/google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9z7d-root",
+          "name": "Root",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6af13854-a9a8-45fa-a7fc-c6014af2a653"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "70002",
+            "wikidata_id": "Q6824485"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

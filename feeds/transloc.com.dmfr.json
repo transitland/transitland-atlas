@@ -6,14 +6,38 @@
       "id": "f-atomic~city~transit",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/atomic.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wkk-atomiccitytransit",
+          "name": "Atomic City Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ACT"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "6R03-60215"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
       "id": "f-davenport~citi~bus",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/davenportcitibus.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9zrs-citibus",
+          "name": "Citibus",
+          "tags": {
+            "us_ntd_id": "70009",
+            "wikidata_id": "Q5230228"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -24,7 +48,25 @@
       "feed_namespace_id": "o-dqb0q-charlottesvilleareatransit",
       "tags": {
         "gtfs_data_exchange": "charlottesville-transit-service"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqb0q-charlottesvilleareatransit",
+          "tags": {
+            "wikidata_id": "Q5086235",
+            "us_ntd_id": "30036",
+            "omd_provider_id": "charlottesville-area-transit"
+          },
+          "name": "Charlottesville Area Transit",
+          "short_name": "CAT",
+          "website": "http://www.charlottesville.org/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

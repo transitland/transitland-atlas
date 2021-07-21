@@ -6,7 +6,29 @@
       "id": "f-sr-atac~romatpl~trenitalia",
       "urls": {
         "static_current": "http://dati.muovi.roma.it/gtfs/rome_static_gtfs.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sr2-atac",
+          "name": "ATAC",
+          "website": "http://atac.roma.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "atac"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-sr2y-romatpl",
+          "name": "Roma TPL",
+          "website": "http://www.romatpl.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "romatpl"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

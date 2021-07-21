@@ -7,7 +7,18 @@
       "urls": {
         "static_current": "http://www.ftis.org/PostFileDownload.aspx?id=160A0"
       },
-      "feed_namespace_id": "o-djjg-lakecounty"
+      "feed_namespace_id": "o-djjg-lakecounty",
+      "operators": [
+        {
+          "onestop_id": "o-djjg-lakecounty",
+          "tags": {
+            "us_ntd_id": "40158",
+            "wikidata_id": "Q6474640"
+          },
+          "name": "LakeXpress",
+          "website": "http://www.ridelakexpress.com"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -15,7 +26,23 @@
       "urls": {
         "static_current": "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
       },
-      "feed_namespace_id": "o-dh-lakeland"
+      "feed_namespace_id": "o-dh-lakeland",
+      "operators": [
+        {
+          "onestop_id": "o-dh-lakeland",
+          "tags": {
+            "us_ntd_id": "40031"
+          },
+          "name": "Lakeland Area Mass Transit District",
+          "short_name": "Citrus Connection",
+          "website": "http://www.ridecitrus.com/content/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -23,7 +50,24 @@
       "urls": {
         "static_current": "http://www.ftis.org/PostFileDownload.aspx?id=164A0"
       },
-      "feed_namespace_id": "o-dht-collierareatransit~cat"
+      "feed_namespace_id": "o-dht-collierareatransit~cat",
+      "operators": [
+        {
+          "onestop_id": "o-dht-collierareatransit~cat",
+          "tags": {
+            "us_ntd_id": "40140",
+            "wikidata_id": "Q5147158"
+          },
+          "name": "Collier Area Transit",
+          "short_name": "CAT",
+          "website": "http://www.gocatbus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

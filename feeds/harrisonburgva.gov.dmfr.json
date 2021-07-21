@@ -10,7 +10,18 @@
       "feed_namespace_id": "o-dnzft-hdpt",
       "tags": {
         "gtfs_data_exchange": "harrisonburg-department-of-public-transportation"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnzft-hdpt",
+          "tags": {
+            "us_ntd_id": "30094",
+            "wikidata_id": "Q5666203"
+          },
+          "name": "Harrisonburg Department of Public Transportation",
+          "short_name": "HDPT"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -18,7 +29,23 @@
       "urls": {
         "static_current": "http://harrisonburgva.gov/sites/default/files/Transit/files/gtfs/google_transit_Working%20%281%29.zip"
       },
-      "feed_namespace_id": "o-dnzft-harrisonburghdpt"
+      "feed_namespace_id": "o-dnzft-harrisonburghdpt",
+      "operators": [
+        {
+          "onestop_id": "o-dnzft-harrisonburghdpt",
+          "tags": {
+            "us_ntd_id": "30094",
+            "wikidata_id": "Q5666203"
+          },
+          "name": "Harrisonburg HDPT",
+          "website": "https://www.harrisonburgva.gov/bus-service/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

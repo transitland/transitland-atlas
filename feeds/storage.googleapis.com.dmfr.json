@@ -14,7 +14,20 @@
         "redistribute": "yes",
         "attribution_text": "Powered by TfL Open Data, Contains OS data © Crown copyright and database rights 2016"
       },
-      "feed_namespace_id": "o-gcpv-transportforlondon"
+      "feed_namespace_id": "o-gcpv-transportforlondon",
+      "operators": [
+        {
+          "onestop_id": "o-gcpv-transportforlondon",
+          "name": "Transport For London",
+          "short_name": "TfL",
+          "website": "https://tfl.gov.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "tfl"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -25,7 +38,20 @@
       "feed_namespace_id": "o-u4x-vestfoldkollektivtrafikk",
       "tags": {
         "feed_id": "RB"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u4x-vestfoldkollektivtrafikk",
+          "name": "Vestfold Kollektivtrafikk",
+          "short_name": "VKT",
+          "website": "http://www.vkt.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VKT:Authority:VKT_ID"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

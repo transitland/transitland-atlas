@@ -7,7 +7,20 @@
       "urls": {
         "static_current": "https://mazzarino.gq/index.php/s/Bo56mFd57aGc9MZ/download"
       },
-      "feed_namespace_id": "o-s-societàtrasportocerignola"
+      "feed_namespace_id": "o-s-societàtrasportocerignola",
+      "operators": [
+        {
+          "onestop_id": "o-s-societàtrasportocerignola",
+          "name": "Società Trasporto Cerignola",
+          "short_name": "STC",
+          "website": "http://www.comune.cerignola.fg.it/hh/index.php",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "STC"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -21,7 +34,23 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-sr76-societàtrasportocerignola"
+      "feed_namespace_id": "o-sr76-societàtrasportocerignola",
+      "operators": [
+        {
+          "onestop_id": "o-sr76-societàtrasportocerignola",
+          "name": "Società Trasporto Cerignola",
+          "short_name": "S.T.C",
+          "website": "http://www.comune.cerignola.fg.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "S.T.C"
+            },
+            {
+              "gtfs_agency_id": "STC"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

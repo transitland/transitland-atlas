@@ -15,7 +15,32 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_instructions": "You shall: Clearly acknowledge MassDOT as the provider of the Data"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drt3p-massport",
+          "name": "Massport",
+          "website": "http://www.massport.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-drm-capecodregionaltransitauthority",
+          "name": "Cape Cod Regional Transit Authority",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "10105",
+            "wikidata_id": "Q5034704"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -40,5 +65,27 @@
       ]
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-drt-mbta",
+      "tags": {
+        "us_ntd_id": "10003",
+        "wikidata_id": "Q171985"
+      },
+      "name": "Massachusetts Bay Transportation Authority",
+      "short_name": "MBTA",
+      "website": "http://www.mbta.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-mbta~rt",
+          "gtfs_agency_id": ""
+        },
+        {
+          "feed_onestop_id": "f-drt-mbta",
+          "gtfs_agency_id": "1"
+        }
+      ]
+    }
+  ]
 }

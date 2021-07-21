@@ -6,8 +6,27 @@
       "id": "f-butte~regional~transit",
       "urls": {
         "static_current": "http://www.blinetransit.com/documents/google_transit.zip",
-        "static_historic": ["https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/butte-regional-transit.zip"]
-      }
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/butte-regional-transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-butte~regional~transit",
+          "tags": {
+            "wikidata_id": "Q5002811",
+            "us_ntd_id": "90208"
+          },
+          "name": "Butte Regional Transit",
+          "short_name": "B-Line",
+          "website": "http://www.blinetransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "97aff62a-ed6d-4bd2-a9c8-d63f8e98a358"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

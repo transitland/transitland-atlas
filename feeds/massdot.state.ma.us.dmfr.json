@@ -14,7 +14,19 @@
         "redistribute": "yes",
         "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
       },
-      "feed_namespace_id": "o-drt3-yankee"
+      "feed_namespace_id": "o-drt3-yankee",
+      "operators": [
+        {
+          "onestop_id": "o-drt3-yankee",
+          "name": "Yankee Line",
+          "website": "http://www.yankeeline.us/actonconcordcommuters.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "YANKEE"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -28,7 +40,18 @@
       },
       "license": {
         "url": "https://www.mass.gov/doc/developers-license-agreement-11132009/download"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drt0-metrowestregionaltransitauthority",
+          "tags": {
+            "us_ntd_id": "10118",
+            "wikidata_id": "Q6824447"
+          },
+          "name": "MetroWest Regional Transit Authority",
+          "short_name": "MWRTA"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -49,7 +72,18 @@
       "feed_namespace_id": "o-drs-franklinregionaltransitauthority",
       "tags": {
         "gtfs_data_exchange": "franklin-regional-transit-authority"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drs-franklinregionaltransitauthority",
+          "tags": {
+            "us_ntd_id": "1R02-10173",
+            "wikidata_id": "Q5491773"
+          },
+          "name": "Franklin Regional Transit Authority",
+          "short_name": "FRTA"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -67,7 +101,19 @@
         "redistribute": "yes",
         "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
       },
-      "feed_namespace_id": "o-drmr-bloombus"
+      "feed_namespace_id": "o-drmr-bloombus",
+      "operators": [
+        {
+          "onestop_id": "o-drmr-bloombus",
+          "name": "Bloom Bus",
+          "website": "http://www.bloombus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BLOOM"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -75,7 +121,16 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/dattco-ma-us/dattco-ma-us.zip"
       },
-      "feed_namespace_id": "o-drm-dattco"
+      "feed_namespace_id": "o-drm-dattco",
+      "operators": [
+        {
+          "onestop_id": "o-drm-dattco",
+          "tags": {
+            "us_ntd_id": "10045"
+          },
+          "name": "DATTCO"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -83,7 +138,19 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/coachcompany-ma-us/coachcompany-ma-us.zip"
       },
-      "feed_namespace_id": "o-drt-coachcompany"
+      "feed_namespace_id": "o-drt-coachcompany",
+      "operators": [
+        {
+          "onestop_id": "o-drt-coachcompany",
+          "name": "Coach Company",
+          "website": "http://www.coachco.com/boston-commuting.asp",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CC"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
