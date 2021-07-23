@@ -6,7 +6,21 @@
       "id": "f-pullman~transit~wa~us",
       "urls": {
         "static_current": "https://pullmanbusbeacon.com/gtfs"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c2k9v-pullmantransit",
+          "name": "Pullman Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "113"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R03-00294"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -16,7 +30,9 @@
         "realtime_vehicle_positions": "https://pullmanbusbeacon.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://pullmanbusbeacon.com/gtfs-rt/tripupdates"
       },
-      "associated_feeds": ["f-pullman~transit~wa~us"]
+      "associated_feeds": [
+        "f-pullman~transit~wa~us"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

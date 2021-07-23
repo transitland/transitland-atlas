@@ -6,7 +6,21 @@
       "id": "f-santee~wateree~rta",
       "urls": {
         "static_current": "https://santeebus.com/gtfs"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnn-santeewatereerta",
+          "name": "Santee Wateree RTA",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "159"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40100"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -16,7 +30,9 @@
         "realtime_vehicle_positions": "https://santeebus.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://santeebus.com/gtfs-rt/tripupdates"
       },
-      "associated_feeds": ["f-santee~wateree~rta"]
+      "associated_feeds": [
+        "f-santee~wateree~rta"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -7,7 +7,17 @@
       "urls": {
         "static_current": "https://citycommbus.com/gtfs"
       },
-      "feed_namespace_id": "o-9q5c-cityofcommercemunicipalbuslines"
+      "feed_namespace_id": "o-9q5c-cityofcommercemunicipalbuslines",
+      "operators": [
+        {
+          "onestop_id": "o-9q5c-cityofcommercemunicipalbuslines",
+          "tags": {
+            "us_ntd_id": "90043",
+            "wikidata_id": "Q5123639"
+          },
+          "name": "City of Commerce Municipal Bus Lines"
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -17,7 +27,9 @@
         "realtime_trip_updates": "https://citycommbus.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://citycommbus.com/gtfs-rt/alerts"
       },
-      "associated_feeds": ["f-9q5c-cityofcommercemunicipalbuslines"],
+      "associated_feeds": [
+        "f-9q5c-cityofcommercemunicipalbuslines"
+      ],
       "feed_namespace_id": "o-9q5c-cityofcommercemunicipalbuslines"
     }
   ],

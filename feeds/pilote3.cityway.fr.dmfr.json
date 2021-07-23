@@ -1,0 +1,444 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-spey-rtm",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=RTMNAV"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spey-rtm"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spe-rtm",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=RTM"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spey-rtm"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-s-aixenbus",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=AIXENBUS"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-aixenbus",
+      "operators": [
+        {
+          "onestop_id": "o-s-aixenbus",
+          "name": "Aix en Bus",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "85"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-s-ciotabus",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=CIOTABUS"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-ciotabus",
+      "operators": [
+        {
+          "onestop_id": "o-s-ciotabus",
+          "name": "CIOTABUS",
+          "website": "http://www.ciotabus.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "68"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spewfv-ulysse",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=MILSAB"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-ulysse"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spev-marcouline",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=MARCOULINE"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spev-marcouline",
+      "operators": [
+        {
+          "onestop_id": "o-spev-marcouline",
+          "name": "Marcouline",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "77"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spey1-frioulifexpress",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=FRIOUL"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spey1-frioulifexpress",
+      "operators": [
+        {
+          "onestop_id": "o-spey1-frioulifexpress",
+          "name": "Frioul If Express",
+          "website": "https://www.frioul-if-express.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "76"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-s-lesbusdescigales",
+      "urls": {
+        "static_current": "http://tsvc2.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=CIGALES"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-lesbusdescigales",
+      "operators": [
+        {
+          "onestop_id": "o-s-lesbusdescigales",
+          "name": "Les bus des Cigales",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "90"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spe-car13",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=CG13"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spe-car13",
+      "operators": [
+        {
+          "onestop_id": "o-spe-car13",
+          "name": "Cartreize",
+          "short_name": "Car13",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-s-ulysse~01",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=SANPROVENCE"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-ulysse"
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spg-envia",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=ACCM"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spg-envia",
+      "operators": [
+        {
+          "onestop_id": "o-spg-envia",
+          "name": "Envia",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "62"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spew-lesbusdelacotebleue",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=COTEBLEUE"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spew-lesbusdelacotebleue",
+      "operators": [
+        {
+          "onestop_id": "o-spew-lesbusdelacotebleue",
+          "name": "Le bus de la Cote Bleue",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spey-leslignesdelagglo",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=AGGLOBUS"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spey-leslignesdelagglo",
+      "operators": [
+        {
+          "onestop_id": "o-spey-leslignesdelagglo",
+          "name": "Les lignes de l'agglo",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-s-busdeletang",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=ETANG"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-busdeletang",
+      "operators": [
+        {
+          "onestop_id": "o-s-busdeletang",
+          "name": "Bus de l'etang",
+          "website": "http://www.bus-de-letang.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-s-mtm",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=BUSDESCOLLINES"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-mtm",
+      "operators": [
+        {
+          "onestop_id": "o-s-mtm",
+          "name": "Les bus des Collines",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "73"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-s-bsdagglopole",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=LIBEBUS"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-s-bsdagglopole",
+      "operators": [
+        {
+          "onestop_id": "o-s-bsdagglopole",
+          "name": "Libébus",
+          "website": "http://www.libebus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "66"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-spez-paysdaixmobilite",
+      "urls": {
+        "static_current": "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=CPA"
+      },
+      "license": {
+        "url": "http://opendata.regionpaca.fr/fileadmin/user_upload/tx_ausyopendata/licences/Licence-Ouverte-Open-Licence-ETALAB.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-spez-paysdaixmobilite",
+      "operators": [
+        {
+          "onestop_id": "o-spez-paysdaixmobilite",
+          "name": "Pays d Aix Mobilite",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "81"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-spey-rtm",
+      "name": "Régie des Transports Métropolitains",
+      "short_name": "RTM",
+      "website": "http://www.rtm.fr/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-spe-rtm",
+          "gtfs_agency_id": "79"
+        },
+        {
+          "feed_onestop_id": "f-spe-rtm",
+          "gtfs_agency_id": "23"
+        },
+        {
+          "feed_onestop_id": "f-spey-rtm",
+          "gtfs_agency_id": "87"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-s-ulysse",
+      "tags": {},
+      "name": "Ulysse",
+      "short_name": null,
+      "website": "http://www.ulyssereseau.fr",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-s-ulysse~01",
+          "gtfs_agency_id": "63"
+        },
+        {
+          "feed_onestop_id": "f-spewfv-ulysse",
+          "gtfs_agency_id": "86"
+        },
+        {
+          "feed_onestop_id": "f-s-ulysse~01",
+          "gtfs_agency_id": "93"
+        }
+      ]
+    }
+  ]
+}

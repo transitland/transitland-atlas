@@ -147,7 +147,23 @@
         "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7-metro~northrailroad",
+          "tags": {
+            "us_ntd_id": "20078",
+            "wikidata_id": "Q125908"
+          },
+          "name": "MTA Metro-North Railroad",
+          "website": "http://www.mta.info/mnr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -177,7 +193,17 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
-      "feed_namespace_id": "o-dr5-longislandrailroad"
+      "feed_namespace_id": "o-dr5-longislandrailroad",
+      "operators": [
+        {
+          "onestop_id": "o-dr5-longislandrailroad",
+          "tags": {
+            "us_ntd_id": "20100",
+            "wikidata_id": "Q125943"
+          },
+          "name": "MTA Long Island Rail Road"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -195,5 +221,43 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-dr5r-nyct",
+      "tags": {
+        "us_ntd_id": "20008",
+        "us_ntd_id2": "20188",
+        "wikidata_id": "Q1146109"
+      },
+      "name": "MTA New York City Transit",
+      "short_name": "MTA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dr5r-mtanewyorkcitytransit"
+        },
+        {
+          "feed_onestop_id": "f-dr5r-nyctsubway"
+        },
+        {
+          "feed_onestop_id": "f-dr5r-mtanyctbusbrooklyn"
+        },
+        {
+          "feed_onestop_id": "f-dr5r-mtanyctbusmanhattan"
+        },
+        {
+          "feed_onestop_id": "f-dr5r-mtanyctbusstatenisland"
+        },
+        {
+          "feed_onestop_id": "f-dr5x-mtanyctbusqueens"
+        },
+        {
+          "feed_onestop_id": "f-dr72-mtanyctbusbronx"
+        },
+        {
+          "feed_onestop_id": "f-dr5r-mtabc"
+        }
+      ]
+    }
+  ]
 }

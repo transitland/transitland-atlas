@@ -7,7 +7,20 @@
       "urls": {
         "static_current": "https://data.omnimodal.io/gtfs/iride-fl-us/iride-fl-us.zip"
       },
-      "feed_namespace_id": "o-djn1-fl~iridetrolley"
+      "feed_namespace_id": "o-djn1-fl~iridetrolley",
+      "operators": [
+        {
+          "onestop_id": "o-djn1-fl~iridetrolley",
+          "name": "I-RIDE Trolley",
+          "short_name": "I-RIDE",
+          "website": "http://iridetrolley.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IRIDE"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -15,7 +28,19 @@
       "urls": {
         "static_current": "https://data.omnimodal.io/gtfs/sanfordcommunity-fl-us/sanfordcommunity-fl-us.zip"
       },
-      "feed_namespace_id": "o-djn5y-sanfordcommunityredevelopmentagency"
+      "feed_namespace_id": "o-djn5y-sanfordcommunityredevelopmentagency",
+      "operators": [
+        {
+          "onestop_id": "o-djn5y-sanfordcommunityredevelopmentagency",
+          "name": "Sanford Community Redevelopment Agency",
+          "website": "http://www.sanfordfl.gov/index.aspx?page=1151",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SANFORDCRA"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

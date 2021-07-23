@@ -13,7 +13,36 @@
       "tags": {
         "feed_id": "TriMet",
         "gtfs_data_exchange": " Portland Aerial Tram"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20fb6-portlandaerialtram",
+          "tags": {
+            "us_ntd_id": "00008"
+          },
+          "name": "Portland Aerial Tram",
+          "website": "http://www.gobytram.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TRAM"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-c20fb-portlandstreetcar",
+          "tags": {
+            "us_ntd_id": "00008",
+            "wikidata_id": "Q1753708"
+          },
+          "name": "Portland Streetcar",
+          "website": "http://portlandstreetcar.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PSC"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -37,5 +66,26 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-c20-trimet",
+      "tags": {
+        "us_ntd_id": "00008",
+        "wikidata_id": "Q1766623"
+      },
+      "name": "Tri-County Metropolitan Transportation District of Oregon",
+      "short_name": "TriMet",
+      "website": "http://trimet.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-c20-trimet",
+          "gtfs_agency_id": "TRIMET"
+        },
+        {
+          "feed_onestop_id": "f-trimet~rt"
+        }
+      ]
+    }
+  ]
 }

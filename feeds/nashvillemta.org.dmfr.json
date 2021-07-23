@@ -9,7 +9,33 @@
       },
       "license": {
         "url": "https://www.nashvillemta.org/Nashville-MTA-Developer-Data-Request.asp"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn6-regionaltransportationauthorityofmiddletennessee",
+          "name": "Regional Transportation Authority of Middle Tennessee",
+          "short_name": "RTA",
+          "website": "http://rtarelaxandride.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Nashville RTA"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-dn6-wegopublictransit",
+          "name": "WeGo Public Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WeGo Public Transit"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40004",
+            "wikidata_id": "Q6966980"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -28,5 +54,25 @@
       ]
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-dn6-nashvillemetropolitantransitauthority",
+      "tags": {
+        "us_ntd_id": "40004"
+      },
+      "name": "Nashville Metropolitan Transit Authority",
+      "short_name": "MTA",
+      "website": "http://www.nashvillemta.org",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dn6-regionaltransportationauthorityofmiddletennessee~nashville",
+          "gtfs_agency_id": "Nashville MTA"
+        },
+        {
+          "feed_onestop_id": "f-nashvillemta~rt"
+        }
+      ]
+    }
+  ]
 }

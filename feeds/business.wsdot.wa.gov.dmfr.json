@@ -7,7 +7,28 @@
       "urls": {
         "static_current": "https://business.wsdot.wa.gov/Transit/csv_files/wsf/google_transit.zip"
       },
-      "feed_namespace_id": "o-c28-washingtonstateferries"
+      "feed_namespace_id": "o-c28-washingtonstateferries",
+      "operators": [
+        {
+          "onestop_id": "o-c28-washingtonstateferries",
+          "tags": {
+            "us_ntd_id": "00035",
+            "wikidata_id": "Q3500373"
+          },
+          "name": "Washington State Ferries",
+          "short_name": "WSF",
+          "website": "http://www.wsdot.wa.gov/ferries/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c28-washingtonstateferries",
+              "gtfs_agency_id": "WSF"
+            },
+            {
+              "feed_onestop_id": "f-wsf~rt"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -19,7 +40,52 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribute": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c2s-goldline",
+          "name": "Gold Line",
+          "website": "http://www.gold-line.us",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Gold Line"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-c25w-grapeline",
+          "name": "Grape Line",
+          "website": "http://www.grapeline.us/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Grape Line"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-c2d-appleline",
+          "tags": {
+            "us_ntd_id": "  "
+          },
+          "name": "Apple Line",
+          "website": "http://www.appleline.us/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Apple Line"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-c22-dungenessline",
+          "name": "Dungeness Line",
+          "website": "http://olympicbuslines.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Dungeness Line"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

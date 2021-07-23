@@ -13,7 +13,25 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-dpz-yorkregiontransit"
+      "feed_namespace_id": "o-dpz-yorkregiontransit",
+      "operators": [
+        {
+          "onestop_id": "o-dpz-yorkregiontransit",
+          "tags": {},
+          "name": "York Region Transit",
+          "short_name": "YRT",
+          "website": "http://www.yrt.ca",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpz-yorkregiontransit",
+              "gtfs_agency_id": "YRT"
+            },
+            {
+              "feed_onestop_id": "f-yrt~rt"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -10,7 +10,24 @@
       "feed_namespace_id": "o-c29-communitytransit",
       "tags": {
         "gtfs_data_exchange": "community-transit"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c29-communitytransit",
+          "tags": {
+            "us_ntd_id": "00003",
+            "wikidata_id": "Q5154898"
+          },
+          "name": "Community Transit",
+          "short_name": "CT",
+          "website": "http://www.communitytransit.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "29"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -27,7 +44,19 @@
       "feed_namespace_id": "o-c23p1-seattlechildrenshospitalshuttle",
       "tags": {
         "gtfs_data_exchange": "seattle-childrens-hospital-shuttle"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c23p1-seattlechildrenshospitalshuttle",
+          "name": "Seattle Children's Hospital Shuttle",
+          "website": "http://www.seattlechildrens.org/visitors/transportation/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "98"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -40,7 +69,28 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribute": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22u-piercetransit",
+          "tags": {
+            "us_ntd_id": "00003",
+            "wikidata_id": "Q7191834"
+          },
+          "name": "Pierce Transit",
+          "short_name": null,
+          "website": "http://www.piercetransit.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c22-piercetransit~soundtransit",
+              "gtfs_agency_id": "3"
+            },
+            {
+              "feed_onestop_id": "f-piercetransit~rt"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -57,7 +107,26 @@
       "feed_namespace_id": "o-c23-soundtransit",
       "tags": {
         "gtfs_data_exchange": "sound-transit"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c23-soundtransit",
+          "tags": {
+            "us_ntd_id": "00003",
+            "wikidata_id": "Q6411393"
+          },
+          "name": "Sound Transit",
+          "short_name": null,
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-soundtransit~rt"
+            },
+            {
+              "feed_onestop_id": "f-c23-soundtransit"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -74,7 +143,28 @@
       "feed_namespace_id": "o-c290-everetttransit",
       "tags": {
         "gtfs_data_exchange": "everett-transit"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c290-everetttransit",
+          "tags": {
+            "us_ntd_id": "00005",
+            "wikidata_id": "Q5417075"
+          },
+          "name": "Everett Transit",
+          "short_name": null,
+          "website": "http://www.everetttransit.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c290-everetttransit",
+              "gtfs_agency_id": "97"
+            },
+            {
+              "feed_onestop_id": "f-everetttransit~rt"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -91,7 +181,28 @@
       "feed_namespace_id": "o-c22e-intercitytransit",
       "tags": {
         "gtfs_data_exchange": "intercity-transit"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22e-intercitytransit",
+          "tags": {
+            "us_ntd_id": "00019",
+            "wikidata_id": "Q2493414"
+          },
+          "name": "Intercity Transit",
+          "short_name": null,
+          "website": "http://www.Intercitytransit.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c22e-intercitytransit",
+              "gtfs_agency_id": "19"
+            },
+            {
+              "feed_onestop_id": "f-intercitytransit~rt"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

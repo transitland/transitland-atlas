@@ -14,7 +14,33 @@
         "redistribute": "unknown",
         "attribution_text": "Source: RSP",
         "attribution_instructions": "This licence is subject to all users being made aware that RSP is the source of the data, either through the inclusion of a conspicuous clickable hyperlink to the Rail Delivery Group website at www.raildeliverygroup.com or by including at least one of the following statements on your website or application: \"Timetable/Fares/London Terminals data under licence from RSP\"; \"Timetable/Fares/London Terminals data: RSP\"; or \"Source: RSP\"."
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gcpv-londonoverground",
+          "name": "London Overground",
+          "website": "https://www.tfl.gov.uk/overground",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcpv-londonunderground",
+          "tags": {
+            "wikidata_id": "Q682520"
+          },
+          "name": "London Underground",
+          "short_name": "Tube",
+          "website": "https://tube.tfl.gov.uk/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LT"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -27,5 +53,358 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-gc-crosscountry",
+      "tags": {},
+      "name": "CrossCountry",
+      "short_name": null,
+      "website": "http://www.crosscountrytrains.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "XC"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-eastcoast",
+      "tags": {},
+      "name": "Virgin Trains East Coast",
+      "short_name": null,
+      "website": "https://www.virgintrainseastcoast.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "GR"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-eastmidlandstrains",
+      "tags": {},
+      "name": "East Midlands Trains",
+      "short_name": null,
+      "website": "http://www.eastmidlandstrains.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "EM"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-firstgreatwestern",
+      "tags": {},
+      "name": "Great Western Railway",
+      "short_name": "GWR",
+      "website": "http://www.firstgreatwestern.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "GW"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-firsttranspennineexpress",
+      "tags": {},
+      "name": "TransPennine Express",
+      "short_name": null,
+      "website": "http://www.tpexpress.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "TP"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-grandcentral",
+      "tags": {},
+      "name": "Grand Central",
+      "short_name": "GC",
+      "website": "http://www.grandcentralrail.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "GC"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-northernrail",
+      "tags": {},
+      "name": "Northern",
+      "short_name": null,
+      "website": "https://www.northernrailway.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "NT"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-scotrail",
+      "tags": {},
+      "name": "ScotRail",
+      "short_name": null,
+      "website": "http://www.scotrail.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "SR"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-sercocaledoniansleeper",
+      "tags": {},
+      "name": "Caledonian Sleeper",
+      "short_name": null,
+      "website": "http://www.sleeper.scot/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "CS"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gc-southwesttrains",
+      "tags": {},
+      "name": "South Western Railway",
+      "short_name": null,
+      "website": "https://www.southwesternrailway.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "SW"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-u12-abelliogreateranglia",
+      "tags": {},
+      "name": "Greater Anglia",
+      "short_name": null,
+      "website": "http://www.greateranglia.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "LE"
+        }
+      ]
+    }  ,
+    {
+      "onestop_id": "o-gc-virgintrains",
+      "tags": {},
+      "name": "Virgin Trains",
+      "short_name": null,
+      "website": "http://www.virgintrains.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "VT"
+        }
+      ]
+    }      ,
+    {
+      "onestop_id": "o-gcm-arrivatrainswales",
+      "tags": {},
+      "name": "Arriva Trains Wales",
+      "short_name": null,
+      "website": "http://www.arrivatrainswales.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "AW"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcm-merseyrail",
+      "tags": {},
+      "name": "Merseyrail",
+      "short_name": null,
+      "website": "http://www.merseyrail.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "ME"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcp-chilternrailways",
+      "tags": {},
+      "name": "Chiltern Railways",
+      "short_name": null,
+      "website": "http://www.chilternrailways.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "CH"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcp-gatwickexpress",
+      "tags": {},
+      "name": "Gatwick Express",
+      "short_name": "GX",
+      "website": "http://www.gatwickexpress.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "GX"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcp-greatnorthern",
+      "tags": {},
+      "name": "Great Northern",
+      "short_name": "GN",
+      "website": "http://www.greatnorthernrail.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "GN"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcp-southern",
+      "tags": {},
+      "name": "Southern Railway",
+      "short_name": "Southern",
+      "website": "http://www.southernrailway.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "SN"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcp-thameslink",
+      "tags": {},
+      "name": "Thameslink",
+      "short_name": null,
+      "website": "http://www.thameslinkrailway.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "TL"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcp0m-islandline",
+      "tags": {},
+      "name": "South Western Railway",
+      "short_name": "Island Line",
+      "website": "https://www.southwesternrailway.com/destinations-and-offers/island-line",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "IL"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcps-heathrowexpress",
+      "tags": {},
+      "name": "Heathrow Express",
+      "short_name": null,
+      "website": "http://www.heathrowexpress.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "HX"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcq-londonmidland",
+      "tags": {},
+      "name": "London Midland",
+      "short_name": "LM",
+      "website": "http://www.londonmidland.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "LM"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcr-firsthulltrains",
+      "tags": {},
+      "name": "Hull Trains",
+      "short_name": null,
+      "website": "http://www.hulltrains.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "HT"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gcyb-nexustyne~wearmetro",
+      "tags": {},
+      "name": "Tyne and Wear Metro",
+      "short_name": "Metro",
+      "website": "http://www.nexus.org.uk/metro",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "TW"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-u10-c2c",
+      "tags": {},
+      "name": "c2c",
+      "short_name": null,
+      "website": "http://www.c2c-online.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "CC"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-u10j-crossrail",
+      "tags": {},
+      "name": "TfL Rail",
+      "short_name": null,
+      "website": "https://tfl.gov.uk/modes/tfl-rail/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "XR"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-u10-southeastern",
+      "tags": {},
+      "name": "Southeastern",
+      "short_name": "Southeastern",
+      "website": "http://www.southeasternrailway.co.uk/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gc-rail~delivery~group~planar~gtfs",
+          "gtfs_agency_id": "SE"
+        }
+      ]
+    }
+  ]
 }

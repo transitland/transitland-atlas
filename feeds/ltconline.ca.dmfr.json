@@ -13,7 +13,23 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-dpwh-londontransit"
+      "feed_namespace_id": "o-dpwh-londontransit",
+      "operators": [
+        {
+          "onestop_id": "o-dpwh-londontransit",
+          "name": "London Transit",
+          "short_name": "LTC",
+          "website": "http://www.ltconline.ca",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LTC -2017 NOVEMBER  Schedules"
+            },
+            {
+              "gtfs_agency_id": "LTC -2017 SEPTEMBER  Schedules rev 3.0"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

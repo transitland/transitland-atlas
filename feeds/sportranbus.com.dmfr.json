@@ -6,7 +6,24 @@
       "id": "f-sportran",
       "urls": {
         "static_current": "http://sportranbus.com/gtfs"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sportran",
+          "tags": {
+            "us_ntd_id": "60024",
+            "wikidata_id": "Q7503603"
+          },
+          "name": "Shreveport Area Transit System",
+          "short_name": "SporTran",
+          "website": "http://sportran.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "58"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -16,7 +33,9 @@
         "realtime_trip_updates": "https://sportranbus.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://sportranbus.com/gtfs-rt/alerts"
       },
-      "associated_feeds": ["f-sportran"]
+      "associated_feeds": [
+        "f-sportran"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

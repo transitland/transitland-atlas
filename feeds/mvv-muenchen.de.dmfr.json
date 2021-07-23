@@ -7,13 +7,28 @@
       "urls": {
         "static_current": "https://www.mvv-muenchen.de/fileadmin/mediapool/02-Fahrplanauskunft/03-Downloads/openData/mvv_gtfs.zip"
       },
-      "languages": ["de-DE"],
+      "languages": [
+        "de-DE"
+      ],
       "license": {
         "url": "https://www.mvv-muenchen.de/fahrplanauskunft/fuer-entwickler/opendata/index.html",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u281z9-mvv",
+          "name": "Münchner Verkehrs- und Tarifverbund",
+          "short_name": "MVV",
+          "website": "https://www.mvv-muenchen.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CC-BY-4.0"

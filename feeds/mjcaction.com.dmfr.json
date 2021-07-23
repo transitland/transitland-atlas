@@ -13,7 +13,21 @@
       "id": "f-express-arrow",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/expressarrow_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9x-expressarrow",
+          "name": "Express Arrow",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "asl"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "8R01-70269"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -27,14 +41,43 @@
       "id": "f-sandusky",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/sandusky_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpm5-sanduskytransitsystem",
+          "name": "Sandusky Transit System",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "sts"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "5R05-50164"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
       "id": "f-santa~fe~trails",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/santafetrails_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wkd-santafetrails",
+          "name": "Santa Fe Trails",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11679215"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60077",
+            "wikidata_id": "Q7419573"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -48,7 +91,21 @@
       "id": "f-sqaxin~tribal~transit",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/squaxintribe_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22k-squaxinislandtransit",
+          "name": "Squaxin Island Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SquaxinIslandTribe"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00103"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -59,7 +116,18 @@
       "feed_namespace_id": "o-9q60w-cityofsanluisobispotransit",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q60w-cityofsanluisobispotransit",
+          "tags": {
+            "us_ntd_id": "90156",
+            "wikidata_id": "Q7390980"
+          },
+          "name": "City of San Luis Obispo Transit",
+          "short_name": "SLO"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -70,7 +138,18 @@
       "feed_namespace_id": "o-9w-navajotransitsystem",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9w-navajotransitsystem",
+          "tags": {
+            "managed_by": "mjc",
+            "us_ntd_id": "90005",
+            "wikidata_id": "Q104868592"
+          },
+          "name": "Navajo Transit System"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -82,7 +161,66 @@
       },
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q4p-socotransit",
+          "tags": {
+            "us_ntd_id": "90206",
+            "wikidata_id": "Q16984346"
+          },
+          "name": "SoCoTransit - South County Transit",
+          "short_name": "SCT",
+          "website": "http://www.slorta.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10215235"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9q60-avilatrolley",
+          "name": "Avila Trolley",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "avila"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90206",
+            "wikidata_id": "Q16984346"
+          }
+        },
+        {
+          "onestop_id": "o-9q64t-pasoroblesexpress",
+          "tags": {
+            "managed_by": "mjc",
+            "us_ntd_id": "90206"
+          },
+          "name": "Paso Robles Express",
+          "website": "http://www.slorta.org/schedules-fares/paso-express/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10184575"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9q6-sanluisobisporegionaltransitauthority",
+          "tags": {
+            "us_ntd_id": "90206",
+            "wikidata_id": "Q16984346"
+          },
+          "name": "San Luis Obispo Regional Transit Authority",
+          "short_name": "RTA",
+          "website": "http://www.slorta.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "slorta"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -93,7 +231,20 @@
       "feed_namespace_id": "o-9q611-morrobaytransit",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q611-morrobaytransit",
+          "name": "Morro Bay Transit",
+          "short_name": "MBT",
+          "website": "http://www.morro-bay.ca.us/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MBT"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -104,7 +255,19 @@
       "feed_namespace_id": "o-9q9hu-cityofpaloaltoshuttle",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q9hu-cityofpaloaltoshuttle",
+          "name": "City of Palo Alto Shuttle",
+          "website": "http://www.cityofpaloalto.org/news/displaynews.asp?NewsID=212&TargetID=107",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "pa_shuttle"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -116,7 +279,19 @@
       "tags": {
         "managed_by": "mjc",
         "gtfs_data_exchange": "gunnison-valley-rta"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wgu-gunnisonvalleyrta",
+          "name": "Gunnison Valley RTA",
+          "website": "http://www.gunnisonvalleyrta.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GVRTA"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -127,7 +302,20 @@
       "feed_namespace_id": "o-dr5re-downtownalliance",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr5re-downtownalliance",
+          "name": "Downtown Alliance",
+          "short_name": "Connection",
+          "website": "http://www.downtownny.com/getting-around/downtown-connection",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "da"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -139,7 +327,22 @@
       "tags": {
         "managed_by": "mjc",
         "gtfs_data_exchange": "curry-public-transit"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9px-currypublictransit",
+          "tags": {
+            "us_ntd_id": "0R02-00308"
+          },
+          "name": "Curry Public Transit",
+          "website": "http://www.currypublictransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "curry"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -150,7 +353,19 @@
       "feed_namespace_id": "o-c28-pugetsoundexpress",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-pugetsoundexpress",
+          "name": "Puget Sound Express",
+          "website": "http://www.pugetsoundexpress.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "psexpress"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -161,7 +376,23 @@
       "feed_namespace_id": "o-c24-peopleforpeople",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c24-peopleforpeople",
+          "tags": {
+            "us_ntd_id": "0R03-00287"
+          },
+          "name": "People for People",
+          "short_name": "Community Connector",
+          "website": "http://www.pfp.org/pfp/Transportation/CommunityConnector.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "pfp"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -178,7 +409,23 @@
       "feed_namespace_id": "o-c0r-pacifictransit",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c0r-pacifictransit",
+          "tags": {
+            "us_ntd_id": "0R03-00322",
+            "wikidata_id": "Q28445739"
+          },
+          "name": "Pacific Transit",
+          "website": "http://www.pacifictransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10408982"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -190,7 +437,23 @@
       "tags": {
         "managed_by": "mjc",
         "gtfs_data_exchange": "jefferson-transit-authority"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-jeffersontransitauthority",
+          "tags": {
+            "us_ntd_id": "0R03-00316",
+            "wikidata_id": "Q6175698"
+          },
+          "name": "Jefferson Transit Authority",
+          "website": "http://www.jeffersontransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "jta"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -201,7 +464,23 @@
       "feed_namespace_id": "o-c22-graysharbortransit",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22-graysharbortransit",
+          "tags": {
+            "us_ntd_id": "0R03-00314",
+            "wikidata_id": "Q25000402"
+          },
+          "name": "Grays Harbor Transit",
+          "website": "http://www.ghtransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ght"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -212,7 +491,19 @@
       "feed_namespace_id": "o-c283-jamestownsklallam",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c283-jamestownsklallam",
+          "name": "Jamestown S'klallam",
+          "website": "http://www.7cedarscasino.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "jamestown"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -223,7 +514,23 @@
       "feed_namespace_id": "o-c28-clallamtransitsystem",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-clallamtransitsystem",
+          "tags": {
+            "us_ntd_id": "0R03-00303",
+            "wikidata_id": "Q5125418"
+          },
+          "name": "Clallam Transit System",
+          "website": "http://www.clallamtransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CTS"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -235,7 +542,19 @@
       "tags": {
         "managed_by": "mjc",
         "gtfs_data_exchange": "black-ball-ferry-line"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c284-blackballferryline",
+          "name": "Black Ball Ferry Line",
+          "website": "http://cohoferry.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "blackball"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -251,14 +570,43 @@
       "feed_namespace_id": "o-c25y-valleytransit",
       "tags": {
         "managed_by": "mjc"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c25y-valleytransit",
+          "tags": {
+            "us_ntd_id": "00064"
+          },
+          "name": "Valley Transit",
+          "website": "http://www.valleytransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "walla2"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
       "id": "f-bay~transit~va",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/baytransit_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq9-baytransit",
+          "name": "Bay Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "bay"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "3R06-30172"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -279,14 +627,43 @@
       "id": "f-las~cruces~road~runner",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/lascrucesroadrunner_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9tsp-roadrunnertransit",
+          "name": "RoadRUNNER Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6049"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60049",
+            "wikidata_id": "Q7339261"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
       "id": "f-santa~ynez~valley~transit",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q4s-a11214029",
+          "name": "A11214029",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11214031"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "9R02-91028"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -308,14 +685,45 @@
       "tags": {
         "status": "unpublished",
         "gtfs_data_exchange": "island-transit"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-islandtransit",
+          "tags": {
+            "us_ntd_id": "0R03-00298",
+            "wikidata_id": "Q16980701"
+          },
+          "name": "Island Transit",
+          "website": "http://www.islandtransit.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "34"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
       "id": "f-kauai",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/kaua'i_google_transit.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-87yt-countyofkauai~transportationagency",
+          "name": "County of Kaua'i - Transportation Agency",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Kauai"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "9R03-90237",
+            "wikidata_id": "Q7744015"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs",

@@ -6,7 +6,21 @@
       "id": "f-presidigo~ca~us",
       "urls": {
         "static_current": "https://presidiobus.com/gtfs"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q8zj-presidigo",
+          "name": "PresidiGo",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "18"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7241517"
+          }
+        }
+      ]
     },
     {
       "spec": "gtfs-rt",
@@ -16,7 +30,9 @@
         "realtime_vehicle_positions": "https://presidiobus.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://presidiobus.com/gtfs-rt/tripupdates"
       },
-      "associated_feeds": ["f-presidigo~ca~us"]
+      "associated_feeds": [
+        "f-presidigo~ca~us"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

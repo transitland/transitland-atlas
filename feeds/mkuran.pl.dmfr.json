@@ -13,7 +13,20 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-u3qb-warszawskakolejdojazdowa"
+      "feed_namespace_id": "o-u3qb-warszawskakolejdojazdowa",
+      "operators": [
+        {
+          "onestop_id": "o-u3qb-warszawskakolejdojazdowa",
+          "name": "Warszawska Kolej Dojazdowa",
+          "short_name": "WKD",
+          "website": "http://www.wkd.com.pl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "wkd"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -26,7 +39,31 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribute": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3qc-komunikacjamiejskaŁomiankispzoo",
+          "name": "Komunikacja Miejska Łomianki",
+          "short_name": "KMŁ",
+          "website": "http://kmlomianki.info/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "kmł"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3qc-komunikacjamiejskaŁomianki",
+          "name": "Komunikacja Miejska Łomianki",
+          "short_name": "KMŁ",
+          "website": "http://kmlomianki.info/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -39,7 +76,31 @@
         "use_without_attribution": "unknown",
         "create_derived_product": "yes",
         "redistribute": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3q-kolejemazowieckie",
+          "name": "Koleje Mazowieckie",
+          "short_name": "KM",
+          "website": "http://www.mazowieckie.com.pl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "km"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3q-ztmwarszawa",
+          "name": "Zarząd Transportu Miejskiego",
+          "short_name": "ZTM",
+          "website": "http://www.ztm.waw.pl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ztm"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

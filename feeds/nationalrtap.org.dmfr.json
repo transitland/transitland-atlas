@@ -17,7 +17,18 @@
       "feed_namespace_id": "o-dnr-piedmontauthorityforregionaltransportation",
       "tags": {
         "gtfs_data_exchange": "piedmont-authority-for-regional-transportation"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnr-piedmontauthorityforregionaltransportation",
+          "tags": {
+            "us_ntd_id": "40173",
+            "wikidata_id": "Q7191491"
+          },
+          "name": "Piedmont Authority for Regional Transportation",
+          "short_name": "PART"
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -25,7 +36,24 @@
       "urls": {
         "static_current": "http://demopro.nationalrtap.org/admin/GTFSzipFiles/3746/google_transit.zip"
       },
-      "feed_namespace_id": "o-9t9e-cityofsierravista"
+      "feed_namespace_id": "o-9t9e-cityofsierravista",
+      "operators": [
+        {
+          "onestop_id": "o-9t9e-cityofsierravista",
+          "tags": {
+            "us_ntd_id": "90239",
+            "wikidata_id": "Q16984607"
+          },
+          "name": "City of Sierra Vista",
+          "short_name": "Vista Transit",
+          "website": "http://www.sierravistaaz.gov/city-departments/transit/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Sierra Vista"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -35,7 +63,22 @@
       },
       "license": {
         "url": "https://www.bata.net/customer-service/gtfs-data.html"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpg-bayareatransportationauthority",
+          "name": "Bay Area Transportation Authority",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BATA"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "5R03-50413",
+            "wikidata_id": "Q20710576"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -14,7 +14,20 @@
         "redistribute": "yes",
         "attribution_text": "Data used in this product or service is provided with the permission of Metrolinx. Metrolinx makes no representations or warranties of any kind, express or implied, with respect to the Data and assumes no responsibility for the accuracy or currency of the data used in this product or service."
       },
-      "feed_namespace_id": "o-dpz2-upexpress"
+      "feed_namespace_id": "o-dpz2-upexpress",
+      "operators": [
+        {
+          "onestop_id": "o-dpz2-upexpress",
+          "name": "Union Pearson Express",
+          "short_name": "UP Express",
+          "website": "http://upexpress.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "UPExpress"
+            }
+          ]
+        }
+      ]
     },
     {
       "spec": "gtfs",
@@ -32,7 +45,19 @@
       "feed_namespace_id": "o-dpz-gotransit",
       "tags": {
         "gtfs_data_exchange": "go-transit"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpz-gotransit",
+          "name": "GO Transit",
+          "website": "http://gotransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GO"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
