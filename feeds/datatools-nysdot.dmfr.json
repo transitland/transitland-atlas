@@ -829,7 +829,8 @@
       "spec": "gtfs",
       "id": "f-chautauqua~area~regional~transit~system",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/CARTS_Chautauqua_Area_Regional_Transit_System.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/CARTS_Chautauqua_Area_Regional_Transit_System_-_City_Routes.zip",
+        "static_historic": ["https://s3.amazonaws.com/datatools-511ny/public/CARTS_Chautauqua_Area_Regional_Transit_System.zip"]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -841,7 +842,9 @@
       "operators": [
         {
           "onestop_id": "o-dpx-carts",
-          "name": "CARTS",
+          "short_name": "CARTS",
+          "name": "Chautauqua Area Regional Transit System",
+          "website": "https://chqgov.com/carts/CARTS",
           "associated_feeds": [
             {
               "gtfs_agency_id": "CARTS-Chautauqua-ny-us"
