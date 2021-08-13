@@ -724,7 +724,8 @@
     },
     {
       "spec": "gtfs",
-      "id": "f-~westchester~county~ny",
+      "id": "f-dr7-westchestercountybee~linesystem",
+      "supersedes_ids": ["f-westchester~county~ny"],
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
         "share_alike_optional": "yes",
@@ -737,8 +738,10 @@
       },
       "operators": [
         {
-          "onestop_id": "o-dr7-bee~linebus",
-          "name": "Bee-Line Bus",
+          "onestop_id": "o-dr7-westchestercountybee~linesystem",
+          "supersedes_ids": ["o-dr7-bee~linebus"],
+          "name": "Westchester County Bee-Line System",
+          "website": "http://transportation.westchestergov.com/bee-line-bus",
           "associated_feeds": [
             {
               "gtfs_agency_id": "WCDOT"
@@ -1079,34 +1082,7 @@
         }
       ]
     },
-    {
-      "spec": "gtfs",
-      "id": "f-dr7-westchestercountybee~linesystem",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Westchester_County_Bee-Line_System.zip"
-      },
-      "feed_namespace_id": "o-dr7-westchestercountybee~linesystem",
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-westchestercountybee~linesystem",
-          "tags": {
-            "us_ntd_id": "20076",
-            "wikidata_id": "Q4879491",
-            "twitter_general": "westchestergov"
-          },
-          "name": "Westchester County Bee-Line System",
-          "website": "http://transportation.westchestergov.com/bee-line-bus",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "WCDOT"
-            }
-          ]
-        }
-      ]
-    },
+
     {
       "spec": "gtfs",
       "id": "f-dr73-tappanzeeexpress",
