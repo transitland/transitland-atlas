@@ -7308,6 +7308,34 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/harborconnector-md-us/harborconnector-md-us.zip"
       }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-bristol~va~us",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/bristol-va-us/bristol-va-us.zip"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-bay~transit~va",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/baytransit-va-us/baytransit-va-us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq9-baytransit",
+          "name": "Bay Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "bay"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "3R06-30172"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
