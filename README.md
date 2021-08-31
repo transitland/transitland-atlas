@@ -54,6 +54,8 @@ For more information on what can go into a DMFR file, see the [DMFR documentatio
     * Add the previous URL value to the `static_historic` array.
 3. Edit the file and open the PR as described above.
 
+Onestop ID values for feeds and operators are used to synchronize with existing values in the Transitland database. Editing the Onestop ID value will cause a new feed or operator record to be created; values in the database that are no longer present in the Transitland Atlas will be marked as soft-deleted. Use caution and clear intent when changing a Onestop ID value.
+
 ## Operators
 
 [Operators](https://transit.land/operators) describe, annotate, and group data from different feed data sources. For example, `o-9q9-actransit` describes a transit operator, Alameda-Contra Costa Transit District, which pulls from two different data sources (one GTFS-RT, one static GTFS) and adds additional metadata such as a US National Transit Database ID.
