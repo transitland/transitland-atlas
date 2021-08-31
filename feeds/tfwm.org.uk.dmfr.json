@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-transport~for~west~midlands",
+      "urls": {
+        "static_current": "http://api.tfwm.org.uk/gtfs/tfwm_gtfs.zip?app_id=9c2ed2e7"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "app_key",
+        "info_url": "https://api-portal.tfwm.org.uk/"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
