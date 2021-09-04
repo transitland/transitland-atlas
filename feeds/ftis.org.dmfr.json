@@ -3,6 +3,38 @@
   "feeds": [
     {
       "spec": "gtfs",
+      "id": "f-djn-votran",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=425A0",
+        "static_historic": [
+          "http://www.votran.org/core/fileparse.php/6120/urlt/google_transit_3.zip"
+        ]
+      },
+      "feed_namespace_id": "o-djn-votran",
+      "operators": [
+        {
+          "onestop_id": "o-djn-votran",
+          "tags": {
+            "us_ntd_id": "40032",
+            "wikidata_id": "Q7941092"
+          },
+          "name": "Votran",
+          "short_name": null,
+          "website": "http://www.votran.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-djn-votran",
+              "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-votran~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
       "id": "f-djjg-lakecounty",
       "urls": {
         "static_current": "http://www.ftis.org/PostFileDownload.aspx?id=160A0"
