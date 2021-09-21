@@ -8,27 +8,28 @@
         "static_current": "https://elkgrovetransit.com/gtfs"
       },
       "license": {
-        "url": "http://www.sacrt.com/gtfs.stm",
+        "url": "http://www.sacrt.com/schedules/gtfs.aspx",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-9qce-sacramentoregionaltransit",
       "tags": {
         "gtfs_data_exchange": "sacramento-regional-transit"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-9qce-sacramentoregionaltransit~rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://gtfsrt.sacrt.com/apps/gtfsrt/SRTD/vehiclepositions",
+        "realtime_trip_updates": "http://gtfsrt.sacrt.com/apps/gtfsrt/SRTD/tripupdates"
       },
-      "operators": [
-        {
-          "onestop_id": "o-9qce-sacramentoregionaltransit",
-          "tags": {
-            "us_ntd_id": "90019",
-            "wikidata_id": "Q7397015",
-            "twitter_general": "RideSacRT"
-          },
-          "name": "Sacramento Regional Transit",
-          "short_name": "SacRT"
-        }
-      ]
+      "license": {
+        "url": "http://www.sacrt.com/schedules/gtfs.aspx",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      }
     },
     {
       "spec": "gtfs",
@@ -81,8 +82,30 @@
       "id": "f-9qcd-etranelkgrove",
       "urls": {
         "static_current": "http://iportal.sacrt.com/GTFS/ETRAN/google_transit.zip"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-9qce-sacramentoregionaltransit",
+      "tags": {
+        "us_ntd_id": "90019",
+        "wikidata_id": "Q7397015",
+        "twitter_general": "RideSacRT"
       },
-      "feed_namespace_id": "o-9qce-sacramentoregionaltransit"
+      "name": "Sacramento Regional Transit",
+      "short_name": "SacRT",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qce-sacramentoregionaltransit"
+        },
+        {
+          "feed_onestop_id": "f-9qce-sacramentoregionaltransit~rt"
+        },
+        {
+          "feed_onestop_id": "f-9qcd-etranelkgrove"
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
