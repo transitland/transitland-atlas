@@ -3,9 +3,109 @@
   "feeds": [
     {
       "spec": "gtfs",
+      "id": "f-djm2-regionaltransitsystem",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=468A0",
+        "static_historic": ["http://go-rts.com/gtfs/google_transit.zip"]
+      },
+      "feed_namespace_id": "o-djm2-gainesvilleregionaltransitsystem",
+      "tags": {
+        "gtfs_data_exchange": "regional-transit-system"
+      },
+      "license": {
+        "url": "https://ftis.org/FTDEDisclaimer.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djm2-gainesvilleregionaltransitsystem",
+          "tags": {
+            "us_ntd_id": "40030",
+            "wikidata_id": "Q5517264",
+            "twitter_general": "gainesvillegov"
+          },
+          "name": "Regional Transit System",
+          "short_name": "RTS"
+        }
+      ]
+    },    
+    {
+      "spec": "gtfs",
+      "id": "f-dhvk-manatee~fl~us",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=342A0",
+        "static_historic": [
+          "http://data.trilliumtransit.com/gtfs/manatee-fl-us/manatee-fl-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "feed_namespace_id": "o-dhvk-manateecountyareatransit",
+      "tags": {
+        "feed_id": "manatee-fl-us",
+        "managed_by": "trillium",
+        "gtfs_data_exchange": "manatee-county-area-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dhvk-manateecountyareatransit",
+          "tags": {
+            "us_ntd_id": "40026",
+            "wikidata_id": "Q60772409",
+            "twitter_general": "manateegov"
+          },
+          "name": "Manatee County Area Transit",
+          "website": "http://www.mymanatee.org/home/government/departments/public-works/transit-paratransit.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "140"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-djn-votran",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=425A0",
+        "static_historic": [
+          "http://www.votran.org/core/fileparse.php/6120/urlt/google_transit_3.zip"
+        ]
+      },
+      "feed_namespace_id": "o-djn-votran",
+      "operators": [
+        {
+          "onestop_id": "o-djn-votran",
+          "tags": {
+            "us_ntd_id": "40032",
+            "wikidata_id": "Q7941092"
+          },
+          "name": "Votran",
+          "short_name": null,
+          "website": "http://www.votran.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-djn-votran",
+              "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-votran~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
       "id": "f-djjg-lakecounty",
       "urls": {
-        "static_current": "http://www.ftis.org/PostFileDownload.aspx?id=160A0"
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=450A0",
+        "static_historic": [
+          "http://www.ftis.org/PostFileDownload.aspx?id=160A0"
+        ]
       },
       "feed_namespace_id": "o-djjg-lakecounty",
       "operators": [
@@ -25,7 +125,10 @@
       "spec": "gtfs",
       "id": "f-dh-lakeland",
       "urls": {
-        "static_current": "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=313A0",
+        "static_historic": [
+          "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
+        ]
       },
       "feed_namespace_id": "o-dh-lakeland",
       "operators": [
@@ -49,7 +152,10 @@
       "spec": "gtfs",
       "id": "f-dht-collierareatransit~cat",
       "urls": {
-        "static_current": "http://www.ftis.org/PostFileDownload.aspx?id=164A0"
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=396A0",
+        "static_historic": [
+          "http://www.ftis.org/PostFileDownload.aspx?id=164A0"
+        ]
       },
       "feed_namespace_id": "o-dht-collierareatransit~cat",
       "operators": [

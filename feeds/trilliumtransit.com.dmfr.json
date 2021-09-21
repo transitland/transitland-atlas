@@ -3,9 +3,33 @@
   "feeds": [
     {
       "spec": "gtfs",
+      "id": "f-9vfu-dentoncountytransportationauthority",
+      "urls": {
+        "static_current": "http://trilliumtransit.com/transit_feeds/dentoncounty-tx-us/dentoncounty-tx-us.zip",
+        "static_historic": ["https://www.dcta.net/images/uploads/content_files/resource_center/DCTA_GTFS.zip"]
+      },
+      "feed_namespace_id": "o-9vfu-dentoncountytransportationauthority",
+      "license": {
+        "url": "https://www.dcta.net/resources/open-data"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9vfu-dentoncountytransportationauthority",
+          "tags": {
+            "us_ntd_id": "60101",
+            "wikidata_id": "Q5259601",
+            "twitter_general": "RideDCTA"
+          },
+          "name": "Denton County Transportation Authority",
+          "short_name": "DCTA"
+        }
+      ]
+    },    
+    {
+      "spec": "gtfs",
       "id": "f-9qf-laketahoe~ca~us",
       "urls": {
-        "static_current": "http://trilliumtransit.com/transit_feeds/laketahoe-ca-us/laketahoe-ca-us.zip"
+        "static_current": "https://govcbus.com/gtfs"
       },
       "license": {
         "use_without_attribution": "yes",
@@ -1860,41 +1884,6 @@
             "twitter_general": "LinkTransit"
           },
           "name": "Link Transit"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dhvk-manatee~fl~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/manatee-fl-us/manatee-fl-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "feed_namespace_id": "o-dhvk-manateecountyareatransit",
-      "tags": {
-        "feed_id": "manatee-fl-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "manatee-county-area-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dhvk-manateecountyareatransit",
-          "tags": {
-            "us_ntd_id": "40026",
-            "wikidata_id": "Q60772409",
-            "twitter_general": "manateegov"
-          },
-          "name": "Manatee County Area Transit",
-          "website": "http://www.mymanatee.org/home/government/departments/public-works/transit-paratransit.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "140"
-            }
-          ]
         }
       ]
     },
@@ -7128,7 +7117,7 @@
     },
     {
       "spec": "gtfs",
-      "id": "o-dnx-radartransit",
+      "id": "f-dnx-radartransit",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/radar-va-us/radar-va-us.zip"
       },
@@ -7342,6 +7331,13 @@
       "id": "f-petersburg~va~us",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/petersburg-va-us/petersburg-va-us.zip"
+      }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-blackstone~va~us",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/blackstone-va-us/blackstone-va-us.zip"
       }
     }
   ],
