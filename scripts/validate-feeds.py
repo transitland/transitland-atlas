@@ -9,7 +9,7 @@ fail_the_build = False
 # load dmfr to database
 db_filename = 'feed-validation.db'
 os.system(f"rm -f {db_filename}")
-sync_command = f"transitland dmfr sync -dburl=sqlite3://{db_filename} ../feeds/*.dmfr.json"
+sync_command = f"transitland dmfr sync --hide-unseen --hide-unseen-operators -dburl=sqlite3://{db_filename} ../feeds/*.dmfr.json"
 sync_log = subprocess.check_output(sync_command, shell=True)
 
 for log_line in sync_log.splitlines():
