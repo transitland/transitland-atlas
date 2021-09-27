@@ -2,17 +2,20 @@ import csv
 import json
 import re
 import requests
+from collections import OrderedDict
 
 r = requests.get("https://github.com/NABSA/gbfs/raw/master/systems.csv")
 decoded_content = r.content.decode("utf-8")
 cr = csv.DictReader(decoded_content.splitlines(), delimiter=",")
 feeds = []
 for row in list(cr):
-    name = row["Name"].lower().replace(" ", "~").replace("-", "~")
-    name = re.sub(r"~{2,}", "~", name)
+    name = (row["Name"] + ' ' + row["Location"]).lower()
+    names = re.split('[;,\.\-\% ]+', name)
+    id = '~'.join(OrderedDict.fromkeys(names))
+    onestop_id = f"f-{id}~gbfs"
     feed = {
         "spec": "gbfs",
-        "id": f"f-{name}~gbfs",
+        "id": onestop_id,
         "urls": {"gbfs_auto_discovery": row["Auto-Discovery URL"]},
     }
     feeds.append(feed)
