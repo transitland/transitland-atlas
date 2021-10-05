@@ -1270,9 +1270,18 @@
     {
       "spec": "gtfs",
       "id": "f-point~or-us",
+      "supersedes_ids": ["f-9rb-cascadespoint~or~us", "f-9r-easternpoint~or~us", "f-c20-northwestpoint~or~us", "f-9r2-southwestpoint~or~us", "f-9rc-highdesertpoint~or~us"],
       "urls": {
         "static_current": "http://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-point~or~us",
+          "name": "The POINT",
+          "website": "http://oregon-point.com",
+          "supersedes_ids": ["o-9rb-cascadespoint", "o-9r-easternpoint", "o-c20-northwestpoint", "o-9r2-southwestpoint", "o-9rc-highdesertpoint"]
+        }
+      ]
     },
     {
       "spec": "gtfs",
