@@ -29,32 +29,20 @@
       "spec": "gtfs",
       "id": "f-9qf-laketahoe~ca~us",
       "urls": {
-        "static_current": "https://govcbus.com/gtfs"
+        "static_current": "http://data.trilliumtransit.com/gtfs/laketahoe-ca-us/laketahoe-ca-us.zip"
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "tags": {
-        "feed_id": "laketahoe-ca-us",
-        "managed_by": "trillium"
-      },
       "operators": [
         {
-          "onestop_id": "o-9qfx-tahoeareametroaltransit",
+          "onestop_id": "o-9qfx-tahoetruckeearearegionaltransit",
+          "supersedes_ids": ["o-9qfx-tahoeareametroaltransit"],
+          "website": "https://tahoetruckeetransit.com/",
           "name": "Tahoe Truckee Area Regional Transit",
           "short_name": "TART",
-          "website": "http://www.placer.ca.gov/Departments/Works/Transit/TART.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "14"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9qfx-tahoetruckeearearegionaltransit",
-          "name": "Tahoe Truckee Area Regional Transit",
           "associated_feeds": [
             {
               "gtfs_agency_id": "904"
@@ -66,19 +54,9 @@
           }
         },
         {
-          "onestop_id": "o-9qft-bluego",
-          "name": "BlueGo",
-          "website": "http://www.tahoetransportation.org/transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "458"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired",
-          "name": "North Lake Tahoe Express - 24 hour advance reservations required",
-          "website": "http://bit.ly/1PmcYOH",
+          "name": "North Lake Tahoe Express",
+          "website": "https://www.northlaketahoeexpress.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "16"
@@ -7128,7 +7106,7 @@
       "spec": "gtfs",
       "id": "f-tahoe~ca~us",
       "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/tahoe-ca-us/tahoe-ca-us.zip"
+        "static_current": "http://data.trilliumtransit.com/gtfs/laketahoe-ca-us/laketahoe-ca-us.zip"
       }
     },
     {
