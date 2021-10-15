@@ -191,7 +191,28 @@
       "id": "f-banning~pass~transit",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/banning-ca-us/banning-ca-us.zip"
-      }
+      },
+      "feed_namespace_id": "o-9qhb-cityofbanningtransit",
+      "associated_feeds": [
+        "f-banning~pass~transit~rt", "f-banning~pass~transit~rt~alerts"
+      ],
+      "operators": [
+        {
+          "onestop_id": "o-9qhb-cityofbanningtransit",
+          "name": "City of Banning Transit"
+        }
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-banning~pass~transit~rt~alerts",
+      "feed_namespace_id": "o-9qhb-cityofbanningtransit",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/banning-ca-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-banning~pass~transit", "f-banning~pass~transit~rt"
+      ]
     },
     {
       "spec": "gtfs",
@@ -250,6 +271,9 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/humboldtcounty-ca-us/humboldtcounty-ca-us.zip"
       },
+      "associated_feeds": [
+        "f-9pp-humboldtcounty~ca~us~redwood~rt", "f-9pp-humboldtcounty~ca~us~rt~alerts"
+      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -331,6 +355,16 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9pp-humboldtcounty~ca~us~rt~alerts",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/humboldtcounty-ca-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-9pp-humboldtcounty~ca~us~redwood~rt", "f-9pp-humboldtcounty~ca~us"
       ]
     },
     {
@@ -489,6 +523,9 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/asheville-nc-us/asheville-nc-us.zip"
       },
+      "associated_feeds": [
+        "f-dnm6-asheville~nc~us~alerts", "f-dnm6-asheville~nc~us~rt"
+      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -516,6 +553,17 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-dnm6-asheville~nc~us~alerts",
+      "feed_namespace_id": "o-dnm6-ashevilleredefinestransit",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/asheville-nc-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-dnm6-asheville~nc~us", "f-dnm6-asheville~nc~us~rt"
       ]
     },
     {
@@ -1220,6 +1268,9 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/durham-area-transit-authority-nc-us/durham-area-transit-authority-nc-us.zip"
       },
+      "associated_feeds": [
+        "f-dnru-durham~area~transit~authority~nc~us~rt"
+      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -1282,6 +1333,9 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/easternsierra-ca-us/easternsierra-ca-us.zip"
       },
+      "associated_feeds": [
+        "f-9q-easternsierra~ca~us~rt"
+      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -1746,6 +1800,9 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/laketransit-ca-us/laketransit-ca-us.zip"
       },
+      "associated_feeds": [
+        "f-9qb-laketransit~ca~us~rt"
+      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -2285,6 +2342,9 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/redding-ca-us/redding-ca-us.zip"
       },
+      "associated_feeds": [
+        "f-9r0-redding~ca~us~rt", "f-9r0-redding~ca~us~rt~alerts"
+      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -2313,6 +2373,17 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9r0-redding~ca~us~rt~alerts",
+      "feed_namespace_id": "o-9r0-reddingareabusauthority",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/redding-ca-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-9r0-redding~ca~us", "f-9r0-redding~ca~us~rt"
       ]
     },
     {
@@ -3764,6 +3835,9 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/carta-sc-us/carta-sc-us.zip"
       },
+      "associated_feeds": [
+        "f-djz4-carta~sc~us~rt", "f-djz4-carta~sc~us~alerts"
+      ],
       "feed_namespace_id": "o-djz4-charlestonarearegionaltransportationauthority",
       "tags": {
         "feed_id": "carta-sc-us",
@@ -3787,6 +3861,17 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-djz4-carta~sc~us~alerts",
+      "feed_namespace_id": "o-djz4-charlestonarearegionaltransportationauthority",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/carta-sc-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-djz4-carta~sc~us", "f-djz4-carta~sc~us~rt"
       ]
     },
     {
@@ -5870,6 +5955,17 @@
       ]
     },
     {
+      "spec": "gtfs-rt",
+      "id": "f-madera~county~connection~rt~alerts",
+      "feed_namespace_id": "o-9qd-maderacountyconnection",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/maderactc-ca-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-madera~county~connection", "f-madera~county~connection~rt"
+      ]
+    },
+    {
       "spec": "gtfs",
       "id": "f-blossomexpress~ca~us",
       "urls": {
@@ -7358,6 +7454,61 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/tcat-flex-ca-us/tcat-flex-ca-us.zip"
       }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-c20-tillamook~or~us~rt~alerts",
+      "feed_namespace_id": "o-c0p-tillamookcountytransportationdistrict",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-c20-tillamook~or~us", "f-c20-tillamook~or~us~rt"
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9rc-cascadeseast~or~us~rt~alerts",
+      "feed_namespace_id": "o-9rc-cascadeseasttransit",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/cascadeseast-or-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-9rc-cascadeseast~or~us", "f-9rc-cascadeseast~or~us~rt"
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9pz-lincolncounty~or~us~rt~alerts",
+      "feed_namespace_id": "o-9pz-lincolncountytransit",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/lincolncounty-or-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-9pz-lincolncounty~or~us", "f-9pz-lincolncounty~or~us~rt"
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-c20dz-washingtonparkshuttle~or~us~alerts",
+      "feed_namespace_id": "o-c20dz-washingtonparkshuttle",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/washingtonparkshuttle-or-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-c20dz-washingtonparkshuttle~or~us", "f-c20dz-washingtonparkshuttle~or~us~rt"
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9rb-benton~or~us~alerts",
+      "feed_namespace_id": "o-9rb-bentoncountytransportation",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/benton-or-us/service_alerts.proto"
+      },
+      "associated_feeds": [
+        "f-9rb-benton~or~us", "f-9rb-benton~or~us~rt"
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
