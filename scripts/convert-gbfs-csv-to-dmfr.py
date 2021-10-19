@@ -13,10 +13,15 @@ for row in list(cr):
     names = re.split('[;,\.\-\% ]+', name)
     id = '~'.join(OrderedDict.fromkeys(names))
     onestop_id = f"f-{id}~gbfs"
+    if onestop_id in [f["id"] for f in feeds]:
+        # if Onestop ID will collide, we'll just skip this feed for now
+        # because of https://github.com/NABSA/gbfs/pull/373
+        continue
+    url = row["Auto-Discovery URL"].strip()
     feed = {
         "spec": "gbfs",
         "id": onestop_id,
-        "urls": {"gbfs_auto_discovery": row["Auto-Discovery URL"]},
+        "urls": {"gbfs_auto_discovery": url}
     }
     feeds.append(feed)
 dmfr = {
