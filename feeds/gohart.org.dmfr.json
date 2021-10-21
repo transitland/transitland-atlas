@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "http://www.gohart.org/google/google_transit.zip"
       },
-      "feed_namespace_id": "o-dhv-hillsborougharearegionaltransit",
       "tags": {
         "gtfs_data_exchange": "hillsborough-area-regional-transit"
       },
@@ -28,7 +27,7 @@
           "website": "http://www.gohart.org",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-hart~rt"
+              "feed_onestop_id": "f-dhv-hillsborougharearegionaltransit~rt"
             }
           ]
         }
@@ -37,6 +36,7 @@
     {
       "spec": "gtfs-rt",
       "id": "f-dhv-hillsborougharearegionaltransit~rt",
+      "supersedes_ids": ["f-hart~rt"],
       "urls": {
         "realtime_trip_updates": "http://api.tampa.onebusaway.org:8088/trip-updates",
         "realtime_vehicle_positions": "http://api.tampa.onebusaway.org:8088/vehicle-positions"

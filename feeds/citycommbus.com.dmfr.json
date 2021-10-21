@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "https://citycommbus.com/gtfs"
       },
-      "feed_namespace_id": "o-9q5c-cityofcommercemunicipalbuslines",
       "operators": [
         {
           "onestop_id": "o-9q5c-cityofcommercemunicipalbuslines",
@@ -16,7 +15,12 @@
             "wikidata_id": "Q5123639",
             "twitter_general": "CityOfCommerce"
           },
-          "name": "City of Commerce Municipal Bus Lines"
+          "name": "City of Commerce Municipal Bus Lines",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q5c-cityofcommercemunicipalbuslines~rt"
+            }
+          ]
         }
       ]
     },
@@ -27,11 +31,7 @@
         "realtime_vehicle_positions": "https://citycommbus.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://citycommbus.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://citycommbus.com/gtfs-rt/alerts"
-      },
-      "associated_feeds": [
-        "f-9q5c-cityofcommercemunicipalbuslines"
-      ],
-      "feed_namespace_id": "o-9q5c-cityofcommercemunicipalbuslines"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -4,7 +4,6 @@
     {
       "spec": "gtfs",
       "id": "f-dqc-wmata~bus",
-      "feed_namespace_id": "o-dqc-met",
       "urls": {
         "static_current": "https://api.wmata.com/gtfs/bus-gtfs-static.zip"
       },
@@ -23,7 +22,6 @@
     {
       "spec": "gtfs",
       "id": "f-dqc-wmata~rail",
-      "feed_namespace_id": "o-dqc-met",
       "urls": {
         "static_current": "https://api.wmata.com/gtfs/rail-gtfs-static.zip"
       },
@@ -42,7 +40,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-wmata~bus~rt",
-      "feed_namespace_id": "o-dqc-met",
       "urls": {
         "realtime_alerts": "https://api.wmata.com/gtfs/bus-gtfsrt-alerts.pb",
         "realtime_trip_updates": "https://api.wmata.com/gtfs/bus-gtfsrt-tripupdates.pb",
@@ -52,15 +49,11 @@
         "type": "header",
         "param_name": "api_key",
         "info_url": "https://developer.wmata.com/"
-      },
-      "associated_feeds": [
-        "f-dqc-wmata~bus"
-      ]
+      }
     },
     {
       "spec": "gtfs-rt",
       "id": "f-wmata~rail~rt",
-      "feed_namespace_id": "o-dqc-met",
       "urls": {
         "realtime_alerts": "https://api.wmata.com/gtfs/rail-gtfsrt-alerts.pb",
         "realtime_trip_updates": "https://api.wmata.com/gtfs/rail-gtfsrt-tripupdates.pb",
@@ -70,10 +63,7 @@
         "type": "header",
         "param_name": "api_key",
         "info_url": "https://developer.wmata.com/"
-      },
-      "associated_feeds": [
-        "f-dqc-wmata~rail"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0",

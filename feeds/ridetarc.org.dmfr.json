@@ -13,7 +13,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-dng1-transitauthorityofrivercity",
       "tags": {
         "gtfs_data_exchange": "transit-authority-of-river-city"
       },
@@ -34,6 +33,15 @@
           ]
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-tarc~rt",
+      "urls": {
+        "realtime_alerts": "http://gtfsrealtime.ridetarc.org/realtime/Alert/Alerts.pb",
+        "realtime_trip_updates": "http://gtfsrealtime.ridetarc.org/realtime/TripUpdate/TripUpdates.pb",
+        "realtime_vehicle_positions": "http://gtfsrealtime.ridetarc.org/realtime/Vehicle/VehiclePositions.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

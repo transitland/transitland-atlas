@@ -4,7 +4,6 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~bus",
-      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_localbus.zip"
       }
@@ -12,7 +11,6 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~raillink",
-      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_lightrail.zip"
       }
@@ -20,7 +18,6 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~subwaylink",
-      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_metro.zip"
       }
@@ -28,7 +25,6 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~marc",
-      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_marc.zip"
       }
@@ -36,9 +32,16 @@
     {
       "spec": "gtfs",
       "id": "f-dq-mtamaryland~commuterbus",
-      "feed_namespace_id": "o-dqc-marylandtransitadministration",
       "urls": {
         "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_commuterbus.zip"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-mtamaryland~rt",
+      "urls": {
+        "realtime_trip_updates": "http://gtfsrt.mta.maryland.gov:8888/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "realtime_vehicle_positions": "http://gtfsrt.mta.maryland.gov:8888/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
       }
     }
   ],

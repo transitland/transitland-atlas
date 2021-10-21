@@ -10,7 +10,6 @@
           "http://data.trilliumtransit.com/gtfs/modesto-ca-us/modesto-ca-us.zip"
         ]
       },
-      "feed_namespace_id": "o-9q9-modestoareaexpress",
       "tags": {
         "feed_id": "modesto-ca-us",
         "managed_by": "trillium",
@@ -32,6 +31,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "95"
+            },
+            {
+              "feed_onstop_id": "f-modestoareaexpress~rt"
             }
           ]
         }
@@ -40,9 +42,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-modestoareaexpress~rt",
-      "associated_feeds": [
-        "f-9q9-modesto~ca~us"
-      ],
       "urls": {
         "realtime_trip_updates": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate",
         "realtime_vehicle_positions": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",

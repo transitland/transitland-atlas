@@ -14,7 +14,6 @@
         "redistribute": "yes",
         "attribution_text": "Reproduced with permission granted by Port Authority of Allegheny County (PAAC). The information has been provided by means of a nonexclusive, limited, and revocable license granted by PAAC. PAAC does not guarantee the accuracy, adequacy, completeness, or usefulness of any information. PAAC provides this information \"as is\" without warranty of any kind, express or implied, including, but not limited to, warranties of merchantability or fitness for a particular purpose and assumes no responsibility for anyone's use of the information."
       },
-      "feed_namespace_id": "o-dppn-portauthorityofalleghenycounty",
       "tags": {
         "gtfs_data_exchange": "port-authority-of-allegheny-county"
       },
@@ -32,6 +31,12 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "PAAC"
+            },
+            {
+              "feed_onestop_id": "f-dppn-portauthorityofalleghenycounty~bus~rt"
+            },
+            {
+              "feed_onestop_id": "f-dppn-portauthorityofalleghenycounty~train~rt"
             }
           ]
         }
@@ -42,20 +47,14 @@
       "id": "f-dppn-portauthorityofalleghenycounty~bus~rt",
       "urls": {
         "realtime_trip_updates": "http://truetime.portauthority.org/gtfsrt-bus/"
-      },
-      "associated_feeds": [
-        "f-dppn-portauthorityofalleghenycounty"
-      ]
+      }
     },
     {
       "spec": "gtfs-rt",
       "id": "f-dppn-portauthorityofalleghenycounty~train~rt",
       "urls": {
         "realtime_trip_updates": "http://truetime.portauthority.org/gtfsrt-train/"
-      },
-      "associated_feeds": [
-        "f-dppn-portauthorityofalleghenycounty"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

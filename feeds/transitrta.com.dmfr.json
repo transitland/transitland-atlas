@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/centralmarylandrta-md-us/centralmarylandrta-md-us.zip"
       },
-      "feed_namespace_id": "o-dqcq-regionaltransportationagencyofcentralmaryland",
       "tags": {
         "gtfs_data_exchange": "regional-transportation-agency-of-central-maryland"
       },
@@ -25,10 +24,30 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "2"
+            },
+            {
+              "feed_onestop_id": "f-dqcq-regionaltransportationagencyofcentralmaryland~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-dqcq-regionaltransportationagencyofcentralmaryland~rt",
+      "urls": {
+        "realtime_alerts": "https://api.goswift.ly/real-time/rtamaryland/gtfs-rt-alerts",
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/rtamaryland/gtfs-rt-trip-updates",
+        "realtime_vehicle_positions": "https://api.goswift.ly/real-time/rtamaryland/gtfs-rt-vehicle-positions"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
