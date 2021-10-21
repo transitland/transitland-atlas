@@ -1,6 +1,39 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-9tb-valleymetro",
+      "urls": {
+        "static_current": "https://phoenixopendata.com/dataset/3eae9a4a-98b9-40c8-8df7-8c00c1756235/resource/28ccc0a5-49c8-495c-b91f-193de5ce2cb7/download/googletransit.zip"
+      },
+      "license": {
+        "url": "http://www.opendefinition.org/licenses/odc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9tb-valleymetro",
+          "tags": {
+            "us_ntd_id": "90032",
+            "wikidata_id": "Q3553869",
+            "twitter_general": "valleymetro"
+          },
+          "name": "Valley Metro",
+          "short_name": "VM",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9tb-valleymetro"
+            },
+            {
+              "feed_onestop_id": "f-valleymetro~rt"
+            }
+          ]
+        }
+      ]
+    },
     {
       "spec": "gtfs-rt",
       "id": "f-valleymetro~rt",
@@ -8,11 +41,7 @@
         "realtime_alerts": "https://transitdata.phoenix.gov/api/servicealerts?format=gtfs.proto",
         "realtime_trip_updates": "https://transitdata.phoenix.gov/api/tripupdates?format=gtfs.proto",
         "realtime_vehicle_positions": "https://transitdata.phoenix.gov/api/vehiclepositions?format=gtfs.proto"
-      },
-      "feed_namespace_id": "o-9tb-valleymetro",
-      "associated_feeds": [
-        "f-9tb-valleymetro"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

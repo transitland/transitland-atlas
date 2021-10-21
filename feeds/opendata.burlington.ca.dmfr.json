@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "http://opendata.burlington.ca/gtfs-rt/GTFS_Data.zip"
       },
-      "feed_namespace_id": "o-dpxq-burlingtontransit",
       "tags": {
         "gtfs_data_exchange": "burlington-transit"
       }
@@ -19,11 +18,7 @@
         "realtime_alerts": "http://opendata.burlington.ca/gtfs-rt/GTFS_ServiceAlerts.pb",
         "realtime_trip_updates": "http://opendata.burlington.ca/gtfs-rt/GTFS_TripUpdates.pb",
         "realtime_vehicle_positions": "http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb"
-      },
-      "feed_namespace_id": "o-dpxq-burlingtontransit",
-      "associated_feeds": [
-        "f-dpxq-burlingtontransit"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0",

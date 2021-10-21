@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "https://www.ltd.org/files/library/ltdgtfs.zip"
       },
-      "feed_namespace_id": "o-9rb-lanetransitdistrict",
       "tags": {
         "gtfs_data_exchange": "lane-transit-district"
       }
@@ -18,11 +17,7 @@
       "urls": {
         "realtime_trip_updates": "http://feed.ltd.org/gtfs-realtime/tripupdate/",
         "realtime_vehicle_positions": "http://feed.ltd.org/gtfs-realtime/vehicle/"
-      },
-      "feed_namespace_id": "o-9rb-lanetransitdistrict",
-      "associated_feeds": [
-        "f-9rb-lanetransitdistrict"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0",

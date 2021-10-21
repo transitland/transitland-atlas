@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -14,26 +14,20 @@
       "operators": [
         {
           "onestop_id": "o-dnx5-valleymetroroanoke",
+          "supersedes_ids": ["o-dnx-radartransit"],
           "name": "Valley Metro Roanoke",
           "associated_feeds": [
             {
               "gtfs_agency_id": "163"
+            },
+            {
+              "feed_onestop_id": "f-dnx-roanoke~va~us~rt"
             }
           ],
           "tags": {
             "us_ntd_id": "30007",
             "wikidata_id": "Q7912141"
           }
-        },
-        {
-          "onestop_id": "o-dnx-radartransit",
-          "name": "Valley Metro",
-          "website": "http://valleymetro.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "139"
-            }
-          ]
         }
       ]
     },
@@ -44,10 +38,7 @@
         "realtime_vehicle_positions": "https://vmgoapp.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://vmgoapp.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://vmgoapp.com/gtfs-rt/alerts"
-      },
-      "associated_feeds": [
-        "f-dnx-roanoke~va~us"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

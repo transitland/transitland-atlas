@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/centralmarylandrta-md-us/centralmarylandrta-md-us.zip"
       },
-      "feed_namespace_id": "o-dqcq-regionaltransportationagencyofcentralmaryland",
       "tags": {
         "gtfs_data_exchange": "regional-transportation-agency-of-central-maryland"
       },
@@ -25,6 +24,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "2"
+            },
+            {
+              "feed_onestop_id": "f-dqcq-regionaltransportationagencyofcentralmaryland~rt"
             }
           ]
         }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -13,7 +13,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-dpzk-barrietransit",
       "tags": {
         "gtfs_data_exchange": "barrie-transit"
       }
@@ -25,11 +24,7 @@
         "realtime_alerts": "http://www.myridebarrie.ca/gtfs/GTFS_ServiceAlerts.pb",
         "realtime_trip_updates": "http://www.myridebarrie.ca/gtfs/GTFS_TripUpdates.pb",
         "realtime_vehicle_positions": "http://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb"
-      },
-      "feed_namespace_id": "o-dpzk-barrietransit",
-      "associated_feeds": [
-        "f-dpzk-barrietransit"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0",
