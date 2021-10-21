@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "https://metrostlouis.org/Transit/google_transit.zip"
       },
-      "feed_namespace_id": "o-9yzg-metrostlouis",
       "license": {
         "url": "https://www.metrostlouis.org/developer-resources/"
       },
@@ -30,9 +29,6 @@
             },
             {
               "feed_onestop_id": "f-saintlouis~rt"
-            },
-            {
-              "feed_onestop_id": "f-saintlouis~green~rt"
             }
           ]
         }
@@ -46,11 +42,6 @@
         "realtime_vehicle_positions": "https://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb",
         "realtime_alerts": "https://www.metrostlouis.org/RealTimeData/StlRealTimeAlerts.pb"
       },
-      "feed_namespace_id": "o-9yzg-metrostlouis",
-      "associated_feeds": [
-        "f-saintlouis~green~rt",
-        "f-9yzg-metrostlouis"
-      ],
       "license": {
         "url": "https://www.metrostlouis.org/developer-resources/"
       }

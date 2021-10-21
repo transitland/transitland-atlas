@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -10,7 +10,6 @@
           "https://lbtransit.box.com/shared/static/a29r6bewfz8xnxjyd9w16orcz4d0zect.zip"
         ]
       },
-      "feed_namespace_id": "o-9q5b-longbeachtransit",
       "tags": {
         "unstable_url": "true",
         "gtfs_data_exchange": "long-beach-transit"
@@ -24,7 +23,12 @@
             "twitter_general": "lbtransit"
           },
           "name": "Long Beach Transit",
-          "short_name": "LBT"
+          "short_name": "LBT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-longbeachtransit~rt"
+            }
+          ]
         }
       ]
     },
@@ -35,10 +39,7 @@
         "gbfs_system_alerts": "http://206.128.158.171/TMGTFSRealTimeWebService/Alert/Alerts.pb",
         "realtime_trip_updates": "http://206.128.158.171/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
         "realtime_vehicle_positions": "http://206.128.158.171/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
-      },
-      "associated_feeds": [
-        "f-9q5b-longbeachtransit"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

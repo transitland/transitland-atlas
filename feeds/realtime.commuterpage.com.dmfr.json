@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "http://realtime.commuterpage.com/rtt/public/utility/gtfs.aspx"
       },
-      "feed_namespace_id": "o-dqcjj-arlingtontransit",
       "tags": {
         "gtfs_data_exchange": "arlington-transit"
       },
@@ -20,11 +19,7 @@
       "id": "f-art~rt",
       "urls": {
         "realtime_trip_updates": "http://realtime.commuterpage.com/rtt/public/utility/gtfsrealtime.aspx/tripupdate"
-      },
-      "feed_namespace_id": "o-dqcjj-arlingtontransit",
-      "associated_feeds": [
-        "f-dqcjj-arlingtontransit"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0",

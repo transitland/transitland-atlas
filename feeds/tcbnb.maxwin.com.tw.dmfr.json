@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -323,6 +323,13 @@
           ]
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-taiwan~rt",
+      "urls": {
+        "realtime_trip_updates": "http://tcgtfs.maxwin.com.tw:18300/realtime-srv/v1.0/routes/101/realtime_pb2"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

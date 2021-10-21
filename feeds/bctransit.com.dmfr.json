@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -13,7 +13,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c29p-bctransit~centralfraservalleytransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-central-fraser-valley-transit-system"
       },
@@ -42,7 +41,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c29r-bctransit~chilliwacktransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-chilliwack-transit-system"
       },
@@ -71,7 +69,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c0z4-bctransit~comoxvalleytransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-comox-valley-transit-system"
       },
@@ -83,6 +80,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "12"
+            },
+            {
+              "feed_onestop_id": "f-c0z4-bctransit~comoxvalleytransitsystem~rt"
             }
           ]
         }
@@ -100,7 +100,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c342-bctransit~kamloopstransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-kamloops-transit-system"
       },
@@ -112,6 +111,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "8"
+            },
+            {
+              "feed_onestop_id": "f-c342-bctransit~kamloopstransitsystem~rt"
             }
           ]
         }
@@ -129,7 +131,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c2g5-bctransit~kelownaregionaltransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-kelowna-regional-transit-system"
       },
@@ -141,6 +142,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "7"
+            },
+            {
+              "feed_onestop_id": "f-c2g5-bctransit~kelownaregionaltransitsystem~rt"
             }
           ]
         }
@@ -158,7 +162,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c0z-bctransit~rdntransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-rdn-transit-system"
       },
@@ -174,7 +177,7 @@
               "gtfs_agency_id": "5"
             },
             {
-              "feed_onestop_id": "f-nanaimo~rt"
+              "feed_onestop_id": "f-c0z-bctransit~rdntransitsystem~rt"
             }
           ]
         }
@@ -192,7 +195,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c38d-bctransit~princegeorgetransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-prince-george-transit-system"
       },
@@ -221,7 +223,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c2b6v-bctransit~squamishtransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-squamish-transit-system"
       },
@@ -233,6 +234,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "4"
+            },
+            {
+              "feed_onestop_id": "f-c2b6v-bctransit~squamishtransitsystem~rt"
             }
           ]
         }
@@ -250,7 +254,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c2b1-bctransit~sunshinecoasttransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-sunshine-coast-transit-system"
       },
@@ -279,7 +282,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c28-bctransit~victoriaregionaltransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-victoria-regional-transit-system"
       },
@@ -291,6 +293,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-c28-bctransit~victoriaregionaltransitsystem~rt"
             }
           ]
         }
@@ -308,7 +313,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c2bt1-bctransit~whistlertransitsystem",
       "tags": {
         "gtfs_data_exchange": "bc-transit-whistler-transit-system"
       },
@@ -320,6 +324,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "3"
+            },
+            {
+              "feed_onestop_id": "f-c2bt-bctransit~whistlertransitsystem~rt"
             }
           ]
         }
@@ -337,7 +344,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c29p-bctransit~fraservalleyexpress",
       "tags": {
         "gtfs_data_exchange": "bc-transit-fraser-valley-express"
       },
@@ -366,7 +372,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c2u-bctransit~westkootenaytransitsystem",
       "operators": [
         {
           "onestop_id": "o-c2u-bctransit~westkootenaytransitsystem",
@@ -393,7 +398,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c2g-bctransit~vernonregionaltransitsystem",
       "operators": [
         {
           "onestop_id": "o-c2g-bctransit~vernonregionaltransitsystem",
@@ -420,7 +424,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c3fpf-bctransit~fortstjohntransitsystem",
       "operators": [
         {
           "onestop_id": "o-c3fpf-bctransit~fortstjohntransitsystem",
@@ -447,7 +450,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c3ft0-bctransit~dawsoncreektransitsystem",
       "operators": [
         {
           "onestop_id": "o-c3ft0-bctransit~dawsoncreektransitsystem",
@@ -474,7 +476,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c2v9t-bctransit~cranbrooktransitsystem",
       "operators": [
         {
           "onestop_id": "o-c2v9t-bctransit~cranbrooktransitsystem",
@@ -501,7 +502,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c28-bctransit~cowichanvalleyregionaltransitsystem",
       "operators": [
         {
           "onestop_id": "o-c28-bctransit~cowichanvalleyregionaltransitsystem",
@@ -528,7 +528,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-c0yu-bctransit~campbellrivertransitsystem",
       "operators": [
         {
           "onestop_id": "o-c0yu-bctransit~campbellrivertransitsystem",
@@ -559,9 +558,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-c0z4-bctransit~comoxvalleytransitsystem~rt",
-      "associated_feeds": [
-        "f-c0z4-bctransit~comoxvalleytransitsystem"
-      ],
       "urls": {
         "realtime_alerts": "http://comox.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
         "realtime_trip_updates": "http://comox.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
@@ -577,9 +573,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-c342-bctransit~kamloopstransitsystem~rt",
-      "associated_feeds": [
-        "f-c342-bctransit~kamloopstransitsystem"
-      ],
       "urls": {
         "realtime_alerts": "http://kamloops.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
         "realtime_trip_updates": "http://kamloops.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
@@ -595,9 +588,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-c2g5-bctransit~kelownaregionaltransitsystem~rt",
-      "associated_feeds": [
-        "f-c2g5-bctransit~kelownaregionaltransitsystem"
-      ],
       "urls": {
         "realtime_alerts": "http://kelowna.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
         "realtime_trip_updates": "http://kelowna.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
@@ -613,9 +603,7 @@
     {
       "spec": "gtfs-rt",
       "id": "f-c0z-bctransit~rdntransitsystem~rt",
-      "associated_feeds": [
-        "f-c0z-bctransit~rdntransitsystem"
-      ],
+      "supersedes_ids": ["f-nanaimo~rt"],
       "urls": {
         "realtime_alerts": "http://nanaimo.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
         "realtime_trip_updates": "http://nanaimo.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
@@ -631,9 +619,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-c2b6v-bctransit~squamishtransitsystem~rt",
-      "associated_feeds": [
-        "f-c2b6v-bctransit~squamishtransitsystem"
-      ],
       "urls": {
         "realtime_alerts": "http://squamish.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
         "realtime_trip_updates": "http://squamish.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
@@ -649,9 +634,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-c28-bctransit~victoriaregionaltransitsystem~rt",
-      "associated_feeds": [
-        "f-c28-bctransit~victoriaregionaltransitsystem"
-      ],
       "urls": {
         "realtime_alerts": "http://victoria.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
         "realtime_trip_updates": "http://victoria.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
@@ -667,9 +649,6 @@
     {
       "spec": "gtfs-rt",
       "id": "f-c2bt-bctransit~whistlertransitsystem~rt",
-      "associated_feeds": [
-        "f-c2bt-bctransit~whistlertransitsystem"
-      ],
       "urls": {
         "realtime_alerts": "http://whistler.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
         "realtime_trip_updates": "http://whistler.mapstrat.com/current/gtfrealtime_TripUpdates.bin",

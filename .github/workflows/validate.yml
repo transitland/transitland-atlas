@@ -20,5 +20,9 @@ jobs:
         wget https://github.com/interline-io/transitland-lib/releases/download/v0.8.6/transitland-linux -O transitland
         chmod a+rx transitland
         sudo mv transitland /usr/local/bin
-    - name: Validate feeds
+    - name: Validate against DMFR schema
+      run: |
+        wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json -O dmfr.schema.json
+        npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
+    - name: Validate against transitland-lib
       run: cd scripts && python validate-feeds.py

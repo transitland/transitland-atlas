@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -13,7 +13,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25f-exo~citchambly~richelieu~carignan",
       "operators": [
         {
           "onestop_id": "o-f25f-exo~citchambly~richelieu~carignan",
@@ -39,7 +38,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f259-exo~citduhaut~saint~laurent",
       "operators": [
         {
           "onestop_id": "o-f259-exo~citduhaut~saint~laurent",
@@ -65,7 +63,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f257-exo~citlaurentides",
       "operators": [
         {
           "onestop_id": "o-f257-exo~citlaurentides",
@@ -91,7 +88,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f256-exo~citlapresquîle",
       "operators": [
         {
           "onestop_id": "o-f256-exo~citlapresquîle",
@@ -117,7 +113,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25d-exo~citlerichelain",
       "operators": [
         {
           "onestop_id": "o-f25d-exo~citlerichelain",
@@ -143,7 +138,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25d-exo~citroussillon",
       "operators": [
         {
           "onestop_id": "o-f25d-exo~citroussillon",
@@ -169,7 +163,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25-exo~citsorel~varennes",
       "operators": [
         {
           "onestop_id": "o-f25-exo~citsorel~varennes",
@@ -195,7 +188,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f253-exo~citsud~ouest",
       "operators": [
         {
           "onestop_id": "o-f253-exo~citsud~ouest",
@@ -222,7 +214,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25g-exo~citvallée~du~richelieu",
       "operators": [
         {
           "onestop_id": "o-f25g-exo~citvallée~du~richelieu",
@@ -248,7 +239,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25u-exo~mrcdelassomption",
       "operators": [
         {
           "onestop_id": "o-f25u-exo~mrcdelassomption",
@@ -274,7 +264,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25s-exo~mrclesmoulinsurbis",
       "operators": [
         {
           "onestop_id": "o-f25s-exo~mrclesmoulinsurbis",
@@ -293,8 +282,7 @@
       "id": "f-f25d-exo~reseaudetransportmetropolitain",
       "urls": {
         "static_current": "https://exo.quebec/xdata/trains/google_transit.zip"
-      },
-      "feed_namespace_id": "o-f25-exo~reseaudetransportmetropolitain"
+      }
     },
     {
       "spec": "gtfs-rt",
@@ -303,11 +291,7 @@
         "realtime_alerts": "http://opendata.rtm.quebec:2539/ServiceGTFSR/Alert.pb?token={RTM_API_KEY}",
         "realtime_trip_updates": "http://opendata.rtm.quebec:2539/ServiceGTFSR/TripUpdate.pb?token={RTM_API_KEY}",
         "realtime_vehicle_positions": "http://opendata.rtm.quebec:2539/ServiceGTFSR/VehiclePosition.pb?token={RTM_API_KEY}"
-      },
-      "feed_namespace_id": "o-f25-exo~reseaudetransportmetropolitain",
-      "associated_feeds": [
-        "f-f25d-exo~reseaudetransportmetropolitain"
-      ]
+      }
     },
     {
       "spec": "gtfs",
@@ -321,7 +305,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-f25g-exo~omitsainte~julie",
       "operators": [
         {
           "onestop_id": "o-f25g-exo~omitsainte~julie",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -9,19 +9,14 @@
       },
       "tags": {
         "manual_import": "true"
-      },
-      "feed_namespace_id": "o-udt-Петербургский~метрополитен"
+      }
     },
     {
       "spec": "gtfs-rt",
       "id": "f-saintpetersburg~rt",
       "urls": {
         "realtime_vehicle_positions": "http://transport.orgp.spb.ru/Portal/transport/internalapi/gtfs/realtime/vehicle"
-      },
-      "feed_namespace_id": "o-udt-Петербургский~метрополитен",
-      "associated_feeds": [
-        "f-udt-Петербургский~метрополитен"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0",

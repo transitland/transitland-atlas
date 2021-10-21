@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -122,7 +122,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "feed_namespace_id": "o-dr79-cttransit~stamford",
       "operators": [
         {
           "onestop_id": "o-dr79-cttransit~stamford",
@@ -143,10 +142,6 @@
         "realtime_trip_updates": "http://65.213.12.244/realtimefeed/tripupdate/tripupdates.pb",
         "realtime_vehicle_positions": "http://65.213.12.244/realtimefeed/vehicle/vehiclepositions.pb"
       },
-      "feed_namespace_id": "o-drk-cttransit~hartford",
-      "associated_feeds": [
-        "f-drk-cttransit~hartford"
-      ],
       "tags": {
         "notes": "Possibly blocking Amazon/EC2 address space."
       }

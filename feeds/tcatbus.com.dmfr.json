@@ -1,13 +1,12 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
       "id": "f-dr997-tompkinsconsolidatedareatransit",
       "urls": {
         "static_current": "https://s3.amazonaws.com/tcat-gtfs/tcat-ny-us.zip"
-      },
-      "feed_namespace_id": "o-dr997-tompkinsconsolidatedareatransit"
+      }
     },
     {
       "spec": "gtfs-rt",
@@ -16,11 +15,7 @@
         "realtime_trip_updates": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=TripUpdate",
         "realtime_vehicle_positions": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
         "realtime_alerts": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=Alert"
-      },
-      "feed_namespace_id": "o-dr997-tompkinsconsolidatedareatransit",
-      "associated_feeds": [
-        "f-dr997-tompkinsconsolidatedareatransit"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs-rt",
@@ -7,11 +7,7 @@
       "urls": {
         "realtime_trip_updates": "http://realtimevotran.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=TripUpdate",
         "realtime_vehicle_positions": "http://realtimevotran.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition"
-      },
-      "feed_namespace_id": "o-djn-votran",
-      "associated_feeds": [
-        "f-djn-votran"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

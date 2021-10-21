@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "spec": "gtfs",
@@ -7,7 +7,6 @@
       "urls": {
         "static_current": "http://rt.pasadenatransit.net/rtt/public/utility/gtfs.aspx"
       },
-      "feed_namespace_id": "o-9q5f-pasadenatransit",
       "license": {
         "url": "https://www.cityofpasadena.net/pasadena-transit/real-time-applications/"
       },
@@ -24,6 +23,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-pasadenatransit~rt"
             }
           ]
         }
@@ -35,10 +37,7 @@
       "urls": {
         "realtime_trip_updates": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/alert"
-      },
-      "associated_feeds": [
-        "f-9q5f-pasadenatransit"
-      ]
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
