@@ -537,9 +537,6 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/asheville-nc-us/asheville-nc-us.zip"
       },
-      "associated_feeds": [
-        "f-dnm6-asheville~nc~us~alerts", "f-dnm6-asheville~nc~us~rt"
-      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -562,7 +559,13 @@
           "website": "http://www.ashevillenc.gov/Departments/Transit.aspx",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "190"
+              "gtfs_agency_id": "190",
+            },
+            {
+              "onestop_id": "f-dnm6-asheville~nc~us~alerts"
+            },
+            {
+              "onestop_id": "f-dnm6-asheville~nc~us~rt"
             }
           ]
         }
@@ -574,8 +577,17 @@
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/asheville-nc-us/service_alerts.proto"
       },
-      "associated_feeds": [
-        "f-dnm6-asheville~nc~us", "f-dnm6-asheville~nc~us~rt"
+      "operators": [
+        {
+          "associated_feeds": [
+            {
+              "onestop_id": "f-dnm6-asheville~nc~us"
+            },
+            {
+              "onestop_id": "f-dnm6-asheville~nc~us~rt"
+            }
+          ]
+        }
       ]
     },
     {
