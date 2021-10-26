@@ -187,13 +187,18 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/banning-ca-us/banning-ca-us.zip"
       },
-      "associated_feeds": [
-        "f-banning~pass~transit~rt", "f-banning~pass~transit~rt~alerts"
-      ],
       "operators": [
         {
           "onestop_id": "o-9qhb-cityofbanningtransit",
-          "name": "City of Banning Transit"
+          "name": "City of Banning Transit",
+          "associated_feeds": [
+            {
+              "onestop_id": "f-banning~pass~transit~rt"
+            },
+            {
+              "onestop_id": "f-banning~pass~transit~rt~alerts"
+            }
+          ]
         }
       ]
     },
@@ -202,10 +207,7 @@
       "id": "f-banning~pass~transit~rt~alerts",
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/banning-ca-us/service_alerts.proto"
-      },
-      "associated_feeds": [
-        "f-banning~pass~transit", "f-banning~pass~transit~rt"
-      ]
+      }
     },
     {
       "spec": "gtfs",
