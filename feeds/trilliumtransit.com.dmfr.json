@@ -559,7 +559,7 @@
           "website": "http://www.ashevillenc.gov/Departments/Transit.aspx",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "190",
+              "gtfs_agency_id": "190"
             },
             {
               "onestop_id": "f-dnm6-asheville~nc~us~alerts"
@@ -579,6 +579,8 @@
       },
       "operators": [
         {
+          "onestop_id": "o-dnm6-ashevilleredefinestransit",
+          "name": "Asheville Redefines Transit",
           "associated_feeds": [
             {
               "onestop_id": "f-dnm6-asheville~nc~us"
@@ -1271,9 +1273,6 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/durham-area-transit-authority-nc-us/durham-area-transit-authority-nc-us.zip"
       },
-      "associated_feeds": [
-        "f-dnru-durham~area~transit~authority~nc~us~rt"
-      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -1292,7 +1291,12 @@
             "wikidata_id": "Q5316462",
             "twitter_general": "godurhamtransit"
           },
-          "name": "GoDurham"
+          "name": "GoDurham",
+          "associated_feeds": [
+            {
+              "onestop_id": "f-dnru-durham~area~transit~authority~nc~us~rt"
+            }
+          ]
         }
       ]
     },
@@ -1334,9 +1338,6 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/easternsierra-ca-us/easternsierra-ca-us.zip"
       },
-      "associated_feeds": [
-        "f-9q-easternsierra~ca~us~rt"
-      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -1360,6 +1361,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "78"
+            },
+            {
+              "onestop_id": "f-9q-easternsierra~ca~us~rt"
             }
           ]
         }
@@ -1787,9 +1791,6 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/laketransit-ca-us/laketransit-ca-us.zip"
       },
-      "associated_feeds": [
-        "f-9qb-laketransit~ca~us~rt"
-      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -1812,6 +1813,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "7"
+            },
+            {
+              "onestop_id": "f-9qb-laketransit~ca~us~rt"
             }
           ]
         }
@@ -2312,9 +2316,6 @@
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/redding-ca-us/redding-ca-us.zip"
       },
-      "associated_feeds": [
-        "f-9r0-redding~ca~us~rt", "f-9r0-redding~ca~us~rt~alerts"
-      ],
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
@@ -2339,6 +2340,12 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "25"
+            },
+            {
+              "onestop_id": "f-9r0-redding~ca~us~rt"
+            },
+            {
+              "onestop_id": "f-9r0-redding~ca~us~rt~alerts"
             }
           ]
         }
@@ -2350,8 +2357,29 @@
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/redding-ca-us/service_alerts.proto"
       },
-      "associated_feeds": [
-        "f-9r0-redding~ca~us", "f-9r0-redding~ca~us~rt"
+      "operators": [
+        {
+          "onestop_id": "o-9r0-reddingareabusauthority",
+          "tags": {
+            "us_ntd_id": "90093",
+            "wikidata_id": "Q7305617",
+            "twitter_general": "cityofredding"
+          },
+          "name": "Redding Area Bus Authority",
+          "short_name": "RABA",
+          "website": "http://www.rabaride.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "25"
+            },
+            {
+              "onestop_id": "f-9r0-redding~ca~us~rt"
+            },
+            {
+              "onestop_id": "f-9r0-redding~ca~us~rt~alerts"
+            }
+          ]
+        }
       ]
     },
     {
