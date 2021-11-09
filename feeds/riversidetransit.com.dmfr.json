@@ -19,9 +19,23 @@
             "twitter_general": "rtabus"
           },
           "name": "Riverside Transit Agency",
-          "short_name": "RTA"
+          "short_name": "RTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rta~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-rta~rt",
+      "urls": {
+        "realtime_alerts": "https://rtabus.com/gtfsrt/alerts",
+        "realtime_trip_updates": "https://rtabus.com/gtfsrt/trips",
+        "realtime_vehicle_positions": "https://rtabus.com/gtfsrt/vehicles"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
