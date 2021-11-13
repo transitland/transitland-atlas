@@ -1,0 +1,57 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dr5r-nycferry",
+      "urls": {
+        "static_current": "http://nycferry.connexionz.net/rtt/public/utility/gtfs.aspx"
+      },
+      "license": {
+        "url": "https://www.ferry.nyc/developer-tools/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr5r-nycferry",
+          "tags": {
+            "us_ntd_id": "22930",
+            "wikidata_id": "Q26987418",
+            "twitter_general": "nycferry"
+          },
+          "name": "NYC Ferry",
+          "website": "https://www.ferry.nyc/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-9q6-sanluisobisporegionaltransitauthority~pasoroblesexpress~so",
+      "urls": {
+        "static_current": "http://slo.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/slorta_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q6-sanluisobisporegionaltransitauthority",
+          "supersedes_ids": ["o-9q64t-pasoroblesexpress", "o-9q60-avilatrolley", "o-9q4p-socotransit"],
+          "tags": {
+            "us_ntd_id": "90206",
+            "wikidata_id": "Q16984346",
+            "twitter_general": "slortatransit"
+          },
+          "name": "San Luis Obispo Regional Transit Authority",
+          "short_name": "SLORTA",
+          "website": "http://www.slorta.org"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
