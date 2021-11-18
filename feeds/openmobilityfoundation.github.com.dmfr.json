@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
   "feeds": [
     {
       "id": "f-jump~mds",
@@ -177,7 +177,7 @@
       "id": "f-superpedestrian~mds",
       "spec": "mds",
       "urls": {
-        "mds_provider": "https://wrangler-mds-production.herokuapp.com/mds"
+        "mds_provider": "https://mds.linkyour.city/mds"
       }
     },
     {
@@ -221,6 +221,22 @@
       "urls": {
         "gbfs_auto_discovery": "https://external.share-now.com/api/rental/mds/gbfs/",
         "mds_provider": "https://external.share-now.com/api/rental/mds/"
+      }
+    },
+    {
+      "id": "f-boaz~bikes~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbsf.movatic.co/en/1.1/576347857979998215",
+        "mds_provider": "https://mds.movatic.co/"
+      }
+    },
+    {
+      "id": "f-veoride~inc.~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://cluster-prod.veoride.com/api/shares/gbfs",
+        "mds_provider": "https://cluster-prod.veoride.com/api/shares/mds"
       }
     }
   ],

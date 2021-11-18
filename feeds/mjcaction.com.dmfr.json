@@ -133,80 +133,6 @@
     },
     {
       "spec": "gtfs",
-      "id": "f-9q6-sanluisobisporegionaltransitauthority~pasoroblesexpress~so",
-      "urls": {
-        "static_historic": [
-          "http://mjcaction.com/MJC_GTFS_Public/slorta_google_transit.zip"
-        ]
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q4p-socotransit",
-          "tags": {
-            "us_ntd_id": "90206",
-            "wikidata_id": "Q16984346",
-            "twitter_general": "slortatransit"
-          },
-          "name": "SoCoTransit - South County Transit",
-          "short_name": "SCT",
-          "website": "http://www.slorta.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "10215235"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9q60-avilatrolley",
-          "name": "Avila Trolley",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "avila"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "90206",
-            "wikidata_id": "Q16984346",
-            "twitter_general": "slortatransit"
-          }
-        },
-        {
-          "onestop_id": "o-9q64t-pasoroblesexpress",
-          "tags": {
-            "managed_by": "mjc",
-            "us_ntd_id": "90206"
-          },
-          "name": "Paso Robles Express",
-          "website": "http://www.slorta.org/schedules-fares/paso-express/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "10184575"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9q6-sanluisobisporegionaltransitauthority",
-          "tags": {
-            "us_ntd_id": "90206",
-            "wikidata_id": "Q16984346",
-            "twitter_general": "slortatransit"
-          },
-          "name": "San Luis Obispo Regional Transit Authority",
-          "short_name": "RTA",
-          "website": "http://www.slorta.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "slorta"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9q611-morrobaytransit",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/morrobay_google_transit.zip"
@@ -686,6 +612,24 @@
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/cb_mtnexpress_google_transit.zip"
       }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-9wh-riometroregionaltransitdistrict",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/nmrailrunner_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wh-riometroregionaltransitdistrict",
+          "tags": {
+            "us_ntd_id": "60111",
+            "wikidata_id": "Q11324955",
+            "twitter_service_alerts": "RioMetroAlerts"
+          },
+          "name": "Rio Metro Regional Transit District"
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
