@@ -1,0 +1,26 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-u2ed-wienerlinien",
+      "urls": {
+        "static_current": "http://www.wienerlinien.at/ogd_realtime/doku/ogd/gtfs/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2ed-wienerlinien",
+          "name": "Wiener Linien",
+          "website": "https://www.wienerlinien.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ],
+      "languages": ["de-AT"]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-2.0"
+}
