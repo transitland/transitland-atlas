@@ -14,9 +14,6 @@
         "create_derived_product": "yes",
         "redistribute": "yes"
       },
-      "tags": {
-        "unstable_url": "yes"
-      },
       "operators": [
         {
           "onestop_id": "o-djn-centralfloridaregionaltransitauthority",
@@ -31,10 +28,21 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "CFRTA"
+            },
+            {
+              "feed_onestop_id": "f-djn-centralfloridaregionaltransitauthority~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-djn-centralfloridaregionaltransitauthority~rt",
+      "urls": {
+        "realtime_trip_updates": "http://gtfsrt.golynx.com/gtfsrt/GTFS_TripUpdates",
+        "realtime_vehicle_positions": "http://gtfsrt.golynx.com/gtfsrt/GTFS_VehiclePositions"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
