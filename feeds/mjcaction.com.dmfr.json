@@ -158,9 +158,10 @@
       "spec": "gtfs",
       "id": "f-9q9hu-cityofpaloaltoshuttle",
       "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/cityofpaloalto_google_transit.zip"
+        "static_historic": ["http://mjcaction.com/MJC_GTFS_Public/cityofpaloalto_google_transit.zip"]
       },
       "tags": {
+        "inactive": "true",
         "managed_by": "mjc"
       },
       "operators": [
@@ -268,32 +269,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "psexpress"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c24-peopleforpeople",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/pfp_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c24-peopleforpeople",
-          "tags": {
-            "us_ntd_id": "0R03-00287"
-          },
-          "name": "People for People",
-          "short_name": "Community Connector",
-          "website": "http://www.pfp.org/pfp/Transportation/CommunityConnector.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "pfp"
             }
           ]
         }
@@ -617,7 +592,8 @@
       "spec": "gtfs",
       "id": "f-9wh-riometroregionaltransitdistrict",
       "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/nmrailrunner_google_transit.zip"
+        "static_current": "https://www.riometro.org/DocumentCenter/View/2195/nmrailrunner_google_transit",
+        "static_historic": ["http://mjcaction.com/MJC_GTFS_Public/nmrailrunner_google_transit.zip"]
       },
       "operators": [
         {
