@@ -31,7 +31,24 @@
       "spec": "gtfs-rt",
       "id": "f-sf~bay~area~rgrt",
       "urls": {
-        // TODO
+        "realtime_alerts": "https://api.511.org/Transit/servicealerts?&agency=RG",
+        "realtime_trip_updates": "https://api.511.org/Transit/TripUpdates?&agency=RG",
+        "realtime_vehicle_positions": "https://api.511.org/Transit/VehiclePositions?&agency=RG"
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribute": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "info_url": "https://511.org/open-data/token",
+        "param_name": "api_key"
       }
     },
     // TODO: operator records for all Bay Area agencies
