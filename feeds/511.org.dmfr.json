@@ -17,6 +17,11 @@
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
       },
+      "authorization": {
+        "type": "query_param",
+        "info_url": "https://511.org/open-data/token",
+        "param_name": "api_key"
+      },
       "tags": {
         "managed_by": "mtc-ca",
         "manual_import": "true"
@@ -27,8 +32,7 @@
       "id": "f-9q8zm-blue~goldfleet",
       "urls": {
         "static_historic": ["http://api.511.org/transit/datafeeds?operator_id=BG"]
-      },
-      
+      },      
       "authorization": {
         "type": "query_param",
         "info_url": "https://511.org/open-data/token",
