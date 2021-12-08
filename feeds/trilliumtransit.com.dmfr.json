@@ -1446,28 +1446,10 @@
         "redistribute": "yes"
       },
       "tags": {
-        "feed_id": "fairfield-ca-us",
         "managed_by": "trillium",
-        "gtfs_data_exchange": "fairfield-and-suisun-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc-fairfieldandsuisuntransit",
-          "tags": {
-            "us_ntd_id": "90092",
-            "wikidata_id": "Q5430409",
-            "twitter_general": "fast_transit"
-          },
-          "name": "Fairfield and Suisun Transit",
-          "short_name": "FAST",
-          "website": "http://www.fasttransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "36"
-            }
-          ]
-        }
-      ]
+        "gtfs_data_exchange": "fairfield-and-suisun-transit",
+        "exclude_from_global_query": "true"
+      }
     },
     {
       "spec": "gtfs",
@@ -2192,26 +2174,9 @@
         "redistribute": "yes"
       },
       "tags": {
-        "feed_id": "petalumatransit-petaluma-ca-us",
+        "exclude_from_global_query": "true",
         "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qbc9-petalumatransit",
-          "tags": {
-            "us_ntd_id": "90213",
-            "wikidata_id": "Q7171668",
-            "twitter_general": "petalumatransit"
-          },
-          "name": "Petaluma Transit",
-          "website": "http://cityofpetaluma.net/pubworks/transit-sub.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "267"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "spec": "gtfs",
@@ -2554,22 +2519,10 @@
         "redistribute": "yes"
       },
       "tags": {
-        "feed_id": "soltrans-ca-us",
+        "exclude_from_global_query": "true",
         "managed_by": "trillium",
         "gtfs_data_exchange": "soltrans"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc0-soltrans",
-          "tags": {
-            "us_ntd_id": "90232",
-            "wikidata_id": "Q16984743",
-            "twitter_general": "SolTransRide"
-          },
-          "name": "Solano County Transit",
-          "short_name": "SolTrans"
-        }
-      ]
+      }
     },
     {
       "spec": "gtfs",
@@ -2583,27 +2536,9 @@
         "redistribute": "yes"
       },
       "tags": {
-        "feed_id": "sonomacounty-ca-us",
         "managed_by": "trillium",
-        "gtfs_data_exchange": "cloverdale-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qb-sonomacountytransit",
-          "tags": {
-            "us_ntd_id": "90089",
-            "wikidata_id": "Q7562177",
-            "twitter_general": "SoCo_TPW"
-          },
-          "name": "Sonoma County Transit",
-          "website": "http://www.sctransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "175"
-            }
-          ]
-        }
-      ]
+        "exclude_from_global_query": "true"
+      }
     },
     {
       "spec": "gtfs",
@@ -3068,26 +3003,9 @@
         "redistribute": "yes"
       },
       "tags": {
-        "feed_id": "westcat-ca-us",
+        "exclude_from_global_query": "true",
         "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc-westcatwesterncontracosta",
-          "tags": {
-            "us_ntd_id": "90159",
-            "wikidata_id": "Q7984179",
-            "twitter_general": "wccta"
-          },
-          "name": "WestCat (Western Contra Costa)",
-          "website": "http://www.westcat.org/index.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "392"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "spec": "gtfs",
@@ -3656,25 +3574,9 @@
       },
       "tags": {
         "managed_by": "trillium",
+        "exclude_from_global_query": "true",
         "gtfs_data_exchange": "rio-vista-delta-breeze"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc3-riovistadeltabreeze",
-          "tags": {
-            "us_ntd_id": "9R02-91014",
-            "wikidata_id": "Q7335361",
-            "twitter_general": "cityofriovista"
-          },
-          "name": "Rio Vista Delta Breeze",
-          "website": "http://www.riovistacity.com/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RV"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "spec": "gtfs",
@@ -3991,25 +3893,9 @@
         "static_current": "http://data.trilliumtransit.com/gtfs/emerygoround-ca-us/emerygoround-ca-us.zip"
       },
       "tags": {
-        "feed_id": "emerygoround-ca-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9p3-emerygo~round",
-          "tags": {
-            "wikidata_id": "Q5370986",
-            "twitter_general": "emeryvilleca"
-          },
-          "name": "Emery Go-Round",
-          "website": "http://www.emerygoround.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "573"
-            }
-          ]
-        }
-      ]
+        "managed_by": "trillium",
+        "exclude_from_global_query": "true"
+      }
     },
     {
       "spec": "gtfs",
@@ -5447,24 +5333,8 @@
         "static_current": "http://data.trilliumtransit.com/gtfs/commute-ca-us/commute-ca-us.zip"
       },
       "tags": {
-        "feed_id": "commute-ca-us"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9j-commuteorgshuttles",
-          "tags": {
-            "wikidata_id": "Q7162971",
-            "twitter_general": "SMCountyCommute"
-          },
-          "name": "Commute.org Shuttles",
-          "website": "http://www.commute.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "936"
-            }
-          ]
-        }
-      ]
+        "exclude_from_global_query": "true"
+      }
     },
     {
       "spec": "gtfs",
@@ -7417,6 +7287,66 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/snoqualmie-wa-us/snoqualmie-wa-us.zip"
       }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-9q8zm-blue~goldfleet",
+      "supersedes_ids": [
+        "f-9q8zn-alcatrazhornblowerferry",
+        "f-9q8zmw-angelislandtiburonferry"
+      ],
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/bayareaferries-ca-us/bayareaferries-ca-us.zip",
+        "static_historic": [
+          "http://api.511.org/transit/datafeeds?operator_id=BG",
+          "http://api.511.org/transit/datafeeds?operator_id=HF",
+          "http://api.511.org/transit/datafeeds?operator_id=AT"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "blue-gold-fleet"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q8zm-blue~goldfleet",
+          "tags": {
+            "omd_provider_id": "blue-gold-fleet",
+            "wikidata_id": "Q4928780",
+            "twitter_general": "bgfleet"
+          },
+          "name": "Blue & Gold Fleet",
+          "website": "http://www.blueandgoldfleet.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "901"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9q8zn-alcatrazhornblowerferry",
+          "name": "Alcatraz Hornblower Ferry",
+          "website": "http://www.alcatrazcruises.com/index.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "899"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9q8zmw-angelislandtiburonferry",
+          "tags": {
+            "wikidata_id": "Q4762195",
+            "twitter_general": "AITFerry"
+          },
+          "name": "Angel Island Tiburon Ferry",
+          "website": "http://www.angelislandferry.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "897"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
