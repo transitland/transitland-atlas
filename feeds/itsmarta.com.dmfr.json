@@ -8,7 +8,6 @@
         "static_current": "https://www.itsmarta.com/google_transit_feed/google_transit.zip"
       },
       "tags": {
-        "unstable_url": "true",
         "gtfs_data_exchange": "metropolitan-atlanta-rapid-transit-authority"
       },
       "operators": [
@@ -28,10 +27,21 @@
             {
               "feed_onestop_id": "f-dnh-marta",
               "gtfs_agency_id": "MARTA"
+            },
+            {
+              "feed_onestop_id": "f-dnh-marta~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-dnh-marta~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.itsmarta.com/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb",
+        "realtime_trip_updates": "https://gtfs-rt.itsmarta.com/TMGTFSRealTimeWebService/tripupdate/tripupdates.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
