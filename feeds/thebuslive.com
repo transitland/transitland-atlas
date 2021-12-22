@@ -1,0 +1,48 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-9qd-mercedthebus~ca~us",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/mercedthebus-ca-us/mercedthebus-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "tags": {
+        "feed_id": "mercedthebus-ca-us",
+        "managed_by": "trillium",
+        "gtfs_data_exchange": "the-bus"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qd-thebus",
+          "tags": {
+            "us_ntd_id": "90173",
+            "wikidata_id": "Q6818067",
+            "twitter_general": "mercedthebus"
+          },
+          "name": "Merced County Transit",
+          "short_name": "The Bus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9qd-mercedthebus~ca~us~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9qd-mercedthebus~ca~us~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://thebuslive.com/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://thebuslive.com/gtfs-rt/alerts"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
