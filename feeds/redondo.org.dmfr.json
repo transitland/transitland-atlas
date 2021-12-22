@@ -22,6 +22,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "BCT"
+            },
+            {
+              "feed_onestop_id": "f-redondo~beach~cities~transit~rt"
             }
           ],
           "tags": {
@@ -31,6 +34,15 @@
           }
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-redondo~beach~cities~transit~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://redondobeachbct.com/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://redondobeachbct.com/gtfs-rt/alerts",
+        "realtime_trip_updates": "https://redondobeachbct.com/gtfs-rt/tripupdates"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
