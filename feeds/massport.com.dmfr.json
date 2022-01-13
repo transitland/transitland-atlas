@@ -1,57 +1,6 @@
 {
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
-    {
-      "spec": "gtfs",
-      "id": "f-drt3-909983",
-      "urls": {
-        "static_current": "https://www.massport.com/media/ptydscvm/massport_gtfs-1013-4.zip",
-        "static_historic": [
-          "http://data.trilliumtransit.com/gtfs/loganexpress-ma-us/loganexpress-ma-us.zip"
-        ]
-      },
-      "license": {
-        "url": "http://www.massport.com/media/1651/massportdatalicenseagreement.pdf"
-      },
-      "tags": {
-        "feed_id": "909_983"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drt3pb-massport",
-          "name": "Massport",
-          "website": "http://www.massport.com/logan-airport/to-from-logan/transportation-options/on-airport-shuttle/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "983"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-drt3-massport",
-          "name": "MASSPORT",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ],
-          "tags": {
-            "wikidata_id": "Q2777980",
-            "twitter_general": "Massport"
-          }
-        },
-        {
-          "onestop_id": "o-drt3-loganexpress",
-          "name": "Logan Express",
-          "website": "http://www.massport.com/logan-airport/to-from-logan/transportation-options/logan-express/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "909"
-            }
-          ]
-        }
-      ]
-    }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
