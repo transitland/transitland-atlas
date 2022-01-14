@@ -905,9 +905,27 @@
     {
       "spec": "gtfs",
       "id": "f-tracy~tracer",
+      "supersedes_ids": ["f-tracy~ca~us"],
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/tracy-tracer.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q9ws-tracer",
+          "name": "City of Tracy",
+          "short_name": "TRACER",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1490"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90197",
+            "wikidata_id": "Q7831176",
+            "twitter_general": "cityoftracy"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
