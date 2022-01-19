@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-greensboro~nc~us",
+      "urls": {
+        "static_current": "https://app.mecatran.com/urb/ws/feed/c2l0ZT1ncmVlbnNib3JvO2NsaWVudD1zZWxmO2V4cGlyZT07dHlwZT1ndGZzO2tleT00ZDQ3MDYyMjNiNjI3ZjFmMTU1YzFiNGIxNTY0Mzg0ZDFjNzYyOTQy"
+      },
+      "license": {
+        "url": "",
+        "use_without_attribution": "unknown",
+        "create_derived_product": "unknown",
+        "redistribute": "unknown"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-dnrm-greensborotransit",
+      "name": "Greensboro Transit Authority",
+      "short_name": "GTA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-greensboro~nc~us"
+        }
+      ]
+    }
+  ]
+}
