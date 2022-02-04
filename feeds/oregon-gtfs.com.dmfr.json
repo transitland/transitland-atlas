@@ -1356,7 +1356,32 @@
       "id": "f-clackamascounty~or~us",
       "urls": {
         "static_current": "http://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip"
-      }
+      },
+    {
+      "spec": "gtfs",
+      "id": "f-9px-currypublictransit",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
+      },
+      "tags": {
+        "managed_by": "Trillium Solutions",
+        "gtfs_data_exchange": "curry-public-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9px-currypublictransit",
+          "tags": {
+            "us_ntd_id": "0R02-00308"
+          },
+          "name": "Curry Public Transit",
+          "website": "http://www.currypublictransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "curry"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
