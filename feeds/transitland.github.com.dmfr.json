@@ -616,21 +616,6 @@
     },
     {
       "spec": "gtfs",
-      "id": "f-greensboro~nc~us",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/greensboro-nc-us.zip"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
-        "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
       "id": "f-uga~ga~us",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/uga-ga-us.zip"
@@ -898,6 +883,31 @@
           "tags": {
             "wikidata_id": "Q935072",
             "twitter_general": "lvmonorail"
+          }
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-tracy~tracer",
+      "supersedes_ids": ["f-tracy~ca~us"],
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/tracy-tracer.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q9ws-tracer",
+          "name": "City of Tracy",
+          "short_name": "TRACER",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1490"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90197",
+            "wikidata_id": "Q7831176",
+            "twitter_general": "cityoftracy"
           }
         }
       ]

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-c29-communitytransit",
+      "urls": {
+        "static_current": "https://www.communitytransit.org/docs/default-source/open-data/gtfs/current.zip?sfvrsn=1968d0e2_118",
+        "static_historic": ["http://developer.onebusaway.org/tmp/sound/gtfs/modified/29_gtfs.zip"]
+      },
+      "license": {
+        "url": "https://www.communitytransit.org/opendata"
+      },
+      "tags": {
+        "gtfs_data_exchange": "community-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c29-communitytransit",
+          "tags": {
+            "us_ntd_id": "00003",
+            "wikidata_id": "Q5154898",
+            "twitter_general": "MyCommTrans"
+          },
+          "name": "Community Transit",
+          "short_name": "CT",
+          "website": "http://www.communitytransit.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "29"
+            },
+            {
+              "feed_onestop_id": "f-c29-communitytransit~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-c29-communitytransit~rt",
+      "urls": {
+        "realtime_alerts": "http://s3.amazonaws.com/commtrans-realtime-prod/alerts.pb",
+        "realtime_trip_updates": "http://s3.amazonaws.com/commtrans-realtime-prod/tripupdates.pb",
+        "realtime_vehicle_positions": "http://s3.amazonaws.com/commtrans-realtime-prod/vehiclepositions.pb"
+      },
+      "license": {
+        "url": "https://www.communitytransit.org/opendata"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

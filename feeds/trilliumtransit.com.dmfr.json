@@ -5822,29 +5822,6 @@
     },
     {
       "spec": "gtfs",
-      "id": "f-tracy~ca~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/tracy-ca-us/tracy-ca-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9ws-tracer",
-          "name": "TRACER",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1490"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "90197",
-            "wikidata_id": "Q7831176",
-            "twitter_general": "cityoftracy"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-cityofdekalb~il~us",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/cityofdekalb-il-us/cityofdekalb-il-us.zip"
@@ -7269,7 +7246,7 @@
       "spec": "gtfs",
       "id": "f-tulare~tcat",
       "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/tcat-flex-ca-us/tcat-flex-ca-us.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/tcat-flex-ca-us/tcat-ca-us.zip"
       }
     },
     {
@@ -7361,7 +7338,67 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/snoqualmie-wa-us/snoqualmie-wa-us.zip"
       }
-    }
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-c28-islandtransit",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/islandtransit-wa-us/islandtransit-wa-us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-islandtransit",
+          "tags": {
+            "us_ntd_id": "0R03-00298",
+            "wikidata_id": "Q16980701"
+          },
+          "name": "Island Transit",
+          "website": "http://www.islandtransit.org/"
+        }
+      ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-drt3-909983",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/massport-ma-us/massport-ma-us.zip",
+        "static_historic": [
+          "https://www.massport.com/media/ptydscvm/massport_gtfs-1013-4.zip"
+        ]
+      },
+      "license": {
+        "url": "http://www.massport.com/media/1651/massportdatalicenseagreement.pdf"
+      },
+      "tags": {
+        "feed_id": "1710"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drt3pb-massport",
+          "name": "Massport",
+          "website": "http://www.massport.com/logan-airport/to-from-logan/transportation-options/on-airport-shuttle/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2272"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2777980",
+            "twitter_general": "Massport"
+          }
+        },
+        {
+          "onestop_id": "o-drt3-loganexpress",
+          "name": "Logan Express",
+          "website": "http://www.massport.com/logan-airport/to-from-logan/transportation-options/logan-express/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2274"
+            }
+          ]
+        }
+      ]
+    }    
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
