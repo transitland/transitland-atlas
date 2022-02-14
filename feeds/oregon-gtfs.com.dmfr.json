@@ -904,11 +904,43 @@
         }
       ]
     },
-    {
+  {
+	"spec": "gtfs",
+    "id": "f-c0p-sunsetempiretransportationdistrict",
+    "urls": {
+	"static_current": "https://oregon-gtfs.com/gtfs_data/clatsopcounty-or-us/clatsopcounty-or-us.zip"
+      },
+          "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+           "tags": {
+        "feed_id": "clatsopcounty-or-us",
+        "managed_by": "trillium"
+      },
+      "operators":
+      {
+          "onestop_id": "o-c0p-sunsetempiretransportationdistrict",
+          "tags": {
+            "us_ntd_id": "0R02-00331",
+            "wikidata_id": "Q7641258"
+          },
+          "name": "Sunset Empire Transportation District",
+          "short_name": "The Bus",
+          "website": "http://www.nworegontransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "253"
+            }
+           ]
+    	}
+    },
+     {
       "spec": "gtfs",
-      "id": "f-c20-tillamook~or~us",
+      "id": "f-c20-columbiacountyrider",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/tillamook-or-us/tillamook-or-us.zip"
+        "static_current": "https://oregon-gtfs.com/gtfs_data/columbiacounty-or-us/columbiacounty-or-us.zip"
       },
       "license": {
         "use_without_attribution": "yes",
@@ -916,23 +948,40 @@
         "redistribute": "yes"
       },
       "tags": {
-        "feed_id": "tillamook-or-us",
+        "feed_id": "columbiacounty-or-us",
         "managed_by": "trillium"
-      },
-      "operators": [
+      },   
+          "operators": [
         {
           "onestop_id": "o-c20-columbiacountyrider",
           "tags": {
             "us_ntd_id": "0R02-00375"
           },
           "name": "Columbia County Rider",
-          "website": "http://www.columbiacountyrider.com/?referrer=gtfs",
+          "short_name": "CCR",
+          "website": "http://www.nworegontransit.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "57"
             }
           ]
         },
+    {
+      "spec": "gtfs",
+      "id": "f-c20-tillamook~or~us",
+      "urls": {
+        "static_current": "https://oregon-gtfs.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribute": "yes"
+      },
+      "tags": {
+        "feed_id": "tillamookcounty-or-us",
+        "managed_by": "trillium"
+      },
+      "operators": [
         {
           "onestop_id": "o-c0p-tillamookcountytransportationdistrict",
           "tags": {
@@ -951,20 +1000,6 @@
             },
             {
               "feed_onstop_id": "f-c20-tillamook~or~us~rt~alerts"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c0p-sunsetempiretransportationdistrict",
-          "tags": {
-            "us_ntd_id": "0R02-00331",
-            "wikidata_id": "Q7641258"
-          },
-          "name": "Sunset Empire Transportation District",
-          "website": "http://www.ridethebus.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "253"
             }
           ]
         }
