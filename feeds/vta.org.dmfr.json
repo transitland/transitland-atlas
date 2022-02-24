@@ -17,10 +17,27 @@
             "twitter_service_alerts": "VTAservice"
           },
           "name": "Santa Clara Valley Transportation Authority",
-          "short_name": "VTA"
+          "short_name": "VTA",
+          "website": "https://www.vta.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "o-9q9-vta"
+            },
+            {
+              "feed_onestop_id": "f-vta~rt"
+            }
+          ]
         }
       ]
-    }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-vta~rt",
+      "urls": {
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/vta/gtfs-rt-trip-updates/",
+        "realtime_vehicle_positions": "https://api.goswift.ly/real-time/vta/gtfs-rt-vehicle-positions/"
+      }
+        }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
