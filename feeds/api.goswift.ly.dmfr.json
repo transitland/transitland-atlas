@@ -633,22 +633,6 @@
     },
     {
       "spec": "gtfs-rt",
-      "id": "f-laketransit~rt",
-      "urls": {
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/lake-county/gtfs-rt-trip-updates",
-        "realtime_vehicle_positions": "https://api.goswift.ly/real-time/lake-county/gtfs-rt-vehicle-positions"
-      },
-      "license": {
-        "url": "https://www.goswift.ly/api-license"
-      },
-      "authorization": {
-        "type": "header",
-        "param_name": "Authorization",
-        "info_url": "https://goswift.ly/realtime-api-key"
-      }
-    },
-    {
-      "spec": "gtfs-rt",
       "id": "f-ruralcommunity~vt~rt",
       "urls": {
         "realtime_trip_updates": "https://api.goswift.ly/real-time/rct/gtfs-rt-trip-updates",
@@ -913,6 +897,22 @@
       "urls": {
         "realtime_trip_updates": "https://api.goswift.ly/real-time/moover/gtfs-rt-trip-updates",
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/moover/gtfs-rt-vehicle-positions"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-vta~rt",
+      "urls": {
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/vta/gtfs-rt-trip-updates/",
+        "realtime_vehicle_positions": "https://api.goswift.ly/real-time/vta/gtfs-rt-vehicle-positions/"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"

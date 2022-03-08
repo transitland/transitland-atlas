@@ -195,6 +195,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "GVRTA"
+            },
+            {
+              "feed_onestop_id": "f-gunnisonvalleyrta~rt"
             }
           ],
           "tags": {
@@ -468,7 +471,17 @@
       "id": "f-central~transit~wa",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/centraltransit_google_transit.zip"
-      }
+      },
+      "operators": [{
+        "onestop_id": "o-c2672-centraltransitellensburg",
+        "name": "Ellensburg Central Transit",
+        "website": "https://ci.ellensburg.wa.us/1051/Ellensburg-Central-Transit",
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-central~transit~wa~rt"
+          }
+        ]
+      }]
     },
     {
       "spec": "gtfs",
