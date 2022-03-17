@@ -4,8 +4,9 @@
     {
       "spec": "gtfs",
       "id": "f-9qce-sacramentoregionaltransit",
+      "supersedes_ids": ["f-9qcg-folsomstagelines"],
       "urls": {
-        "static_current": "http://iportal.sacrt.com/GTFS/SRTD/google_transit.zip"
+        "static_current": "https://iportal.sacrt.com/gtfs/SRTD/google_transit.zip"
       },
       "license": {
         "url": "http://www.sacrt.com/schedules/gtfs.aspx",
@@ -21,8 +22,9 @@
       "spec": "gtfs-rt",
       "id": "f-9qce-sacramentoregionaltransit~rt",
       "urls": {
-        "realtime_vehicle_positions": "http://gtfsrt.sacrt.com/apps/gtfsrt/SRTD/vehiclepositions",
-        "realtime_trip_updates": "http://gtfsrt.sacrt.com/apps/gtfsrt/SRTD/tripupdates"
+        "realtime_vehicle_positions": "https://bustime.sacrt.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://bustime.sacrt.com/gtfsrt/trips",
+        "realtime_alerts": "https://bustime.sacrt.com/gtfsrt/alerts"
       },
       "license": {
         "url": "http://www.sacrt.com/schedules/gtfs.aspx",
@@ -35,7 +37,7 @@
       "spec": "gtfs",
       "id": "f-9qcs-rosevilletransit",
       "urls": {
-        "static_current": "http://iportal.sacrt.com/GTFS/Roseville/google_transit.zip"
+        "static_current": "https://iportal.sacrt.com/gtfs/Roseville/google_transit.zip"
       },
       "license": {
         "url": "http://www.sacrt.com/gtfs.stm",
@@ -60,32 +62,25 @@
     },
     {
       "spec": "gtfs",
-      "id": "f-9qcg-folsomstagelines",
-      "urls": {
-        "static_current": "http://iportal.sacrt.com/gtfs/FSL/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qcg-folsomstagelines",
-          "tags": {
-            "us_ntd_id": "90220",
-            "wikidata_id": "Q96418422"
-          },
-          "name": "Folsom Stage Line"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9qcd-etranelkgrove",
       "urls": {
-        "static_current": "http://iportal.sacrt.com/GTFS/ETRAN/google_transit.zip"
+        "static_current": "https://elkgrovetransit.com/gtfs"
+      }
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-9qcd-etranelkgrove~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://elkgrovetransit.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://elkgrovetransit.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://elkgrovetransit.com/gtfs-rt/alerts"
       }
     }
   ],
   "operators": [
     {
       "onestop_id": "o-9qce-sacramentoregionaltransit",
+      "supersedes_ids": ["o-9qcg-folsomstagelines"],
       "tags": {
         "us_ntd_id": "90019",
         "wikidata_id": "Q7397015",
@@ -102,6 +97,9 @@
         },
         {
           "feed_onestop_id": "f-9qcd-etranelkgrove"
+        },
+        {
+          "feed_onestop_id": "f-9qcd-etranelkgrove~rt"
         }
       ]
     }
