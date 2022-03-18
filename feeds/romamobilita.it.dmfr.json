@@ -5,10 +5,7 @@
       "spec": "gtfs",
       "id": "f-sr-atac~romatpl~trenitalia",
       "urls": {
-        "static_current": "http://dati.muovi.roma.it/gtfs/rome_static_gtfs.zip"
-      },
-      "tags": {
-        "manual_import": "true"
+        "static_current": "https://romamobilita.it/sites/default/files/rome_static_gtfs.zip"
       },
       "operators": [
         {
@@ -32,6 +29,15 @@
           ]
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-sr-atac~romatpl~trenitalia~rt",
+      "urls": {
+        "realtime_trip_updates": "https://romamobilita.it/sites/default/files/rome_rtgtfs_trip_updates_feed.pb",
+        "realtime_vehicle_positions": "https://romamobilita.it/sites/default/files/rome_rtgtfs_vehicle_positions_feed.pb",
+        "realtime_alerts": "https://romamobilita.it/sites/default/files/rome_rtgtfs_service_alerts_feed.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
