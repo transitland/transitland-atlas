@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-xtrafik~se",
+      "urls": {
+        "static_current": "https://opendata.samtrafiken.se/gtfs/xt/xt.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-xtrafik~se",
+          "name": "X-trafix (Region Gävleborg)",
+          "website": "https://xtrafik.se/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-xtrafix~se"
+            }
+          ]
+        },
+        {
+          "spec": "gtfs-rt",
+          "id": "f-xtrafik~se~rt",
+          "urls":
+          {
+            "realtime_trip_updates": "https://api.goswift.ly/real-time/se-xtrafik/gtfs-rt-trip-updates/",
+            "realtime_vehicle_positions": "https://api.goswift.ly/real-time/se-xtrafik/gtfs-rt-vehicle-positions/"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

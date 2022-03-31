@@ -79,6 +79,40 @@
           }
         }
       ]
+    },
+    {
+      "spec": "gtfs",
+      "id": "f-ata~bus~ks",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5197/FH_ATA_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ata~bus~ks",
+          "name": "Flint Hills Area Transportation Agency",
+          "short_name": "ATA Bus",
+          "website": "https://www.fhata.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ATA Bus"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "70053",
+            "wikidata_id": "Q16974066"
+          }
+        },
+        {
+          "spec": "gtfs-rt",
+          "id": "f-ata~bus~ks~rt",
+          "urls":
+          {
+            "realtime_trip_updates": "https://api.goswift.ly/real-time/flint-hills-ata/gtfs-rt-trip-updates/",
+            "realtime_vehicle_positions": "https://api.goswift.ly/real-time/flint-hills-ata/gtfs-rt-vehicle-positions/",
+            "realtime_alerts": "https://api.goswift.ly/real-time/flint-hills-ata/gtfs-rt-alerts/"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

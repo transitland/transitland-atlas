@@ -23,7 +23,7 @@
           "short_name": "DCTA"
         }
       ]
-    },    
+    },
     {
       "spec": "gtfs",
       "id": "f-9qf-laketahoe~ca~us",
@@ -4587,7 +4587,24 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "809"
-            }
+            },
+                {
+              "feed_onestop_id": "f-cuboulder~rt"
+            },
+                {
+              "feed_onestop_id": "f-cuboulder~rt~alerts"
+                }
+              ]
+          },
+          {
+          "spec": "gtfs-rt",
+          "id": "f-cuboulder~rt",
+          "urls": [
+            {
+            "realtime_trip_updates": "https://api.goswift.ly/real-time/cu-boulder/gtfs-rt-trip-updates/",
+            "realtime_vehicle_positions": "https://api.goswift.ly/real-time/cu-boulder/gtfs-rt-vehicle-positions/",
+            "realtime_alerts": "https://api.goswift.ly/real-time/cu-boulder/gtfs-rt-alerts/"
+          }
           ],
           "tags": {
             "twitter_general": "cu_pts"
@@ -7410,7 +7427,7 @@
           ]
         }
       ]
-    }    
+    }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
