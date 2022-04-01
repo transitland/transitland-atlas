@@ -195,6 +195,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "GVRTA"
+            },
+            {
+              "feed_onestop_id": "f-gunnisonvalleyrta~rt"
             }
           ],
           "tags": {
@@ -221,32 +224,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "da"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9px-currypublictransit",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/curry_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc",
-        "gtfs_data_exchange": "curry-public-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9px-currypublictransit",
-          "tags": {
-            "us_ntd_id": "0R02-00308"
-          },
-          "name": "Curry Public Transit",
-          "website": "http://www.currypublictransit.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "curry"
             }
           ]
         }
@@ -468,7 +445,17 @@
       "id": "f-central~transit~wa",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/centraltransit_google_transit.zip"
-      }
+      },
+      "operators": [{
+        "onestop_id": "o-c2672-centraltransitellensburg",
+        "name": "Ellensburg Central Transit",
+        "website": "https://ci.ellensburg.wa.us/1051/Ellensburg-Central-Transit",
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-central~transit~wa~rt"
+          }
+        ]
+      }]
     },
     {
       "spec": "gtfs",

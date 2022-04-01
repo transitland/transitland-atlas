@@ -20,32 +20,22 @@
     },
     {
       "spec": "gtfs",
-      "id": "f-dinuba~area~regional~transit",
+      "id": "f-tulare~county~regional~transit~agency",
+      "supersedes_ids": ["f-dinuba~area~regional~transit", "f-tulare~dart"],
       "urls": {
-        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/dinuba-area-regional-transit-gtfs/",
-        "static_historic": [
-          "http://www.tularecog.org/googletransit/DART/google_transit.zip",
-          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/dinuba-area-regional-transit.zip"
-        ]
+        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/tulare-county-regional-transit-agency-tcrta-gtfs/"
       },
       "operators": [
         {
-          "onestop_id": "o-9q7p-dart",
-          "name": "Dinuba Area Regional Transit",
-          "short_name": "DART",
+          "onestop_id": "o-tulare~county~regional~transit~agency",
+          "name": "Tulare County Regional Transit Agency",
+          "short_name": "TCRTA",
+          "supersedes_ids": ["o-9q7p-dart"],
           "tags": {
-            "us_ntd_id": "9R02-91040",
-            "twitter_general": "cityofdinuba"
+            "wikidata_id": "Q110722692"
           }
         }
       ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-tulare~dart",
-      "urls": {
-        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/dinuba-area-regional-transit-gtfs/"
-      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -26,9 +26,15 @@
       "spec": "gtfs-rt",
       "id": "f-actransit~rt",
       "urls": {
-        "realtime_alerts": "http://api.actransit.org/transit/gtfsrt/alerts?token={ACTRANSIT_API_KEY}",
-        "realtime_trip_updates": "http://api.actransit.org/transit/gtfsrt/tripupdates?token={ACTRANSIT_API_KEY}",
-        "realtime_vehicle_positions": "http://api.actransit.org/transit/gtfsrt/vehicles?token={ACTRANSIT_API_KEY}"
+        "realtime_alerts": "http://api.actransit.org/transit/gtfsrt/alerts",
+        "realtime_trip_updates": "http://api.actransit.org/transit/gtfsrt/tripupdates",
+        "realtime_vehicle_positions": "http://api.actransit.org/transit/gtfsrt/vehicles"
+      },
+      "authorization": {
+        "info_url": "https://api.actransit.org/transit/Account/Register",
+        "type": "query_param",
+        "param_name": "token"
+
       },
       "license": {
         "url": "http://www.actransit.org/data-terms-and-conditions/",

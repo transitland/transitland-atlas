@@ -5,7 +5,7 @@
       "spec": "gtfs",
       "id": "f-brightline~trails",
       "urls": {
-        "static_current": "https://gobrightline.com/gtfs/gtfs.zip"
+        "static_current": "http://feed.gobrightline.com/bl_gtfs.zip"
       },
       "operators": [
         {
@@ -14,6 +14,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "BRIGHTLINE"
+            },
+            {
+              "feed_onestop_id": "f-brightline~trails~rt"
             }
           ],
           "tags": {
@@ -22,6 +25,15 @@
           }
         }
       ]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-brightline~trails~rt",
+      "urls": {
+        "realtime_alerts": "http://feed.gobrightline.com/alerts.pb",
+        "realtime_vehicle_positions": "http://feed.gobrightline.com/position_updates.pb",
+        "realtime_trip_updates": "http://feed.gobrightline.com/trip_updates.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

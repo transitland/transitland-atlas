@@ -20,7 +20,12 @@
             "twitter_general": "RideDCTA"
           },
           "name": "Denton County Transportation Authority",
-          "short_name": "DCTA"
+          "short_name": "DCTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dentoncountytransportationauthority~rt"
+            }
+          ]
         }
       ]
     },
@@ -1025,6 +1030,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "461"
+            },
+            {
+              "feed_onestop_id": "f-chittendoncounty~rt"
             }
           ]
         }
@@ -1173,6 +1181,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "232"
+            },
+            {
+              "feed_onestop_id": "f-crtransit~vt~rt"
             }
           ]
         }
@@ -1327,6 +1338,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "218"
+            },
+            {
+              "feed_onestop_id": "f-dvtamoover~vt~rt"
             }
           ]
         }
@@ -1464,6 +1478,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "36"
+            },
+            {
+              "feed_onestop_id": "f-fairfield~ca~rt"
             }
           ]
         }
@@ -1586,6 +1603,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "219"
+            },
+            {
+              "feed_onestop_id": "f-greenmtncn~vt~rt"
             }
           ]
         }
@@ -1747,6 +1767,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "194"
+            },
+            {
+              "feed_onestop_id": "f-kerncounty~ca~rt"
             }
           ]
         }
@@ -1978,6 +2001,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "441"
+            },
+            {
+              "feed_onestop_id": "f-merrimackvalley~rt"
             }
           ]
         }
@@ -2036,33 +2062,6 @@
             "wikidata_id": "Q6905645"
           },
           "name": "Montgomery Transit"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dq259-ncsu~wolfline~nc~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/ncsu-wolfline-nc-us/ncsu-wolfline-nc-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "ncsu-wolfline-nc-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dq259-ncsuwolfline",
-          "tags": {
-            "us_ntd_id": "40147",
-            "wikidata_id": "Q8030170",
-            "twitter_general": "NCStateTranspo"
-          },
-          "name": "NCSU Wolfline"
         }
       ]
     },
@@ -2410,6 +2409,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "221"
+            },
+            {
+              "feed_onestop_id": "f-ruralcommunity~vt~rt"
             }
           ]
         }
@@ -2857,12 +2859,15 @@
             "us_ntd_id": "1R06-10154",
             "wikidata_id": "Q6755227"
           },
-          "name": "The Bus (Marble Valley metroal Transit District)",
+          "name": "The Bus (Marble Valley Regional Transit District)",
           "short_name": "MVRTD",
           "website": "http://www.thebus.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "220"
+            },
+            {
+              "feed_onestop_id": "f-thebus~vt~rt"
             }
           ]
         }
@@ -3367,6 +3372,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "407"
+            },
+            {
+              "feed_onestop_id": "f-baytowntrolley~fl~rt"
             }
           ]
         }
@@ -3615,6 +3623,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "474"
+            },
+            {
+              "feed_onestop_id": "f-cityandboroughofjuneau~rt"
             }
           ]
         }
@@ -3643,59 +3654,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "RV"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dnwe-radford~va~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/radford-va-us/radford-va-us.zip"
-      },
-      "tags": {
-        "feed_id": "radford-va-us",
-        "gtfs_data_exchange": "radford-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnwe-radfordtransit",
-          "tags": {
-            "us_ntd_id": "30200"
-          },
-          "name": "Radford Transit",
-          "website": "http://www.radfordtransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "182"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dnwe-pulaski~va~us",
-      "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/pulaski-va-us/pulaski-va-us.zip"
-      },
-      "tags": {
-        "feed_id": "pulaski-va-us",
-        "gtfs_data_exchange": "pulaski-area-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnwe-pulaskiareatransit",
-          "tags": {
-            "us_ntd_id": "3R06-30115"
-          },
-          "name": "Pulaski Area Transit",
-          "short_name": "PAT",
-          "website": "http://www.pulaskitransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "170"
             }
           ]
         }
@@ -4775,6 +4733,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "622"
+            },
+            {
+              "feed_onestop_id": "f-avalon~ca~rt"
             }
           ]
         }
@@ -5882,6 +5843,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1535"
+            },
+            {
+              "feed_onestop_id": "f-smart~ca~rt"
             }
           ],
           "tags": {
@@ -5912,6 +5876,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1494"
+            },
+            {
+              "feed_onestop_id": "f-qline~mi~rt"
             }
           ],
           "tags": {
@@ -7024,7 +6991,21 @@
       "id": "f-tahoe~ca~us",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/tahoe-ca-us/tahoe-ca-us.zip"
-      }
+      },
+      "operators": [{
+        "onestop_id": "o-9qft-tahoetransportationdistrict",
+        "name": "Tahoe Transportation District",
+        "short_name": "TTD",
+        "website": "https://www.tahoetransportation.org/",
+        "tags": {
+          "us_ntd_id": "91092"
+        },
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-tahoe~ca~rt"
+          }
+        ]
+      }]
     },
     {
       "spec": "gtfs",
@@ -7267,6 +7248,31 @@
       "id": "f-turlock~ca~us",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/turlock-ca-us/turlock-ca-us.zip"
+      },
+      "operators": [{
+        "onestop_id": "o-9qdj3-turlocktransit",
+        "name": "Turlock Transit",
+        "tags": {
+          "us_ntd_id": "90201"
+        },
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-turlock~ca~rt"
+          },
+          {
+            "feed_onestop_id": "f-turlock~ca~us~rt~alerts"
+          }
+        ]
+      }]
+    },
+    {
+      "spec": "gtfs-rt",
+      "id": "f-turlock~ca~us~rt~alerts",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/turlock-ca-us/service_alerts.proto"
+      },
+      "license": {
+        "url": "https://www.turlocktransit.com/developers.html"
       }
     },
     {

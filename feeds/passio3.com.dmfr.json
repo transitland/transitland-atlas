@@ -1,0 +1,32 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-dnwe-radford~va~us",
+      "urls": {
+        "static_current": "https://passio3.com/radford/passioTransit/gtfs/google_transit.zip"
+      },
+      "tags": {
+        "feed_id": "radford-va-us",
+        "gtfs_data_exchange": "radford-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnwe-radfordtransit",
+          "tags": {
+            "us_ntd_id": "30200"
+          },
+          "name": "Radford Transit",
+          "website": "http://www.radfordtransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "182"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
