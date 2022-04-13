@@ -60,6 +60,7 @@
       ],
       "spec": "gtfs",
       "tags": {
+        "feed_id": "lagunabeach-ca-us",
         "gtfs_data_exchange": "laguna-beach-transit",
         "managed_by": "trillium"
       },
@@ -284,6 +285,13 @@
       }
     },
     {
+      "id": "f-9pz-lincolncounty~or~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/lincolncounty-or-us/service_alerts.proto"
+      }
+    },
+    {
       "id": "f-9q-easternsierra~ca~us",
       "license": {
         "create_derived_product": "yes",
@@ -370,15 +378,90 @@
         }
       ],
       "spec": "gtfs",
-      "tags": {
-        "managed_by": "trillium"
-      },
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/guadalupeflyer-ca-us/guadalupeflyer-ca-us.zip"
       }
     },
     {
       "id": "f-9q5-airportvaletexpress~ca~us",
+      "operators": [
+        {
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "229"
+            }
+          ],
+          "name": "Airport Valet Express",
+          "onestop_id": "o-9q5-airportvaletexpress",
+          "short_name": "Bakersfield",
+          "website": "https://www.airportvaletexpress.com/fares/"
+        }
+      ],
+      "spec": "gtfs",
+      "tags": {
+        "feed_id": "airportvaletexpress-ca-us"
+      },
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/airportvaletexpress-ca-us/airportvaletexpress-ca-us.zip"
+      }
+    },
+    {
+      "id": "f-9q5-dpwlacounty~ca~us",
+      "operators": [
+        {
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1466"
+            }
+          ],
+          "name": "LA Go Bus",
+          "onestop_id": "o-9q5-lagobus",
+          "tags": {
+            "twitter_general": "LACoPublicWorks",
+            "us_ntd_id": "90270,90271,90272,90273,90274,90275,90276,90278"
+          },
+          "website": "https://dpw.lacounty.gov/transit/"
+        }
+      ],
+      "spec": "gtfs",
+      "tags": {
+        "feed_id": "dpwlacounty-ca-us"
+      },
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/dpwlacounty-ca-us/dpwlacounty-ca-us.zip"
+      }
+    },
+    {
+      "id": "f-9q56-thousandoaks~ca~us",
+      "operators": [
+        {
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "526"
+            }
+          ],
+          "name": "Thousand Oaks Transit",
+          "onestop_id": "o-9q56-thousandoakstransit",
+          "tags": {
+            "twitter_general": "TOTransit",
+            "us_ntd_id": "90165",
+            "wikidata_id": "Q7797062"
+          },
+          "website": "http://www.toaks.org/government/depts/public_works/transportation/default.asp"
+        }
+      ],
+      "spec": "gtfs",
+      "tags": {
+        "feed_id": "thousandoaks-ca-us",
+        "gtfs_data_exchange": "thousand-oaks-transit",
+        "managed_by": "trillium"
+      },
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/thousandoaks-ca-us/thousandoaks-ca-us.zip"
+      }
+    },
+    {
+      "id": "f-9q5b4-pvpta~ca~us",
       "license": {
         "create_derived_product": "yes",
         "redistribute": "yes",
@@ -597,11 +680,6 @@
       },
       "operators": [
         {
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": ""
-            }
-          ],
           "name": "Kings Area Rural Transit",
           "onestop_id": "o-9q6-kingsarearuraltransit",
           "short_name": "KART",
@@ -677,7 +755,7 @@
           "tags": {
             "twitter_general": "ridept",
             "us_ntd_id": "90198",
-            "wikidata_id": ""
+            "wikidata_id": "Q110682480"
           },
           "website": "https://www.ci.porterville.ca.us/departments/porterville_transit/bus_schedules.php"
         }
@@ -977,22 +1055,21 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "7"
+            },
+            {
+              "onestop_id": "f-9qb-laketransit~ca~us~rt"
             }
           ],
           "name": "Lake Transit",
           "onestop_id": "o-9qb-laketransit",
           "tags": {
-            "us_ntd_id": "9R02-91053",
-            "wikidata_id": "Q6478146"
+            "twitter_general": "CountyExpress",
+            "wikidata_id": "Q7413407"
           },
           "website": "https://laketransit.org/"
         }
       ],
       "spec": "gtfs",
-      "tags": {
-        "gtfs_data_exchange": "lake-transit",
-        "managed_by": "trillium"
-      },
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/laketransit-ca-us/laketransit-ca-us.zip"
       }
@@ -2294,12 +2371,7 @@
       },
       "operators": [
         {
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "274"
-            }
-          ],
-          "name": "JTRAN",
+          "name": "JATRAN",
           "onestop_id": "o-9vxz-jatran",
           "tags": {
             "us_ntd_id": "50034",
@@ -2365,7 +2437,26 @@
             "us_ntd_id": "9R01-91010"
           },
           "website": "https://cottonwoodaz.gov/161/Cottonwood-Area-Transit-CAT"
-        },
+        }
+      ],
+      "spec": "gtfs",
+      "tags": {
+        "feed_id": "cottonwood-az-us",
+        "gtfs_data_exchange": "cottonwood-area-transit",
+        "managed_by": "trillium"
+      },
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/cottonwood-az-us/cottonwood-az-us.zip"
+      }
+    },
+    {
+      "id": "f-9w0q-verdelynx~az~us",
+      "license": {
+        "create_derived_product": "yes",
+        "redistribute": "yes",
+        "use_without_attribution": "yes"
+      },
+      "operators": [
         {
           "associated_feeds": [
             {
@@ -2453,7 +2544,7 @@
       }
     },
     {
-      "id": "f-9wgzn-snowmassvillage",
+      "id": "f-9wgzn-741",
       "license": {
         "create_derived_product": "yes",
         "redistribute": "yes",
@@ -2701,11 +2792,6 @@
           ],
           "name": "Rocky Mountain National Park Shuttle",
           "onestop_id": "o-9xhv-rockymountainnationalpark",
-          "tags": {
-            "twitter_general": "",
-            "us_ntd_id": "",
-            "wikidata_id": ""
-          },
           "website": "https://www.nps.gov/romo/index.htm"
         }
       ],
@@ -2769,6 +2855,12 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "809"
+            },
+            {
+              "feed_onestop_id": "f-cuboulder~rt"
+            },
+            {
+              "feed_onestop_id": "f-cuboulder~rt~alerts"
             }
           ],
           "name": "University of Colorado Boulder",
@@ -2801,7 +2893,8 @@
           "onestop_id": "o-9yz-jeffcoexpress",
           "tags": {
             "twitter_general": "JeffCoExpress"
-          }
+          },
+          "website": "http://www.jeffcoexpress.org/"
         }
       ],
       "spec": "gtfs",
@@ -2816,7 +2909,7 @@
       }
     },
     {
-      "id": "f-9ze3-siouxcitytransitsystem",
+      "id": "f-9ze3-755",
       "license": {
         "create_derived_product": "yes",
         "redistribute": "yes",
@@ -2883,7 +2976,7 @@
       }
     },
     {
-      "id": "f-9zmzj-marshalltownmunicipaltransit",
+      "id": "f-9zmzj-767",
       "license": {
         "create_derived_product": "yes",
         "redistribute": "yes",
@@ -2914,7 +3007,7 @@
       }
     },
     {
-      "id": "f-9zq4g-10~15transit",
+      "id": "f-9zq4g-762",
       "license": {
         "create_derived_product": "yes",
         "redistribute": "yes",
@@ -2997,11 +3090,6 @@
       },
       "operators": [
         {
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": ""
-            }
-          ],
           "name": "University of Iowa",
           "onestop_id": "o-9zqvh-universityofiowa~cambus",
           "short_name": "CAMBUS",
@@ -3073,9 +3161,7 @@
           "onestop_id": "o-9zr0n-burlingtonurbanservice",
           "short_name": "BUS",
           "tags": {
-            "twitter_general": "",
-            "us_ntd_id": "7R01-70111",
-            "wikidata_id": ""
+            "us_ntd_id": "7R01-70111"
           },
           "website": "https://www.burlingtoniowa.org/2265/Burlington-Urban-Service-BUS"
         }
@@ -3170,9 +3256,7 @@
           "onestop_id": "o-9zt1b-dodgerarearapidtransit",
           "short_name": "DART",
           "tags": {
-            "twitter_general": "",
-            "us_ntd_id": "7R01-70108",
-            "wikidata_id": ""
+            "us_ntd_id": "7R01-70108"
           },
           "website": "https://www.midascogia.net/transit/transit_index.php"
         }
@@ -3500,6 +3584,13 @@
       },
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/banning-ca-us/banning-ca-us.zip"
+      }
+    },
+    {
+      "id": "f-banning~pass~transit~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/banning-ca-us/service_alerts.proto"
       }
     },
     {
@@ -9298,9 +9389,6 @@
         }
       ],
       "spec": "gtfs",
-      "tags": {
-        "status": "outdated"
-      },
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/westberkeleyshuttle-ca-us/westberkeleyshuttle-ca-us.zip"
       }
