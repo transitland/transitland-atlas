@@ -360,6 +360,30 @@
       }
     },
     {
+      "id": "f-9q5-airportvaletexpress~ca~us",
+      "license": {
+        "create_derived_product": "yes",
+        "redistribute": "yes",
+        "use_without_attribution": "yes"
+      },
+      "operators": [
+        {
+          "name": "Airport Valet Express",
+          "onestop_id": "o-9q5-airportvaletexpress",
+          "website": "https://www.airportvaletexpress.com/fares/"
+        }
+      ],
+      "spec": "gtfs",
+      "tags": {
+        "status": "outdated"
+      },
+      "urls": {
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/airportvaletexpress-ca-us/airportvaletexpress-ca-us.zip"
+        ]
+      }
+    },
+    {
       "id": "f-9q5-dpwlacounty~ca~us",
       "license": {
         "create_derived_product": "yes",
@@ -448,7 +472,7 @@
       }
     },
     {
-      "id": "f-9q5b4-pvpta~ca~u",
+      "id": "f-9q5b4-pvpta~ca~us",
       "license": {
         "create_derived_product": "yes",
         "redistribute": "yes",
@@ -480,30 +504,6 @@
       }
     },
     {
-      "id": "f-9q5b4-pvpta~ca~us",
-      "license": {
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "name": "Airport Valet Express",
-          "onestop_id": "o-9q5-airportvaletexpress",
-          "website": "https://www.airportvaletexpress.com/fares/"
-        }
-      ],
-      "spec": "gtfs",
-      "tags": {
-        "status": "outdated"
-      },
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/airportvaletexpress-ca-us/airportvaletexpress-ca-us.zip"
-        ]
-      }
-    },
-    {
       "id": "f-9q5bf-lawndale~ca~us",
       "license": {
         "create_derived_product": "yes",
@@ -515,7 +515,7 @@
           "name": "Lawndale Beat",
           "onestop_id": "o-9q5bf-lawndalebeat",
           "tags": {
-            "us_ntd_id": "1522"
+            "us_ntd_id": "90280"
           },
           "website": "https://www.lawndalecity.org/cms/One.aspx?portalId=16676137&pageId=17108147"
         }
@@ -800,17 +800,6 @@
     },
     {
       "id": "f-9q9hy-mountainview~rt",
-      "operators": [
-        {
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-9q9hy-mountainview"
-            }
-          ],
-          "name": "Mountain View Transportation Management Association",
-          "onestop_id": "o-9q9hy-mvgomountainview"
-        }
-      ],
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "https://ridemvgo.org/gtfs-rt/alerts",
@@ -947,14 +936,14 @@
               "gtfs_agency_id": "7"
             },
             {
-              "onestop_id": "f-9qb-laketransit~ca~us~rt"
+              "feed_onestop_id": "f-9qb-laketransit~ca~us~rt"
             }
           ],
           "name": "Lake Transit",
           "onestop_id": "o-9qb-laketransit",
           "tags": {
-            "twitter_general": "CountyExpress",
-            "wikidata_id": "Q7413407"
+            "us_ntd_id": "9R02-91053",
+            "wikidata_id": "Q6478146"
           },
           "website": "https://laketransit.org/"
         }
@@ -1329,7 +1318,8 @@
         {
           "name": "Ceres Area Transit",
           "onestop_id": "o-9q9vz-ceresareatransit",
-          "short_name": "CAT"
+          "short_name": "CAT",
+          "website": "http://www.ci.ceres.ca.us/CeresAreaTransit/CAT.html"
         }
       ],
       "spec": "gtfs",
@@ -2215,9 +2205,7 @@
               "gtfs_agency_id": "959"
             }
           ],
-          "name": "Groome Transportation",
-          "onestop_id": "o-9w-groometransportation",
-          "website": "https://groometransportation.com/arizona/"
+          "onestop_id": "o-9w-groometransportation"
         }
       ],
       "spec": "gtfs",
@@ -2382,9 +2370,7 @@
               "gtfs_agency_id": "955"
             }
           ],
-          "name": "Groome Transportation",
-          "onestop_id": "o-9wk-sandiashuttle",
-          "website": "https://groometransportation.com/santa-fe/"
+          "onestop_id": "o-9w-groometransportation"
         }
       ],
       "spec": "gtfs",
@@ -2406,9 +2392,7 @@
               "gtfs_agency_id": "954"
             }
           ],
-          "name": "Groome Transportation",
-          "onestop_id": "o-9wv-groometransportation",
-          "website": "https://groometransportation.com/colorado-springs/"
+          "onestop_id": "o-9w-groometransportation"
         }
       ],
       "spec": "gtfs",
@@ -3289,10 +3273,10 @@
               "gtfs_agency_id": "72"
             },
             {
-              "onestop_id": "f-banning~pass~transit~rt~alerts"
+              "feed_onestop_id": "f-banning~pass~transit~rt~alerts"
             },
             {
-              "onestop_id": "f-banning~pass~transit~rt"
+              "feed_onestop_id": "f-banning~pass~transit~rt"
             }
           ],
           "name": "City of Banning Transit",
@@ -3351,9 +3335,11 @@
           "name": "University of California Berkeley Shuttle",
           "onestop_id": "o-9q9p3-beartransit",
           "short_name": "Bear Transit",
+          "supersedes_ids": ["o-9q9p3-beartransit~ucberkeleyshuttle"],
           "tags": {
+            "twitter_general": "CalParking",
             "us_ntd_id": "9R02-91012",
-            "wikidata_id": "Q6924864"
+            "wikidata_id": "Q4876580"
           },
           "website": "http://pt.berkeley.edu/around/transit/routes/"
         }
@@ -3541,6 +3527,13 @@
         "static_historic": [
           "https://data.trilliumtransit.com/gtfs/blossomexpress-ca-us/blossomexpress-ca-us.zip"
         ]
+      }
+    },
+    {
+      "id": "f-bouldercounty~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/bouldercounty-co-us/bouldercounty-co-us.zip"
       }
     },
     {
@@ -4463,9 +4456,7 @@
               "gtfs_agency_id": "948"
             }
           ],
-          "name": "Groome Transportation",
-          "onestop_id": "o-d-groometransportation",
-          "website": "https://groometransportation.com"
+          "onestop_id": "o-9w-groometransportation"
         }
       ],
       "spec": "gtfs",
@@ -5035,6 +5026,7 @@
         {
           "name": "Clemson Area Transit",
           "onestop_id": "o-dnjj-clemsonareatransit",
+          "short_name": "CATbus",
           "tags": {
             "twitter_general": "catclemson",
             "us_ntd_id": "40208",
@@ -5067,10 +5059,10 @@
               "gtfs_agency_id": "190"
             },
             {
-              "onestop_id": "f-dnm6-asheville~nc~us~alerts"
+              "feed_onestop_id": "f-dnm6-asheville~nc~us~alerts"
             },
             {
-              "onestop_id": "f-dnm6-asheville~nc~us~rt"
+              "feed_onestop_id": "f-dnm6-asheville~nc~us~rt"
             }
           ],
           "name": "Asheville Redefines Transit",
@@ -5091,20 +5083,6 @@
     },
     {
       "id": "f-dnm6-asheville~nc~us~alerts",
-      "operators": [
-        {
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dnm6-asheville~nc~us"
-            },
-            {
-              "onestop_id": "f-dnm6-asheville~nc~us~rt"
-            }
-          ],
-          "name": "Asheville Redefines Transit",
-          "onestop_id": "o-dnm6-ashevilleredefinestransit"
-        }
-      ],
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/asheville-nc-us/service_alerts.proto"
@@ -5274,6 +5252,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "241"
+            },
+            {
+              "feed_onestop_id": "f-dnru-durham~area~transit~authority~nc~us~rt"
             }
           ],
           "name": "GoDurham",
@@ -5399,7 +5380,7 @@
       }
     },
     {
-      "id": "f-dp-indiantrails",
+      "id": "f-dp-945963",
       "license": {
         "create_derived_product": "yes",
         "redistribute": "yes",
@@ -5419,6 +5400,16 @@
             "wikidata_id": "Q6021774"
           },
           "website": "https://www.indiantrails.com/"
+        },
+        {
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1591"
+            }
+          ],
+          "name": "Detroit Ann Arbor Express",
+          "onestop_id": "o-dps-detroitannarborexpress",
+          "website": "https://d2a2.com/"
         }
       ],
       "spec": "gtfs",
@@ -5740,16 +5731,6 @@
             "wikidata_id": "Q6021774"
           },
           "website": "https://www.michiganflyer.com/"
-        },
-        {
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1531"
-            }
-          ],
-          "name": "Detroit Ann Arbor Express",
-          "onestop_id": "o-dps-detroitannarborexpress",
-          "website": "https://d2a2.com/"
         }
       ],
       "spec": "gtfs",
@@ -6769,7 +6750,7 @@
       }
     },
     {
-      "id": "f-drt3-massport",
+      "id": "f-drt3-909983",
       "license": {
         "create_derived_product": "no",
         "redistribute": "no",
@@ -7032,6 +7013,10 @@
           ],
           "name": "Tri-Valley Transit",
           "onestop_id": "o-dru-tri~valleytransit",
+          "supersedes_ids": [
+            "o-dru-stagecoachtransportationservices",
+            "o-drg-addisoncountytransitresources"
+          ],
           "tags": {
             "twitter_general": "actransitvt",
             "us_ntd_id": "1R06-10143,1R06-10168"
@@ -7382,9 +7367,7 @@
               "gtfs_agency_id": "966"
             }
           ],
-          "name": "Groome Transportation",
-          "onestop_id": "o-greenride~co~us",
-          "website": "https://groometransportation.com/denver-airport/"
+          "onestop_id": "o-9w-groometransportation"
         }
       ],
       "spec": "gtfs",
@@ -8561,20 +8544,33 @@
         {
           "associated_feeds": [
             {
+              "feed_onestop_id": "f-turlock~ca~rt"
+            },
+            {
               "gtfs_agency_id": "1642"
             },
             {
-              "feed_onestop_id": "f-turlock~ca~rt"
+              "feed_onestop_id": "f-turlock~ca~us~rt~alerts"
             }
           ],
           "name": "Turlock Transit",
           "onestop_id": "o-9qdj3-turlocktransit",
+          "tags": {
+            "us_ntd_id": "90201"
+          },
           "website": "https://www.turlocktransit.com/"
         }
       ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/turlock-ca-us/turlock-ca-us.zip"
+      }
+    },
+    {
+      "id": "f-turlock~ca~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/turlock-ca-us/service_alerts.proto"
       }
     },
     {
@@ -8730,5 +8726,18 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "name": "Groome Transportation",
+      "onestop_id": "o-9w-groometransportation",
+      "supersedes_ids": [
+        "o-9wk-sandiashuttle",
+        "o-9wv-groometransportation",
+        "o-d-groometransportation",
+        "o-greenride~co~us"
+      ],
+      "website": "https://groometransportation.com/"
+    }
+  ]
 }
