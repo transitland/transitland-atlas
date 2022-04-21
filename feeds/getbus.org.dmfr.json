@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q7-getbus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://eta.getbus.org/rtt/public/utility/gtfs.aspx"
       },
@@ -13,11 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-9q7-goldenempiretransitdistrict",
-          "tags": {
-            "us_ntd_id": "90004",
-            "wikidata_id": "Q5579372",
-            "twitter_general": "get_bus"
-          },
           "name": "Golden Empire Transit District",
           "short_name": "GET",
           "website": "http://www.getbus.org/",
@@ -25,7 +20,12 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "get_bus",
+            "us_ntd_id": "90004",
+            "wikidata_id": "Q5579372"
+          }
         }
       ]
     }

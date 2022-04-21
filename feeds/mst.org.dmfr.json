@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q9-monterey~salinastransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.mst.org/google/google_transit.zip"
       },
@@ -15,27 +15,21 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-mst~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://206.128.158.191/TMGTFSRealTimeWebService/Alert/Alerts.pb",
+        "realtime_vehicle_positions": "http://206.128.158.191/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "http://206.128.158.191/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://206.128.158.191/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
+        "realtime_alerts": "http://206.128.158.191/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       },
       "license": {
         "url": "https://mst.org/about-mst/developer-resources/"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9q9-monterey~salinastransit",
-      "tags": {
-        "us_ntd_id": "90062",
-        "wikidata_id": "Q16982191",
-        "twitter_general": "MST_BUS"
-      },
       "name": "Monterey-Salinas Transit",
       "short_name": "MST",
       "associated_feeds": [
@@ -45,7 +39,13 @@
         {
           "feed_onestop_id": "f-mst~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "MST_BUS",
+        "us_ntd_id": "90062",
+        "wikidata_id": "Q16982191"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

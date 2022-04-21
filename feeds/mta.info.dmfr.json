@@ -2,166 +2,38 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-dr5-mtanyclirr",
       "spec": "gtfs",
-      "id": "f-dr5r-nyctsubway",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/subway/google_transit.zip"
+        "static_current": "http://web.mta.info/developers/data/lirr/google_transit.zip"
       },
       "license": {
         "url": "http://web.mta.info/developers/developer-data-terms.html",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "mta-new-york-city-transit"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr5r-mtanyctbusbrooklyn",
-      "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_brooklyn.zip"
-      },
-      "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "mta-new-york-city-transit"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr5r-mtanyctbusmanhattan",
-      "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_manhattan.zip"
-      },
-      "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "mta-new-york-city-transit"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr5r-mtanyctbusstatenisland",
-      "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_staten_island.zip"
-      },
-      "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "mta-new-york-city-transit"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr5x-mtanyctbusqueens",
-      "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_queens.zip"
-      },
-      "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "mta-new-york-city-transit"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr72-mtanyctbusbronx",
-      "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_bronx.zip"
-      },
-      "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "mta-new-york-city-transit"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr5r-mtabc",
-      "urls": {
-        "static_current": "http://web.mta.info/developers/data/busco/google_transit.zip"
-      },
-      "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "mta-new-york-city-transit"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr7-mtanyc~metro~north",
-      "urls": {
-        "static_current": "http://web.mta.info/developers/data/mnr/google_transit.zip"
-      },
-      "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-dr7-metro~northrailroad",
-          "tags": {
-            "us_ntd_id": "20078",
-            "wikidata_id": "Q125908",
-            "twitter_general": "metronorth"
-          },
-          "name": "MTA Metro-North Railroad",
-          "website": "http://www.mta.info/mnr",
+          "onestop_id": "o-dr5-longislandrailroad",
+          "name": "MTA Long Island Rail Road",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "feed_onestop_id": "f-dr5-mtanyclirr~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "LIRR",
+            "us_ntd_id": "20100",
+            "wikidata_id": "Q125943"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-dr5-mtanyclirr~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "https://mnorth.prod.acquia-sites.com/wse/LIRR/gtfsrt/realtime/{}/proto"
       },
@@ -171,39 +43,25 @@
       }
     },
     {
+      "id": "f-dr5r-mtabc",
       "spec": "gtfs",
-      "id": "f-dr5-mtanyclirr",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/lirr/google_transit.zip"
+        "static_current": "http://web.mta.info/developers/data/busco/google_transit.zip"
       },
       "license": {
         "url": "http://web.mta.info/developers/developer-data-terms.html",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
-      "operators": [
-        {
-          "onestop_id": "o-dr5-longislandrailroad",
-          "tags": {
-            "us_ntd_id": "20100",
-            "wikidata_id": "Q125943",
-            "twitter_general": "LIRR"
-          },
-          "name": "MTA Long Island Rail Road",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dr5-mtanyclirr~rt"
-            }
-          ]
-        }
-      ]
+      "tags": {
+        "gtfs_data_exchange": "mta-new-york-city-transit"
+      }
     },
     {
-      "spec": "gtfs",
       "id": "f-dr5r-mtanewyorkcitytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://web.mta.info/developers/files/google_transit_supplemented.zip"
       },
@@ -214,27 +72,152 @@
       "tags": {
         "manual_import": "true"
       }
+    },
+    {
+      "id": "f-dr5r-mtanyctbusbrooklyn",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_brooklyn.zip"
+      },
+      "license": {
+        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "mta-new-york-city-transit"
+      }
+    },
+    {
+      "id": "f-dr5r-mtanyctbusmanhattan",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_manhattan.zip"
+      },
+      "license": {
+        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "mta-new-york-city-transit"
+      }
+    },
+    {
+      "id": "f-dr5r-mtanyctbusstatenisland",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_staten_island.zip"
+      },
+      "license": {
+        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "mta-new-york-city-transit"
+      }
+    },
+    {
+      "id": "f-dr5r-nyctsubway",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://web.mta.info/developers/data/nyct/subway/google_transit.zip"
+      },
+      "license": {
+        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "mta-new-york-city-transit"
+      }
+    },
+    {
+      "id": "f-dr5x-mtanyctbusqueens",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_queens.zip"
+      },
+      "license": {
+        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "mta-new-york-city-transit"
+      }
+    },
+    {
+      "id": "f-dr7-mtanyc~metro~north",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://web.mta.info/developers/data/mnr/google_transit.zip"
+      },
+      "license": {
+        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7-metro~northrailroad",
+          "name": "MTA Metro-North Railroad",
+          "website": "http://www.mta.info/mnr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "twitter_general": "metronorth",
+            "us_ntd_id": "20078",
+            "wikidata_id": "Q125908"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr72-mtanyctbusbronx",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_bronx.zip"
+      },
+      "license": {
+        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "mta-new-york-city-transit"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dr5r-nyct",
-      "tags": {
-        "us_ntd_id": "20008",
-        "us_ntd_id2": "20188",
-        "wikidata_id": "Q1146109",
-        "twitter_general": "mta",
-        "twitter_service_alerts": "NYCTSubway"
-      },
       "name": "MTA New York City Transit",
       "short_name": "MTA",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dr5r-mtanewyorkcitytransit"
+          "feed_onestop_id": "f-dr5r-mtabc"
         },
         {
-          "feed_onestop_id": "f-dr5r-nyctsubway"
+          "feed_onestop_id": "f-dr5r-mtanewyorkcitytransit"
         },
         {
           "feed_onestop_id": "f-dr5r-mtanyctbusbrooklyn"
@@ -246,15 +229,23 @@
           "feed_onestop_id": "f-dr5r-mtanyctbusstatenisland"
         },
         {
+          "feed_onestop_id": "f-dr5r-nyctsubway"
+        },
+        {
           "feed_onestop_id": "f-dr5x-mtanyctbusqueens"
         },
         {
           "feed_onestop_id": "f-dr72-mtanyctbusbronx"
-        },
-        {
-          "feed_onestop_id": "f-dr5r-mtabc"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "mta",
+        "twitter_service_alerts": "NYCTSubway",
+        "us_ntd_id": "20008",
+        "us_ntd_id2": "20188",
+        "wikidata_id": "Q1146109"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

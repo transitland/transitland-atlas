@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qh-riversidetransitagency",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.riversidetransit.com/google_transit.zip"
       },
@@ -13,28 +13,28 @@
       "operators": [
         {
           "onestop_id": "o-9qh-riversidetransitagency",
-          "tags": {
-            "us_ntd_id": "90031",
-            "wikidata_id": "Q7338635",
-            "twitter_general": "rtabus"
-          },
           "name": "Riverside Transit Agency",
           "short_name": "RTA",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-rta~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "rtabus",
+            "us_ntd_id": "90031",
+            "wikidata_id": "Q7338635"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-rta~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://rtabus.com/gtfsrt/alerts",
+        "realtime_vehicle_positions": "https://rtabus.com/gtfsrt/vehicles",
         "realtime_trip_updates": "https://rtabus.com/gtfsrt/trips",
-        "realtime_vehicle_positions": "https://rtabus.com/gtfsrt/vehicles"
+        "realtime_alerts": "https://rtabus.com/gtfsrt/alerts"
       }
     }
   ],

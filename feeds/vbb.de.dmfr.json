@@ -2,35 +2,34 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u3-günterangergüterverkehrsgmbh~coomnibusvermietungkg~fritzbeh",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.vbb.de/de/download/GTFS_VBB_Jan_Dez2017.zip"
       },
       "license": {
         "url": "http://creativecommons.org/licenses/by/3.0/de/",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-u336-harureisenohghansrudek",
-          "name": "Haru-Reisen",
-          "website": "http://www.harureisen.de",
+          "onestop_id": "o-u3-dbregioag",
+          "name": "DB Regio",
+          "website": "http://www.bahn.de/brandenburg",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "Haru--"
+              "gtfs_agency_id": "N01---,N04---,N51---,NBB---"
             }
           ]
         },
         {
-          "onestop_id": "o-u331-fritzbehrendtohg",
-          "name": "Fritz Behrendt",
-          "website": "http://www.behrendt-touristik.de",
+          "onestop_id": "o-u3-odegostdeutscheeisenbahngmbh",
+          "name": "Ostdeutsche Eisenbahn ",
+          "website": "http://www.odeg.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BEH---"
+              "gtfs_agency_id": "ODBUS_,ODEN__,ODRE2_,ODRE4_,ODSNN_"
             }
           ]
         },
@@ -46,75 +45,12 @@
           ]
         },
         {
-          "onestop_id": "o-u32f-verkehrsbetriebebrandenburganderhavelgmbh",
-          "name": "Verkehrsbetriebe Brandenburg an der Havel",
-          "short_name": "VBBr",
-          "website": "http://www.vbbr.de",
+          "onestop_id": "o-u31-verkehrsgesellschaftoberspreewald~lausitzmbh",
+          "name": "Verkehrsgesellschaft Oberspreewald-Lausitz ",
+          "website": "http://www.vgosl.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BRB---,BRT---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u333-regiobuspotsdammittelmarkgmbh",
-          "name": "Regiobus Potsdam Mittelmark GmbH",
-          "website": "http://www.regiobus-pm.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "846"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33-havelbusverkehrsgesellschaftmbh",
-          "name": "Havelbus Verkehrsgesellschaft",
-          "website": "http://www.havelbus.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HVG---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u34-dbregiobusostgmbh",
-          "name": "Spree-Neiße-Bus",
-          "website": "http://www.bahn.de/spreeneissebus/view/index.shtml",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SNB___"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u36-busverkehroder~spreegmbh",
-          "name": "Busverkehr Oder-Spree",
-          "short_name": "BOS",
-          "website": "http://www.bos-fw.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BON---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u330-sabinchentouristikgmbh",
-          "name": "Sabinchen Touristik",
-          "website": "http://www.vbb.de/de/article/verkehrsunternehmen-im-vbb/sabinchen-touristik-gmbh/6613.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "STG---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33-barnimerbusgesellschaftmbh",
-          "name": "Barnimer Busgesellschaft",
-          "short_name": "BBG",
-          "website": "http://www.bbg-eberswalde.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BTS___"
+              "gtfs_agency_id": "VGOSL_"
             }
           ]
         },
@@ -129,105 +65,12 @@
           ]
         },
         {
-          "onestop_id": "o-u32c-lange",
-          "name": "Lange",
-          "website": "http://www.lange-tours.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "LANGE-"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33-oberhavelverkehrsgesellschaftmbh",
-          "name": "Oberhavel Verkehrsgesellschaft ",
-          "short_name": "OVG",
-          "website": "http://www.ovg-online.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "OVG---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u330-areichgmbhbusbetrieb",
-          "name": "A. Reich",
-          "website": "http://www.a-reich.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "REI---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3-odegostdeutscheeisenbahngmbh",
-          "name": "Ostdeutsche Eisenbahn ",
-          "website": "http://www.odeg.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ODBUS_,ODEN__,ODRE2_,ODRE4_,ODSNN_"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33fg-strausbergereisenbahngmbh",
-          "name": "Strausberger Eisenbahn ",
-          "website": "http://www.strausberger-eisenbahn.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "STE---,STF---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u32b-glaser",
-          "name": "Glaser",
-          "website": "http://www.busreisen-glaser.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GLA---"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u32-hanseatischeeisenbahn",
           "name": "Hanseatische Eisenbahn",
           "website": "http://www.hanseatische-eisenbahn.de/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "HANS--"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33-uckermärkischeverkehrsgesellschaft",
-          "name": "Uckermärkische Verkehrsgesellschaft",
-          "short_name": "UVG",
-          "website": "http://www.uvg-online.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "UVGG__"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u31-verkehrsgesellschaftoberspreewald~lausitzmbh",
-          "name": "Verkehrsgesellschaft Oberspreewald-Lausitz ",
-          "website": "http://www.vgosl.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "VGOSL_"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33-verkehrsgesellschaftteltow~flämingmbh",
-          "name": "Verkehrsgesellschaft Teltow-Fläming",
-          "short_name": "VTF",
-          "website": "http://www.vtf-online.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "VTF---"
             }
           ]
         },
@@ -243,33 +86,12 @@
           ]
         },
         {
-          "onestop_id": "o-u33-nebbetriebsgesellschaftmbh",
-          "name": "Niederbarnimer Eisenbahng",
-          "short_name": "NEB",
-          "website": "http://www.neb.de",
+          "onestop_id": "o-u32-prignitzbus",
+          "name": "prignitzbus",
+          "website": "http://www.prignitz-bus.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "NEB---,NEV---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33-s~bahnberlingmbh",
-          "name": "S-Bahn Berlin",
-          "website": "http://www.s-bahn-berlin.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "DBS---,SEV---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3-dbregioag",
-          "name": "DB Regio",
-          "website": "http://www.bahn.de/brandenburg",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "N01---,N04---,N51---,NBB---"
+              "gtfs_agency_id": "PRG---"
             }
           ]
         },
@@ -284,22 +106,119 @@
           ]
         },
         {
-          "onestop_id": "o-u32-prignitzbus",
-          "name": "prignitzbus",
-          "website": "http://www.prignitz-bus.de",
+          "onestop_id": "o-u32b-glaser",
+          "name": "Glaser",
+          "website": "http://www.busreisen-glaser.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "PRG---"
+              "gtfs_agency_id": "GLA---"
             }
           ]
         },
         {
-          "onestop_id": "o-u33f-schöneicherrüdersdorferstraßenbahngmbh",
-          "name": "Schöneicher Rüdersdorfer Straßenbahn",
-          "website": "http://www.srs-tram.de",
+          "onestop_id": "o-u32c-lange",
+          "name": "Lange",
+          "website": "http://www.lange-tours.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SRS---"
+              "gtfs_agency_id": "LANGE-"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u32f-verkehrsbetriebebrandenburganderhavelgmbh",
+          "name": "Verkehrsbetriebe Brandenburg an der Havel",
+          "short_name": "VBBr",
+          "website": "http://www.vbbr.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BRB---,BRT---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-barnimerbusgesellschaftmbh",
+          "name": "Barnimer Busgesellschaft",
+          "short_name": "BBG",
+          "website": "http://www.bbg-eberswalde.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BTS___"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-havelbusverkehrsgesellschaftmbh",
+          "name": "Havelbus Verkehrsgesellschaft",
+          "website": "http://www.havelbus.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HVG---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-nebbetriebsgesellschaftmbh",
+          "name": "Niederbarnimer Eisenbahng",
+          "short_name": "NEB",
+          "website": "http://www.neb.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NEB---,NEV---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-oberhavelverkehrsgesellschaftmbh",
+          "name": "Oberhavel Verkehrsgesellschaft ",
+          "short_name": "OVG",
+          "website": "http://www.ovg-online.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OVG---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-regionaleverkehrsgesellschaftdahme~spreewaldmbh",
+          "name": "Regionale Verkehrsgesellschaft Dahme-Spreewald ",
+          "short_name": "RVS",
+          "website": "http://www.rvs-lds.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RVS---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-s~bahnberlingmbh",
+          "name": "S-Bahn Berlin",
+          "website": "http://www.s-bahn-berlin.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "DBS---,SEV---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-uckermärkischeverkehrsgesellschaft",
+          "name": "Uckermärkische Verkehrsgesellschaft",
+          "short_name": "UVG",
+          "website": "http://www.uvg-online.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "UVGG__"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33-verkehrsgesellschaftteltow~flämingmbh",
+          "name": "Verkehrsgesellschaft Teltow-Fläming",
+          "short_name": "VTF",
+          "website": "http://www.vtf-online.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VTF---"
             }
           ]
         },
@@ -314,65 +233,42 @@
           ]
         },
         {
-          "onestop_id": "o-u34n-cottbusverkehrgmbh",
-          "name": "Cottbusverkehr",
-          "website": "http://www.cottbusverkehr.de",
+          "onestop_id": "o-u330-areichgmbhbusbetrieb",
+          "name": "A. Reich",
+          "website": "http://www.a-reich.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CNB---,CNT---"
+              "gtfs_agency_id": "REI---"
             }
           ]
         },
         {
-          "onestop_id": "o-u33d-berlinerverkehrsbetriebe",
-          "name": "Berliner Verkehrsbetriebe",
-          "short_name": "BVG",
-          "website": "http://www.bvg.de",
+          "onestop_id": "o-u330-sabinchentouristikgmbh",
+          "name": "Sabinchen Touristik",
+          "website": "http://www.vbb.de/de/article/verkehrsunternehmen-im-vbb/sabinchen-touristik-gmbh/6613.html",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BVB---,BVF---,BVU---,BVT---"
+              "gtfs_agency_id": "STG---"
             }
           ]
         },
         {
-          "onestop_id": "o-u36-busverkehrmärkisch~oderlandgmbh",
-          "name": "Busverkehr Märkisch-Oderland",
-          "short_name": "BMO",
-          "website": "http://www.busmol.de",
+          "onestop_id": "o-u331-fritzbehrendtohg",
+          "name": "Fritz Behrendt",
+          "website": "http://www.behrendt-touristik.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BMO---"
+              "gtfs_agency_id": "BEH---"
             }
           ]
         },
         {
-          "onestop_id": "o-u33f2-woltersdorferstraßenbahngmbh",
-          "name": "Woltersdorfer Straßenbahn",
-          "website": "http://www.woltersdorfer-strassenbahn.com",
+          "onestop_id": "o-u333-regiobuspotsdammittelmarkgmbh",
+          "name": "Regiobus Potsdam Mittelmark GmbH",
+          "website": "http://www.regiobus-pm.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "WS----"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u363-stadtverkehrsgesellschaftmbhfrankfurtoder",
-          "name": "Stadtverkehrsgesellschaft",
-          "short_name": "SVF",
-          "website": "http://www.svf-ffo.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FFB---,FFT---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33b0-tropicalislands",
-          "name": "Tropical Islands",
-          "website": "http://www.tropical-islands.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TI----"
+              "gtfs_agency_id": "846"
             }
           ]
         },
@@ -388,6 +284,16 @@
           ]
         },
         {
+          "onestop_id": "o-u336-harureisenohghansrudek",
+          "name": "Haru-Reisen",
+          "website": "http://www.harureisen.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Haru--"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-u336-verkehrsbetriebpotsdamgmbh",
           "name": "Verkehrsbetrieb Potsdam ",
           "website": "http://www.vip-potsdam.de",
@@ -398,13 +304,106 @@
           ]
         },
         {
-          "onestop_id": "o-u33-regionaleverkehrsgesellschaftdahme~spreewaldmbh",
-          "name": "Regionale Verkehrsgesellschaft Dahme-Spreewald ",
-          "short_name": "RVS",
-          "website": "http://www.rvs-lds.de",
+          "onestop_id": "o-u33b0-tropicalislands",
+          "name": "Tropical Islands",
+          "website": "http://www.tropical-islands.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "RVS---"
+              "gtfs_agency_id": "TI----"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33d-berlinerverkehrsbetriebe",
+          "name": "Berliner Verkehrsbetriebe",
+          "short_name": "BVG",
+          "website": "http://www.bvg.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BVB---,BVF---,BVU---,BVT---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33f-schöneicherrüdersdorferstraßenbahngmbh",
+          "name": "Schöneicher Rüdersdorfer Straßenbahn",
+          "website": "http://www.srs-tram.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SRS---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33f2-woltersdorferstraßenbahngmbh",
+          "name": "Woltersdorfer Straßenbahn",
+          "website": "http://www.woltersdorfer-strassenbahn.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WS----"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u33fg-strausbergereisenbahngmbh",
+          "name": "Strausberger Eisenbahn ",
+          "website": "http://www.strausberger-eisenbahn.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "STE---,STF---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u34-dbregiobusostgmbh",
+          "name": "Spree-Neiße-Bus",
+          "website": "http://www.bahn.de/spreeneissebus/view/index.shtml",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SNB___"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u34n-cottbusverkehrgmbh",
+          "name": "Cottbusverkehr",
+          "website": "http://www.cottbusverkehr.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CNB---,CNT---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u36-busverkehrmärkisch~oderlandgmbh",
+          "name": "Busverkehr Märkisch-Oderland",
+          "short_name": "BMO",
+          "website": "http://www.busmol.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BMO---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u36-busverkehroder~spreegmbh",
+          "name": "Busverkehr Oder-Spree",
+          "short_name": "BOS",
+          "website": "http://www.bos-fw.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BON---"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u363-stadtverkehrsgesellschaftmbhfrankfurtoder",
+          "name": "Stadtverkehrsgesellschaft",
+          "short_name": "SVF",
+          "website": "http://www.svf-ffo.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FFB---,FFT---"
             }
           ]
         }

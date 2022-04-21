@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-memphis~area~transit~authority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.matatransit.com/assets/2/6/Memphis_TN_transitfeed2.zip",
         "static_historic": [
@@ -13,18 +13,18 @@
       "operators": [
         {
           "onestop_id": "o-memphis~area~transit~authority",
-          "tags": {
-            "us_ntd_id": "40003",
-            "wikidata_id": "Q12061679",
-            "twitter_general": "RideMATA"
-          },
           "name": "Memphis Area Transit Authority",
           "short_name": "MATA",
           "associated_feeds": [
             {
               "gtfs_agency_id": "MATA"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "RideMATA",
+            "us_ntd_id": "40003",
+            "wikidata_id": "Q12061679"
+          }
         }
       ]
     }

@@ -2,42 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-spqb-aspoolbia",
-      "urls": {
-        "static_current": "http://www.sardegnamobilita.it/opendata/dati_aspo.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spqb-aspoolbia",
-          "name": "ASPO Olbia",
-          "short_name": "ASPO",
-          "website": "http://www.aspoolbia.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-s-atpnuoro",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.sardegnamobilita.it/opendata/dati_atpnu.zip"
       },
       "license": {
         "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -54,102 +27,124 @@
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-spnp-atpsassari",
-      "urls": {
-        "static_current": "http://www.sardegnamobilita.it/opendata/dati_atpss.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spnp-atpsassari",
-          "name": "Azienda Trasporti Pubblici - Sassari",
-          "short_name": "ATP",
-          "website": "http://www.atpsassari.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "3"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-spn-maddalenalines~delcomar",
-      "urls": {
-        "static_current": "http://www.sardegnamobilita.it/opendata/dati_mare.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spn-delcomar",
-          "name": "Delcomar",
-          "website": "http://www.delcomar.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "888"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-spn-trenitalia",
-      "urls": {
-        "static_current": "http://www.sardegnamobilita.it/opendata/dati_trenitalia.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "trenitalia"
-      }
-    },
-    {
-      "spec": "gtfs",
       "id": "f-spn-asara~atzeni~murgiaautolinee~baireautolinee~autolineedelgo",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.sardegnamobilita.it/opendata/dati_privati.zip"
       },
       "license": {
         "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-spn-pisanu",
-          "name": "Pisanu Eredi",
-          "website": "http://www.pisanuautolinee.it",
+          "onestop_id": "o-snvyp-senis",
+          "name": "Autoservizi e Autolinee de Senis Enrico",
+          "website": "http://www.autoservizisenis.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "51"
+              "gtfs_agency_id": "57"
             }
           ]
         },
         {
-          "onestop_id": "o-spn-frauautolinee",
-          "name": "Autolinee Frau",
+          "onestop_id": "o-sny-baireautolinee",
+          "name": "Autolinee Baire",
+          "website": "http://www.tourbaire.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "12"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-sny-murgiaautolinee",
+          "name": "Autolinee Antonio Murgia",
+          "website": "http://www.murgiabus.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-snyr-autolineedelgolfo",
+          "name": "Autolinee del Golfo",
           "website": "http://www.sardegnamobilita.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "14"
+              "gtfs_agency_id": "13"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-snyr-dedoni",
+          "name": "Dedoni Giulio",
+          "website": "http://www.dedoniturismo.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "25"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-snyr-tourbus",
+          "name": "Tour Bus di Caria Giacomo",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "63"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-snyx-vaccaviaggisnc",
+          "name": "Vacca Viaggi",
+          "website": "http://www.vaccaviaggi.net",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "213"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-sp-careddu",
+          "name": "Careddu Maddalo",
+          "website": "http://www.caredduautoservizi.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "23"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-balestrucci",
+          "name": "Balestrucci",
+          "website": "http://www.faraviaggi.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "20"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-cappato",
+          "name": "Fratelli Cappato di Ivana e Pier Lorenzo",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "32"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-deplanoflli",
+          "name": "Fratelli Deplano",
+          "website": "http://www.noleggiopullmansardegna.it/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "33"
             }
           ]
         },
@@ -160,16 +155,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "26"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn4-melis",
-          "name": "Melis Sergio",
-          "website": "http://www.melisnoleggioautobus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "43"
             }
           ]
         },
@@ -185,12 +170,92 @@
           ]
         },
         {
-          "onestop_id": "o-spnp-dettori",
-          "name": "Demarbus di Marco Dettori",
+          "onestop_id": "o-spn-faraviaggi",
+          "name": "Fara Viaggi",
+          "website": "http://www.faraviaggi.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "35"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-frauautolinee",
+          "name": "Autolinee Frau",
           "website": "http://www.sardegnamobilita.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "28"
+              "gtfs_agency_id": "14"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-garau",
+          "name": "Garau Mauro",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "38"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-logudorotour",
+          "name": "Logudoro Tours",
+          "website": "http://www.logudorotours.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "41"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-molinu",
+          "name": "Francesco Molinu",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "37"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-pisanu",
+          "name": "Pisanu Eredi",
+          "website": "http://www.pisanuautolinee.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "51"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn-turmotravel",
+          "name": "Turmo Travel",
+          "website": "http://www.gruppoturmotravel.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "64"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn0-mereu",
+          "name": "Mereu Autolinee",
+          "website": "http://autoservizi.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "17"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn1-atzeni",
+          "name": "Atzeni Avelino",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10"
             }
           ]
         },
@@ -211,252 +276,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "210"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-snyr-dedoni",
-          "name": "Dedoni Giulio",
-          "website": "http://www.dedoniturismo.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "25"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnn-turmolinessrl",
-          "name": "Turmo Lines",
-          "website": "http://www.gruppoturmotravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "211"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnz-eurosar",
-          "name": "Autoservi Eurosar di Carlo e Andrea Tucconi",
-          "short_name": "Eurosar",
-          "website": "http://www.eurosar.it/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "30"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnt-masala",
-          "name": "Masala Francesco Angelo Eredi",
-          "short_name": "Autolinee Masala",
-          "website": "http://www.autolineemasala.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "42"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn-molinu",
-          "name": "Francesco Molinu",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "37"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spq-sunlines",
-          "name": "Sun Lines",
-          "website": "http://www.sunlineseliteservice.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "62"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnb6-sina",
-          "name": "Sina di Gianfranco Stevelli",
-          "website": "http://www.sinautonoleggio.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "60"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn4-fata",
-          "name": "Fata Eredi Angius Felice",
-          "short_name": "Fata",
-          "website": "http://www.autoservizifata.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "31"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-sny-baireautolinee",
-          "name": "Autolinee Baire",
-          "website": "http://www.tourbaire.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "12"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-snyr-tourbus",
-          "name": "Tour Bus di Caria Giacomo",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "63"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnn-seunis",
-          "name": "Seunis Tours",
-          "website": "http://www.seunistours.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "59"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spq8-giagheddu",
-          "name": "Giagheddu Antonio",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "39"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnx-fab",
-          "name": "Autoservizi FAB",
-          "website": "http://www.autoservizifab.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "16"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn-balestrucci",
-          "name": "Balestrucci",
-          "website": "http://www.faraviaggi.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "20"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spq-sardabus",
-          "name": "Sardabus di Addis Francesco",
-          "short_name": "Sardabus",
-          "website": "http://www.sardabus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "55"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn0-mereu",
-          "name": "Mereu Autolinee",
-          "website": "http://autoservizi.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "17"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn-turmotravel",
-          "name": "Turmo Travel",
-          "website": "http://www.gruppoturmotravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "64"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnn-sanna",
-          "name": "SANNA ANTONIO",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "54"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-snyr-autolineedelgolfo",
-          "name": "Autolinee del Golfo",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "13"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spq2-serra",
-          "name": "Serra Gesuino",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "58"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn-deplanoflli",
-          "name": "Fratelli Deplano",
-          "website": "http://www.noleggiopullmansardegna.it/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "33"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spq-caramellitours",
-          "name": "Autolinee Autonoleggio Caramelli Tours",
-          "short_name": "Caramelli Tours",
-          "website": "http://www.caramellitours.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "22"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnw-autnuovasuntravel",
-          "name": "Autoservizi Nuova Sun Travel di Moreddu Mario",
-          "short_name": "Nuova Sun Travel",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "111"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spnx-nordorientale",
-          "name": "Autoservizi Nordorientale",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "46"
             }
           ]
         },
@@ -482,12 +301,83 @@
           ]
         },
         {
-          "onestop_id": "o-spn-faraviaggi",
-          "name": "Fara Viaggi",
-          "website": "http://www.faraviaggi.it",
+          "onestop_id": "o-spn4-fata",
+          "name": "Fata Eredi Angius Felice",
+          "short_name": "Fata",
+          "website": "http://www.autoservizifata.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "35"
+              "gtfs_agency_id": "31"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spn4-melis",
+          "name": "Melis Sergio",
+          "website": "http://www.melisnoleggioautobus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "43"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnb6-sina",
+          "name": "Sina di Gianfranco Stevelli",
+          "website": "http://www.sinautonoleggio.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "60"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnc-puddu",
+          "name": "Autolinee di Puddu Sandro",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "52"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnn-sanna",
+          "name": "SANNA ANTONIO",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "54"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnn-seunis",
+          "name": "Seunis Tours",
+          "website": "http://www.seunistours.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "59"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnn-turmolinessrl",
+          "name": "Turmo Lines",
+          "website": "http://www.gruppoturmotravel.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "211"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnp-dettori",
+          "name": "Demarbus di Marco Dettori",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "28"
             }
           ]
         },
@@ -498,66 +388,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "67"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn1-atzeni",
-          "name": "Atzeni Avelino",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "10"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-snyx-vaccaviaggisnc",
-          "name": "Vacca Viaggi",
-          "website": "http://www.vaccaviaggi.net",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "213"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn-garau",
-          "name": "Garau Mauro",
-          "website": "http://www.sardegnamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "38"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spn-logudorotour",
-          "name": "Logudoro Tours",
-          "website": "http://www.logudorotours.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "41"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-sp-careddu",
-          "name": "Careddu Maddalo",
-          "website": "http://www.caredduautoservizi.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "23"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-snvyp-senis",
-          "name": "Autoservizi e Autolinee de Senis Enrico",
-          "website": "http://www.autoservizisenis.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "57"
             }
           ]
         },
@@ -573,32 +403,196 @@
           ]
         },
         {
-          "onestop_id": "o-spn-cappato",
-          "name": "Fratelli Cappato di Ivana e Pier Lorenzo",
-          "website": "http://www.sardegnamobilita.it",
+          "onestop_id": "o-spnt-masala",
+          "name": "Masala Francesco Angelo Eredi",
+          "short_name": "Autolinee Masala",
+          "website": "http://www.autolineemasala.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "32"
+              "gtfs_agency_id": "42"
             }
           ]
         },
         {
-          "onestop_id": "o-sny-murgiaautolinee",
-          "name": "Autolinee Antonio Murgia",
-          "website": "http://www.murgiabus.it",
+          "onestop_id": "o-spnw-autnuovasuntravel",
+          "name": "Autoservizi Nuova Sun Travel di Moreddu Mario",
+          "short_name": "Nuova Sun Travel",
+          "website": "http://www.sardegnamobilita.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "11"
+              "gtfs_agency_id": "111"
             }
           ]
         },
         {
-          "onestop_id": "o-spnc-puddu",
-          "name": "Autolinee di Puddu Sandro",
+          "onestop_id": "o-spnx-fab",
+          "name": "Autoservizi FAB",
+          "website": "http://www.autoservizifab.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "16"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnx-nordorientale",
+          "name": "Autoservizi Nordorientale",
           "website": "http://www.sardegnamobilita.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "52"
+              "gtfs_agency_id": "46"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spnz-eurosar",
+          "name": "Autoservi Eurosar di Carlo e Andrea Tucconi",
+          "short_name": "Eurosar",
+          "website": "http://www.eurosar.it/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "30"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spq-caramellitours",
+          "name": "Autolinee Autonoleggio Caramelli Tours",
+          "short_name": "Caramelli Tours",
+          "website": "http://www.caramellitours.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spq-sardabus",
+          "name": "Sardabus di Addis Francesco",
+          "short_name": "Sardabus",
+          "website": "http://www.sardabus.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "55"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spq-sunlines",
+          "name": "Sun Lines",
+          "website": "http://www.sunlineseliteservice.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "62"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spq2-serra",
+          "name": "Serra Gesuino",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "58"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spq8-giagheddu",
+          "name": "Giagheddu Antonio",
+          "website": "http://www.sardegnamobilita.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "39"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-spn-maddalenalines~delcomar",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.sardegnamobilita.it/opendata/dati_mare.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spn-delcomar",
+          "name": "Delcomar",
+          "website": "http://www.delcomar.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "888"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-spn-trenitalia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.sardegnamobilita.it/opendata/dati_trenitalia.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "trenitalia"
+      }
+    },
+    {
+      "id": "f-spnp-atpsassari",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.sardegnamobilita.it/opendata/dati_atpss.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spnp-atpsassari",
+          "name": "Azienda Trasporti Pubblici - Sassari",
+          "short_name": "ATP",
+          "website": "http://www.atpsassari.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-spqb-aspoolbia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.sardegnamobilita.it/opendata/dati_aspo.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/deed.it",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spqb-aspoolbia",
+          "name": "ASPO Olbia",
+          "short_name": "ASPO",
+          "website": "http://www.aspoolbia.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5"
             }
           ]
         }

@@ -2,23 +2,22 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c9k0-saskatoontransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://apps2.saskatoon.ca/app/data/google_transit.zip"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-saskatoon~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://apps2.saskatoon.ca/app/data/Alert/Alerts.pb",
+        "realtime_vehicle_positions": "https://apps2.saskatoon.ca/app/data/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "https://apps2.saskatoon.ca/app/data/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "https://apps2.saskatoon.ca/app/data/Vehicle/VehiclePositions.pb"
+        "realtime_alerts": "https://apps2.saskatoon.ca/app/data/Alert/Alerts.pb"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-c9k0-saskatoontransit",
@@ -26,12 +25,13 @@
       "website": "http://transit.saskatoon.ca",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-saskatoon~rt"
+          "feed_onestop_id": "f-c9k0-saskatoontransit"
         },
         {
-          "feed_onestop_id": "f-c9k0-saskatoontransit"
+          "feed_onestop_id": "f-saskatoon~rt"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

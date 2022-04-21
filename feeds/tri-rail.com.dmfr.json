@@ -2,35 +2,35 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dhx-tri~rail",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.tri-rail.com/GTDF/Current/google_transit.zip",
         "static_historic": [
           "http://www.tri-rail.com/GTDF/Current/google_transit.zip"
         ]
       },
-      "tags": {
-        "gtfs_data_exchange": "tri-rail"
-      },
       "license": {
         "url": "https://ftis.org/FTDEDisclaimer.aspx"
+      },
+      "tags": {
+        "gtfs_data_exchange": "tri-rail"
       },
       "operators": [
         {
           "onestop_id": "o-dhx-tri~rail",
-          "tags": {
-            "us_ntd_id": "40077",
-            "wikidata_id": "Q2452212",
-            "twitter_general": "Tri_Rail"
-          },
           "name": "Tri-Rail",
           "website": "http://tri-rail.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "tri-rail"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "Tri_Rail",
+            "us_ntd_id": "40077",
+            "wikidata_id": "Q2452212"
+          }
         }
       ]
     }

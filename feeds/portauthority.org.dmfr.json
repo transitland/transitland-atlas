@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dppn-portauthorityofalleghenycounty",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.portauthority.org/developerresources/GTFS.zip"
       },
@@ -11,7 +11,6 @@
         "url": "https://www.portauthority.org/business-center/developer-resources/developer-license-agreement/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Reproduced with permission granted by Port Authority of Allegheny County (PAAC). The information has been provided by means of a nonexclusive, limited, and revocable license granted by PAAC. PAAC does not guarantee the accuracy, adequacy, completeness, or usefulness of any information. PAAC provides this information \"as is\" without warranty of any kind, express or implied, including, but not limited to, warranties of merchantability or fitness for a particular purpose and assumes no responsibility for anyone's use of the information."
       },
       "tags": {
@@ -20,12 +19,6 @@
       "operators": [
         {
           "onestop_id": "o-dppn-portauthorityofalleghenycounty",
-          "tags": {
-            "us_ntd_id": "30022",
-            "wikidata_id": "Q7230500",
-            "twitter_general": "pghtransit",
-            "twitter_service_alerts": "pghtransitalert"
-          },
           "name": "Port Authority of Allegheny County",
           "website": "http://www.portauthority.org",
           "associated_feeds": [
@@ -38,20 +31,26 @@
             {
               "feed_onestop_id": "f-dppn-portauthorityofalleghenycounty~train~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "pghtransit",
+            "twitter_service_alerts": "pghtransitalert",
+            "us_ntd_id": "30022",
+            "wikidata_id": "Q7230500"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-dppn-portauthorityofalleghenycounty~bus~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "http://truetime.portauthority.org/gtfsrt-bus/"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-dppn-portauthorityofalleghenycounty~train~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "http://truetime.portauthority.org/gtfsrt-train/"
       }

@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp3-cta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.transitchicago.com/downloads/sch_data/google_transit.zip"
       },
       "license": {
         "url": "http://www.transitchicago.com/downloads/sch_data/developers_license_agreement.htm",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "chicago-transit-authority"
@@ -19,13 +18,13 @@
       "operators": [
         {
           "onestop_id": "o-dp3-chicagotransitauthority",
-          "tags": {
-            "us_ntd_id": "50066",
-            "wikidata_id": "Q117309",
-            "twitter_general": "cta"
-          },
           "name": "Chicago Transit Authority",
-          "short_name": "CTA"
+          "short_name": "CTA",
+          "tags": {
+            "twitter_general": "cta",
+            "us_ntd_id": "50066",
+            "wikidata_id": "Q117309"
+          }
         }
       ]
     }

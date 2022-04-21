@@ -2,61 +2,60 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp3-metra",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfsapi.metrarail.com/gtfs/raw/schedule.zip"
       },
       "license": {
         "url": "https://metrarail.com/developers",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "authorization": {
-        "info_url": "https://metrarail.com/developers",
-        "type": "basic_auth"
+        "type": "basic_auth",
+        "info_url": "https://metrarail.com/developers"
       },
       "tags": {
         "gtfs_data_exchange": "metra"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-metra~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://gtfsapi.metrarail.com/gtfs/raw/alerts.dat",
+        "realtime_vehicle_positions": "https://gtfsapi.metrarail.com/gtfs/raw/positionUpdates.dat",
         "realtime_trip_updates": "https://gtfsapi.metrarail.com/gtfs/raw/tripUpdates.dat",
-        "realtime_vehicle_positions": "https://gtfsapi.metrarail.com/gtfs/raw/positionUpdates.dat"
+        "realtime_alerts": "https://gtfsapi.metrarail.com/gtfs/raw/alerts.dat"
       },
       "authorization": {
-        "info_url": "https://metrarail.com/developers",
-        "type": "basic_auth"
+        "type": "basic_auth",
+        "info_url": "https://metrarail.com/developers"
       },
       "tags": {
         "notes": "Needs HTTP Basic Auth."
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dp3-metra",
-      "tags": {
-        "us_ntd_id": "50118",
-        "wikidata_id": "Q1814208",
-        "twitter_general": "Metra"
-      },
       "name": "Metra",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dp3-metra",
-          "gtfs_agency_id": "METRA"
+          "gtfs_agency_id": "METRA",
+          "feed_onestop_id": "f-dp3-metra"
         },
         {
           "feed_onestop_id": "f-metra~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "Metra",
+        "us_ntd_id": "50118",
+        "wikidata_id": "Q1814208"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

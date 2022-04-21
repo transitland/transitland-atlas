@@ -2,26 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dhv-hillsborougharearegionaltransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.gohart.org/google/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "hillsborough-area-regional-transit"
       },
       "license": {
         "url": "https://ftis.org/FTDEDisclaimer.aspx"
       },
+      "tags": {
+        "gtfs_data_exchange": "hillsborough-area-regional-transit"
+      },
       "operators": [
         {
           "onestop_id": "o-dhv-hillsborougharearegionaltransit",
-          "tags": {
-            "wikidata_id": "Q5763656",
-            "us_ntd_id": "40041",
-            "omd_provider_id": "hillsborough-area-regional-transit",
-            "twitter_general": "goHART"
-          },
           "name": "Hillsborough Area Regional Transit",
           "short_name": "HART",
           "website": "http://www.gohart.org",
@@ -29,17 +23,22 @@
             {
               "feed_onestop_id": "f-dhv-hillsborougharearegionaltransit~rt"
             }
-          ]
+          ],
+          "tags": {
+            "omd_provider_id": "hillsborough-area-regional-transit",
+            "twitter_general": "goHART",
+            "us_ntd_id": "40041",
+            "wikidata_id": "Q5763656"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-dhv-hillsborougharearegionaltransit~rt",
-      "supersedes_ids": ["f-hart~rt"],
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://api.tampa.onebusaway.org:8088/trip-updates",
-        "realtime_vehicle_positions": "http://api.tampa.onebusaway.org:8088/vehicle-positions"
+        "realtime_vehicle_positions": "http://api.tampa.onebusaway.org:8088/vehicle-positions",
+        "realtime_trip_updates": "http://api.tampa.onebusaway.org:8088/trip-updates"
       }
     }
   ],

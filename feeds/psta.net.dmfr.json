@@ -2,25 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dhv-psta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.psta.net/latest/Google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "psta"
       },
       "license": {
         "url": "https://ftis.org/FTDEDisclaimer.aspx"
       },
+      "tags": {
+        "gtfs_data_exchange": "psta"
+      },
       "operators": [
         {
           "onestop_id": "o-dhv-psta",
-          "tags": {
-            "us_ntd_id": "40027",
-            "wikidata_id": "Q7195535",
-            "twitter_general": "RidePSTA"
-          },
           "name": "Pinellas Suncoast Transit Authority",
           "short_name": "PSTA",
           "website": "http://www.psta.net",
@@ -28,7 +23,12 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "RidePSTA",
+            "us_ntd_id": "40027",
+            "wikidata_id": "Q7195535"
+          }
         }
       ]
     }

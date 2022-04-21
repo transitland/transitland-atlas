@@ -2,27 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dnh-grtaxpress",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://atlantaregional.org/wp-content/uploads/2017/03/gtfs-grta.zip"
       },
       "license": {
         "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-dnh-grtaxpress",
-          "tags": {
-            "us_ntd_id": "40135",
-            "wikidata_id": "Q5514501",
-            "twitter_general": "xpressga"
-          },
           "name": "Georgia Regional Transportation Authority",
-          "short_name": "GRTA Xpress"
+          "short_name": "GRTA Xpress",
+          "tags": {
+            "twitter_general": "xpressga",
+            "us_ntd_id": "40135",
+            "wikidata_id": "Q5514501"
+          }
         }
       ]
     }

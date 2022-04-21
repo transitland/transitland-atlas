@@ -2,19 +2,14 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr4e-patco",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.ridepatco.org/developers/PortAuthorityTransitCorporation.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dr4e-portauthoritytransitcorporation",
-          "tags": {
-            "us_ntd_id": "20098",
-            "wikidata_id": "Q2043730",
-            "twitter_general": "ridepatco"
-          },
           "name": "Port Authority Transit Corporation",
           "short_name": "PATCO",
           "website": "http://www.ridepatco.org",
@@ -22,7 +17,12 @@
             {
               "gtfs_agency_id": "PATCO"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "ridepatco",
+            "us_ntd_id": "20098",
+            "wikidata_id": "Q2043730"
+          }
         }
       ]
     }

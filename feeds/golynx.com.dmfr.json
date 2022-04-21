@@ -2,26 +2,22 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-djn-centralfloridaregionaltransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://gtfsrt.golynx.com/gtfsrt/google_transit.zip",
-        "static_historic": ["http://www.golynx.com/lynxmap/GoLYNX_data/google_transit.zip"]
+        "static_historic": [
+          "http://www.golynx.com/lynxmap/GoLYNX_data/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.golynx.com/lynxmap/DataDownload/index_files/Page414.htm",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-djn-centralfloridaregionaltransitauthority",
-          "tags": {
-            "wikidata_id": "Q6709559",
-            "us_ntd_id": "40035",
-            "twitter_general": "lynxbusorlando"
-          },
           "name": "Central Florida Regional Transit Authority",
           "short_name": "LYNX",
           "website": "http://www.golynx.com",
@@ -32,16 +28,21 @@
             {
               "feed_onestop_id": "f-djn-centralfloridaregionaltransitauthority~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "lynxbusorlando",
+            "us_ntd_id": "40035",
+            "wikidata_id": "Q6709559"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-djn-centralfloridaregionaltransitauthority~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://gtfsrt.golynx.com/gtfsrt/GTFS_TripUpdates",
-        "realtime_vehicle_positions": "http://gtfsrt.golynx.com/gtfsrt/GTFS_VehiclePositions"
+        "realtime_vehicle_positions": "http://gtfsrt.golynx.com/gtfsrt/GTFS_VehiclePositions",
+        "realtime_trip_updates": "http://gtfsrt.golynx.com/gtfsrt/GTFS_TripUpdates"
       }
     }
   ],

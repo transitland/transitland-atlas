@@ -2,91 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-drm-dattco",
       "spec": "gtfs",
-      "id": "f-drt3-yankee",
       "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/yankeeline-ma-us/yankeeline-ma-us.zip"
-      },
-      "license": {
-        "url": "https://www.massdot.state.ma.us/Portals/0/docs/developers/develop_license_agree.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
+        "static_current": "http://data.trilliumtransit.com/gtfs/dattco-ma-us/dattco-ma-us.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-drt3-yankee",
-          "name": "Yankee Line",
-          "website": "http://www.yankeeline.us/actonconcordcommuters.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "YANKEE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-drt0-metrowestregionaltransitauthority",
-      "urls": {
-        "static_current": "http://vc.mwrta.com/gtfs/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "metrowest-regional-transit-authority"
-      },
-      "license": {
-        "url": "https://www.mass.gov/doc/developers-license-agreement-11132009/download"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drt0-metrowestregionaltransitauthority",
+          "onestop_id": "o-drm-dattco",
+          "name": "DATTCO",
           "tags": {
-            "us_ntd_id": "10118",
-            "wikidata_id": "Q6824447",
-            "twitter_general": "MWRTA"
-          },
-          "name": "MetroWest Regional Transit Authority",
-          "short_name": "MWRTA"
+            "twitter_general": "dattcoinc",
+            "us_ntd_id": "10045"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-drs-franklinregionaltransitauthority",
-      "urls": {
-        "static_historic": [
-          "http://www.massdot.state.ma.us/Portals/0/docs/developers/frta_google_transit.zip",
-          "https://www.mass.gov/doc/franklin-rta-gtfs-files-zip-file-12292014/download"
-        ],
-        "static_current": "https://data.trilliumtransit.com/gtfs/frta-ma-us/frta-ma-us.zip"
-      },
-      "license": {
-        "url": "https://www.mass.gov/doc/developers-license-agreement-11132009/download",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
-      },
-      "tags": {
-        "gtfs_data_exchange": "franklin-regional-transit-authority"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drs-franklinregionaltransitauthority",
-          "tags": {
-            "us_ntd_id": "1R02-10173",
-            "wikidata_id": "Q5491773"
-          },
-          "name": "Franklin Regional Transit Authority",
-          "short_name": "FRTA"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-drmr-bloombus",
+      "spec": "gtfs",
       "urls": {
         "static_historic": [
           "http://www.massdot.state.ma.us/Portals/0/docs/developers/Bloom_google_transit.zip",
@@ -97,7 +31,6 @@
         "url": "https://www.massdot.state.ma.us/Portals/0/docs/developers/develop_license_agree.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
       },
       "operators": [
@@ -114,25 +47,39 @@
       ]
     },
     {
+      "id": "f-drs-franklinregionaltransitauthority",
       "spec": "gtfs",
-      "id": "f-drm-dattco",
       "urls": {
-        "static_current": "http://data.trilliumtransit.com/gtfs/dattco-ma-us/dattco-ma-us.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/frta-ma-us/frta-ma-us.zip",
+        "static_historic": [
+          "http://www.massdot.state.ma.us/Portals/0/docs/developers/frta_google_transit.zip",
+          "https://www.mass.gov/doc/franklin-rta-gtfs-files-zip-file-12292014/download"
+        ]
+      },
+      "license": {
+        "url": "https://www.mass.gov/doc/developers-license-agreement-11132009/download",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
+      },
+      "tags": {
+        "gtfs_data_exchange": "franklin-regional-transit-authority"
       },
       "operators": [
         {
-          "onestop_id": "o-drm-dattco",
+          "onestop_id": "o-drs-franklinregionaltransitauthority",
+          "name": "Franklin Regional Transit Authority",
+          "short_name": "FRTA",
           "tags": {
-            "us_ntd_id": "10045",
-            "twitter_general": "dattcoinc"
-          },
-          "name": "DATTCO"
+            "us_ntd_id": "1R02-10173",
+            "wikidata_id": "Q5491773"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-drt-coachcompany",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/coachcompany-ma-us/coachcompany-ma-us.zip"
       },
@@ -144,6 +91,56 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "CC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-drt0-metrowestregionaltransitauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://vc.mwrta.com/gtfs/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.mass.gov/doc/developers-license-agreement-11132009/download"
+      },
+      "tags": {
+        "gtfs_data_exchange": "metrowest-regional-transit-authority"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drt0-metrowestregionaltransitauthority",
+          "name": "MetroWest Regional Transit Authority",
+          "short_name": "MWRTA",
+          "tags": {
+            "twitter_general": "MWRTA",
+            "us_ntd_id": "10118",
+            "wikidata_id": "Q6824447"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-drt3-yankee",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/yankeeline-ma-us/yankeeline-ma-us.zip"
+      },
+      "license": {
+        "url": "https://www.massdot.state.ma.us/Portals/0/docs/developers/develop_license_agree.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drt3-yankee",
+          "name": "Yankee Line",
+          "website": "http://www.yankeeline.us/actonconcordcommuters.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "YANKEE"
             }
           ]
         }

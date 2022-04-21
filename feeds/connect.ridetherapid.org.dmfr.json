@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpe-therapid",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://connect.ridetherapid.org/InfoPoint/gtfs-zip.ashx"
       },
@@ -13,18 +13,18 @@
       "operators": [
         {
           "onestop_id": "o-dpe-therapid",
-          "tags": {
-            "us_ntd_id": "50033",
-            "wikidata_id": "Q14716158",
-            "twitter_general": "TheRapid"
-          },
           "name": "The Rapid",
           "website": "http://www.ridetherapid.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "0"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "TheRapid",
+            "us_ntd_id": "50033",
+            "wikidata_id": "Q14716158"
+          }
         }
       ]
     }

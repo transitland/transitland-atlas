@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dxfy-halifaxtransit~hrm",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://gtfs.halifax.ca/static/google_transit.zip"
       },
@@ -11,7 +11,6 @@
         "url": "http://www.halifax.ca/opendata/OD_TermsOfUse.php",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Contains information licenced under the Open Government Licence — Halifax."
       },
       "tags": {
@@ -19,16 +18,15 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-halifax~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://gtfs.halifax.ca/realtime/Alert/Alerts.pb",
+        "realtime_vehicle_positions": "http://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "http://gtfs.halifax.ca/realtime/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb"
+        "realtime_alerts": "http://gtfs.halifax.ca/realtime/Alert/Alerts.pb"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dxfy-halifaxtransit~hrm",
@@ -36,13 +34,14 @@
       "website": "http://www.halifax.ca/metrotransit/",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-halifax~rt"
+          "gtfs_agency_id": "Halifax",
+          "feed_onestop_id": "f-dxfy-halifaxtransit~hrm"
         },
         {
-          "feed_onestop_id": "f-dxfy-halifaxtransit~hrm",
-          "gtfs_agency_id": "Halifax"
+          "feed_onestop_id": "f-halifax~rt"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

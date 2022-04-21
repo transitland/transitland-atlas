@@ -2,18 +2,28 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9g3-semovi",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/setravi/GTFS_SEMOVI_CDMX.zip"
       },
       "license": {
         "url": "http://www7.df.gob.mx/wb/stv/condiciones_de_uso",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
+        {
+          "onestop_id": "o-9g3-reddetransportedepasajeros",
+          "name": "Red de Transporte de Pasajeros",
+          "short_name": "RTP",
+          "website": "http://www.rtp.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RTP"
+            }
+          ]
+        },
         {
           "onestop_id": "o-9g3q-corredoresconcesionados",
           "name": "Corredores Concesionados",
@@ -21,26 +31,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "CC"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9g3r-ferrocarrilessuburbanos",
-          "name": "Ferrocarriles Suburbanos",
-          "website": "http://www.fsuburbanos.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SUB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9g3w-metrobs",
-          "name": "Metrobús",
-          "website": "http://www.metrobus.df.gob.mx/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MB"
             }
           ]
         },
@@ -76,6 +66,26 @@
           ]
         },
         {
+          "onestop_id": "o-9g3r-ferrocarrilessuburbanos",
+          "name": "Ferrocarriles Suburbanos",
+          "website": "http://www.fsuburbanos.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SUB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9g3w-metrobs",
+          "name": "Metrobús",
+          "website": "http://www.metrobus.df.gob.mx/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MB"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-9g3w-sistemadetransportecolectivometro",
           "name": "Sistema de Transporte Colectivo - Metro",
           "short_name": "STC",
@@ -85,23 +95,12 @@
               "gtfs_agency_id": "METRO"
             }
           ]
-        },
-        {
-          "onestop_id": "o-9g3-reddetransportedepasajeros",
-          "name": "Red de Transporte de Pasajeros",
-          "short_name": "RTP",
-          "website": "http://www.rtp.gob.mx/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RTP"
-            }
-          ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-dr7-nywaterway",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/data.bytemark.co/nywaterway/nywaterway.zip"
       },
@@ -111,29 +110,29 @@
       "operators": [
         {
           "onestop_id": "o-dr7-nywaterway",
-          "tags": {
-            "us_ntd_id": "20190",
-            "wikidata_id": "Q6956135",
-            "twitter_general": "ridetheferry"
-          },
           "name": "NY Waterway",
           "website": "http://www.nywaterway.com",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-dr7-nywaterway",
-              "gtfs_agency_id": "NYW"
+              "gtfs_agency_id": "2",
+              "feed_onestop_id": "f-dr7-mtanyc~metro~north"
             },
             {
-              "feed_onestop_id": "f-dr7-mtanyc~metro~north",
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "NYW",
+              "feed_onestop_id": "f-dr7-nywaterway"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "ridetheferry",
+            "us_ntd_id": "20190",
+            "wikidata_id": "Q6956135"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-omaha~metro",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/omaha-metro/TrapezeExport/google_transit.zip"
       },
@@ -147,9 +146,9 @@
             }
           ],
           "tags": {
+            "twitter_general": "rideORBT",
             "us_ntd_id": "70002",
-            "wikidata_id": "Q6824485",
-            "twitter_general": "rideORBT"
+            "wikidata_id": "Q6824485"
           }
         }
       ]

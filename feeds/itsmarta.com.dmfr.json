@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dnh-marta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.itsmarta.com/google_transit_feed/google_transit.zip"
       },
@@ -13,31 +13,31 @@
       "operators": [
         {
           "onestop_id": "o-dnh-metropolitanatlantarapidtransitauthority",
-          "tags": {
-            "omd_provider_id": "marta",
-            "us_ntd_id": "40022",
-            "wikidata_id": "Q1423792",
-            "twitter_general": "marta_explorers",
-            "twitter_service_alerts": "MARTAservice"
-          },
           "name": "Metropolitan Atlanta Rapid Transit Authority",
           "short_name": "MARTA",
           "website": "http://www.itsmarta.com",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-dnh-marta",
-              "gtfs_agency_id": "MARTA"
+              "gtfs_agency_id": "MARTA",
+              "feed_onestop_id": "f-dnh-marta"
             },
             {
               "feed_onestop_id": "f-dnh-marta~rt"
             }
-          ]
+          ],
+          "tags": {
+            "omd_provider_id": "marta",
+            "twitter_general": "marta_explorers",
+            "twitter_service_alerts": "MARTAservice",
+            "us_ntd_id": "40022",
+            "wikidata_id": "Q1423792"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-dnh-marta~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://gtfs-rt.itsmarta.com/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb",
         "realtime_trip_updates": "https://gtfs-rt.itsmarta.com/TMGTFSRealTimeWebService/tripupdate/tripupdates.pb"

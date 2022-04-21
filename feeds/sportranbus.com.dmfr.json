@@ -2,19 +2,14 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-sportran",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://sportranbus.com/gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-sportran",
-          "tags": {
-            "us_ntd_id": "60024",
-            "wikidata_id": "Q7503603",
-            "twitter_general": "SporTranBus"
-          },
           "name": "Shreveport Area Transit System",
           "short_name": "SporTran",
           "website": "http://sportran.org/",
@@ -25,13 +20,18 @@
             {
               "feed_onestop_id": "f-sportran~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "SporTranBus",
+            "us_ntd_id": "60024",
+            "wikidata_id": "Q7503603"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-sportran~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://sportranbus.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://sportranbus.com/gtfs-rt/tripupdates",

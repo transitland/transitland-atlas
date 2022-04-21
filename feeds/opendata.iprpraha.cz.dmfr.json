@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u2f-dpp",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://opendata.iprpraha.cz/DPP/JR/jrdata.zip"
       },
@@ -11,6 +11,96 @@
         "manual_import": "true"
       },
       "operators": [
+        {
+          "onestop_id": "o-u2f-arrivaprahasro",
+          "name": "ARRIVA PRAHA s.r.o.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "18"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2f-csadstrednicechyas",
+          "name": "CSAD Stredni Cechy, a.s.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2f5-arrivastrednicechysro",
+          "name": "ARRIVA STREDNI CECHY s.r.o.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "21"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2f5-martinuherspolsro",
+          "name": "Martin UHER, spol. s r.o.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "17"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2fh-prazskebenatkysro",
+          "name": "Prazske Benatky s.r.o.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "41"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2fh-probobusas",
+          "name": "PROBO BUS a.s.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "14"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2fhxz-vittusgroupsro",
+          "name": "VITTUS GROUP, s.r.o.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "42"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2fj-csadmhdkladnoas",
+          "name": "CSAD MHD Kladno a.s.",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "8"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2fjt-vlastimilslezak",
+          "name": "Vlastimil Slezak",
+          "website": "http://www.ropid.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "26"
+            }
+          ]
+        },
         {
           "onestop_id": "o-u2fk-aboutmesro",
           "name": "ABOUT ME s.r.o.",
@@ -33,22 +123,12 @@
           ]
         },
         {
-          "onestop_id": "o-u2fh-prazskebenatkysro",
-          "name": "Prazske Benatky s.r.o.",
+          "onestop_id": "o-u2fk-stenbussro",
+          "name": "STENBUS s.r.o.",
           "website": "http://www.ropid.cz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "41"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2fhxz-vittusgroupsro",
-          "name": "VITTUS GROUP, s.r.o.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "42"
+              "gtfs_agency_id": "29"
             }
           ]
         },
@@ -63,92 +143,12 @@
           ]
         },
         {
-          "onestop_id": "o-u2fs-okresniautobusovadopravakolinsro",
-          "name": "Okresni autobusova doprava Kolin, s.r.o.",
+          "onestop_id": "o-u2fm4-jaroslavstepanek",
+          "name": "Jaroslav Stepanek",
           "website": "http://www.ropid.cz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "13"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2fj-csadmhdkladnoas",
-          "name": "CSAD MHD Kladno a.s.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "8"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2f-csadstrednicechyas",
-          "name": "CSAD Stredni Cechy, a.s.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "10"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2fh-probobusas",
-          "name": "PROBO BUS a.s.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "14"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2f5-martinuherspolsro",
-          "name": "Martin UHER, spol. s r.o.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "17"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2f-arrivaprahasro",
-          "name": "ARRIVA PRAHA s.r.o.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "18"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2fk-stenbussro",
-          "name": "STENBUS s.r.o.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "29"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2f5-arrivastrednicechysro",
-          "name": "ARRIVA STREDNI CECHY s.r.o.",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "21"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u2fjt-vlastimilslezak",
-          "name": "Vlastimil Slezak",
-          "website": "http://www.ropid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "26"
+              "gtfs_agency_id": "6"
             }
           ]
         },
@@ -163,12 +163,12 @@
           ]
         },
         {
-          "onestop_id": "o-u2fm4-jaroslavstepanek",
-          "name": "Jaroslav Stepanek",
+          "onestop_id": "o-u2fs-okresniautobusovadopravakolinsro",
+          "name": "Okresni autobusova doprava Kolin, s.r.o.",
           "website": "http://www.ropid.cz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "6"
+              "gtfs_agency_id": "13"
             }
           ]
         }

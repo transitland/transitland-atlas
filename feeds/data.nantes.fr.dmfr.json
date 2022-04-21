@@ -2,25 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-gbqc-france~impulsyon",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.nantes.fr/fileadmin/data/datastore/pdl/GTFS/J386.zip"
       },
       "license": {
         "url": "http://data.nantes.fr/licences/",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "no"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-gbqc-france~impulsyon",
+          "name": "Impulsyon ",
+          "website": "https://www.impulsyon.fr/",
           "tags": {
             "needs_agency_id": "f-gbqc-france~impulsyon"
-          },
-          "name": "Impulsyon ",
-          "website": "https://www.impulsyon.fr/"
+          }
         }
       ]
     }

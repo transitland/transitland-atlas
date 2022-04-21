@@ -2,28 +2,28 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9vg-dallasarearapidtransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.dart.org/transitdata/latest/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "dallas-area-rapid-transit"
       },
       "license": {
         "url": "https://ridedart.com/business-center/developer-resources"
       },
+      "tags": {
+        "gtfs_data_exchange": "dallas-area-rapid-transit"
+      },
       "operators": [
         {
           "onestop_id": "o-9vg-dallasarearapidtransit",
-          "tags": {
-            "us_ntd_id": "60056",
-            "wikidata_id": "Q380660",
-            "twitter_general": "dartmedia",
-            "twitter_service_alerts": "dartalerts"
-          },
           "name": "Dallas Area Rapid Transit",
-          "short_name": "DART"
+          "short_name": "DART",
+          "tags": {
+            "twitter_general": "dartmedia",
+            "twitter_service_alerts": "dartalerts",
+            "us_ntd_id": "60056",
+            "wikidata_id": "Q380660"
+          }
         }
       ]
     }

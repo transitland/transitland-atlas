@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dps2-annarborareatransportationauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.theride.org/sites/default/files/google/google_transit.zip"
       },
@@ -11,7 +11,6 @@
         "url": "https://www.theride.org/business/software-developers",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Transit scheduling, geographic, and real-time data provided by permission of AAATA/TheRide"
       },
       "tags": {
@@ -20,13 +19,13 @@
       "operators": [
         {
           "onestop_id": "o-dps2-annarborareatransportationauthority",
+          "name": "Ann Arbor Area Transportation Authority",
+          "short_name": "TheRide",
+          "website": "https://www.theride.org",
           "tags": {
             "us_ntd_id": "50040",
             "wikidata_id": "Q4766233"
-          },
-          "name": "Ann Arbor Area Transportation Authority",
-          "short_name": "TheRide",
-          "website": "https://www.theride.org"
+          }
         }
       ]
     }

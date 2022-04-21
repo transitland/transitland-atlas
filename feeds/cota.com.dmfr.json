@@ -2,51 +2,50 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
+      "id": "f-cota~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://realtime.cota.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "http://realtime.cota.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb"
+      }
+    },
+    {
       "id": "f-dphg-centralohiotransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.cota.com/data/cota.gtfs.zip"
       },
       "license": {
         "url": "http://www.cota.com/data",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "central-ohio-transit-authority"
       }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-cota~rt",
-      "urls": {
-        "realtime_trip_updates": "http://realtime.cota.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://realtime.cota.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dphg-centralohiotransitauthority",
-      "tags": {
-        "us_ntd_id": "50016",
-        "wikidata_id": "Q5061543",
-        "twitter_general": "COTABus"
-      },
       "name": "Central Ohio Transit Authority",
       "short_name": "COTA",
       "website": "http://www.cota.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dphg-centralohiotransitauthority",
-          "gtfs_agency_id": "COTA"
+          "feed_onestop_id": "f-cota~rt"
         },
         {
-          "feed_onestop_id": "f-cota~rt"
+          "gtfs_agency_id": "COTA",
+          "feed_onestop_id": "f-dphg-centralohiotransitauthority"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "COTABus",
+        "us_ntd_id": "50016",
+        "wikidata_id": "Q5061543"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

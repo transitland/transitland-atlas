@@ -2,166 +2,33 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-f25f-exo~citchambly~richelieu~carignan",
+      "id": "f-exo~reseaudetransportmetropolitain~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://exo.quebec/xdata/citcrc/google_transit.zip"
+        "realtime_vehicle_positions": "http://opendata.rtm.quebec:2539/ServiceGTFSR/VehiclePosition.pb",
+        "realtime_trip_updates": "http://opendata.rtm.quebec:2539/ServiceGTFSR/TripUpdate.pb",
+        "realtime_alerts": "http://opendata.rtm.quebec:2539/ServiceGTFSR/Alert.pb"
       },
       "license": {
-        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "spdx_identifier": "CC-BY",
+        "url": "https://exo.quebec/en/about/open-data"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25f-exo~citchambly~richelieu~carignan",
-          "name": "EXO - Chambly-Richelieu-Carignan",
-          "website": "http://www.monblus.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITCRC"
-            }
-          ]
-        }
-      ]
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
-      "spec": "gtfs",
-      "id": "f-f259-exo~citduhaut~saint~laurent",
-      "urls": {
-        "static_current": "https://exo.quebec/xdata/cithsl/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f259-exo~citduhaut~saint~laurent",
-          "name": "EXO - Haut-Saint-Laurent",
-          "website": "http://www.cithsl.amt.qc.ca/index.asp",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITHSL"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-f257-exo~citlaurentides",
-      "urls": {
-        "static_current": "https://exo.quebec/xdata/citla/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f257-exo~citlaurentides",
-          "name": "EXO - Laurentides",
-          "website": "http://www.citl.qc.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITLA"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-f256-exo~citlapresquîle",
-      "urls": {
-        "static_current": "https://exo.quebec/xdata/citpi/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f256-exo~citlapresquîle",
-          "name": "EXO - La Presqu'île",
-          "website": "http://www.citlapresquile.qc.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITPI"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-f25d-exo~citlerichelain",
-      "urls": {
-        "static_current": "https://exo.quebec/xdata/citlr/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f25d-exo~citlerichelain",
-          "name": "EXO - Le Richelain",
-          "website": "http://www.citrichelain.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITLR"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-f25d-exo~citroussillon",
-      "urls": {
-        "static_current": "https://exo.quebec/xdata/citrous/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f25d-exo~citroussillon",
-          "name": "EXO - Roussillon",
-          "website": "http://www.citroussillon.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITROUS"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-f25-exo~citsorel~varennes",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://exo.quebec/xdata/citsv/google_transit.zip"
       },
       "license": {
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -177,16 +44,15 @@
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-f253-exo~citsud~ouest",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://exo.quebec/xdata/citso/google_transit.zip"
       },
       "license": {
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -203,16 +69,166 @@
       ]
     },
     {
+      "id": "f-f256-exo~citlapresquîle",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/citpi/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f256-exo~citlapresquîle",
+          "name": "EXO - La Presqu'île",
+          "website": "http://www.citlapresquile.qc.ca/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CITPI"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f257-exo~citlaurentides",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/citla/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f257-exo~citlaurentides",
+          "name": "EXO - Laurentides",
+          "website": "http://www.citl.qc.ca/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CITLA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f259-exo~citduhaut~saint~laurent",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/cithsl/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f259-exo~citduhaut~saint~laurent",
+          "name": "EXO - Haut-Saint-Laurent",
+          "website": "http://www.cithsl.amt.qc.ca/index.asp",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CITHSL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f25d-exo~citlerichelain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/citlr/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f25d-exo~citlerichelain",
+          "name": "EXO - Le Richelain",
+          "website": "http://www.citrichelain.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CITLR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f25d-exo~citroussillon",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/citrous/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f25d-exo~citroussillon",
+          "name": "EXO - Roussillon",
+          "website": "http://www.citroussillon.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CITROUS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f25d-exo~reseaudetransportmetropolitain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/trains/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-f25f-exo~citchambly~richelieu~carignan",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/citcrc/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f25f-exo~citchambly~richelieu~carignan",
+          "name": "EXO - Chambly-Richelieu-Carignan",
+          "website": "http://www.monblus.ca/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CITCRC"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-f25g-exo~citvallée~du~richelieu",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://exo.quebec/xdata/citvr/google_transit.zip"
       },
       "license": {
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -228,41 +244,39 @@
       ]
     },
     {
+      "id": "f-f25g-exo~omitsainte~julie",
       "spec": "gtfs",
-      "id": "f-f25u-exo~mrcdelassomption",
       "urls": {
-        "static_current": "https://exo.quebec/xdata/mrclasso/google_transit.zip"
+        "static_current": "https://exo.quebec/xdata/omitsju/google_transit.zip"
       },
       "license": {
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-f25u-exo~mrcdelassomption",
-          "name": "EXO - L'Assomption",
-          "website": "http://www.gortcr.info/",
+          "onestop_id": "o-f25g-exo~omitsainte~julie",
+          "name": "EXO - Sainte-Julie",
+          "website": "http://transport.ville.sainte-julie.qc.ca/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "MRCLASSO"
+              "gtfs_agency_id": "OMITSJU"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-f25s-exo~mrclesmoulinsurbis",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://exo.quebec/xdata/mrclm/google_transit.zip"
       },
       "license": {
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -278,57 +292,30 @@
       ]
     },
     {
+      "id": "f-f25u-exo~mrcdelassomption",
       "spec": "gtfs",
-      "id": "f-f25d-exo~reseaudetransportmetropolitain",
       "urls": {
-        "static_current": "https://exo.quebec/xdata/trains/google_transit.zip"
-      }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-exo~reseaudetransportmetropolitain~rt",
-      "urls": {
-        "realtime_alerts": "http://opendata.rtm.quebec:2539/ServiceGTFSR/Alert.pb",
-        "realtime_trip_updates": "http://opendata.rtm.quebec:2539/ServiceGTFSR/TripUpdate.pb",
-        "realtime_vehicle_positions": "http://opendata.rtm.quebec:2539/ServiceGTFSR/VehiclePosition.pb"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY",
-        "url": "https://exo.quebec/en/about/open-data"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token",
-        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-f25g-exo~omitsainte~julie",
-      "urls": {
-        "static_current": "https://exo.quebec/xdata/omitsju/google_transit.zip"
+        "static_current": "https://exo.quebec/xdata/mrclasso/google_transit.zip"
       },
       "license": {
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-f25g-exo~omitsainte~julie",
-          "name": "EXO - Sainte-Julie",
-          "website": "http://transport.ville.sainte-julie.qc.ca/",
+          "onestop_id": "o-f25u-exo~mrcdelassomption",
+          "name": "EXO - L'Assomption",
+          "website": "http://www.gortcr.info/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "OMITSJU"
+              "gtfs_agency_id": "MRCLASSO"
             }
           ]
         }
       ]
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-f25-exo~reseaudetransportmetropolitain",
@@ -337,13 +324,14 @@
       "website": "https://exo.quebec/fr/planifier-trajet/train",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-f25d-exo~reseaudetransportmetropolitain",
-          "gtfs_agency_id": "TRAINS"
+          "feed_onestop_id": "f-exo~reseaudetransportmetropolitain~rt"
         },
         {
-          "feed_onestop_id": "f-exo~reseaudetransportmetropolitain~rt"
+          "gtfs_agency_id": "TRAINS",
+          "feed_onestop_id": "f-f25d-exo~reseaudetransportmetropolitain"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

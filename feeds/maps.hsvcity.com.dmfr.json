@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dn4m-huntsvilleshuttle",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://maps.hsvcity.com/GoogleTransit/google_transit.zip"
       },
@@ -13,10 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-dn4m-huntsvilleshuttle",
-          "tags": {
-            "wikidata_id": "Q5945894",
-            "us_ntd_id": "40071"
-          },
           "name": "Huntsville Transit",
           "short_name": "Orbit",
           "website": "https://www.huntsvilleal.gov/residents/streets/public-transportation/huntsvilletransit/",
@@ -24,7 +20,11 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "40071",
+            "wikidata_id": "Q5945894"
+          }
         }
       ]
     }
