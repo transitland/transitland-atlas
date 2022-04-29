@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9-amtrak~amtrakcalifornia~amtrakcharteredvehicle",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://content.amtrak.com/content/gtfs/GTFS.zip",
         "static_historic": [
@@ -12,59 +12,61 @@
       },
       "operators": [
         {
-          "onestop_id": "o-dp8-badgerbus",
-          "name": "Badger Bus",
+          "onestop_id": "o-9-amtrak",
+          "name": "Amtrak",
+          "website": "http://www.amtrak.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "155"
+              "gtfs_agency_id": "51"
             }
           ],
           "tags": {
-            "wikidata_id": "Q4840840",
-            "twitter_general": "badgerbus"
+            "twitter_general": "amtrak",
+            "twitter_service_alerts": "amtrakalerts",
+            "wikidata_id": "Q23239"
           }
         },
         {
-          "onestop_id": "o-dnb-vandaliabuslines",
-          "name": "Vandalia Bus Lines",
+          "onestop_id": "o-9-amtrakcharteredvehicle",
+          "name": "Amtrak Chartered Vehicle",
           "website": "http://www.amtrak.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "12"
+              "gtfs_agency_id": "28"
             }
           ]
         },
         {
-          "onestop_id": "o-dr6-martztrailways",
+          "onestop_id": "o-9q-amtrakcalifornia",
+          "name": "Amtrak California",
+          "website": "http://www.amtrakcalifornia.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "42"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9q9-altamontcorridorexpress",
+          "name": "Altamont Corridor Express",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "99"
+            }
+          ],
           "tags": {
-            "wikidata_id": "Q42377159",
-            "twitter_general": "martztrailways"
-          },
-          "name": "Martz Trailways",
-          "website": "http://martztrailways.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "108"
-            }
-          ]
+            "twitter_general": "ACE_train",
+            "us_ntd_id": "90182",
+            "wikidata_id": "Q434302"
+          }
         },
         {
-          "onestop_id": "o-dhv-martzfirstclasscoach",
-          "name": "Martz First Class Coach",
-          "website": "http://www.amtrak.com",
+          "onestop_id": "o-9v-lonestarcoaches",
+          "name": "Lone Star Coaches",
+          "website": "http://lonestarcoaches.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "4"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9zp-executivetransportation",
-          "name": "Executive Transportation",
-          "website": "http://www.amtrak.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "117"
+              "gtfs_agency_id": "45"
             }
           ]
         },
@@ -81,6 +83,26 @@
           }
         },
         {
+          "onestop_id": "o-9zp-executivetransportation",
+          "name": "Executive Transportation",
+          "website": "http://www.amtrak.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "117"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-dhv-martzfirstclasscoach",
+          "name": "Martz First Class Coach",
+          "website": "http://www.amtrak.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-djj-annettbuslines",
           "name": "Annett Bus Lines",
           "website": "http://www.annettbuslines.com/",
@@ -91,27 +113,36 @@
           ]
         },
         {
-          "onestop_id": "o-dps-trinitytransportation",
-          "name": "Trinity Transportation",
+          "onestop_id": "o-dnb-vandaliabuslines",
+          "name": "Vandalia Bus Lines",
           "website": "http://www.amtrak.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "116"
+              "gtfs_agency_id": "12"
             }
           ]
         },
         {
-          "onestop_id": "o-9q9-altamontcorridorexpress",
-          "name": "Altamont Corridor Express",
+          "onestop_id": "o-dp-burlingtontrailways",
+          "name": "Burlington Trailways",
+          "website": "http://burlingtontrailways.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "99"
+              "gtfs_agency_id": "16"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-dp8-badgerbus",
+          "name": "Badger Bus",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "155"
             }
           ],
           "tags": {
-            "us_ntd_id": "90182",
-            "wikidata_id": "Q434302",
-            "twitter_general": "ACE_train"
+            "twitter_general": "badgerbus",
+            "wikidata_id": "Q4840840"
           }
         },
         {
@@ -127,12 +158,12 @@
           }
         },
         {
-          "onestop_id": "o-dp-burlingtontrailways",
-          "name": "Burlington Trailways",
-          "website": "http://burlingtontrailways.com/",
+          "onestop_id": "o-dps-trinitytransportation",
+          "name": "Trinity Transportation",
+          "website": "http://www.amtrak.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "16"
+              "gtfs_agency_id": "116"
             }
           ]
         },
@@ -147,49 +178,18 @@
           ]
         },
         {
-          "onestop_id": "o-9-amtrakcharteredvehicle",
-          "name": "Amtrak Chartered Vehicle",
-          "website": "http://www.amtrak.com",
+          "onestop_id": "o-dr6-martztrailways",
+          "name": "Martz Trailways",
+          "website": "http://martztrailways.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "28"
+              "gtfs_agency_id": "108"
             }
-          ]
-        },
-        {
-          "onestop_id": "o-9-amtrak",
+          ],
           "tags": {
-            "wikidata_id": "Q23239",
-            "twitter_general": "amtrak",
-            "twitter_service_alerts": "amtrakalerts"
-          },
-          "name": "Amtrak",
-          "website": "http://www.amtrak.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "51"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9v-lonestarcoaches",
-          "name": "Lone Star Coaches",
-          "website": "http://lonestarcoaches.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "45"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9q-amtrakcalifornia",
-          "name": "Amtrak California",
-          "website": "http://www.amtrakcalifornia.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "42"
-            }
-          ]
+            "twitter_general": "martztrailways",
+            "wikidata_id": "Q42377159"
+          }
         }
       ]
     }

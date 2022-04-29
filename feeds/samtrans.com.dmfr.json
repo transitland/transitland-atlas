@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q8-samtrans",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.samtrans.com/Assets/GTFS/samtrans/ST-GTFS.zip"
       },
@@ -11,21 +11,20 @@
         "url": "http://www.samtrans.com/Developer.html",
         "use_without_attribution": "yes",
         "create_derived_product": "unknown",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-9q8-samtrans",
-          "tags": {
-            "us_ntd_id": "90009",
-            "omd_provider_id": "samtrans",
-            "wikidata_id": "Q7407040",
-            "twitter_general": "SamTrans"
-          },
           "name": "San Mateo County Transit District",
-          "short_name": "samTrans"
+          "short_name": "samTrans",
+          "tags": {
+            "omd_provider_id": "samtrans",
+            "twitter_general": "SamTrans",
+            "us_ntd_id": "90009",
+            "wikidata_id": "Q7407040"
+          }
         }
       ]
     }

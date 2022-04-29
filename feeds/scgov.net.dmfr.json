@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dhv-sarasotacountyareatransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "ftp://ftp.scgov.net/pub/scat/SCATGTFS.zip",
         "static_historic": [
@@ -11,19 +11,19 @@
         ]
       },
       "tags": {
-        "status": "unreachable",
-        "gtfs_data_exchange": "sarasota-county-area-transit"
+        "gtfs_data_exchange": "sarasota-county-area-transit",
+        "status": "unreachable"
       },
       "operators": [
         {
           "onestop_id": "o-dhv-sarasotacountyareatransit",
-          "tags": {
-            "us_ntd_id": "40046",
-            "wikidata_id": "Q7423226",
-            "twitter_general": "SRQCountyGov"
-          },
           "name": "Sarasota County Area Transit",
-          "short_name": "SCAT"
+          "short_name": "SCAT",
+          "tags": {
+            "twitter_general": "SRQCountyGov",
+            "us_ntd_id": "40046",
+            "wikidata_id": "Q7423226"
+          }
         }
       ]
     }

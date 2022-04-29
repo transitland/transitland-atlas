@@ -2,25 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dht-leecountytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.leegov.com/leetran/Documents/GTFS.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dht-leecountytransit",
-          "tags": {
-            "us_ntd_id": "40028",
-            "wikidata_id": "Q6512891"
-          },
           "name": "Lee County Transit",
           "website": "http://www.rideleetran.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "40028",
+            "wikidata_id": "Q6512891"
+          }
         }
       ]
     }

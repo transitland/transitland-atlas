@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-butte~regional~transit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.blinetransit.com/documents/Google%20Transit/google_transit.zip",
         "static_historic": [
@@ -13,10 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-butte~regional~transit",
-          "tags": {
-            "wikidata_id": "Q5002811",
-            "us_ntd_id": "90208"
-          },
           "name": "Butte Regional Transit",
           "short_name": "B-Line",
           "website": "http://www.blinetransit.com/",
@@ -24,7 +20,11 @@
             {
               "gtfs_agency_id": "97aff62a-ed6d-4bd2-a9c8-d63f8e98a358"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "90208",
+            "wikidata_id": "Q5002811"
+          }
         }
       ]
     }

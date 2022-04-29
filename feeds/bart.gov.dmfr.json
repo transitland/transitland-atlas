@@ -2,51 +2,50 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q9-bart",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.bart.gov/dev/schedules/google_transit.zip"
       },
       "license": {
         "url": "http://www.bart.gov/schedules/developers/developer-license-agreement",
         "use_without_attribution": "yes",
-        "create_derived_product": "unknown",
-        "redistribute": "yes"
+        "create_derived_product": "unknown"
       },
       "tags": {
         "gtfs_data_exchange": "airbart"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-bart~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.bart.gov/gtfsrt/alerts.aspx",
-        "realtime_trip_updates": "http://api.bart.gov/gtfsrt/tripupdate.aspx"
+        "realtime_trip_updates": "http://api.bart.gov/gtfsrt/tripupdate.aspx",
+        "realtime_alerts": "http://api.bart.gov/gtfsrt/alerts.aspx"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9q9-bart",
-      "tags": {
-        "us_ntd_id": "90003",
-        "omd_provider_id": "bart",
-        "wikidata_id": "Q610120",
-        "twitter_general": "sfbart",
-        "twitter_service_alerts": "SFBARTalert"
-      },
       "name": "Bay Area Rapid Transit",
       "short_name": "BART",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-bart~rt"
+          "feed_onestop_id": "f-9q9-bart"
         },
         {
-          "feed_onestop_id": "f-9q9-bart"
+          "feed_onestop_id": "f-bart~rt"
         }
-      ]
+      ],
+      "tags": {
+        "omd_provider_id": "bart",
+        "twitter_general": "sfbart",
+        "twitter_service_alerts": "SFBARTalert",
+        "us_ntd_id": "90003",
+        "wikidata_id": "Q610120"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

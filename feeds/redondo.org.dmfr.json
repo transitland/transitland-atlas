@@ -2,18 +2,18 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-redondo~beach~cities~transit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.redondo.org/civicax/filebank/blobdload.aspx?BlobID=33555"
       },
       "license": {
         "url": "https://www.redondo.org/depts/recreation/transit/trip_planner/gtfs_data.asp",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
-        "share_alike_optional": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
@@ -28,20 +28,20 @@
             }
           ],
           "tags": {
+            "twitter_general": "RedondoBeachBCT",
             "us_ntd_id": "90214",
-            "wikidata_id": "Q4875696",
-            "twitter_general": "RedondoBeachBCT"
+            "wikidata_id": "Q4875696"
           }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-redondo~beach~cities~transit~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://redondobeachbct.com/gtfs-rt/vehiclepositions",
-        "realtime_alerts": "https://redondobeachbct.com/gtfs-rt/alerts",
-        "realtime_trip_updates": "https://redondobeachbct.com/gtfs-rt/tripupdates"
+        "realtime_trip_updates": "https://redondobeachbct.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://redondobeachbct.com/gtfs-rt/alerts"
       }
     }
   ],

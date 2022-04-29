@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-xn6-山梨交通グループ~富士急行グループ~甲斐市~中央市~南アルプス市~富士川町",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://opendata.busmaps.jp/yamanashi.zip"
       },
@@ -12,22 +12,12 @@
       },
       "operators": [
         {
-          "onestop_id": "o-xn6d2-中央市",
-          "name": "中央市",
-          "website": "http://www.city.chuo.yamanashi.jp/sougou/",
+          "onestop_id": "o-xn6-富士急行グループ",
+          "name": "富士急行グループ",
+          "website": "http://www.fujikyu.co.jp/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "9"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-xn66n-富士川町",
-          "name": "富士川町",
-          "website": "http://www.town.fujikawa.yamanashi.jp/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "22"
+              "gtfs_agency_id": "2"
             }
           ]
         },
@@ -42,16 +32,6 @@
           ]
         },
         {
-          "onestop_id": "o-xn6db-甲斐市",
-          "name": "甲斐市",
-          "website": "http://www.city.kai.yamanashi.jp/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-xn66-南アルプス市",
           "name": "南アルプス市",
           "website": "http://www.city.minami-alps.yamanashi.jp/",
@@ -62,12 +42,32 @@
           ]
         },
         {
-          "onestop_id": "o-xn6-富士急行グループ",
-          "name": "富士急行グループ",
-          "website": "http://www.fujikyu.co.jp/",
+          "onestop_id": "o-xn66n-富士川町",
+          "name": "富士川町",
+          "website": "http://www.town.fujikawa.yamanashi.jp/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "22"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-xn6d2-中央市",
+          "name": "中央市",
+          "website": "http://www.city.chuo.yamanashi.jp/sougou/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "9"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-xn6db-甲斐市",
+          "name": "甲斐市",
+          "website": "http://www.city.kai.yamanashi.jp/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5"
             }
           ]
         }

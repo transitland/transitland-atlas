@@ -2,8 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-tulare~county~regional~transit~agency",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/tulare-county-regional-transit-agency-tcrta-gtfs/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tulare~county~regional~transit~agency",
+          "name": "Tulare County Regional Transit Agency",
+          "short_name": "TCRTA",
+          "tags": {
+            "wikidata_id": "Q110722692"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-tulare~time",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://tularetransit.com/gtfs"
       },
@@ -14,25 +31,6 @@
           "short_name": "TIME",
           "tags": {
             "us_ntd_id": "90244"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-tulare~county~regional~transit~agency",
-      "supersedes_ids": ["f-dinuba~area~regional~transit", "f-tulare~dart"],
-      "urls": {
-        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/tulare-county-regional-transit-agency-tcrta-gtfs/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-tulare~county~regional~transit~agency",
-          "name": "Tulare County Regional Transit Agency",
-          "short_name": "TCRTA",
-          "supersedes_ids": ["o-9q7p-dart"],
-          "tags": {
-            "wikidata_id": "Q110722692"
           }
         }
       ]

@@ -2,18 +2,14 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c25p-benfranklintransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.bft.org/gtfs/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-c25p-benfranklintransit",
-          "tags": {
-            "us_ntd_id": "00018",
-            "wikidata_id": "Q4885675"
-          },
           "name": "Ben Franklin Transit",
           "short_name": "BFT",
           "website": "http://www.bft.org",
@@ -21,7 +17,11 @@
             {
               "gtfs_agency_id": "bft"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00018",
+            "wikidata_id": "Q4885675"
+          }
         }
       ]
     }

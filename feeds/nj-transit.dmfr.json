@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr5-nj~transit~bus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.njtransit.com/bus_data.zip"
       },
@@ -15,8 +15,8 @@
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-dr5-nj~transit~rail",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.njtransit.com/rail_data.zip"
       },
@@ -28,28 +28,28 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dr5-nj~transit",
-      "tags": {
-        "us_ntd_id": "20080",
-        "omd_provider_id": "nj-transit",
-        "wikidata_id": "Q498553",
-        "twitter_general": "NJTRANSIT"
-      },
       "name": "New Jersey Transit",
       "short_name": "NJ Transit",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dr5-nj~transit~rail",
-          "gtfs_agency_id": "NJT"
+          "gtfs_agency_id": "NJB",
+          "feed_onestop_id": "f-dr5-nj~transit~bus"
         },
         {
-          "feed_onestop_id": "f-dr5-nj~transit~bus",
-          "gtfs_agency_id": "NJB"
+          "gtfs_agency_id": "NJT",
+          "feed_onestop_id": "f-dr5-nj~transit~rail"
         }
-      ]
+      ],
+      "tags": {
+        "omd_provider_id": "nj-transit",
+        "twitter_general": "NJTRANSIT",
+        "us_ntd_id": "20080",
+        "wikidata_id": "Q498553"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

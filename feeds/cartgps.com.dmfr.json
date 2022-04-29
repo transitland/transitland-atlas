@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9y68-clevelandarearapidtransitcart",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.cartgps.com/gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-9y68-clevelandarearapidtransitcart",
-          "tags": {
-            "us_ntd_id": "60096",
-            "wikidata_id": "Q5132058",
-            "twitter_general": "CARTNORMAN"
-          },
           "name": "Cleveland Area Rapid Transit",
-          "short_name": "CART"
+          "short_name": "CART",
+          "tags": {
+            "twitter_general": "CARTNORMAN",
+            "us_ntd_id": "60096",
+            "wikidata_id": "Q5132058"
+          }
         }
       ]
     }

@@ -2,25 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-drk-seastreak",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://seastreak.com/api/transit/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-drk-seastreak",
-          "tags": {
-            "wikidata_id": "Q7439820",
-            "twitter_general": "SeaStreakFerry"
-          },
           "name": "Seastreak",
           "website": "http://seastreak.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "SeaStreakFerry",
+            "wikidata_id": "Q7439820"
+          }
         }
       ]
     }

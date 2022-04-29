@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr4-dartfirststate",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://dartfirststate.com/RiderInfo/Routes/gtfs_data/dartfirststate_de_us.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dr4-dartfirststate",
-          "tags": {
-            "us_ntd_id": "30075",
-            "wikidata_id": "Q5204301",
-            "twitter_general": "dartfirststate"
-          },
           "name": "Delaware Transit Corporation",
-          "short_name": "DART"
+          "short_name": "DART",
+          "tags": {
+            "twitter_general": "dartfirststate",
+            "us_ntd_id": "30075",
+            "wikidata_id": "Q5204301"
+          }
         }
       ]
     }

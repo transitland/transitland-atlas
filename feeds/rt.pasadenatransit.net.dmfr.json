@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5f-pasadenatransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://rt.pasadenatransit.net/rtt/public/utility/gtfs.aspx"
       },
@@ -13,11 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-9q5f-pasadenatransit",
-          "tags": {
-            "us_ntd_id": "99424",
-            "wikidata_id": "Q7141527",
-            "twitter_general": "PasadenaDOT"
-          },
           "name": "Pasadena Transit",
           "website": "http://www.pasadenatransit.net/",
           "associated_feeds": [
@@ -27,13 +22,18 @@
             {
               "feed_onestop_id": "f-pasadenatransit~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "PasadenaDOT",
+            "us_ntd_id": "99424",
+            "wikidata_id": "Q7141527"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-pasadenatransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://rt.pasadenatransit.net/rtt/public/utility/gtfsrealtime.aspx/alert"

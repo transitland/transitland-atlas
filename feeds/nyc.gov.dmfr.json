@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr5r7-nycdotsiferry",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.nyc.gov/html/dot/downloads/misc/siferry-gtfs.zip"
       },
@@ -11,19 +11,18 @@
         "url": "http://www.nyc.gov/html/dot/html/about/datafeeds.shtml#disclaimer",
         "use_without_attribution": "no",
         "create_derived_product": "unknown",
-        "redistribute": "unknown",
         "attribution_text": "This application may contain and/or utilize information which was originally compiled by the New York City Department of Transportation (DOT) for governmental purposes; the information may subsequently been modified by entity/entities other than DOT. DOT and the City of New York make no representation as to the accuracy or usefulness of the information provided by this application or the information's suitability for any purpose and disclaim any liability for omissions or errors that may be contained therein. The public is advised to observe posted signage for compliance with applicable laws and regulations."
       },
       "operators": [
         {
           "onestop_id": "o-dr5r7-nycdot",
-          "tags": {
-            "us_ntd_id": "20082",
-            "wikidata_id": "Q1048582",
-            "twitter_general": "NYC_DOT"
-          },
           "name": "New York City Department of Transportation",
-          "short_name": "NYC DOT"
+          "short_name": "NYC DOT",
+          "tags": {
+            "twitter_general": "NYC_DOT",
+            "us_ntd_id": "20082",
+            "wikidata_id": "Q1048582"
+          }
         }
       ]
     }

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q54-goldcoasttransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.goldcoasttransit.org/images/GTFS/GTFS.zip"
       },
@@ -13,13 +13,13 @@
       "operators": [
         {
           "onestop_id": "o-9q54-goldcoasttransit",
-          "tags": {
-            "us_ntd_id": "90035",
-            "wikidata_id": "Q5578666",
-            "twitter_general": "goldcoastbus"
-          },
           "name": "Gold Coast Transit",
-          "short_name": "GCT"
+          "short_name": "GCT",
+          "tags": {
+            "twitter_general": "goldcoastbus",
+            "us_ntd_id": "90035",
+            "wikidata_id": "Q5578666"
+          }
         }
       ]
     }

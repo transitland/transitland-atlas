@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5-vctc~ca~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/vctc-ca-us/vctc-ca-us.zip"
       },
@@ -13,11 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-9q5-venturacountytransportationcommission",
-          "tags": {
-            "us_ntd_id": "90164",
-            "wikidata_id": "Q7920384",
-            "twitter_general": "govctc"
-          },
           "name": "Ventura County Transportation Commission",
           "short_name": "VCTC",
           "website": "http://www.goventura.org/",
@@ -28,17 +23,22 @@
             {
               "feed_onestop_id": "f-9q5-vctc~ca~us~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "govctc",
+            "us_ntd_id": "90164",
+            "wikidata_id": "Q7920384"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-9q5-vctc~ca~us~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
-        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts",
-        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates"
+        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
       }
     }
   ],

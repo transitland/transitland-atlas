@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c3x-edmontontransitsystem",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.edmonton.ca/TMGTFSRealTimeWebService/GTFS/gtfs.zip"
       },
@@ -15,19 +15,18 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-ets~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Alert/Alerts.pb",
+        "realtime_vehicle_positions": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
+        "realtime_alerts": "http://gtfs.edmonton.ca/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       },
       "license": {
         "url": "https://www.edmonton.ca/transportation/Web-version2.1-OpenDataAgreement.pdf"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-c3x-edmontontransitsystem",
@@ -36,12 +35,13 @@
       "website": "http://www.takeets.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-ets~rt"
+          "feed_onestop_id": "f-c3x-edmontontransitsystem"
         },
         {
-          "feed_onestop_id": "f-c3x-edmontontransitsystem"
+          "feed_onestop_id": "f-ets~rt"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

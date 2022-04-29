@@ -2,28 +2,17 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-ue5-linja~karjalaoy~jääskeläisenautooy~pohjolanliikenneoy~kuop",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://karttapalvelu.kuopio.fi/google_transit/google_transit.zip"
       },
       "license": {
         "url": "http://creativecommons.org/licenses/by/4.0/deed.fi",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
-        {
-          "onestop_id": "o-ue5t-kuopionliikenneoy",
-          "name": "Kuopion Liikenne",
-          "website": "http://www.kuopionliikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "44517"
-            }
-          ]
-        },
         {
           "onestop_id": "o-ue5-linja~karjalaoy",
           "name": "Linja-Karjala",
@@ -31,6 +20,16 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "6791"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ue5t-kuopionliikenneoy",
+          "name": "Kuopion Liikenne",
+          "website": "http://www.kuopionliikenne.fi/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "44517"
             }
           ]
         },

@@ -2,12 +2,22 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u3-süd~thüringen~bahn~gvbverkehrs~undbetriebsgesellschaftgeram",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.vmt-thueringen.de/fileadmin/user_upload/Open_Data/VMT_GTFS.zip"
       },
       "operators": [
+        {
+          "onestop_id": "o-u1p-süd~thüringen~bahn",
+          "name": "Süd-Thüringen-Bahn",
+          "website": "https://www.sued-thueringen-bahn.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "106"
+            }
+          ]
+        },
         {
           "onestop_id": "o-u1p8-süd~thüringen~bahnexpress",
           "name": "Süd-Thüringen-Bahn Express",
@@ -29,6 +39,16 @@
           ]
         },
         {
+          "onestop_id": "o-u1p9-thüringerwaldbahnundstraßenbahngothagmbh",
+          "name": "Thüringerwaldbahn und Straßenbahn Gotha GmbH",
+          "website": "http://www.waldbahn-gotha.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "117"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-u1pf-erfurterverkehrsbetriebeag",
           "name": "Erfurter Verkehrsbetriebe AG",
           "website": "http://www.evag-erfurt.de",
@@ -39,32 +59,12 @@
           ]
         },
         {
-          "onestop_id": "o-u309-gvbverkehrs~undbetriebsgesellschaftgerambh",
-          "name": "GVB Verkehrs- und Betriebsgesellschaft Gera mbH",
-          "website": "http://www.gvbgera.de",
+          "onestop_id": "o-u3-abelliorailmitteldeutschlandgmbh",
+          "name": "Abellio Rail Mitteldeutschland GmbH",
+          "website": "https://www.abellio.de/de/mitteldeutschland",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "111"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u30-erfurterbahn",
-          "name": "Erfurter Bahn",
-          "website": "https://www.erfurter-bahn.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "171"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u301-jenaernahverkehrgmbh",
-          "name": "Jenaer Nahverkehr GmbH",
-          "website": "https://www.nahverkehr-jena.de/fahrplan.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "112"
+              "gtfs_agency_id": "176"
             }
           ]
         },
@@ -79,52 +79,12 @@
           ]
         },
         {
-          "onestop_id": "o-u304-stadtwirtschaftweimargmbh",
-          "name": "Stadtwirtschaft Weimar GmbH",
-          "website": "http://www.swg-weimar.de",
+          "onestop_id": "o-u30-erfurterbahn",
+          "name": "Erfurter Bahn",
+          "website": "https://www.erfurter-bahn.de/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "116"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u303-verkehrsunternehmenandreasschröder",
-          "name": "Verkehrsunternehmen Andreas Schröder",
-          "website": "http://www.verkehrsunternehmen-schroeder.de/cms/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "118"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1p9-thüringerwaldbahnundstraßenbahngothagmbh",
-          "name": "Thüringerwaldbahn und Straßenbahn Gotha GmbH",
-          "website": "http://www.waldbahn-gotha.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "117"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u303-jesverkehrsgesellschaftmbh",
-          "name": "JES Verkehrsgesellschaft mbH",
-          "website": "http://www.jes-eisenberg.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "113"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1p-süd~thüringen~bahn",
-          "name": "Süd-Thüringen-Bahn",
-          "website": "https://www.sued-thueringen-bahn.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "106"
+              "gtfs_agency_id": "171"
             }
           ]
         },
@@ -139,12 +99,52 @@
           ]
         },
         {
-          "onestop_id": "o-u3-abelliorailmitteldeutschlandgmbh",
-          "name": "Abellio Rail Mitteldeutschland GmbH",
-          "website": "https://www.abellio.de/de/mitteldeutschland",
+          "onestop_id": "o-u301-jenaernahverkehrgmbh",
+          "name": "Jenaer Nahverkehr GmbH",
+          "website": "https://www.nahverkehr-jena.de/fahrplan.html",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "176"
+              "gtfs_agency_id": "112"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u303-jesverkehrsgesellschaftmbh",
+          "name": "JES Verkehrsgesellschaft mbH",
+          "website": "http://www.jes-eisenberg.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "113"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u303-verkehrsunternehmenandreasschröder",
+          "name": "Verkehrsunternehmen Andreas Schröder",
+          "website": "http://www.verkehrsunternehmen-schroeder.de/cms/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "118"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u304-stadtwirtschaftweimargmbh",
+          "name": "Stadtwirtschaft Weimar GmbH",
+          "website": "http://www.swg-weimar.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "116"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u309-gvbverkehrs~undbetriebsgesellschaftgerambh",
+          "name": "GVB Verkehrs- und Betriebsgesellschaft Gera mbH",
+          "website": "http://www.gvbgera.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "111"
             }
           ]
         }

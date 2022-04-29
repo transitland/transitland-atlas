@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-bus~dft~gov~uk",
-      "tags": {
-        "manual_import": "true"
-      },
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://data.bus-data.dft.gov.uk/timetable/download/gtfs-file/all/"
       },
       "license": {
         "url": "https://data.bus-data.dft.gov.uk/guidance/requirements/",
-        "commercial_use_allowed": "yes",
-        "redistribution_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "share_alike_optional": "yes",
-        "use_without_attribution": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "manual_import": "true"
       }
     }
   ],

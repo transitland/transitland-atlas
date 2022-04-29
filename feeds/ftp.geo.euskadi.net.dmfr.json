@@ -2,27 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-ezww-dbus",
-      "urls": {
-        "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/ATTG/dbus/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-ezww-dbus",
-          "name": "dBUS",
-          "website": "http://www.dbus.es",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "100"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-ezty-metrobilbao",
+      "spec": "gtfs",
       "urls": {
         "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/MetroBilbao/google_transit.zip"
       },
@@ -38,8 +19,27 @@
       ]
     },
     {
+      "id": "f-eztyjm-funiculardeartxanda",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/FunicularArtxanda/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eztyjm-funiculardeartxanda",
+          "name": "Funicular de Artxanda",
+          "website": "http://www.bilbao.net/cs/Satellite/funicularArtxanda/Inicio/es/100001096/Home",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "A1"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-ezw-euskotren",
+      "spec": "gtfs",
       "urls": {
         "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/Euskotren/google_transit.zip"
       },
@@ -57,19 +57,19 @@
       ]
     },
     {
+      "id": "f-ezww-dbus",
       "spec": "gtfs",
-      "id": "f-eztyjm-funiculardeartxanda",
       "urls": {
-        "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/FunicularArtxanda/google_transit.zip"
+        "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/ATTG/dbus/google_transit.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-eztyjm-funiculardeartxanda",
-          "name": "Funicular de Artxanda",
-          "website": "http://www.bilbao.net/cs/Satellite/funicularArtxanda/Inicio/es/100001096/Home",
+          "onestop_id": "o-ezww-dbus",
+          "name": "dBUS",
+          "website": "http://www.dbus.es",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "A1"
+              "gtfs_agency_id": "100"
             }
           ]
         }

@@ -2,30 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9r-sagestage",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/sagestage-ca-us/sagestage-ca-us.zip"
       },
       "license": {
         "url": "http://sagestage.com/gtfs-data/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-9r-sagestage",
-          "tags": {
-            "us_ntd_id": "9R02-91008"
-          },
           "name": "Sage Stage",
           "website": "http://www.sagestage.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "SS"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "9R02-91008"
+          }
         }
       ]
     }

@@ -2,22 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-rck-gowest~sealinkgroup~atairporter~atmetro~thepartybuscompany",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://cdn01.at.govt.nz/data/gtfs.zip"
       },
       "operators": [
-        {
-          "onestop_id": "o-rckp-bayescoachlines",
-          "name": "Bayes Coachlines",
-          "website": "http://www.aucklandtransport.govt.nz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BAYES"
-            }
-          ]
-        },
         {
           "onestop_id": "o-rck-ritchiestransport",
           "name": "Ritchies Transport",
@@ -29,12 +19,22 @@
           ]
         },
         {
-          "onestop_id": "o-rckq-sealinkpineharbour",
-          "name": "SeaLink Pine Harbour",
+          "onestop_id": "o-rckm-atmetro",
+          "name": "AT Metro",
           "website": "http://www.aucklandtransport.govt.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SLPH"
+              "gtfs_agency_id": "AM"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckm-gobus",
+          "name": "Go Bus",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GBT"
             }
           ]
         },
@@ -49,22 +49,42 @@
           ]
         },
         {
-          "onestop_id": "o-rckr-northstar",
-          "name": "NorthStar",
+          "onestop_id": "o-rckn-gowest",
+          "name": "Auckland Transport",
           "website": "http://www.aucklandtransport.govt.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "NZBNS"
+              "gtfs_agency_id": "NZBGW"
             }
           ]
         },
         {
-          "onestop_id": "o-rckq-urbanexpress",
-          "name": "Urban Express",
+          "onestop_id": "o-rckn-thepartybuscompany",
+          "name": "The Party Bus Company",
           "website": "http://www.aucklandtransport.govt.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "UE"
+              "gtfs_agency_id": "PBC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckp-bayescoachlines",
+          "name": "Bayes Coachlines",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BAYES"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckq-belaireferries",
+          "name": "Belaire Ferries",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BFL"
             }
           ]
         },
@@ -79,22 +99,12 @@
           ]
         },
         {
-          "onestop_id": "o-rckq-skybus",
-          "name": "SkyBus",
-          "website": "http://skybus.co.nz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ABEXP"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-rckn-thepartybuscompany",
-          "name": "The Party Bus Company",
+          "onestop_id": "o-rckq-fullersferries",
+          "name": "Fullers Ferries",
           "website": "http://www.aucklandtransport.govt.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "PBC"
+              "gtfs_agency_id": "FGL"
             }
           ]
         },
@@ -119,22 +129,32 @@
           ]
         },
         {
-          "onestop_id": "o-rckm-gobus",
-          "name": "Go Bus",
+          "onestop_id": "o-rckq-sealinkpineharbour",
+          "name": "SeaLink Pine Harbour",
           "website": "http://www.aucklandtransport.govt.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "GBT"
+              "gtfs_agency_id": "SLPH"
             }
           ]
         },
         {
-          "onestop_id": "o-rckq-belaireferries",
-          "name": "Belaire Ferries",
+          "onestop_id": "o-rckq-skybus",
+          "name": "SkyBus",
+          "website": "http://skybus.co.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ABEXP"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckq-urbanexpress",
+          "name": "Urban Express",
           "website": "http://www.aucklandtransport.govt.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BFL"
+              "gtfs_agency_id": "UE"
             }
           ]
         },
@@ -149,32 +169,12 @@
           ]
         },
         {
-          "onestop_id": "o-rckm-atmetro",
-          "name": "AT Metro",
+          "onestop_id": "o-rckr-northstar",
+          "name": "NorthStar",
           "website": "http://www.aucklandtransport.govt.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "AM"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-rckn-gowest",
-          "name": "Auckland Transport",
-          "website": "http://www.aucklandtransport.govt.nz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NZBGW"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-rckq-fullersferries",
-          "name": "Fullers Ferries",
-          "website": "http://www.aucklandtransport.govt.nz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FGL"
+              "gtfs_agency_id": "NZBNS"
             }
           ]
         }

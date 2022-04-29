@@ -2,61 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-drt8-nps~boha~ferries",
-      "urls": {
-        "static_current": "http://nationalparkservice.github.io/nps-gtfs/boha/ferries/gtfs.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drt8-bostonharborislandsnationalandstatepark",
-          "name": "Boston Harbor Islands National and State Park",
-          "website": "http://www.bostonharborislands.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NPS_BOHA__BHIP"
-            }
-          ],
-          "tags": {
-            "twitter_general": "34islandsboston"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dpmf-nps~cuva~scenic~rail",
-      "urls": {
-        "static_current": "http://nationalparkservice.github.io/nps-gtfs/cuva/scenic-rail/gtfs.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dpmf-cuyahogavalleyscenicrailroad",
-          "name": "Cuyahoga Valley Scenic Railroad",
-          "website": "http://www.cvsr.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NPS_CUVA_CVSR"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9xhvw-townofestespark",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://nationalparkservice.github.io/nps-gtfs/romo-epshuttles/shuttles/gtfs.zip"
       },
@@ -73,6 +20,57 @@
           ],
           "tags": {
             "twitter_general": "TownofEstesPark"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dpmf-nps~cuva~scenic~rail",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://nationalparkservice.github.io/nps-gtfs/cuva/scenic-rail/gtfs.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpmf-cuyahogavalleyscenicrailroad",
+          "name": "Cuyahoga Valley Scenic Railroad",
+          "website": "http://www.cvsr.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NPS_CUVA_CVSR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-drt8-nps~boha~ferries",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://nationalparkservice.github.io/nps-gtfs/boha/ferries/gtfs.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drt8-bostonharborislandsnationalandstatepark",
+          "name": "Boston Harbor Islands National and State Park",
+          "website": "http://www.bostonharborislands.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NPS_BOHA__BHIP"
+            }
+          ],
+          "tags": {
+            "twitter_general": "34islandsboston"
           }
         }
       ]

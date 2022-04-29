@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qc7-yolobusyolocounty",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.yolobus.com/GTFS/google_transit.zip",
         "static_historic": [
@@ -13,18 +13,18 @@
       "operators": [
         {
           "onestop_id": "o-9qc7-yolobusyolocounty",
-          "tags": {
-            "us_ntd_id": "90090",
-            "wikidata_id": "Q7779123",
-            "twitter_general": "yolobusYCTD"
-          },
           "name": "Yolo County Transportation District",
           "short_name": "Yolobus",
           "associated_feeds": [
             {
               "gtfs_agency_id": "d139e461-175c-4156-beb0-e6a23b64d978"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "yolobusYCTD",
+            "us_ntd_id": "90090",
+            "wikidata_id": "Q7779123"
+          }
         }
       ]
     }

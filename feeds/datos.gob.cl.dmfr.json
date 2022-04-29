@@ -2,50 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-63h-sociedaddetransporteslinean5sa~sociedaddetransporteaaleman",
       "spec": "gtfs",
-      "id": "f-66tm-liserco~lincosur~lisanco",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/c77c9a50-6dd1-449d-b5ab-947ec0139b31/resource/a4edcf07-0657-456d-bbbc-54b2aec1de8d/download/coquimbo10feb16.zip"
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-66tm9-liserco",
-          "name": "LISERCO",
-          "website": "http://coquimbo.transporteinforma.cl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4359"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66tm-lisanco",
-          "name": "LISANCO",
-          "website": "http://coquimbo.transporteinforma.cl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4567"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66tm-lincosur",
-          "name": "LINCOSUR",
-          "website": "http://coquimbo.transporteinforma.cl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4360"
-            }
-          ]
-        }
-      ]
+        "static_current": "http://datos.gob.cl/dataset/cef4c471-2837-412b-a78e-1d4c6a261bf9/resource/7887a7e7-9af6-4fc8-b19f-8ff4ea474d1c/download/temuco24nov16.zip"
+      }
     },
     {
-      "spec": "gtfs",
       "id": "f-63h7-sociedaddetransporteslinean5sa~sociedaddetransporteaalema",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://datos.gob.cl/dataset/cef4c471-2837-412b-a78e-1d4c6a261bf9/resource/7887a7e7-9af6-4fc8-b19f-8ff4ea474d1c/download/temuco24nov16.zip"
       },
@@ -60,29 +25,11 @@
           ]
         },
         {
-          "onestop_id": "o-63h7e-empresadetransportesaltamirasa",
-          "name": "Empresa de Transportes Altamira",
+          "onestop_id": "o-63h7-empresadetransporteslíneanº8plcasassa",
+          "name": "Empresa de Transportes Línea Nº 8 P.L. Casas",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "4763"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-63h7-transportesstarosalimitada",
-          "name": "Transportes Sta. Rosa Limitada.",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4758"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-63h7-transppdevaldivia~plascasasltdanº3",
-          "name": "Transp. P.De Valdivia-P.Las Casas Ltda. Nº3",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4757"
+              "gtfs_agency_id": "4761"
             }
           ]
         },
@@ -105,15 +52,6 @@
           ]
         },
         {
-          "onestop_id": "o-63h7-taxibusesnumeroseissa",
-          "name": "Taxibuses Numero Seis S.A.",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4759"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-63h7-sociedaddetransporteslinean5sa",
           "name": "Sociedad de Transportes Linea N°5",
           "associated_feeds": [
@@ -123,11 +61,11 @@
           ]
         },
         {
-          "onestop_id": "o-63h7-empresadetransporteslíneanº8plcasassa",
-          "name": "Empresa de Transportes Línea Nº 8 P.L. Casas",
+          "onestop_id": "o-63h7-taxibusesnumeroseissa",
+          "name": "Taxibuses Numero Seis S.A.",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "4761"
+              "gtfs_agency_id": "4759"
             }
           ]
         },
@@ -139,231 +77,39 @@
               "gtfs_agency_id": "4756"
             }
           ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-66jh-vinabussa~trolebuseschilesa~busesdelgranvalparaisosa~topt",
-      "urls": {
-        "static_current": "http://datos.gob.cl/dataset/9e74dc7e-9a58-41a1-8ccf-422b979173a8/resource/ae8d306d-7a47-4c9f-bdf0-d608bc33df40/download/valparaiso1feb16.zip"
-      },
-      "operators": [
+        },
         {
-          "onestop_id": "o-66jh-metrovalparaíso",
-          "name": "Metro Valparaíso",
-          "website": "http://www.metro-valparaiso.cl/",
+          "onestop_id": "o-63h7-transportesstarosalimitada",
+          "name": "Transportes Sta. Rosa Limitada.",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "653"
+              "gtfs_agency_id": "4758"
             }
           ]
         },
         {
-          "onestop_id": "o-66jh-toptursa",
-          "name": "Top Tur",
-          "website": "http://www.tmv.cl/",
+          "onestop_id": "o-63h7-transppdevaldivia~plascasasltdanº3",
+          "name": "Transp. P.De Valdivia-P.Las Casas Ltda. Nº3",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "649"
+              "gtfs_agency_id": "4757"
             }
           ]
         },
         {
-          "onestop_id": "o-66j5-fenursa",
-          "name": "Fenur",
-          "website": "http://www.tmv.cl/",
+          "onestop_id": "o-63h7e-empresadetransportesaltamirasa",
+          "name": "Empresa de Transportes Altamira",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "656"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66jh4-trolebuseschilesa",
-          "name": "Trolebuses Chile",
-          "website": "http://www.tmv.cl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "658"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66jh-busesdelgranvalparaisosa",
-          "name": "Buses Del Gran Valparaiso",
-          "website": "http://www.tmv.cl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "647"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66jh-vinabussa",
-          "name": "Vina Bus",
-          "website": "http://www.tmv.cl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "657"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66jh-solymarsa",
-          "name": "Sol y Mar",
-          "website": "http://www.tmv.cl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "655"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66j5-codretransa",
-          "name": "Codretran",
-          "website": "http://www.tmv.cl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "652"
+              "gtfs_agency_id": "4763"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-63vt-trans~ohiggins",
-      "urls": {
-        "static_current": "http://datos.gob.cl/dataset/22cb7071-34f2-46dc-8c2d-dd9b86e9c32f/resource/65b65c20-a4ab-4cca-ba55-d2ef5bbb9605/download/rancagua1feb16.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-63vt-empresadetransportescordilleralimitada",
-          "name": "Empresa de Transportes Cordillera Limitada.",
-          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5073"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-63vtw-asociacióngremialbusesmanzanal",
-          "name": "Asociación Gremial Buses Manzanal",
-          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1683"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-63vtw-asociacióndetaxibusesisabelriquelme",
-          "name": "Asociación de taxibuses Isabel Riquelme",
-          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5072"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-63vtt-trans~ohiggins",
-          "name": "Trans-O'Higgins",
-          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4828"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-63vtw-expresorancagua",
-          "name": "Expreso Rancagua",
-          "website": "http://www.expresorancagua.cl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5071"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-63vtt-asociaciongremialdetaxibusescachapoalderancagua",
-          "name": "Asociación Gremial de Taxibuses Cachapoal de Rancagua",
-          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5074"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-67vc-transantofagasta",
-      "urls": {
-        "static_current": "http://datos.gob.cl/dataset/90e39a55-42d0-445e-b9d5-c73c07c6579b/resource/9111f713-0bbd-449f-ad65-4e3fce1583be/download/antofagasta5feb16.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-67vc-transantofagasta",
-          "name": "TransAntofagasta",
-          "website": "http://www.subtrans.gob.cl/region-de-antofagasta.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1586"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-66jc-transantiago~metrodesantiago",
-      "urls": {
-        "static_current": "http://datos.gob.cl/dataset/5e8bb1f8-f0a5-4719-a877-38543545505b/resource/28cd894d-a3f0-4cdc-8e8e-317e1cac6c88/download/gtfsv33tc.zip"
-      },
-      "license": {
-        "url": "http://datos.gob.cl/dataset/33245/resource/7ebb56a3-b7c3-40d6-a5c7-a6e4ebc1421e"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-66j9-metrotrennos",
-          "name": "MetroTren Nos",
-          "website": "http://www.trencentral.cl/bin/link.cgi/servicios/metrotren-nos/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66jc-transantiago",
-          "name": "Transantiago",
-          "website": "http://www.transantiago.cl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TS"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-66jc-metrodesantiago",
-          "name": "Metro de Santiago",
-          "website": "http://www.metro.cl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "M"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-63tn-abatemolinaltda~sotratalsa~taxutalsa",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://datos.gob.cl/dataset/22fa7b82-50ec-4c85-aa89-709a8e0dd268/resource/f4526a2f-dd8e-4943-ab12-be997ce04fbb/download/talca1sep16.zip"
       },
@@ -401,14 +147,267 @@
       ]
     },
     {
+      "id": "f-63vt-trans~ohiggins",
       "spec": "gtfs",
-      "id": "f-63h-sociedaddetransporteslinean5sa~sociedaddetransporteaaleman",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/cef4c471-2837-412b-a78e-1d4c6a261bf9/resource/7887a7e7-9af6-4fc8-b19f-8ff4ea474d1c/download/temuco24nov16.zip"
-      }
+        "static_current": "http://datos.gob.cl/dataset/22cb7071-34f2-46dc-8c2d-dd9b86e9c32f/resource/65b65c20-a4ab-4cca-ba55-d2ef5bbb9605/download/rancagua1feb16.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-63vt-empresadetransportescordilleralimitada",
+          "name": "Empresa de Transportes Cordillera Limitada.",
+          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5073"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-63vtt-asociaciongremialdetaxibusescachapoalderancagua",
+          "name": "Asociación Gremial de Taxibuses Cachapoal de Rancagua",
+          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5074"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-63vtt-trans~ohiggins",
+          "name": "Trans-O'Higgins",
+          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4828"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-63vtw-asociacióndetaxibusesisabelriquelme",
+          "name": "Asociación de taxibuses Isabel Riquelme",
+          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5072"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-63vtw-asociacióngremialbusesmanzanal",
+          "name": "Asociación Gremial Buses Manzanal",
+          "website": "http://www.subtrans.gob.cl/del-libertador-gral-bernardo-ohiggins.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1683"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-63vtw-expresorancagua",
+          "name": "Expreso Rancagua",
+          "website": "http://www.expresorancagua.cl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5071"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-66jc-transantiago~metrodesantiago",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://datos.gob.cl/dataset/5e8bb1f8-f0a5-4719-a877-38543545505b/resource/28cd894d-a3f0-4cdc-8e8e-317e1cac6c88/download/gtfsv33tc.zip"
+      },
+      "license": {
+        "url": "http://datos.gob.cl/dataset/33245/resource/7ebb56a3-b7c3-40d6-a5c7-a6e4ebc1421e"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-66j9-metrotrennos",
+          "name": "MetroTren Nos",
+          "website": "http://www.trencentral.cl/bin/link.cgi/servicios/metrotren-nos/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MT"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jc-metrodesantiago",
+          "name": "Metro de Santiago",
+          "website": "http://www.metro.cl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "M"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jc-transantiago",
+          "name": "Transantiago",
+          "website": "http://www.transantiago.cl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-66jh-vinabussa~trolebuseschilesa~busesdelgranvalparaisosa~topt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://datos.gob.cl/dataset/9e74dc7e-9a58-41a1-8ccf-422b979173a8/resource/ae8d306d-7a47-4c9f-bdf0-d608bc33df40/download/valparaiso1feb16.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-66j5-codretransa",
+          "name": "Codretran",
+          "website": "http://www.tmv.cl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "652"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66j5-fenursa",
+          "name": "Fenur",
+          "website": "http://www.tmv.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "656"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jh-busesdelgranvalparaisosa",
+          "name": "Buses Del Gran Valparaiso",
+          "website": "http://www.tmv.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "647"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jh-metrovalparaíso",
+          "name": "Metro Valparaíso",
+          "website": "http://www.metro-valparaiso.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "653"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jh-solymarsa",
+          "name": "Sol y Mar",
+          "website": "http://www.tmv.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "655"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jh-toptursa",
+          "name": "Top Tur",
+          "website": "http://www.tmv.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "649"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jh-vinabussa",
+          "name": "Vina Bus",
+          "website": "http://www.tmv.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "657"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66jh4-trolebuseschilesa",
+          "name": "Trolebuses Chile",
+          "website": "http://www.tmv.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "658"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-66tm-liserco~lincosur~lisanco",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://datos.gob.cl/dataset/c77c9a50-6dd1-449d-b5ab-947ec0139b31/resource/a4edcf07-0657-456d-bbbc-54b2aec1de8d/download/coquimbo10feb16.zip"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-66tm-lincosur",
+          "name": "LINCOSUR",
+          "website": "http://coquimbo.transporteinforma.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4360"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66tm-lisanco",
+          "name": "LISANCO",
+          "website": "http://coquimbo.transporteinforma.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4567"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-66tm9-liserco",
+          "name": "LISERCO",
+          "website": "http://coquimbo.transporteinforma.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4359"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-67vc-transantofagasta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://datos.gob.cl/dataset/90e39a55-42d0-445e-b9d5-c73c07c6579b/resource/9111f713-0bbd-449f-ad65-4e3fce1583be/download/antofagasta5feb16.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-67vc-transantofagasta",
+          "name": "TransAntofagasta",
+          "website": "http://www.subtrans.gob.cl/region-de-antofagasta.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1586"
+            }
+          ]
+        }
+      ]
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-63h-fesub",
@@ -416,14 +415,15 @@
       "website": "http://www.victoriatemuco.cl/",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-63h-sociedaddetransporteslinean5sa~sociedaddetransporteaaleman",
-          "gtfs_agency_id": "5233"
+          "gtfs_agency_id": "5233",
+          "feed_onestop_id": "f-63h-sociedaddetransporteslinean5sa~sociedaddetransporteaaleman"
         },
         {
-          "feed_onestop_id": "f-63h7-sociedaddetransporteslinean5sa~sociedaddetransporteaalema",
-          "gtfs_agency_id": "5233"
+          "gtfs_agency_id": "5233",
+          "feed_onestop_id": "f-63h7-sociedaddetransporteslinean5sa~sociedaddetransporteaalema"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
