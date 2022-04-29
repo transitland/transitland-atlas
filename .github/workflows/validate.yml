@@ -25,7 +25,20 @@ jobs:
         wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json -O dmfr.schema.json
         npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
     - name: Lint against the opinionated DMFR format
+      id: lint
+      continue-on-error: true
       run: |
         transitland dmfr lint feeds/*.dmfr.json
+    - name: Report lint failure
+      if: steps.lint.outcome == 'failure'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const issue = await github.rest.pulls.createReviewComment({
+              pull_number: context.pull_request.number
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Lint error'
+            });
     - name: Validate against transitland-lib
       run: cd scripts && python validate-feeds.py
