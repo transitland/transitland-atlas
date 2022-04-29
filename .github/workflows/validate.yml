@@ -26,6 +26,6 @@ jobs:
         npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
     - name: Lint against the opinionated DMFR format
       run: |
-        find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr lint {} \;
+        transitland dmfr lint feeds/*.dmfr.json
     - name: Validate against transitland-lib
       run: cd scripts && python validate-feeds.py
