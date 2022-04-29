@@ -29,13 +29,18 @@ jobs:
       continue-on-error: true
       run: |
         transitland dmfr lint feeds/*.dmfr.json
+    - name: Get Pull Request Number
+      id: pr
+      run: echo "::set-output name=pull_request_number::$(gh pr view --json number -q .number || echo "")"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Report lint failure
       if: steps.lint.outcome == 'failure'
       uses: actions/github-script@v6
       with:
         script: |
-          const issue = await github.rest.pulls.createReviewComment({
-              pull_number: context.pull_request.number
+          await github.rest.pulls.createReviewComment({
+              pull_number: steps.pr.outputs.pull_request_number
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: 'Lint error'
