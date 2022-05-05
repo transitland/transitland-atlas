@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dnkk-knoxvilleareatransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.knoxvilletn.gov/UserFiles/Servers/Server_109478/File/KAT/gtfs-kat.zip"
       },
@@ -13,13 +13,13 @@
       "operators": [
         {
           "onestop_id": "o-dnkk-knoxvilleareatransit",
-          "tags": {
-            "us_ntd_id": "40002",
-            "wikidata_id": "Q6423650",
-            "twitter_general": "kat_bus"
-          },
           "name": "Knoxville Area Transit",
-          "short_name": "KAT"
+          "short_name": "KAT",
+          "tags": {
+            "twitter_general": "kat_bus",
+            "us_ntd_id": "40002",
+            "wikidata_id": "Q6423650"
+          }
         }
       ]
     }

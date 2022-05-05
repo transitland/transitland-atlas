@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qb-goldengatetransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://realtime.goldengate.org/gtfsstatic/GTFSTransitData.zip"
       },
@@ -13,16 +13,16 @@
       "operators": [
         {
           "onestop_id": "o-9qb-goldengatetransit",
+          "name": "Golden Gate Bridge, Highway and Transportation District",
+          "short_name": "GGT",
+          "website": "http://www.goldengate.org",
           "tags": {
             "omd_provider_id": "golden-gate-bridge-highway-transportation-district",
-            "wikidata_id": "Q525895",
-            "us_ntd_id": "90016",
             "twitter_general": "GGBridge",
-            "twitter_service_alerts": "GGBridgeAlerts"
-          },
-          "short_name": "GGT",
-          "name": "Golden Gate Bridge, Highway and Transportation District",
-          "website": "http://www.goldengate.org"
+            "twitter_service_alerts": "GGBridgeAlerts",
+            "us_ntd_id": "90016",
+            "wikidata_id": "Q525895"
+          }
         }
       ]
     }

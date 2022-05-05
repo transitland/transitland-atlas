@@ -2,8 +2,33 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-d44-nicaragua",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://datos.mapanica.net/ni-gtfs.zip"
+      },
+      "license": {
+        "url": "http://opendatacommons.org/licenses/odbl/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "This data is made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-d44-nicaragua",
+          "name": "Nicaragua",
+          "website": "https://wiki.openstreetmap.org/wiki/ES:Wikiproyecto_Nicaragua/Transporte_p%C3%BAblico",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NI"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-d44t-nicaragua~institutoreguladordeltransportedelmunicipiodemanagua",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://datos.mapanica.net/ni-managua-gtfs.zip"
       },
@@ -11,7 +36,6 @@
         "url": "https://opendatacommons.org/licenses/odbl/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "This data is made available under the Open Database License with Copyright of OpenStreetMap Contributors: http://opendatacommons.org/licenses/odbl/1.0/."
       },
       "operators": [
@@ -29,8 +53,8 @@
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-d46d6-nicaragua~estelí",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://datos.mapanica.net/ni-esteli-gtfs.zip"
       },
@@ -38,7 +62,6 @@
         "url": "http://opendatacommons.org/licenses/odbl/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "This data is made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/."
       },
       "operators": [
@@ -49,32 +72,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "NI-Estelí"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-d44-nicaragua",
-      "urls": {
-        "static_current": "https://datos.mapanica.net/ni-gtfs.zip"
-      },
-      "license": {
-        "url": "http://opendatacommons.org/licenses/odbl/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "This data is made available under the Open Database License: http://opendatacommons.org/licenses/odbl/1.0/."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-d44-nicaragua",
-          "name": "Nicaragua",
-          "website": "https://wiki.openstreetmap.org/wiki/ES:Wikiproyecto_Nicaragua/Transporte_p%C3%BAblico",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NI"
             }
           ]
         }

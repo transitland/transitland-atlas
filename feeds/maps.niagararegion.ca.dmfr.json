@@ -2,19 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpx-townofforterietransitsystem~niagarafallstransit~niagarapar",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://maps.niagararegion.ca/googletransit/NiagaraRegionTransit.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-dpxv-niagarafallstransit",
-          "name": "Niagara Falls Transit",
-          "website": "http://www.niagarafalls.ca/transit",
+          "onestop_id": "o-dpxs-wellandtransit",
+          "name": "Welland Transit",
+          "website": "http://www.welland.ca/transit/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "Niagara Falls Transit"
+              "gtfs_agency_id": "WE"
             }
           ]
         },
@@ -25,36 +25,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "PE"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-dpxu-townofforterietransitsystem",
-          "name": "Town of Fort Erie Transit System",
-          "website": "http://www.town.forterie.ca/WebSite/tofeweb.nsf/0/D845A40EE74157C985256FB600665776?OpenDocument",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FE"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-dpxv-niagaraparkscommissionwego",
-          "name": "Niagara Parks Commission WeGo",
-          "website": "http://www.wegoniagarafalls.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "Niagara Parks Commission WeGo"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-dpxs-wellandtransit",
-          "name": "Welland Transit",
-          "website": "http://www.welland.ca/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "WE"
             }
           ]
         },
@@ -85,6 +55,36 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "W2017_St. Catharines Transit Commission"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-dpxu-townofforterietransitsystem",
+          "name": "Town of Fort Erie Transit System",
+          "website": "http://www.town.forterie.ca/WebSite/tofeweb.nsf/0/D845A40EE74157C985256FB600665776?OpenDocument",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FE"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-dpxv-niagarafallstransit",
+          "name": "Niagara Falls Transit",
+          "website": "http://www.niagarafalls.ca/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Niagara Falls Transit"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-dpxv-niagaraparkscommissionwego",
+          "name": "Niagara Parks Commission WeGo",
+          "website": "http://www.wegoniagarafalls.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Niagara Parks Commission WeGo"
             }
           ]
         }

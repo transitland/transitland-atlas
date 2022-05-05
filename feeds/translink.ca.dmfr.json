@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c28-nstranslinkca",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://gtfs.translink.ca/static/latest"
       },
@@ -11,22 +11,11 @@
         "url": "https://developer.translink.ca/ServicesGtfs/GtfsData",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "attribution_text": "Route and arrival data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service.",
         "attribution_instructions": "You must, unless otherwise agreed to by TransLink in writing, at all times present and identify the Data with the following legend, prominently displayed"
       },
       "operators": [
-        {
-          "onestop_id": "o-c2b8-britishcolumbiarapidtransitcompany",
-          "name": "British Columbia Rapid Transit Company",
-          "website": "http://www.translink.ca/en/About-Us/Corporate-Overview/Operating-Companies/BCRTC.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SKYT"
-            }
-          ]
-        },
         {
           "onestop_id": "o-c2b-westcoastexpress",
           "name": "West Coast Express",
@@ -36,15 +25,25 @@
               "gtfs_agency_id": "WCEX"
             }
           ]
+        },
+        {
+          "onestop_id": "o-c2b8-britishcolumbiarapidtransitcompany",
+          "name": "British Columbia Rapid Transit Company",
+          "website": "http://www.translink.ca/en/About-Us/Corporate-Overview/Operating-Companies/BCRTC.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SKYT"
+            }
+          ]
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-translink~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://gtfs.translink.ca/v2/gtfsrealtime",
         "realtime_vehicle_positions": "https://gtfs.translink.ca/v2/gtfsposition",
+        "realtime_trip_updates": "https://gtfs.translink.ca/v2/gtfsrealtime",
         "realtime_alerts": "https://gtfs.translink.ca/v2/gtfsalerts"
       },
       "license": {
@@ -58,7 +57,6 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-c28-translink",
@@ -66,13 +64,14 @@
       "website": "http://www.translink.ca",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-c28-nstranslinkca",
-          "gtfs_agency_id": "CMBC"
+          "gtfs_agency_id": "CMBC",
+          "feed_onestop_id": "f-c28-nstranslinkca"
         },
         {
           "feed_onestop_id": "f-translink~rt"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

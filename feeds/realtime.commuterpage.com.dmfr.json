@@ -2,45 +2,45 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-dqcjj-arlingtontransit",
-      "urls": {
-        "static_current": "http://realtime.commuterpage.com/rtt/public/utility/gtfs.aspx"
-      },
-      "tags": {
-        "gtfs_data_exchange": "arlington-transit"
-      },
-      "license": {
-        "url": "https://www.arlingtonva.us/terms-conditions/"
-      }
-    },
-    {
-      "spec": "gtfs-rt",
       "id": "f-art~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "http://realtime.commuterpage.com/rtt/public/utility/gtfsrealtime.aspx/tripupdate"
       }
+    },
+    {
+      "id": "f-dqcjj-arlingtontransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://realtime.commuterpage.com/rtt/public/utility/gtfs.aspx"
+      },
+      "license": {
+        "url": "https://www.arlingtonva.us/terms-conditions/"
+      },
+      "tags": {
+        "gtfs_data_exchange": "arlington-transit"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dqcjj-arlingtontransit",
-      "tags": {
-        "us_ntd_id": "30080",
-        "wikidata_id": "Q4792406",
-        "twitter_general": "art_alert"
-      },
       "name": "Arlington Transit",
       "short_name": "ART",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dqcjj-arlingtontransit"
+          "feed_onestop_id": "f-art~rt"
         },
         {
-          "feed_onestop_id": "f-art~rt"
+          "feed_onestop_id": "f-dqcjj-arlingtontransit"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "art_alert",
+        "us_ntd_id": "30080",
+        "wikidata_id": "Q4792406"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

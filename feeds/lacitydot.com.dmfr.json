@@ -2,25 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5-ladot",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://ladotbus.com/gtfs"
       },
       "license": {
         "url": "http://www.ladottransit.com/dla.html",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-9q5-ladot",
-          "tags": {
-            "us_ntd_id": "90147",
-            "wikidata_id": "Q3259703",
-            "twitter_general": "LADOTofficial"
-          },
           "name": "Los Angeles Department of Transportation",
           "short_name": "LADOT",
           "website": "http://www.ladottransit.com",
@@ -28,7 +22,12 @@
             {
               "gtfs_agency_id": "27"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "LADOTofficial",
+            "us_ntd_id": "90147",
+            "wikidata_id": "Q3259703"
+          }
         }
       ]
     }

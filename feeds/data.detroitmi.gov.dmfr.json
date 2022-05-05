@@ -2,16 +2,33 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-dpsby4-detroitpeoplemover",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/PeopleMoverGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpsby4-detroitpeoplemover",
+          "name": "Detroit People Mover",
+          "short_name": "DPM",
+          "website": "http://www.thepeoplemover.com/",
+          "tags": {
+            "wikidata_id": "Q1201543"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dpsc-detroitdepartmentoftransportation",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/ddot_gtfs.zip"
       },
       "license": {
         "url": "https://data.detroitmi.gov/datasets/1de3fec8cc894fdbbc03c5d31bca32d4",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "detroit-department-of-transportation"
@@ -19,30 +36,12 @@
       "operators": [
         {
           "onestop_id": "o-dpsc-detroitdepartmentoftransportation",
+          "name": "Detroit Department of Transportation",
+          "short_name": "DDOT",
           "tags": {
             "us_ntd_id": "50119",
             "wikidata_id": "Q5265906"
-          },
-          "name": "Detroit Department of Transportation",
-          "short_name": "DDOT"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dpsby4-detroitpeoplemover",
-      "urls": {
-        "static_current": "https://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/PeopleMoverGTFS.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dpsby4-detroitpeoplemover",
-          "tags": {
-            "wikidata_id": "Q1201543"
-          },
-          "name": "Detroit People Mover",
-          "short_name": "DPM",
-          "website": "http://www.thepeoplemover.com/"
+          }
         }
       ]
     }

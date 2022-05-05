@@ -2,8 +2,27 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-c28-thevictoriaclipper",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://addtransit.com/gtfsfile/42017/TheVictoriaClipper.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-thevictoriaclipper",
+          "name": "The Victoria Clipper",
+          "website": "http://www.clippervacations.com/?utm_source=AddTransit\u0026utm_medium=GTFS",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-r6v-byroneasybus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://addtransit.com/gtfsfile/54743/ByronEasybus.zip"
       },
@@ -21,27 +40,8 @@
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c28-thevictoriaclipper",
-      "urls": {
-        "static_current": "https://addtransit.com/gtfsfile/42017/TheVictoriaClipper.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c28-thevictoriaclipper",
-          "name": "The Victoria Clipper",
-          "website": "http://www.clippervacations.com/?utm_source=AddTransit&utm_medium=GTFS",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-u155-dewaterbus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://addtransit.com/gtfsfile/85165/DeWaterbus.zip"
       },

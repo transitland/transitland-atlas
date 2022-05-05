@@ -2,25 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9xj-transfortcityoffortcollins",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.ridetransfort.com/img/site_specific/uploads/google_transit.zip"
       },
       "license": {
         "url": "http://www.ridetransfort.com/img/site_specific/uploads/Transfort_GTFS_License_Agreement.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "unknown",
-        "redistribute": "yes"
+        "create_derived_product": "unknown"
       },
       "operators": [
         {
           "onestop_id": "o-9xj-transfortcityoffortcollins",
-          "tags": {
-            "us_ntd_id": "80011",
-            "wikidata_id": "Q7834201",
-            "twitter_general": "RideTransfort"
-          },
           "name": "Transfort – City of Fort Collins",
           "short_name": "Transfort",
           "website": "http://www.ridetransfort.com/",
@@ -28,7 +22,12 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "RideTransfort",
+            "us_ntd_id": "80011",
+            "wikidata_id": "Q7834201"
+          }
         }
       ]
     }

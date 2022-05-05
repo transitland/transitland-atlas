@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dre-cdta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.cdta.org/schedules/google_transit.zip"
       },
       "license": {
         "url": "https://www.cdta.org/developer-license-agreement/169",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "cdta"
@@ -19,13 +18,13 @@
       "operators": [
         {
           "onestop_id": "o-dre-cdta",
-          "tags": {
-            "us_ntd_id": "20002",
-            "wikidata_id": "Q5035551",
-            "twitter_general": "cdta"
-          },
           "name": "Capital District Transportation Authority",
-          "short_name": "CDTA"
+          "short_name": "CDTA",
+          "tags": {
+            "twitter_general": "cdta",
+            "us_ntd_id": "20002",
+            "wikidata_id": "Q5035551"
+          }
         }
       ]
     }

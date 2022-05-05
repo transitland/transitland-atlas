@@ -2,13 +2,13 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c26-yakimatransit",
+      "spec": "gtfs",
       "urls": {
+        "static_current": "https://yakimatransit.org/gtfs/yakima_gtfs.zip",
         "static_historic": [
           "http://mjcaction.com/MJC_GTFS_Public/yakima_google_transit.zip"
-        ],
-        "static_current": "https://yakimatransit.org/gtfs/yakima_gtfs.zip"
+        ]
       },
       "tags": {
         "managed_by": "mjc"
@@ -16,18 +16,18 @@
       "operators": [
         {
           "onestop_id": "o-c26-yakimatransit",
-          "tags": {
-            "us_ntd_id": "00006",
-            "wikidata_id": "Q8047098",
-            "twitter_general": "YakimaTransit"
-          },
           "name": "Yakima Transit",
           "website": "http://www.yakimatransit.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "YT"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "YakimaTransit",
+            "us_ntd_id": "00006",
+            "wikidata_id": "Q8047098"
+          }
         }
       ]
     }

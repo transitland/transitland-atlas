@@ -2,25 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9yum-thejo",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.jocogov.org/sites/default/files/documents/TRN/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9yum-thejo",
-          "tags": {
-            "us_ntd_id": "70035",
-            "wikidata_id": "Q6268267"
-          },
           "name": "The JO",
           "website": "https://jocogov.org/dept/transit/home",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "70035",
+            "wikidata_id": "Q6268267"
+          }
         }
       ]
     }

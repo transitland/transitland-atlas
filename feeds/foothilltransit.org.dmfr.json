@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qh1-foothilltransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://foothilltransit.org/gtfs/foothilltransit-ca-us.zip"
       },
@@ -13,14 +13,14 @@
       "operators": [
         {
           "onestop_id": "o-9qh1-foothilltransit",
-          "tags": {
-            "us_ntd_id": "90146",
-            "needs_agency_id": "f-9qh1-foothilltransit",
-            "wikidata_id": "Q5466493",
-            "twitter_general": "foothilltransit"
-          },
           "name": "Foothill Transit",
-          "website": "http://www.foothilltransit.org"
+          "website": "http://www.foothilltransit.org",
+          "tags": {
+            "needs_agency_id": "f-9qh1-foothilltransit",
+            "twitter_general": "foothilltransit",
+            "us_ntd_id": "90146",
+            "wikidata_id": "Q5466493"
+          }
         }
       ]
     }

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpwz-guelphtransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://guelph.ca/uploads/google/google_transit.zip"
       },
@@ -16,13 +16,12 @@
       "operators": [
         {
           "onestop_id": "o-dpwz-guelphtransit",
-          "tags": {},
           "name": "Guelph Transit",
           "website": "http://guelph.ca/transit",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-dpwz-guelphtransit",
-              "gtfs_agency_id": "GT"
+              "gtfs_agency_id": "GT",
+              "feed_onestop_id": "f-dpwz-guelphtransit"
             },
             {
               "feed_onestop_id": "f-guelph~rt"
@@ -32,12 +31,12 @@
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-guelph~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/Alert/Alerts.pb",
+        "realtime_vehicle_positions": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
+        "realtime_alerts": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       }
     }
   ],

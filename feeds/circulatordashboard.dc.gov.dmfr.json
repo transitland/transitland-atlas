@@ -2,54 +2,48 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dqcjr-dccirculator",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://extranet.ddot.dc.gov/ddot_data/gtfs/dc-circulator.zip"
       },
       "license": {
-        "url": "https://octo.dc.gov/page/district-columbia-data-policy",
         "spdx_identifier": "CC0-1.0",
-        "commercial_use_allowed": "yes",
+        "url": "https://octo.dc.gov/page/district-columbia-data-policy",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
-        "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
-        "license_spdx_identifier": "CC0-1.0"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-dqcjr-dccirculator",
-          "tags": {
-            "us_ntd_id": "30012",
-            "wikidata_id": "Q5204585",
-            "twitter_general": "DCCirculator"
-          },
           "name": "DC Circulator",
           "website": "http://www.dccirculator.com",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-dqcjr-dccirculator",
-              "gtfs_agency_id": "45"
+              "gtfs_agency_id": "45",
+              "feed_onestop_id": "f-dqcjr-dccirculator"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "DCCirculator",
+            "us_ntd_id": "30012",
+            "wikidata_id": "Q5204585"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-dqcm2-dcstreetcar",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/dcstreetcar-dc-us/dcstreetcar-dc-us.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dqcm2-dcstreetcar",
-          "tags": {
-            "us_ntd_id": "30012",
-            "wikidata_id": "Q3537231",
-            "twitter_general": "dcstreetcar"
-          },
           "name": "DC Streetcar",
           "website": "http://www.dcstreetcar.com",
           "associated_feeds": [
@@ -59,7 +53,12 @@
             {
               "feed_onestop_id": "f-dcstreetcar~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "dcstreetcar",
+            "us_ntd_id": "30012",
+            "wikidata_id": "Q3537231"
+          }
         }
       ]
     }

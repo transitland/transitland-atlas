@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr63-monroecountytransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.gomcta.com/google_transit.zip"
       },
       "license": {
         "url": "https://www.gomcta.com/developerapi.php",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "monroe-county-transit-authority"
@@ -19,14 +18,14 @@
       "operators": [
         {
           "onestop_id": "o-dr63-monroecountytransitauthority",
-          "tags": {
-            "us_ntd_id": "30137",
-            "wikidata_id": "Q6902179",
-            "twitter_general": "PoconoPony",
-            "twitter_service_alerts": "PonyAlerts"
-          },
           "name": "Monroe County Transit Authority",
-          "short_name": "Pocono Pony"
+          "short_name": "Pocono Pony",
+          "tags": {
+            "twitter_general": "PoconoPony",
+            "twitter_service_alerts": "PonyAlerts",
+            "us_ntd_id": "30137",
+            "wikidata_id": "Q6902179"
+          }
         }
       ]
     }

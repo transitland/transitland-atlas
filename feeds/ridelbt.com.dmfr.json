@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5b-longbeachtransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://lbtransit.box.com/shared/static/aoyeskwmsa9g7pyg78q3xuioi0lgqe4f.zip",
         "static_historic": [
@@ -11,34 +11,34 @@
         ]
       },
       "tags": {
-        "unstable_url": "true",
-        "gtfs_data_exchange": "long-beach-transit"
+        "gtfs_data_exchange": "long-beach-transit",
+        "unstable_url": "true"
       },
       "operators": [
         {
           "onestop_id": "o-9q5b-longbeachtransit",
-          "tags": {
-            "us_ntd_id": "90023",
-            "wikidata_id": "Q6672372",
-            "twitter_general": "lbtransit"
-          },
           "name": "Long Beach Transit",
           "short_name": "LBT",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-longbeachtransit~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "lbtransit",
+            "us_ntd_id": "90023",
+            "wikidata_id": "Q6672372"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-longbeachtransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "gbfs_system_alerts": "http://206.128.158.171/TMGTFSRealTimeWebService/Alert/Alerts.pb",
+        "realtime_vehicle_positions": "http://206.128.158.171/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "http://206.128.158.171/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://206.128.158.171/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb"
+        "gbfs_system_alerts": "http://206.128.158.171/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       }
     }
   ],

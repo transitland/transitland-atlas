@@ -2,26 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-cb74-matbus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.matbus.com/gtfs/google/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-cb74-matbus",
-          "tags": {
-            "us_ntd_id": "80003",
-            "wikidata_id": "Q5435113",
-            "twitter_general": "matbus"
-          },
           "name": "MATBUS",
           "website": "http://www.matbus.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "matbus",
+            "us_ntd_id": "80003",
+            "wikidata_id": "Q5435113"
+          }
         }
       ]
     }

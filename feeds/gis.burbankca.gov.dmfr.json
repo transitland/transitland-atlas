@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5f7-burbankbus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://rideburbankbus.com/gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-9q5f7-burbankbus",
-          "tags": {
-            "us_ntd_id": "90256",
-            "wikidata_id": "Q4998151",
-            "twitter_general": "burbankca"
-          },
           "name": "Burbank Bus",
-          "website": "http://www.burbankbus.org"
+          "website": "http://www.burbankbus.org",
+          "tags": {
+            "twitter_general": "burbankca",
+            "us_ntd_id": "90256",
+            "wikidata_id": "Q4998151"
+          }
         }
       ]
     }

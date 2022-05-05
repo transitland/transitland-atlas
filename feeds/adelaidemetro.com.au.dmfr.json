@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-r1f-adelaidemetrocomau",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.adelaidemetro.com.au/v1/static/latest/google_transit.zip"
       },
@@ -11,17 +11,16 @@
         "url": "http://creativecommons.org/licenses/by/4.0",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Department of Planning, Transport and Infrastructure, Government of South Australia"
       },
       "operators": [
         {
-          "onestop_id": "o-r1f9-adelaidemetrotorrenstransit",
-          "name": "Adelaide Metro - Torrens Transit",
+          "onestop_id": "o-r1f-adelaidemetrorailcommissioner",
+          "name": "Adelaide Metro",
           "website": "http://adelaidemetro.com.au/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "5"
+              "gtfs_agency_id": "2"
             }
           ]
         },
@@ -46,6 +45,26 @@
           ]
         },
         {
+          "onestop_id": "o-r1f9-adelaidemetroindustrialservice~lightcitybuses",
+          "name": "Adelaide Metro - Light-City Buses Industrial Service",
+          "website": "http://adelaidemetro.com.au/Timetables-Maps/Special-Services",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "72"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r1f9-adelaidemetrolightcitybuses",
+          "name": "Adelaide Metro - Light-City Buses",
+          "website": "http://adelaidemetro.com.au/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-r1f9-adelaidemetroschoolservice~lightcitybuses",
           "name": "Adelaide Metro - Light-City Buses School Service",
           "website": "http://adelaidemetro.com.au/Timetables-Maps/Special-Services/School-Services",
@@ -66,22 +85,12 @@
           ]
         },
         {
-          "onestop_id": "o-r1f-adelaidemetrorailcommissioner",
-          "name": "Adelaide Metro",
+          "onestop_id": "o-r1f9-adelaidemetrotorrenstransit",
+          "name": "Adelaide Metro - Torrens Transit",
           "website": "http://adelaidemetro.com.au/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r1f9-adelaidemetrolightcitybuses",
-          "name": "Adelaide Metro - Light-City Buses",
-          "website": "http://adelaidemetro.com.au/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7"
+              "gtfs_agency_id": "5"
             }
           ]
         },
@@ -92,16 +101,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "52"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r1f9-adelaidemetroindustrialservice~lightcitybuses",
-          "name": "Adelaide Metro - Light-City Buses Industrial Service",
-          "website": "http://adelaidemetro.com.au/Timetables-Maps/Special-Services",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "72"
             }
           ]
         }

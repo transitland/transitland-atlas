@@ -2,22 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-u0pv-ttesercizio",
-      "urls": {
-        "static_current": "https://www.trentinotrasporti.it/opendata/google_transit_urbano_tte.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-2.5",
-        "url": "https://www.trentinotrasporti.it/open-data/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
       "id": "f-u0p-trentinotrasportieserciziospa",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.trentinotrasporti.it/opendata/google_transit_extraurbano_tte.zip"
       },
@@ -25,12 +11,23 @@
         "spdx_identifier": "CC-BY-2.5",
         "url": "https://www.trentinotrasporti.it/open-data/",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-u0pv-ttesercizio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.trentinotrasporti.it/opendata/google_transit_urbano_tte.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-2.5",
+        "url": "https://www.trentinotrasporti.it/open-data/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-u0p-trentinotrasportieserciziospa",
@@ -39,14 +36,15 @@
       "website": "http://www.trentinotrasporti.it",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-u0pv-ttesercizio",
-          "gtfs_agency_id": "12"
+          "gtfs_agency_id": "12",
+          "feed_onestop_id": "f-u0p-trentinotrasportieserciziospa"
         },
         {
-          "feed_onestop_id": "f-u0p-trentinotrasportieserciziospa",
-          "gtfs_agency_id": "12"
+          "gtfs_agency_id": "12",
+          "feed_onestop_id": "f-u0pv-ttesercizio"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

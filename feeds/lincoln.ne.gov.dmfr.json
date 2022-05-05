@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9z70-lincolnstartran",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://lincoln.ne.gov/city/pworks/startran/feed/gtfs.zip"
       },
@@ -13,18 +13,18 @@
       "operators": [
         {
           "onestop_id": "o-9z70-lincolnstartran",
-          "tags": {
-            "us_ntd_id": "70001",
-            "wikidata_id": "Q7600574",
-            "twitter_general": "cityoflincoln"
-          },
           "name": "StarTran",
           "website": "https://lincoln.ne.gov/city/pworks/startran/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "cityoflincoln",
+            "us_ntd_id": "70001",
+            "wikidata_id": "Q7600574"
+          }
         }
       ]
     }

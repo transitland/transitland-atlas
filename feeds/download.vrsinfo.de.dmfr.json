@@ -2,18 +2,49 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u1j-kvbkölnerverkehrs~betriebeag~wupsiwupsigmbh~dbdeutschebahn",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://download.vrsinfo.de/gtfs/google_transit.zip"
       },
       "license": {
         "url": "https://www.vrs.de/fahren/fahrplanauskunft/opendata-/-openservice",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
+        {
+          "onestop_id": "o-u0u-rvkregionalverkehrkölngmbhnleuskirchen",
+          "name": "Regionalverkehr Köln - Euskirchen",
+          "short_name": "RVK",
+          "website": "http://www.rvk.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "13"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0ux-schkarlschäferreisengmbh",
+          "name": "SCH Karl Schäfer Reisen GmbH",
+          "website": "http://www.schaefer-mechernich.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "28"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0uy-rmvrmvrhein~moselverkehrsgesellschaftmbh",
+          "name": "Rhein-Mosel Verkehrsgesellschaft",
+          "short_name": "RMV",
+          "website": "http://www.rhein-mosel-bus.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "38"
+            }
+          ]
+        },
         {
           "onestop_id": "o-u0v-trtransregiodeutscheregionalbahngmbh",
           "name": "TransRegio",
@@ -22,94 +53,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "100"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hf-bsmbahnenderstadtmonheim",
-          "name": "Bahnen der Stadt Monheim",
-          "short_name": "BSM",
-          "website": "http://www.bahnen-monheim.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "63"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hch-stwbstadtwerkebrühl",
-          "name": "Stadtwerke Brühl",
-          "short_name": "StWB",
-          "website": "http://www.stadtbus-bruehl.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "24"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1j4-kgwkraftverkehrgebrwiedenhoffgmbh~cokg",
-          "name": "Kraftverkehr Gebr. Wiedenhoff",
-          "short_name": "KGW",
-          "website": "http://www.wiedenhoff.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "26"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1j-nxnationalexpressrailgmbh",
-          "name": "National Express",
-          "short_name": "NX",
-          "website": "http://www.nationalexpress.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "139"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1j0-rsvgrhein~sieg~verkehrsgesellschaftmbh",
-          "name": "Rhein-Sieg-Verkehrsgesellschaft",
-          "short_name": "RSVG",
-          "website": "http://www.rsvg.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "8"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1j-ovagoberbergischeverkehrsgesellschaftmbh",
-          "name": "Oberbergische Verkehrsgesellschaft",
-          "short_name": "OVAG",
-          "website": "http://www.ovaginfo.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "11"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1j4-rvkregionalverkehrkölngmbhnlwermelsk",
-          "name": "Regionalverkehr Köln - Wermelskirchen",
-          "short_name": "RVK",
-          "website": "http://www.rvk.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "16"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hb-rvkregionalverkehrkölngmbhnlmeckenheim",
-          "name": "Regionalverkehr Köln - Meckenheim",
-          "short_name": "RVK",
-          "website": "http://www.rvk.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "12"
             }
           ]
         },
@@ -125,67 +68,13 @@
           ]
         },
         {
-          "onestop_id": "o-u1j4-wupsiwupsigmbh",
-          "name": "Wupsi",
-          "website": "http://www.wupsi.de/",
+          "onestop_id": "o-u0vp-btbbrohltal~schmalspureisenbahnbetriebs~gmbh",
+          "name": "Brohltal-Schmalspureisenbahn Betriebs",
+          "short_name": "BTB",
+          "website": "http://vulkan-express.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "3"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hf-vhverkehrsbetriebhüttebäuckergmbh",
-          "name": "Verkehrsbetrieb Hüttebäucker",
-          "short_name": "VH",
-          "website": "http://www.treffpunkt-bus.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "25"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hcp-swwstadtwerkewesselinggmbh",
-          "name": "Stadtwerke Wesseling",
-          "short_name": "SWW",
-          "website": "http://www.stadtwerke-wesseling.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "29"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hc-kvbkölnerverkehrs~betriebeag",
-          "name": "Kölner Verkehrs-Betriebe",
-          "short_name": "KVB",
-          "website": "http://www.kvb-koeln.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hb-svestadtverkehreuskirchengmbh",
-          "name": "Stadtverkehr Euskirchen",
-          "short_name": "SVE",
-          "website": "http://www.sveinfo.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "22"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hc-revgrhein~erft~verkehrsgesellschaftmbh",
-          "name": "Rhein-Erft-Verkehrsgesellschaft",
-          "short_name": "REVG",
-          "website": "http://www.revg.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "17"
+              "gtfs_agency_id": "138"
             }
           ]
         },
@@ -201,6 +90,127 @@
           ]
         },
         {
+          "onestop_id": "o-u1h-rtbrurtalbahngmbh",
+          "name": "Rurtalbahn",
+          "short_name": "RTB",
+          "website": "http://www.rurtalbahn.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "131"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1h9x-tiomnibusbetriebtirteygmbh~cokg",
+          "name": "Omnibusbetrieb Tirtey",
+          "short_name": "TI",
+          "website": "http://www.tirtey-reisen.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "27"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hb-rvkregionalverkehrkölngmbhnlmeckenheim",
+          "name": "Regionalverkehr Köln - Meckenheim",
+          "short_name": "RVK",
+          "website": "http://www.rvk.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "12"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hb-svestadtverkehreuskirchengmbh",
+          "name": "Stadtverkehr Euskirchen",
+          "short_name": "SVE",
+          "website": "http://www.sveinfo.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hc-kvbkölnerverkehrs~betriebeag",
+          "name": "Kölner Verkehrs-Betriebe",
+          "short_name": "KVB",
+          "website": "http://www.kvb-koeln.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hc-revgrhein~erft~verkehrsgesellschaftmbh",
+          "name": "Rhein-Erft-Verkehrsgesellschaft",
+          "short_name": "REVG",
+          "website": "http://www.revg.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "17"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hch-stwbstadtwerkebrühl",
+          "name": "Stadtwerke Brühl",
+          "short_name": "StWB",
+          "website": "http://www.stadtbus-bruehl.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "24"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hck-svhstadtverkehrhürthaörabtÖpnv",
+          "name": "Stadtverkehr Hürth AöR, Abt. ÖPNV",
+          "short_name": "SVH",
+          "website": "http://www.svh-direkt.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "23"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hcp-swwstadtwerkewesselinggmbh",
+          "name": "Stadtwerke Wesseling",
+          "short_name": "SWW",
+          "website": "http://www.stadtwerke-wesseling.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "29"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hf-bsmbahnenderstadtmonheim",
+          "name": "Bahnen der Stadt Monheim",
+          "short_name": "BSM",
+          "website": "http://www.bahnen-monheim.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "63"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hf-vhverkehrsbetriebhüttebäuckergmbh",
+          "name": "Verkehrsbetrieb Hüttebäucker",
+          "short_name": "VH",
+          "website": "http://www.treffpunkt-bus.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "25"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-u1j-hlbhessischelandesbahngmbh",
           "name": "Hessische Landesbahn",
           "short_name": "HLB",
@@ -212,13 +222,46 @@
           ]
         },
         {
-          "onestop_id": "o-u0uy-rmvrmvrhein~moselverkehrsgesellschaftmbh",
-          "name": "Rhein-Mosel Verkehrsgesellschaft",
-          "short_name": "RMV",
-          "website": "http://www.rhein-mosel-bus.de/",
+          "onestop_id": "o-u1j-nxnationalexpressrailgmbh",
+          "name": "National Express",
+          "short_name": "NX",
+          "website": "http://www.nationalexpress.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "38"
+              "gtfs_agency_id": "139"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1j-ovagoberbergischeverkehrsgesellschaftmbh",
+          "name": "Oberbergische Verkehrsgesellschaft",
+          "short_name": "OVAG",
+          "website": "http://www.ovaginfo.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1j0-rsvgrhein~sieg~verkehrsgesellschaftmbh",
+          "name": "Rhein-Sieg-Verkehrsgesellschaft",
+          "short_name": "RSVG",
+          "website": "http://www.rsvg.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "8"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1j0-swbstadtwerkebonnverkehrsgmbh",
+          "name": "Stadtwerke Bonn",
+          "short_name": "SWB",
+          "website": "http://www.swb-busundbahn.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6"
             }
           ]
         },
@@ -245,6 +288,38 @@
           ]
         },
         {
+          "onestop_id": "o-u1j4-kgwkraftverkehrgebrwiedenhoffgmbh~cokg",
+          "name": "Kraftverkehr Gebr. Wiedenhoff",
+          "short_name": "KGW",
+          "website": "http://www.wiedenhoff.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "26"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1j4-rvkregionalverkehrkölngmbhnlwermelsk",
+          "name": "Regionalverkehr Köln - Wermelskirchen",
+          "short_name": "RVK",
+          "website": "http://www.rvk.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "16"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1j4-wupsiwupsigmbh",
+          "name": "Wupsi",
+          "website": "http://www.wupsi.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-u1j5-bvrbusverkehrrheinlandgmbh",
           "name": "Busverkehr Rheinland",
           "short_name": "BVR",
@@ -263,82 +338,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "60"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1j0-swbstadtwerkebonnverkehrsgmbh",
-          "name": "Stadtwerke Bonn",
-          "short_name": "SWB",
-          "website": "http://www.swb-busundbahn.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0u-rvkregionalverkehrkölngmbhnleuskirchen",
-          "name": "Regionalverkehr Köln - Euskirchen",
-          "short_name": "RVK",
-          "website": "http://www.rvk.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "13"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hck-svhstadtverkehrhürthaörabtÖpnv",
-          "name": "Stadtverkehr Hürth AöR, Abt. ÖPNV",
-          "short_name": "SVH",
-          "website": "http://www.svh-direkt.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "23"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0ux-schkarlschäferreisengmbh",
-          "name": "SCH Karl Schäfer Reisen GmbH",
-          "website": "http://www.schaefer-mechernich.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "28"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1h-rtbrurtalbahngmbh",
-          "name": "Rurtalbahn",
-          "short_name": "RTB",
-          "website": "http://www.rurtalbahn.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "131"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0vp-btbbrohltal~schmalspureisenbahnbetriebs~gmbh",
-          "name": "Brohltal-Schmalspureisenbahn Betriebs",
-          "short_name": "BTB",
-          "website": "http://vulkan-express.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "138"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1h9x-tiomnibusbetriebtirteygmbh~cokg",
-          "name": "Omnibusbetrieb Tirtey",
-          "short_name": "TI",
-          "website": "http://www.tirtey-reisen.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "27"
             }
           ]
         },

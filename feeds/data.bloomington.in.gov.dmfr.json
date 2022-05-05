@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dnfq-bloomingtontransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://data.bloomington.in.gov/dataset/5aca3228-b81b-4572-a45c-b05a30053949/resource/16145a82-0959-4922-93ae-14dcee02950c/download/googletransitfeed.zip"
       },
@@ -13,14 +13,14 @@
       "operators": [
         {
           "onestop_id": "o-dnfq-bloomingtontransit",
-          "tags": {
-            "us_ntd_id": "50110",
-            "wikidata_id": "Q4928359",
-            "twitter_general": "BT_Transit"
-          },
           "name": "Bloomington Transit",
           "short_name": "BT",
-          "website": "http://bloomingtontransit.com"
+          "website": "http://bloomingtontransit.com",
+          "tags": {
+            "twitter_general": "BT_Transit",
+            "us_ntd_id": "50110",
+            "wikidata_id": "Q4928359"
+          }
         }
       ]
     }

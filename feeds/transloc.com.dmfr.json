@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-atomic~city~transit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/atomic.zip"
       },
@@ -17,15 +17,15 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "6R03-60215",
-            "twitter_general": "losalamos"
+            "twitter_general": "losalamos",
+            "us_ntd_id": "6R03-60215"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-davenport~citi~bus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/davenportcitibus.zip"
       },
@@ -34,16 +34,34 @@
           "onestop_id": "o-9zrs-citibus",
           "name": "Citibus",
           "tags": {
+            "twitter_general": "cityofdavenport",
             "us_ntd_id": "70009",
-            "wikidata_id": "Q5230228",
-            "twitter_general": "cityofdavenport"
+            "wikidata_id": "Q5230228"
           }
         }
       ]
     },
     {
+      "id": "f-dq259-ncsu~wolfline~nc~us",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/ncsu.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq259-ncsuwolfline",
+          "name": "NCSU Wolfline",
+          "tags": {
+            "twitter_general": "NCStateTranspo",
+            "us_ntd_id": "40147",
+            "wikidata_id": "Q8030170"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dqb0q-charlottesvilleareatransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/charlottesville.zip"
       },
@@ -53,12 +71,6 @@
       "operators": [
         {
           "onestop_id": "o-dqb0q-charlottesvilleareatransit",
-          "tags": {
-            "wikidata_id": "Q5086235",
-            "us_ntd_id": "30036",
-            "omd_provider_id": "charlottesville-area-transit",
-            "twitter_general": "RideWithCAT"
-          },
           "name": "Charlottesville Area Transit",
           "short_name": "CAT",
           "website": "http://www.charlottesville.org/transit",
@@ -66,25 +78,13 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dq259-ncsu~wolfline~nc~us",
-      "urls": {
-        "static_current": "https://api.transloc.com/gtfs/ncsu.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dq259-ncsuwolfline",
+          ],
           "tags": {
-            "us_ntd_id": "40147",
-            "wikidata_id": "Q8030170",
-            "twitter_general": "NCStateTranspo"
-          },
-          "name": "NCSU Wolfline"
+            "omd_provider_id": "charlottesville-area-transit",
+            "twitter_general": "RideWithCAT",
+            "us_ntd_id": "30036",
+            "wikidata_id": "Q5086235"
+          }
         }
       ]
     }

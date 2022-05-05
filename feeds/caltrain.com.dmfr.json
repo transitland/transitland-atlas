@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q9-caltrain",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/caltrain-ca-us/caltrain-ca-us.zip",
         "static_historic": [
@@ -14,7 +14,6 @@
         "url": "http://www.caltrain.com/developer.html",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
@@ -24,15 +23,15 @@
       "operators": [
         {
           "onestop_id": "o-9q9-caltrain",
-          "tags": {
-            "us_ntd_id": "90134",
-            "omd_provider_id": "caltrain",
-            "wikidata_id": "Q166817",
-            "twitter_general": "Caltrain",
-            "twitter_service_alerts": "CaltrainAlerts"
-          },
           "name": "Caltrain",
-          "website": "http://www.caltrain.com/"
+          "website": "http://www.caltrain.com/",
+          "tags": {
+            "omd_provider_id": "caltrain",
+            "twitter_general": "Caltrain",
+            "twitter_service_alerts": "CaltrainAlerts",
+            "us_ntd_id": "90134",
+            "wikidata_id": "Q166817"
+          }
         }
       ]
     }

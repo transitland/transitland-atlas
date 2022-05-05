@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q9q-wheelsbus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://webwatch.lavta.org/TMGTFSRealTimeWebService/GTFS-Static/google_transit.zip"
       },
@@ -11,19 +11,18 @@
         "url": "http://www.wheelsbus.com/lavta-developer-license-agreement/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Visit http://www.wheelsbus.com/ for more information."
       },
       "operators": [
         {
           "onestop_id": "o-9q9q-wheelsbus",
-          "tags": {
-            "us_ntd_id": "90144",
-            "wikidata_id": "Q7950139",
-            "twitter_general": "wheelsbus"
-          },
           "name": "Livermore Amador Valley Transit Authority",
-          "short_name": "Wheels Bus"
+          "short_name": "Wheels Bus",
+          "tags": {
+            "twitter_general": "wheelsbus",
+            "us_ntd_id": "90144",
+            "wikidata_id": "Q7950139"
+          }
         }
       ]
     }

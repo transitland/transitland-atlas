@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dngb-lextran",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://lextran.com/wp-content/uploads/2021/05/GTFS.zip"
       },
@@ -13,11 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-dngb-lextran",
-          "tags": {
-            "wikidata_id": "Q6537504",
-            "us_ntd_id": "40017",
-            "twitter_general": "Lextran"
-          },
           "name": "Lexington Transit Authority",
           "short_name": "Lextran",
           "website": "http://lextran.com/",
@@ -25,7 +20,12 @@
             {
               "gtfs_agency_id": "71"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "Lextran",
+            "us_ntd_id": "40017",
+            "wikidata_id": "Q6537504"
+          }
         }
       ]
     }

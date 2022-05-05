@@ -2,27 +2,27 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp9-milwaukeecountytransitsystem",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://kamino.mcts.org/gtfs/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "milwaukee-county-transit-system"
       },
       "license": {
         "url": "https://www.ridemcts.com/policies/developer-terms"
       },
+      "tags": {
+        "gtfs_data_exchange": "milwaukee-county-transit-system"
+      },
       "operators": [
         {
           "onestop_id": "o-dp9-milwaukeecountytransitsystem",
-          "tags": {
-            "us_ntd_id": "50008",
-            "wikidata_id": "Q1935975",
-            "twitter_general": "RideMCTS"
-          },
           "name": "Milwaukee County Transit System",
-          "short_name": "MCTS"
+          "short_name": "MCTS",
+          "tags": {
+            "twitter_general": "RideMCTS",
+            "us_ntd_id": "50008",
+            "wikidata_id": "Q1935975"
+          }
         }
       ]
     }

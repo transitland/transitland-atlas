@@ -2,11 +2,13 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-w21z-lta",
+      "spec": "gtfs",
       "urls": {
-        "static_historic": ["http://jonpetersen.co.uk/sggtfs/gtfs_feed.zip"],
-        "static_current": "https://cdn.rushowl.app/rushtrail-app/gtfs-feed/gtfs-feed-lta.zip"
+        "static_current": "https://cdn.rushowl.app/rushtrail-app/gtfs-feed/gtfs-feed-lta.zip",
+        "static_historic": [
+          "http://jonpetersen.co.uk/sggtfs/gtfs_feed.zip"
+        ]
       },
       "tags": {
         "unofficial": "true"

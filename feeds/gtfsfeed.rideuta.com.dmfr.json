@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9x0-uta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfsfeed.rideuta.com/GTFS.zip"
       },
@@ -17,13 +17,13 @@
       "operators": [
         {
           "onestop_id": "o-9x0-utahtransitauthority",
-          "tags": {
-            "us_ntd_id": "80001",
-            "wikidata_id": "Q7902494",
-            "twitter_general": "RideUTA"
-          },
           "name": "Utah Transit Authority",
-          "short_name": "UTA"
+          "short_name": "UTA",
+          "tags": {
+            "twitter_general": "RideUTA",
+            "us_ntd_id": "80001",
+            "wikidata_id": "Q7902494"
+          }
         }
       ]
     }

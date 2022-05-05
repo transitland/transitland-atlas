@@ -2,20 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9tsk-sunmetro",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://transit.sunmetro.net/google_transit/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9tsk-sunmetro",
+          "name": "Sun Metro",
           "tags": {
+            "twitter_general": "sunmetro",
             "us_ntd_id": "60006",
-            "wikidata_id": "Q7638408",
-            "twitter_general": "sunmetro"
-          },
-          "name": "Sun Metro"
+            "wikidata_id": "Q7638408"
+          }
         }
       ]
     }

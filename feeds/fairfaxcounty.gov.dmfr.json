@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dqcj-fairfaxconnector",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.fairfaxcounty.gov/connector/sites/connector/files/Assets/connector_gtfs.zip"
       },
@@ -16,14 +16,14 @@
       "operators": [
         {
           "onestop_id": "o-dqcj-fairfaxconnector",
-          "tags": {
-            "us_ntd_id": "30068",
-            "wikidata_id": "Q5430155",
-            "twitter_general": "ffxconnector"
-          },
           "name": "Fairfax Connector",
           "short_name": "Fairfax Connector",
-          "website": "http://www.fairfaxconnector.com"
+          "website": "http://www.fairfaxconnector.com",
+          "tags": {
+            "twitter_general": "ffxconnector",
+            "us_ntd_id": "30068",
+            "wikidata_id": "Q5430155"
+          }
         }
       ]
     }

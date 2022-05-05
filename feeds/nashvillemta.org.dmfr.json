@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dn6-regionaltransportationauthorityofmiddletennessee~nashville",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.nashvillemta.org/GoogleExport/google_transit.zip"
       },
@@ -31,45 +31,45 @@
             }
           ],
           "tags": {
+            "twitter_general": "WeGoTransit",
             "us_ntd_id": "40004",
-            "wikidata_id": "Q6966980",
-            "twitter_general": "WeGoTransit"
+            "wikidata_id": "Q6966980"
           }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-nashvillemta~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/alert/alerts.pb",
+        "realtime_vehicle_positions": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb",
         "realtime_trip_updates": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/tripupdate/tripupdates.pb",
-        "realtime_vehicle_positions": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/vehicle/vehiclepositions.pb"
+        "realtime_alerts": "http://transitdata.nashvillemta.org/TMGTFSRealTimeWebService/alert/alerts.pb"
       },
       "license": {
         "url": "https://www.nashvillemta.org/Nashville-MTA-Developer-Data-Request.asp"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dn6-nashvillemetropolitantransitauthority",
-      "tags": {
-        "us_ntd_id": "40004"
-      },
       "name": "Nashville Metropolitan Transit Authority",
       "short_name": "MTA",
       "website": "http://www.nashvillemta.org",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dn6-regionaltransportationauthorityofmiddletennessee~nashville",
-          "gtfs_agency_id": "Nashville MTA"
+          "gtfs_agency_id": "Nashville MTA",
+          "feed_onestop_id": "f-dn6-regionaltransportationauthorityofmiddletennessee~nashville"
         },
         {
           "feed_onestop_id": "f-nashvillemta~rt"
         }
-      ]
+      ],
+      "tags": {
+        "us_ntd_id": "40004"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

@@ -2,50 +2,44 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5c-bigbluebus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://gtfs.bigbluebus.com/current.zip"
       },
       "license": {
         "url": "http://gtfs.bigbluebus.com/terms-and-conditions",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
-        "share_alike_optional": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "big-blue-bus"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-bigbluebus~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://gtfs.bigbluebus.com/alerts.bin",
+        "realtime_vehicle_positions": "http://gtfs.bigbluebus.com/vehiclepositions.bin",
         "realtime_trip_updates": "http://gtfs.bigbluebus.com/tripupdates.bin",
-        "realtime_vehicle_positions": "http://gtfs.bigbluebus.com/vehiclepositions.bin"
+        "realtime_alerts": "http://gtfs.bigbluebus.com/alerts.bin"
       },
       "license": {
         "url": "http://gtfs.bigbluebus.com/current.zip",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
-        "share_alike_optional": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9q5c-bigbluebus",
-      "tags": {
-        "us_ntd_id": "90008",
-        "wikidata_id": "Q4905149",
-        "twitter_general": "SMBigBlueBus"
-      },
       "name": "Big Blue Bus",
       "associated_feeds": [
         {
@@ -54,7 +48,13 @@
         {
           "feed_onestop_id": "f-bigbluebus~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "SMBigBlueBus",
+        "us_ntd_id": "90008",
+        "wikidata_id": "Q4905149"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

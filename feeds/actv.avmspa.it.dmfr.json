@@ -2,21 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-u20f-actvspa",
-      "urls": {
-        "static_current": "http://actv.avmspa.it/sites/default/files/attachments/opendata/navigazione/actv_nav.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
       "id": "f-u20-actvspa",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://actv.avmspa.it/sites/default/files/attachments/opendata/automobilistico/actv_aut.zip"
       }
+    },
+    {
+      "id": "f-u20f-actvspa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://actv.avmspa.it/sites/default/files/attachments/opendata/navigazione/actv_nav.zip"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-u20-actvspa",
@@ -25,14 +24,15 @@
       "website": "http://www.actv.it",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-u20-actvspa",
-          "gtfs_agency_id": "ACTV S.p.a"
+          "gtfs_agency_id": "ACTV S.p.a",
+          "feed_onestop_id": "f-u20-actvspa"
         },
         {
-          "feed_onestop_id": "f-u20f-actvspa",
-          "gtfs_agency_id": "ACTV S.p.a"
+          "gtfs_agency_id": "ACTV S.p.a",
+          "feed_onestop_id": "f-u20f-actvspa"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

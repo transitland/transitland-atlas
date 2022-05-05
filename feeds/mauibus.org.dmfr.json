@@ -2,15 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-maui~county~transit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://mauibus.org/gtfs"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-maui~county~transit~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://mauibus.org/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://mauibus.org/gtfs-rt/tripupdates",
@@ -23,10 +23,6 @@
       "onestop_id": "o-maui~county~transit",
       "name": "County of Maui Department of Transportation",
       "short_name": "Maui Bus",
-      "tags": {
-        "us_ntd_id": "90241",
-        "wikidata_id": "Q6792371"
-      },
       "associated_feeds": [
         {
           "feed_onestop_id": "f-maui~county~transit"
@@ -34,7 +30,11 @@
         {
           "feed_onestop_id": "f-maui~county~transit~rt"
         }
-      ]
+      ],
+      "tags": {
+        "us_ntd_id": "90241",
+        "wikidata_id": "Q6792371"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

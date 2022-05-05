@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp1h-champaignurbanamasstransitdistrict",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://developer.cumtd.com/gtfs/google_transit.zip"
       },
@@ -16,13 +16,13 @@
       "operators": [
         {
           "onestop_id": "o-dp1h-champaignurbanamasstransitdistrict",
-          "tags": {
-            "us_ntd_id": "50060",
-            "wikidata_id": "Q5069909",
-            "twitter_general": "rideMTD"
-          },
           "name": "Champaign Urbana Mass Transit District",
-          "short_name": "MTD"
+          "short_name": "MTD",
+          "tags": {
+            "twitter_general": "rideMTD",
+            "us_ntd_id": "50060",
+            "wikidata_id": "Q5069909"
+          }
         }
       ]
     }

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dprp-eriemetropolitantransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/eriemta-pa-us/eriemta-pa-us.zip"
       },
@@ -13,20 +13,20 @@
       "operators": [
         {
           "onestop_id": "o-dprp-eriemetropolitantransitauthority",
-          "tags": {
-            "us_ntd_id": "30013",
-            "wikidata_id": "Q5388327",
-            "twitter_general": "ride_the_e"
-          },
           "name": "Erie Metropolitan Transit Authority",
           "short_name": "EMTA",
           "website": "http://www.ride-the-e.com/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-dprp-eriemetropolitantransitauthority",
-              "gtfs_agency_id": "0"
+              "gtfs_agency_id": "0",
+              "feed_onestop_id": "f-dprp-eriemetropolitantransitauthority"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "ride_the_e",
+            "us_ntd_id": "30013",
+            "wikidata_id": "Q5388327"
+          }
         }
       ]
     }

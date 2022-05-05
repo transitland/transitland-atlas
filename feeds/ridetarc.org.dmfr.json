@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dng1-transitauthorityofrivercity",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://googletransit.ridetarc.org/feed/google_transit.zip"
       },
       "license": {
         "url": "http://googletransit.ridetarc.org/feed/Developer%20License%20Agreeement.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "transit-authority-of-river-city"
@@ -19,28 +18,28 @@
       "operators": [
         {
           "onestop_id": "o-dng1-transitauthorityofrivercity",
-          "tags": {
-            "us_ntd_id": "40018",
-            "wikidata_id": "Q3537637",
-            "twitter_general": "ridetarc"
-          },
           "name": "Transit Authority of River City",
           "short_name": "TARC",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-tarc~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "ridetarc",
+            "us_ntd_id": "40018",
+            "wikidata_id": "Q3537637"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-tarc~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://gtfsrealtime.ridetarc.org/realtime/Alert/Alerts.pb",
+        "realtime_vehicle_positions": "http://gtfsrealtime.ridetarc.org/realtime/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "http://gtfsrealtime.ridetarc.org/realtime/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://gtfsrealtime.ridetarc.org/realtime/Vehicle/VehiclePositions.pb"
+        "realtime_alerts": "http://gtfsrealtime.ridetarc.org/realtime/Alert/Alerts.pb"
       }
     }
   ],

@@ -2,25 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-djn-floridadepartmentoftransportation",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://corporate.sunrail.com/wp-content/uploads/2016/05/google_transit.zip"
       },
       "license": {
         "url": "http://corporate.sunrail.com/about-sunrail/gtfs-data-download/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-djn-floridadepartmentoftransportation",
+          "name": "Florida Department of Transportation",
+          "short_name": "SunRail",
           "tags": {
             "us_ntd_id": "40232"
-          },
-          "name": "Florida Department of Transportation",
-          "short_name": "SunRail"
+          }
         }
       ]
     }

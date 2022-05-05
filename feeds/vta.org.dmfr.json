@@ -2,31 +2,31 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q9-vta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.vta.org/gtfs_vta.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9q9-vta",
-          "tags": {
-            "us_ntd_id": "90013",
-            "wikidata_id": "Q1456861",
-            "twitter_general": "VTA",
-            "twitter_service_alerts": "VTAservice"
-          },
           "name": "Santa Clara Valley Transportation Authority",
           "short_name": "VTA",
           "website": "https://www.vta.org/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "o-9q9-vta"
+              "feed_onestop_id": "f-vta~rt"
             },
             {
-              "feed_onestop_id": "f-vta~rt"
+              "feed_onestop_id": "o-9q9-vta"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "VTA",
+            "twitter_service_alerts": "VTAservice",
+            "us_ntd_id": "90013",
+            "wikidata_id": "Q1456861"
+          }
         }
       ]
     }

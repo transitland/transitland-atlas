@@ -2,30 +2,30 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp73-citilink",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://jump.nextinsight.com/gtfs/ni_citilink/google_transit.zip"
       },
       "tags": {
-        "status": "unpublished",
-        "gtfs_data_exchange": "citilink"
+        "gtfs_data_exchange": "citilink",
+        "status": "unpublished"
       },
       "operators": [
         {
           "onestop_id": "o-dp73-citilink",
-          "tags": {
-            "us_ntd_id": "50044",
-            "wikidata_id": "Q5472275",
-            "twitter_general": "FWCitilink"
-          },
           "name": "Citilink",
           "website": "http://www.fwcitilink.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "77"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "FWCitilink",
+            "us_ntd_id": "50044",
+            "wikidata_id": "Q5472275"
+          }
         }
       ]
     }

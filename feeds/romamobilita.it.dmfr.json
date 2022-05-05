@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-sr-atac~romatpl~trenitalia",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://romamobilita.it/sites/default/files/rome_static_gtfs.zip"
       },
@@ -42,11 +42,11 @@
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-sr-atac~romatpl~trenitalia~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://romamobilita.it/sites/default/files/rome_rtgtfs_trip_updates_feed.pb",
         "realtime_vehicle_positions": "https://romamobilita.it/sites/default/files/rome_rtgtfs_vehicle_positions_feed.pb",
+        "realtime_trip_updates": "https://romamobilita.it/sites/default/files/rome_rtgtfs_trip_updates_feed.pb",
         "realtime_alerts": "https://romamobilita.it/sites/default/files/rome_rtgtfs_service_alerts_feed.pb"
       }
     }

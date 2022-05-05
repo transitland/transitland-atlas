@@ -2,31 +2,31 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5c-cityofcommercemunicipalbuslines",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://citycommbus.com/gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-9q5c-cityofcommercemunicipalbuslines",
-          "tags": {
-            "us_ntd_id": "90043",
-            "wikidata_id": "Q5123639",
-            "twitter_general": "CityOfCommerce"
-          },
           "name": "City of Commerce Municipal Bus Lines",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-9q5c-cityofcommercemunicipalbuslines~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "CityOfCommerce",
+            "us_ntd_id": "90043",
+            "wikidata_id": "Q5123639"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-9q5c-cityofcommercemunicipalbuslines~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://citycommbus.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://citycommbus.com/gtfs-rt/tripupdates",

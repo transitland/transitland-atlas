@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9x8-pocatelloregionaltransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://pocatellotransit.com/gtfs/pocatello-regional-transit-gtfs.zip?v=current"
       },
@@ -13,13 +13,13 @@
       "operators": [
         {
           "onestop_id": "o-9x8-pocatelloregionaltransit",
-          "tags": {
-            "us_ntd_id": "00022",
-            "wikidata_id": "Q7206301",
-            "twitter_general": "rideprt"
-          },
           "name": "Pocatello Regional Transit",
-          "short_name": "PRT"
+          "short_name": "PRT",
+          "tags": {
+            "twitter_general": "rideprt",
+            "us_ntd_id": "00022",
+            "wikidata_id": "Q7206301"
+          }
         }
       ]
     }

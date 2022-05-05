@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-f08e-thunderbaytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://api.nextlift.ca/gtfs.zip"
       },
@@ -12,16 +12,15 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-thunderbay~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.nextlift.ca/gtfs-realtime/alerts.pb",
+        "realtime_vehicle_positions": "http://api.nextlift.ca/gtfs-realtime/vehicleupdates.pb",
         "realtime_trip_updates": "http://api.nextlift.ca/gtfs-realtime/tripupdates.pb",
-        "realtime_vehicle_positions": "http://api.nextlift.ca/gtfs-realtime/vehicleupdates.pb"
+        "realtime_alerts": "http://api.nextlift.ca/gtfs-realtime/alerts.pb"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-f08e-thunderbaytransit",
@@ -29,13 +28,14 @@
       "website": "http://www.thunderbay.ca/Living/Getting_Around/Thunder_Bay_Transit.htm",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-f08e-thunderbaytransit",
-          "gtfs_agency_id": "0"
+          "gtfs_agency_id": "0",
+          "feed_onestop_id": "f-f08e-thunderbaytransit"
         },
         {
           "feed_onestop_id": "f-thunderbay~rt"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

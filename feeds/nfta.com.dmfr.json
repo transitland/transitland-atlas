@@ -2,25 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpx-wwwnftacom",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.nfta.com/metro/__googletransit/google_transit.zip"
       },
       "license": {
         "url": "http://metro.nfta.com/Contact/Developers.aspx",
         "use_without_attribution": "unknown",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-dpx-nfta~metro",
-          "tags": {
-            "us_ntd_id": "20004",
-            "wikidata_id": "Q15114900",
-            "twitter_general": "NFTAMetro"
-          },
           "name": "Niagara Frontier Transportation Authority",
           "short_name": "NFTA",
           "website": "http://www.nfta.com",
@@ -28,7 +22,12 @@
             {
               "gtfs_agency_id": "MET"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "NFTAMetro",
+            "us_ntd_id": "20004",
+            "wikidata_id": "Q15114900"
+          }
         }
       ]
     }
