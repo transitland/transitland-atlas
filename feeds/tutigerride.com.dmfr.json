@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-tutigerride~md",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tutigerride.com/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tutigerride~md",
+          "name": "Towson University TigerRide",
+          "website": "https://www.towson.edu/parking/shuttle/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tutigerride~md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-tutigerride~md~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tutigerride.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://tutigerride.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://tutigerride.com/gtfs-rt/alerts"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-palmettobreeze~sc",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://trackthebreeze.com/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-palmettobreeze~sc",
+          "name": "Palmetto Breeze Transit",
+          "website": "https://www.palmettobreezetransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-palmettobreeze~sc"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "41092"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-palmettobreeze~sc~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://trackthebreeze.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://trackthebreeze.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://trackthebreeze.com/gtfs-rt/alerts"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
