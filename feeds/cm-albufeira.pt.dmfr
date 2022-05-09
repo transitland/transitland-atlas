@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-eyd-giro",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://drive.google.com/uc?export=download&id=1tkKV40lQlFcLiJhq8SwZQdxNVjFclRCA"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by-nd/4.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eyd-giro",
+          "name": "GIRO - Transportes Urbanos",
+          "short_name": "GIRO",
+          "website": "https://www.cm-albufeira.pt/content/folheto-mapa-do-giro",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "giro"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
