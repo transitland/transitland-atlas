@@ -2,43 +2,42 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-srb-tperspa~bologna",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsbo&version=20200529&format=zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://solweb.tper.it/web/tools/open-data/open-data.aspx"
+      }
+    },
+    {
       "id": "f-srb-tperspa~ferrara",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsfe&version=20200529&format=zip"
       },
       "license": {
-        "url": "https://solweb.tper.it/web/tools/open-data/open-data.aspx",
-        "spdx_identifier": "CC-BY-3.0"
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://solweb.tper.it/web/tools/open-data/open-data.aspx"
       },
       "tags": {
         "unstable_url": "true"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-srbj1-tperspa~blq~aeroporto",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsblq&version=20200529&format=zip"
       },
       "license": {
-        "url": "https://solweb.tper.it/web/tools/open-data/open-data.aspx",
-        "spdx_identifier": "CC-BY-3.0"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-srb-tperspa~bologna",
-      "urls": {
-        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsbo&version=20200529&format=zip"
-      },
-      "license": {
-        "url": "https://solweb.tper.it/web/tools/open-data/open-data.aspx",
-        "spdx_identifier": "CC-BY-3.0"
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://solweb.tper.it/web/tools/open-data/open-data.aspx"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-srb-tperspa",
@@ -47,18 +46,19 @@
       "website": "http://www.tper.it",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-srbj1-tperspa~blq~aeroporto",
-          "gtfs_agency_id": "TPERBO"
+          "gtfs_agency_id": "TPERBO",
+          "feed_onestop_id": "f-srb-tperspa~bologna"
         },
         {
-          "feed_onestop_id": "f-srb-tperspa~ferrara",
-          "gtfs_agency_id": "TPERFE"
+          "gtfs_agency_id": "TPERFE",
+          "feed_onestop_id": "f-srb-tperspa~ferrara"
         },
         {
-          "feed_onestop_id": "f-srb-tperspa~bologna",
-          "gtfs_agency_id": "TPERBO"
+          "gtfs_agency_id": "TPERBO",
+          "feed_onestop_id": "f-srbj1-tperspa~blq~aeroporto"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

@@ -2,26 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dph4-greaterdaytonrta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://proc.greaterdaytonrta.org/gtfs/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dph4-greaterdaytonrta",
-          "tags": {
-            "us_ntd_id": "50017",
-            "wikidata_id": "Q5600523",
-            "twitter_general": "GDRTA"
-          },
           "name": "Greater Dayton RTA",
           "website": "http://www.i-riderta.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "GDRTA",
+            "us_ntd_id": "50017",
+            "wikidata_id": "Q5600523"
+          }
         }
       ]
     }

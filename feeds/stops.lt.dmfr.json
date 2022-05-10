@@ -2,27 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-u995-kautra",
-      "urls": {
-        "static_current": "http://www.stops.lt/druskininkai/druskininkai/gtfs.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u995-kautra",
-          "name": "Kautra",
-          "website": "http://www.kautra.lt/kontaktai/druskininku-filialas/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "druskininkai"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-u3z-klaipėdoskeleivinistransportas",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.stops.lt/klaipeda/klaipeda/gtfs.zip"
       },
@@ -40,27 +21,46 @@
       ]
     },
     {
+      "id": "f-u995-alytus",
       "spec": "gtfs",
-      "id": "f-u9c0-kaunoviešasistransportas",
       "urls": {
-        "static_current": "http://www.stops.lt/kaunas/kaunas/gtfs.zip"
+        "static_current": "http://www.stops.lt/alytus/alytus/gtfs.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-u9c0-kaunoviešasistransportas",
-          "name": "Kauno viešasis transportas",
-          "website": "http://www.kvt.lt",
+          "onestop_id": "o-u995-kautra",
+          "name": "Kautra",
+          "website": "https://alytus.lt/transportas",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "kaunas"
+              "gtfs_agency_id": "alytus"
             }
           ]
         }
       ]
     },
     {
+      "id": "f-u995-kautra",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.stops.lt/druskininkai/druskininkai/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u995-kautra",
+          "name": "Kautra",
+          "website": "http://www.kautra.lt/kontaktai/druskininku-filialas/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "druskininkai"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-u99z-sĮsusisiekimopaslaugos",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.stops.lt/vilnius/vilnius/gtfs.zip"
       },
@@ -78,8 +78,46 @@
       ]
     },
     {
+      "id": "f-u9bw-siauliaibusturas",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.stops.lt/siauliai/siauliai/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u9bw-busturas",
+          "name": "Busturas",
+          "website": "https://www.busturas.lt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "siauliai"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u9c0-kaunoviešasistransportas",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.stops.lt/kaunas/kaunas/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u9c0-kaunoviešasistransportas",
+          "name": "Kauno viešasis transportas",
+          "website": "http://www.kvt.lt",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "kaunas"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-u9cm-panevėžioautobusųparkas",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.stops.lt/panevezys/panevezys/gtfs.zip"
       },

@@ -2,20 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u0t9-tunibergexpress~freiburgerverkehrsag~rastreisen",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.vag-freiburg.de/fileadmin/gtfs/VAGFR.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-u0t9-freiburgerverkehrsag",
-          "name": "Freiburger Verkehrs AG",
-          "short_name": "VAG",
+          "onestop_id": "o-u0t2-rastreisen",
+          "name": "R.A.S.T. Reisen",
+          "short_name": "RAST",
           "website": "https://www.vag-freiburg.de/fahrplan-linien/fahrplanauskunft.html",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "5"
             }
           ]
         },
@@ -30,13 +30,13 @@
           ]
         },
         {
-          "onestop_id": "o-u0t2-rastreisen",
-          "name": "R.A.S.T. Reisen",
-          "short_name": "RAST",
+          "onestop_id": "o-u0t9-freiburgerverkehrsag",
+          "name": "Freiburger Verkehrs AG",
+          "short_name": "VAG",
           "website": "https://www.vag-freiburg.de/fahrplan-linien/fahrplanauskunft.html",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "5"
+              "gtfs_agency_id": "1"
             }
           ]
         }

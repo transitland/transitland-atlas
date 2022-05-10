@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9rb-cherriots",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.cherriots.org/media/doc/gtfs.zip",
         "static_historic": [
@@ -19,18 +19,18 @@
       "operators": [
         {
           "onestop_id": "o-9rb-cherriots",
-          "tags": {
-            "us_ntd_id": "00025",
-            "wikidata_id": "Q7404020",
-            "twitter_general": "Cherriots"
-          },
           "name": "Cherriots",
           "website": "http://www.cherriots.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "cherriots-salem-or-us"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "Cherriots",
+            "us_ntd_id": "00025",
+            "wikidata_id": "Q7404020"
+          }
         }
       ]
     }

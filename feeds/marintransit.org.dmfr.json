@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qbb-marintransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://marintransit.org/data/google_transit.zip"
       },
@@ -13,30 +13,30 @@
       "operators": [
         {
           "onestop_id": "o-9qbb-marintransit",
-          "tags": {
-            "us_ntd_id": "90234",
-            "wikidata_id": "Q6763758",
-            "twitter_general": "marintransit"
-          },
           "name": "Marin County Transit District",
           "short_name": "MCTD",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-9qbb-marintransit~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "marintransit",
+            "us_ntd_id": "90234",
+            "wikidata_id": "Q6763758"
+          }
         }
       ]
     },
     {
-       "spec": "gtfs-rt",
-       "id": "f-9qbb-marintransit~rt",
-       "urls": {
-         "realtime_alerts": "https://marintransit.net/gtfs-rt/alerts",
-         "realtime_trip_updates": "https://marintransit.net/gtfs-rt/tripupdates",
-         "realtime_vehicle_positions": "https://marintransit.net/gtfs-rt/vehiclepositions"
-       }
-     }
+      "id": "f-9qbb-marintransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://marintransit.net/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://marintransit.net/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://marintransit.net/gtfs-rt/alerts"
+      }
+    }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

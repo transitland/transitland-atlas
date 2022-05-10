@@ -2,48 +2,14 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-dnr-piedmontauthorityforregionaltransportation",
-      "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5137/gtfs.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Piedmont Authority for Regional Transportation"
-      },
-      "tags": {
-        "gtfs_data_exchange": "piedmont-authority-for-regional-transportation"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnr-piedmontauthorityforregionaltransportation",
-          "tags": {
-            "us_ntd_id": "40173",
-            "wikidata_id": "Q7191491",
-            "twitter_general": "partnc"
-          },
-          "name": "Piedmont Authority for Regional Transportation",
-          "short_name": "PART"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9t9e-cityofsierravista",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://demopro.nationalrtap.org/admin/GTFSzipFiles/3746/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9t9e-cityofsierravista",
-          "tags": {
-            "us_ntd_id": "90239",
-            "wikidata_id": "Q16984607",
-            "twitter_general": "SierraVistaAZ"
-          },
           "name": "City of Sierra Vista",
           "short_name": "Vista Transit",
           "website": "http://www.sierravistaaz.gov/city-departments/transit/",
@@ -51,13 +17,45 @@
             {
               "gtfs_agency_id": "Sierra Vista"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "SierraVistaAZ",
+            "us_ntd_id": "90239",
+            "wikidata_id": "Q16984607"
+          }
         }
       ]
     },
     {
+      "id": "f-ata~bus~ks",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5197/FH_ATA_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ata~bus~ks",
+          "name": "Flint Hills Area Transportation Agency",
+          "short_name": "ATA Bus",
+          "website": "https://www.fhata.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ATA Bus"
+            },
+            {
+              "feed_onestop_id": "f-ata~bus~ks~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "70053",
+            "wikidata_id": "Q16974066"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-bay~area~transportation~authority~mi",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7480/BATA_GTFS.zip"
       },
@@ -77,6 +75,34 @@
           "tags": {
             "us_ntd_id": "5R03-50413",
             "wikidata_id": "Q20710576"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnr-piedmontauthorityforregionaltransportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5137/gtfs.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Piedmont Authority for Regional Transportation"
+      },
+      "tags": {
+        "gtfs_data_exchange": "piedmont-authority-for-regional-transportation"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnr-piedmontauthorityforregionaltransportation",
+          "name": "Piedmont Authority for Regional Transportation",
+          "short_name": "PART",
+          "tags": {
+            "twitter_general": "partnc",
+            "us_ntd_id": "40173",
+            "wikidata_id": "Q7191491"
           }
         }
       ]

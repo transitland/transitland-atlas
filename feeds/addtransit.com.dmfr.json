@@ -2,27 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-r6v-byroneasybus",
-      "urls": {
-        "static_current": "https://addtransit.com/gtfsfile/54743/ByronEasybus.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-r6v-byroneasybus",
-          "name": "Byron Easybus",
-          "website": "https://www.byronbayshuttle.com.au",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-c28-thevictoriaclipper",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://addtransit.com/gtfsfile/42017/TheVictoriaClipper.zip"
       },
@@ -40,8 +21,27 @@
       ]
     },
     {
+      "id": "f-r6v-byroneasybus",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://addtransit.com/gtfsfile/54743/ByronEasybus.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-r6v-byroneasybus",
+          "name": "Byron Easybus",
+          "website": "https://www.byronbayshuttle.com.au",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-u155-dewaterbus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://addtransit.com/gtfsfile/85165/DeWaterbus.zip"
       },

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u3h4-mpkautobusy~mpktramwaje~dla~sevibussiechnice~dlawiszniama",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.wroclaw.pl/open-data/87b09b32-f076-4475-8ec9-6020ed1f9ac0/1513602900.0_OtwartyWroclaw_rozklad_jazdy_GTFS.zip"
       },
@@ -12,22 +12,12 @@
       },
       "operators": [
         {
-          "onestop_id": "o-u3h5-sevibus~dladługołęka",
-          "name": "Sevibus/DLA Długołęka",
+          "onestop_id": "o-u35g-sevibus~dlamiękinia",
+          "name": "Sevibus/DLA Miękinia",
           "website": "http://www.sevibus.pl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "6"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3h4-mpktramwaje",
-          "name": "MPK Tramwaje",
-          "website": "http://www.mpk.wroc.pl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "3"
+              "gtfs_agency_id": "7"
             }
           ]
         },
@@ -43,16 +33,6 @@
           ]
         },
         {
-          "onestop_id": "o-u3h55-dlawiszniamała",
-          "name": "DLA Wisznia Mała",
-          "website": "http://www.dla.com.pl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u3h4-mpkautobusy",
           "name": "MPK Autobusy",
           "website": "http://www.mpk.wroc.pl",
@@ -63,12 +43,32 @@
           ]
         },
         {
-          "onestop_id": "o-u35g-sevibus~dlamiękinia",
-          "name": "Sevibus/DLA Miękinia",
+          "onestop_id": "o-u3h4-mpktramwaje",
+          "name": "MPK Tramwaje",
+          "website": "http://www.mpk.wroc.pl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3h5-sevibus~dladługołęka",
+          "name": "Sevibus/DLA Długołęka",
           "website": "http://www.sevibus.pl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "7"
+              "gtfs_agency_id": "6"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3h55-dlawiszniamała",
+          "name": "DLA Wisznia Mała",
+          "website": "http://www.dla.com.pl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5"
             }
           ]
         }

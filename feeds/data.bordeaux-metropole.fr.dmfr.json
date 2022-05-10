@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-ezzx-tbc",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.bordeaux-metropole.fr/files.php?gid=67&format=14"
       },
@@ -12,8 +12,8 @@
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-ezzx-tbc~bus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.bordeaux-metropole.fr/files.php?gid=68&format=14"
       },
@@ -22,7 +22,6 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-ezzx-tbc",
@@ -31,14 +30,15 @@
       "website": "http://www.infotbm.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-ezzx-tbc~bus",
-          "gtfs_agency_id": "1"
+          "gtfs_agency_id": "1",
+          "feed_onestop_id": "f-ezzx-tbc"
         },
         {
-          "feed_onestop_id": "f-ezzx-tbc",
-          "gtfs_agency_id": "1"
+          "gtfs_agency_id": "1",
+          "feed_onestop_id": "f-ezzx-tbc~bus"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

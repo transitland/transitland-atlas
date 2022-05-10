@@ -2,19 +2,14 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr28-wwwcatabuscom",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://catabus.com/wp-content/uploads/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dr28-cata",
-          "tags": {
-            "us_ntd_id": "30054",
-            "wikidata_id": "Q5062227",
-            "twitter_general": "CATABUS"
-          },
           "name": "Centre County Transit Authority",
           "short_name": "CATA",
           "website": "http://www.catabus.com",
@@ -22,7 +17,12 @@
             {
               "gtfs_agency_id": "0"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "CATABUS",
+            "us_ntd_id": "30054",
+            "wikidata_id": "Q5062227"
+          }
         }
       ]
     }

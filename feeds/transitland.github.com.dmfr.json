@@ -2,41 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-9ydy-wichitatransit",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit.zip?raw=true"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit-license.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "no"
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9ydy-wichitatransit",
-          "tags": {
-            "us_ntd_id": "70015",
-            "wikidata_id": "Q7998172",
-            "twitter_general": "wichitatransit"
-          },
-          "name": "Wichita Transit",
-          "website": "http://www.wichitatransit.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-6gy-sptrans",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/sao-paulo-sptrans.zip?raw=true"
       },
@@ -55,108 +22,103 @@
       ]
     },
     {
+      "id": "f-9ydy-wichitatransit",
       "spec": "gtfs",
-      "id": "f-tf34-metropolitantransportcorporation",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/mtc_chennai.zip?raw=true#mtc_chennai"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit.zip?raw=true"
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit-license.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
       },
       "tags": {
-        "unstable_url": "true",
-        "gtfs_data_exchange": "metropolitan-transport-corporation"
+        "unstable_url": "true"
       },
       "operators": [
         {
-          "onestop_id": "o-tf34-metropolitantransportcorporation",
-          "name": "Metropolitan Transport Corporation",
-          "short_name": "MTC",
-          "website": "http://www.mtcbus.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MTC"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-wcb4-cebu~dotc",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/phl-cebu.zip#GTFS_feed"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-wcb4-departmentoftransportationcebudotc",
-          "name": "Department of Transportation, Cebu",
-          "short_name": "DOTC",
-          "website": "http://www.dotc.gov.ph",
+          "onestop_id": "o-9ydy-wichitatransit",
+          "name": "Wichita Transit",
+          "website": "http://www.wichitatransit.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "0"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "wichitatransit",
+            "us_ntd_id": "70015",
+            "wikidata_id": "Q7998172"
+          }
         }
       ]
     },
     {
+      "id": "f-barta~pa",
       "spec": "gtfs",
-      "id": "f-dnq-charlotteareatransitsystem",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/charlotte-cats.zip?raw=true"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/barta.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-dnq-charlotteareatransitsystem",
+          "onestop_id": "o-barta~pa",
+          "name": "Berks Area Regional Transportation Authority",
+          "short_name": "BARTA",
+          "website": "https://www.bartabus.com",
           "tags": {
-            "us_ntd_id": "40008",
-            "wikidata_id": "Q5085831",
-            "twitter_general": "CATSRideTransit"
-          },
-          "name": "Charlotte Area Transit System",
-          "short_name": "CATS",
-          "website": "http://www.ridetransit.org"
+            "us_ntd_id": "30024",
+            "wikidata_id": "Q4892231"
+          }
         }
       ]
     },
     {
+      "id": "f-baton~rouge~cats",
       "spec": "gtfs",
-      "id": "f-dnq5-greenwaypublictransportation",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-greenway.zip?raw=true"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/f-baton~rouge~cats.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-baton~rouge~cats",
+          "name": "Capital Area Transit System",
+          "short_name": "CATS",
+          "tags": {
+            "us_ntd_id": "60022",
+            "wikidata_id": "Q5035470"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-bethesdacirculator~md~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/bethesdacirculator-md-us.zip"
       },
       "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-regional-transit-authority-license.pdf",
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "no"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnq5-greenwaypublictransportation",
-          "name": "Greenway Public Transportation",
-          "website": "http://www.mygreenway.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "greenway"
-            }
-          ]
-        }
-      ]
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
+      }
     },
     {
-      "spec": "gtfs",
       "id": "f-d2g6-transmilenio~troncal~transmilenio~alimentadores~transmile",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/sdm-bogota-co.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-d2g6-transmilenio~troncal",
-          "name": "Transmilenio - Troncal (trunk)",
+          "onestop_id": "o-d2g6-transmilenio~alimentadores",
+          "name": "Transmilenio - Alimentadores (feeders)",
           "website": "http://www.sitp.gov.co",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "2"
             }
           ]
         },
@@ -171,12 +133,12 @@
           ]
         },
         {
-          "onestop_id": "o-d2g6-transmilenio~alimentadores",
-          "name": "Transmilenio - Alimentadores (feeders)",
+          "onestop_id": "o-d2g6-transmilenio~dual",
+          "name": "Transmilenio - Dual (doors on both sides)",
           "website": "http://www.sitp.gov.co",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "6"
             }
           ]
         },
@@ -191,12 +153,12 @@
           ]
         },
         {
-          "onestop_id": "o-d2g6-transmilenio~dual",
-          "name": "Transmilenio - Dual (doors on both sides)",
+          "onestop_id": "o-d2g6-transmilenio~troncal",
+          "name": "Transmilenio - Troncal (trunk)",
           "website": "http://www.sitp.gov.co",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "6"
+              "gtfs_agency_id": "1"
             }
           ]
         },
@@ -213,151 +175,202 @@
       ]
     },
     {
+      "id": "f-danville~il~us",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/danville-il-us.zip"
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-djjt-suntran~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/suntran-fl-us.zip"
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djjt-suntrancityofocala",
+          "name": "Ocala SunTran",
+          "website": "http://www.ocalafl.org/suntran",
+          "tags": {
+            "twitter_general": "CityofOcalaFL",
+            "us_ntd_id": "40120",
+            "wikidata_id": "Q5123847"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq-charlotteareatransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/charlotte-cats.zip?raw=true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq-charlotteareatransitsystem",
+          "name": "Charlotte Area Transit System",
+          "short_name": "CATS",
+          "website": "http://www.ridetransit.org",
+          "tags": {
+            "twitter_general": "CATSRideTransit",
+            "us_ntd_id": "40008",
+            "wikidata_id": "Q5085831"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq5-greenwaypublictransportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-greenway.zip?raw=true"
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-regional-transit-authority-license.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq5-greenwaypublictransportation",
+          "name": "Greenway Public Transportation",
+          "website": "http://www.mygreenway.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "greenway"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-dqcx2-baltimorewatertaxi",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/baltimore-water-taxi.zip?raw=true"
       },
       "operators": [
         {
           "onestop_id": "o-dqcx2-baltimorewatertaxi",
-          "tags": {
-            "wikidata_id": "Q5335009",
-            "twitter_general": "BmoreWaterTaxi"
-          },
           "name": "Baltimore Water Taxi",
-          "website": "https://baltimorewatertaxi.com/"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-bethesdacirculator~md~us",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/bethesdacirculator-md-us.zip"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
-        "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-shuttleum~md~us",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/shuttleum-md-us.zip"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
-        "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqcm-shuttle~um",
-          "name": "Shuttle-UM",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1653"
-            }
-          ],
+          "website": "https://baltimorewatertaxi.com/",
           "tags": {
-            "wikidata_id": "Q7505684",
-            "twitter_general": "dots_umd"
+            "twitter_general": "BmoreWaterTaxi",
+            "wikidata_id": "Q5335009"
           }
         }
       ]
     },
     {
+      "id": "f-dubai~rta",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/dubai-rta.zip"
+      },
+      "license": {
+        "url": "https://www.dubaipulse.gov.ae/data/rta_gtfs-open/datafiles/605e9d34-cfea-4bed-9b31-3b2ce86c7a25/rta-public-transports#preview"
+      }
+    },
+    {
       "id": "f-green~bay~wi~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/green-bay-wi-us.zip"
       },
       "license": {
         "url": "https://greenbaywi.gov/496/Transit-Data-Developer",
         "use_without_attribution": "yes",
-        "attribution_instructions": "Licensee shall have the option, but not the obligation, to credit City for the Data. If the Licensee so chooses, the credit line should be placed as close to the actual Data information as reasonably possible.",
-        "attribution_text": "Data provided under license granted by the City of Green Bay, Metro Transit."
+        "attribution_text": "Data provided under license granted by the City of Green Bay, Metro Transit.",
+        "attribution_instructions": "Licensee shall have the option, but not the obligation, to credit City for the Data. If the Licensee so chooses, the credit line should be placed as close to the actual Data information as reasonably possible."
       },
       "operators": [
         {
           "onestop_id": "o-dpcm-greenbaymetro",
           "name": "Green Bay Metro",
           "tags": {
+            "twitter_general": "GBmetro",
             "us_ntd_id": "50002",
-            "wikidata_id": "Q3116073",
-            "twitter_general": "GBmetro"
+            "wikidata_id": "Q3116073"
           }
         }
       ]
     },
     {
+      "id": "f-grtc~va",
       "spec": "gtfs",
-      "id": "f-western~reserve~transit~authority",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/western-reserve-transit-authority.zip"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/grtc.zip"
+      },
+      "license": {
+        "url": "http://ridegrtc.com/gtfs-files-developer-license-agreement-and-terms-of-use"
+      }
+    },
+    {
+      "id": "f-hele~on~hi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/hele-on.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-dpq9-westernreservetransitauthority",
-          "name": "Western Reserve Transit Authority",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            }
-          ],
+          "onestop_id": "o-hele~on~hi",
+          "name": "County of Hawai'i Mass Transit Agency",
+          "short_name": "Hele-On Bus",
           "tags": {
-            "us_ntd_id": "50024",
-            "wikidata_id": "Q7988244",
-            "twitter_general": "WRTAbus"
+            "us_ntd_id": "9R03-91080",
+            "wikidata_id": "Q59314153"
           }
         }
       ]
     },
     {
+      "id": "f-jefferson~parish",
       "spec": "gtfs",
-      "id": "f-stark~area~regional~transit~authority",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/stark-area-regional-transit-authority.zip"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/f-jefferson~parish.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-dpq-sarta",
-          "name": "SARTA",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            }
-          ],
+          "onestop_id": "o-jefferson~parish",
+          "name": "Jefferson Parish Transit",
+          "short_name": "The JeT,",
           "tags": {
-            "us_ntd_id": "50011",
-            "wikidata_id": "Q7601948",
-            "twitter_general": "SARTAonline"
+            "us_ntd_id": "60088",
+            "wikidata_id": "Q6175697"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-kenosha~wi~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/kenosha-wi-us.zip"
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
         "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
         "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
@@ -369,72 +382,66 @@
             }
           ],
           "tags": {
+            "twitter_general": "city_of_kenosha",
             "us_ntd_id": "50003",
-            "wikidata_id": "Q6391318",
-            "twitter_general": "city_of_kenosha"
+            "wikidata_id": "Q6391318"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-lacrosse~wi~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lacrosse-wi-us.zip"
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
         "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
         "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
       }
     },
     {
+      "id": "f-lasvegasmonorail~nv~us",
       "spec": "gtfs",
-      "id": "f-uga~ga~us",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/uga-ga-us.zip"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lasvegasmonorail-nv-us.zip"
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
         "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
         "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-dnh9n-universityofgeorgia",
-          "name": "University of Georgia",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1740"
-            }
-          ],
+          "onestop_id": "o-lasvegasmonorail~nv~us",
+          "name": "Las Vegas Monorail",
           "tags": {
-            "us_ntd_id": "40180",
-            "wikidata_id": "Q7864605",
-            "twitter_general": "UGA_TPS"
+            "twitter_general": "lvmonorail",
+            "wikidata_id": "Q935072"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-piercecountyferries~wa~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/piercecountyferries-wa-us.zip"
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
         "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
         "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
@@ -453,221 +460,149 @@
       ]
     },
     {
+      "id": "f-rockland~ny~us",
       "spec": "gtfs",
-      "id": "f-seattlemonorail~wa~us",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/seattlemonorail-wa-us.zip"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rockland-ny-us.zip"
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
         "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
         "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
       }
     },
     {
-      "spec": "gtfs",
-      "id": "f-dubai~rta",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/dubai-rta.zip"
-      },
-      "license": {
-        "url": "https://www.dubaipulse.gov.ae/data/rta_gtfs-open/datafiles/605e9d34-cfea-4bed-9b31-3b2ce86c7a25/rta-public-transports#preview"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-grtc~va",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/grtc.zip"
-      },
-      "license": {
-        "url": "http://ridegrtc.com/gtfs-files-developer-license-agreement-and-terms-of-use"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-barta~pa",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/barta.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-barta~pa",
-          "tags": {
-            "us_ntd_id": "30024",
-            "wikidata_id": "Q4892231"
-          },
-          "name": "Berks Area Regional Transportation Authority",
-          "short_name": "BARTA",
-          "website": "https://www.bartabus.com"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-rrta~pa",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rrta.zip"
       },
       "operators": [
         {
           "onestop_id": "o-rrta~pa",
+          "name": "Red Rose Transit Authority",
+          "short_name": "RRTA",
+          "website": "https://www.redrosetransit.com/",
           "tags": {
             "us_ntd_id": "30018",
             "wikidata_id": "Q7304963"
-          },
-          "name": "Red Rose Transit Authority",
-          "short_name": "RRTA",
-          "website": "https://www.redrosetransit.com/"
+          }
         }
       ]
     },
     {
+      "id": "f-seattlemonorail~wa~us",
       "spec": "gtfs",
-      "id": "f-rockland~ny~us",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rockland-ny-us.zip"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/seattlemonorail-wa-us.zip"
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
         "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
         "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
       }
     },
     {
+      "id": "f-shuttleum~md~us",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/shuttleum-md-us.zip"
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqcm-shuttle~um",
+          "name": "Shuttle-UM",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1653"
+            }
+          ],
+          "tags": {
+            "twitter_general": "dots_umd",
+            "wikidata_id": "Q7505684"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-stark~area~regional~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/stark-area-regional-transit-authority.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpq-sarta",
+          "name": "SARTA",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            }
+          ],
+          "tags": {
+            "twitter_general": "SARTAonline",
+            "us_ntd_id": "50011",
+            "wikidata_id": "Q7601948"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-steamshipauthority~ma~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/steamshipauthority-ma-us.zip"
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
         "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
         "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
       }
     },
     {
+      "id": "f-tf34-metropolitantransportcorporation",
       "spec": "gtfs",
-      "id": "f-unh~nh~us",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/unh-nh-us.zip"
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/mtc_chennai.zip?raw=true#mtc_chennai"
       },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
-        "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-hele~on~hi",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/hele-on.zip"
+      "tags": {
+        "gtfs_data_exchange": "metropolitan-transport-corporation",
+        "unstable_url": "true"
       },
       "operators": [
         {
-          "onestop_id": "o-hele~on~hi",
-          "name": "County of Hawai'i Mass Transit Agency",
-          "short_name": "Hele-On Bus",
-          "tags": {
-            "us_ntd_id": "9R03-91080",
-            "wikidata_id": "Q59314153"
-          }
+          "onestop_id": "o-tf34-metropolitantransportcorporation",
+          "name": "Metropolitan Transport Corporation",
+          "short_name": "MTC",
+          "website": "http://www.mtcbus.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MTC"
+            }
+          ]
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-baton~rouge~cats",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/f-baton~rouge~cats.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-baton~rouge~cats",
-          "name": "Capital Area Transit System",
-          "short_name": "CATS",
-          "tags": {
-            "us_ntd_id": "60022",
-            "wikidata_id": "Q5035470"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-jefferson~parish",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/f-jefferson~parish.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-jefferson~parish",
-          "name": "Jefferson Parish Transit",
-          "short_name": "The JeT,",
-          "tags": {
-            "us_ntd_id": "60088",
-            "wikidata_id": "Q6175697"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-danville~il~us",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/danville-il-us.zip"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
-        "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-lasvegasmonorail~nv~us",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lasvegasmonorail-nv-us.zip"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "commercial_use_allowed": "no",
-        "use_without_attribution": "yes",
-        "share_alike_optional": "yes",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-lasvegasmonorail~nv~us",
-          "name": "Las Vegas Monorail",
-          "tags": {
-            "wikidata_id": "Q935072",
-            "twitter_general": "lvmonorail"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-tracy~tracer",
-      "supersedes_ids": ["f-tracy~ca~us"],
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/tracy-tracer.zip"
       },
@@ -682,9 +617,98 @@
             }
           ],
           "tags": {
+            "twitter_general": "cityoftracy",
             "us_ntd_id": "90197",
-            "wikidata_id": "Q7831176",
-            "twitter_general": "cityoftracy"
+            "wikidata_id": "Q7831176"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-uga~ga~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/uga-ga-us.zip"
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnh9n-universityofgeorgia",
+          "name": "University of Georgia",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1740"
+            }
+          ],
+          "tags": {
+            "twitter_general": "UGA_TPS",
+            "us_ntd_id": "40180",
+            "wikidata_id": "Q7864605"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-unh~nh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/unh-nh-us.zip"
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-wcb4-cebu~dotc",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/phl-cebu.zip#GTFS_feed"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-wcb4-departmentoftransportationcebudotc",
+          "name": "Department of Transportation, Cebu",
+          "short_name": "DOTC",
+          "website": "http://www.dotc.gov.ph",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-western~reserve~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/western-reserve-transit-authority.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpq9-westernreservetransitauthority",
+          "name": "Western Reserve Transit Authority",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            }
+          ],
+          "tags": {
+            "twitter_general": "WRTAbus",
+            "us_ntd_id": "50024",
+            "wikidata_id": "Q7988244"
           }
         }
       ]

@@ -2,51 +2,50 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
+      "id": "f-cincinnatimetro~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://developer.go-metro.com/TMGTFSRealTimeWebService/vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "http://developer.go-metro.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb"
+      }
+    },
+    {
       "id": "f-dngy-southwestohioregionaltransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.go-metro.com/uploads/GTFS/google_transit_info.zip"
       },
       "license": {
         "url": "https://www.go-metro.com/about-metro/developer-data",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "southwest-ohio-regional-transit-authority"
       }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-cincinnatimetro~rt",
-      "urls": {
-        "realtime_trip_updates": "http://developer.go-metro.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "http://developer.go-metro.com/TMGTFSRealTimeWebService/vehicle/VehiclePositions.pb"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dngy-southwestohioregionaltransitauthority",
-      "tags": {
-        "wikidata_id": "Q7571329",
-        "us_ntd_id": "50012",
-        "twitter_general": "cincinnatimetro"
-      },
       "name": "Southwest Ohio Regional Transit Authority",
       "short_name": "SORTA Metro",
       "website": "http://www.go-metro.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dngy-southwestohioregionaltransitauthority",
-          "gtfs_agency_id": "SORTA"
+          "feed_onestop_id": "f-cincinnatimetro~rt"
         },
         {
-          "feed_onestop_id": "f-cincinnatimetro~rt"
+          "gtfs_agency_id": "SORTA",
+          "feed_onestop_id": "f-dngy-southwestohioregionaltransitauthority"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "cincinnatimetro",
+        "us_ntd_id": "50012",
+        "wikidata_id": "Q7571329"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

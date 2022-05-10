@@ -2,213 +2,18 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-hartford~county~md",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-st~marys~md",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dqc-delmarvacommunitytransit",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Delmarva_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqc-delmarvacommunitytransit",
-          "tags": {
-            "us_ntd_id": "3R03-30161"
-          },
-          "name": "Delmarva Community Transit",
-          "website": "http://www.dcsdct.org/transportation--mobility.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "3"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr09-washingtoncountycommuter",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/WC_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr09-washingtoncountycommuter",
-          "tags": {
-            "us_ntd_id": "30042",
-            "wikidata_id": "Q5177638",
-            "twitter_general": "WashingtonCoMD"
-          },
-          "name": "Washington County Commuter",
-          "website": "http://www.washco-md.net/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dqf3-shoretransit",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Shore_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqf3-shoretransit",
-          "tags": {
-            "us_ntd_id": "30096",
-            "wikidata_id": "Q16984591",
-            "twitter_general": "ShoreTransit"
-          },
-          "name": "Shore Transit",
-          "website": "http://www.shoretransit.org/Home.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dqfd7-oceancitytransporation",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/OC_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqfd7-oceancitytransporation",
-          "tags": {
-            "us_ntd_id": "3R03-30155",
-            "wikidata_id": "Q54933081"
-          },
-          "name": "Ocean City Transportation",
-          "website": "http://oceancitymd.gov/oc/departments/public-works/transportation/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dqcqz-bwithurgoodmarshallairport",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/BWI_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "bwi-thurgood-marshall-airport"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqcqz-bwithurgoodmarshallairport",
-          "tags": {
-            "wikidata_id": "Q94895",
-            "twitter_general": "BWI_Airport"
-          },
-          "name": "BWI Thurgood Marshall Airport",
-          "short_name": "BWI",
-          "website": "http://www.bwiairport.com/en",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BWI"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-dppc-alleganycountytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Allegany_GTFS.zip"
       },
       "license": {
         "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
         "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
       },
       "tags": {
         "gtfs_data_exchange": "allegany-county-transit"
@@ -216,58 +21,179 @@
       "operators": [
         {
           "onestop_id": "o-dppc-alleganycountytransit",
-          "tags": {
-            "us_ntd_id": "30041",
-            "wikidata_id": "Q4731234"
-          },
           "name": "Allegany County Transit",
           "website": "http://gov.allconet.org/act",
           "associated_feeds": [
             {
               "gtfs_agency_id": "ACT"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "30041",
+            "wikidata_id": "Q4731234"
+          }
         }
       ]
     },
     {
+      "id": "f-dqc-delmarvacommunitytransit",
       "spec": "gtfs",
-      "id": "f-dr41-ceciltransit",
       "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Cecil_GTFS.zip"
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Delmarva_GTFS.zip"
       },
       "license": {
         "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
         "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "cecil-transit"
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
       },
       "operators": [
         {
-          "onestop_id": "o-dr41-ceciltransit",
-          "tags": {
-            "us_ntd_id": "30108",
-            "wikidata_id": "Q52162155"
-          },
-          "name": "Cecil Transit",
-          "website": "http://www.ccgov.org/dept_aging/communitytransit.cfm",
+          "onestop_id": "o-dqc-delmarvacommunitytransit",
+          "name": "Delmarva Community Transit",
+          "website": "http://www.dcsdct.org/transportation--mobility.html",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "3"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "3R03-30161"
+          }
         }
       ]
     },
     {
+      "id": "f-dqc-stmarystransitsystem",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqc-stmarystransitsystem",
+          "name": "St. Mary's Transit System",
+          "short_name": "STS",
+          "website": "http://www.stmarysmd.com/dpw/STSfares.asp",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
+            }
+          ],
+          "tags": {
+            "twitter_general": "StMarysCoGov",
+            "us_ntd_id": "30109"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dqc7-charlescountyvango",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Charles_GTFS.zip"
+      },
+      "license": {
+        "url": "http://www.mdtrip.org/commuter-tools/developer-resources/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Central Maryland Regional Transit",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqc7-charlescountyvango",
+          "name": "Charles County VanGo",
+          "website": "http://www.charlescountymd.gov/cs/vango/vango",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5"
+            }
+          ],
+          "tags": {
+            "twitter_general": "charlescomd",
+            "us_ntd_id": "30088"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dqce-calvertcountypublictransportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Calvert_GTFS.zip"
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqce-calvertcountypublictransportation",
+          "name": "Calvert County Public Transportation",
+          "website": "http://www.co.cal.md.us/residents/transportation/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "30131"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dqcqz-bwithurgoodmarshallairport",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/BWI_GTFS.zip"
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bwi-thurgood-marshall-airport"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqcqz-bwithurgoodmarshallairport",
+          "name": "BWI Thurgood Marshall Airport",
+          "short_name": "BWI",
+          "website": "http://www.bwiairport.com/en",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BWI"
+            }
+          ],
+          "tags": {
+            "twitter_general": "BWI_Airport",
+            "wikidata_id": "Q94895"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dqct-annapolistransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Annapolis_GTFS.zip"
       },
@@ -277,17 +203,49 @@
       "operators": [
         {
           "onestop_id": "o-dqct-annapolistransit",
+          "name": "Annapolis Transit",
           "tags": {
             "us_ntd_id": "30040",
             "wikidata_id": "Q4767978"
-          },
-          "name": "Annapolis Transit"
+          }
         }
       ]
     },
     {
+      "id": "f-dqcv-queenannescountyride",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/QA_GTFS.zip"
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqcv-queenannescountyride",
+          "name": "Queen Anne's County",
+          "short_name": "County Ride",
+          "website": "http://www.qac.org/181/County-Ride",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "twitter_general": "qacgov",
+            "us_ntd_id": "3R03-30192"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dqcx8-charmcitycirculator",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/CCC_GTFS.zip"
       },
@@ -297,11 +255,6 @@
       "operators": [
         {
           "onestop_id": "o-dqcx8-charmcitycirculator",
-          "tags": {
-            "us_ntd_id": "30201",
-            "wikidata_id": "Q5086389",
-            "twitter_general": "charmcitycirc"
-          },
           "name": "Charm City Circulator",
           "short_name": "CCC",
           "website": "http://www.charmcitycirculator.com/",
@@ -309,79 +262,113 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "charmcitycirc",
+            "us_ntd_id": "30201",
+            "wikidata_id": "Q5086389"
+          }
         }
       ]
     },
     {
+      "id": "f-dqf3-shoretransit",
       "spec": "gtfs",
-      "id": "f-dqc-stmarystransitsystem",
       "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Shore_GTFS.zip"
       },
       "license": {
         "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
         "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
       },
       "operators": [
         {
-          "onestop_id": "o-dqc-stmarystransitsystem",
-          "tags": {
-            "us_ntd_id": "30109",
-            "twitter_general": "StMarysCoGov"
-          },
-          "name": "St. Mary's Transit System",
-          "short_name": "STS",
-          "website": "http://www.stmarysmd.com/dpw/STSfares.asp",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dqcv-queenannescountyride",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/QA_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqcv-queenannescountyride",
-          "tags": {
-            "us_ntd_id": "3R03-30192",
-            "twitter_general": "qacgov"
-          },
-          "name": "Queen Anne's County",
-          "short_name": "County Ride",
-          "website": "http://www.qac.org/181/County-Ride",
+          "onestop_id": "o-dqf3-shoretransit",
+          "name": "Shore Transit",
+          "website": "http://www.shoretransit.org/Home.aspx",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "ShoreTransit",
+            "us_ntd_id": "30096",
+            "wikidata_id": "Q16984591"
+          }
         }
       ]
     },
     {
+      "id": "f-dqfd7-oceancitytransporation",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/OC_GTFS.zip"
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqfd7-oceancitytransporation",
+          "name": "Ocean City Transportation",
+          "website": "http://oceancitymd.gov/oc/departments/public-works/transportation/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "3R03-30155",
+            "wikidata_id": "Q54933081"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr09-washingtoncountycommuter",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/WC_GTFS.zip"
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr09-washingtoncountycommuter",
+          "name": "Washington County Commuter",
+          "website": "http://www.washco-md.net/transit/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "twitter_general": "WashingtonCoMD",
+            "us_ntd_id": "30042",
+            "wikidata_id": "Q5177638"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dr10-carrolltransitsystem~carrollareatransitsystemcats",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Carroll_GTFS.zip"
       },
@@ -398,9 +385,9 @@
             }
           ],
           "tags": {
+            "twitter_general": "CarrollCoMD",
             "us_ntd_id": "30092",
-            "wikidata_id": "Q85750789",
-            "twitter_general": "CarrollCoMD"
+            "wikidata_id": "Q85750789"
           }
         },
         {
@@ -428,68 +415,68 @@
       ]
     },
     {
+      "id": "f-dr41-ceciltransit",
       "spec": "gtfs",
-      "id": "f-dqce-calvertcountypublictransportation",
       "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Calvert_GTFS.zip"
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Cecil_GTFS.zip"
       },
       "license": {
         "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
         "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "tags": {
+        "gtfs_data_exchange": "cecil-transit"
       },
       "operators": [
         {
-          "onestop_id": "o-dqce-calvertcountypublictransportation",
-          "tags": {
-            "us_ntd_id": "30131"
-          },
-          "name": "Calvert County Public Transportation",
-          "website": "http://www.co.cal.md.us/residents/transportation/",
+          "onestop_id": "o-dr41-ceciltransit",
+          "name": "Cecil Transit",
+          "website": "http://www.ccgov.org/dept_aging/communitytransit.cfm",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "30108",
+            "wikidata_id": "Q52162155"
+          }
         }
       ]
     },
     {
+      "id": "f-hartford~county~md",
       "spec": "gtfs",
-      "id": "f-dqc7-charlescountyvango",
       "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Charles_GTFS.zip"
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
       },
       "license": {
-        "url": "http://www.mdtrip.org/commuter-tools/developer-resources/",
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
         "use_without_attribution": "no",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/).",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
-        "attribution_text": "Central Maryland Regional Transit"
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      }
+    },
+    {
+      "id": "f-st~marys~md",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
       },
-      "operators": [
-        {
-          "onestop_id": "o-dqc7-charlescountyvango",
-          "tags": {
-            "us_ntd_id": "30088",
-            "twitter_general": "charlescomd"
-          },
-          "name": "Charles County VanGo",
-          "website": "http://www.charlescountymd.gov/cs/vango/vango",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

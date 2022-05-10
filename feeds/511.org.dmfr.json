@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-9q8z-goldengateferry",
       "spec": "gtfs",
-      "id": "f-sf~bay~area~rg",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=RG"
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=GF"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
@@ -19,78 +18,95 @@
       },
       "authorization": {
         "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
       },
       "tags": {
-        "managed_by": "mtc-ca",
-        "manual_import": "true"
-      }
+        "gtfs_data_exchange": "golden-gate-ferry",
+        "managed_by": "mtc-ca"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q8z-goldengateferry",
+          "name": "Golden Gate Ferry",
+          "website": "http://www.goldengateferry.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GF"
+            }
+          ],
+          "tags": {
+            "twitter_general": "GGBridge",
+            "twitter_service_alerts": "GGBridgeAlerts",
+            "wikidata_id": "Q5579447"
+          }
+        }
+      ]
     },
     {
-      "spec": "gtfs",
       "id": "f-9q8zm-blue~goldfleet",
+      "spec": "gtfs",
       "urls": {
-        "static_historic": ["http://api.511.org/transit/datafeeds?operator_id=BG"]
-      },      
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
+        "static_historic": [
+          "http://api.511.org/transit/datafeeds?operator_id=BG"
+        ]
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
       },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
       "tags": {
-        "managed_by": "mtc-ca",
         "gtfs_data_exchange": "blue-gold-fleet",
+        "managed_by": "mtc-ca",
         "status": "archived"
       },
       "operators": [
         {
           "onestop_id": "o-9q8zm-blue~goldfleet",
-          "tags": {
-            "omd_provider_id": "blue-gold-fleet",
-            "wikidata_id": "Q4928780",
-            "twitter_general": "bgfleet"
-          },
           "name": "Blue & Gold Fleet",
           "website": "http://www.blueandgoldfleet.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "BG"
             }
-          ]
+          ],
+          "tags": {
+            "omd_provider_id": "blue-gold-fleet",
+            "twitter_general": "bgfleet",
+            "wikidata_id": "Q4928780"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-9q8zmw-angelislandtiburonferry",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://api.511.org/transit/datafeeds?operator_id=AT"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
       },
       "tags": {
         "managed_by": "mtc-ca"
@@ -98,204 +114,39 @@
       "operators": [
         {
           "onestop_id": "o-9q8zmw-angelislandtiburonferry",
-          "tags": {
-            "wikidata_id": "Q4762195",
-            "twitter_general": "AITFerry"
-          },
           "name": "Angel Island Tiburon Ferry",
           "website": "http://www.angelislandferry.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "AT"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9qc14-americancanyontransit",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=AY"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "tags": {
-        "managed_by": "mtc-ca"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc14-americancanyontransit",
-          "name": "American Canyon Transit",
-          "website": "http://www.ridethevine.com/american-canyon-transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "AY"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9q9-acealtamontcorridorexpress",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=CE"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "tags": {
-        "managed_by": "mtc-ca"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9-acealtamontcorridorexpress",
+          ],
           "tags": {
-            "us_ntd_id": "90182",
-            "wikidata_id": "Q434302",
-            "twitter_general": "ACE_train"
-          },
-          "name": "Altamont Corridor Express",
-          "short_name": "ACE",
-          "website": "http://www.acerail.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CE"
-            }
-          ]
+            "twitter_general": "AITFerry",
+            "wikidata_id": "Q4762195"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-9q9j-dumbartonexpress",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=DE"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "tags": {
-        "managed_by": "mtc-ca"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9j-dumbartonexpress",
-          "tags": {
-            "wikidata_id": "Q5313687",
-            "twitter_general": "rideact"
-          },
-          "name": "Dumbarton Express",
-          "website": "http://www.dumbartonexpress.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "DE"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9q8z-goldengateferry",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=GF"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "tags": {
-        "managed_by": "mtc-ca",
-        "gtfs_data_exchange": "golden-gate-ferry"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q8z-goldengateferry",
-          "tags": {
-            "wikidata_id": "Q5579447",
-            "twitter_general": "GGBridge",
-            "twitter_service_alerts": "GGBridgeAlerts"
-          },
-          "name": "Golden Gate Ferry",
-          "website": "http://www.goldengateferry.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GF"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9q8zn-alcatrazhornblowerferry",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://api.511.org/transit/datafeeds?operator_id=HF"
       },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
       },
       "tags": {
         "managed_by": "mtc-ca"
@@ -314,69 +165,106 @@
       ]
     },
     {
+      "id": "f-9q9-acealtamontcorridorexpress",
       "spec": "gtfs",
-      "id": "f-9qb-smart",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SA"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=CE"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
       },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
       "tags": {
-        "managed_by": "mtc-ca",
-        "gtfs_data_exchange": "smart"
+        "managed_by": "mtc-ca"
       },
       "operators": [
         {
-          "onestop_id": "o-9qb-smart",
-          "tags": {
-            "us_ntd_id": "90299",
-            "wikidata_id": "Q7562166",
-            "twitter_general": "smarttrain"
-          },
-          "name": "Sonoma–Marin Area Rail Transit",
-          "short_name": "SMART",
-          "website": "http://www.transit.511.org/schedules?m1=A&m2=bus&cid=SA",
+          "onestop_id": "o-9q9-acealtamontcorridorexpress",
+          "name": "Altamont Corridor Express",
+          "short_name": "ACE",
+          "website": "http://www.acerail.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SA"
+              "gtfs_agency_id": "CE"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "ACE_train",
+            "us_ntd_id": "90182",
+            "wikidata_id": "Q434302"
+          }
         }
       ]
     },
     {
+      "id": "f-9q9j-dumbartonexpress",
       "spec": "gtfs",
-      "id": "f-9q9jy-unioncitytransit",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=UC"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=DE"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "managed_by": "mtc-ca"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q9j-dumbartonexpress",
+          "name": "Dumbarton Express",
+          "website": "http://www.dumbartonexpress.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "DE"
+            }
+          ],
+          "tags": {
+            "twitter_general": "rideact",
+            "wikidata_id": "Q5313687"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9q9jy-unioncitytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=UC"
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
       },
       "tags": {
         "managed_by": "mtc-ca"
@@ -384,126 +272,40 @@
       "operators": [
         {
           "onestop_id": "o-9q9jy-unioncitytransit",
-          "tags": {
-            "us_ntd_id": "90161",
-            "wikidata_id": "Q7885556",
-            "twitter_general": "UnionCityCA_Gov"
-          },
           "name": "Union City Transit",
           "website": "http://www.uctransit.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "UC"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9qc60-vacavillecitycoach",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=VC"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "tags": {
-        "managed_by": "mtc-ca"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc60-vacavillecitycoach",
+          ],
           "tags": {
-            "us_ntd_id": "90155",
-            "wikidata_id": "Q7907915",
-            "twitter_general": "coach_city"
-          },
-          "name": "Vacaville City Coach",
-          "website": "http://www.citycoach.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "VC"
-            }
-          ]
+            "twitter_general": "UnionCityCA_Gov",
+            "us_ntd_id": "90161",
+            "wikidata_id": "Q7885556"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-9qc-vinenapacounty",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=VN"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "tags": {
-        "managed_by": "mtc-ca"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc-vinenapacounty",
-          "tags": {
-            "us_ntd_id": "90088",
-            "wikidata_id": "Q7907027",
-            "twitter_general": "vinetransit"
-          },
-          "name": "Napa Valley Transportation Authority",
-          "short_name": "VINE Transit",
-          "website": "http://www.ridethevine.com/vine",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "VN"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9q9p-sanfranciscobayferry",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://api.511.org/transit/datafeeds?operator_id=SB"
       },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
-      },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
       },
       "tags": {
         "managed_by": "mtc-ca"
@@ -511,42 +313,238 @@
       "operators": [
         {
           "onestop_id": "o-9q9p-sanfranciscobayferry",
-          "tags": {
-            "us_ntd_id": "90225",
-            "wikidata_id": "Q7413935",
-            "twitter_general": "SFBayFerry",
-            "twitter_service_alerts": "SFBFBayAlerts"
-          },
           "name": "San Francisco Bay Ferry",
           "website": "http://www.sanfranciscobayferry.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "SB"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "SFBayFerry",
+            "twitter_service_alerts": "SFBFBayAlerts",
+            "us_ntd_id": "90225",
+            "wikidata_id": "Q7413935"
+          }
         }
       ]
     },
     {
+      "id": "f-9qb-smart",
       "spec": "gtfs",
-      "id": "f-sfo~airtrain~shuttles",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SI"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SA"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "gtfs_data_exchange": "smart",
+        "managed_by": "mtc-ca"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qb-smart",
+          "name": "Sonoma–Marin Area Rail Transit",
+          "short_name": "SMART",
+          "website": "http://www.transit.511.org/schedules?m1=A&m2=bus&cid=SA",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SA"
+            }
+          ],
+          "tags": {
+            "twitter_general": "smarttrain",
+            "us_ntd_id": "90299",
+            "wikidata_id": "Q7562166"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qc-vinenapacounty",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=VN"
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "managed_by": "mtc-ca"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc-vinenapacounty",
+          "name": "Napa Valley Transportation Authority",
+          "short_name": "VINE Transit",
+          "website": "http://www.ridethevine.com/vine",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VN"
+            },
+            {
+              "feed_onestop_id": "f-vinenapacounty~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "vinetransit",
+            "us_ntd_id": "90088",
+            "wikidata_id": "Q7907027"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qc14-americancanyontransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=AY"
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "managed_by": "mtc-ca"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc14-americancanyontransit",
+          "name": "American Canyon Transit",
+          "website": "http://www.ridethevine.com/american-canyon-transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9qc2-trideltatransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=3D"
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc2-trideltatransit",
+          "name": "Tri Delta Transit",
+          "tags": {
+            "twitter_general": "TriDeltaTransit",
+            "us_ntd_id": "90162",
+            "wikidata_id": "Q7839840"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qc60-vacavillecitycoach",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=VC"
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "managed_by": "mtc-ca"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc60-vacavillecitycoach",
+          "name": "Vacaville City Coach",
+          "website": "http://www.citycoach.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VC"
+            }
+          ],
+          "tags": {
+            "twitter_general": "coach_city",
+            "us_ntd_id": "90155",
+            "wikidata_id": "Q7907915"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-sfo~airtrain~shuttles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SI"
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
       },
       "operators": [
         {
@@ -559,44 +557,36 @@
             }
           ],
           "tags": {
-            "wikidata_id": "Q8688",
-            "twitter_general": "flySFO"
+            "twitter_general": "flySFO",
+            "wikidata_id": "Q8688"
           }
         }
       ]
     },
     {
+      "id": "f-sf~bay~area~rg",
       "spec": "gtfs",
-      "id": "f-9qc2-trideltatransit",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=3D"
-      },
-      "authorization": {
-        "type": "query_param",
-        "info_url": "https://511.org/open-data/token",
-        "param_name": "api_key"
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=RG"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
       },
-      "operators": [
-        {
-          "onestop_id": "o-9qc2-trideltatransit",
-          "tags": {
-            "us_ntd_id": "90162",
-            "wikidata_id": "Q7839840",
-            "twitter_general": "TriDeltaTransit"
-          },
-          "name": "Tri Delta Transit"
-        }
-      ]
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "managed_by": "mtc-ca",
+        "manual_import": "true"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-presidigo~ca~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://presidiobus.com/gtfs"
       },
@@ -20,19 +20,19 @@
             }
           ],
           "tags": {
-            "wikidata_id": "Q7241517",
-            "twitter_general": "presidiosf"
+            "twitter_general": "presidiosf",
+            "wikidata_id": "Q7241517"
           }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-presidigo~ca~us~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://presidiobus.com/gtfs-rt/alerts",
         "realtime_vehicle_positions": "https://presidiobus.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://presidiobus.com/gtfs-rt/tripupdates"
+        "realtime_trip_updates": "https://presidiobus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://presidiobus.com/gtfs-rt/alerts"
       }
     }
   ],

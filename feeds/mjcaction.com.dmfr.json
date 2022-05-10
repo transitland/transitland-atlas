@@ -2,138 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-dc~motorcoach",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/dcmotorcoach_google_transit.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-express-arrow",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/expressarrow_google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9x-expressarrow",
-          "name": "Express Arrow",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "asl"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "8R01-70269",
-            "twitter_general": "express_arrow"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-makah",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/makah_google_transit.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-sandusky",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/sandusky_google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dpm5-sanduskytransitsystem",
-          "name": "Sandusky Transit System",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "sts"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "5R05-50164",
-            "twitter_general": "sanduskytransit"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-santa~fe~trails",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/santafetrails_google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9wkd-santafetrails",
-          "name": "Santa Fe Trails",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "11679215"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "60077",
-            "wikidata_id": "Q7419573",
-            "twitter_general": "santafegov"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-~rio~metro~rtd",
-      "urls": {
-        "static_current": "https://www.riometro.org/DocumentCenter/View/1391"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-sqaxin~tribal~transit",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/squaxintribe_google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c22k-squaxinislandtransit",
-          "name": "Squaxin Island Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SquaxinIslandTribe"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "00103"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9w-navajotransitsystem",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/navajo_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9w-navajotransitsystem",
-          "tags": {
-            "managed_by": "mjc",
-            "us_ntd_id": "90005",
-            "wikidata_id": "Q104868592"
-          },
-          "name": "Navajo Transit System"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9q611-morrobaytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/morrobay_google_transit.zip"
       },
@@ -155,10 +25,12 @@
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-9q9hu-cityofpaloaltoshuttle",
+      "spec": "gtfs",
       "urls": {
-        "static_historic": ["http://mjcaction.com/MJC_GTFS_Public/cityofpaloalto_google_transit.zip"]
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/cityofpaloalto_google_transit.zip"
+        ]
       },
       "tags": {
         "inactive": "true",
@@ -178,14 +50,35 @@
       ]
     },
     {
+      "id": "f-9w-navajotransitsystem",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/navajo_google_transit.zip"
+      },
+      "tags": {
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9w-navajotransitsystem",
+          "name": "Navajo Transit System",
+          "tags": {
+            "managed_by": "mjc",
+            "us_ntd_id": "90005",
+            "wikidata_id": "Q104868592"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9wgu-gunnisonvalleyrta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/gunnisonrta_google_transit.zip"
       },
       "tags": {
-        "managed_by": "mjc",
-        "gtfs_data_exchange": "gunnison-valley-rta"
+        "gtfs_data_exchange": "gunnison-valley-rta",
+        "managed_by": "mjc"
       },
       "operators": [
         {
@@ -195,6 +88,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "GVRTA"
+            },
+            {
+              "feed_onestop_id": "f-gunnisonvalleyrta~rt"
             }
           ],
           "tags": {
@@ -204,8 +100,265 @@
       ]
     },
     {
+      "id": "f-9wh-riometroregionaltransitdistrict",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.riometro.org/DocumentCenter/View/2195/nmrailrunner_google_transit",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/nmrailrunner_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wh-riometroregionaltransitdistrict",
+          "name": "Rio Metro Regional Transit District",
+          "tags": {
+            "twitter_service_alerts": "RioMetroAlerts",
+            "us_ntd_id": "60111",
+            "wikidata_id": "Q11324955"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c0r-pacifictransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/pacific_google_transit.zip"
+      },
+      "license": {
+        "url": "http://mjcaction.com/MJC_GTFS_Public/PacificTransit-datasharing-license_062116.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c0r-pacifictransit",
+          "name": "Pacific Transit",
+          "website": "http://www.pacifictransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10408982"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R03-00322",
+            "wikidata_id": "Q28445739"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c22-graysharbortransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/graysharbor_google_transit.zip"
+      },
+      "tags": {
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22-graysharbortransit",
+          "name": "Grays Harbor Transit",
+          "website": "http://www.ghtransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ght"
+            }
+          ],
+          "tags": {
+            "twitter_general": "realghtransit",
+            "us_ntd_id": "0R03-00314",
+            "wikidata_id": "Q25000402"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c25y-valleytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/valley_google_transit.zip"
+        ]
+      },
+      "license": {
+        "url": "http://mjcaction.com/MJC_GTFS_Public/Valley_Transit_Data_Terms_of_Use.pdf"
+      },
+      "tags": {
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c25y-valleytransit",
+          "name": "Valley Transit",
+          "website": "http://www.valleytransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "walla2"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00064"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c28-clallamtransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/clallam_google_transit.zip"
+      },
+      "tags": {
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-clallamtransitsystem",
+          "name": "Clallam Transit System",
+          "website": "http://www.clallamtransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CTS"
+            }
+          ],
+          "tags": {
+            "twitter_general": "clallamtransit",
+            "us_ntd_id": "0R03-00303",
+            "wikidata_id": "Q5125418"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c28-jeffersontransitauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/jefferson_google_transit.zip"
+      },
+      "tags": {
+        "gtfs_data_exchange": "jefferson-transit-authority",
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-jeffersontransitauthority",
+          "name": "Jefferson Transit Authority",
+          "website": "http://www.jeffersontransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "jta"
+            }
+          ],
+          "tags": {
+            "twitter_general": "JTAtransit",
+            "us_ntd_id": "0R03-00316",
+            "wikidata_id": "Q6175698"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c28-pugetsoundexpress",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/pse_google_transit.zip"
+      },
+      "tags": {
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-pugetsoundexpress",
+          "name": "Puget Sound Express",
+          "website": "http://www.pugetsoundexpress.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "psexpress"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c283-jamestownsklallam",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/sevencedars_google_transit.zip"
+      },
+      "tags": {
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c283-jamestownsklallam",
+          "name": "Jamestown S'klallam",
+          "website": "http://www.7cedarscasino.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "jamestown"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c284-blackballferryline",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/blackball_google_transit.zip"
+      },
+      "tags": {
+        "gtfs_data_exchange": "black-ball-ferry-line",
+        "managed_by": "mjc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c284-blackballferryline",
+          "name": "Black Ball Ferry Line",
+          "website": "http://cohoferry.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "blackball"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-central~transit~wa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/centraltransit_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c2672-centraltransitellensburg",
+          "name": "Ellensburg Central Transit",
+          "website": "https://ci.ellensburg.wa.us/1051/Ellensburg-Central-Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-central~transit~wa~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-dc~motorcoach",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/dcmotorcoach_google_transit.zip"
+      }
+    },
+    {
       "id": "f-dr5re-downtownalliance",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/downtown_nyc_google_transit.zip"
       },
@@ -227,285 +380,37 @@
       ]
     },
     {
+      "id": "f-express-arrow",
       "spec": "gtfs",
-      "id": "f-c28-pugetsoundexpress",
       "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/pse_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc"
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/expressarrow_google_transit.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-c28-pugetsoundexpress",
-          "name": "Puget Sound Express",
-          "website": "http://www.pugetsoundexpress.com/",
+          "onestop_id": "o-9x-expressarrow",
+          "name": "Express Arrow",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "psexpress"
+              "gtfs_agency_id": "asl"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c0r-pacifictransit",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/pacific_google_transit.zip"
-      },
-      "license": {
-        "url": "http://mjcaction.com/MJC_GTFS_Public/PacificTransit-datasharing-license_062116.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c0r-pacifictransit",
+          ],
           "tags": {
-            "us_ntd_id": "0R03-00322",
-            "wikidata_id": "Q28445739"
-          },
-          "name": "Pacific Transit",
-          "website": "http://www.pacifictransit.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "10408982"
-            }
-          ]
+            "twitter_general": "express_arrow",
+            "us_ntd_id": "8R01-70269"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c28-jeffersontransitauthority",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/jefferson_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc",
-        "gtfs_data_exchange": "jefferson-transit-authority"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c28-jeffersontransitauthority",
-          "tags": {
-            "us_ntd_id": "0R03-00316",
-            "wikidata_id": "Q6175698",
-            "twitter_general": "JTAtransit"
-          },
-          "name": "Jefferson Transit Authority",
-          "website": "http://www.jeffersontransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "jta"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c22-graysharbortransit",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/graysharbor_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c22-graysharbortransit",
-          "tags": {
-            "us_ntd_id": "0R03-00314",
-            "wikidata_id": "Q25000402",
-            "twitter_general": "realghtransit"
-          },
-          "name": "Grays Harbor Transit",
-          "website": "http://www.ghtransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ght"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c283-jamestownsklallam",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/sevencedars_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c283-jamestownsklallam",
-          "name": "Jamestown S'klallam",
-          "website": "http://www.7cedarscasino.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "jamestown"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c28-clallamtransitsystem",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/clallam_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c28-clallamtransitsystem",
-          "tags": {
-            "us_ntd_id": "0R03-00303",
-            "wikidata_id": "Q5125418",
-            "twitter_general": "clallamtransit"
-          },
-          "name": "Clallam Transit System",
-          "website": "http://www.clallamtransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CTS"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c284-blackballferryline",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/blackball_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc",
-        "gtfs_data_exchange": "black-ball-ferry-line"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c284-blackballferryline",
-          "name": "Black Ball Ferry Line",
-          "website": "http://cohoferry.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "blackball"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c25y-valleytransit",
-      "urls": {
-        "static_historic": [
-          "http://mjcaction.com/MJC_GTFS_Public/valley_google_transit.zip"
-        ]
-      },
-      "license": {
-        "url": "http://mjcaction.com/MJC_GTFS_Public/Valley_Transit_Data_Terms_of_Use.pdf"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c25y-valleytransit",
-          "tags": {
-            "us_ntd_id": "00064"
-          },
-          "name": "Valley Transit",
-          "website": "http://www.valleytransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "walla2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-central~transit~wa",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/centraltransit_google_transit.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
       "id": "f-gallup~express",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/gallupexpress_google_transit.zip"
       }
     },
     {
-      "spec": "gtfs",
-      "id": "f-las~cruces~road~runner",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/lascrucesroadrunner_google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9tsp-roadrunnertransit",
-          "name": "RoadRUNNER Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6049"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "60049",
-            "wikidata_id": "Q7339261",
-            "twitter_general": "clcgov"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-santa~ynez~valley~transit",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q4s-a11214029",
-          "name": "A11214029",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "11214031"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "9R02-91028",
-            "twitter_general": "cityofsolvang"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-sierra~vista~az",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/sierravista_google_transit.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
       "id": "f-kauai",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/kaua'i_google_transit.zip"
       },
@@ -526,30 +431,143 @@
       ]
     },
     {
+      "id": "f-las~cruces~road~runner",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/lascrucesroadrunner_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9tsp-roadrunnertransit",
+          "name": "RoadRUNNER Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6049"
+            }
+          ],
+          "tags": {
+            "twitter_general": "clcgov",
+            "us_ntd_id": "60049",
+            "wikidata_id": "Q7339261"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-makah",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/makah_google_transit.zip"
+      }
+    },
+    {
       "id": "f-mountain~express",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/cb_mtnexpress_google_transit.zip"
       }
     },
     {
+      "id": "f-sandusky",
       "spec": "gtfs",
-      "id": "f-9wh-riometroregionaltransitdistrict",
       "urls": {
-        "static_current": "https://www.riometro.org/DocumentCenter/View/2195/nmrailrunner_google_transit",
-        "static_historic": ["http://mjcaction.com/MJC_GTFS_Public/nmrailrunner_google_transit.zip"]
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/sandusky_google_transit.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-9wh-riometroregionaltransitdistrict",
+          "onestop_id": "o-dpm5-sanduskytransitsystem",
+          "name": "Sandusky Transit System",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "sts"
+            }
+          ],
           "tags": {
-            "us_ntd_id": "60111",
-            "wikidata_id": "Q11324955",
-            "twitter_service_alerts": "RioMetroAlerts"
-          },
-          "name": "Rio Metro Regional Transit District"
+            "twitter_general": "sanduskytransit",
+            "us_ntd_id": "5R05-50164"
+          }
         }
       ]
+    },
+    {
+      "id": "f-santa~fe~trails",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/santafetrails_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wkd-santafetrails",
+          "name": "Santa Fe Trails",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11679215"
+            }
+          ],
+          "tags": {
+            "twitter_general": "santafegov",
+            "us_ntd_id": "60077",
+            "wikidata_id": "Q7419573"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-santa~ynez~valley~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q4s-a11214029",
+          "name": "A11214029",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11214031"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cityofsolvang",
+            "us_ntd_id": "9R02-91028"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-sierra~vista~az",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/sierravista_google_transit.zip"
+      }
+    },
+    {
+      "id": "f-sqaxin~tribal~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://mjcaction.com/MJC_GTFS_Public/squaxintribe_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22k-squaxinislandtransit",
+          "name": "Squaxin Island Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SquaxinIslandTribe"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00103"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-~rio~metro~rtd",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.riometro.org/DocumentCenter/View/1391"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

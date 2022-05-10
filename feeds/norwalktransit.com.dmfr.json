@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr7cc-norwalktransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.norwalktransit.com/s/GTFS_Data.zip"
       },
@@ -13,18 +13,18 @@
       "operators": [
         {
           "onestop_id": "o-dr7cc-norwalktransit",
-          "tags": {
-            "us_ntd_id": "10057",
-            "wikidata_id": "Q7060801",
-            "twitter_general": "norwalktransit"
-          },
           "name": "Norwalk Transit District",
           "website": "http://www.norwalktransit.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "norwalktransit"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "norwalktransit",
+            "us_ntd_id": "10057",
+            "wikidata_id": "Q7060801"
+          }
         }
       ]
     }

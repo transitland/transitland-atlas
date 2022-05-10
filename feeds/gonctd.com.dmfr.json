@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9mu-northcountytransitdistrict",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.gonctd.com/google_transit.zip"
       },
@@ -13,19 +13,22 @@
       "operators": [
         {
           "onestop_id": "o-9mu-northcountytransitdistrict",
-          "tags": {
-            "us_ntd_id": "90030",
-            "wikidata_id": "Q7054956",
-            "twitter_general": "GoNCTD"
-          },
           "name": "North County Transit District",
           "short_name": "NCTD",
           "website": "http://www.gonctd.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "NCTD"
+            },
+            {
+              "feed_onestop_id": "f-northcountrytransitdistrict~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "GoNCTD",
+            "us_ntd_id": "90030",
+            "wikidata_id": "Q7054956"
+          }
         }
       ]
     }

@@ -2,22 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u2nr-dakkzrt~szkt",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://szegedimenetrend.hu/google_transit.zip"
       },
       "operators": [
-        {
-          "onestop_id": "o-u2nr4-szkt",
-          "name": "SZKT",
-          "website": "http://www.szkt.hu",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        },
         {
           "onestop_id": "o-u2nr-dakkzrt",
           "name": "DAKK Zrt.",
@@ -25,6 +15,16 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2nr4-szkt",
+          "name": "SZKT",
+          "website": "http://www.szkt.hu",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
             }
           ]
         }

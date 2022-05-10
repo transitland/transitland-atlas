@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-pullman~transit~wa~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://pullmanbusbeacon.com/gtfs"
       },
@@ -26,12 +26,12 @@
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-pullman~transit~wa~us~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://pullmanbusbeacon.com/gtfs-rt/alerts",
         "realtime_vehicle_positions": "https://pullmanbusbeacon.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://pullmanbusbeacon.com/gtfs-rt/tripupdates"
+        "realtime_trip_updates": "https://pullmanbusbeacon.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://pullmanbusbeacon.com/gtfs-rt/alerts"
       }
     }
   ],

@@ -2,24 +2,38 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp04-smtd",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.smtd.org/gtfs/smtd_gtfs_feed.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dp04-smtd",
-          "tags": {
-            "us_ntd_id": "50059",
-            "wikidata_id": "Q7580990",
-            "twitter_general": "SMTD_Online"
-          },
-          "name": "Springfield Mass Transit District",
+          "name": "Sangamon Mass Transit District",
           "short_name": "SMTD",
-          "website": "http://www.smtd.org"
+          "website": "http://www.smtd.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dp04-smtd~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "SMTD_Online",
+            "us_ntd_id": "50059",
+            "wikidata_id": "Q7580990"
+          }
         }
       ]
+    },
+    {
+      "id": "f-dp04-smtd~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://ride.smtd.org/gtfsrt/vehicles",
+        "realtime_trip_updates": "http://ride.smtd.org/gtfsrt/trips",
+        "realtime_alerts": "http://ride.smtd.org/gtfsrt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

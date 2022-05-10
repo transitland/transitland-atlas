@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5f-glendalebeeline",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://glendaleca.gov/Home/ShowDocument?id=29549"
       },
@@ -13,18 +13,18 @@
       "operators": [
         {
           "onestop_id": "o-9q5f-glendalebeeline",
-          "tags": {
-            "us_ntd_id": "99423",
-            "wikidata_id": "Q5568346",
-            "twitter_general": "myglendale"
-          },
           "name": "Glendale Beeline",
           "website": "http://glendalebeeline.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "myglendale",
+            "us_ntd_id": "99423",
+            "wikidata_id": "Q5568346"
+          }
         }
       ]
     }

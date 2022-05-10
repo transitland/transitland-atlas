@@ -2,27 +2,32 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qqj-rtcsnv",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://rtcws.rtcsnv.com/g/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "regional-transportation-commission-of-southern-nevada"
       },
       "license": {
         "url": "https://www.rtcsnv.com/ways-to-travel/transit-services/for-developers/"
       },
+      "tags": {
+        "gtfs_data_exchange": "regional-transportation-commission-of-southern-nevada"
+      },
       "operators": [
         {
           "onestop_id": "o-9qqj-regionaltransportationcommissionofsouthernnevada",
-          "tags": {
-            "us_ntd_id": "90045",
-            "wikidata_id": "Q7277817",
-            "twitter_general": "rtcsnv"
-          },
           "name": "Regional Transportation Commission of Southern Nevada",
-          "short_name": "RTC"
+          "short_name": "RTC",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rtcsnv~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "rtcsnv",
+            "us_ntd_id": "90045",
+            "wikidata_id": "Q7277817"
+          }
         }
       ]
     }

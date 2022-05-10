@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q9-scmtdcom",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://scmtd.com/google_transit/google_transit.zip"
       },
@@ -13,13 +13,13 @@
       "operators": [
         {
           "onestop_id": "o-9q9-santacruzmetro",
-          "tags": {
-            "us_ntd_id": "90006",
-            "wikidata_id": "Q7419419",
-            "twitter_general": "santacruzmetro"
-          },
           "name": "Santa Cruz Metropolitan Transit District",
-          "short_name": "METRO"
+          "short_name": "METRO",
+          "tags": {
+            "twitter_general": "santacruzmetro",
+            "us_ntd_id": "90006",
+            "wikidata_id": "Q7419419"
+          }
         }
       ]
     }

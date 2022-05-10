@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qcbb-cityofloditransit~grapeline",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.lodi.gov/DocumentCenter/View/2453/lodi_gtfs-ZIP",
         "static_historic": [
@@ -14,12 +14,12 @@
       "operators": [
         {
           "onestop_id": "o-9qcbb-cityofloditransit~grapeline",
-          "tags": {
-            "us_ntd_id": "90175"
-          },
           "name": "City of Lodi Transit",
           "short_name": "GrapeLine",
-          "website": "http://www.lodi.gov/transit"
+          "website": "http://www.lodi.gov/transit",
+          "tags": {
+            "us_ntd_id": "90175"
+          }
         }
       ]
     }

@@ -2,16 +2,73 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://datahub.io/angelou/proastiakos-patras-gtfs-20171128/r/prostiakos-patras-gtfs-20171128.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών",
+          "name": "Προστιακός Σιδηρόδρομος Πατρών",
+          "short_name": "Suburban Railway of Patras",
+          "website": "https://www.trainose.gr/en/passenger-activity/suburban-railway/patras-suburban-railway/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ProastiakosPatras"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://datahub.io/angelou/ktel-zakynthou-gtfs-20171128/r/ktel-zakynthou-gtfs-20171128.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ",
+          "name": "ΚΤΕΛ Ν. ZΑΚΥΝΘΟΥ Α.Ε.",
+          "website": "http://ktel-zakynthos.gr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KTELZakynthou"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sqz-greece~ΥΠΕΡΑΣΤΙΚΟΚΤΕΛΝΘΕΣΠΡΩΤΙΑΣ",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://datahub.io/angelou/ktel-thesprotias-gtfs-20171128/r/ktel-thesprotias-gtfs-20171128.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sqz-greece~ΥΠΕΡΑΣΤΙΚΟΚΤΕΛΝΘΕΣΠΡΩΤΙΑΣ",
+          "name": "ΥΠΕΡΑΣΤΙΚΟ ΚΤΕΛ Ν. ΘΕΣΠΡΩΤΙΑΣ",
+          "website": "https://www.ktel-thesprotias.gr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KTELThesprotias"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-sr7-societatrasportiprovincialespa",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://datahub.io/dataset/289cecea-0162-4ef7-bfab-7872299defa8/resource/8e7992ee-ac03-4b09-a0a9-4a54ba367336/download/gtfs.zip"
       },
       "license": {
         "url": "http://egov.comune.gioiadelcolle.ba.it/servizio-bus/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "unstable_url": "true"
@@ -30,16 +87,15 @@
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-srk0-autolineescoppio",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://datahub.io/dataset/289cecea-0162-4ef7-bfab-7872299defa8/resource/f2537ad4-4943-433a-a5a8-fc7db433f30b/download/gtfs.zip"
       },
       "license": {
         "url": "http://www.gioialab.it",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -55,16 +111,15 @@
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-srk01-comunedigioiadelcolle",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://datahub.io/dataset/289cecea-0162-4ef7-bfab-7872299defa8/resource/e2b2a650-eb84-4153-ae13-697da9c738fc/download/gtfs.zip"
       },
       "license": {
         "url": "http://egov.comune.gioiadelcolle.ba.it/servizio-bus/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -74,64 +129,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "gdc"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ",
-      "urls": {
-        "static_current": "https://datahub.io/angelou/ktel-zakynthou-gtfs-20171128/r/ktel-zakynthou-gtfs-20171128.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ",
-          "name": "ΚΤΕΛ Ν. ZΑΚΥΝΘΟΥ Α.Ε.",
-          "website": "http://ktel-zakynthos.gr/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "KTELZakynthou"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-sqz-greece~ΥΠΕΡΑΣΤΙΚΟΚΤΕΛΝΘΕΣΠΡΩΤΙΑΣ",
-      "urls": {
-        "static_current": "https://datahub.io/angelou/ktel-thesprotias-gtfs-20171128/r/ktel-thesprotias-gtfs-20171128.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-sqz-greece~ΥΠΕΡΑΣΤΙΚΟΚΤΕΛΝΘΕΣΠΡΩΤΙΑΣ",
-          "name": "ΥΠΕΡΑΣΤΙΚΟ ΚΤΕΛ Ν. ΘΕΣΠΡΩΤΙΑΣ",
-          "website": "https://www.ktel-thesprotias.gr/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "KTELThesprotias"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών",
-      "urls": {
-        "static_current": "https://datahub.io/angelou/proastiakos-patras-gtfs-20171128/r/prostiakos-patras-gtfs-20171128.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών",
-          "name": "Προστιακός Σιδηρόδρομος Πατρών",
-          "short_name": "Suburban Railway of Patras",
-          "website": "https://www.trainose.gr/en/passenger-activity/suburban-railway/patras-suburban-railway/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ProastiakosPatras"
             }
           ]
         }

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9vk-metropolitantransitauthorityofharriscounty",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.ridemetro.org/Downloads/google_transit.zip"
       },
@@ -16,15 +16,15 @@
       "operators": [
         {
           "onestop_id": "o-9vk-metropolitantransitauthorityofharriscounty",
-          "tags": {
-            "us_ntd_id": "60008",
-            "wikidata_id": "Q5015387",
-            "twitter_general": "METROHouston",
-            "twitter_service_alerts": "METROHouAlerts"
-          },
           "name": "Metropolitan Transit Authority of Harris County",
           "short_name": "Houston Metro",
-          "website": "https://www.ridemetro.org"
+          "website": "https://www.ridemetro.org",
+          "tags": {
+            "twitter_general": "METROHouston",
+            "twitter_service_alerts": "METROHouAlerts",
+            "us_ntd_id": "60008",
+            "wikidata_id": "Q5015387"
+          }
         }
       ]
     }

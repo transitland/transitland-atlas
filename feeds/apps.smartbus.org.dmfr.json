@@ -2,31 +2,33 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dps-smart",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://apps1.smartbus.org/gtfs/smart_gtfs.zip"
       },
       "license": {
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "unknown"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-dps-smart",
-          "tags": {
-            "us_ntd_id": "50031",
-            "wikidata_id": "Q7632360"
-          },
           "name": "Suburban Mobility Authority for Regional Transit",
           "short_name": "SMART",
           "website": "https://www.smartbus.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "SMART"
+            },
+            {
+              "feed_onestop_id": "f-smart~mi~rt"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "50031",
+            "wikidata_id": "Q7632360"
+          }
         }
       ]
     }

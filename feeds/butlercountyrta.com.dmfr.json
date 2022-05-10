@@ -2,10 +2,13 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-butler~county~rta",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.butlercountyrta.com/wp-content/uploads/2019/11/Bcrta-GTFS-1.zip"
+        "static_current": "https://www.buztrakr.com/gtfs",
+        "static_historic": [
+          "https://www.butlercountyrta.com/wp-content/uploads/2019/11/Bcrta-GTFS-1.zip"
+        ]
       },
       "license": {
         "url": "https://www.butlercountyrta.com/gtfs-download/"

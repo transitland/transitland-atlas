@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c3nf-calgarytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://data.calgary.ca/download/npk7-z3bj/application%2Fzip"
       },
@@ -12,40 +12,40 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-calgarytransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://data.calgary.ca/download/jhgn-ynqj/application%2Foctet-stream",
+        "realtime_vehicle_positions": "https://data.calgary.ca/download/am7c-qe3u/application%2Foctet-stream",
         "realtime_trip_updates": "https://data.calgary.ca/download/gs4m-mdc2/application%2Foctet-stream",
-        "realtime_vehicle_positions": "https://data.calgary.ca/download/am7c-qe3u/application%2Foctet-stream"
+        "realtime_alerts": "https://data.calgary.ca/download/jhgn-ynqj/application%2Foctet-stream"
       },
       "license": {
         "url": "https://data.calgary.ca/stories/s/Open-Calgary-Terms-of-Use/u45n-7awa",
         "use_without_attribution": "no",
-        "redistribution_allowed": "yes",
         "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "Contains information licensed under the Open Government Licence – City of Calgary."
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-c3nf-calgarytransit",
-      "tags": {
-        "wikidata_id": "Q143630"
-      },
       "name": "Calgary Transit",
       "website": "http://www.calgarytransit.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-calgarytransit~rt"
+          "feed_onestop_id": "f-c3nf-calgarytransit"
         },
         {
-          "feed_onestop_id": "f-c3nf-calgarytransit"
+          "feed_onestop_id": "f-calgarytransit~rt"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q143630"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

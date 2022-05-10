@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qbdx-santarosacitybus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://srcity.org/DocumentCenter/View/21635/google_transit",
         "static_historic": [
@@ -16,18 +16,18 @@
       "operators": [
         {
           "onestop_id": "o-9qbdx-santarosacitybus",
-          "tags": {
-            "us_ntd_id": "90017",
-            "wikidata_id": "Q7419876",
-            "twitter_general": "SRCITYBUS"
-          },
           "name": "CityBus",
           "website": "http://ci.santa-rosa.ca.us/departments/transit/CityBus/Pages/default.aspx",
           "associated_feeds": [
             {
               "gtfs_agency_id": "SRCityBus"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "SRCITYBUS",
+            "us_ntd_id": "90017",
+            "wikidata_id": "Q7419876"
+          }
         }
       ]
     }

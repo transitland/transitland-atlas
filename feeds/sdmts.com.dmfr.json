@@ -2,21 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9mu-mts",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.sdmts.com/google_transit_files/google_transit.zip"
       },
       "license": {
         "url": "https://www.sdmts.com/business-center-developers/terms-and-conditions",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-9mu-mts~sandiegointernationalairport",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.sdmts.com/google_transit_files/google_transit.zip"
       },
@@ -25,47 +24,47 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
-      "onestop_id": "o-9mudj-sandiegointernationalairport",
-      "tags": {
-        "wikidata_id": "Q1333923",
-        "twitter_general": "SanDiegoAirport"
-      },
-      "name": "San Diego International Airport",
-      "website": "http://www.san.org",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-9mu-mts",
-          "gtfs_agency_id": "SAN"
-        },
-        {
-          "feed_onestop_id": "f-9mu-mts~sandiegointernationalairport",
-          "gtfs_agency_id": "SAN"
-        }
-      ]
-    },
-    {
       "onestop_id": "o-9mu-mts",
-      "tags": {
-        "us_ntd_id": "90026",
-        "wikidata_id": "Q3471406",
-        "twitter_general": "sdmts"
-      },
       "name": "Metropolitan Transit System",
       "short_name": "MTS",
       "website": "http://www.sdmts.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-9mu-mts",
-          "gtfs_agency_id": "MTS"
+          "gtfs_agency_id": "MTS",
+          "feed_onestop_id": "f-9mu-mts"
         },
         {
-          "feed_onestop_id": "f-9mu-mts~sandiegointernationalairport",
-          "gtfs_agency_id": "MTS"
+          "gtfs_agency_id": "MTS",
+          "feed_onestop_id": "f-9mu-mts~sandiegointernationalairport"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "sdmts",
+        "us_ntd_id": "90026",
+        "wikidata_id": "Q3471406"
+      }
+    },
+    {
+      "onestop_id": "o-9mudj-sandiegointernationalairport",
+      "name": "San Diego International Airport",
+      "website": "http://www.san.org",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SAN",
+          "feed_onestop_id": "f-9mu-mts"
+        },
+        {
+          "gtfs_agency_id": "SAN",
+          "feed_onestop_id": "f-9mu-mts~sandiegointernationalairport"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SanDiegoAirport",
+        "wikidata_id": "Q1333923"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

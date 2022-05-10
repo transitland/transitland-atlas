@@ -2,28 +2,28 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-djmu-jacksonvilletransportationauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://schedules.jtafla.com/schedulesgtfs/download"
-      },
-      "tags": {
-        "gtfs_data_exchange": "jacksonville-transportation-authority"
       },
       "license": {
         "url": "https://ftis.org/FTDEDisclaimer.aspx"
       },
+      "tags": {
+        "gtfs_data_exchange": "jacksonville-transportation-authority"
+      },
       "operators": [
         {
           "onestop_id": "o-djmu-jacksonvilletransportationauthority",
-          "tags": {
-            "us_ntd_id": "40040",
-            "wikidata_id": "Q15051623",
-            "twitter_general": "JTAFLA"
-          },
           "name": "Jacksonville Transportation Authority",
           "short_name": "JTA",
-          "website": "http://www.jtafla.com"
+          "website": "http://www.jtafla.com",
+          "tags": {
+            "twitter_general": "JTAFLA",
+            "us_ntd_id": "40040",
+            "wikidata_id": "Q15051623"
+          }
         }
       ]
     }

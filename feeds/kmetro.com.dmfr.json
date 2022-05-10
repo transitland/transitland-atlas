@@ -2,13 +2,13 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpe0-kalamazoometrotransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.kmetro.com/sites/default/files/public/gtfs.zip",
         "static_historic": [
           "http://www.kmetro.com/sites/default/files/public/documents/gtfs.zip"
-         ]
+        ]
       },
       "tags": {
         "status": "unpublished"
@@ -16,12 +16,12 @@
       "operators": [
         {
           "onestop_id": "o-dpe0-kalamazoometrotransit",
+          "name": "Kalamazoo Metro Transit",
           "tags": {
+            "twitter_general": "Metrokzoo",
             "us_ntd_id": "50035",
-            "wikidata_id": "Q6824746",
-            "twitter_general": "Metrokzoo"
-          },
-          "name": "Kalamazoo Metro Transit"
+            "wikidata_id": "Q6824746"
+          }
         }
       ]
     }

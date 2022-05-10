@@ -2,62 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u-nl",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://gtfs.ovapi.nl/gtfs-nl.zip"
       },
       "operators": [
-        {
-          "onestop_id": "o-u1-ns",
-          "name": "NS",
-          "website": "http://www.ns.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:NS"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1k-arriva",
-          "name": "Arriva",
-          "website": "http://www.arriva.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:NOORD"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u170-htmbuzz",
-          "name": "HTMbuzz",
-          "website": "http://www.htmbuzz.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HTMBUZZ"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u17b-valleilijn",
-          "name": "Valleilijn",
-          "website": "http://www.valleilijn.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:VALLEI"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1798k-gvb",
-          "name": "GVB",
-          "website": "http://www.gvb.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:GVB"
-            }
-          ]
-        },
         {
           "onestop_id": "o-u-dkb",
           "name": "Aachener Verkehrsverbund",
@@ -70,102 +20,33 @@
           ]
         },
         {
-          "onestop_id": "o-u15u-hermes",
-          "name": "Hermes",
-          "website": "http://www.hermes.nl",
+          "onestop_id": "o-u-west",
+          "name": "Aachener Verkehrsverbund - West",
+          "short_name": "AVV",
+          "website": "http://www.avv.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "HERMES"
+              "gtfs_agency_id": "AVV:30"
             }
           ]
         },
         {
-          "onestop_id": "o-u1h-keolis",
-          "name": "Keolis",
-          "website": "http://www.keolis.de",
+          "onestop_id": "o-u1-db",
+          "name": "DB",
+          "website": "http://www.db.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "IFF:KEO"
+              "gtfs_agency_id": "IFF:DB"
             }
           ]
         },
         {
-          "onestop_id": "o-u1k-ovregioijsselmond",
-          "name": "OV Regio IJsselmond",
-          "website": "http://www.ovregioijsselmond.nl",
+          "onestop_id": "o-u1-ns",
+          "name": "NS",
+          "website": "http://www.ns.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "OVREGIOY"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1k-syntus",
-          "name": "Syntus",
-          "website": "http://www.syntus.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SYNTUS"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1k-qbuzz",
-          "name": "Qbuzz",
-          "website": "http://www.qbuzz.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "QBUZZ"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u173-gvb",
-          "name": "GVB",
-          "website": "http://www.gvb.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GVB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hq-niag",
-          "name": "NIAG",
-          "website": "http://www.niag-online.de/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NIAG"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u178-u~ov",
-          "name": "U-OV",
-          "website": "http://www.u-ov.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "UOV"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1hr-breng",
-          "name": "Breng",
-          "website": "http://www.breng.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:BRENG"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1h-veolia",
-          "name": "Veolia",
-          "website": "http://www.veolia.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:VEO"
+              "gtfs_agency_id": "IFF:NS"
             }
           ]
         },
@@ -180,12 +61,12 @@
           ]
         },
         {
-          "onestop_id": "o-u1k-twentssyntus",
-          "name": "Twents (Syntus)",
-          "website": "http://www.twents.nl",
+          "onestop_id": "o-u14-haltetaxizeeland",
+          "name": "Haltetaxi Zeeland",
+          "website": "http://www.zeeland.nl/haltetaxi",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "TWENTS"
+              "gtfs_agency_id": "HTZ"
             }
           ]
         },
@@ -200,32 +81,22 @@
           ]
         },
         {
-          "onestop_id": "o-u1k9-syntus",
-          "name": "Syntus",
-          "website": "http://www.syntus.nl",
+          "onestop_id": "o-u15-veolia",
+          "name": "Veolia",
+          "website": "http://www.veolia.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "IFF:SYN"
+              "gtfs_agency_id": "VTN"
             }
           ]
         },
         {
-          "onestop_id": "o-u17mk-teso",
-          "name": "TESO",
-          "website": "http://www.teso.nl/",
+          "onestop_id": "o-u15p-ret",
+          "name": "RET",
+          "website": "http://www.ret.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "TESO"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u172-r~net",
-          "name": "R-net",
-          "website": "http://www.connexxion.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:RNET"
+              "gtfs_agency_id": "RET"
             }
           ]
         },
@@ -250,22 +121,32 @@
           ]
         },
         {
-          "onestop_id": "o-u1h-breng",
-          "name": "Breng",
-          "website": "http://www.breng.nl",
+          "onestop_id": "o-u15u-hermes",
+          "name": "Hermes",
+          "website": "http://www.hermes.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BRENG"
+              "gtfs_agency_id": "HERMES"
             }
           ]
         },
         {
-          "onestop_id": "o-u15p-ret",
-          "name": "RET",
-          "website": "http://www.ret.nl",
+          "onestop_id": "o-u17-arriva",
+          "name": "Arriva",
+          "website": "http://www.arriva.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "RET"
+              "gtfs_agency_id": "ARR"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u17-connexxion",
+          "name": "Connexxion",
+          "website": "http://www.connexxion.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CXX"
             }
           ]
         },
@@ -281,83 +162,42 @@
           ]
         },
         {
-          "onestop_id": "o-u17x-rederijdoeksen",
-          "name": "Rederij Doeksen",
-          "website": "http://www.rederij-doeksen.nl/",
+          "onestop_id": "o-u170-htmbuzz",
+          "name": "HTMbuzz",
+          "website": "http://www.htmbuzz.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "DOEKSEN"
+              "gtfs_agency_id": "HTMBUZZ"
             }
           ]
         },
         {
-          "onestop_id": "o-u1kr-wagenborg",
-          "name": "Wagenborg",
-          "website": "http://www.wpd.nl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "WPD"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u17-connexxion",
-          "name": "Connexxion",
+          "onestop_id": "o-u172-r~net",
+          "name": "R-net",
           "website": "http://www.connexxion.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CXX"
+              "gtfs_agency_id": "IFF:RNET"
             }
           ]
         },
         {
-          "onestop_id": "o-u-west",
-          "name": "Aachener Verkehrsverbund - West",
-          "short_name": "AVV",
-          "website": "http://www.avv.de",
+          "onestop_id": "o-u173-gvb",
+          "name": "GVB",
+          "website": "http://www.gvb.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "AVV:30"
+              "gtfs_agency_id": "GVB"
             }
           ]
         },
         {
-          "onestop_id": "o-u15-veolia",
-          "name": "Veolia",
-          "website": "http://www.veolia.nl",
+          "onestop_id": "o-u178-u~ov",
+          "name": "U-OV",
+          "website": "http://www.u-ov.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "VTN"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u17d-ebs",
-          "name": "EBS",
-          "website": "http://www.ebs-ov.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "EBS"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u17-arriva",
-          "name": "Arriva",
-          "website": "http://www.arriva.nl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ARR"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u1-db",
-          "name": "DB",
-          "website": "http://www.db.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "IFF:DB"
+              "gtfs_agency_id": "UOV"
             }
           ]
         },
@@ -372,12 +212,172 @@
           ]
         },
         {
-          "onestop_id": "o-u14-haltetaxizeeland",
-          "name": "Haltetaxi Zeeland",
-          "website": "http://www.zeeland.nl/haltetaxi",
+          "onestop_id": "o-u1798k-gvb",
+          "name": "GVB",
+          "website": "http://www.gvb.nl",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "HTZ"
+              "gtfs_agency_id": "IFF:GVB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u17b-valleilijn",
+          "name": "Valleilijn",
+          "website": "http://www.valleilijn.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IFF:VALLEI"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u17d-ebs",
+          "name": "EBS",
+          "website": "http://www.ebs-ov.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "EBS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u17mk-teso",
+          "name": "TESO",
+          "website": "http://www.teso.nl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TESO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u17x-rederijdoeksen",
+          "name": "Rederij Doeksen",
+          "website": "http://www.rederij-doeksen.nl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "DOEKSEN"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1h-breng",
+          "name": "Breng",
+          "website": "http://www.breng.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BRENG"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1h-keolis",
+          "name": "Keolis",
+          "website": "http://www.keolis.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IFF:KEO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1h-veolia",
+          "name": "Veolia",
+          "website": "http://www.veolia.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IFF:VEO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hq-niag",
+          "name": "NIAG",
+          "website": "http://www.niag-online.de/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NIAG"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1hr-breng",
+          "name": "Breng",
+          "website": "http://www.breng.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IFF:BRENG"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1k-arriva",
+          "name": "Arriva",
+          "website": "http://www.arriva.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IFF:NOORD"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1k-ovregioijsselmond",
+          "name": "OV Regio IJsselmond",
+          "website": "http://www.ovregioijsselmond.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OVREGIOY"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1k-qbuzz",
+          "name": "Qbuzz",
+          "website": "http://www.qbuzz.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "QBUZZ"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1k-syntus",
+          "name": "Syntus",
+          "website": "http://www.syntus.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SYNTUS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1k-twentssyntus",
+          "name": "Twents (Syntus)",
+          "website": "http://www.twents.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TWENTS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1k9-syntus",
+          "name": "Syntus",
+          "website": "http://www.syntus.nl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IFF:SYN"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u1kr-wagenborg",
+          "name": "Wagenborg",
+          "website": "http://www.wpd.nl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WPD"
             }
           ]
         }

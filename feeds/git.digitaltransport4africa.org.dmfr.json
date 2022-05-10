@@ -2,54 +2,44 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-bamako~sotrama",
       "spec": "gtfs",
-      "id": "f-s0wz-socatur~taxisco",
       "urls": {
-        "static_current": "https://git.digitaltransport4africa.org/places/douala/raw/master/GTFS-SYSTRA/GTFS-SYSTRA.zip"
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/bamako/-/raw/main/gtfs_Public_Transport_Bamako_Sotrama_01_01_2020_06_42_48.zip"
       },
       "license": {
-        "url": "https://git.digitaltransport4africa.org/places/douala/blob/master/LICENSE",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "url": "https://gitlab.com/digitaltransport/data/africa/bamako"
       },
       "tags": {
         "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-s0wz-taxisco",
-          "name": "Taxis Co",
-          "website": "http://www.douala.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-s0wz-socatur",
-          "name": "Socatur",
-          "website": "http://www.douala.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
+      "id": "f-ebvn-grand~abidjan",
       "spec": "gtfs",
-      "id": "f-ebzz-amadepartmentoftransport",
       "urls": {
-        "static_current": "https://git.digitaltransport4africa.org/data/africa/accra/raw/master/GTFS/GTFS_Accra.zip"
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/abidjan/raw/master/Donn%C3%A9es/abidjan.zip"
+      },
+      "languages": [
+        "fr"
+      ],
+      "license": {
+        "url": "https://opendatacommons.org/licenses/odbl/index.html",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Jungle Bus © OpenStreetMap contributors"
+      }
+    },
+    {
+      "id": "f-ebzz-amadepartmentoftransport",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/accra/raw/master/GTFS/GTFS_Accra.zip"
       },
       "license": {
         "url": "https://opendatacommons.org/licenses/odbl/index.html",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Jungle Bus © OpenStreetMap contributors"
       },
       "operators": [
@@ -66,21 +56,63 @@
       ]
     },
     {
+      "id": "f-kzf-nairobi~saccos",
       "spec": "gtfs",
-      "id": "f-ebvn-grand~abidjan",
       "urls": {
-        "static_current": "https://git.digitaltransport4africa.org/data/africa/abidjan/raw/master/Donn%C3%A9es/abidjan.zip"
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/nairobi/-/raw/master/Data/GTFS.zip",
+        "static_historic": [
+          "http://www.s-e-w.net/nairobi/2017_Jan.zip"
+        ]
       },
-      "languages": [
-        "fr"
-      ],
+      "operators": [
+        {
+          "onestop_id": "o-kzf-nairobi~saccos",
+          "name": "Approved SACCOs of Nairobi as mapped by University of Nairobi C4D Lab",
+          "website": "http://www.digitalmatatus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "UON"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-s0wz-socatur~taxisco",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://git.digitaltransport4africa.org/places/douala/raw/master/GTFS-SYSTRA/GTFS-SYSTRA.zip"
+      },
       "license": {
-        "url": "https://opendatacommons.org/licenses/odbl/index.html",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Jungle Bus © OpenStreetMap contributors"
-      }
+        "url": "https://git.digitaltransport4africa.org/places/douala/blob/master/LICENSE",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-s0wz-socatur",
+          "name": "Socatur",
+          "website": "http://www.douala.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-s0wz-taxisco",
+          "name": "Taxis Co",
+          "website": "http://www.douala.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

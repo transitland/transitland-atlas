@@ -2,8 +2,17 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
+      "id": "f-cata~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://developers.cata.org/gtfsrt/vehicle/vehiclepositions.pb",
+        "realtime_trip_updates": "http://developers.cata.org/gtfsrt/tripupdate/tripupdates.pb",
+        "realtime_alerts": "http://developers.cata.org/gtfsrt/alert/alerts.pb"
+      }
+    },
+    {
       "id": "f-dpeg-capitalareatransportationauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://developers.cata.org/gtfsdownload.ashx?key=5b4690ed-0a69-4320-897b-7d92def4b96f&data=base"
       },
@@ -11,31 +20,16 @@
         "url": "https://www.cata.org/Portals/0/CATAGTFSLicenseAgreement20150323.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "unknown",
-        "redistribute": "no",
         "attribution_text": "See agreement for details."
       },
       "tags": {
         "gtfs_data_exchange": "capital-area-transportation-authority"
       }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-cata~rt",
-      "urls": {
-        "realtime_alerts": "http://developers.cata.org/gtfsrt/alert/alerts.pb",
-        "realtime_trip_updates": "http://developers.cata.org/gtfsrt/tripupdate/tripupdates.pb",
-        "realtime_vehicle_positions": "http://developers.cata.org/gtfsrt/vehicle/vehiclepositions.pb"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dpeg-capitalareatransportationauthority",
-      "tags": {
-        "us_ntd_id": "50036",
-        "wikidata_id": "Q5035474"
-      },
       "name": "Capital Area Transportation Authority",
       "short_name": "CATA",
       "website": "http://www.cata.org",
@@ -44,10 +38,15 @@
           "feed_onestop_id": "f-cata~rt"
         },
         {
-          "feed_onestop_id": "f-dpeg-capitalareatransportationauthority",
-          "gtfs_agency_id": "01"
+          "gtfs_agency_id": "01",
+          "feed_onestop_id": "f-dpeg-capitalareatransportationauthority"
         }
-      ]
+      ],
+      "tags": {
+        "us_ntd_id": "50036",
+        "wikidata_id": "Q5035474"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

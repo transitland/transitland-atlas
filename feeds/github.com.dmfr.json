@@ -2,8 +2,64 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-9tvbk-carlsbadmunicipaltransitsystem",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/ethan-nelson/carlsbadnmtransit/blob/master/gtfs-odbl/carlsbadtransit-odbl.zip?raw=true"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9tvbk-carlsbadmunicipaltransitsystem",
+          "name": "Carlsbad Municipal Transit System",
+          "website": "http://cityofcarlsbadnm.com/transit.cfm",
+          "tags": {
+            "needs_agency_id": "f-9tvbk-carlsbadmunicipaltransitsystem"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c23n-microsoftshuttles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/cookieguru/microsoft-gtfs/releases/download/20150518150359/gtfs_20150518150359.zip"
+      },
+      "tags": {
+        "source": "unofficial"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c23n-microsoftshuttles",
+          "name": "Microsoft Shuttles",
+          "website": "https://msshuttle.mobi/"
+        }
+      ]
+    },
+    {
+      "id": "f-c28-whatcomtransportationauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/whatcomtrans/publicwtadata/raw/master/GTFS/wta_gtfs_latest.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-whatcomtransportationauthority",
+          "name": "Whatcom Transportation Authority",
+          "short_name": "WTA",
+          "tags": {
+            "twitter_general": "ridewta",
+            "us_ntd_id": "00021",
+            "wikidata_id": "Q7991690"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dhvrs-bullrunner",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/CUTR-at-USF/bullrunner-gtfs-realtime-generator/raw/master/bullrunner-gtfs.zip"
       },
@@ -19,16 +75,15 @@
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-dr1b-harfordtransitlink",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
       },
       "license": {
         "url": "http://mdtrip.org/About/DeveloperResources.aspx",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "harford-transit-link"
@@ -36,63 +91,26 @@
       "operators": [
         {
           "onestop_id": "o-dr1b-harfordtransitlink",
-          "tags": {
-            "us_ntd_id": "30074",
-            "wikidata_id": "Q5657016",
-            "twitter_general": "HarfordCountyMD"
-          },
           "name": "Harford Transit LINK",
           "website": "http://www.harfordtransit.org/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "HarfordTransit"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr4-septa~rail",
-      "urls": {
-        "static_current": "https://github.com/septadev/GTFS/releases/download/v202106061/gtfs_public.zip#google_rail.zip"
-      },
-      "license": {
-        "url": "http://www3.septa.org/developer/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "septa"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr4-septa",
+          ],
           "tags": {
-            "us_ntd_id": "30019",
-            "wikidata_id": "Q2037863",
-            "omd_provider_id": "septa"
-          },
-          "name": "Southeastern Pennsylvania Transportation Authority",
-          "short_name": "SEPTA",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dr4-septa~rail",
-              "gtfs_agency_id": "SEPTA"
-            },
-            {
-              "feed_onestop_id": "f-dr4-septa~bus"
-            }
-          ]
+            "twitter_general": "HarfordCountyMD",
+            "us_ntd_id": "30074",
+            "wikidata_id": "Q5657016"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-dr4-septa~bus",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/septadev/GTFS/releases/download/v202106061/gtfs_public.zip#google_bus.zip"
+        "static_current": "https://github.com/septadev/GTFS/releases/latest/download/gtfs_public.zip#google_bus.zip"
       },
       "license": {
         "url": "http://www3.septa.org/developer/"
@@ -102,8 +120,180 @@
       }
     },
     {
+      "id": "f-dr4-septa~rail",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/septadev/GTFS/releases/latest/download/gtfs_public.zip#google_rail.zip"
+      },
+      "license": {
+        "url": "http://www3.septa.org/developer/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "septa"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr4-septa",
+          "name": "Southeastern Pennsylvania Transportation Authority",
+          "short_name": "SEPTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dr4-septa~bus"
+            },
+            {
+              "gtfs_agency_id": "SEPTA",
+              "feed_onestop_id": "f-dr4-septa~rail"
+            },
+            {
+              "feed_onestop_id": "f-septa~rail~rt"
+            },
+            {
+              "feed_onestop_id": "f-septa~rt"
+            }
+          ],
+          "tags": {
+            "omd_provider_id": "septa",
+            "us_ntd_id": "30019",
+            "wikidata_id": "Q2037863"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr4r-lanta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/LANTA-Transportation-Authority/GTFS-data/raw/master/lanta_gtfs_feed.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr4r-lanta",
+          "name": "Lehigh and Northampton Transportation Authority",
+          "short_name": "LANTA",
+          "tags": {
+            "twitter_general": "lantalv",
+            "us_ntd_id": "30010",
+            "wikidata_id": "Q6518871"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-ebzz-accratrotro",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/AFDLab4Dev/AccraMobility/raw/master/GTFS/GTFS_Accra.zip"
+      },
+      "license": {
+        "url": "https://git.digitaltransport4africa.org/places/accra/blob/master/GTFS/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "(C) OpenStreetMap contributors"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ebzz-accratrotro",
+          "name": "Accra Trotro",
+          "website": "https://ama.gov.gh/welcome/transport/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AM3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f244-RITC~Transcollines",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transcollines/gtfs/raw/master/transcollines-qc-ca.zip"
+      },
+      "license": {
+        "url": "https://github.com/transcollines/GTFS/blob/master/LICENCE.MD",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Le présent service intègre les données ouvertes fournies par la Régie intermunicipale de transport des Collines (RITC - Transcollines). Transcollines n’est pas responsable de l’exactitude de l’information générée par cette application. Dernière mise à jour : AAAA-MM-JJ."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f244-RITC~Transcollines",
+          "name": "Régie intermunicipale de transport des Collines",
+          "short_name": "Transcollines",
+          "website": "http://transcollines.ca",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Transcollines",
+              "feed_onestop_id": "f-f244-RITC~Transcollines"
+            },
+            {
+              "feed_onestop_id": "f-f244-RITC~Transcollines~RT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-port~phillip~ferries~au",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/PPF-GTFS/GTFS/raw/main/GTFS.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      }
+    },
+    {
+      "id": "f-qw3zwf-monkeyforestubudshuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/balitransitproject/btp-gtfs/blob/master/ubud/mfus_gtfs.zip?raw=true"
+      },
+      "license": {
+        "url": "https://raw.githubusercontent.com/balitransitproject/btp-gtfs/master/LICENSE.md",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-qw3zwf-monkeyforestubudshuttle",
+          "name": "Monkey Forest Ubud Shuttle",
+          "short_name": "MFUS",
+          "website": "http://www.monkeyforestubud.com/the-monkey-forest-ubud-shuttle/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MFUS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-rioc~nyc",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7707/gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-SA-4.0",
+        "url": "https://github.com/laidig/rioc-gtfs/blob/master/README.md"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rioc~nyc",
+          "name": "Roosevelt Island Operating Corporation Tramway",
+          "short_name": "RIOC Tramway",
+          "tags": {
+            "wikidata_id": "Q641980"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-stq4-nationalauthorityfortunnels",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transportforcairo/Metro-GTFS/archive/master.zip#Metro-GTFS-master"
       },
@@ -111,7 +301,6 @@
         "url": "https://github.com/transportforcairo/Metro-GTFS/blob/master/LICENSE.md",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Transport for Cairo"
       },
       "operators": [
@@ -128,66 +317,116 @@
       ]
     },
     {
+      "id": "f-u-ruterbuss~ruterbåt~rutertrikk~rutertbane~buss~tog~båt~flytog",
       "spec": "gtfs",
-      "id": "f-c28-whatcomtransportationauthority",
       "urls": {
-        "static_current": "https://github.com/whatcomtrans/publicwtadata/raw/master/GTFS/wta_gtfs_latest.zip"
+        "static_current": "https://github.com/joakimsk/pt-data-ubud/blob/master/feed/ubud_shuttle.zip?raw=true"
       },
-      "operators": [
-        {
-          "onestop_id": "o-c28-whatcomtransportationauthority",
-          "tags": {
-            "us_ntd_id": "00021",
-            "wikidata_id": "Q7991690",
-            "twitter_general": "ridewta"
-          },
-          "name": "Whatcom Transportation Authority",
-          "short_name": "WTA"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr4r-lanta",
-      "urls": {
-        "static_current": "https://github.com/LANTA-Transportation-Authority/GTFS-data/raw/master/lanta_gtfs_feed.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr4r-lanta",
-          "tags": {
-            "us_ntd_id": "30010",
-            "wikidata_id": "Q6518871",
-            "twitter_general": "lantalv"
-          },
-          "name": "Lehigh and Northampton Transportation Authority",
-          "short_name": "LANTA"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9tvbk-carlsbadmunicipaltransitsystem",
-      "urls": {
-        "static_current": "https://github.com/ethan-nelson/carlsbadnmtransit/blob/master/gtfs-odbl/carlsbadtransit-odbl.zip?raw=true"
+      "license": {
+        "url": "https://data.norge.no/nlod/en/2.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Powered by Ruter As"
       },
       "tags": {
         "unstable_url": "true"
       },
       "operators": [
         {
-          "onestop_id": "o-9tvbk-carlsbadmunicipaltransitsystem",
-          "tags": {
-            "needs_agency_id": "f-9tvbk-carlsbadmunicipaltransitsystem"
-          },
-          "name": "Carlsbad Municipal Transit System",
-          "website": "http://cityofcarlsbadnm.com/transit.cfm"
+          "onestop_id": "o-u-buss",
+          "name": "Buss",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4-båt",
+          "name": "Båt",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FF"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4-tog",
+          "name": "Tog",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TT"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4x-flybuss",
+          "name": "Flybuss",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4x-flytog",
+          "name": "Flytog",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FT"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4x-ruterbuss",
+          "name": "RuterBuss",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4x-ruterbåt",
+          "name": "RuterBåt",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RF"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4xs-rutertbane",
+          "name": "RuterTBane",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RT"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4xs-rutertrikk",
+          "name": "RuterTrikk",
+          "website": "http://www.ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RS"
+            }
+          ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-u8-romania~interregionalcalatori~regiotrans~cfrcălători~softrans~trans",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/vasile/data.gov.ro-gtfs-exporter/archive/master.zip#data.gov.ro-gtfs-exporter-master/gtfs-out"
       },
@@ -203,22 +442,22 @@
           ]
         },
         {
+          "onestop_id": "o-u8-cfrcălători",
+          "name": "CFR Călători",
+          "website": "http://www.cfrcalatori.ro/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6100826"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-u8-regiotrans",
           "name": "Regiotrans",
           "website": "http://www.regiotrans.ro/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "227098"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u82-interregionalcalatori",
-          "name": "Interregional Calatori",
-          "website": "http://www.viaterraspedition.ro/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "236037"
             }
           ]
         },
@@ -233,44 +472,24 @@
           ]
         },
         {
-          "onestop_id": "o-u8-cfrcălători",
-          "name": "CFR Călători",
-          "website": "http://www.cfrcalatori.ro/",
+          "onestop_id": "o-u82-interregionalcalatori",
+          "name": "Interregional Calatori",
+          "website": "http://www.viaterraspedition.ro/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "6100826"
+              "gtfs_agency_id": "236037"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-wdw-manila",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/sakayph/gtfs/archive/master.zip#gtfs-master"
       },
       "operators": [
-        {
-          "onestop_id": "o-wdw4-philippinenationalrailways",
-          "name": "Philippine National Railways",
-          "website": "http://www.pnr.gov.ph/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "PNR"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-wdw5-manilalightrailtransitauthority",
-          "name": "Manila Light Rail Transit Authority",
-          "website": "http://www.lrta.gov.ph/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "LRTA"
-            }
-          ]
-        },
         {
           "onestop_id": "o-wdw-ltfrb",
           "name": "LTFRB",
@@ -290,12 +509,32 @@
               "gtfs_agency_id": "MRTC"
             }
           ]
+        },
+        {
+          "onestop_id": "o-wdw4-philippinenationalrailways",
+          "name": "Philippine National Railways",
+          "website": "http://www.pnr.gov.ph/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PNR"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-wdw5-manilalightrailtransitauthority",
+          "name": "Manila Light Rail Transit Authority",
+          "website": "http://www.lrta.gov.ph/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LRTA"
+            }
+          ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-wdw4-p2p",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/sakayph/p2p-gtfs/archive/master.zip#p2p-gtfs-master"
       },
@@ -317,12 +556,12 @@
           ]
         },
         {
-          "onestop_id": "o-wdw54-froehlichtours",
-          "name": "Froehlich Tours",
-          "website": "https://www.facebook.com/HolidayLand/",
+          "onestop_id": "o-wdw4f-hmtransportincandrobinsonsmalls",
+          "name": "HM Transport Inc. and Robinsons Malls",
+          "website": "https://www.facebook.com/RobinsonsMalls/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "FROEHLICH"
+              "gtfs_agency_id": "ROBINSONS"
             }
           ]
         },
@@ -337,257 +576,16 @@
           ]
         },
         {
-          "onestop_id": "o-wdw4f-hmtransportincandrobinsonsmalls",
-          "name": "HM Transport Inc. and Robinsons Malls",
-          "website": "https://www.facebook.com/RobinsonsMalls/",
+          "onestop_id": "o-wdw54-froehlichtours",
+          "name": "Froehlich Tours",
+          "website": "https://www.facebook.com/HolidayLand/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ROBINSONS"
+              "gtfs_agency_id": "FROEHLICH"
             }
           ]
         }
       ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-u-ruterbuss~ruterbåt~rutertrikk~rutertbane~buss~tog~båt~flytog",
-      "urls": {
-        "static_current": "https://github.com/joakimsk/pt-data-ubud/blob/master/feed/ubud_shuttle.zip?raw=true"
-      },
-      "license": {
-        "url": "https://data.norge.no/nlod/en/2.0",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Powered by Ruter As"
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u4x-ruterbåt",
-          "name": "RuterBåt",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RF"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4x-ruterbuss",
-          "name": "RuterBuss",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u-buss",
-          "name": "Buss",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4-tog",
-          "name": "Tog",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4x-flytog",
-          "name": "Flytog",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4-båt",
-          "name": "Båt",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FF"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4xs-rutertbane",
-          "name": "RuterTBane",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4x-flybuss",
-          "name": "Flybuss",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4xs-rutertrikk",
-          "name": "RuterTrikk",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RS"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c23n-microsoftshuttles",
-      "urls": {
-        "static_current": "https://github.com/cookieguru/microsoft-gtfs/releases/download/20150518150359/gtfs_20150518150359.zip"
-      },
-      "tags": {
-        "source": "unofficial"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c23n-microsoftshuttles",
-          "name": "Microsoft Shuttles",
-          "website": "https://msshuttle.mobi/"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-ebzz-accratrotro",
-      "urls": {
-        "static_current": "https://github.com/AFDLab4Dev/AccraMobility/raw/master/GTFS/GTFS_Accra.zip"
-      },
-      "license": {
-        "url": "https://git.digitaltransport4africa.org/places/accra/blob/master/GTFS/README.md",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "(C) OpenStreetMap contributors"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-ebzz-accratrotro",
-          "name": "Accra Trotro",
-          "website": "https://ama.gov.gh/welcome/transport/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "AM3"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-qw3zwf-monkeyforestubudshuttle",
-      "urls": {
-        "static_current": "https://github.com/balitransitproject/btp-gtfs/blob/master/ubud/mfus_gtfs.zip?raw=true"
-      },
-      "license": {
-        "url": "https://raw.githubusercontent.com/balitransitproject/btp-gtfs/master/LICENSE.md",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-qw3zwf-monkeyforestubudshuttle",
-          "name": "Monkey Forest Ubud Shuttle",
-          "short_name": "MFUS",
-          "website": "http://www.monkeyforestubud.com/the-monkey-forest-ubud-shuttle/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MFUS"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-f244-RITC~Transcollines",
-      "urls": {
-        "static_current": "https://github.com/transcollines/gtfs/raw/master/transcollines-qc-ca.zip"
-      },
-      "license": {
-        "url": "https://github.com/transcollines/GTFS/blob/master/LICENCE.MD",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Le présent service intègre les données ouvertes fournies par la Régie intermunicipale de transport des Collines (RITC - Transcollines). Transcollines n’est pas responsable de l’exactitude de l’information générée par cette application. Dernière mise à jour : AAAA-MM-JJ."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f244-RITC~Transcollines",
-          "tags": {},
-          "name": "Régie intermunicipale de transport des Collines",
-          "short_name": "Transcollines",
-          "website": "http://transcollines.ca",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-f244-RITC~Transcollines",
-              "gtfs_agency_id": "Transcollines"
-            },
-            {
-              "feed_onestop_id": "f-f244-RITC~Transcollines~RT"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-rioc~nyc",
-      "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7707/gtfs.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-rioc~nyc",
-          "name": "Roosevelt Island Operating Corporation Tramway",
-          "short_name": "RIOC Tramway",
-          "tags": {
-            "wikidata_id": "Q641980"
-          }
-        }
-      ],
-      "license": {
-        "spdx_identifier": "CC-BY-SA-4.0",
-        "url": "https://github.com/laidig/rioc-gtfs/blob/master/README.md"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-port~phillip~ferries~au",
-      "urls": {
-        "static_current": "https://github.com/PPF-GTFS/GTFS/raw/main/GTFS.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0"
-      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

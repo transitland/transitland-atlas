@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp5k-indiana~mits",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.mitsbus.org/wp-content/uploads/2016/11/GTFS.zip"
       },
@@ -13,11 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-dp5k-indiana~mits",
-          "tags": {
-            "us_ntd_id": "50054",
-            "wikidata_id": "Q6935688",
-            "twitter_general": "mitsbus"
-          },
           "name": "Muncie Indiana Transit System",
           "short_name": "MITS",
           "website": "http://www.mitsbus.org/",
@@ -25,7 +20,12 @@
             {
               "gtfs_agency_id": "35"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "mitsbus",
+            "us_ntd_id": "50054",
+            "wikidata_id": "Q6935688"
+          }
         }
       ]
     }

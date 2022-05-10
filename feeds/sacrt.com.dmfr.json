@@ -2,46 +2,60 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-9qcd-etranelkgrove",
       "spec": "gtfs",
-      "id": "f-9qce-sacramentoregionaltransit",
       "urls": {
-        "static_current": "http://iportal.sacrt.com/GTFS/SRTD/google_transit.zip"
+        "static_current": "https://elkgrovetransit.com/gtfs"
+      }
+    },
+    {
+      "id": "f-9qcd-etranelkgrove~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://elkgrovetransit.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://elkgrovetransit.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://elkgrovetransit.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-9qce-sacramentoregionaltransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://iportal.sacrt.com/gtfs/SRTD/google_transit.zip"
       },
       "license": {
         "url": "http://www.sacrt.com/schedules/gtfs.aspx",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "sacramento-regional-transit"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-9qce-sacramentoregionaltransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://gtfsrt.sacrt.com/apps/gtfsrt/SRTD/vehiclepositions",
-        "realtime_trip_updates": "http://gtfsrt.sacrt.com/apps/gtfsrt/SRTD/tripupdates"
+        "realtime_vehicle_positions": "https://bustime.sacrt.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://bustime.sacrt.com/gtfsrt/trips",
+        "realtime_alerts": "https://bustime.sacrt.com/gtfsrt/alerts"
       },
       "license": {
         "url": "http://www.sacrt.com/schedules/gtfs.aspx",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-9qcs-rosevilletransit",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://iportal.sacrt.com/GTFS/Roseville/google_transit.zip"
+        "static_current": "https://iportal.sacrt.com/gtfs/Roseville/google_transit.zip"
       },
       "license": {
         "url": "http://www.sacrt.com/gtfs.stm",
         "use_without_attribution": "unknown",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "roseville-transit"
@@ -49,61 +63,40 @@
       "operators": [
         {
           "onestop_id": "o-9qcs-rosevilletransit",
+          "name": "Roseville Transit",
           "tags": {
+            "twitter_general": "RSVL_Transit",
             "us_ntd_id": "90168",
-            "wikidata_id": "Q7368740",
-            "twitter_general": "RSVL_Transit"
-          },
-          "name": "Roseville Transit"
+            "wikidata_id": "Q7368740"
+          }
         }
       ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9qcg-folsomstagelines",
-      "urls": {
-        "static_current": "http://iportal.sacrt.com/gtfs/FSL/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qcg-folsomstagelines",
-          "tags": {
-            "us_ntd_id": "90220",
-            "wikidata_id": "Q96418422"
-          },
-          "name": "Folsom Stage Line"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9qcd-etranelkgrove",
-      "urls": {
-        "static_current": "http://iportal.sacrt.com/GTFS/ETRAN/google_transit.zip"
-      }
     }
   ],
   "operators": [
     {
       "onestop_id": "o-9qce-sacramentoregionaltransit",
-      "tags": {
-        "us_ntd_id": "90019",
-        "wikidata_id": "Q7397015",
-        "twitter_general": "RideSacRT"
-      },
       "name": "Sacramento Regional Transit",
       "short_name": "SacRT",
       "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qcd-etranelkgrove"
+        },
+        {
+          "feed_onestop_id": "f-9qcd-etranelkgrove~rt"
+        },
         {
           "feed_onestop_id": "f-9qce-sacramentoregionaltransit"
         },
         {
           "feed_onestop_id": "f-9qce-sacramentoregionaltransit~rt"
-        },
-        {
-          "feed_onestop_id": "f-9qcd-etranelkgrove"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "RideSacRT",
+        "us_ntd_id": "90019",
+        "wikidata_id": "Q7397015"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -2,22 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-spv0-tuatransdev~envibus~keolis",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://nextcloud.agglo-casa.fr/nextcloud/index.php/s/F10PMtqPtFAoeqG/download"
       },
       "operators": [
-        {
-          "onestop_id": "o-spv0-tuatransdev",
-          "name": "TUA TRANSDEV",
-          "website": "http://www.envibus.fr/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
         {
           "onestop_id": "o-sptpc-keolis",
           "name": "KEOLIS",
@@ -25,6 +15,16 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "3"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spv0-tuatransdev",
+          "name": "TUA TRANSDEV",
+          "website": "http://www.envibus.fr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
             }
           ]
         },

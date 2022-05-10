@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u0-switzerland",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://opentransportdata.swiss/de/dataset/timetable-2022-gtfs2020/permalink"
       },
@@ -15,24 +15,24 @@
       },
       "operators": [
         {
-          "onestop_id": "o-u0qdny-sfmsesselbahnfeldis~mutta",
-          "name": "Sesselbahn Feldis-Mutta",
-          "short_name": "SFM",
-          "website": "http://www.viamala.ch/winter/wintersport/wintersportgebiete/feldis/betriebszeiten-tarife/betriebszeiten/sesselbahn-und-skilifte-feldis-ag-ssf.html",
+          "onestop_id": "o-u0-pagpostautoschweiz",
+          "name": "PostAuto Schweiz",
+          "short_name": "PAG",
+          "website": "http://www.sbb.ch",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "003158"
+              "gtfs_agency_id": "000801"
             }
           ]
         },
         {
-          "onestop_id": "o-u0qj6z-dbzdolderbahnbetriebsag",
-          "name": "Dolderbahn-Betriebs",
-          "short_name": "DBZ",
+          "onestop_id": "o-u0-sbbschweizerischebundesbahnensbb",
+          "name": "Schweizerische Bundesbahnen",
+          "short_name": "SBB",
           "website": "http://www.sbb.ch",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "000164"
+              "gtfs_agency_id": "000011"
             }
           ]
         },
@@ -57,35 +57,13 @@
           ]
         },
         {
-          "onestop_id": "o-u0q5d4-lkrkräbel~rigischeidegg",
-          "name": "Luftseilbahn Kräbel-Rigi Scheidegg",
-          "short_name": "LKR",
+          "onestop_id": "o-u0h-tpgtransportspublicsgenevois",
+          "name": "Transports Publics Genevois",
+          "short_name": "TPG",
           "website": "http://www.sbb.ch",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "000248"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0m-svbautostädtischeverkehrsbetriebebern",
-          "name": "Städtische Verkehrsbetriebe Bern",
-          "short_name": "SVB",
-          "website": "http://www.sbb.ch",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "000827"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0q5-sgvvierwaldstättersee",
-          "name": "Schifffahrtsgesellschaft des Vierwaldstättersees",
-          "short_name": "SGV",
-          "website": "http://www.sbb.ch",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "000185"
+              "gtfs_agency_id": "000881"
             }
           ]
         },
@@ -113,61 +91,6 @@
           ]
         },
         {
-          "onestop_id": "o-u0-sbbschweizerischebundesbahnensbb",
-          "name": "Schweizerische Bundesbahnen",
-          "short_name": "SBB",
-          "website": "http://www.sbb.ch",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "000011"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0-pagpostautoschweiz",
-          "name": "PostAuto Schweiz",
-          "short_name": "PAG",
-          "website": "http://www.sbb.ch",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "000801"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0qdn-lrfrhäzüns~feldis~veulden",
-          "name": "Luftseilbahn Rhäzüns-Feldis",
-          "short_name": "LRF",
-          "website": "http://www.viamala.ch/winter/wintersport/wintersportgebiete/feldis/betriebszeiten-tarife/betriebszeiten/luftseilbahn-rhaezuens-feldis-ag-lrf.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "000232"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0q59-rbrigi~bahnen",
-          "name": "Rigi-Bahnen",
-          "short_name": "RB",
-          "website": "http://www.sbb.ch",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "000137"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0qj-vbzverkehrsbetriebezürich",
-          "name": "Verkehrsbetriebe Zürich - Buses & funiculars",
-          "short_name": "VBZ",
-          "website": "http://www.sbb.ch",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "000849"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u0kg-trn~tctransportspublicsneuchâteloissatc",
           "name": "Transports Publics Neuchâtelois - La Locie",
           "short_name": "transN",
@@ -185,13 +108,90 @@
           ]
         },
         {
-          "onestop_id": "o-u0h-tpgtransportspublicsgenevois",
-          "name": "Transports Publics Genevois",
-          "short_name": "TPG",
+          "onestop_id": "o-u0m-svbautostädtischeverkehrsbetriebebern",
+          "name": "Städtische Verkehrsbetriebe Bern",
+          "short_name": "SVB",
           "website": "http://www.sbb.ch",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "000881"
+              "gtfs_agency_id": "000827"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0q5-sgvvierwaldstättersee",
+          "name": "Schifffahrtsgesellschaft des Vierwaldstättersees",
+          "short_name": "SGV",
+          "website": "http://www.sbb.ch",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "000185"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0q59-rbrigi~bahnen",
+          "name": "Rigi-Bahnen",
+          "short_name": "RB",
+          "website": "http://www.sbb.ch",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "000137"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0q5d4-lkrkräbel~rigischeidegg",
+          "name": "Luftseilbahn Kräbel-Rigi Scheidegg",
+          "short_name": "LKR",
+          "website": "http://www.sbb.ch",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "000248"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0qdn-lrfrhäzüns~feldis~veulden",
+          "name": "Luftseilbahn Rhäzüns-Feldis",
+          "short_name": "LRF",
+          "website": "http://www.viamala.ch/winter/wintersport/wintersportgebiete/feldis/betriebszeiten-tarife/betriebszeiten/luftseilbahn-rhaezuens-feldis-ag-lrf.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "000232"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0qdny-sfmsesselbahnfeldis~mutta",
+          "name": "Sesselbahn Feldis-Mutta",
+          "short_name": "SFM",
+          "website": "http://www.viamala.ch/winter/wintersport/wintersportgebiete/feldis/betriebszeiten-tarife/betriebszeiten/sesselbahn-und-skilifte-feldis-ag-ssf.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "003158"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0qj-vbzverkehrsbetriebezürich",
+          "name": "Verkehrsbetriebe Zürich - Buses & funiculars",
+          "short_name": "VBZ",
+          "website": "http://www.sbb.ch",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "000849"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0qj6z-dbzdolderbahnbetriebsag",
+          "name": "Dolderbahn-Betriebs",
+          "short_name": "DBZ",
+          "website": "http://www.sbb.ch",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "000164"
             }
           ]
         }

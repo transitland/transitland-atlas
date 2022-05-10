@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qcy-nevadacountygoldcountrystage",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.trilliumtransit.com/gtfs/goldcountrystage-ca-us/goldcountrystage-ca-us.zip"
       },
@@ -13,18 +13,21 @@
       "operators": [
         {
           "onestop_id": "o-9qcy-nevadacountygoldcountrystage",
-          "tags": {
-            "us_ntd_id": "9R02-91095",
-            "twitter_general": "NevadaCountyCA"
-          },
           "name": "Nevada County",
           "short_name": "Gold Country Stage",
           "website": "http://www.goldcountrystage.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-nevadacountygoldcountrystage~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "NevadaCountyCA",
+            "us_ntd_id": "9R02-91095"
+          }
         }
       ]
     }

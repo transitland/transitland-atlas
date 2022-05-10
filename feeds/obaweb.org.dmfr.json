@@ -2,16 +2,118 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-c22-piercetransit~soundtransit",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.sound.obaweb.org/prod/3_gtfs.zip"
+      },
+      "license": {
+        "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22u-piercetransit",
+          "name": "Pierce Transit",
+          "website": "http://www.piercetransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3",
+              "feed_onestop_id": "f-c22-piercetransit~soundtransit"
+            },
+            {
+              "feed_onestop_id": "f-piercetransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "PierceTransit",
+            "us_ntd_id": "00003",
+            "wikidata_id": "Q7191834"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c22e-intercitytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.sound.obaweb.org/prod/19_gtfs.zip"
+      },
+      "license": {
+        "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "intercity-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22e-intercitytransit",
+          "name": "Intercity Transit",
+          "website": "http://www.Intercitytransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "19",
+              "feed_onestop_id": "f-c22e-intercitytransit"
+            },
+            {
+              "feed_onestop_id": "f-intercitytransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "intercitytransi",
+            "us_ntd_id": "00019",
+            "wikidata_id": "Q2493414"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c23-soundtransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.sound.obaweb.org/prod/40_gtfs.zip"
+      },
+      "license": {
+        "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "sound-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c23-soundtransit",
+          "name": "Sound Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c23-soundtransit"
+            },
+            {
+              "feed_onestop_id": "f-soundtransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "kcmetrobus",
+            "us_ntd_id": "00003",
+            "wikidata_id": "Q6411393"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-c23p1-seattlechildrenshospitalshuttle",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.sound.obaweb.org/prod/98_gtfs.zip"
       },
       "license": {
         "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "seattle-childrens-hospital-shuttle"
@@ -24,91 +126,24 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "98"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c22-piercetransit~soundtransit",
-      "urls": {
-        "static_current": "https://gtfs.sound.obaweb.org/prod/3_gtfs.zip"
-      },
-      "license": {
-        "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c22u-piercetransit",
-          "tags": {
-            "us_ntd_id": "00003",
-            "wikidata_id": "Q7191834",
-            "twitter_general": "PierceTransit"
-          },
-          "name": "Pierce Transit",
-          "website": "http://www.piercetransit.org",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-c22-piercetransit~soundtransit",
-              "gtfs_agency_id": "3"
             },
             {
-              "feed_onestop_id": "f-piercetransit~rt"
+              "feed_onestop_id": "f-seattlechildrenshospitalshuttle~rt"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c23-soundtransit",
-      "urls": {
-        "static_current": "https://gtfs.sound.obaweb.org/prod/40_gtfs.zip"
-      },
-      "license": {
-        "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "sound-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c23-soundtransit",
-          "tags": {
-            "us_ntd_id": "00003",
-            "wikidata_id": "Q6411393",
-            "twitter_general": "kcmetrobus"
-          },
-          "name": "Sound Transit",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-soundtransit~rt"
-            },
-            {
-              "feed_onestop_id": "f-c23-soundtransit"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-c290-everetttransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.sound.obaweb.org/prod/97_gtfs.zip"
       },
       "license": {
         "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "everett-transit"
@@ -116,178 +151,141 @@
       "operators": [
         {
           "onestop_id": "o-c290-everetttransit",
-          "tags": {
-            "us_ntd_id": "00005",
-            "wikidata_id": "Q5417075"
-          },
           "name": "Everett Transit",
           "website": "http://www.everetttransit.org/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-c290-everetttransit",
-              "gtfs_agency_id": "97"
+              "gtfs_agency_id": "97",
+              "feed_onestop_id": "f-c290-everetttransit"
             },
             {
               "feed_onestop_id": "f-everetttransit~rt"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c22e-intercitytransit",
-      "urls": {
-        "static_current": "https://gtfs.sound.obaweb.org/prod/19_gtfs.zip"
-      },
-      "license": {
-        "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "intercity-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c22e-intercitytransit",
+          ],
           "tags": {
-            "us_ntd_id": "00019",
-            "wikidata_id": "Q2493414",
-            "twitter_general": "intercitytransi"
-          },
-          "name": "Intercity Transit",
-          "website": "http://www.Intercitytransit.com",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-c22e-intercitytransit",
-              "gtfs_agency_id": "19"
-            },
-            {
-              "feed_onestop_id": "f-intercitytransit~rt"
-            }
-          ]
+            "us_ntd_id": "00005",
+            "wikidata_id": "Q5417075"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-everetttransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/97.pb",
+        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/97.pb",
         "realtime_trip_updates": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/trip-updates-for-agency/97.pb",
-        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/97.pb"
+        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/97.pb"
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       },
       "authorization": {
         "type": "query_param",
         "param_name": "key",
         "info_url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd"
-      },
-      "license": {
-        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-intercitytransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/19.pb",
+        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/19.pb",
         "realtime_trip_updates": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/trip-updates-for-agency/19.pb",
-        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/19.pb"
+        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/19.pb"
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       },
       "authorization": {
         "type": "query_param",
         "param_name": "key",
         "info_url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd"
-      },
-      "license": {
-        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-kingcountymetro~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/1.pb",
+        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/1.pb",
         "realtime_trip_updates": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/trip-updates-for-agency/1.pb",
-        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/1.pb"
+        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/1.pb"
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       },
       "authorization": {
         "type": "query_param",
         "param_name": "key",
         "info_url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd"
-      },
-      "license": {
-        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-piercetransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/3.pb",
+        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/3.pb",
         "realtime_trip_updates": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/trip-updates-for-agency/3.pb",
-        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/3.pb"
+        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/3.pb"
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       },
       "authorization": {
         "type": "query_param",
         "param_name": "key",
         "info_url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd"
-      },
-      "license": {
-        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-seattlestreetcar~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/23.pb",
+        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/23.pb",
         "realtime_trip_updates": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/trip-updates-for-agency/23.pb",
-        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/23.pb"
+        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/23.pb"
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       },
       "authorization": {
         "type": "query_param",
         "param_name": "key",
         "info_url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd"
-      },
-      "license": {
-        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-soundtransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/40.pb",
+        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/40.pb",
         "realtime_trip_updates": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/trip-updates-for-agency/40.pb",
-        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/40.pb"
+        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/40.pb"
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       },
       "authorization": {
         "type": "query_param",
         "param_name": "key",
         "info_url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd"
-      },
-      "license": {
-        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-wsf~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/95.pb",
+        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/95.pb",
         "realtime_trip_updates": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/trip-updates-for-agency/95.pb",
-        "realtime_vehicle_positions": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/vehicle-positions-for-agency/95.pb"
+        "realtime_alerts": "http://api.pugetsound.onebusaway.org/api/gtfs_realtime/alerts-for-agency/95.pb"
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       },
       "authorization": {
         "type": "query_param",
         "param_name": "key",
         "info_url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd"
-      },
-      "license": {
-        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use"
       }
     }
   ],

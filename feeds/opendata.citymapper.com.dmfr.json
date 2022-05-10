@@ -2,27 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-gcpvn-citymapper",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://opendata.citymapper.com/uk-london/gtfs.zip"
       },
       "license": {
         "url": "https://opendatacommons.org/licenses/pddl/1.0/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-smartbus~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "http://opendata.citymapper.com/uk-london/trip_updates.pbf"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-gcpvn-citymapper",
@@ -31,13 +29,14 @@
       "website": "https://citymapper.com/smartbus",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-gcpvn-citymapper",
-          "gtfs_agency_id": "CM"
+          "gtfs_agency_id": "CM",
+          "feed_onestop_id": "f-gcpvn-citymapper"
         },
         {
           "feed_onestop_id": "f-smartbus~rt"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

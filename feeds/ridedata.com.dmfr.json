@@ -2,20 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dphv-delawareareatransitagency",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.ridedata.com/transit/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dphv-delawareareatransitagency",
-          "tags": {
-            "us_ntd_id": "50199",
-            "twitter_general": "DCTDelCounty"
-          },
           "name": "Delaware Area Transit Agency",
-          "short_name": "DATA"
+          "short_name": "DATA",
+          "tags": {
+            "twitter_general": "DCTDelCounty",
+            "us_ntd_id": "50199"
+          }
         }
       ]
     }

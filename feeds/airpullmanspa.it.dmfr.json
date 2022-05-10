@@ -2,32 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-airpullmanspa",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://usbshare.agenziatpl.it/index.php/s/Gz7EBQqzybjEkq3/download"
       },
       "license": {
         "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-airpullmanspa",
-          "tags": {},
           "name": "AirPullman",
           "short_name": "AP",
           "website": "https://www.airpullmanspa.com/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-airpullmanspa",
-              "gtfs_agency_id": "AirPullman_feed"
+              "gtfs_agency_id": "AirPullman_feed",
+              "feed_onestop_id": "f-airpullmanspa"
             }
           ]
         }
-        
       ]
     }
   ],

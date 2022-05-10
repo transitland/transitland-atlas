@@ -2,32 +2,30 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
+      "id": "f-barrie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "http://www.myridebarrie.ca/gtfs/GTFS_TripUpdates.pb",
+        "realtime_alerts": "http://www.myridebarrie.ca/gtfs/GTFS_ServiceAlerts.pb"
+      }
+    },
+    {
       "id": "f-dpzk-barrietransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.myridebarrie.ca/gtfs/Google_transit.zip"
       },
       "license": {
         "url": "http://www.barrie.ca/Living/Getting%20Around/BarrieTransit/Pages/Barrie-GTFS.aspx",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "barrie-transit"
       }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-barrie~rt",
-      "urls": {
-        "realtime_alerts": "http://www.myridebarrie.ca/gtfs/GTFS_ServiceAlerts.pb",
-        "realtime_trip_updates": "http://www.myridebarrie.ca/gtfs/GTFS_TripUpdates.pb",
-        "realtime_vehicle_positions": "http://www.myridebarrie.ca/gtfs/GTFS_VehiclePositions.pb"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dpzk-barrietransit",
@@ -35,13 +33,14 @@
       "website": "http://www.barrie.ca/transit",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-dpzk-barrietransit",
-          "gtfs_agency_id": "478c63c1-9928-4080-bc80-0e8143f4df1b"
+          "feed_onestop_id": "f-barrie~rt"
         },
         {
-          "feed_onestop_id": "f-barrie~rt"
+          "gtfs_agency_id": "478c63c1-9928-4080-bc80-0e8143f4df1b",
+          "feed_onestop_id": "f-dpzk-barrietransit"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

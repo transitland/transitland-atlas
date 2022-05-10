@@ -2,22 +2,18 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-r6-nswtrainlink~sydneytrains~buswayswesternsydney~interlinebus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.transport.nsw.gov.au/v1/publictransport/timetables/complete/gtfs",
         "static_historic": [
           "https://opendata.transport.nsw.gov.au/sites/default/files/resources/full_greater_sydney_gtfs_static_0.zip"
         ]
       },
-      "tags": {
-        "manual_import": "true"
-      },
       "license": {
         "url": "https://creativecommons.org/licenses/by/4.0/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Transport for NSW"
       },
       "authorization": {
@@ -25,54 +21,47 @@
         "param_name": "Authorization",
         "info_url": "https://opendata.transport.nsw.gov.au/get-started"
       },
+      "tags": {
+        "manual_import": "true"
+      },
       "operators": [
         {
-          "onestop_id": "o-r643-newmansbusservice",
-          "name": "Newman's Bus Service",
+          "onestop_id": "o-r1vj-sunraysiabuslines",
+          "name": "Sunraysia Buslines",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B018"
+              "gtfs_agency_id": "B009"
             }
           ]
         },
         {
-          "onestop_id": "o-r387-cannsbuslines",
-          "name": "Cann's Buslines",
+          "onestop_id": "o-r1wfw-newtonsbusservice",
+          "name": "Newtons Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B020"
+              "gtfs_agency_id": "B003"
             }
           ]
         },
         {
-          "onestop_id": "o-r659k-centralcoastferries",
-          "name": "Central Coast Ferries",
+          "onestop_id": "o-r1xjf-purtillbrothers",
+          "name": "Purtill Brothers",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "303"
+              "gtfs_agency_id": "B008"
             }
           ]
         },
         {
-          "onestop_id": "o-r6ub-lawrencebusservice",
-          "name": "Lawrence Bus Service",
+          "onestop_id": "o-r1zu-griffithbuslines",
+          "name": "Griffith Buslines ",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B055"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6ez-michaeljillett",
-          "name": "Michael Jillett",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B085"
+              "gtfs_agency_id": "B007"
             }
           ]
         },
@@ -93,105 +82,18 @@
           ]
         },
         {
-          "onestop_id": "o-r3d-murrayscoaches",
-          "name": "Murrays Coaches",
+          "onestop_id": "o-r3-transdevnsw",
+          "name": "Transdev NSW",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B079"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6177-westernroadliners",
-          "name": "Western Road Liners ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B039"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6-portstephenscoaches",
-          "name": "Port Stephens Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "75"
+              "gtfs_agency_id": "2442"
             },
             {
-              "gtfs_agency_id": "2449"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6ef-edwardscoaches",
-          "name": "Edwards Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
+              "gtfs_agency_id": "2443"
+            },
             {
-              "gtfs_agency_id": "B040"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gk-dionsbusservice",
-          "name": "Dions Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2458"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6eqw-inverellbusservice",
-          "name": "Inverell Bus Service ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B041"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r386w-dysons",
-          "name": "Dysons",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B043"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r66zd-hopesbusservice",
-          "name": "Hopes Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B004"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3grr1-statetransit",
-          "name": "State Transit",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "11954"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gq-punchbowlbuscompany",
-          "name": "Punchbowl Bus Company",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2437"
+              "gtfs_agency_id": "2444"
             }
           ]
         },
@@ -209,132 +111,32 @@
           ]
         },
         {
-          "onestop_id": "o-r3gx3-manlyfastferry",
-          "name": "Manly Fast Ferry",
+          "onestop_id": "o-r386w-dysons",
+          "name": "Dysons",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "306"
+              "gtfs_agency_id": "B043"
             }
           ]
         },
         {
-          "onestop_id": "o-r6vn-bhanglasinghsbusservice",
-          "name": "Bhangla Singh's Bus Service",
+          "onestop_id": "o-r386z-martinsalbury",
+          "name": "Martins Albury ",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B050"
+              "gtfs_agency_id": "B042"
             }
           ]
         },
         {
-          "onestop_id": "o-r6v-ballinabuslines",
-          "name": "Ballina Buslines",
+          "onestop_id": "o-r387-cannsbuslines",
+          "name": "Cann's Buslines",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B082"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3du-priorsbusservice",
-          "name": "Priors Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B031"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3g-nswtrainlink",
-          "name": "NSW TrainLink",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "X0000"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gr-sydneyolympicparkmajoreventbuses",
-          "name": "Sydney Olympic Park Major Event Buses",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "232"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6ut-watsonsbusservice",
-          "name": "Watson's Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B053"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r672-osbornbusservice",
-          "name": "Osborn Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B013"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6ew-symescoaches",
-          "name": "Symes Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B084"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3g1-stuartscoaches",
-          "name": "Stuarts Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "89"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6uv-goselsbusservice",
-          "name": "Gosel's Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B086"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r65d-coastalliner",
-          "name": "Coastal Liner",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2457"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3g1-kennedysbusservice",
-          "name": "Kennedys Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "88"
+              "gtfs_agency_id": "B020"
             }
           ]
         },
@@ -349,12 +151,82 @@
           ]
         },
         {
-          "onestop_id": "o-r61-ogdenscoaches",
-          "name": "Ogden's Coaches",
+          "onestop_id": "o-r3bb-busaboutwagga",
+          "name": "Busabout Wagga",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B012"
+              "gtfs_agency_id": "B045"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3bc-juneebuses",
+          "name": "Junee Buses",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B044"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3c-transborderexpress",
+          "name": "Transborder Express",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B077"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3cxx-cowrabusservice",
+          "name": "Cowra Bus Service ",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B037"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3d-murrayscoaches",
+          "name": "Murrays Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B079"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3d1c-coomacoaches",
+          "name": "Cooma Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B075"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3d8-begavalleycoaches",
+          "name": "Bega Valley Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B032"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3dd-symonsbus~coachservice",
+          "name": "Symons Bus & Coach Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B036"
             }
           ]
         },
@@ -369,12 +241,62 @@
           ]
         },
         {
-          "onestop_id": "o-r3gx-captaincookcruises",
-          "name": "Captain Cook Cruises",
+          "onestop_id": "o-r3du-priorsbusservice",
+          "name": "Priors Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "305"
+              "gtfs_agency_id": "B031"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3dy-ulladullabuslines",
+          "name": "Ulladulla Buslines ",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B035"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3f-berrimabuslines",
+          "name": "Berrima Buslines",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "79"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3f6r-pbcgoulburn",
+          "name": "PBC Goulburn",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B078"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3f7-crookwellbusservice",
+          "name": "Crookwell Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B081"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3g-busabout",
+          "name": "Busabout",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2446"
             }
           ]
         },
@@ -425,22 +347,65 @@
           ]
         },
         {
-          "onestop_id": "o-r3f-berrimabuslines",
-          "name": "Berrima Buslines",
+          "onestop_id": "o-r3g-nswtrainlink",
+          "name": "NSW TrainLink",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "79"
+              "gtfs_agency_id": "X0000"
             }
           ]
         },
         {
-          "onestop_id": "o-r3gj-pictonbuslines",
-          "name": "Picton Buslines",
+          "onestop_id": "o-r3g-shoalbus",
+          "name": "Shoal Bus",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "74"
+              "gtfs_agency_id": "121"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3g-statetransitsydney",
+          "name": "Transport for New South Wales",
+          "short_name": "TfNSW",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2441"
+            },
+            {
+              "gtfs_agency_id": "2438"
+            },
+            {
+              "gtfs_agency_id": "2440"
+            },
+            {
+              "gtfs_agency_id": "2439"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7834923"
+          }
+        },
+        {
+          "onestop_id": "o-r3g-sydneytrains",
+          "name": "Sydney Trains",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "x0001"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3g1-kennedysbusservice",
+          "name": "Kennedys Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "88"
             }
           ]
         },
@@ -455,82 +420,52 @@
           ]
         },
         {
-          "onestop_id": "o-r3d1c-coomacoaches",
-          "name": "Cooma Coaches",
+          "onestop_id": "o-r3g1-stuartscoaches",
+          "name": "Stuarts Coaches",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B075"
+              "gtfs_agency_id": "89"
             }
           ]
         },
         {
-          "onestop_id": "o-r1wfw-newtonsbusservice",
-          "name": "Newtons Bus Service",
+          "onestop_id": "o-r3g6-kiamacoachlines",
+          "name": "Kiama Coachlines",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B003"
+              "gtfs_agency_id": "72"
             }
           ]
         },
         {
-          "onestop_id": "o-r6k-winghamcoaches",
-          "name": "Wingham Coaches",
+          "onestop_id": "o-r3g7-premierillawarra",
+          "name": "Premier Illawarra",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "WHC"
+              "gtfs_agency_id": "2456"
             }
           ]
         },
         {
-          "onestop_id": "o-r6u-northernriversbuslines",
-          "name": "Northern Rivers Buslines",
+          "onestop_id": "o-r3gj-pictonbuslines",
+          "name": "Picton Buslines",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B047"
+              "gtfs_agency_id": "74"
             }
           ]
         },
         {
-          "onestop_id": "o-r6f83-reynolds~fogarty",
-          "name": "Reynolds & Fogarty",
+          "onestop_id": "o-r3gk-dionsbusservice",
+          "name": "Dions Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B002"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3f6r-pbcgoulburn",
-          "name": "PBC Goulburn",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B078"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6vh-dunoonbusservice",
-          "name": "Dunoon Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B060"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r1zu-griffithbuslines",
-          "name": "Griffith Buslines ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B007"
+              "gtfs_agency_id": "2458"
             }
           ]
         },
@@ -545,22 +480,321 @@
           ]
         },
         {
-          "onestop_id": "o-r3g-busabout",
-          "name": "Busabout",
+          "onestop_id": "o-r3gk32-dionsbusservice",
+          "name": "Dions Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2446"
+              "gtfs_agency_id": "69"
             }
           ]
         },
         {
-          "onestop_id": "o-r3dd-symonsbus~coachservice",
-          "name": "Symons Bus & Coach Service",
+          "onestop_id": "o-r3gq-interlinebusservices",
+          "name": "Interline Bus Services",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B036"
+              "gtfs_agency_id": "2434"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gq-punchbowlbuscompany",
+          "name": "Punchbowl Bus Company",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2437"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gqp-cronullaferries",
+          "name": "Cronulla Ferries",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "300"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gr-sydneyolympicparkmajoreventbuses",
+          "name": "Sydney Olympic Park Major Event Buses",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "232"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gr-transitsystems",
+          "name": "Transit Systems",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2435"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3grr1-statetransit",
+          "name": "State Transit",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11954"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gx-captaincookcruises",
+          "name": "Captain Cook Cruises",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "305"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gx-sydneyferries",
+          "name": "Sydney Ferries",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "112"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gx2-specialeventbuses",
+          "name": "Special Event Buses",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "202"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gx2-sydneylightrail",
+          "name": "Sydney Lightrail",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LR"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r3gx3-manlyfastferry",
+          "name": "Manly Fast Ferry",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "306"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r4kd4-murtonscitybus",
+          "name": "Murton's City Bus",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B024"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6-nswtrainlinkcoach",
+          "name": "NSW TrainLink - Coach",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "710"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6-nswtrainlinktrain",
+          "name": "NSW TrainLink - Regional Trains",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "711"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6-portstephenscoaches",
+          "name": "Port Stephens Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "75"
+            },
+            {
+              "gtfs_agency_id": "2449"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6-premiermotorservice",
+          "name": "Premier Motor Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B083"
+            },
+            {
+              "gtfs_agency_id": "B025"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r61-ogdenscoaches",
+          "name": "Ogden's Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B012"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6160-forbesbuslines",
+          "name": "Forbes Bus Lines",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B038"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6177-westernroadliners",
+          "name": "Western Road Liners ",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B039"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r638-dubbobuslines",
+          "name": "Dubbo Buslines",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B014"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r643-bathurstbuslines",
+          "name": "Bathurst Buslines",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "123"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r643-newmansbusservice",
+          "name": "Newman's Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B018"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r644-orangebuslines",
+          "name": "Orange Buslines ",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B021"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r649-lithgowbuslines",
+          "name": "Lithgow Buslines",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "122"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r65-buswayscentralcoast",
+          "name": "Busways Central Coast",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2452"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r65-buswayswesternsydney",
+          "name": "Busways Western Sydney",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2433"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r65-huntervalleybuses",
+          "name": "Hunter Valley Buses",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2448"
+            },
+            {
+              "gtfs_agency_id": "2450"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r65-intercitytrain",
+          "name": "NSW TrainLink - Intercity Trains",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "X000"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r65-rovercoaches",
+          "name": "Rover Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2447"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r650-bluemountainstransit",
+          "name": "Blue Mountains Transit",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2454"
             }
           ]
         },
@@ -585,292 +819,12 @@
           ]
         },
         {
-          "onestop_id": "o-r3bc-juneebuses",
-          "name": "Junee Buses",
+          "onestop_id": "o-r658-palmbeachferryservice",
+          "name": "Palm Beach Ferry Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B044"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3f7-crookwellbusservice",
-          "name": "Crookwell Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B081"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3cxx-cowrabusservice",
-          "name": "Cowra Bus Service ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B037"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r65d-redbusservice",
-          "name": "Red Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2453"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r65-rovercoaches",
-          "name": "Rover Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2447"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gqp-cronullaferries",
-          "name": "Cronulla Ferries",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "300"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gq-interlinebusservices",
-          "name": "Interline Bus Services",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2434"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3c-transborderexpress",
-          "name": "Transborder Express",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B077"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3bb-busaboutwagga",
-          "name": "Busabout Wagga",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B045"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r650-bluemountainstransit",
-          "name": "Blue Mountains Transit",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2454"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3g7-premierillawarra",
-          "name": "Premier Illawarra",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2456"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r65-buswayswesternsydney",
-          "name": "Busways Western Sydney",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2433"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6vnd-murwillumbahbuscompany",
-          "name": "Murwillumbah Bus Company ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B056"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6k2-forstercoaches",
-          "name": "Forster Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B067"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6vn-parsonsbusservice",
-          "name": "Parsons Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B058"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6s-buswaysgrafton",
-          "name": "Busways Grafton",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "y"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6-nswtrainlinkcoach",
-          "name": "NSW TrainLink - Coach",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "710"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gx2-specialeventbuses",
-          "name": "Special Event Buses",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "202"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r67r1-hannafordsbusservice",
-          "name": "Hannafords Bus Service ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B010"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r1vj-sunraysiabuslines",
-          "name": "Sunraysia Buslines",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B009"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6h-buswaysgreatlakes",
-          "name": "Busways (Great Lakes)",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B072"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6v09-clarenceriverferries",
-          "name": "Clarence River Ferries",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CRF"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r65-buswayscentralcoast",
-          "name": "Busways Central Coast",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2452"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r65-intercitytrain",
-          "name": "NSW TrainLink - Intercity Trains",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "X000"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r65u-statetransitnewcastle",
-          "name": "State Transit Newcastle",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2451"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r1xjf-purtillbrothers",
-          "name": "Purtill Brothers",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B008"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gk32-dionsbusservice",
-          "name": "Dions Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "69"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6ugf-casinobusservice",
-          "name": "Casino Bus Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B054"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6k6-tinoneebuscompany",
-          "name": "Tinonee Bus Company",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B069"
+              "gtfs_agency_id": "301"
             }
           ]
         },
@@ -885,109 +839,6 @@
           ]
         },
         {
-          "onestop_id": "o-r6-nswtrainlinktrain",
-          "name": "NSW TrainLink - Regional Trains",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "711"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6k-egginscomfortcoaches",
-          "name": "Eggins Comfort Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B066"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3g-sydneytrains",
-          "name": "Sydney Trains",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "x0001"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gx-sydneyferries",
-          "name": "Sydney Ferries",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "112"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6kx-cavanaghsbuscompany",
-          "name": "Cavanaghs Bus Company",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B065"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3g-statetransitsydney",
-          "tags": {
-            "wikidata_id": "Q7834923"
-          },
-          "name": "Transport for New South Wales",
-          "short_name": "TfNSW",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2441"
-            },
-            {
-              "gtfs_agency_id": "2438"
-            },
-            {
-              "gtfs_agency_id": "2440"
-            },
-            {
-              "gtfs_agency_id": "2439"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6sg7-sawtellcoaches",
-          "name": "Sawtell Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B052"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r67-tamworthbuslines",
-          "name": "Tamworth Buslines",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B011"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6vj-brunswickvalleycoaches",
-          "name": "Brunswick Valley Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BVC"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-r6591t-brooklynferryservice",
           "name": "Brooklyn Ferry Service",
           "website": "http://transportnsw.info",
@@ -998,22 +849,42 @@
           ]
         },
         {
-          "onestop_id": "o-r6s-ryansbusservice",
-          "name": "Ryans Bus Service",
+          "onestop_id": "o-r659k-centralcoastferries",
+          "name": "Central Coast Ferries",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B057"
+              "gtfs_agency_id": "303"
             }
           ]
         },
         {
-          "onestop_id": "o-r4kd4-murtonscitybus",
-          "name": "Murton's City Bus",
+          "onestop_id": "o-r65d-coastalliner",
+          "name": "Coastal Liner",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B024"
+              "gtfs_agency_id": "2457"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r65d-redbusservice",
+          "name": "Red Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2453"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r65u-statetransitnewcastle",
+          "name": "State Transit Newcastle",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2451"
             }
           ]
         },
@@ -1028,161 +899,52 @@
           ]
         },
         {
-          "onestop_id": "o-r649-lithgowbuslines",
-          "name": "Lithgow Buslines",
+          "onestop_id": "o-r66z-millerdsbusservice",
+          "name": "Millerds Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "122"
+              "gtfs_agency_id": "B001"
             }
           ]
         },
         {
-          "onestop_id": "o-r3g-shoalbus",
-          "name": "Shoal Bus",
+          "onestop_id": "o-r66zd-hopesbusservice",
+          "name": "Hopes Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "121"
+              "gtfs_agency_id": "B004"
             }
           ]
         },
         {
-          "onestop_id": "o-r65-huntervalleybuses",
-          "name": "Hunter Valley Buses",
+          "onestop_id": "o-r67-tamworthbuslines",
+          "name": "Tamworth Buslines",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2448"
-            },
-            {
-              "gtfs_agency_id": "2450"
+              "gtfs_agency_id": "B011"
             }
           ]
         },
         {
-          "onestop_id": "o-r3-transdevnsw",
-          "name": "Transdev NSW",
+          "onestop_id": "o-r672-osbornbusservice",
+          "name": "Osborn Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2442"
-            },
-            {
-              "gtfs_agency_id": "2443"
-            },
-            {
-              "gtfs_agency_id": "2444"
+              "gtfs_agency_id": "B013"
             }
           ]
         },
         {
-          "onestop_id": "o-r638-dubbobuslines",
-          "name": "Dubbo Buslines",
+          "onestop_id": "o-r67r1-hannafordsbusservice",
+          "name": "Hannafords Bus Service ",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B014"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6160-forbesbuslines",
-          "name": "Forbes Bus Lines",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B038"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6vh-blanchsbuscompany",
-          "name": "Blanch's Bus Company",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B048"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6uu-wallersbuscompany",
-          "name": "Waller's Bus Company ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B062"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r643-bathurstbuslines",
-          "name": "Bathurst Buslines",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "123"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3dy-ulladullabuslines",
-          "name": "Ulladulla Buslines ",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B035"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3d8-begavalleycoaches",
-          "name": "Bega Valley Coaches",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B032"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r658-palmbeachferryservice",
-          "name": "Palm Beach Ferry Service",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "301"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6vp-surfsidebuslines",
-          "name": "Surfside Buslines",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B061"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r3gx2-sydneylightrail",
-          "name": "Sydney Lightrail",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "LR"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-r6k-buswaysportmacquarie",
-          "name": "Busways (Port Macquarie)",
-          "website": "http://transportnsw.info",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "B073"
+              "gtfs_agency_id": "B010"
             }
           ]
         },
@@ -1197,32 +959,192 @@
           ]
         },
         {
-          "onestop_id": "o-r3g6-kiamacoachlines",
-          "name": "Kiama Coachlines",
+          "onestop_id": "o-r6ef-edwardscoaches",
+          "name": "Edwards Coaches",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "72"
+              "gtfs_agency_id": "B040"
             }
           ]
         },
         {
-          "onestop_id": "o-r644-orangebuslines",
-          "name": "Orange Buslines ",
+          "onestop_id": "o-r6eqw-inverellbusservice",
+          "name": "Inverell Bus Service ",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B021"
+              "gtfs_agency_id": "B041"
             }
           ]
         },
         {
-          "onestop_id": "o-r386z-martinsalbury",
-          "name": "Martins Albury ",
+          "onestop_id": "o-r6ew-symescoaches",
+          "name": "Symes Coaches",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B042"
+              "gtfs_agency_id": "B084"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6ez-michaeljillett",
+          "name": "Michael Jillett",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B085"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6f83-reynolds~fogarty",
+          "name": "Reynolds & Fogarty",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B002"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6h-buswaysgreatlakes",
+          "name": "Busways (Great Lakes)",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B072"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6k-buswaysportmacquarie",
+          "name": "Busways (Port Macquarie)",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B073"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6k-egginscomfortcoaches",
+          "name": "Eggins Comfort Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B066"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6k-winghamcoaches",
+          "name": "Wingham Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WHC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6k2-forstercoaches",
+          "name": "Forster Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B067"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6k6-tinoneebuscompany",
+          "name": "Tinonee Bus Company",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B069"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6kx-cavanaghsbuscompany",
+          "name": "Cavanaghs Bus Company",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B065"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6s-buswaysgrafton",
+          "name": "Busways Grafton",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "y"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6s-ryansbusservice",
+          "name": "Ryans Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B057"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6sg7-sawtellcoaches",
+          "name": "Sawtell Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B052"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6u-northernriversbuslines",
+          "name": "Northern Rivers Buslines",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B047"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6ub-lawrencebusservice",
+          "name": "Lawrence Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B055"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6ugf-casinobusservice",
+          "name": "Casino Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B054"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6ut-watsonsbusservice",
+          "name": "Watson's Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B053"
             }
           ]
         },
@@ -1237,35 +1159,112 @@
           ]
         },
         {
-          "onestop_id": "o-r6-premiermotorservice",
-          "name": "Premier Motor Service",
+          "onestop_id": "o-r6uu-wallersbuscompany",
+          "name": "Waller's Bus Company ",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B083"
-            },
-            {
-              "gtfs_agency_id": "B025"
+              "gtfs_agency_id": "B062"
             }
           ]
         },
         {
-          "onestop_id": "o-r3gr-transitsystems",
-          "name": "Transit Systems",
+          "onestop_id": "o-r6uv-goselsbusservice",
+          "name": "Gosel's Bus Service",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2435"
+              "gtfs_agency_id": "B086"
             }
           ]
         },
         {
-          "onestop_id": "o-r66z-millerdsbusservice",
-          "name": "Millerds Bus Service",
+          "onestop_id": "o-r6v-ballinabuslines",
+          "name": "Ballina Buslines",
           "website": "http://transportnsw.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "B001"
+              "gtfs_agency_id": "B082"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6v09-clarenceriverferries",
+          "name": "Clarence River Ferries",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CRF"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6vh-blanchsbuscompany",
+          "name": "Blanch's Bus Company",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B048"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6vh-dunoonbusservice",
+          "name": "Dunoon Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B060"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6vj-brunswickvalleycoaches",
+          "name": "Brunswick Valley Coaches",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BVC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6vn-bhanglasinghsbusservice",
+          "name": "Bhangla Singh's Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B050"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6vn-parsonsbusservice",
+          "name": "Parsons Bus Service",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B058"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6vnd-murwillumbahbuscompany",
+          "name": "Murwillumbah Bus Company ",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B056"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-r6vp-surfsidebuslines",
+          "name": "Surfside Buslines",
+          "website": "http://transportnsw.info",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B061"
             }
           ]
         }

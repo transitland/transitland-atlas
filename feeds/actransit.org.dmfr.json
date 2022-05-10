@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q9-actransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.actransit.org/transit/gtfs/download?token=2512B81107A09D2DC44895CDDC650D47",
         "static_historic": [
@@ -15,54 +15,56 @@
         "url": "http://www.actransit.org/data-terms-and-conditions/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
-        "attribution_instructions": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.",
-        "license_spdx_identifier": "CC-BY-3.0"
+        "attribution_instructions": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use."
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-actransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.actransit.org/transit/gtfsrt/alerts?token={ACTRANSIT_API_KEY}",
-        "realtime_trip_updates": "http://api.actransit.org/transit/gtfsrt/tripupdates?token={ACTRANSIT_API_KEY}",
-        "realtime_vehicle_positions": "http://api.actransit.org/transit/gtfsrt/vehicles?token={ACTRANSIT_API_KEY}"
+        "realtime_vehicle_positions": "http://api.actransit.org/transit/gtfsrt/vehicles",
+        "realtime_trip_updates": "http://api.actransit.org/transit/gtfsrt/tripupdates",
+        "realtime_alerts": "http://api.actransit.org/transit/gtfsrt/alerts"
       },
       "license": {
         "url": "http://www.actransit.org/data-terms-and-conditions/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_instructions": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://api.actransit.org/transit/Account/Register"
       },
       "tags": {
         "notes": "Requires API key."
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9q9-actransit",
-      "tags": {
-        "us_ntd_id": "90014",
-        "wikidata_id": "Q4353850",
-        "twitter_general": "rideact"
-      },
       "name": "Alameda-Contra Costa Transit District",
       "short_name": "AC Transit",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-actransit~rt"
+          "feed_onestop_id": "f-9q9-actransit"
         },
         {
-          "feed_onestop_id": "f-9q9-actransit"
+          "feed_onestop_id": "f-actransit~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "rideact",
+        "us_ntd_id": "90014",
+        "wikidata_id": "Q4353850"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

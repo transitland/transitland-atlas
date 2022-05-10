@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9mu-orangecountytransportationauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.octa.net/current/google_transit.zip"
       },
@@ -15,24 +15,18 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-octa~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://api.octa.net/GTFSRealTime/protoBuf/servicealerts.aspx",
+        "realtime_vehicle_positions": "http://api.octa.net/GTFSRealTime/protoBuf/VehiclePositions.aspx",
         "realtime_trip_updates": "http://api.octa.net/GTFSRealTime/protoBuf/tripupdates.aspx",
-        "realtime_vehicle_positions": "http://api.octa.net/GTFSRealTime/protoBuf/VehiclePositions.aspx"
+        "realtime_alerts": "http://api.octa.net/GTFSRealTime/protoBuf/servicealerts.aspx"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9mu-orangecountytransportationauthority",
-      "tags": {
-        "us_ntd_id": "90036",
-        "wikidata_id": "Q7099595",
-        "twitter_general": "goocta"
-      },
       "name": "Orange County Transportation Authority",
       "short_name": "OCTA",
       "associated_feeds": [
@@ -42,7 +36,13 @@
         {
           "feed_onestop_id": "f-octa~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "goocta",
+        "us_ntd_id": "90036",
+        "wikidata_id": "Q7099595"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

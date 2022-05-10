@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qh-omnitrans",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.omnitrans.org/google/google_transit.zip"
       },
@@ -13,13 +13,13 @@
       "operators": [
         {
           "onestop_id": "o-9qh-omnitrans",
-          "tags": {
-            "us_ntd_id": "90029",
-            "wikidata_id": "Q7090404",
-            "twitter_general": "Omnitrans"
-          },
           "name": "OmniTrans",
-          "website": "http://www.omnitrans.org"
+          "website": "http://www.omnitrans.org",
+          "tags": {
+            "twitter_general": "Omnitrans",
+            "us_ntd_id": "90029",
+            "wikidata_id": "Q7090404"
+          }
         }
       ]
     }

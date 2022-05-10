@@ -2,19 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-madison~county~transit~il~us",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://mct.org/googletransit/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-madison~county~transit~il~us",
+          "name": "Madison County Transit",
           "tags": {
             "us_ntd_id": "50146",
             "wikidata_id": "Q6727956"
-          },
-          "name": "Madison County Transit"
+          }
         }
       ]
     }

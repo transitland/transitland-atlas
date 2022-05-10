@@ -2,39 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-rbs-gowellington~tranzitcoachlines~paraparaumutaxisltd~kapitic",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.metlink.org.nz/assets/Google_Transit/google-transit.zip"
+        "static_current": "https://static.opendata.metlink.org.nz/v1/gtfs/full.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-rbsrn-paraparaumutaxisltd",
-          "name": "Paraparaumu Taxis Ltd",
-          "website": "http://www.paraparaumutaxis.co.nz/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "PTXL"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-rbsm-valleyflyer",
-          "name": "Valley Flyer",
+          "onestop_id": "o-rbs-manacoachservicesltd",
+          "name": "Mana Coach Services Ltd",
           "website": "http://www.metlink.org.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "VLYF"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-rbsm3-newlandscoachservices",
-          "name": "Newlands Coach Services",
-          "website": "http://www.metlink.org.nz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NLDS"
+              "gtfs_agency_id": "MANA"
             }
           ]
         },
@@ -49,16 +29,6 @@
           ]
         },
         {
-          "onestop_id": "o-rbu8-madgecoachlineslimited",
-          "name": "Madge Coachlines Limited",
-          "website": "http://www.metlink.org.nz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MADG"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-rbsm-eastbywestferry",
           "name": "East By West Ferry",
           "website": "http://www.metlink.org.nz",
@@ -69,12 +39,12 @@
           ]
         },
         {
-          "onestop_id": "o-rbs-manacoachservicesltd",
-          "name": "Mana Coach Services Ltd",
+          "onestop_id": "o-rbsm-gowellington",
+          "name": "Go Wellington",
           "website": "http://www.metlink.org.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "MANA"
+              "gtfs_agency_id": "GOW"
             }
           ]
         },
@@ -89,22 +59,12 @@
           ]
         },
         {
-          "onestop_id": "o-rbsy-tranzitcoachlines",
-          "name": "Tranzit Coachlines",
+          "onestop_id": "o-rbsm-valleyflyer",
+          "name": "Valley Flyer",
           "website": "http://www.metlink.org.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "TZWA"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-rbsq-kapiticoachtourslimited",
-          "name": "Kapiti Coach Tours Limited",
-          "website": "http://www.metlink.org.nz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "KCTL"
+              "gtfs_agency_id": "VLYF"
             }
           ]
         },
@@ -119,12 +79,52 @@
           ]
         },
         {
-          "onestop_id": "o-rbsm-gowellington",
-          "name": "Go Wellington",
+          "onestop_id": "o-rbsm3-newlandscoachservices",
+          "name": "Newlands Coach Services",
           "website": "http://www.metlink.org.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "GOW"
+              "gtfs_agency_id": "NLDS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rbsq-kapiticoachtourslimited",
+          "name": "Kapiti Coach Tours Limited",
+          "website": "http://www.metlink.org.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KCTL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rbsrn-paraparaumutaxisltd",
+          "name": "Paraparaumu Taxis Ltd",
+          "website": "http://www.paraparaumutaxis.co.nz/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PTXL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rbsy-tranzitcoachlines",
+          "name": "Tranzit Coachlines",
+          "website": "http://www.metlink.org.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TZWA"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rbu8-madgecoachlineslimited",
+          "name": "Madge Coachlines Limited",
+          "website": "http://www.metlink.org.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MADG"
             }
           ]
         }

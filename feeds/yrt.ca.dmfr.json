@@ -2,28 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpz-yorkregiontransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.yrt.ca/google/google_transit.zip"
       },
       "license": {
         "url": "http://york.ca/opendata",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-dpz-yorkregiontransit",
-          "tags": {},
           "name": "York Region Transit",
           "short_name": "YRT",
           "website": "http://www.yrt.ca",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-dpz-yorkregiontransit",
-              "gtfs_agency_id": "YRT"
+              "gtfs_agency_id": "YRT",
+              "feed_onestop_id": "f-dpz-yorkregiontransit"
             },
             {
               "feed_onestop_id": "f-yrt~rt"
@@ -33,11 +31,11 @@
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-yrt~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://rtu.york.ca/gtfsrealtime/TripUpdates",
-        "realtime_vehicle_positions": "http://rtu.york.ca/gtfsrealtime/VehiclePositions"
+        "realtime_vehicle_positions": "http://rtu.york.ca/gtfsrealtime/VehiclePositions",
+        "realtime_trip_updates": "http://rtu.york.ca/gtfsrealtime/TripUpdates"
       }
     }
   ],

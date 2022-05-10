@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp4d-indygo",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.indygo.net/wp-content/plugins/wp-gtfs/feed/gtfs.zip"
       },
       "license": {
         "url": "http://www.indygo.net/about-indygo/indygo-developer-content-area/indygo-gtfs-terms-of-use/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "indygo"
@@ -19,12 +18,17 @@
       "operators": [
         {
           "onestop_id": "o-dp4d-indygo",
+          "name": "IndyGo",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-indygo~rt"
+            }
+          ],
           "tags": {
+            "twitter_general": "IndyGoBus",
             "us_ntd_id": "50050",
-            "wikidata_id": "Q2196924",
-            "twitter_general": "IndyGoBus"
-          },
-          "name": "IndyGo"
+            "wikidata_id": "Q2196924"
+          }
         }
       ]
     }

@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr0b-transitservicesoffrederickcounty",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://maps.frederickcountymd.gov/google/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dr0b-transitservicesoffrederickcounty",
-          "tags": {
-            "us_ntd_id": "30072",
-            "wikidata_id": "Q7833621",
-            "twitter_general": "frederickcomd"
-          },
           "name": "TransIT Services of Frederick County",
-          "short_name": "TransIT"
+          "short_name": "TransIT",
+          "tags": {
+            "twitter_general": "frederickcomd",
+            "us_ntd_id": "30072",
+            "wikidata_id": "Q7833621"
+          }
         }
       ]
     }

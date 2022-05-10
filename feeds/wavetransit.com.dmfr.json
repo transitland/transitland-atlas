@@ -2,26 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dq0d-wavetransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.wavetransit.com/gtransit/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dq0d-wavetransit",
-          "tags": {
-            "us_ntd_id": "40006",
-            "wikidata_id": "Q5034793",
-            "twitter_general": "WaveTransitILM"
-          },
           "name": "Wave Transit",
           "website": "http://www.wavetransit.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "WTA"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "WaveTransitILM",
+            "us_ntd_id": "40006",
+            "wikidata_id": "Q5034793"
+          }
         }
       ]
     }

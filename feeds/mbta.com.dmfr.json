@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-drt-mbta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://cdn.mbta.com/MBTA_GTFS.zip"
       },
@@ -11,22 +11,11 @@
         "url": "https://www.mass.gov/files/documents/2017/10/27/develop_license_agree_0.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_instructions": "You shall: Clearly acknowledge MassDOT as the provider of the Data"
       },
       "operators": [
-        {
-          "onestop_id": "o-drt3p-massport",
-          "name": "Massport",
-          "website": "http://www.massport.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        },
         {
           "onestop_id": "o-drm-capecodregionaltransitauthority",
           "name": "Cape Cod Regional Transit Authority",
@@ -36,52 +25,61 @@
             }
           ],
           "tags": {
+            "twitter_general": "CapeCodRTA",
             "us_ntd_id": "10105",
-            "wikidata_id": "Q5034704",
-            "twitter_general": "CapeCodRTA"
+            "wikidata_id": "Q5034704"
           }
+        },
+        {
+          "onestop_id": "o-drt3p-massport",
+          "name": "Massport",
+          "website": "http://www.massport.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
+            }
+          ]
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-mbta~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://cdn.mbta.com/realtime/Alerts.pb",
+        "realtime_vehicle_positions": "https://cdn.mbta.com/realtime/VehiclePositions.pb",
         "realtime_trip_updates": "https://cdn.mbta.com/realtime/TripUpdates.pb",
-        "realtime_vehicle_positions": "https://cdn.mbta.com/realtime/VehiclePositions.pb"
+        "realtime_alerts": "https://cdn.mbta.com/realtime/Alerts.pb"
       },
       "license": {
         "url": "https://www.mass.gov/files/documents/2017/10/27/develop_license_agree_0.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_instructions": "You shall: Clearly acknowledge MassDOT as the provider of the Data"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-drt-mbta",
-      "tags": {
-        "us_ntd_id": "10003",
-        "wikidata_id": "Q171985",
-        "twitter_general": "MBTA"
-      },
       "name": "Massachusetts Bay Transportation Authority",
       "short_name": "MBTA",
       "website": "http://www.mbta.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-mbta~rt"
+          "feed_onestop_id": "f-drt-mbta"
         },
         {
-          "feed_onestop_id": "f-drt-mbta"
+          "feed_onestop_id": "f-mbta~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "MBTA",
+        "us_ntd_id": "10003",
+        "wikidata_id": "Q171985"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

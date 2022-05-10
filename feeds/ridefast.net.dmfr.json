@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dnpz-fast",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.fayettevillenc.gov/home/showpublisheddocument/16121/637514028117170000"
       },
@@ -13,11 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-dnpz-fast",
-          "tags": {
-            "us_ntd_id": "40009",
-            "wikidata_id": "Q5439044",
-            "twitter_general": "cityoffaync"
-          },
           "name": "Fayetteville Area System of Transit",
           "short_name": "FAST",
           "website": "http://www.ridefast.net/",
@@ -25,7 +20,12 @@
             {
               "gtfs_agency_id": "3262d847-4744-490a-b6e8-b2a2b8c6710c"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "cityoffaync",
+            "us_ntd_id": "40009",
+            "wikidata_id": "Q5439044"
+          }
         }
       ]
     }

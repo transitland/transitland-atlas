@@ -2,26 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr1-rabbittransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.rabbittransit.org/infopoint/gtfs/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dr1-rabbittransit",
-          "tags": {
-            "us_ntd_id": "30027",
-            "wikidata_id": "Q7278624",
-            "twitter_general": "rabbitalerts"
-          },
           "name": "rabbittransit",
           "website": "http://www.rabbittransit.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "0"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "rabbitalerts",
+            "us_ntd_id": "30027",
+            "wikidata_id": "Q7278624"
+          }
         }
       ]
     }

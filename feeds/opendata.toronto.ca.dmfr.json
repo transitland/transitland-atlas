@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpz8-ttc",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://opendata.toronto.ca/toronto.transit.commission/ttc-routes-and-schedules/OpenData_TTC_Schedules.zip"
       },
@@ -11,16 +11,11 @@
         "url": "https://open.toronto.ca/dataset/ttc-routes-and-schedules/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Contains information licensed under the Open Government Licence – Toronto."
       },
       "operators": [
         {
           "onestop_id": "o-dpz8-ttc",
-          "tags": {
-            "wikidata_id": "Q17978",
-            "omd_provider_id": "ttc"
-          },
           "name": "Toronto Transit Comission",
           "short_name": "TTC",
           "website": "http://www.ttc.ca",
@@ -28,7 +23,11 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "omd_provider_id": "ttc",
+            "wikidata_id": "Q17978"
+          }
         }
       ]
     }

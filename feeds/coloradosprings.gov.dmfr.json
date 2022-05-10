@@ -2,27 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9wvk-mountainmetropolitantransit",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://coloradosprings.gov/sites/default/files/google-transit.zip"
+        "static_current": "https://coloradosprings.gov/sites/default/files/google_transit_0.zip",
+        "static_historic": [
+          "https://coloradosprings.gov/sites/default/files/google-transit.zip"
+        ]
       },
       "tags": {
-        "status": "unreachable",
         "gtfs_data_exchange": "mountain-metropolitan-transit"
       },
       "operators": [
         {
           "onestop_id": "o-9wvk-mountainmetropolitantransit",
-          "tags": {
-            "needs_agency_id": "f-9wvk-mountainmetropolitantransit",
-            "us_ntd_id": "80005",
-            "wikidata_id": "Q6925119",
-            "twitter_general": "MountainMetro"
-          },
           "name": "Mountain Metropolitan Transit",
           "short_name": "Mountain Metro",
-          "website": "http://www.mmtransit.com"
+          "website": "http://www.mmtransit.com",
+          "tags": {
+            "needs_agency_id": "f-9wvk-mountainmetropolitantransit",
+            "twitter_general": "MountainMetro",
+            "us_ntd_id": "80005",
+            "wikidata_id": "Q6925119"
+          }
         }
       ]
     }

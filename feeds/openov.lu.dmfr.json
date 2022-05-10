@@ -2,26 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u0-openov~lu",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://openov.lu/data/gtfs/gtfs-openov-lu.zip"
       },
       "license": {
         "url": "http://openov.lu/data/gtfs/LICENSE.TXT",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-u0u1-tice",
-          "name": "Transport intercommunal de personnes dans le canton d'Esch-sur-Alzette",
-          "short_name": "TICE",
-          "website": "http://tice.lu",
+          "onestop_id": "o-u0-cfl",
+          "name": "Société Nationale des Chemins de Fer Luxembourgeois",
+          "short_name": "CFL",
+          "website": "http://cfl.lu",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "4"
+              "gtfs_agency_id": "2"
             }
           ]
         },
@@ -37,13 +36,13 @@
           ]
         },
         {
-          "onestop_id": "o-u0-cfl",
-          "name": "Société Nationale des Chemins de Fer Luxembourgeois",
-          "short_name": "CFL",
-          "website": "http://cfl.lu",
+          "onestop_id": "o-u0u1-tice",
+          "name": "Transport intercommunal de personnes dans le canton d'Esch-sur-Alzette",
+          "short_name": "TICE",
+          "website": "http://tice.lu",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "4"
             }
           ]
         },

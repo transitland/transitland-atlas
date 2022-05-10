@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qh-metrolinktrains",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://metrolinktrains.com/globalassets/about/gtfs/gtfs.zip",
         "static_historic": [
@@ -16,18 +16,18 @@
       "operators": [
         {
           "onestop_id": "o-9qh-metrolinktrains",
-          "tags": {
-            "us_ntd_id": "90151",
-            "wikidata_id": "Q766647",
-            "twitter_general": "Metrolink"
-          },
           "name": "Metrolink",
           "website": "http://www.metrolinktrains.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "Metrolink"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "Metrolink",
+            "us_ntd_id": "90151",
+            "wikidata_id": "Q766647"
+          }
         }
       ]
     }
