@@ -2,6 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-metra~ga~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://metracolumbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://metracolumbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://metracolumbus.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-metra~ga~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://metracolumbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://metracolumbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://metracolumbus.com/gtfs-rt/alerts"
+      }
+    },
+    {
       "id": "f-metra~ga~us",
       "spec": "gtfs",
       "urls": {
@@ -11,6 +29,14 @@
         {
           "onestop_id": "o-metra~ga~us",
           "name": "Metra (Columbus)",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-metra~ga~rt"
+            },
+            {
+              "feed_onestop_id": "f-metra~ga~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "40024",
             "wikidata_id": "Q6715484"

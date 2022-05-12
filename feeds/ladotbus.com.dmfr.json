@@ -1,0 +1,26 @@
+{
+  "feeds": [
+    {
+      "id": "f-ladot~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ladotbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ladotbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ladotbus.com/gtfs-rt/alerts"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-9q5ct-ladot",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-ladot~rt"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "90147"
+      }
+    }
+  ]
+}
