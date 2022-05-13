@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-santa~clarita",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://apps.santaclaritatransit.com/rtt/public/utility/gtfs.aspx"
+      }
+    },
+    {
+      "id": "f-santa~clarita~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://apps.santaclaritatransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "http://apps.santaclaritatransit.com/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "http://apps.santaclaritatransit.com/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-santa~clarita",
+      "name": "City of Santa Clarita Transit",
+      "website": "https://santaclaritatransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-santa~clarita"
+        },
+        {
+          "feed_onestop_id": "f-santa~clarita~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "sctbus",
+        "us_ntd_id": "90171",
+        "wikidata_id": "Q5123908"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
