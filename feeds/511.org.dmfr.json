@@ -196,9 +196,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "CE"
-            },
-            {
-              "feed_onestop_id": "f-acealtamontcorridorexpress~rt"
             }
           ],
           "tags": {
@@ -280,9 +277,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "UC"
-            },
-            {
-              "feed_onestop_id": "f-unioncitytransit~rt"
             }
           ],
           "tags": {
@@ -593,30 +587,7 @@
         "managed_by": "mtc-ca",
         "manual_import": "true"
       }
-    },
-    {
-      "id": "f-unioncitytransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://uctransit.info/gtfs-rt/tripupdates",
-        "realtime_vehicle_positions": "https://uctransit.info/gtfs-rt/vehiclepositions",
-        "realtime_alerts": "https://uctransit.info/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "auth_type": "unclear"
-      }
-    },
-    {
-      "id": "f-acealtamontcorridorexpress~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=altamont-corridor-express"
-      },
-      "authorization": {
-        "auth_type": "unsure"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": []
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

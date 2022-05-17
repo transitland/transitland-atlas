@@ -270,9 +270,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "WCDOT"
-            },
-            {
-              "feed_onestop_id": "f-westchestercountybee~linesystem~rt"
             }
           ],
           "tags": {
@@ -950,9 +947,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "RTS-Seneca-NY-US"
-            },
-            {
-              "feed_onestop_id": "f-rochester~geneseeregionaltransportationauthority~rt"
             }
           ],
           "tags": {
@@ -983,9 +977,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "RTS-WYOMING-NY-US"
-            },
-            {
-              "feed_onestop_id": "f-rochester~geneseeregionaltransportationauthority~rt"
             }
           ],
           "tags": {
@@ -1218,29 +1209,7 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
-    },
-    {
-      "id": "f-westchestercountybee~linesystem~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://wcgtfs.westchestergov.com/api/tripupdates?format=json",
-        "realtime_vehicle_positions": "https://wcgtfs.westchestergov.com/api/vehiclepositions?format=json",
-        "realtime_alerts": "https://wcgtfs.westchestergov.com/api/servicealerts?format=json"
-      },
-      "authorization": {
-        "auth_type": "unclear"
-      }
-    },
-    {
-      "id": "f-rochester~geneseeregionaltransportationauthority~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "http://api.rgrta.com/rttrips",
-        "realtime_vehicle_positions": "http://api.rgrta.com/rtvehicles",
-        "realtime_alerts": "http://api.rgrta.com/rtservicealerts"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": []
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
