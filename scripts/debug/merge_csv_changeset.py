@@ -9,9 +9,9 @@ import json
 from urllib.parse import urlparse
 
 CSV_FILE = sys.argv[1]
-check_cols = ['us_ntd_id','rt_feed','realtime_trip_updates','realtime_vehicle_positions','realtime_alerts','auth_type','auth_url','auth_param'] # ,'notes'
+check_cols = ['us_ntd_id','rt_feed','realtime_trip_updates','realtime_vehicle_positions','realtime_alerts','type','info_url','param'] # ,'notes'
 check_rt_urls = ['realtime_trip_updates','realtime_vehicle_positions','realtime_alerts']
-check_rt_auth = ['auth_type','auth_url']
+check_rt_auth = ['type','info_url', 'param']
 check_rt_cols = check_rt_urls + check_rt_auth
 
 def apply_change(ent, c):
