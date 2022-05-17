@@ -22,6 +22,20 @@
       "license": {
         "url": "https://www.sdmts.com/business-center-developers/terms-and-conditions"
       }
+    },
+    {
+      "id": "f-mts~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://realtime.sdmts.com/api/api/gtfs_realtime/trip-updates-for-agency/MTS.pb?key=YOURKEY",
+        "realtime_vehicle_positions": "https://realtime.sdmts.com/api/api/gtfs_realtime/vehicle-positions-for-agency/MTS.pb?key=YOURKEY",
+        "realtime_alerts": "http://app.mecatran.com/utw/ws/gtfsfeed/alerts/sdmts?apiKey=78161d20210d221e242d3f62056b1e764469525a&asText=true"
+      },
+      "authorization": {
+        "type": "unclear",
+        "info_url": "https://www.sdmts.com/business-center-developers/real-time-data",
+        "param_name": "Authorization"
+      }
     }
   ],
   "operators": [
@@ -38,6 +52,9 @@
         {
           "gtfs_agency_id": "MTS",
           "feed_onestop_id": "f-9mu-mts~sandiegointernationalairport"
+        },
+        {
+          "feed_onestop_id": "f-mts~rt"
         }
       ],
       "tags": {

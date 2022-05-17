@@ -40,7 +40,31 @@
         "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
       }
+    },
+    {
+      "id": "f-valleyexpress~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
+        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
+      },
+      "authorization": {
+        "type": "unclear",
+        "info_url": "https://gtfs-directory.syncromatics.com/"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": [
+    {
+      "onestop_id": "o-9q57-valleyexpress",
+      "name": "TODO",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-valleyexpress~rt"
+        }
+      ]
+    }
+  ]
 }

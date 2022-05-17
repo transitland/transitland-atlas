@@ -20,10 +20,29 @@
             "twitter_general": "foothilltransit",
             "us_ntd_id": "90146",
             "wikidata_id": "Q5466493"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-foothilltransit~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-foothilltransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_vehicle_positions": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_alerts": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=Alert"
+      },
+      "authorization": {
+        "type": "unclear",
+        "info_url": "http://foothilltransit.org/about/developer-resources/"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }
