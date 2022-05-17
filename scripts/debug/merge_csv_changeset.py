@@ -8,19 +8,47 @@ import csv
 import json
 from urllib.parse import urlparse
 
-DMFR_DIR = sys.argv[1]
-CSV_FILE = sys.argv[2]
-check_cols = ['us_ntd_id','rt_feed','realtime_trip_updates','realtime_vehicle_positions','realtime_alerts','auth_type','auth_url','auth_param','notes']
+CSV_FILE = sys.argv[1]
+check_cols = ['us_ntd_id','rt_feed','realtime_trip_updates','realtime_vehicle_positions','realtime_alerts','auth_type','auth_url','auth_param'] # ,'notes'
 check_rt_urls = ['realtime_trip_updates','realtime_vehicle_positions','realtime_alerts']
 check_rt_auth = ['auth_type','auth_url']
-check_rt_cols = check_rt_urls + check_rt_auth + ['notes']
+check_rt_cols = check_rt_urls + check_rt_auth
 
+def apply_change(ent, c):
+    print("applying change:", c)
+    if c[0] == 'set_tag':
+        ent['tags'] = ent.get('tags') or {}
+        ent['tags'][c[2]] = c[3]
+    elif c[0] == 'set_url':
+        ent['urls'] = ent.get('urls')or {}
+        ent['urls'][c[2]] = c[3]
+    elif c[0] == 'set_auth':
+        ent['authorization'] = ent.get('authorization') or {}
+        ent['authorization'][c[2]] = c[3]
+    elif c[0] == 'add_associated_feed':
+        ent['associated_feeds'] = ent.get('associated_feeds') or []
+        ent['associated_feeds'].append({'feed_onestop_id':c[2]})
+    elif c[0] == 'new_feed':
+        pass
+    elif c[0] == 'new_operator':
+        pass
+    else:
+        raise Exception("unknown change:", c)
+
+
+########################
+########################
+########################
+########################
+
+# Build index of feeds and operators
 operators = {}
 feeds = {}
-filenames = glob.glob(os.path.join(DMFR_DIR, "*.dmfr.json"))
+filenames = set(os.path.basename(i) for i in glob.glob(os.path.join("*.dmfr.json")))
 for fn in filenames:
     with open(fn) as f:
         data = json.load(f)
+    fn = os.path.basename(fn)
     for op in data.get('operators', []):
         osid = op['onestop_id']
         if osid in operators:
@@ -37,20 +65,23 @@ for fn in filenames:
             op_osid = op_update['onestop_id']
             if op_osid in operators:
                 print("updating op:", op_osid, op_update)
-            op = operators.get(op_osid) or {'onestop_id': op_osid, 'associated_feeds':[]}
+            op = operators.get(op_osid) or {'onestop_id': op_osid, 'associated_feeds':[], 'tags':{}}
+            op['tags'] = op.get('tags', {})
+            op['tags'].update(op_update.get('tags', {}))
             op['associated_feeds'] = op.get('associated_feeds') or []
             for a in op_update.get('associated_feeds', []):
-                # a['feed_onestop_id'] = osid
                 op['associated_feeds'].append(a)
             op['file'] = fn
             operators[op_osid] = op
 
 
+# Process change CSV
 changeset = []
 with open(CSV_FILE) as f:
     reader = csv.DictReader(f)
     for row in reader:
         osid = row['onestop_id']
+        op = operators.get(osid)
 
         # check if this row provides sufficient data to update a record
         check = list(filter(lambda x:x, map(row.get, check_cols)))
@@ -79,24 +110,29 @@ with open(CSV_FILE) as f:
         if not rt_feed:
             a = row.get('rt_feed')
             rt_feed = {'id': a, 'urls': {}, 'authorization': {}, 'spec': 'gtfs-rt'}
-            for key in check_rt_urls:
-                rturl = row.get(key)
-                if rturl:
-                    print(rturl)
-                    ap = urlparse(rturl)
-                    rt_feed['file'] = ap.hostname + '.dmfr.json'
-                    break
+            if op and op.get('file'):
+                print("setting new feed",  a, "file to operator file:", op.get('file'))
+                rt_feed['file'] = op.get('file')
+            else:
+                for key in check_rt_urls:
+                    rturl = row.get(key)
+                    if rturl:
+                        print(rturl)
+                        ap = urlparse(rturl)
+                        rt_feed['file'] = ap.hostname + '.dmfr.json'
+                        break
             if not rt_feed.get('file'):
-                rt_feed['file'] = 'uknown.dmfr.json'
-            changeset.append(('new_feed', a, rt_feed.get('file')))
+                rt_feed['file'] = 'unknown.dmfr.json'
+            feeds[a] = rt_feed
+            changeset.append(('new_feed', a, rt_feed['file']))
 
         # check if operator exists
-        op = operators.get(osid)
         if not op:
             # TODO: check associated_feeds
             op = {'onestop_id': osid, 'associated_feeds': []}
             # where should we put this?
             changeset.append(('new_operator', osid, rt_feed['file']))
+            operators[osid] = op
             print("new operator:", osid, op)
 
         # check feed association
@@ -133,27 +169,7 @@ with open(CSV_FILE) as f:
                 changeset.append(('set_auth', rt_feed['id'], key, b))
                 print("updated rt auth:", key, a, "->", b)
 
-def apply_change(ent, c):
-    print("applying change:", c)
-    if c[0] == 'set_tag':
-        ent['tags'] = ent.get('tags') or {}
-        ent['tags'][c[2]] = c[3]
-    elif c[0] == 'set_url':
-        ent['urls'] = ent.get('urls')or {}
-        ent['urls'][c[2]] = c[3]
-    elif c[0] == 'set_auth':
-        ent['authorization'] = ent.get('authorization') or {}
-        ent['authorization'][c[2]] = c[3]
-    elif c[0] == 'add_associated_feed':
-        ent['associated_feeds'] = ent.get('associated_feeds') or []
-        ent['associated_feeds'].append({'feed_onestop_id':c[2]})
-    elif c[0] == 'new_feed':
-        pass
-    elif c[0] == 'new_operator':
-        pass
-    else:
-        raise Exception("unknown change:", c)
-
+# Print summary
 changes_by_key = collections.defaultdict(list)
 changes_by_file = collections.defaultdict(list)
 new_files = set()
@@ -163,9 +179,9 @@ for c in changeset:
     changes_by_key[c[1]].append(c)
     if c[0] == "new_feed" or c[0] == "new_operator":
         new_files.add(c[2])
-
 print("new files:", new_files)
 
+# Apply changesets
 changed = set()
 for fn in set(filenames) | new_files:
     print("\nprocessing...", fn)
@@ -176,16 +192,21 @@ for fn in set(filenames) | new_files:
             data = json.load(f)
     except:
         pass
-    
+    fn = os.path.basename(fn)
     data['feeds'] = data.get('feeds') or []
     data['operators'] = data.get('operators') or []
     # new feeds
-    for c in [i for i in changeset if i[0] == 'new_feed' and i[2] == os.path.basename(fn)]:
-        data['feeds'].append({'id': c[1], 'spec':'gtfs-rt'})
+    for c in [i for i in changeset if i[0] == 'new_feed' and i[2] == fn]:
+        print("NEW FEED:", c)
+        feed = {'id': c[1], 'spec':'gtfs-rt'}
+        apply_change(feed, c)
+        data['feeds'].append(feed)
         updated = True
     # new operators
-    for c in [i for i in changeset if i[0] == 'new_operator' and i[2] == os.path.basename(fn)]:
-        data['operators'].append({'onestop_id': c[1]})
+    for c in [i for i in changeset if i[0] == 'new_operator' and i[2] == fn]:
+        op = {'onestop_id': c[1], 'name': 'TODO'}
+        apply_change(op, c)
+        data['operators'].append(op)
         updated = True
 
     # update entities
@@ -201,6 +222,7 @@ for fn in set(filenames) | new_files:
             for c in changes_by_key[op['onestop_id']]:
                 apply_change(op, c)
                 updated = True
+
     if updated:
         with codecs.open(fn, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)        
