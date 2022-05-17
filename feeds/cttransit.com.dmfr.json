@@ -28,18 +28,27 @@
         {
           "onestop_id": "o-dr79-cttransit~stamford",
           "name": "CTTransit - Stamford",
-          "tags": {
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10055",
-            "wikidata_id": "Q5161640"
-          },
           "associated_feeds": [
             {
               "feed_onestop_id": "f-dr79-cttransit~stamford~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "cttransit",
+            "us_ntd_id": "10055",
+            "wikidata_id": "Q5161640"
+          }
         }
       ]
+    },
+    {
+      "id": "f-dr79-cttransit~stamford~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
+      }
     },
     {
       "id": "f-drk-cttransit~hartford",
@@ -71,17 +80,17 @@
           "onestop_id": "o-drk5-cttransit~newhaven",
           "name": "CTTransit - New Haven",
           "website": "http://www.cttransit.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-drk5-cttransit~newhaven~rt"
+            }
+          ],
           "tags": {
             "needs_agency_id": "f-drk-cttransit~hartford",
             "twitter_general": "cttransit",
             "us_ntd_id": "10056",
             "wikidata_id": "Q5161638"
-          },
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-drk5-cttransit~newhaven~rt"
-            }
-          ]
+          }
         },
         {
           "onestop_id": "o-drkh-cttransit~waterbury~meriden",
@@ -137,6 +146,24 @@
       ]
     },
     {
+      "id": "f-drk5-cttransit~newhaven~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
+      }
+    },
+    {
+      "id": "f-drkh-cttransit~waterbury~meriden~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
+      }
+    },
+    {
       "id": "f-drkhr-cttransit~meriden",
       "spec": "gtfs",
       "urls": {
@@ -154,52 +181,25 @@
         {
           "onestop_id": "o-drkhr-cttransit~meriden",
           "name": "CTTransit - Meriden",
-          "tags": {
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10128",
-            "wikidata_id": "Q7057991"
-          },
           "associated_feeds": [
             {
               "feed_onestop_id": "f-drkhr-cttransit~meriden~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "cttransit",
+            "us_ntd_id": "10128",
+            "wikidata_id": "Q7057991"
+          }
         }
       ]
-    },
-    {
-      "id": "f-dr79-cttransit~stamford~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
-      }
-    },
-    {
-      "id": "f-drk5-cttransit~newhaven~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
-      }
     },
     {
       "id": "f-drkhr-cttransit~meriden~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
         "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
-      }
-    },
-    {
-      "id": "f-drkh-cttransit~waterbury~meriden~rt",
-      "spec": "gtfs-rt",
-      "urls": {
         "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
         "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
       }
     },
@@ -207,8 +207,8 @@
       "id": "f-drkj-cttransit~newbritain~bristol~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
         "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
         "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
       }
     },
@@ -216,8 +216,8 @@
       "id": "f-drkj-cttransit~newbritain~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
         "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
         "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
       }
     }

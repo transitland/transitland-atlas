@@ -12,16 +12,16 @@
           "onestop_id": "o-cbdbx-citiesareatransit",
           "name": "Cities Area Transit",
           "website": "http://www.grandforksgov.com/government/bus/routes-schedules",
-          "tags": {
-            "twitter_general": "RideCATGF",
-            "us_ntd_id": "80008",
-            "wikidata_id": "Q5122471"
-          },
           "associated_feeds": [
             {
               "feed_onestop_id": "f-citiesareatransit~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "RideCATGF",
+            "us_ntd_id": "80008",
+            "wikidata_id": "Q5122471"
+          }
         }
       ]
     },
@@ -29,8 +29,8 @@
       "id": "f-citiesareatransit~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://catprowler.org/gtfs-rt/tripupdates",
         "realtime_vehicle_positions": "https://catprowler.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://catprowler.org/gtfs-rt/tripupdates",
         "realtime_alerts": "https://catprowler.org/gtfs-rt/alerts"
       },
       "authorization": {
@@ -39,6 +39,5 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": []
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

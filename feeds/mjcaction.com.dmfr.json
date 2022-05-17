@@ -350,6 +350,19 @@
       ]
     },
     {
+      "id": "f-countyofkauai~transportationagency~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://thekauaibus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://thekauaibus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://thekauaibus.com/gtfs-rt/alerts"
+      },
+      "authorization": {
+        "type": "unclear",
+        "info_url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
       "id": "f-dc~motorcoach",
       "spec": "gtfs",
       "urls": {
@@ -571,21 +584,7 @@
       "urls": {
         "static_current": "https://www.riometro.org/DocumentCenter/View/1391"
       }
-    },
-    {
-      "id": "f-countyofkauai~transportationagency~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://thekauaibus.com/gtfs-rt/tripupdates",
-        "realtime_vehicle_positions": "https://thekauaibus.com/gtfs-rt/vehiclepositions",
-        "realtime_alerts": "https://thekauaibus.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": []
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

@@ -17,15 +17,15 @@
           "name": "Cache Valley Transit District",
           "short_name": "CVTD",
           "website": "https://cvtdbus.org/",
-          "tags": {
-            "twitter_general": "cvtdbus",
-            "us_ntd_id": "80028"
-          },
           "associated_feeds": [
             {
               "feed_onestop_id": "f-cachevalleytransitdistrict~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "cvtdbus",
+            "us_ntd_id": "80028"
+          }
         }
       ]
     },
@@ -33,8 +33,8 @@
       "id": "f-cachevalleytransitdistrict~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://mycvtdbus.org/gtfs-rt/tripupdates",
         "realtime_vehicle_positions": "https://mycvtdbus.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://mycvtdbus.org/gtfs-rt/tripupdates",
         "realtime_alerts": "https://mycvtdbus.org/gtfs-rt/alerts"
       },
       "authorization": {
@@ -43,6 +43,5 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": []
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

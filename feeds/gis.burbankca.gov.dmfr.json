@@ -12,16 +12,16 @@
           "onestop_id": "o-9q5f7-burbankbus",
           "name": "Burbank Bus",
           "website": "http://www.burbankbus.org",
-          "tags": {
-            "twitter_general": "burbankca",
-            "us_ntd_id": "90256",
-            "wikidata_id": "Q4998151"
-          },
           "associated_feeds": [
             {
               "feed_onestop_id": "f-burbankbus~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "burbankca",
+            "us_ntd_id": "90256",
+            "wikidata_id": "Q4998151"
+          }
         }
       ]
     },
@@ -29,8 +29,8 @@
       "id": "f-burbankbus~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://rideburbankbus.com/gtfs-rt/tripupdates",
         "realtime_vehicle_positions": "https://rideburbankbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://rideburbankbus.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://rideburbankbus.com/gtfs-rt/alerts"
       },
       "authorization": {
@@ -39,6 +39,5 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": []
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

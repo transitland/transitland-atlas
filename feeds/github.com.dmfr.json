@@ -49,16 +49,16 @@
           "onestop_id": "o-c28-whatcomtransportationauthority",
           "name": "Whatcom Transportation Authority",
           "short_name": "WTA",
-          "tags": {
-            "twitter_general": "ridewta",
-            "us_ntd_id": "21",
-            "wikidata_id": "Q7991690"
-          },
           "associated_feeds": [
             {
               "feed_onestop_id": "f-whatcomtransportationauthority~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "ridewta",
+            "us_ntd_id": "21",
+            "wikidata_id": "Q7991690"
+          }
         }
       ]
     },
@@ -606,8 +606,8 @@
       "id": "f-whatcomtransportationauthority~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://bustracker.ridewta.com/gtfsrt/trips?debug",
         "realtime_vehicle_positions": "https://bustracker.ridewta.com/gtfsrt/vehicles?debug",
+        "realtime_trip_updates": "https://bustracker.ridewta.com/gtfsrt/trips?debug",
         "realtime_alerts": "https://bustracker.ridewta.com/gtfsrt/alerts?debug%E2%80%8B"
       },
       "authorization": {
@@ -615,6 +615,5 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": []
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
