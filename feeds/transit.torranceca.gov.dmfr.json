@@ -23,6 +23,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "TT"
+            },
+            {
+              "feed_onestop_id": "f-torrancetransit~rt"
             }
           ],
           "tags": {
@@ -32,7 +35,20 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-torrancetransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "http://www.mybusinfo.com/gtfsrt/trips?debug",
+        "realtime_vehicle_positions": "http://www.mybusinfo.com/gtfsrt/vehicles?debug",
+        "realtime_alerts": "http://www.mybusinfo.com/gtfsrt/alerts?debug"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

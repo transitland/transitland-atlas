@@ -51,9 +51,14 @@
           "short_name": "WTA",
           "tags": {
             "twitter_general": "ridewta",
-            "us_ntd_id": "00021",
+            "us_ntd_id": "21",
             "wikidata_id": "Q7991690"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-whatcomtransportationauthority~rt"
+            }
+          ]
         }
       ]
     },
@@ -596,7 +601,17 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-whatcomtransportationauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://bustracker.ridewta.com/gtfsrt/trips?debug",
+        "realtime_vehicle_positions": "https://bustracker.ridewta.com/gtfsrt/vehicles?debug",
+        "realtime_alerts": "https://bustracker.ridewta.com/gtfsrt/alerts?debug%E2%80%8B"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

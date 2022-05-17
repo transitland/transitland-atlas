@@ -19,10 +19,28 @@
             "twitter_general": "TulsaTransit",
             "us_ntd_id": "60018",
             "wikidata_id": "Q6825293"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-metropolitantulsatransitauthority~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-metropolitantulsatransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "http://gtfs.tulsatransit.org/trip_updates.pb",
+        "realtime_vehicle_positions": "http://gtfs.tulsatransit.org/position_updates.pb",
+        "realtime_alerts": "http://gtfs.tulsatransit.org/alerts.pb"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

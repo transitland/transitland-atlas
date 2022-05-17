@@ -27,10 +27,28 @@
             "twitter_general": "ConnectTransit",
             "us_ntd_id": "50047",
             "wikidata_id": "Q4928329"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-connecttransit~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-connecttransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://rideconnecttransit.com/gtfs-rt/tripupdates",
+        "realtime_vehicle_positions": "https://rideconnecttransit.com/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://rideconnecttransit.com/gtfs-rt/alerts"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

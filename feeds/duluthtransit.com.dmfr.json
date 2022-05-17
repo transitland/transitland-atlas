@@ -24,10 +24,28 @@
             "twitter_general": "DuluthTransit",
             "us_ntd_id": "50025",
             "wikidata_id": "Q16967413"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-duluthtransitauthority~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-duluthtransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://duluthtransit.com/gtfsrt/TripUpdate/TripUpdates.json",
+        "realtime_vehicle_positions": "https://duluthtransit.com/gtfsrt/Vehicle/VehiclePositions.json",
+        "realtime_alerts": "https://duluthtransit.com/gtfsrt/Alert/Alerts.json"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

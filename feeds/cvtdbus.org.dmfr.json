@@ -20,10 +20,28 @@
           "tags": {
             "twitter_general": "cvtdbus",
             "us_ntd_id": "80028"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cachevalleytransitdistrict~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-cachevalleytransitdistrict~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://mycvtdbus.org/gtfs-rt/tripupdates",
+        "realtime_vehicle_positions": "https://mycvtdbus.org/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://mycvtdbus.org/gtfs-rt/alerts"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

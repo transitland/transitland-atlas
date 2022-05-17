@@ -41,6 +41,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-nycferry~rt"
             }
           ],
           "tags": {
@@ -50,7 +53,16 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-nycferry~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

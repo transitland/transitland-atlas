@@ -23,10 +23,28 @@
             "twitter_general": "ffxconnector",
             "us_ntd_id": "30068",
             "wikidata_id": "Q5430155"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-fairfaxconnector~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-fairfaxconnector~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://www.fairfaxcounty.gov/gtfsrt/trips",
+        "realtime_vehicle_positions": "https://www.fairfaxcounty.gov/gtfsrt/vehicles",
+        "realtime_alerts": "https://www.fairfaxcounty.gov/gtfsrt/alerts"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

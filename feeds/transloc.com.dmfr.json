@@ -24,7 +24,12 @@
             "twitter_general": "VVTransit",
             "us_ntd_id": "90148",
             "wikidata_id": "Q7926418"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-victorvalleytransitauthority~rt"
+            }
+          ]
         }
       ]
     },
@@ -163,7 +168,20 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-victorvalleytransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://ontime.vvta.org/gtfs-rt/tripupdates",
+        "realtime_vehicle_positions": "https://ontime.vvta.org/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://ontime.vvta.org/gtfs-rt/alerts"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0",
+  "operators": []
 }

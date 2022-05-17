@@ -68,9 +68,25 @@
             "twitter_general": "RSVL_Transit",
             "us_ntd_id": "90168",
             "wikidata_id": "Q7368740"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rosevilletransit~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-rosevilletransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rosevillebustracker.com/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://rosevillebustracker.com/gtfs-rt/alerts"
+      },
+      "authorization": {
+        "auth_type": "unclear"
+      }
     }
   ],
   "operators": [
