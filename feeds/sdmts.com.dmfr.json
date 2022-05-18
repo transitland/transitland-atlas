@@ -15,6 +15,18 @@
       }
     },
     {
+      "id": "f-mts~rt~mecatrans",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://app.mecatran.com/utw/ws/gtfsfeed/alerts/sdmts"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "apiKey",
+        "info_url": "https://www.sdmts.com/business-center-developers/real-time-data"
+      }
+    },
+    {
       "id": "f-mts~rt~onebusaway",
       "spec": "gtfs-rt",
       "urls": {
@@ -24,18 +36,6 @@
       "authorization": {
         "type": "query_param",
         "param_name": "key",
-        "info_url": "https://www.sdmts.com/business-center-developers/real-time-data"
-      }
-    },
-    {
-      "id": "f-mts~rt~mecatrans",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_alerts": "http://app.mecatran.com/utw/ws/gtfsfeed/alerts/sdmts"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "apiKey",
         "info_url": "https://www.sdmts.com/business-center-developers/real-time-data"
       }
     }
@@ -52,10 +52,10 @@
           "feed_onestop_id": "f-9mu-mts"
         },
         {
-          "feed_onestop_id": "f-mts~rt~onebusaway"
+          "feed_onestop_id": "f-mts~rt~mecatrans"
         },
         {
-          "feed_onestop_id": "f-mts~rt~mecatrans"
+          "feed_onestop_id": "f-mts~rt~onebusaway"
         }
       ],
       "tags": {
