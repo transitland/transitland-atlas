@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-c28-whatcomtransportationauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/whatcomtrans/publicwtadata/raw/master/GTFS/wta_gtfs_latest.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-whatcomtransportationauthority",
+          "name": "Whatcom Transportation Authority",
+          "short_name": "WTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-whatcomtransportationauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridewta",
+            "us_ntd_id": "21",
+            "wikidata_id": "Q7991690"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-whatcomtransportationauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bustracker.ridewta.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://bustracker.ridewta.com/gtfsrt/trips",
+        "realtime_alerts": "https://bustracker.ridewta.com/gtfsrt/alerts"
+      },
+      "license": {
+        "url": "https://transitdata.ridewta.com/gtfs/"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
