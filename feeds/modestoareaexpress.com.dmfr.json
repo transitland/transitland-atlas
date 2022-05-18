@@ -26,7 +26,7 @@
               "gtfs_agency_id": "95"
             },
             {
-              "feed_onestop_id": "f-stanrta~rt"
+              "feed_onestop_id": "f-modestoareaexpress~rt"
             }
           ],
           "tags": {
@@ -34,7 +34,8 @@
             "twitter_general": "TheMaxBus",
             "us_ntd_id": "90007",
             "wikidata_id": "Q6889205",
-            "wikidata_is": "Q6889205"
+            "wikidata_is": "Q6889205",
+            "developer_site": "https://www.stanrta.org/431/GTFS-Information-Datasets"
           }
         }
       ]
@@ -43,22 +44,9 @@
       "id": "f-modestoareaexpress~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
-        "realtime_trip_updates": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate",
-        "realtime_alerts": "http://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
-      }
-    },
-    {
-      "id": "f-stanrta~rt",
-      "spec": "gtfs-rt",
-      "urls": {
         "realtime_vehicle_positions": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
         "realtime_trip_updates": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate",
         "realtime_alerts": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://www.stanrta.org/431/GTFS-Information-Datasets"
       }
     }
   ],

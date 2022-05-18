@@ -31,7 +31,8 @@
           "tags": {
             "twitter_general": "TorranceTransit",
             "us_ntd_id": "90010",
-            "wikidata_id": "Q7826932"
+            "wikidata_id": "Q7826932",
+            "developer_site": "https://transit.torranceca.gov/our-city/transit/services/general-transit-feed-specification"
           }
         }
       ]
@@ -40,13 +41,9 @@
       "id": "f-torrancetransit~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://www.mybusinfo.com/gtfsrt/vehicles?debug",
-        "realtime_trip_updates": "http://www.mybusinfo.com/gtfsrt/trips?debug",
-        "realtime_alerts": "http://www.mybusinfo.com/gtfsrt/alerts?debug"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://transit.torranceca.gov/our-city/transit/services/general-transit-feed-specification"
+        "realtime_vehicle_positions": "http://www.mybusinfo.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "http://www.mybusinfo.com/gtfsrt/trips",
+        "realtime_alerts": "http://www.mybusinfo.com/gtfsrt/alerts"
       }
     }
   ],
