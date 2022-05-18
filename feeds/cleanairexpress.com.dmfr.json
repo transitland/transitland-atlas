@@ -5,7 +5,7 @@
       "id": "f-clean~air~express~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.cleanairexpress.com/GTFS/GTFS.zip"
+        "static_current": "https://cleanairexpress.com/wp-content/uploads/GTFS.zip"
       },
       "operators": [
         {
@@ -14,9 +14,24 @@
           "website": "http://www.cleanairexpress.com",
           "tags": {
             "wikidata_id": "Q7419215"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-clean~air~express~ca~us~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-clean~air~express~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=santa-barbara-clean-air-express"
+      },
+      "tags": {
+        "developer_site": "https://github.com/cal-itp/graas"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
