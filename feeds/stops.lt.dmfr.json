@@ -9,6 +9,14 @@
       }
     },
     {
+      "id": "f-sĮsusisiekimopaslaugos~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.stops.lt/vilnius/gtfs_realtime.pb",
+        "realtime_trip_updates": "https://www.stops.lt/vilnius/gtfs_realtime.pb"
+      }
+    },
+    {
       "id": "f-u9c0-kaunoviešasistransportas",
       "spec": "gtfs",
       "urls": {
@@ -16,10 +24,26 @@
       }
     },
     {
+      "id": "f-kaunoviešasistransportas~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.stops.lt/kaunas/gtfs_realtime.pb",
+        "realtime_trip_updates": "https://www.stops.lt/kaunas/gtfs_realtime.pb"
+      }
+    },
+    {
       "id": "f-u3z-klaipėdoskeleivinistransportas",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.stops.lt/klaipeda/klaipeda/gtfs.zip"
+      }
+    },
+    {
+      "id": "f-klaipėdoskeleivinistransportas~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.stops.lt/klaipeda/gtfs_realtime.pb",
+        "realtime_trip_updates": "https://www.stops.lt/klaipeda/gtfs_realtime.pb"
       }
     },
     {
@@ -67,6 +91,9 @@
         {
           "feed_onestop_id": "f-u99z-sĮsusisiekimopaslaugos",
           "gtfs_agency_id": "vilnius"
+        },
+        {
+          "feed_onestop_id": "f-sĮsusisiekimopaslaugos~rt"
         }
       ]
     },
@@ -78,6 +105,9 @@
         {
           "feed_onestop_id": "f-u9c0-kaunoviešasistransportas",
           "gtfs_agency_id": "kaunas"
+        },
+        {
+          "feed_onestop_id": "f-kaunoviešasistransportas~rt"
         }
       ]
     },
@@ -89,6 +119,9 @@
         {
           "feed_onestop_id": "f-u3z-klaipėdoskeleivinistransportas",
           "gtfs_agency_id": "klaipeda"
+        },
+        {
+          "feed_onestop_id": "f-klaipėdoskeleivinistransportas~rt"
         }
       ]
     },
