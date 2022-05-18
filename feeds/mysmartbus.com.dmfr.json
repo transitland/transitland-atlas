@@ -1,4 +1,5 @@
 {
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
       "id": "f-southmetroarearegionaltransit~rt",
@@ -16,15 +17,22 @@
   ],
   "operators": [
     {
-      "onestop_id": "o-c20-southmetroareametroaltransit",
-      "name": "TODO",
+      "onestop_id": "o-c20-wilsonville~or~us",
+      "name": "South Metro Area Regional Transit",
+      "short_name": "SMART",
+      "website": "https://www.ridesmart.com/transit",
       "associated_feeds": [
+        {
+          "feed_onestop_id": "f-c20-wilsonville~or~us",
+          "gtfs_agency_id": "101"
+        },
         {
           "feed_onestop_id": "f-southmetroarearegionaltransit~rt"
         }
       ],
       "tags": {
-        "us_ntd_id": "46"
+        "us_ntd_id": "00046",
+        "wikidata_id": "Q7567940"
       }
     }
   ]
