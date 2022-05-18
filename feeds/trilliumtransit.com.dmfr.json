@@ -374,9 +374,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "526"
-            },
-            {
-              "feed_onestop_id": "f-thousandoakstransit~rt"
             }
           ],
           "tags": {
@@ -490,46 +487,11 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "729"
-            },
-            {
-              "feed_onestop_id": "f-simivalleytransit~rt"
             }
           ],
           "tags": {
             "twitter_general": "svtransit",
             "us_ntd_id": "90050"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9q6-kcapta~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "http://data.trilliumtransit.com/gtfs/kcapta-ca-us/kcapta-ca-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q6-kingsarearuraltransit",
-          "name": "Kings Area Rural Transit",
-          "short_name": "KART",
-          "website": "http://mykartbus.com/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "o-kingsarearuraltransit~rt"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "90200"
           }
         }
       ]
@@ -1102,40 +1064,6 @@
       ]
     },
     {
-      "id": "f-9qc0-soltrans~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/soltrans-ca-us/soltrans-ca-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "soltrans",
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc0-soltrans",
-          "name": "Solano County Transit",
-          "short_name": "SolTrans",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-soltrans~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "SolTransRide",
-            "us_ntd_id": "90232",
-            "wikidata_id": "Q16984743"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9qc3-riovistadeltabreeze",
       "spec": "gtfs",
       "urls": {
@@ -1409,41 +1337,6 @@
           "tags": {
             "twitter_general": "areatahoe",
             "us_ntd_id": "9R02-91101"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9qh0-anaheim~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "http://data.trilliumtransit.com/gtfs/anaheim-ca-us/anaheim-ca-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "anaheim-resort-transportation",
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qh0-anaheimresorttransportation",
-          "name": "Anaheim Resort Transportation",
-          "short_name": "ART",
-          "website": "https://rideart.org/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-anaheimresorttransportation~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "RideARTbus",
-            "us_ntd_id": "90211",
-            "wikidata_id": "Q4750893"
           }
         }
       ]
@@ -2928,17 +2821,6 @@
       ]
     },
     {
-      "id": "f-anaheimresorttransportation~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://art.tripshot.com/v1/gtfs/realtime/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://rideart.org/gtfs/"
-      }
-    },
-    {
       "id": "f-arcadia~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -3885,15 +3767,6 @@
       ]
     },
     {
-      "id": "f-camarilloareatransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
-      }
-    },
-    {
       "id": "f-camarillo~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -3911,9 +3784,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1656"
-            },
-            {
-              "feed_onestop_id": "f-camarilloareatransit~rt"
             }
           ],
           "tags": {
@@ -4145,10 +4015,6 @@
         "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
       }
     },
     {
@@ -6787,10 +6653,6 @@
         "realtime_vehicle_positions": "https://egrshuttle.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://egrshuttle.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://egrshuttle.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
       }
     },
     {
@@ -7150,10 +7012,6 @@
         "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
       }
     },
     {
@@ -7194,10 +7052,6 @@
         "realtime_vehicle_positions": "https://kwtransit.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://kwtransit.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://kwtransit.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
       }
     },
     {
@@ -7466,19 +7320,6 @@
       ]
     },
     {
-      "id": "f-moorparkcitytransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
-      }
-    },
-    {
       "id": "f-moorpark~city~transit",
       "spec": "gtfs",
       "urls": {
@@ -7496,9 +7337,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "877"
-            },
-            {
-              "feed_onestop_id": "f-moorparkcitytransit~rt"
             }
           ],
           "tags": {
@@ -7881,19 +7719,6 @@
       ]
     },
     {
-      "id": "f-simivalleytransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
-      }
-    },
-    {
       "id": "f-smart~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -7947,19 +7772,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "f-soltrans~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://soltrans.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
-        "realtime_trip_updates": "https://soltrans.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate2",
-        "realtime_alerts": "https://soltrans.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://soltrans.org/resources/developer-resources/"
-      }
     },
     {
       "id": "f-southcountytransitlink~ca~us",
@@ -8137,19 +7949,6 @@
       ]
     },
     {
-      "id": "f-thousandoakstransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
-      }
-    },
-    {
       "id": "f-thurston~wa~us",
       "spec": "gtfs",
       "urls": {
@@ -8265,10 +8064,6 @@
         "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
       }
     },
     {
@@ -8278,10 +8073,6 @@
         "realtime_vehicle_positions": "https://ride.vailgov.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://ride.vailgov.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://ride.vailgov.com/gtfs-rt/alerts"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://gtfs-directory.syncromatics.com/"
       }
     },
     {
@@ -8429,19 +8220,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "o-kingsarearuraltransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
-        "realtime_trip_updates": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
-        "realtime_alerts": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://www.kartbus.org/developers/"
-      }
     }
   ],
   "operators": [

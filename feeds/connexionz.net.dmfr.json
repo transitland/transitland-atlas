@@ -62,7 +62,90 @@
         "realtime_trip_updates": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
       }
-    }
+    },
+    {
+      "id": "f-9qc0-soltrans~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://soltrans.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/soltrans-ca-us/soltrans-ca-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "soltrans",
+        "status": "outdated"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc0-soltrans",
+          "name": "Solano County Transit",
+          "short_name": "SolTrans",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-soltrans~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "SolTransRide",
+            "us_ntd_id": "90232",
+            "wikidata_id": "Q16984743"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-soltrans~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://soltrans.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://soltrans.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate2",
+        "realtime_alerts": "https://soltrans.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      },
+      "license": {
+        "url": "https://soltrans.org/resources/developer-resources/"
+      }
+    },
+    {
+      "id": "f-kingsarearuraltransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
+      "id": "f-9q6-kcapta~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.kartbus.org/data/gtfs.zip",
+        "static_historic": [
+          "http://data.trilliumtransit.com/gtfs/kcapta-ca-us/kcapta-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q6-kingsarearuraltransit",
+          "name": "Kings Area Rural Transit",
+          "short_name": "KART",
+          "website": "http://mykartbus.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-kingsarearuraltransit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90200",
+            "developer_site": "https://www.kartbus.org/developers/"
+          }
+        }
+      ]
+    },
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
