@@ -249,40 +249,7 @@
         }
       ]
     },
-    {
-      "id": "f-dr7-westchestercountybee~linesystem",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Westchester_County_Bee-Line_System.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-westchestercountybee~linesystem",
-          "name": "Westchester County Bee-Line System",
-          "website": "http://transportation.westchestergov.com/bee-line-bus",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "WCDOT"
-            },
-            {
-              "feed_onestop_id": "f-westchestercountybee~linesystem~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "westchestergov",
-            "us_ntd_id": "20076",
-            "wikidata_id": "Q4879491"
-          }
-        }
-      ]
-    },
+
     {
       "id": "f-dr73-tappanzeeexpress",
       "spec": "gtfs",
@@ -931,19 +898,6 @@
       ]
     },
     {
-      "id": "f-rochester~geneseeregionaltransportationauthority~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "http://api.rgrta.com/rtvehicles",
-        "realtime_trip_updates": "http://api.rgrta.com/rttrips",
-        "realtime_alerts": "http://api.rgrta.com/rtservicealerts"
-      },
-      "authorization": {
-        "param_name": "api_key",
-        "info_url": "https://www.myrts.com/RGRTA-API"
-      }
-    },
-    {
       "id": "f-rts~seneca~ny",
       "spec": "gtfs",
       "urls": {
@@ -963,39 +917,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "RTS-Seneca-NY-US"
-            },
-            {
-              "feed_onestop_id": "f-rochester~geneseeregionaltransportationauthority~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "enjoyRTS",
-            "us_ntd_id": "20113",
-            "wikidata_id": "Q7353936"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-rts~wyoming~ny",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/RTS-Wyoming.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr8-regionaltransitservice",
-          "name": "Regional Transit Service",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RTS-WYOMING-NY-US"
             },
             {
               "feed_onestop_id": "f-rochester~geneseeregionaltransportationauthority~rt"
@@ -1216,19 +1137,6 @@
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      }
-    },
-    {
-      "id": "f-westchestercountybee~linesystem~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://wcgtfs.westchestergov.com/api/vehiclepositions?format=json",
-        "realtime_trip_updates": "https://wcgtfs.westchestergov.com/api/tripupdates?format=json",
-        "realtime_alerts": "https://wcgtfs.westchestergov.com/api/servicealerts?format=json"
-      },
-      "authorization": {
-        "type": "unclear",
-        "info_url": "https://wcgtfs.westchestergov.com/"
       }
     },
     {

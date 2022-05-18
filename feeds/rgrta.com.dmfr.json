@@ -3,6 +3,7 @@
   "feeds": [
     {
       "id": "f-dr8-rochester~geneseeregionaltransportationauthority",
+      "supersedes_ids": ["f-rts~wyoming~ny"],
       "spec": "gtfs",
       "urls": {
         "static_current": "http://scheduledata.rgrta.com/google_transit.zip"
@@ -13,15 +14,13 @@
       "operators": [
         {
           "onestop_id": "o-dr8-rochester~geneseeregionaltransportationauthority",
+          "supersedes_ids": ["o-dr8-regionaltransitservice"],
           "name": "Rochester-Genesee Regional Transportation Authority",
           "short_name": "RGRTA",
           "website": "http://www.rgrta.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "RGRTA"
-            },
-            {
-              "feed_onestop_id": "f-rochester~geneseeregionaltransportationauthority~rt"
             }
           ],
           "tags": {
