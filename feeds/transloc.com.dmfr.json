@@ -20,6 +20,11 @@
           "name": "Victor Valley Transit Authority",
           "short_name": "VVTA",
           "website": "https://www.vvta.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-victorvalleytransitauthority~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "VVTransit",
             "us_ntd_id": "90148",
@@ -163,6 +168,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-victorvalleytransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ontime.vvta.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ontime.vvta.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ontime.vvta.org/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

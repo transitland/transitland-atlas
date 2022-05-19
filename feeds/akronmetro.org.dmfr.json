@@ -2,6 +2,18 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-akronmetro~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=TripUpdate",
+        "realtime_alerts": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=Alert"
+      },
+      "license": {
+        "url": "https://www.akronmetro.org/gtfs-and-shapefiles.aspx"
+      }
+    },
+    {
       "id": "f-dpq-metro",
       "spec": "gtfs",
       "urls": {
@@ -18,6 +30,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-akronmetro~rt"
             }
           ],
           "tags": {

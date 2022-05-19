@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-9wh-riometroregionaltransitdistrict",
+      "supersedes_ids": [
+        "f-~rio~metro~rtd"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.riometro.org/DocumentCenter/View/2195/nmrailrunner_google_transit",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/nmrailrunner_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wh-riometroregionaltransitdistrict",
+          "name": "Rio Metro Regional Transit District",
+          "tags": {
+            "twitter_service_alerts": "RioMetroAlerts",
+            "us_ntd_id": "60111",
+            "wikidata_id": "Q11324955"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

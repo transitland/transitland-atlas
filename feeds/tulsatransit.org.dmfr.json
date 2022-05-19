@@ -15,6 +15,11 @@
           "onestop_id": "o-9y7v-metropolitantulsatransitauthority",
           "name": "Metropolitan Tulsa Transit Authority",
           "short_name": "MTTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-metropolitantulsatransitauthority~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "TulsaTransit",
             "us_ntd_id": "60018",
@@ -22,6 +27,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-metropolitantulsatransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://gtfs.tulsatransit.org/position_updates.pb",
+        "realtime_trip_updates": "http://gtfs.tulsatransit.org/trip_updates.pb",
+        "realtime_alerts": "http://gtfs.tulsatransit.org/alerts.pb"
+      },
+      "license": {
+        "url": "https://gtfs.tulsatransit.org/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
