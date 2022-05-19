@@ -24,8 +24,8 @@ jobs:
       run: |
         wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json -O dmfr.schema.json
         npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
-    - name: Lint against the opinionated DMFR format
-      run: |
-        transitland dmfr lint feeds/*.dmfr.json
+    # - name: Lint against the opinionated DMFR format
+    #   run: |
+    #     transitland dmfr lint feeds/*.dmfr.json
     - name: Validate against transitland-lib
       run: cd scripts && python validate-feeds.py
