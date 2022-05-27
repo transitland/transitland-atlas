@@ -40,7 +40,7 @@
         {
           "onestop_id": "o-9q9hu-cityofpaloaltoshuttle",
           "name": "City of Palo Alto Shuttle",
-          "website": "http://www.cityofpaloalto.org/news/displaynews.asp?NewsID=212\u0026TargetID=107",
+          "website": "http://www.cityofpaloalto.org/news/displaynews.asp?NewsID=212&TargetID=107",
           "associated_feeds": [
             {
               "gtfs_agency_id": "pa_shuttle"
@@ -95,27 +95,6 @@
           ],
           "tags": {
             "twitter_general": "gunnisonrta1"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9wh-riometroregionaltransitdistrict",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.riometro.org/DocumentCenter/View/2195/nmrailrunner_google_transit",
-        "static_historic": [
-          "http://mjcaction.com/MJC_GTFS_Public/nmrailrunner_google_transit.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9wh-riometroregionaltransitdistrict",
-          "name": "Rio Metro Regional Transit District",
-          "tags": {
-            "twitter_service_alerts": "RioMetroAlerts",
-            "us_ntd_id": "60111",
-            "wikidata_id": "Q11324955"
           }
         }
       ]
@@ -350,6 +329,18 @@
       ]
     },
     {
+      "id": "f-countyofkauai~transportationagency~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://thekauaibus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://thekauaibus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://thekauaibus.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
       "id": "f-dc~motorcoach",
       "spec": "gtfs",
       "urls": {
@@ -421,6 +412,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "Kauai"
+            },
+            {
+              "feed_onestop_id": "f-countyofkauai~transportationagency~rt"
             }
           ],
           "tags": {
@@ -561,13 +555,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "f-~rio~metro~rtd",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.riometro.org/DocumentCenter/View/1391"
-      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

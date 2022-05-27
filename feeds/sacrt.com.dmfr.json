@@ -64,6 +64,11 @@
         {
           "onestop_id": "o-9qcs-rosevilletransit",
           "name": "Roseville Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rosevilletransit~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "RSVL_Transit",
             "us_ntd_id": "90168",
@@ -71,6 +76,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-rosevilletransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rosevillebustracker.com/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://rosevillebustracker.com/gtfs-rt/alerts"
+      }
     }
   ],
   "operators": [

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-f244-RITC~Transcollines",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transcollines/gtfs/raw/master/transcollines-qc-ca.zip"
+      },
+      "license": {
+        "url": "https://github.com/transcollines/GTFS/blob/master/LICENCE.MD",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Le présent service intègre les données ouvertes fournies par la Régie intermunicipale de transport des Collines (RITC - Transcollines). Transcollines n’est pas responsable de l’exactitude de l’information générée par cette application. Dernière mise à jour : AAAA-MM-JJ."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f244-RITC~Transcollines",
+          "name": "Régie intermunicipale de transport des Collines",
+          "short_name": "Transcollines",
+          "website": "http://transcollines.ca",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Transcollines",
+              "feed_onestop_id": "f-f244-RITC~Transcollines"
+            },
+            {
+              "feed_onestop_id": "f-f244-RITC~Transcollines~RT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f244-RITC~Transcollines~RT",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://67.212.79.244:8080/hermes_st_Transcollines/pb/vehiclePositions.pb",
+        "realtime_trip_updates": "http://67.212.79.244:8080/hermes_st_Transcollines/pb/tripUpdates.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

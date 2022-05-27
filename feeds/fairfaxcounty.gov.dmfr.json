@@ -19,13 +19,28 @@
           "name": "Fairfax Connector",
           "short_name": "Fairfax Connector",
           "website": "http://www.fairfaxconnector.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-fairfaxconnector~rt"
+            }
+          ],
           "tags": {
+            "developer_site": "https://www.fairfaxcounty.gov/connector/bustracker/data/gtfsrt",
             "twitter_general": "ffxconnector",
             "us_ntd_id": "30068",
             "wikidata_id": "Q5430155"
           }
         }
       ]
+    },
+    {
+      "id": "f-fairfaxconnector~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.fairfaxcounty.gov/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://www.fairfaxcounty.gov/gtfsrt/trips",
+        "realtime_alerts": "https://www.fairfaxcounty.gov/gtfsrt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

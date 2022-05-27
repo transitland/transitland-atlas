@@ -3,6 +3,9 @@
   "feeds": [
     {
       "id": "f-9mu-mts",
+      "supersedes_ids": [
+        "f-9mu-mts~sandiegointernationalairport"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "http://www.sdmts.com/google_transit_files/google_transit.zip"
@@ -14,20 +17,35 @@
       }
     },
     {
-      "id": "f-9mu-mts~sandiegointernationalairport",
-      "spec": "gtfs",
+      "id": "f-mts~rt~mecatrans",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://www.sdmts.com/google_transit_files/google_transit.zip"
+        "realtime_alerts": "http://app.mecatran.com/utw/ws/gtfsfeed/alerts/sdmts"
       },
-      "license": {
-        "url": "https://www.sdmts.com/business-center-developers/terms-and-conditions"
+      "authorization": {
+        "type": "query_param",
+        "param_name": "apiKey",
+        "info_url": "https://www.sdmts.com/business-center-developers/real-time-data"
+      }
+    },
+    {
+      "id": "f-mts~rt~onebusaway",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtime.sdmts.com/api/api/gtfs_realtime/vehicle-positions-for-agency/MTS.pb",
+        "realtime_trip_updates": "https://realtime.sdmts.com/api/api/gtfs_realtime/trip-updates-for-agency/MTS.pb"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key",
+        "info_url": "https://www.sdmts.com/business-center-developers/real-time-data"
       }
     }
   ],
   "operators": [
     {
       "onestop_id": "o-9mu-mts",
-      "name": "Metropolitan Transit System",
+      "name": "San Diego Metropolitan Transit System",
       "short_name": "MTS",
       "website": "http://www.sdmts.com",
       "associated_feeds": [
@@ -36,8 +54,10 @@
           "feed_onestop_id": "f-9mu-mts"
         },
         {
-          "gtfs_agency_id": "MTS",
-          "feed_onestop_id": "f-9mu-mts~sandiegointernationalairport"
+          "feed_onestop_id": "f-mts~rt~mecatrans"
+        },
+        {
+          "feed_onestop_id": "f-mts~rt~onebusaway"
         }
       ],
       "tags": {
@@ -48,16 +68,13 @@
     },
     {
       "onestop_id": "o-9mudj-sandiegointernationalairport",
-      "name": "San Diego International Airport",
-      "website": "http://www.san.org",
+      "name": "San Diego County Regional Airport Authority",
+      "short_name": "San Diego Flyer",
+      "website": "https://www.san.org/to-from/Public-Transportation#1178347-old-town-shuttle",
       "associated_feeds": [
         {
           "gtfs_agency_id": "SAN",
           "feed_onestop_id": "f-9mu-mts"
-        },
-        {
-          "gtfs_agency_id": "SAN",
-          "feed_onestop_id": "f-9mu-mts~sandiegointernationalairport"
         }
       ],
       "tags": {

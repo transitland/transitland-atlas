@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-tram~tbs",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://opendata.tram.cat/GTFS/zip/TBS.zip"
+      },
+      "license": {
+        "url": "https://opendata.tram.cat/assets/pdf/condicions_en.pdf"
+      }
+    },
+    {
+      "id": "f-tram~tbx",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://opendata.tram.cat/GTFS/zip/TBX.zip"
+      },
+      "license": {
+        "url": "https://opendata.tram.cat/assets/pdf/condicions_en.pdf"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-tram",
+      "name": "Tramvia Metropolità",
+      "short_name": "TRAM",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tram~tbs"
+        },
+        {
+          "feed_onestop_id": "f-tram~tbx"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q794585"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

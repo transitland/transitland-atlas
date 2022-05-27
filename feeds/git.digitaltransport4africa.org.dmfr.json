@@ -2,10 +2,23 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-bamako~sotrama",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/bamako/-/raw/main/gtfs_Public_Transport_Bamako_Sotrama_01_01_2020_06_42_48.zip"
+      },
+      "license": {
+        "url": "https://gitlab.com/digitaltransport/data/africa/bamako"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
       "id": "f-ebvn-grand~abidjan",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://git.digitaltransport4africa.org/data/africa/abidjan/raw/master/Donn%C3%A9es/abidjan.zip"
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/abidjan/raw/master/Donn%C3%A9es/abidjan.zip"
       },
       "languages": [
         "fr"
@@ -21,7 +34,7 @@
       "id": "f-ebzz-amadepartmentoftransport",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://git.digitaltransport4africa.org/data/africa/accra/raw/master/GTFS/GTFS_Accra.zip"
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/accra/raw/master/GTFS/GTFS_Accra.zip"
       },
       "license": {
         "url": "https://opendatacommons.org/licenses/odbl/index.html",
@@ -37,6 +50,28 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "AMA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-kzf-nairobi~saccos",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/nairobi/-/raw/master/Data/GTFS.zip",
+        "static_historic": [
+          "http://www.s-e-w.net/nairobi/2017_Jan.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-kzf-nairobi~saccos",
+          "name": "Approved SACCOs of Nairobi as mapped by University of Nairobi C4D Lab",
+          "website": "http://www.digitalmatatus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "UON"
             }
           ]
         }

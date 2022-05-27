@@ -20,6 +20,11 @@
           "onestop_id": "o-cbq6-duluthtransitauthority",
           "name": "Duluth Transit Authority",
           "short_name": "DTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-duluthtransitauthority~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "DuluthTransit",
             "us_ntd_id": "50025",
@@ -27,6 +32,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-duluthtransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://duluthtransit.com/gtfsrt/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://duluthtransit.com/gtfsrt/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://duluthtransit.com/gtfsrt/Alert/Alerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

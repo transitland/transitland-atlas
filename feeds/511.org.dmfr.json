@@ -73,7 +73,7 @@
       "operators": [
         {
           "onestop_id": "o-9q8zm-blue~goldfleet",
-          "name": "Blue \u0026 Gold Fleet",
+          "name": "Blue & Gold Fleet",
           "website": "http://www.blueandgoldfleet.com/",
           "associated_feeds": [
             {
@@ -196,6 +196,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "CE"
+            },
+            {
+              "feed_onestop_id": "f-acealtamontcorridorexpress~rt"
             }
           ],
           "tags": {
@@ -277,6 +280,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "UC"
+            },
+            {
+              "feed_onestop_id": "f-unioncitytransit~rt"
             }
           ],
           "tags": {
@@ -358,7 +364,7 @@
           "onestop_id": "o-9qb-smart",
           "name": "Sonoma–Marin Area Rail Transit",
           "short_name": "SMART",
-          "website": "http://www.transit.511.org/schedules?m1=A\u0026m2=bus\u0026cid=SA",
+          "website": "http://www.transit.511.org/schedules?m1=A&m2=bus&cid=SA",
           "associated_feeds": [
             {
               "gtfs_agency_id": "SA"
@@ -527,6 +533,16 @@
       ]
     },
     {
+      "id": "f-acealtamontcorridorexpress~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=altamont-corridor-express"
+      },
+      "tags": {
+        "developer_site": "https://github.com/cal-itp/graas"
+      }
+    },
+    {
       "id": "f-sfo~airtrain~shuttles",
       "spec": "gtfs",
       "urls": {
@@ -586,6 +602,15 @@
       "tags": {
         "managed_by": "mtc-ca",
         "manual_import": "true"
+      }
+    },
+    {
+      "id": "f-unioncitytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://uctransit.info/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://uctransit.info/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://uctransit.info/gtfs-rt/alerts"
       }
     }
   ],

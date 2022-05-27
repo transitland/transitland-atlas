@@ -15,14 +15,31 @@
           "onestop_id": "o-9qh1-foothilltransit",
           "name": "Foothill Transit",
           "website": "http://www.foothilltransit.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-foothilltransit~rt"
+            }
+          ],
           "tags": {
-            "needs_agency_id": "f-9qh1-foothilltransit",
+            "developer_site": "http://foothilltransit.org/about/developer-resources/",
             "twitter_general": "foothilltransit",
             "us_ntd_id": "90146",
             "wikidata_id": "Q5466493"
           }
         }
       ]
+    },
+    {
+      "id": "f-foothilltransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=Alert"
+      },
+      "license": {
+        "url": "http://foothilltransit.org/about/developer-resources/developer-license-agreement/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
