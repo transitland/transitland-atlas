@@ -3,6 +3,7 @@
   "feeds": [
     {
       "id": "f-9y69-embark",
+      "supersedes_ids": ["f-embarknorman~ok"],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://embarkok.com/data/gtfs/google_transit.zip"
@@ -16,11 +17,16 @@
       "operators": [
         {
           "onestop_id": "o-9y69-embark",
-          "name": "Embark",
+          "supersedes_ids": ["o-embarknorman~ok"],
+          "name": "Central Oklahoma Transportation and Parking Authority",
+          "short_name": "EMBARK",
           "website": "http://embarkok.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "embark-ok-us"
+            },
+            {
+              "feed_onestop_id": "f-embarknorman~ok~rt"
             }
           ],
           "tags": {
@@ -31,6 +37,19 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-embarknorman~ok~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://app.mecatran.com/utw/ws/gtfsfeed/vehicles/embarkok",
+        "realtime_trip_updates": "https://app.mecatran.com/utw/ws/gtfsfeed/realtime/embarkok"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "apiKey",
+        "info_url": "https://embarkok.com/business/developer-resources/developer-registration"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
