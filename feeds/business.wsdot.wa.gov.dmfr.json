@@ -2,53 +2,23 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-c28-washingtonstateferries",
-      "urls": {
-        "static_current": "https://business.wsdot.wa.gov/Transit/csv_files/wsf/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c28-washingtonstateferries",
-          "tags": {
-            "us_ntd_id": "00035",
-            "wikidata_id": "Q3500373",
-            "twitter_general": "wsferries"
-          },
-          "name": "Washington State Ferries",
-          "short_name": "WSF",
-          "website": "http://www.wsdot.wa.gov/ferries/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-c28-washingtonstateferries",
-              "gtfs_agency_id": "WSF"
-            },
-            {
-              "feed_onestop_id": "f-wsf~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-c2-appleline~goldline~dungenessline~grapeline",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://business.wsdot.wa.gov/Transit/csv_files/InterCityBus/WSDOT_GTFS_Intercity.zip"
       },
       "license": {
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-c2s-goldline",
-          "name": "Gold Line",
-          "website": "http://www.gold-line.us",
+          "onestop_id": "o-c22-dungenessline",
+          "name": "Dungeness Line",
+          "website": "http://olympicbuslines.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "Gold Line"
+              "gtfs_agency_id": "Dungeness Line"
             }
           ]
         },
@@ -64,26 +34,55 @@
         },
         {
           "onestop_id": "o-c2d-appleline",
-          "tags": {
-            "us_ntd_id": "  "
-          },
           "name": "Apple Line",
           "website": "http://www.appleline.us/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "Apple Line"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "  "
+          }
         },
         {
-          "onestop_id": "o-c22-dungenessline",
-          "name": "Dungeness Line",
-          "website": "http://olympicbuslines.com/",
+          "onestop_id": "o-c2s-goldline",
+          "name": "Gold Line",
+          "website": "http://www.gold-line.us",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "Dungeness Line"
+              "gtfs_agency_id": "Gold Line"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "f-c28-washingtonstateferries",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://business.wsdot.wa.gov/Transit/csv_files/wsf/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-washingtonstateferries",
+          "name": "Washington State Ferries",
+          "short_name": "WSF",
+          "website": "http://www.wsdot.wa.gov/ferries/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WSF",
+              "feed_onestop_id": "f-c28-washingtonstateferries"
+            },
+            {
+              "feed_onestop_id": "f-wsf~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "wsferries",
+            "us_ntd_id": "35",
+            "wikidata_id": "Q3500373"
+          }
         }
       ]
     }

@@ -2,42 +2,42 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dr997-tompkinsconsolidatedareatransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/tcat-gtfs/tcat-ny-us.zip"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-tompkinsconsolidatedareatransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=TripUpdate",
         "realtime_vehicle_positions": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=TripUpdate",
         "realtime_alerts": "https://realtimetcatbus.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=Alert"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dr997-tompkinsconsolidatedareatransit",
-      "tags": {
-        "us_ntd_id": "20145",
-        "wikidata_id": "Q7820360",
-        "twitter_general": "tcatrides"
-      },
       "name": "Tompkins Consolidated Area Transit",
       "short_name": "TCAT",
       "website": "https://tcatbus.com/",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-tompkinsconsolidatedareatransit~rt"
+          "feed_onestop_id": "f-dr997-tompkinsconsolidatedareatransit"
         },
         {
-          "feed_onestop_id": "f-dr997-tompkinsconsolidatedareatransit"
+          "feed_onestop_id": "f-tompkinsconsolidatedareatransit~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "tcatrides",
+        "us_ntd_id": "20145",
+        "wikidata_id": "Q7820360"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

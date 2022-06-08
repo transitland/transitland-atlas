@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-w4-greenbusthailandltd",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.thaitransit.org/CM/GreenBus/greenbus_transit.zip"
       },
@@ -21,27 +21,15 @@
       ]
     },
     {
+      "id": "f-w5q-nakornchiangmaidernroteco~operativeltd",
       "spec": "gtfs",
-      "id": "f-w5q6g-chiangmaiuniversityth",
       "urls": {
-        "static_current": "http://www.thaitransit.org/CM/CMU/cmu_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-w5q6g-chiangmaiuniversityth",
-          "name": "Chiang Mai University",
-          "website": "http://www.cmu.ac.th/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "cmu_transit"
-            }
-          ]
-        }
-      ]
+        "static_current": "http://www.thaitransit.org/CM/West/west_route.zip"
+      }
     },
     {
-      "spec": "gtfs",
       "id": "f-w5q-nakornchiangmaidernroteco~operativeltd~sankamphaengco~oper",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.thaitransit.org/CM/North/north_route.zip"
       },
@@ -79,55 +67,67 @@
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-w5q-nakornchiangmaidernroteco~operativeltd",
-      "urls": {
-        "static_current": "http://www.thaitransit.org/CM/West/west_route.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
       "id": "f-w5q-sankamphaengco~operativeltd~nakornchiangmaidernroteco~oper",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.thaitransit.org/CM/East/east_route.zip"
       }
-    }
-  ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
-  "operators": [
+    },
     {
-      "onestop_id": "o-w5q7-sankamphaengco~operativeltd",
-      "name": "Sankamphaeng Co-Operative",
-      "website": "http://www.coopthai.com/nct/",
-      "associated_feeds": [
+      "id": "f-w5q6g-chiangmaiuniversityth",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.thaitransit.org/CM/CMU/cmu_transit.zip"
+      },
+      "operators": [
         {
-          "feed_onestop_id": "f-w5q-nakornchiangmaidernroteco~operativeltd~sankamphaengco~oper",
-          "gtfs_agency_id": "Sankamphaeng_transit"
-        },
-        {
-          "feed_onestop_id": "f-w5q-sankamphaengco~operativeltd~nakornchiangmaidernroteco~oper",
-          "gtfs_agency_id": "Sankamphaeng_Transit"
+          "onestop_id": "o-w5q6g-chiangmaiuniversityth",
+          "name": "Chiang Mai University",
+          "website": "http://www.cmu.ac.th/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "cmu_transit"
+            }
+          ]
         }
       ]
-    },
+    }
+  ],
+  "operators": [
     {
       "onestop_id": "o-w5q-nakornchiangmaidernroteco~operativeltd",
       "name": "Nakorn Chiangmai Dernrote Co-Operative",
       "website": "http://www.coopthai.com/nct/",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-w5q-nakornchiangmaidernroteco~operativeltd~sankamphaengco~oper",
-          "gtfs_agency_id": "Nakorn Chiangmai_transit"
+          "gtfs_agency_id": "Coopthai_transit",
+          "feed_onestop_id": "f-w5q-nakornchiangmaidernroteco~operativeltd"
         },
         {
-          "feed_onestop_id": "f-w5q-sankamphaengco~operativeltd~nakornchiangmaidernroteco~oper",
-          "gtfs_agency_id": "Nakorn Chiangmai Dernrote_Transit"
+          "gtfs_agency_id": "Nakorn Chiangmai_transit",
+          "feed_onestop_id": "f-w5q-nakornchiangmaidernroteco~operativeltd~sankamphaengco~oper"
         },
         {
-          "feed_onestop_id": "f-w5q-nakornchiangmaidernroteco~operativeltd",
-          "gtfs_agency_id": "Coopthai_transit"
+          "gtfs_agency_id": "Nakorn Chiangmai Dernrote_Transit",
+          "feed_onestop_id": "f-w5q-sankamphaengco~operativeltd~nakornchiangmaidernroteco~oper"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-w5q7-sankamphaengco~operativeltd",
+      "name": "Sankamphaeng Co-Operative",
+      "website": "http://www.coopthai.com/nct/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "Sankamphaeng_transit",
+          "feed_onestop_id": "f-w5q-nakornchiangmaidernroteco~operativeltd~sankamphaengco~oper"
+        },
+        {
+          "gtfs_agency_id": "Sankamphaeng_Transit",
+          "feed_onestop_id": "f-w5q-sankamphaengco~operativeltd~nakornchiangmaidernroteco~oper"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

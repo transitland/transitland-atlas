@@ -2,74 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-u3qb-warszawskakolejdojazdowa",
-      "urls": {
-        "static_current": "https://mkuran.pl/feed/wkd/wkd-latest.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3qb-warszawskakolejdojazdowa",
-          "name": "Warszawska Kolej Dojazdowa",
-          "short_name": "WKD",
-          "website": "http://www.wkd.com.pl/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "wkd"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-u3qc-komunikacjamiejskaŁomiankispzoo",
-      "urls": {
-        "static_current": "https://mkuran.pl/feed/kml/kml-latest.zip"
-      },
-      "license": {
-        "url": "http://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3qc-komunikacjamiejskaŁomiankispzoo",
-          "name": "Komunikacja Miejska Łomianki",
-          "short_name": "KMŁ",
-          "website": "http://kmlomianki.info/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "kmł"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3qc-komunikacjamiejskaŁomianki",
-          "name": "Komunikacja Miejska Łomianki",
-          "short_name": "KMŁ",
-          "website": "http://kmlomianki.info/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa",
-      "tags": {
-        "manual_import": "true"
-      },
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://mkuran.pl/feed/ztm/ztm-latest.zip"
       },
@@ -77,8 +11,10 @@
         "url": "http://www.ztm.waw.pl/?c=628&l=1",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Bus shapes based on data by: © OpenStreetMap contributors"
+      },
+      "tags": {
+        "manual_import": "true"
       },
       "operators": [
         {
@@ -100,6 +36,67 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "ztm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u3qb-warszawskakolejdojazdowa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/feed/wkd/wkd-latest.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3qb-warszawskakolejdojazdowa",
+          "name": "Warszawska Kolej Dojazdowa",
+          "short_name": "WKD",
+          "website": "http://www.wkd.com.pl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "wkd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u3qc-komunikacjamiejskaŁomiankispzoo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/feed/kml/kml-latest.zip"
+      },
+      "license": {
+        "url": "http://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3qc-komunikacjamiejskaŁomianki",
+          "name": "Komunikacja Miejska Łomianki",
+          "short_name": "KMŁ",
+          "website": "http://kmlomianki.info/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3qc-komunikacjamiejskaŁomiankispzoo",
+          "name": "Komunikacja Miejska Łomianki",
+          "short_name": "KMŁ",
+          "website": "http://kmlomianki.info/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "kmł"
             }
           ]
         }

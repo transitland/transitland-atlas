@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-9q5f7-burbankbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rideburbankbus.com/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5f7-burbankbus",
+          "name": "Burbank Bus",
+          "website": "http://www.burbankbus.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-burbankbus~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "burbankca",
+            "us_ntd_id": "90256",
+            "wikidata_id": "Q4998151"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-burbankbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rideburbankbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://rideburbankbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://rideburbankbus.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

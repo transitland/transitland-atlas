@@ -2,8 +2,48 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-xn4ju-掛川市",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://opentrans.it/feed/gtfs/5707702298738688/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-xn4ju-掛川市",
+          "name": "Kakegawa Local Voluntary Operation Bus",
+          "short_name": "掛川市",
+          "website": "http://www.city.kakegawa.shizuoka.jp/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22213-5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-xn4k-御前崎市",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://opentrans.it/feed/gtfs/5634472569470976/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-xn4k-御前崎市",
+          "name": "Omaezaki Local Voluntary Operation Bus",
+          "short_name": "御前崎市",
+          "website": "http://www.city.omaezaki.shizuoka.jp/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22223-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-xn4n-島田市",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://opentrans.it/feed/gtfs/5724160613416960/gtfs.zip"
       },
@@ -24,8 +64,8 @@
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-xn4q-焼津市役所",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://opentrans.it/feed/gtfs/5714163003293696/google_transit.zip"
       },
@@ -46,28 +86,33 @@
       ]
     },
     {
+      "id": "f-xn4q-藤枝市",
       "spec": "gtfs",
-      "id": "f-xn4ju-掛川市",
       "urls": {
-        "static_current": "http://opentrans.it/feed/gtfs/5707702298738688/google_transit.zip"
+        "static_current": "http://opentrans.it/feed/gtfs/5697423099822080/gtfs.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Using data copyright(C) Fujieda City"
       },
       "operators": [
         {
-          "onestop_id": "o-xn4ju-掛川市",
-          "name": "Kakegawa Local Voluntary Operation Bus",
-          "short_name": "掛川市",
-          "website": "http://www.city.kakegawa.shizuoka.jp/",
+          "onestop_id": "o-xn4q-藤枝市",
+          "name": "藤枝市",
+          "website": "http://www.city.fujieda.shizuoka.jp",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "22213-5"
+              "gtfs_agency_id": "22214_1"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-xn6b1-裾野市",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://opentrans.it/feed/gtfs/5649391675244544/google_transit.zip"
       },
@@ -79,52 +124,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "22220-8"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-xn4k-御前崎市",
-      "urls": {
-        "static_current": "http://opentrans.it/feed/gtfs/5634472569470976/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-xn4k-御前崎市",
-          "name": "Omaezaki Local Voluntary Operation Bus",
-          "short_name": "御前崎市",
-          "website": "http://www.city.omaezaki.shizuoka.jp/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "22223-2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-xn4q-藤枝市",
-      "urls": {
-        "static_current": "http://opentrans.it/feed/gtfs/5697423099822080/gtfs.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Using data copyright(C) Fujieda City"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-xn4q-藤枝市",
-          "name": "藤枝市",
-          "website": "http://www.city.fujieda.shizuoka.jp",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "22214_1"
             }
           ]
         }

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-southmetroarearegionaltransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mysmartbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://mysmartbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://mysmartbus.com/gtfs-rt/alerts"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-c20-wilsonville~or~us",
+      "name": "South Metro Area Regional Transit",
+      "short_name": "SMART",
+      "website": "https://www.ridesmart.com/transit",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "101",
+          "feed_onestop_id": "f-c20-wilsonville~or~us"
+        },
+        {
+          "feed_onestop_id": "f-southmetroarearegionaltransit~rt"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "00046",
+        "wikidata_id": "Q7567940"
+      }
+    }
+  ]
+}

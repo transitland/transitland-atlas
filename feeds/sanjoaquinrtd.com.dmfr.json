@@ -2,20 +2,18 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qc-sanjoaquinrtd",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://sjrtd.com/RTD-GTFS/RTD-GTFS.zip"
       },
       "license": {
-        "url": "http://sanjoaquinrtd.com/preview/terms-of-use/",
         "spdx_identifier": "CC-BY-3.0",
+        "url": "http://sanjoaquinrtd.com/preview/terms-of-use/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_instructions": "You must present the Data with the following legend, prominently displayed",
         "attribution_text": " and schedule data provided by permission of San Joaquin RTD",
-        "license_spdx_identifier": "CC-BY-3.0"
+        "attribution_instructions": "You must present the Data with the following legend, prominently displayed"
       },
       "tags": {
         "gtfs_data_exchange": "san-joaquin-regional-transit-district-rtd"
@@ -23,13 +21,18 @@
       "operators": [
         {
           "onestop_id": "o-9qc-sanjoaquinregionaltransitdistrictrtd",
-          "tags": {
-            "us_ntd_id": "90012",
-            "wikidata_id": "Q7414399",
-            "twitter_general": "sanjoaquinrtd"
-          },
           "name": "San Joaquin Regional Transit District",
-          "short_name": "RTD"
+          "short_name": "RTD",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sanjoaquinrtd~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "sanjoaquinrtd",
+            "us_ntd_id": "90012",
+            "wikidata_id": "Q7414399"
+          }
         }
       ]
     }

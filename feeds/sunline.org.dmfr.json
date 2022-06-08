@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qj-sunlinetransitagency",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.sunline.org/transit/google_transit.zip"
       },
@@ -13,13 +13,13 @@
       "operators": [
         {
           "onestop_id": "o-9qj-sunlinetransitagency",
-          "tags": {
-            "us_ntd_id": "90079",
-            "wikidata_id": "Q7638150",
-            "twitter_general": "sunlinetransit"
-          },
           "name": "SunLine Transit Agency",
-          "short_name": "SunLine"
+          "short_name": "SunLine",
+          "tags": {
+            "twitter_general": "sunlinetransit",
+            "us_ntd_id": "90079",
+            "wikidata_id": "Q7638150"
+          }
         }
       ]
     }

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dps2w-universityofmichigantransitservices",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://ltp.umich.edu/gtfs/google_transit.zip"
       },
@@ -13,17 +13,17 @@
       "operators": [
         {
           "onestop_id": "o-dps2w-universityofmichigantransitservices",
-          "tags": {
-            "us_ntd_id": "50158",
-            "twitter_general": "UMichBusDrivers"
-          },
           "name": "University of Michigan Transit Services",
           "website": "http://pts.umich.edu",
           "associated_feeds": [
             {
               "gtfs_agency_id": "UM_Transit"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "UMichBusDrivers",
+            "us_ntd_id": "50158"
+          }
         }
       ]
     }

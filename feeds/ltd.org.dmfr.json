@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9rb-lanetransitdistrict",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.ltd.org/files/library/ltdgtfs.zip"
       },
@@ -12,23 +12,17 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-ltd~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://feed.ltd.org/gtfs-realtime/tripupdate/",
-        "realtime_vehicle_positions": "http://feed.ltd.org/gtfs-realtime/vehicle/"
+        "realtime_vehicle_positions": "http://feed.ltd.org/gtfs-realtime/vehicle/",
+        "realtime_trip_updates": "http://feed.ltd.org/gtfs-realtime/tripupdate/"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9rb-lanetransitdistrict",
-      "tags": {
-        "us_ntd_id": "00007",
-        "wikidata_id": "Q6485453",
-        "twitter_general": "lanetransit"
-      },
       "name": "Lane Transit District",
       "short_name": "LTD",
       "associated_feeds": [
@@ -38,7 +32,13 @@
         {
           "feed_onestop_id": "f-ltd~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "lanetransit",
+        "us_ntd_id": "7",
+        "wikidata_id": "Q6485453"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

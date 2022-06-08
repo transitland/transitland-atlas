@@ -2,32 +2,38 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-tulare~county~regional~transit~agency",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/tulare-county-regional-transit-agency-tcrta-gtfs/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tulare~county~regional~transit~agency",
+          "name": "Tulare County Regional Transit Agency",
+          "short_name": "TCRTA",
+          "tags": {
+            "wikidata_id": "Q110722692"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-tulare~time",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://tularetransit.com/gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-9q7j-time",
-          "name": "TIME",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TIME"
-            }
-          ],
+          "name": "Tulare InterModal Express ",
+          "short_name": "TIME",
           "tags": {
             "us_ntd_id": "90244"
           }
         }
       ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-tulare~dart",
-      "urls": {
-        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/dinuba-area-regional-transit-gtfs/"
-      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

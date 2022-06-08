@@ -2,25 +2,30 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dnjq-greenlink",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://trackgreenlink.com/gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-dnjq-greenlink",
+          "name": "Greenlink",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnjq-greenlink~rt"
+            }
+          ],
           "tags": {
-            "us_ntd_id": "40053",
-            "twitter_general": "ridegreenlink"
-          },
-          "name": "Greenlink"
+            "twitter_general": "ridegreenlink",
+            "us_ntd_id": "40053"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-dnjq-greenlink~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://trackgreenlink.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://trackgreenlink.com/gtfs-rt/tripupdates",

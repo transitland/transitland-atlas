@@ -2,245 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-u0j-trenitalia",
-      "urls": {
-        "static_current": "http://www.dati.piemonte.it/allegati/tpl/GTFS_RAIL_IT_PIE.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/2.5/it/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Elaborazione  dati  realizzata  da  [Licensee],  basata  su  \"Servizio programmato del Trasporto Pubblico Regione Piemonte - Treni Regionali\"  della  Regione Piemonte"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u0j-trenitalia",
-          "name": "TRENITALIA",
-          "website": "http://www.trenitalia.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000174"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-u0j-piemonte~autobus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.dati.piemonte.it/catalogodati/scarica.html?idallegato=1097"
       },
       "operators": [
         {
-          "onestop_id": "o-spvph-comunediangrogna",
-          "name": "Comune di Angrogna",
-          "website": "http://www.comune.angrogna.to.gov.it/trasporti.php",
+          "onestop_id": "o-spv-atitrasportiinterurbanispa~buscompany",
+          "name": "BUSCOMPANY",
+          "website": "http://www.buscompany.it/ati",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000053"
+              "gtfs_agency_id": "ITRP-AG000008"
             }
           ]
         },
         {
-          "onestop_id": "o-spvj-comunitamontanavallevaraita",
-          "name": "Comunità montana Valle Varaita",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000095"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j39-comunedimonasterolanzo",
-          "name": "Comune di Monastero Lanzo",
-          "website": "http://www.comune.monasterodilanzo.to.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000070"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j1-rossattoclaudioserviziautobus",
-          "name": "Rossatto Claudio Servizi Autobus",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000223"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvr-chiesasrl",
-          "name": "Chiesa",
-          "website": "http://www.chiesaviaggi.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000050"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-sademspa",
+          "onestop_id": "o-spv-autoindustrialeesadempool",
           "name": "Sadem",
-          "website": "http://www.sadem.it",
+          "website": "http://www.sadem.it/en/home.aspx",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000158"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvz-autolineefllimortarasrl",
-          "name": "Autolinee Fratelli Mortara",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000107"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j1-rossattoegtt",
-          "name": "Rossatto e GTT",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000229"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-autolineegiorssrl",
-          "name": "Autolinee Giachino",
-          "website": "http://www.autolineegiachino.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000025"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvz-hollibusautoservizidiollinosergio~csnc",
-          "name": "Hollibus Autoservizi",
-          "website": "http://www.hollibus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000132"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j-canovaspa",
-          "name": "CA.NOVA",
-          "website": "http://www.canovaspa.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000212"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvpk-bouchardenzo~cditizianabouchard~csnc",
-          "name": "Bouchard",
-          "website": "http://www.bouchardviaggi.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000047"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j2-gherrasrl",
-          "name": "Gherra",
-          "website": "http://www.gherra.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000113"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-rivieratrasportipiemontespa",
-          "name": "Riviera Trasporti",
-          "website": "http://www.rivieratrasporti.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000200"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0n0-amc~aziendamultiservizicasalesespa",
-          "name": "Azienda Multiservizi Casalese",
-          "short_name": "AMC",
-          "website": "http://www.amcasale.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000001"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvp2-comunediprali",
-          "name": "Comune di Prali",
-          "website": "http://www.comune.prali.to.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000075"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvv-comunitamontanalangaastigiana~valbormida",
-          "name": "Communità Montana Langa Astigiana Val Bormida",
-          "website": "http://www.langastigiana.at.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000187"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j3d-comunedicoassolotorinese",
-          "name": "Comune di Coassolo Torinese",
-          "website": "http://www.comune.coassolo.to.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000062"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-autolineenuovabenesesrl",
-          "name": "Autolinee Nuova Benese",
-          "short_name": "Benese",
-          "website": "http://www.benese.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000026"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j-atavvigospa",
-          "name": "A.T.A.V. VIGO",
-          "short_name": "VIGO",
-          "website": "http://www.vigobus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000006"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j-baranzellinatursrl",
-          "name": "Baranzelli Natur",
-          "short_name": "Baranzelli",
-          "website": "http://www.baranzelli.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000042"
+              "gtfs_agency_id": "ITRP-AG000018"
             }
           ]
         },
@@ -256,62 +40,33 @@
           ]
         },
         {
-          "onestop_id": "o-spvz-autoservizisquillarisrl",
-          "name": "Autoservizi Squillari",
-          "website": "http://www.autoservizisquillari.com",
+          "onestop_id": "o-spv-autolineegiorssrl",
+          "name": "Autolinee Giachino",
+          "website": "http://www.autolineegiachino.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000036"
+              "gtfs_agency_id": "ITRP-AG000025"
             }
           ]
         },
         {
-          "onestop_id": "o-spvm-gunettoautolineesrl",
-          "name": "Gunetto Autolinee",
-          "website": "http://www.gunettoautolinee.it",
+          "onestop_id": "o-spv-autolineenuovabenesesrl",
+          "name": "Autolinee Nuova Benese",
+          "short_name": "Benese",
+          "website": "http://www.benese.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000131"
+              "gtfs_agency_id": "ITRP-AG000026"
             }
           ]
         },
         {
-          "onestop_id": "o-spvqn-comunedisavigliano",
-          "name": "Comune di Savigliano",
-          "website": "http://www.comune.savigliano.cn.it",
+          "onestop_id": "o-spv-buscompanysrl",
+          "name": "BUSCOMPANY",
+          "website": "http://www.buscompany.it/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000081"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvz-rattitoursdirattiluigi~csnc",
-          "name": "Ratti Tours",
-          "website": "http://www.rattitours.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000146"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j3-votteroautoservizi",
-          "name": "Vottero Autoserizi",
-          "website": "http://www.vottero.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000224"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvy1-comunedimango",
-          "name": "Comune di Mango",
-          "website": "http://www.comune.mango.cn.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000068"
+              "gtfs_agency_id": "ITRP-AG000234"
             }
           ]
         },
@@ -326,6 +81,291 @@
           ]
         },
         {
+          "onestop_id": "o-spv-consorziograndabus",
+          "name": "Consorzio Grandabus",
+          "website": "http://www.grandabus.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000098"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spv-gelosobussrl",
+          "name": "Gelosobus",
+          "website": "http://www.gelosobus.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000111"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spv-gttecanova",
+          "name": "GTT e CA.NOVA",
+          "website": "http://canovaspa.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000213"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spv-rivieratrasportipiemontespa",
+          "name": "Riviera Trasporti",
+          "website": "http://www.rivieratrasporti.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000200"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spv-sademspa",
+          "name": "Sadem",
+          "website": "http://www.sadem.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000158"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvj-comunitamontanavallevaraita",
+          "name": "Comunità montana Valle Varaita",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000095"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvk-autolineevallepesiosrl",
+          "name": "Autolinee Valle Pesio",
+          "website": "http://www.savgroup.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000030"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvm-actpsrl",
+          "name": "A.C.T.P.",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000189"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvm-comunedifossano",
+          "name": "Comune di Fossano",
+          "website": "http://www.comune.fossano.cn.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000066"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvm-gunettoautolineesrl",
+          "name": "Gunetto Autolinee",
+          "website": "http://www.gunettoautolinee.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000131"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvm-savautolineesrl",
+          "name": "S.A.V.",
+          "website": "http://www.sav.cnnet.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000153"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvm0-comunedivillarsancostanzo",
+          "name": "Comune di Villar San Costanzo",
+          "website": "http://www.comune.villarsancostanzo.cn.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000085"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvm3-comunedirossana",
+          "name": "Comune di Rossana",
+          "website": "http://www.comune.rossana.cn.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000079"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvmf-comunedisaluzzo",
+          "name": "Comune di Saluzzo",
+          "website": "http://www.comune.saluzzo.cn.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000080"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvn-comunitamontanavallepobrondainfernotto",
+          "name": "Communità montana valli Po Bronda Infernotto",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000093"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvp-cavouresespa",
+          "name": "Cavourese",
+          "website": "http://www.cavourese.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000049"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvp-comunitamontanavalchisone",
+          "name": "Comunità montana Valli Chisone e Germanasca",
+          "website": "http://www.unionevallichisonegermanasca.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000087"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvp2-comunediprali",
+          "name": "Comune di Prali",
+          "website": "http://www.comune.prali.to.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000075"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvph-comunediangrogna",
+          "name": "Comune di Angrogna",
+          "website": "http://www.comune.angrogna.to.gov.it/trasporti.php",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000053"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvpk-bobbaroberto",
+          "name": "Bobba Roberto",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000045"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvpk-bouchardenzo~cditizianabouchard~csnc",
+          "name": "Bouchard",
+          "website": "http://www.bouchardviaggi.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000047"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvpk-comunedipramollo",
+          "name": "Comune di Pramollo",
+          "website": "http://www.comune.pramollo.to.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000076"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvps-sademebouchardpool",
+          "name": "Bouchard e Sadem",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000214"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvq-autolineeallasiasrl",
+          "name": "Autolinee Allasia",
+          "website": "http://www.allasiaautolinee.com/allasia/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000020"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvqn-comunedisavigliano",
+          "name": "Comune di Savigliano",
+          "website": "http://www.comune.savigliano.cn.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000081"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvr-cavoureseesadempool",
+          "name": "Cavourese e Sadem",
+          "website": "http://www.cavourese.it/default.asp",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000209"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvr-chiesasrl",
+          "name": "Chiesa",
+          "website": "http://www.chiesaviaggi.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000050"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvs-nuovasaarsrl",
+          "name": "Nuova SAAR",
+          "website": "http://www.viaggisac.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000140"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvv-comunitamontanalangaastigiana~valbormida",
+          "name": "Communità Montana Langa Astigiana Val Bormida",
+          "website": "http://www.langastigiana.at.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000187"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-spvw-nuovabeccariasrl",
           "name": "Nuova Beccaria",
           "website": "http://www.viaggisac.com/",
@@ -336,11 +376,165 @@
           ]
         },
         {
-          "onestop_id": "o-spvm-actpsrl",
-          "name": "A.C.T.P.",
+          "onestop_id": "o-spvw-sacsrl",
+          "name": "S.A.C.",
+          "website": "http://www.viaggisac.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000189"
+              "gtfs_agency_id": "ITRP-AG000150"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvy1-comunedimango",
+          "name": "Comune di Mango",
+          "website": "http://www.comune.mango.cn.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000068"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvz-arfeaspa",
+          "name": "Aziende Riunite Filovie ed Autolinee",
+          "short_name": "Arfea",
+          "website": "http://www.arfea.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000011"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvz-asp~aziendaservizipubblicispa",
+          "name": "Asti Servizi Pubblici",
+          "short_name": "ASP",
+          "website": "http://www.asp.asti.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000014"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvz-autolineefllimortarasrl",
+          "name": "Autolinee Fratelli Mortara",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000107"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvz-autoservizisquillarisrl",
+          "name": "Autoservizi Squillari",
+          "website": "http://www.autoservizisquillari.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000036"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvz-aviosibusdipongoliabramoeaviosistefaniasnc",
+          "name": "Aviosibus di Pongoli Abrama e Aviosi Stefania",
+          "short_name": "Aviosibus",
+          "website": "http://www.aviosibus.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000040"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvz-hollibusautoservizidiollinosergio~csnc",
+          "name": "Hollibus Autoservizi",
+          "website": "http://www.hollibus.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000132"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spvz-rattitoursdirattiluigi~csnc",
+          "name": "Ratti Tours",
+          "website": "http://www.rattitours.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000146"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0h-bellandotourssrl",
+          "name": "Bellando Tours",
+          "website": "http://www.bellandotours.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000043"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0hb-bellandotours~gherra",
+          "name": "Bellando Tours & Gherra Autolinee",
+          "website": "https://sites.google.com/site/autolineegherra/autonoleggio",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000225"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j-atavvigospa",
+          "name": "A.T.A.V. VIGO",
+          "short_name": "VIGO",
+          "website": "http://www.vigobus.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000006"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j-autostradalesrl",
+          "name": "Autostradale",
+          "website": "http://www.autostradale.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000037"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j-baranzellinatursrl",
+          "name": "Baranzelli Natur",
+          "short_name": "Baranzelli",
+          "website": "http://www.baranzelli.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000042"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j-canovaspa",
+          "name": "CA.NOVA",
+          "website": "http://www.canovaspa.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000212"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j-sademestaavpool",
+          "name": "S.T.A.A.V. e Sadem",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000220"
             }
           ]
         },
@@ -356,119 +550,12 @@
           ]
         },
         {
-          "onestop_id": "o-u0h-bellandotourssrl",
-          "name": "Bellando Tours",
-          "website": "http://www.bellandotours.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000043"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j-sademestaavpool",
-          "name": "S.T.A.A.V. e Sadem",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000220"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvp-cavouresespa",
-          "name": "Cavourese",
-          "website": "http://www.cavourese.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000049"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0nhd-pirazziautoservizisrl",
-          "name": "Pirazzi Autoservizi",
-          "website": "http://www.pirazzi.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000144"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvmf-comunedisaluzzo",
-          "name": "Comune di Saluzzo",
-          "website": "http://www.comune.saluzzo.cn.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000080"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-gttecanova",
-          "name": "GTT e CA.NOVA",
-          "website": "http://canovaspa.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000213"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j2-vigoautoindustrialeecanova",
-          "name": "VIGO Autoindustriale e CA.NOVA",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000231"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j6-viaggimunaro",
-          "name": "Viaggi Munaro",
-          "website": "http://vimu.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000177"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvp-comunitamontanavalchisone",
-          "name": "Comunità montana Valli Chisone e Germanasca",
-          "website": "http://www.unionevallichisonegermanasca.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000087"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u0j-vigoautoindustriale",
           "name": "Vigo Autoindustriale",
           "website": "http://www.vigo-autoindustriale.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "ITRP-AG000181"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j9-atavvigoeautoindustrialevigoevimuevitaegtt",
-          "name": "ATAV VIGO e Autoindustriale VIGO e VIMU e VITA e GTT",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000226"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-buscompanysrl",
-          "name": "BUSCOMPANY",
-          "website": "http://www.buscompany.it/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000234"
             }
           ]
         },
@@ -492,21 +579,89 @@
           ]
         },
         {
-          "onestop_id": "o-spvpk-bobbaroberto",
-          "name": "Bobba Roberto",
+          "onestop_id": "o-u0j1-rossattoclaudioserviziautobus",
+          "name": "Rossatto Claudio Servizi Autobus",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000045"
+              "gtfs_agency_id": "ITRP-AG000223"
             }
           ]
         },
         {
-          "onestop_id": "o-spv-autoindustrialeesadempool",
-          "name": "Sadem",
-          "website": "http://www.sadem.it/en/home.aspx",
+          "onestop_id": "o-u0j1-rossattoegtt",
+          "name": "Rossatto e GTT",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000018"
+              "gtfs_agency_id": "ITRP-AG000229"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j2-gherrasrl",
+          "name": "Gherra",
+          "website": "http://www.gherra.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000113"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j2-vigoautoindustrialeecanova",
+          "name": "VIGO Autoindustriale e CA.NOVA",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000231"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j3-viaggifurnosrl",
+          "name": "Viaggi Furno",
+          "website": "http://www.furno.it/home.htm",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000178"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j3-votteroautoservizi",
+          "name": "Vottero Autoserizi",
+          "website": "http://www.vottero.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000224"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j39-comunedimonasterolanzo",
+          "name": "Comune di Monastero Lanzo",
+          "website": "http://www.comune.monasterodilanzo.to.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000070"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j3d-comunedicoassolotorinese",
+          "name": "Comune di Coassolo Torinese",
+          "website": "http://www.comune.coassolo.to.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000062"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j6-viaggimunaro",
+          "name": "Viaggi Munaro",
+          "website": "http://vimu.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000177"
             }
           ]
         },
@@ -516,6 +671,35 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "ITRP-AG000227"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j9-atavvigoeautoindustrialevigoevimuevitaegtt",
+          "name": "ATAV VIGO e Autoindustriale VIGO e VIMU e VITA e GTT",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000226"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j9-marlettiautolineesrlsrl",
+          "name": "Marletti Autolinee",
+          "website": "http://www.marletti.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000031"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j9-staav~calusoviaggidiviglioccosrl",
+          "name": "S.T.A.A.V. - Servizi Turistici Autonoleggi Autolinee Vigliocco",
+          "short_name": "Caluso Viaggi",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ITRP-AG000154"
             }
           ]
         },
@@ -541,107 +725,6 @@
           ]
         },
         {
-          "onestop_id": "o-spvpk-comunedipramollo",
-          "name": "Comune di Pramollo",
-          "website": "http://www.comune.pramollo.to.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000076"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvz-asp~aziendaservizipubblicispa",
-          "name": "Asti Servizi Pubblici",
-          "short_name": "ASP",
-          "website": "http://www.asp.asti.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000014"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvm3-comunedirossana",
-          "name": "Comune di Rossana",
-          "website": "http://www.comune.rossana.cn.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000079"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvz-arfeaspa",
-          "name": "Aziende Riunite Filovie ed Autolinee",
-          "short_name": "Arfea",
-          "website": "http://www.arfea.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000011"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvm-comunedifossano",
-          "name": "Comune di Fossano",
-          "website": "http://www.comune.fossano.cn.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000066"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvr-cavoureseesadempool",
-          "name": "Cavourese e Sadem",
-          "website": "http://www.cavourese.it/default.asp",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000209"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvs-nuovasaarsrl",
-          "name": "Nuova SAAR",
-          "website": "http://www.viaggisac.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000140"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvn-comunitamontanavallepobrondainfernotto",
-          "name": "Communità montana valli Po Bronda Infernotto",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000093"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j-autostradalesrl",
-          "name": "Autostradale",
-          "website": "http://www.autostradale.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000037"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j9-marlettiautolineesrlsrl",
-          "name": "Marletti Autolinee",
-          "website": "http://www.marletti.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000031"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u0n-saf~societaautoservizifontanetosrl",
           "name": "Società Autoservizi Fontaneto",
           "short_name": "S.A.F.",
@@ -649,66 +732,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "ITRP-AG000151"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0j3-viaggifurnosrl",
-          "name": "Viaggi Furno",
-          "website": "http://www.furno.it/home.htm",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000178"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-atitrasportiinterurbanispa~buscompany",
-          "name": "BUSCOMPANY",
-          "website": "http://www.buscompany.it/ati",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000008"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvq-autolineeallasiasrl",
-          "name": "Autolinee Allasia",
-          "website": "http://www.allasiaautolinee.com/allasia/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000020"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvm-savautolineesrl",
-          "name": "S.A.V.",
-          "website": "http://www.sav.cnnet.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000153"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvk-autolineevallepesiosrl",
-          "name": "Autolinee Valle Pesio",
-          "website": "http://www.savgroup.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000030"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvw-sacsrl",
-          "name": "S.A.C.",
-          "website": "http://www.viaggisac.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000150"
             }
           ]
         },
@@ -724,72 +747,48 @@
           ]
         },
         {
-          "onestop_id": "o-spv-gelosobussrl",
-          "name": "Gelosobus",
-          "website": "http://www.gelosobus.it",
+          "onestop_id": "o-u0n0-amc~aziendamultiservizicasalesespa",
+          "name": "Azienda Multiservizi Casalese",
+          "short_name": "AMC",
+          "website": "http://www.amcasale.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000111"
+              "gtfs_agency_id": "ITRP-AG000001"
             }
           ]
         },
         {
-          "onestop_id": "o-u0j9-staav~calusoviaggidiviglioccosrl",
-          "name": "S.T.A.A.V. - Servizi Turistici Autonoleggi Autolinee Vigliocco",
-          "short_name": "Caluso Viaggi",
+          "onestop_id": "o-u0nhd-pirazziautoservizisrl",
+          "name": "Pirazzi Autoservizi",
+          "website": "http://www.pirazzi.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000154"
+              "gtfs_agency_id": "ITRP-AG000144"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "f-u0j-trenitalia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.dati.piemonte.it/allegati/tpl/GTFS_RAIL_IT_PIE.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/2.5/it/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Elaborazione  dati  realizzata  da  [Licensee],  basata  su  \"Servizio programmato del Trasporto Pubblico Regione Piemonte - Treni Regionali\"  della  Regione Piemonte"
+      },
+      "operators": [
         {
-          "onestop_id": "o-spvm0-comunedivillarsancostanzo",
-          "name": "Comune di Villar San Costanzo",
-          "website": "http://www.comune.villarsancostanzo.cn.it",
+          "onestop_id": "o-u0j-trenitalia",
+          "name": "TRENITALIA",
+          "website": "http://www.trenitalia.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ITRP-AG000085"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0hb-bellandotours~gherra",
-          "name": "Bellando Tours & Gherra Autolinee",
-          "website": "https://sites.google.com/site/autolineegherra/autonoleggio",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000225"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvz-aviosibusdipongoliabramoeaviosistefaniasnc",
-          "name": "Aviosibus di Pongoli Abrama e Aviosi Stefania",
-          "short_name": "Aviosibus",
-          "website": "http://www.aviosibus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000040"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spvps-sademebouchardpool",
-          "name": "Bouchard e Sadem",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000214"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-spv-consorziograndabus",
-          "name": "Consorzio Grandabus",
-          "website": "http://www.grandabus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ITRP-AG000098"
+              "gtfs_agency_id": "ITRP-AG000174"
             }
           ]
         }

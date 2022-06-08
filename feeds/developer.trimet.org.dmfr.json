@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c20-trimet",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://developer.trimet.org/schedule/gtfs.zip"
       },
@@ -16,72 +16,72 @@
       },
       "operators": [
         {
-          "onestop_id": "o-c20fb6-portlandaerialtram",
-          "tags": {
-            "us_ntd_id": "00008"
-          },
-          "name": "Portland Aerial Tram",
-          "website": "http://www.gobytram.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TRAM"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-c20fb-portlandstreetcar",
-          "tags": {
-            "us_ntd_id": "00008",
-            "wikidata_id": "Q1753708",
-            "twitter_general": "PDXStreetcar"
-          },
           "name": "Portland Streetcar",
           "website": "http://portlandstreetcar.org/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "PSC"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "PDXStreetcar",
+            "us_ntd_id": "00008",
+            "wikidata_id": "Q1753708"
+          }
+        },
+        {
+          "onestop_id": "o-c20fb6-portlandaerialtram",
+          "name": "Portland Aerial Tram",
+          "website": "http://www.gobytram.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TRAM"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00008"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-trimet~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://developer.trimet.org/ws/V1/FeedSpecAlerts",
+        "realtime_vehicle_positions": "http://developer.trimet.org/ws/gtfs/VehiclePositions",
         "realtime_trip_updates": "http://developer.trimet.org/ws/V1/TripUpdate",
-        "realtime_vehicle_positions": "http://developer.trimet.org/ws/gtfs/VehiclePositions"
+        "realtime_alerts": "http://developer.trimet.org/ws/V1/FeedSpecAlerts"
       },
       "authorization": {
         "type": "query_param",
-        "info_url": "https://developer.trimet.org/GTFS.shtml",
-        "param_name": "appID"
+        "param_name": "appID",
+        "info_url": "https://developer.trimet.org/GTFS.shtml"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-c20-trimet",
-      "tags": {
-        "us_ntd_id": "00008",
-        "wikidata_id": "Q1766623",
-        "twitter_general": "trimet",
-        "twitter_service_alerts": "trimetalerts"
-      },
       "name": "Tri-County Metropolitan Transportation District of Oregon",
       "short_name": "TriMet",
       "website": "http://trimet.org/",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-c20-trimet",
-          "gtfs_agency_id": "TRIMET"
+          "gtfs_agency_id": "TRIMET",
+          "feed_onestop_id": "f-c20-trimet"
         },
         {
           "feed_onestop_id": "f-trimet~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "trimet",
+        "twitter_service_alerts": "trimetalerts",
+        "us_ntd_id": "8",
+        "wikidata_id": "Q1766623"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

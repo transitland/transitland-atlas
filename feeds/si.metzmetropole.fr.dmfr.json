@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u0sr-lemet~proxis",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://si.metzmetropole.fr/fiches/opendata/gtfs_current.zip"
       },
@@ -12,22 +12,22 @@
       },
       "operators": [
         {
-          "onestop_id": "o-u0sr-proxis",
-          "name": "PROXIS",
-          "website": "http://lemet.fr",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u0sr-lemet",
           "name": "LE MET'",
           "website": "http://lemet.fr",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0sr-proxis",
+          "name": "PROXIS",
+          "website": "http://lemet.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
             }
           ]
         }

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-ztp~krakow~bus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.ztp.krakow.pl/GTFS_KRK_A.zip"
+      },
+      "tags": {
+        "mdb_source_id": "1326"
+      }
+    },
+    {
+      "id": "f-ztp~krakow~bus~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",
+        "realtime_trip_updates": "https://gtfs.ztp.krakow.pl/TripUpdates_A.pb",
+        "realtime_alerts": "https://gtfs.ztp.krakow.pl/ServiceAlerts_A.pb"
+      }
+    },
+    {
+      "id": "f-ztp~krakow~tram",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.ztp.krakow.pl/GTFS_KRK_T.zip"
+      },
+      "tags": {
+        "mdb_source_id": "1270"
+      }
+    },
+    {
+      "id": "f-ztp~krakow~tram~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs.ztp.krakow.pl/VehiclePositions_T.pb",
+        "realtime_trip_updates": "https://gtfs.ztp.krakow.pl/TripUpdates_T.pb",
+        "realtime_alerts": "https://gtfs.ztp.krakow.pl/ServiceAlerts_T.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

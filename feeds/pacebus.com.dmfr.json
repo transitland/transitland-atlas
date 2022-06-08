@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dp3-pace",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://public.pacebus.com/gtfs/gtfs.zip"
       },
       "license": {
         "url": "http://www.pacebus.com/sub/about/data_services.asp",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "pace-suburban-bus-service"
@@ -19,11 +18,6 @@
       "operators": [
         {
           "onestop_id": "o-dp3-pace",
-          "tags": {
-            "us_ntd_id": "50113",
-            "wikidata_id": "Q3360030",
-            "twitter_general": "PaceSuburbanBus"
-          },
           "name": "Pace Suburban Bus",
           "short_name": "Pace",
           "website": "http://www.pacebus.com",
@@ -31,7 +25,12 @@
             {
               "gtfs_agency_id": "PACE"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "PaceSuburbanBus",
+            "us_ntd_id": "50113",
+            "wikidata_id": "Q3360030"
+          }
         }
       ]
     }

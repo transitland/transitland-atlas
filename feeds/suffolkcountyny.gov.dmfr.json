@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-drk-ny~suffolkcountytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.suffolkcountyny.gov/Portals/0/formsdocs/publicworks/Zip/google_transit.zip"
       },
@@ -13,27 +13,31 @@
       "operators": [
         {
           "onestop_id": "o-drk-ny~suffolkcountytransit",
-          "tags": {
-            "us_ntd_id": "20072",
-            "wikidata_id": "Q7634561",
-            "twitter_general": "SCTBusInfo"
-          },
           "name": "Suffolk County Transit",
           "website": "http://www.sct-bus.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "SCT"
+            },
+            {
+              "feed_onestop_id": "f-drk-ny~suffolkcountytransit~rt"
             }
-          ]
+          ],
+          "tags": {
+            "developer_site": "https://www.suffolkcountyny.gov/Departments/Public-Works/Transportation/General-Transit-Feed-Specification-Details",
+            "twitter_general": "SCTBusInfo",
+            "us_ntd_id": "20072",
+            "wikidata_id": "Q7634561"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-drk-ny~suffolkcountytransit~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://gtfsrealtime.suffolkcountyny.gov:8080/gtfsrealtime/TripUpdates",
-        "realtime_vehicle_positions": "http://gtfsrealtime.suffolkcountyny.gov:8080/gtfsrealtime/VehiclePositions"
+        "realtime_vehicle_positions": "http://gtfsrealtime.suffolkcountyny.gov:8080/gtfsrealtime/VehiclePositions",
+        "realtime_trip_updates": "http://gtfsrealtime.suffolkcountyny.gov:8080/gtfsrealtime/TripUpdates"
       },
       "license": {
         "url": "https://www.suffolkcountyny.gov/Departments/Public-Works/Transportation/Terms-and-Conditions"

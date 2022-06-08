@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpnz-bcta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://gt.bcta.com/current/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-dpnz-bcta",
-          "tags": {
-            "us_ntd_id": "30023",
-            "wikidata_id": "Q4878009",
-            "twitter_general": "BeaverCoTransit"
-          },
           "name": "Beaver County Transit Authority",
-          "short_name": "BCTA"
+          "short_name": "BCTA",
+          "tags": {
+            "twitter_general": "BeaverCoTransit",
+            "us_ntd_id": "30023",
+            "wikidata_id": "Q4878009"
+          }
         }
       ]
     }

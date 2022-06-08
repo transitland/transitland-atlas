@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-cbq6-duluthtransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://duluthtransit.com/gtf/google_transit.zip"
       },
       "license": {
         "url": "https://www.duluthtransit.com/home/doing-business/developer-resources/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "duluth-transit-authority"
@@ -19,15 +18,29 @@
       "operators": [
         {
           "onestop_id": "o-cbq6-duluthtransitauthority",
-          "tags": {
-            "us_ntd_id": "50025",
-            "wikidata_id": "Q16967413",
-            "twitter_general": "DuluthTransit"
-          },
           "name": "Duluth Transit Authority",
-          "short_name": "DTA"
+          "short_name": "DTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-duluthtransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "DuluthTransit",
+            "us_ntd_id": "50025",
+            "wikidata_id": "Q16967413"
+          }
         }
       ]
+    },
+    {
+      "id": "f-duluthtransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://duluthtransit.com/gtfsrt/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://duluthtransit.com/gtfsrt/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://duluthtransit.com/gtfsrt/Alert/Alerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

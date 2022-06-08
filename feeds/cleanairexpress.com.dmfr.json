@@ -2,21 +2,36 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-clean~air~express~ca~us",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.cleanairexpress.com/GTFS/GTFS.zip"
+        "static_current": "https://cleanairexpress.com/wp-content/uploads/GTFS.zip"
       },
       "operators": [
         {
           "onestop_id": "o-clean~air~express~ca~us",
+          "name": "Clean Air Express",
+          "website": "http://www.cleanairexpress.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-clean~air~express~ca~us~rt"
+            }
+          ],
           "tags": {
             "wikidata_id": "Q7419215"
-          },
-          "name": "Clean Air Express",
-          "website": "http://www.cleanairexpress.com"
+          }
         }
       ]
+    },
+    {
+      "id": "f-clean~air~express~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=santa-barbara-clean-air-express"
+      },
+      "tags": {
+        "developer_site": "https://github.com/cal-itp/graas"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

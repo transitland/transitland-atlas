@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dqcj1-fairfaxcue",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.fairfaxva.gov/Home/ShowDocument?id=6713"
       },
       "operators": [
         {
           "onestop_id": "o-dqcj1-fairfaxcue",
-          "tags": {
-            "us_ntd_id": "30058",
-            "wikidata_id": "Q5014679",
-            "twitter_general": "CityofFFXCUE"
-          },
           "name": "Fairfax CUE Bus",
-          "short_name": "CUE"
+          "short_name": "CUE",
+          "tags": {
+            "twitter_general": "CityofFFXCUE",
+            "us_ntd_id": "30058",
+            "wikidata_id": "Q5014679"
+          }
         }
       ]
     }

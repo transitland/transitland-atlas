@@ -1,0 +1,52 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-dr7-westchestercountybee~linesystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Westchester_County_Bee-Line_System.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7-westchestercountybee~linesystem",
+          "name": "Westchester County Bee-Line System",
+          "website": "http://transportation.westchestergov.com/bee-line-bus",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WCDOT"
+            },
+            {
+              "feed_onestop_id": "f-westchestercountybee~linesystem~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "westchestergov",
+            "us_ntd_id": "20076",
+            "wikidata_id": "Q4879491"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-westchestercountybee~linesystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://wcgtfs.westchestergov.com/api/vehiclepositions?format=gtfs.proto",
+        "realtime_trip_updates": "https://wcgtfs.westchestergov.com/api/tripupdates?format=gtfs.proto",
+        "realtime_alerts": "https://wcgtfs.westchestergov.com/api/servicealerts?format=gtfs.proto"
+      },
+      "license": {
+        "url": "https://wcgtfs.westchestergov.com/"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

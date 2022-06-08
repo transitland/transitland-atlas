@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-bdvk-anchoragepeoplemover",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://gtfs.muni.org/People_Mover.gtfs.zip"
       },
@@ -11,7 +11,6 @@
         "url": "http://www.muni.org/Departments/transit/PeopleMover/Pages/GTFSDiscliamer.aspx",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Data provided courtesy of MOA"
       },
       "tags": {
@@ -20,21 +19,21 @@
       "operators": [
         {
           "onestop_id": "o-bdvk-anchoragepeoplemover",
-          "tags": {
-            "us_ntd_id": "00012",
-            "wikidata_id": "Q7165908"
-          },
           "name": "Anchorage People Mover",
           "website": "http://www.peoplemover.org/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-bdvk-anchoragepeoplemover",
-              "gtfs_agency_id": "Anchorage People Mover"
+              "gtfs_agency_id": "Anchorage People Mover",
+              "feed_onestop_id": "f-bdvk-anchoragepeoplemover"
             },
             {
               "feed_onestop_id": "f-peoplemover~rt"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "12",
+            "wikidata_id": "Q7165908"
+          }
         }
       ]
     }

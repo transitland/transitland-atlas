@@ -2,29 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9t9-suntran",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.suntran.com/wp-content/uploads/2021/08/SunTranGTFS.zip",
         "static_historic": [
           "https://www.suntran.com/GTFS/SunTranGTFS.zip"
         ]
       },
-      "tags": {
-        "gtfs_data_exchange": "suntran"
-      },
       "license": {
         "url": "https://www.suntran.com/developers_terms.php"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
           "onestop_id": "o-9t9-suntran",
+          "name": "Sun Tran",
           "tags": {
+            "twitter_general": "SunTran_Tucson",
             "us_ntd_id": "90033",
-            "wikidata_id": "Q7638551",
-            "twitter_general": "SunTran_Tucson"
-          },
-          "name": "SunTran"
+            "wikidata_id": "Q7638551"
+          }
         }
       ]
     }

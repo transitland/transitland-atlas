@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-dr5re-downtownalliance",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://app.mecatran.com/utw/ws/gtfsfeed/static/nydtc"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "apiKey"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr5re-downtownalliance",
+          "name": "Alliance for Downtown New York",
+          "short_name": "Downtown Connection",
+          "website": "http://www.downtownny.com/getting-around/downtown-connection",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dr5re-downtownalliance~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-dr5re-downtownalliance~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://app.mecatran.com/utw/ws/gtfsfeed/realtime/nydtc",
+        "realtime_alerts": "https://app.mecatran.com/utw/ws/gtfsfeed/alerts/nydtc"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "apiKey"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

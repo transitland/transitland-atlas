@@ -2,35 +2,46 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5-ladot",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://ladotbus.com/gtfs"
       },
       "license": {
         "url": "http://www.ladottransit.com/dla.html",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-9q5-ladot",
-          "tags": {
-            "us_ntd_id": "90147",
-            "wikidata_id": "Q3259703",
-            "twitter_general": "LADOTofficial"
-          },
           "name": "Los Angeles Department of Transportation",
           "short_name": "LADOT",
           "website": "http://www.ladottransit.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "27"
+            },
+            {
+              "feed_onestop_id": "f-ladot~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "LADOTofficial",
+            "us_ntd_id": "90147",
+            "wikidata_id": "Q3259703"
+          }
         }
       ]
+    },
+    {
+      "id": "f-ladot~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ladotbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ladotbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ladotbus.com/gtfs-rt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

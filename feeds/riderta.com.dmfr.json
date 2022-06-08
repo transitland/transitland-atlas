@@ -2,29 +2,46 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpmg-rta",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.riderta.com/sites/default/files/gtfs/latest/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "greater-cleveland-regional-transit-authority"
       },
       "license": {
         "url": "http://www.riderta.com/developers"
       },
+      "tags": {
+        "gtfs_data_exchange": "greater-cleveland-regional-transit-authority"
+      },
       "operators": [
         {
           "onestop_id": "o-dpmg-greaterclevelandregionaltransitauthority",
-          "tags": {
-            "us_ntd_id": "50015",
-            "wikidata_id": "Q1544412",
-            "twitter_general": "GCRTA"
-          },
           "name": "Greater Cleveland Regional Transit Authority",
-          "short_name": "GCRTA"
+          "short_name": "GCRTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-greaterclevelandregionaltransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "GCRTA",
+            "us_ntd_id": "50015",
+            "wikidata_id": "Q1544412"
+          }
         }
       ]
+    },
+    {
+      "id": "f-greaterclevelandregionaltransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://gtfs.gcrta.org/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "http://gtfs.gcrta.org/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_alerts": "http://gtfs.gcrta.org/TMGTFSRealTimeWebService/Alert/Alerts.pb"
+      },
+      "license": {
+        "url": "http://www.riderta.com/developers"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

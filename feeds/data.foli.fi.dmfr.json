@@ -2,30 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u6x-turunlinja~autoilijainosakeyhtiö~savonlinjaoy~sl~autolinja",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.foli.fi/gtfs/gtfs.zip"
       },
       "operators": [
-        {
-          "onestop_id": "o-udb0-vesmanliikenneoy",
-          "name": "Vesman Liikenne",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "28"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u6zb-länsilinjatoy",
-          "name": "Länsilinjat",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "41"
-            }
-          ]
-        },
         {
           "onestop_id": "o-u6x-jvainionliikenneoy",
           "name": "J. Vainion Liikenne",
@@ -54,15 +36,6 @@
           ]
         },
         {
-          "onestop_id": "o-u6zb-savonlinjaoy~sl~autolinjat",
-          "name": "Savonlinja/SL-Autolinjat",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "11"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u6xz-turunkaupunkiliikenneoy",
           "name": "Turun Kaupunkiliikenne",
           "associated_feeds": [
@@ -77,6 +50,33 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "55"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u6zb-länsilinjatoy",
+          "name": "Länsilinjat",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "41"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u6zb-savonlinjaoy~sl~autolinjat",
+          "name": "Savonlinja/SL-Autolinjat",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-udb0-vesmanliikenneoy",
+          "name": "Vesman Liikenne",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "28"
             }
           ]
         }

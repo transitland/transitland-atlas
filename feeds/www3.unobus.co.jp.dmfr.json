@@ -2,16 +2,18 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-wyp-unobus~宇野自動車株式会社",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://www3.unobus.co.jp/opendata/GTFS.ZIP"
+        "static_current": "http://www3.unobus.co.jp/opendata/GTFS-JP.zip"
       },
       "license": {
         "url": "https://creativecommons.org/licenses/by/4.0/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "mdb_source_id": "1250"
       },
       "operators": [
         {

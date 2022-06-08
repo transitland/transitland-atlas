@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q5-metro~losangeles",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gitlab.com/LACMTA/gtfs_bus/raw/master/gtfs_bus.zip"
       },
@@ -11,7 +11,6 @@
         "url": "http://developer.metro.net/the-basics/policies/terms-and-conditions/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "no",
         "attribution_text": "provided by LA Metro"
       },
       "tags": {
@@ -19,16 +18,15 @@
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-9q5-metro~losangeles~rail",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gitlab.com/LACMTA/gtfs_rail/raw/master/gtfs_rail.zip"
       },
       "license": {
         "url": "http://developer.metro.net/the-basics/policies/terms-and-conditions/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "no"
+        "create_derived_product": "yes"
       },
       "tags": {
         "feed_id": "us_ca_lacmta_rail",
@@ -36,37 +34,23 @@
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-catalina~express",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gitlab.com/LACMTA/gtfs_lax/-/archive/master/gtfs_lax-master.zip?path=catalina_express"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-la~county",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gitlab.com/LACMTA/gtfs_lax/-/archive/master/gtfs_lax-master.zip?path=la_county"
       }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-santa~clarita",
-      "urls": {
-        "static_current": "https://gitlab.com/LACMTA/gtfs_lax/-/archive/master/gtfs_lax-master.zip?path=santa_clarita"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9q5-metro~losangeles",
-      "tags": {
-        "us_ntd_id": "90154",
-        "wikidata_id": "Q3259702",
-        "twitter_general": "metrolosangeles",
-        "twitter_service_alerts": "MetroLAalerts"
-      },
       "name": "Los Angeles County Metropolitan Transportation Authority",
       "short_name": "LA Metro",
       "associated_feeds": [
@@ -75,8 +59,18 @@
         },
         {
           "feed_onestop_id": "f-9q5-metro~losangeles~rail"
+        },
+        {
+          "feed_onestop_id": "f-metro~losangeles~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "metrolosangeles",
+        "twitter_service_alerts": "MetroLAalerts",
+        "us_ntd_id": "90154",
+        "wikidata_id": "Q3259702"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

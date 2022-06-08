@@ -2,21 +2,38 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q60w-cityofsanluisobispotransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://app.mecatran.com/urb/ws/feed/c2l0ZT1zbG90cmFuc2l0O2NsaWVudD1zZWxmO2V4cGlyZT07dHlwZT1ndGZzO2tleT0zZTMwMzM1OTRiMTE2NzA0N2IxNjQwNjA0ZjQwMGMzMzdiM2E1MTQ0"
       },
       "operators": [
         {
           "onestop_id": "o-9q60w-cityofsanluisobispotransit",
-          "tags": {
-            "us_ntd_id": "90156",
-            "wikidata_id": "Q7390980",
-            "twitter_general": "SloTransit"
-          },
           "name": "City of San Luis Obispo Transit",
-          "short_name": "SLO"
+          "short_name": "SLO",
+          "tags": {
+            "twitter_general": "SloTransit",
+            "us_ntd_id": "90156",
+            "wikidata_id": "Q7390980"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-greensboro~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://app.mecatran.com/urb/ws/feed/c2l0ZT1ncmVlbnNib3JvO2NsaWVudD1zZWxmO2V4cGlyZT07dHlwZT1ndGZzO2tleT00ZDQ3MDYyMjNiNjI3ZjFmMTU1YzFiNGIxNTY0Mzg0ZDFjNzYyOTQy",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/greensboro-nc-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnrm-greensborotransit",
+          "name": "Greensboro Transit Authority",
+          "short_name": "GTA"
         }
       ]
     }

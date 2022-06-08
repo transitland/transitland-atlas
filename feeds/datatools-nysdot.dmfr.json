@@ -2,324 +2,107 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-academy~express~staten~island",
       "spec": "gtfs",
-      "id": "f-dr5x2-jfkairtrain",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Academy_Express_-_Staten_Island.zip"
+      },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Airtrain_JFK.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr5x2-jfkairtrain",
-          "tags": {
-            "wikidata_id": "Q406683",
-            "twitter_general": "JFKairport"
-          },
-          "name": "JFK Airtrain",
-          "website": "http://www.mta.info/mta/airtrain.htm",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "JA"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-drg-clintoncountypublictransit",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
         "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Clinton_County_Public_Transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drg-clintoncountypublictransit",
-          "tags": {
-            "us_ntd_id": "2R02-20939"
-          },
-          "name": "Clinton County Public Transit",
-          "short_name": "CCPT",
-          "website": "http://www.clintoncountypublictransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CCPT-Clinton-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr8-accessallegany",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Access_Allegany.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr8-accessallegany",
-          "tags": {
-            "us_ntd_id": "2R02-20951",
-            "twitter_general": "accessallegany"
-          },
-          "name": "Access Allegany",
-          "website": "http://www.accessallegany.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "AccessAllegany-Allegany-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-drd-chenangofirsttransit",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Chenango_First_Transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drd-chenangofirsttransit",
-          "tags": {
-            "us_ntd_id": "2R02-20935",
-            "wikidata_id": "Q7501815"
-          },
-          "name": "Chenango First Transit",
-          "website": "http://chenango-first-transit.webnode.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CHFT-chenango-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr8-hornellareatransit",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Hornell_Area_Transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr8-hornellareatransit",
-          "tags": {
-            "us_ntd_id": "2R02-20953"
-          },
-          "name": "Hornell Area Transit",
-          "short_name": "HAT",
-          "website": "http://www.hatrides.com/contact.htm",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HATSteuben-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-drg-northcountryexpresstransit",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/North_Country_Express.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drg-northcountryexpresstransit",
-          "name": "North Country Express Transit",
-          "website": "http://www.511ny.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NCET-Clinton-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dres54-cityofmechanicvillepublictransit",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/City_of_Mechanicville_Public_Transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dres54-cityofmechanicvillepublictransit",
-          "tags": {
-            "us_ntd_id": "20213"
-          },
-          "name": "City of Mechanicville Public Transit",
-          "website": "http://www.mechanicville.com/index.aspx?NID=253",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CMT-Mechanicville-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-drg-franklincountypublictransportation",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Franklin_County_Public_Transportation.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drg-franklincountypublictransportation",
-          "tags": {
-            "us_ntd_id": "2R02-20992"
-          },
-          "name": "Franklin County Public Transportation",
-          "website": "http://franklincony.org/content/Departments/View/13",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FranklinCOPT-Franklin-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dreh-gloversvilletransitservices",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Gloversville_Transit_Services.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dreh-gloversvilletransitservices",
-          "tags": {
-            "us_ntd_id": "2R02-20981"
-          },
-          "name": "Gloversville Transit System",
-          "website": "http://www.ride-gts.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GTS-Fulton-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-drew-greaterglensfallstransitsystem",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Greater_Glens_Falls_Transit_System.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drew-greaterglensfallstransitsystem",
-          "tags": {
-            "us_ntd_id": "20120",
-            "twitter_general": "ggftransit"
-          },
-          "name": "Greater Glens Falls Transit System",
-          "website": "https://www.cityofglensfalls.com/60/Greater-Glens-Falls-Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GGFT-Warren-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-birnie~bus",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Birnie_Bus.zip"
+        "share_alike_optional": "yes"
       }
     },
     {
+      "id": "f-birnie~bus",
       "spec": "gtfs",
-      "id": "f-chemung~c~tran",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Birnie_Bus.zip"
+      },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-ceats~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Corning_Erwin_Area_Transit_System_CEATS.zip"
       },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr3p-ceats",
+          "name": "CEATS",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CEATS-Steuben-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20941"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-chautauqua~area~regional~transit~system",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/CARTS_Chautauqua_Area_Regional_Transit_System_-_City_Routes.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/CARTS_Chautauqua_Area_Regional_Transit_System.zip"
+        ]
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpx-carts",
+          "name": "Chautauqua Area Regional Transit System",
+          "short_name": "CARTS",
+          "website": "https://chqgov.com/carts/CARTS",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CARTS-Chautauqua-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20959",
+            "wikidata_id": "Q5088381"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-chemung~c~tran",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Chemung_C_Tran.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
@@ -338,613 +121,61 @@
       ]
     },
     {
+      "id": "f-clarkstown~mini~trans",
       "spec": "gtfs",
-      "id": "f-ceats~ny",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Clarkstown_Mini_Trans.zip"
+      },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Corning_Erwin_Area_Transit_System_CEATS.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr3p-ceats",
-          "name": "CEATS",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CEATS-Steuben-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20941"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dutchess~county~ny",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
         "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Dutchess_County_Transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-dutchesscounty",
-          "name": "Dutchess County",
-          "tags": {
-            "us_ntd_id": "20010",
-            "wikidata_id": "Q5317486",
-            "twitter_general": "DutchessCoGov"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-lewis~county~ny",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Lewis_County.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drf-lewiscountypublictransportation",
-          "name": "Lewis County Public Transportation",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "LCPT"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20925"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-madison~transit~services~ny",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Madison_Transit_Services.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drd-madisoncountytransit",
-          "name": "Madison County Transit",
-          "tags": {
-            "us_ntd_id": "2R02-20940"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-olean~area~transit~system",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Olean_Area_Transit_System.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr2p-oleanareatransitsystem",
-          "name": "Olean Area Transit System",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "OATS-Cattaraugus-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20975",
-            "twitter_general": "oatsolean"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-oneida~county~ny",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Oneida_County_Rural_Transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drd-herkimer~oneidacountiestransportationstudyhocts",
-          "name": "HERKIMER-ONEIDA COUNTIES TRANSPORTATION STUDY (HOCTS)",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HOCTS"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20989"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-otsego~express",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Otsego_Express_Public_Transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drd-otsegoexpresspublictransportation",
-          "name": "Otsego Express Public Transportation",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "OEPT-Otsego-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20998"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-rts~seneca~ny",
-      "license": {
-        "url": "https://www.myrts.com/RGRTA-API",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/RTS-Seneca.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr9k-rtsseneca",
-          "name": "RTS Seneca",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RTS-Seneca-NY-US"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20113",
-            "wikidata_id": "Q7353936",
-            "twitter_general": "enjoyRTS"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-rts~wyoming~ny",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/RTS-Wyoming.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr8-regionaltransitservice",
-          "name": "Regional Transit Service",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RTS-WYOMING-NY-US"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20113",
-            "wikidata_id": "Q7353936",
-            "twitter_general": "enjoyRTS"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-rensselaer~county~yankee~trails",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Rensselaer_County_Yankee_Trails.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dree-rensselaercounty~yankeetrails",
-          "name": "Rensselaer County/Yankee Trails",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RCYT-Rensselaer-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20968"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-steuben~area~rides",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Steuben_Area_Rides.zip"
+        "share_alike_optional": "yes"
       }
     },
     {
+      "id": "f-clbt~nassau~ny~us",
       "spec": "gtfs",
-      "id": "f-steuben~county~ny",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/City_of_Long_Beach.zip"
+      },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Steuben_County_Transit.zip"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-dr90-steubencountytransit",
-          "name": "Steuben County Transit",
+          "onestop_id": "o-dr5w-cityoflongbeachtransportation",
+          "name": "City of Long Beach Transportation",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SCT-Steuben-NY-US"
+              "gtfs_agency_id": "CLBT-Nassau-ny-us"
             }
           ],
           "tags": {
-            "us_ntd_id": "2R02-20946"
+            "twitter_general": "LongBeach11561",
+            "us_ntd_id": "20006",
+            "wikidata_id": "Q6672287"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-dr7-ulstercountyareatransit",
-      "supersedes_ids": ["f-ucat~ulster~county~ny"],
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/UCAT_Ulster_County_Area_Transit.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-ulstercountyareatransit",
-          "tags": {
-            "us_ntd_id": "20178",
-            "wikidata_id": "Q7879947",
-            "twitter_general": "UlsterNY"
-          },
-          "name": "Ulster County Area Transit",
-          "short_name": "UCAT",
-          "website": "http://ulstercountyny.gov/ucat/ulster-county-area-transit"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-village~of~cooperstown~trolley",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Village_of_Cooperstown_Trolley_System.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-watertown~citibus",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Watertown_Citibus.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dr7-westchestercountybee~linesystem",
-      "supersedes_ids": ["f-westchester~county~ny"],
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Westchester_County_Bee-Line_System.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-westchestercountybee~linesystem",
-          "supersedes_ids": ["o-dr7-bee~linebus"],
-          "name": "Westchester County Bee-Line System",
-          "website": "http://transportation.westchestergov.com/bee-line-bus",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "WCDOT"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20076",
-            "wikidata_id": "Q4879491",
-            "twitter_general": "westchestergov"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-yates~transit~service",
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Yates_Transit_Service.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-leprechaun~connection",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Leprechaun_Connection.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-leprechaunlines",
-          "name": "Leprechaun Lines",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "Leprechaun-Dutchess-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20179"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-newburgh~bus",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Newburgh_Bus.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7k-transitorange~newburghlocaltransit",
-          "name": "Transit Orange / Newburgh Local Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NewburghAreaTransit-Orange-NY-US"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20216"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-chautauqua~area~regional~transit~system",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/CARTS_Chautauqua_Area_Regional_Transit_System_-_City_Routes.zip",
-        "static_historic": ["https://s3.amazonaws.com/datatools-511ny/public/CARTS_Chautauqua_Area_Regional_Transit_System.zip"]
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dpx-carts",
-          "short_name": "CARTS",
-          "name": "Chautauqua Area Regional Transit System",
-          "website": "https://chqgov.com/carts/CARTS",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CARTS-Chautauqua-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20959",
-            "wikidata_id": "Q5088381"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-schuyler~county~public~transit",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Schuyler_County_Public_Transit.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr9-schuylercountytransit",
-          "name": "Schuyler County Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SCPT-Schuyler-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20945"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-putnam~area~rapid~transit",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/PART_Putnam_Area_Rapid_Transit.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7e-partputnamarearapidtransit",
-          "name": "PART Putnam Area Rapid Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "PART-Putnam-ny-us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20096",
-            "wikidata_id": "Q7262355",
-            "twitter_general": "putnamcountygov"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-huntington~area~rapid~transit",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/HART_Huntington_Area_Rapid_Transit.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7b-hart",
-          "name": "HART",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HART"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20071"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-cortland~transit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Cortland_Transit.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
@@ -962,124 +193,65 @@
       ]
     },
     {
+      "id": "f-dr5x2-jfkairtrain",
       "spec": "gtfs",
-      "id": "f-lower~hudson~transit~link",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Hudson_Link.zip",
-        "static_historic": ["https://s3.amazonaws.com/datatools-511ny/public/Lower_Hudson_Transit_Link.zip"]
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Airtrain_JFK.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-dr73-lowerhudsonvalleytransit",
-          "name": "Lower Hudson Transit Link",
-          "short_name": "Hudson Link",
+          "onestop_id": "o-dr5x2-jfkairtrain",
+          "name": "JFK Airtrain",
+          "website": "http://www.mta.info/mta/airtrain.htm",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "LHTL"
+              "gtfs_agency_id": "JA"
             }
           ],
           "tags": {
-            "wikidata_id": "Q65091276",
-            "twitter_general": "ridehudsonlink"
+            "twitter_general": "JFKairport",
+            "wikidata_id": "Q406683"
           }
         }
       ]
     },
     {
+      "id": "f-dr7-ulstercountyareatransit",
       "spec": "gtfs",
-      "id": "f-clarkstown~mini~trans",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Clarkstown_Mini_Trans.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/UCAT_Ulster_County_Area_Transit.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-clbt~nassau~ny~us",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/City_of_Long_Beach.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
         "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-dr5w-cityoflongbeachtransportation",
-          "name": "City of Long Beach Transportation",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CLBT-Nassau-ny-us"
-            }
-          ],
+          "onestop_id": "o-dr7-ulstercountyareatransit",
+          "name": "Ulster County Area Transit",
+          "short_name": "UCAT",
+          "website": "http://ulstercountyny.gov/ucat/ulster-county-area-transit",
           "tags": {
-            "us_ntd_id": "20006",
-            "wikidata_id": "Q6672287",
-            "twitter_general": "LongBeach11561"
+            "twitter_general": "UlsterNY",
+            "us_ntd_id": "20178",
+            "wikidata_id": "Q7879947"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-sullivan~county",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Sullivan_County.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
-        "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr6v-movesullivan",
-          "name": "Move Sullivan",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SCT_MS"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20937",
-            "twitter_general": "sullivancntygov"
-          }
-        },
-        {
-          "onestop_id": "o-dr6u-sullivancountytransit",
-          "name": "Sullivan County Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SCT"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "2R02-20937"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-dr73-tappanzeeexpress",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-nysdot/public/TappanZee_Express.zip"
       },
@@ -1098,115 +270,900 @@
       ]
     },
     {
+      "id": "f-dr8-accessallegany",
       "spec": "gtfs",
-      "id": "f-newburgh~beacon~shuttle~ny",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Newburgh_Beacon_Shuttle.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Access_Allegany.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr8-accessallegany",
+          "name": "Access Allegany",
+          "website": "http://www.accessallegany.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AccessAllegany-Allegany-ny-us"
+            }
+          ],
+          "tags": {
+            "twitter_general": "accessallegany",
+            "us_ntd_id": "2R02-20951"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr8-hornellareatransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Hornell_Area_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr8-hornellareatransit",
+          "name": "Hornell Area Transit",
+          "short_name": "HAT",
+          "website": "http://www.hatrides.com/contact.htm",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HATSteuben-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20953"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-drd-chenangofirsttransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Chenango_First_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drd-chenangofirsttransit",
+          "name": "Chenango First Transit",
+          "website": "http://chenango-first-transit.webnode.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CHFT-chenango-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20935",
+            "wikidata_id": "Q7501815"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dreh-gloversvilletransitservices",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Gloversville_Transit_Services.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dreh-gloversvilletransitservices",
+          "name": "Gloversville Transit System",
+          "website": "http://www.ride-gts.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GTS-Fulton-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20981"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dres54-cityofmechanicvillepublictransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/City_of_Mechanicville_Public_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dres54-cityofmechanicvillepublictransit",
+          "name": "City of Mechanicville Public Transit",
+          "website": "http://www.mechanicville.com/index.aspx?NID=253",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CMT-Mechanicville-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "20213"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-drew-greaterglensfallstransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Greater_Glens_Falls_Transit_System.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drew-greaterglensfallstransitsystem",
+          "name": "Greater Glens Falls Transit System",
+          "website": "https://www.cityofglensfalls.com/60/Greater-Glens-Falls-Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GGFT-Warren-ny-us"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ggftransit",
+            "us_ntd_id": "20120"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-drg-clintoncountypublictransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Clinton_County_Public_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drg-clintoncountypublictransit",
+          "name": "Clinton County Public Transit",
+          "short_name": "CCPT",
+          "website": "http://www.clintoncountypublictransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CCPT-Clinton-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20939"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-drg-franklincountypublictransportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Franklin_County_Public_Transportation.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drg-franklincountypublictransportation",
+          "name": "Franklin County Public Transportation",
+          "website": "http://franklincony.org/content/Departments/View/13",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FranklinCOPT-Franklin-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20992"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-drg-northcountryexpresstransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/North_Country_Express.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drg-northcountryexpresstransit",
+          "name": "North Country Express Transit",
+          "website": "http://www.511ny.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NCET-Clinton-ny-us"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-dutchess~county~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Dutchess_County_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7-dutchesscounty",
+          "name": "Dutchess County",
+          "tags": {
+            "twitter_general": "DutchessCoGov",
+            "us_ntd_id": "20010",
+            "wikidata_id": "Q5317486"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-fullington~trailways~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Fullington_Trailways.zip"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-greene~county~transit~ny",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Greene_County_Transit.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       }
     },
     {
+      "id": "f-huntington~area~rapid~transit",
       "spec": "gtfs",
-      "id": "f-",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/HART_Huntington_Area_Rapid_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7b-hart",
+          "name": "HART",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HART"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "20071"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-leprechaun~connection",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Leprechaun_Connection.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7-leprechaunlines",
+          "name": "Leprechaun Lines",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Leprechaun-Dutchess-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "20179"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-lewis~county~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Lewis_County.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drf-lewiscountypublictransportation",
+          "name": "Lewis County Public Transportation",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LCPT"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20925"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-lower~hudson~transit~link",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Hudson_Link.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Lower_Hudson_Transit_Link.zip"
+        ]
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr73-lowerhudsonvalleytransit",
+          "name": "Lower Hudson Transit Link",
+          "short_name": "Hudson Link",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LHTL"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridehudsonlink",
+            "wikidata_id": "Q65091276"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-madison~transit~services~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Madison_Transit_Services.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drd-madisoncountytransit",
+          "name": "Madison County Transit",
+          "tags": {
+            "us_ntd_id": "2R02-20940"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-monsey~trails~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Monsey_Trails.zip"
+      }
+    },
+    {
+      "id": "f-newburgh~beacon~shuttle~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Newburgh_Beacon_Shuttle.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-newburgh~bus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oc-otp-gtfs.s3.amazonaws.com/newburgh.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7k-transitorange~newburghlocaltransit",
+          "name": "Transit Orange / Newburgh Local Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NewburghAreaTransit-Orange-NY-US"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "20216"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-olean~area~transit~system",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Olean_Area_Transit_System.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr2p-oleanareatransitsystem",
+          "name": "Olean Area Transit System",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OATS-Cattaraugus-ny-us"
+            }
+          ],
+          "tags": {
+            "twitter_general": "oatsolean",
+            "us_ntd_id": "2R02-20975"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-oneida~county~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Oneida_County_Rural_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drd-herkimer~oneidacountiestransportationstudyhocts",
+          "name": "HERKIMER-ONEIDA COUNTIES TRANSPORTATION STUDY (HOCTS)",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HOCTS"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20989"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-otsego~express",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Otsego_Express_Public_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drd-otsegoexpresspublictransportation",
+          "name": "Otsego Express Public Transportation",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OEPT-Otsego-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20998"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-putnam~area~rapid~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/PART_Putnam_Area_Rapid_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7e-partputnamarearapidtransit",
+          "name": "PART Putnam Area Rapid Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PART-Putnam-ny-us"
+            }
+          ],
+          "tags": {
+            "twitter_general": "putnamcountygov",
+            "us_ntd_id": "20096",
+            "wikidata_id": "Q7262355"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rensselaer~county~yankee~trails",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Rensselaer_County_Yankee_Trails.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dree-rensselaercounty~yankeetrails",
+          "name": "Rensselaer County/Yankee Trails",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RCYT-Rensselaer-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20968"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rts~seneca~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/RTS-Seneca.zip"
+      },
+      "license": {
+        "url": "https://www.myrts.com/RGRTA-API",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr9k-rtsseneca",
+          "name": "RTS Seneca",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RTS-Seneca-NY-US"
+            },
+            {
+              "feed_onestop_id": "f-rochester~geneseeregionaltransportationauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "enjoyRTS",
+            "us_ntd_id": "20113",
+            "wikidata_id": "Q7353936"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-schuyler~county~public~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Schuyler_County_Public_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr9-schuylercountytransit",
+          "name": "Schuyler County Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SCPT-Schuyler-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20945"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-steuben~area~rides",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Steuben_Area_Rides.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-steuben~county~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Steuben_County_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr90-steubencountytransit",
+          "name": "Steuben County Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SCT-Steuben-NY-US"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20946"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-st~lawrence~county~ny",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/St_Lawrence_County_Public_Transit.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       }
     },
     {
+      "id": "f-sullivan~county",
       "spec": "gtfs",
-      "id": "f-academy~express~staten~island",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Academy_Express_-_Staten_Island.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Sullivan_County.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
-      }
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr6u-sullivancountytransit",
+          "name": "Sullivan County Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SCT"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20937"
+          }
+        },
+        {
+          "onestop_id": "o-dr6v-movesullivan",
+          "name": "Move Sullivan",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SCT_MS"
+            }
+          ],
+          "tags": {
+            "twitter_general": "sullivancntygov",
+            "us_ntd_id": "2R02-20937"
+          }
+        }
+      ]
     },
     {
-      "spec": "gtfs",
       "id": "f-trailways~adp~ny",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Trailways-ADP.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-trailways~nyp~ny",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Trailways-NYP.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-trailways~nyt~ny",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Trailways-NYT.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-trailways~phk~ny",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Trailways-PHK.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "share_alike_optional": "yes",
-        "commercial_use_allowed": "yes",
+        "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "use_without_attribution": "yes"
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-village~of~cooperstown~trolley",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Village_of_Cooperstown_Trolley_System.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-watertown~citibus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Watertown_Citibus.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-yates~transit~service",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Yates_Transit_Service.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       }
     }
   ],

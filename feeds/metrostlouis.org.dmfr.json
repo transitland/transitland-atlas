@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9yzg-metrostlouis",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://metrostlouis.org/Transit/google_transit.zip"
       },
@@ -16,11 +16,6 @@
       "operators": [
         {
           "onestop_id": "o-9yzg-metrostlouis",
-          "tags": {
-            "us_ntd_id": "70006",
-            "wikidata_id": "Q4902339",
-            "twitter_general": "STLMetro"
-          },
           "name": "Metro St. Louis",
           "website": "http://www.metrostlouis.org",
           "associated_feeds": [
@@ -30,16 +25,21 @@
             {
               "feed_onestop_id": "f-saintlouis~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "STLMetro",
+            "us_ntd_id": "70006",
+            "wikidata_id": "Q4902339"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-saintlouis~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://www.metrostlouis.org/RealTimeData/StlRealTimeTrips.pb",
         "realtime_vehicle_positions": "https://www.metrostlouis.org/RealTimeData/StlRealTimeVehicles.pb",
+        "realtime_trip_updates": "https://www.metrostlouis.org/RealTimeData/StlRealTimeTrips.pb",
         "realtime_alerts": "https://www.metrostlouis.org/RealTimeData/StlRealTimeAlerts.pb"
       },
       "license": {

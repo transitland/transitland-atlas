@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-alsa~es",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.alsa.es/GoogleTransit/google_transit_Swiftly.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-alsa~es",
+          "name": "Alsa",
+          "website": "http://alsa.es",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1071VC"
+            },
+            {
+              "feed_onestop_id": "f-alsa~es~rt"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

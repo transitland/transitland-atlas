@@ -2,35 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-dpz2-upexpress",
-      "urls": {
-        "static_current": "https://www.gotransit.com/static_files/gotransit/assets/Files/UP-GTFS.zip"
-      },
-      "license": {
-        "url": "http://www.gotransit.com/publicroot/en/schedules/DeveloperResources.aspx#useagreement",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes",
-        "attribution_text": "Data used in this product or service is provided with the permission of Metrolinx. Metrolinx makes no representations or warranties of any kind, express or implied, with respect to the Data and assumes no responsibility for the accuracy or currency of the data used in this product or service."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dpz2-upexpress",
-          "name": "Union Pearson Express",
-          "short_name": "UP Express",
-          "website": "http://upexpress.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "UPExpress"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-dpz-gotransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.gotransit.com/static_files/gotransit/assets/Files/GO_GTFS.zip"
       },
@@ -38,7 +11,6 @@
         "url": "http://www.gotransit.com/publicroot/en/schedules/DeveloperResources.aspx#useagreement",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Data used in this product or service is provided with the permission of Metrolinx. Metrolinx makes no representations or warranties of any kind, express or implied, with respect to the Data and assumes no responsibility for the accuracy or currency of the data used in this product or service."
       },
       "tags": {
@@ -52,6 +24,32 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "GO"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-dpz2-upexpress",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.gotransit.com/static_files/gotransit/assets/Files/UP-GTFS.zip"
+      },
+      "license": {
+        "url": "http://www.gotransit.com/publicroot/en/schedules/DeveloperResources.aspx#useagreement",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Data used in this product or service is provided with the permission of Metrolinx. Metrolinx makes no representations or warranties of any kind, express or implied, with respect to the Data and assumes no responsibility for the accuracy or currency of the data used in this product or service."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpz2-upexpress",
+          "name": "Union Pearson Express",
+          "short_name": "UP Express",
+          "website": "http://upexpress.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "UPExpress"
             }
           ]
         }

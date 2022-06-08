@@ -2,25 +2,44 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9x2-cachevalleytransitdistrict",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://cvtd.us:91/developer/googlefeed/google_transit.zip",
-        "static_historic": [ 
+        "static_current": "https://mycvtdbus.org/gtfs",
+        "static_historic": [
+          "https://cvtd.us:91/developer/googlefeed/google_transit.zip",
           "http://cvtdbus.org/developer/googlefeed/google_transit.zip"
-         ]
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-9x2-cachevalleytransitdistrict",
-          "tags": {
-            "us_ntd_id": "80028",
-            "twitter_general": "cvtdbus"
-          },
           "name": "Cache Valley Transit District",
-          "short_name": "CVTD"
+          "short_name": "CVTD",
+          "website": "https://cvtdbus.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cachevalleytransitdistrict~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cvtdbus",
+            "us_ntd_id": "80028"
+          }
         }
       ]
+    },
+    {
+      "id": "f-cachevalleytransitdistrict~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mycvtdbus.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://mycvtdbus.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://mycvtdbus.org/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

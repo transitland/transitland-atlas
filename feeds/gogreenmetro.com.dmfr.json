@@ -2,21 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9zrs-metrorockislandcountymetropolitanmasstransitdistrict",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.gogreenmetro.com/latest/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9zrs-metrorockislandcountymetropolitanmasstransitdistrict",
-          "tags": {
-            "us_ntd_id": "50057",
-            "wikidata_id": "Q7268260",
-            "twitter_general": "qcmetro"
-          },
           "name": "Metro Rock Island County Metropolitan Mass Transit District",
-          "short_name": "MetroLINK"
+          "short_name": "MetroLINK",
+          "tags": {
+            "twitter_general": "qcmetro",
+            "us_ntd_id": "50057",
+            "wikidata_id": "Q7268260"
+          }
         }
       ]
     }

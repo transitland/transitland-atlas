@@ -2,123 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-djm2-regionaltransitsystem",
-      "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=468A0",
-        "static_historic": ["http://go-rts.com/gtfs/google_transit.zip"]
-      },
-      "tags": {
-        "gtfs_data_exchange": "regional-transit-system"
-      },
-      "license": {
-        "url": "https://ftis.org/FTDEDisclaimer.aspx"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-djm2-gainesvilleregionaltransitsystem",
-          "tags": {
-            "us_ntd_id": "40030",
-            "wikidata_id": "Q5517264",
-            "twitter_general": "gainesvillegov"
-          },
-          "name": "Regional Transit System",
-          "short_name": "RTS"
-        }
-      ]
-    },    
-    {
-      "spec": "gtfs",
-      "id": "f-dhvk-manatee~fl~us",
-      "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=342A0",
-        "static_historic": [
-          "http://data.trilliumtransit.com/gtfs/manatee-fl-us/manatee-fl-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "manatee-fl-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "manatee-county-area-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dhvk-manateecountyareatransit",
-          "tags": {
-            "us_ntd_id": "40026",
-            "wikidata_id": "Q60772409",
-            "twitter_general": "manateegov"
-          },
-          "name": "Manatee County Area Transit",
-          "website": "http://www.mymanatee.org/home/government/departments/public-works/transit-paratransit.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "140"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-djn-votran",
-      "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=425A0",
-        "static_historic": [
-          "http://www.votran.org/core/fileparse.php/6120/urlt/google_transit_3.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-djn-votran",
-          "tags": {
-            "us_ntd_id": "40032",
-            "wikidata_id": "Q7941092"
-          },
-          "name": "Votran",
-          "website": "http://www.votran.org",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-djn-votran",
-              "gtfs_agency_id": "0"
-            },
-            {
-              "feed_onestop_id": "f-votran~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-djjg-lakecounty",
-      "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=450A0",
-        "static_historic": [
-          "http://www.ftis.org/PostFileDownload.aspx?id=160A0"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-djjg-lakecounty",
-          "tags": {
-            "us_ntd_id": "40158",
-            "wikidata_id": "Q6474640",
-            "twitter_general": "lakexpress"
-          },
-          "name": "LakeXpress",
-          "website": "http://www.ridelakexpress.com"
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-dh-lakeland",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://ftis.org/PostFileDownload.aspx?id=313A0",
         "static_historic": [
@@ -128,9 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-dh-lakeland",
-          "tags": {
-            "us_ntd_id": "40031"
-          },
           "name": "Lakeland Area Mass Transit District",
           "short_name": "Citrus Connection",
           "website": "http://www.ridecitrus.com/content/",
@@ -138,13 +20,16 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "40031"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-dht-collierareatransit~cat",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://ftis.org/PostFileDownload.aspx?id=396A0",
         "static_historic": [
@@ -154,10 +39,6 @@
       "operators": [
         {
           "onestop_id": "o-dht-collierareatransit~cat",
-          "tags": {
-            "us_ntd_id": "40140",
-            "wikidata_id": "Q5147158"
-          },
           "name": "Collier Area Transit",
           "short_name": "CAT",
           "website": "http://www.gocatbus.com",
@@ -165,7 +46,127 @@
             {
               "gtfs_agency_id": "0"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "40140",
+            "wikidata_id": "Q5147158"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dhvk-manatee~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=342A0",
+        "static_historic": [
+          "http://data.trilliumtransit.com/gtfs/manatee-fl-us/manatee-fl-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "feed_id": "manatee-fl-us",
+        "gtfs_data_exchange": "manatee-county-area-transit",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dhvk-manateecountyareatransit",
+          "name": "Manatee County Area Transit",
+          "website": "http://www.mymanatee.org/home/government/departments/public-works/transit-paratransit.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "140"
+            }
+          ],
+          "tags": {
+            "twitter_general": "manateegov",
+            "us_ntd_id": "40026",
+            "wikidata_id": "Q60772409"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-djjg-lakecounty",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=450A0",
+        "static_historic": [
+          "http://www.ftis.org/PostFileDownload.aspx?id=160A0"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djjg-lakecounty",
+          "name": "LakeXpress",
+          "website": "http://www.ridelakexpress.com",
+          "tags": {
+            "twitter_general": "lakexpress",
+            "us_ntd_id": "40158",
+            "wikidata_id": "Q6474640"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-djm2-regionaltransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=468A0",
+        "static_historic": [
+          "http://go-rts.com/gtfs/google_transit.zip"
+        ]
+      },
+      "license": {
+        "url": "https://ftis.org/FTDEDisclaimer.aspx"
+      },
+      "tags": {
+        "gtfs_data_exchange": "regional-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djm2-gainesvilleregionaltransitsystem",
+          "name": "Regional Transit System",
+          "short_name": "RTS",
+          "tags": {
+            "twitter_general": "gainesvillegov",
+            "us_ntd_id": "40030",
+            "wikidata_id": "Q5517264"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-djn-votran",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=425A0",
+        "static_historic": [
+          "http://www.votran.org/core/fileparse.php/6120/urlt/google_transit_3.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djn-votran",
+          "name": "Votran",
+          "website": "http://www.votran.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0",
+              "feed_onestop_id": "f-djn-votran"
+            },
+            {
+              "feed_onestop_id": "f-votran~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40032",
+            "wikidata_id": "Q7941092"
+          }
         }
       ]
     }

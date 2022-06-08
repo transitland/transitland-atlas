@@ -2,27 +2,32 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dn5r-carta",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.gocarta.org/wp-content/uploads/2020/10/GTFS.zip"
+        "static_current": "https://www.gocarta.org/wp-content/uploads/2021/08/GTFS.zip",
+        "static_historic": [
+          "https://www.gocarta.org/wp-content/uploads/2020/10/GTFS.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/gocarta/gtfs/blob/master/README.md#license",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
           "onestop_id": "o-dn5r-carta",
-          "tags": {
-            "us_ntd_id": "40001",
-            "wikidata_id": "Q5087866",
-            "twitter_general": "GoCARTA"
-          },
           "name": "Chattanooga Area Regional Transportation Authority",
-          "short_name": "CARTA"
+          "short_name": "CARTA",
+          "tags": {
+            "twitter_general": "GoCARTA",
+            "us_ntd_id": "40001",
+            "wikidata_id": "Q5087866"
+          }
         }
       ]
     }

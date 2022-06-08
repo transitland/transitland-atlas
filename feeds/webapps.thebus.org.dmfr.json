@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-87z-thebus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://webapps.thebus.org/transitdata/Production/google_transit.zip"
       },
@@ -13,12 +13,17 @@
       "operators": [
         {
           "onestop_id": "o-87z-thebus",
+          "name": "TheBus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-thebus~hi~rt"
+            }
+          ],
           "tags": {
+            "twitter_general": "hnldts",
             "us_ntd_id": "90002",
-            "wikidata_id": "Q7711627",
-            "twitter_general": "hnldts"
-          },
-          "name": "TheBus"
+            "wikidata_id": "Q7711627"
+          }
         }
       ]
     }

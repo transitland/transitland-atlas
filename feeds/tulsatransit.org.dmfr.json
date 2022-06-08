@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9y7v-metropolitantulsatransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.tulsatransit.org/gtfs/google_transit.zip"
       },
@@ -13,15 +13,32 @@
       "operators": [
         {
           "onestop_id": "o-9y7v-metropolitantulsatransitauthority",
-          "tags": {
-            "us_ntd_id": "60018",
-            "wikidata_id": "Q6825293",
-            "twitter_general": "TulsaTransit"
-          },
           "name": "Metropolitan Tulsa Transit Authority",
-          "short_name": "MTTA"
+          "short_name": "MTTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-metropolitantulsatransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "TulsaTransit",
+            "us_ntd_id": "60018",
+            "wikidata_id": "Q6825293"
+          }
         }
       ]
+    },
+    {
+      "id": "f-metropolitantulsatransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://gtfs.tulsatransit.org/position_updates.pb",
+        "realtime_trip_updates": "http://gtfs.tulsatransit.org/trip_updates.pb",
+        "realtime_alerts": "http://gtfs.tulsatransit.org/alerts.pb"
+      },
+      "license": {
+        "url": "https://gtfs.tulsatransit.org/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

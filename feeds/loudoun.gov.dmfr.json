@@ -1,0 +1,35 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-loudouncounty~md~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.loudoun.gov/loudountransitgtfs",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/loudouncounty-md-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://virginia-gtfs.com/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqbv-loudouncountytransit",
+          "name": "Loudoun County Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1654"
+            }
+          ],
+          "tags": {
+            "twitter_general": "LoudounCoGovt",
+            "us_ntd_id": "30081",
+            "wikidata_id": "Q6686032"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

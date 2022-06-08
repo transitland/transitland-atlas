@@ -2,20 +2,14 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9zvw-mvta~metro",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://wiki.mvta.com/files/Home/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9zvw-mvta",
-          "tags": {
-            "us_ntd_id": "50519",
-            "omd_provider_id": "minnesota-valley-transit-authority",
-            "wikidata_id": "Q6868609",
-            "twitter_general": "mvtatransit"
-          },
           "name": "Minnesota Valley Transit Authority",
           "short_name": "MVTA",
           "website": "http://www.mvta.com",
@@ -23,7 +17,13 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "omd_provider_id": "minnesota-valley-transit-authority",
+            "twitter_general": "mvtatransit",
+            "us_ntd_id": "50519",
+            "wikidata_id": "Q6868609"
+          }
         }
       ]
     }

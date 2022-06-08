@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c23-metrokingcounty",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://metro.kingcounty.gov/GTFS/google_transit.zip"
       },
@@ -11,41 +11,6 @@
         "url": "http://www.kingcounty.gov/transportation/kcdot/MetroTransit/Developers/TermsOfUse.aspx"
       },
       "operators": [
-        {
-          "onestop_id": "o-c23nb-cityofseattle",
-          "tags": {
-            "us_ntd_id": "00023"
-          },
-          "name": "City of Seattle",
-          "short_name": "Seattle Streetcar",
-          "website": "http://seattlestreetcar.com",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-seattlestreetcar~rt"
-            },
-            {
-              "gtfs_agency_id": "EOS"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c23-metrotransit",
-          "tags": {
-            "wikidata_id": "Q6411393",
-            "twitter_general": "kcmetrobus"
-          },
-          "name": "King County Metro",
-          "short_name": "Metro",
-          "website": "http://metro.kingcounty.gov",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-kingcountymetro~rt"
-            },
-            {
-              "gtfs_agency_id": "KCM"
-            }
-          ]
-        },
         {
           "onestop_id": "o-c22y-kingcountymarinedivison",
           "name": "King County Marine Divison",
@@ -55,6 +20,41 @@
               "gtfs_agency_id": "KMD"
             }
           ]
+        },
+        {
+          "onestop_id": "o-c23-metrotransit",
+          "name": "King County Metro",
+          "short_name": "Metro",
+          "website": "http://metro.kingcounty.gov",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KCM"
+            },
+            {
+              "feed_onestop_id": "f-kingcountymetro~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "kcmetrobus",
+            "wikidata_id": "Q6411393"
+          }
+        },
+        {
+          "onestop_id": "o-c23nb-cityofseattle",
+          "name": "City of Seattle",
+          "short_name": "Seattle Streetcar",
+          "website": "http://seattlestreetcar.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "EOS"
+            },
+            {
+              "feed_onestop_id": "f-seattlestreetcar~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00023"
+          }
         }
       ]
     }

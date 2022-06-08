@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-visalia",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://visaliatransit.info/gtfs",
         "static_historic": [
@@ -17,14 +17,29 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "84"
+            },
+            {
+              "feed_onestop_id": "f-visaliatransit~rt"
             }
           ],
           "tags": {
-            "us_ntd_id": "90091",
-            "twitter_general": "visaliatransit"
+            "twitter_general": "visaliatransit",
+            "us_ntd_id": "90091"
           }
         }
       ]
+    },
+    {
+      "id": "f-visaliatransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://visaliatransit.info/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://visaliatransit.info/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://visaliatransit.info/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

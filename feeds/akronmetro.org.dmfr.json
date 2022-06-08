@@ -2,8 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
+      "id": "f-akronmetro~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=TripUpdate",
+        "realtime_alerts": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=Alert"
+      },
+      "license": {
+        "url": "https://www.akronmetro.org/gtfs-and-shapefiles.aspx"
+      }
+    },
+    {
       "id": "f-dpq-metro",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.akronmetro.org/Data/Sites/2/gtfs-data/akronmetrogtfs.zip"
       },
@@ -13,18 +25,21 @@
       "operators": [
         {
           "onestop_id": "o-dpq-metro",
-          "tags": {
-            "us_ntd_id": "50010",
-            "wikidata_id": "Q6715494",
-            "twitter_general": "AkronMETROBus"
-          },
           "name": "Akron Metro Regional Transit Authority",
           "website": "http://www.akronmetro.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-akronmetro~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "AkronMETROBus",
+            "us_ntd_id": "50010",
+            "wikidata_id": "Q6715494"
+          }
         }
       ]
     }

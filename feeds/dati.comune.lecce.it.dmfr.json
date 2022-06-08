@@ -2,25 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-s-sgmspa",
       "spec": "gtfs",
-      "id": "f-srhv-sgmspa",
       "urls": {
         "static_current": "http://dati.comune.lecce.it/trasporti/gtfs/google_transit.zip"
       },
       "license": {
-        "url": "http://creativecommons.org/licenses/by/4.0/deed.it",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "unstable_url": "true"
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-srhv-sgmspa",
-          "name": "Società Gestione Multipla",
-          "short_name": "SGM",
+          "onestop_id": "o-s-sgmspa",
+          "name": "S.G.M. S.p.A.",
           "website": "http://www.sgmlecce.it",
           "associated_feeds": [
             {
@@ -31,20 +25,24 @@
       ]
     },
     {
+      "id": "f-srhv-sgmspa",
       "spec": "gtfs",
-      "id": "f-s-sgmspa",
       "urls": {
         "static_current": "http://dati.comune.lecce.it/trasporti/gtfs/google_transit.zip"
       },
       "license": {
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "url": "http://creativecommons.org/licenses/by/4.0/deed.it",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
-          "onestop_id": "o-s-sgmspa",
-          "name": "S.G.M. S.p.A.",
+          "onestop_id": "o-srhv-sgmspa",
+          "name": "Società Gestione Multipla",
+          "short_name": "SGM",
           "website": "http://www.sgmlecce.it",
           "associated_feeds": [
             {

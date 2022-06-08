@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpz2-bramptontransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.brampton.ca/EN/City-Hall/OpenGov/Open-Data-Catalogue/Documents/Google_Transit.zip"
       },
@@ -11,7 +11,6 @@
         "url": "http://www.brampton.ca/EN/City-Hall/OpenGov/Open-Data-Catalogue/Pages/Terms-of-Use.aspx",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Copyright © YEAR, The City of Brampton (All rights reserved)."
       },
       "tags": {
@@ -20,12 +19,12 @@
       "operators": [
         {
           "onestop_id": "o-dpz2-bramptontransit",
-          "tags": {
-            "wikidata_id": "Q4956262",
-            "omd_provider_id": "brampton-transit"
-          },
           "name": "Brampton Transit",
-          "website": "http://www.bramptontransit.com"
+          "website": "http://www.bramptontransit.com",
+          "tags": {
+            "omd_provider_id": "brampton-transit",
+            "wikidata_id": "Q4956262"
+          }
         }
       ]
     }

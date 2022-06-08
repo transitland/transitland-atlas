@@ -2,25 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dn5b-cobbavl",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.arcgis.com/sharing/rest/content/items/1ce8e370a12c41b5854d8baa21f8451c/data"
       },
       "license": {
         "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-dn5b-cobbavl",
-          "tags": {
-            "us_ntd_id": "40078",
-            "wikidata_id": "Q5138753",
-            "twitter_general": "cobbdot"
-          },
           "name": "Cobb Community Transit",
           "short_name": "CCT",
           "website": "http://www.cobbcct.org",
@@ -28,50 +22,25 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-dn5bpc-atlantastreetcar",
-      "urls": {
-        "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_ASC.zip"
-      },
-      "license": {
-        "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dn5bpc-atlantastreetcar",
+          ],
           "tags": {
-            "us_ntd_id": "40022",
-            "wikidata_id": "Q16845737",
-            "twitter_service_alerts": "MARTAservice"
-          },
-          "name": "Atlanta Streetcar",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ASC"
-            }
-          ]
+            "twitter_general": "cobbdot",
+            "us_ntd_id": "40078",
+            "wikidata_id": "Q5138753"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-dn5b-georgiatechtrolley~stingershuttles",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_GT.zip"
       },
       "license": {
         "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -90,75 +59,43 @@
       ]
     },
     {
+      "id": "f-dn5bpc-atlantastreetcar",
       "spec": "gtfs",
-      "id": "f-dn5fv-cherokeeareatransportationsystemcats",
       "urls": {
-        "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_CATS.zip"
+        "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_ASC.zip"
       },
       "license": {
         "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-dn5fv-cherokeeareatransportationsystemcats",
-          "tags": {
-            "us_ntd_id": "40161",
-            "twitter_general": "cherokee_ga"
-          },
-          "name": "Cherokee Area Transportation System",
-          "short_name": "CATS",
-          "website": "http://www.cherokeega.com/transportation/",
+          "onestop_id": "o-dn5bpc-atlantastreetcar",
+          "name": "Atlanta Streetcar",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CATS"
+              "gtfs_agency_id": "ASC"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_service_alerts": "MARTAservice",
+            "us_ntd_id": "40022",
+            "wikidata_id": "Q16845737"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-dnh01-cliffshuttles~emoryuniversity",
-      "urls": {
-        "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_CCTMA.zip"
-      },
-      "license": {
-        "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnh01-cliffshuttles~emoryuniversity",
-          "tags": {
-            "wikidata_id": "Q7723378",
-            "twitter_general": "TPSInTouch"
-          },
-          "name": "Cliff Shuttles at Emory University",
-          "website": "http://transportation.emory.edu/shuttles/index.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "EMORY"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-dn5bpr-atlanticstationshuttle",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_Atlantic.zip"
       },
       "license": {
         "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "atlantic-station-shuttle"
@@ -177,16 +114,72 @@
       ]
     },
     {
+      "id": "f-dn5fv-cherokeeareatransportationsystemcats",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_CATS.zip"
+      },
+      "license": {
+        "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn5fv-cherokeeareatransportationsystemcats",
+          "name": "Cherokee Area Transportation System",
+          "short_name": "CATS",
+          "website": "http://www.cherokeega.com/transportation/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CATS"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cherokee_ga",
+            "us_ntd_id": "40161"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnh01-cliffshuttles~emoryuniversity",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_CCTMA.zip"
+      },
+      "license": {
+        "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnh01-cliffshuttles~emoryuniversity",
+          "name": "Cliff Shuttles at Emory University",
+          "website": "http://transportation.emory.edu/shuttles/index.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "EMORY"
+            }
+          ],
+          "tags": {
+            "twitter_general": "TPSInTouch",
+            "wikidata_id": "Q7723378"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnh08-bucshuttle",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://documents.atlantaregional.com/transitdata/gtfs_Buc.zip"
       },
       "license": {
         "url": "http://atlantaregional.com/File%20Library/Transportation/Transit/Developers-Agreement-for-Web.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {

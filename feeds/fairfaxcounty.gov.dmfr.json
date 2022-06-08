@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dqcj-fairfaxconnector",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.fairfaxcounty.gov/connector/sites/connector/files/Assets/connector_gtfs.zip"
       },
@@ -16,16 +16,31 @@
       "operators": [
         {
           "onestop_id": "o-dqcj-fairfaxconnector",
-          "tags": {
-            "us_ntd_id": "30068",
-            "wikidata_id": "Q5430155",
-            "twitter_general": "ffxconnector"
-          },
           "name": "Fairfax Connector",
           "short_name": "Fairfax Connector",
-          "website": "http://www.fairfaxconnector.com"
+          "website": "http://www.fairfaxconnector.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-fairfaxconnector~rt"
+            }
+          ],
+          "tags": {
+            "developer_site": "https://www.fairfaxcounty.gov/connector/bustracker/data/gtfsrt",
+            "twitter_general": "ffxconnector",
+            "us_ntd_id": "30068",
+            "wikidata_id": "Q5430155"
+          }
         }
       ]
+    },
+    {
+      "id": "f-fairfaxconnector~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.fairfaxcounty.gov/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://www.fairfaxcounty.gov/gtfsrt/trips",
+        "realtime_alerts": "https://www.fairfaxcounty.gov/gtfsrt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

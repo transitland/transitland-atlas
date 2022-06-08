@@ -2,39 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-dqc-montgomerycountymdrideon",
-      "urls": {
-        "static_current": "http://www.montgomerycountymd.gov/DOT-Transit/Resources/Files/RideOnGTFS.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "montgomery-county-md-ride-on"
-      },
-      "license": {
-        "url": "https://www.montgomerycountymd.gov/mcg/user_rights.html"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqc-montgomerycountymdrideon",
-          "tags": {
-            "us_ntd_id": "30051",
-            "wikidata_id": "Q7332502",
-            "twitter_general": "Rideonmct"
-          },
-          "name": "Montgomery County MD Ride On",
-          "short_name": "Ride On",
-          "website": "http://www.montgomerycountymd.gov/dot-transit/index.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MCRO"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-dqcn-montgomerycountymdrideon",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.montgomerycountymd.gov/DOT-Transit/Resources/Files/GTFS/RideOnGTFS.zip"
       },
@@ -44,11 +13,6 @@
       "operators": [
         {
           "onestop_id": "o-dqcn-montgomerycountymdrideon",
-          "tags": {
-            "us_ntd_id": "30051",
-            "wikidata_id": "Q7332502",
-            "twitter_general": "Rideonmct"
-          },
           "name": "Montgomery County Ride On",
           "short_name": "Ride On",
           "website": "http://www.montgomerycountymd.gov/dot-transit/index.html",
@@ -56,7 +20,12 @@
             {
               "gtfs_agency_id": "MCRO"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "Rideonmct",
+            "us_ntd_id": "30051",
+            "wikidata_id": "Q7332502"
+          }
         }
       ]
     }

@@ -2,23 +2,37 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-cbdbx-citiesareatransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://catprowler.org/gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-cbdbx-citiesareatransit",
-          "tags": {
-            "us_ntd_id": "80008",
-            "wikidata_id": "Q5122471",
-            "twitter_general": "RideCATGF"
-          },
           "name": "Cities Area Transit",
-          "website": "http://www.grandforksgov.com/government/bus/routes-schedules"
+          "website": "http://www.grandforksgov.com/government/bus/routes-schedules",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-citiesareatransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RideCATGF",
+            "us_ntd_id": "80008",
+            "wikidata_id": "Q5122471"
+          }
         }
       ]
+    },
+    {
+      "id": "f-citiesareatransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://catprowler.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://catprowler.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://catprowler.org/gtfs-rt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -2,129 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-eycs0-soflusa",
-      "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/14/gtfs_14.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/",
-        "use_without_attribution": "no",
-        "create_derived_product": "unknown",
-        "redistribute": "yes",
-        "attribution_text": "Transtejo & Soflusa"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eycs0-soflusa",
-          "name": "Soflusa",
-          "website": "http://www.transtejo.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "14"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-eyce-fertagus",
-      "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/13/gtfs_13.zip"
-      },
-      "license": {
-        "url": "http://www.opendefinition.org/licenses/cc-zero",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyce-fertagus",
-          "name": "Fertagus",
-          "website": "https://www.fertagus.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "13"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-eyckr-metrodelisboa",
-      "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/2/gtfs_2.zip"
-      },
-      "license": {
-        "url": "http://opendefinition.org/licenses/cc-zero/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyckr-metrodelisboa",
-          "name": "Metro de Lisboa",
-          "short_name": "Metro",
-          "website": "http://www.metrolisboa.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-eyck-carris",
-      "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/1/gtfs_1.zip"
-      },
-      "license": {
-        "url": "http://opendefinition.org/licenses/cc-zero/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyck-carris",
-          "name": "Carris",
-          "website": "http://www.carris.pt",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-eyck-transtejo",
-      "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/4/gtfs_4.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyck-transtejo",
-          "name": "Transtejo",
-          "website": "http://www.transtejo.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-eyc-cp",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/3/gtfs_3.zip"
       },
@@ -143,27 +22,32 @@
       ]
     },
     {
+      "id": "f-eyce-fertagus",
       "spec": "gtfs",
-      "id": "f-eyck-rodoviáriadelisboa",
       "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/61/gtfs_61.zip"
+        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/13/gtfs_13.zip"
+      },
+      "license": {
+        "url": "http://www.opendefinition.org/licenses/cc-zero",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-eyck-rodoviáriadelisboa",
-          "name": "Rodoviária de Lisboa",
-          "website": "http://www.rodoviariadelisboa.pt/",
+          "onestop_id": "o-eyce-fertagus",
+          "name": "Fertagus",
+          "website": "https://www.fertagus.pt/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "61"
+              "gtfs_agency_id": "13"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-eyce-tst",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/11/gtfs_11.zip"
       },
@@ -182,8 +66,120 @@
       ]
     },
     {
+      "id": "f-eyck-carris",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/1/gtfs_1.zip"
+      },
+      "license": {
+        "url": "http://opendefinition.org/licenses/cc-zero/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eyck-carris",
+          "name": "Carris",
+          "website": "http://www.carris.pt",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-eyck-rodoviáriadelisboa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/61/gtfs_61.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eyck-rodoviáriadelisboa",
+          "name": "Rodoviária de Lisboa",
+          "website": "http://www.rodoviariadelisboa.pt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "61"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-eyck-transtejo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/4/gtfs_4.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eyck-transtejo",
+          "name": "Transtejo",
+          "website": "http://www.transtejo.pt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-eyckr-metrodelisboa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/2/gtfs_2.zip"
+      },
+      "license": {
+        "url": "http://opendefinition.org/licenses/cc-zero/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eyckr-metrodelisboa",
+          "name": "Metro de Lisboa",
+          "short_name": "Metro",
+          "website": "http://www.metrolisboa.pt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-eycs0-soflusa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/14/gtfs_14.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "use_without_attribution": "no",
+        "create_derived_product": "unknown",
+        "attribution_text": "Transtejo & Soflusa"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eycs0-soflusa",
+          "name": "Soflusa",
+          "website": "http://www.transtejo.pt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-sulfertagus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/21/gtfs_21.zip"
       }

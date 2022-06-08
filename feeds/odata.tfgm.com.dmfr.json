@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-gcw-greater~manchester",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://odata.tfgm.com/opendata/downloads/TfGMgtfsnew.zip",
         "static_historic": [
@@ -14,17 +14,46 @@
         "url": "https://data.gov.uk/dataset/public-transport-schedules-gtfs/resource/e58f35d3-7404-4d70-b2d3-0eeb3143ccea",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Contains public sector information licensed under the Open Government Licence v3.0."
       },
       "operators": [
         {
-          "onestop_id": "o-gcw3-lancashireunited",
-          "name": "Transdev Lancashire United",
-          "website": "http://www.lancashirebus.co.uk",
+          "onestop_id": "o-gcq-easybus",
+          "name": "Easy Bus",
+          "website": "http://www.easybus.com/en/manchester",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "LUL"
+              "gtfs_agency_id": "ESY"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcq-highpeakbuses",
+          "name": "High Peak Buses",
+          "website": "http://www.highpeakbuses.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HGP"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcqr-eliteservices",
+          "name": "Elite Services",
+          "website": "http://www.elitecoachessalemoor.co.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ELI"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcqr-gogoodwins",
+          "name": "Go Goodwins",
+          "website": "http://www.tfgm.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GOO"
             }
           ]
         },
@@ -39,52 +68,12 @@
           ]
         },
         {
-          "onestop_id": "o-gcw0-rstyrer~sons",
-          "name": "Tyrers",
-          "website": "http://www.tyrerscoaches.co.uk",
+          "onestop_id": "o-gcqrx-selwynstravel",
+          "name": "Selwyn's Travel",
+          "website": "http://selwyns.co.uk",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "TYR"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw0-cumfybus",
-          "name": "Cumfy Bus",
-          "website": "http://www.cumfybus.co.uk",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CBL"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw0-diamond",
-          "name": "Diamond",
-          "website": "http://www.diamondbuses.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GTB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcq-easybus",
-          "name": "Easy Bus",
-          "website": "http://www.easybus.com/en/manchester",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "ESY"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw2-mtravelminibuses",
-          "name": "M Travel Mini Buses",
-          "website": "http://www.tfgm.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MTR"
+              "gtfs_agency_id": "SEL"
             }
           ]
         },
@@ -109,32 +98,82 @@
           ]
         },
         {
-          "onestop_id": "o-gcw2j-bullockcoaches",
-          "name": "Bullock Coaches",
-          "website": "http://www.coach-trips-manchester.co.uk",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BUL"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw3-rosso",
-          "name": "Rosso",
-          "website": "http://www.rossobus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RDT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw1-stagecoachinlancashire",
-          "name": "Stagecoach in Lancashire",
+          "onestop_id": "o-gcw-stagecoach",
+          "name": "Stagecoach",
           "website": "https://www.stagecoachbus.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "GNV"
+              "gtfs_agency_id": "GMS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw0-cumfybus",
+          "name": "Cumfy Bus",
+          "website": "http://www.cumfybus.co.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CBL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw0-diamond",
+          "name": "Diamond",
+          "website": "http://www.diamondbuses.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GTB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw0-htlbuses",
+          "name": "HTL Buses",
+          "website": "http://huytontravel.co.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HTL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw0-jimstonescoaches",
+          "name": "Jim Stones Coaches",
+          "website": "http://jimstonescoaches.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "JSC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw0-prestonbus",
+          "name": "Preston Bus",
+          "website": "http://www.prestonbus.co.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PBS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw0-rstyrer~sons",
+          "name": "Tyrers",
+          "website": "http://www.tyrerscoaches.co.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TYR"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw0-ukcoachwayslimited",
+          "name": "UK Coachways Limited",
+          "website": "http://www.ukcoachways.co.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "UKC"
             }
           ]
         },
@@ -149,12 +188,22 @@
           ]
         },
         {
-          "onestop_id": "o-gcqrx-selwynstravel",
-          "name": "Selwyn's Travel",
-          "website": "http://selwyns.co.uk",
+          "onestop_id": "o-gcw0s-wiganbuses",
+          "name": "Wigan Buses",
+          "website": "http://www.tfgm.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SEL"
+              "gtfs_agency_id": "WBL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw1-stagecoachinlancashire",
+          "name": "Stagecoach in Lancashire",
+          "website": "https://www.stagecoachbus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GNV"
             }
           ]
         },
@@ -179,72 +228,22 @@
           ]
         },
         {
-          "onestop_id": "o-gcw0-jimstonescoaches",
-          "name": "Jim Stones Coaches",
-          "website": "http://jimstonescoaches.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "JSC"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw0s-wiganbuses",
-          "name": "Wigan Buses",
-          "website": "http://www.tfgm.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "WBL"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcqr-gogoodwins",
-          "name": "Go Goodwins",
-          "website": "http://www.tfgm.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GOO"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw0-htlbuses",
-          "name": "HTL Buses",
-          "website": "http://huytontravel.co.uk",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HTL"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw9-firstyorkshirewest",
-          "name": "First West Yorkshire",
-          "website": "http://www.firstgroup.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CAL"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw3-travelassistservices",
-          "name": "Travel Assist Services",
-          "website": "http://www.travelassist.org/bus-services",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TAS"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-gcw2-metrolink",
           "name": "Metrolink",
           "website": "http://www.metrolink.co.uk/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "MET"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw2-mtravelminibuses",
+          "name": "M Travel Mini Buses",
+          "website": "http://www.tfgm.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MTR"
             }
           ]
         },
@@ -259,52 +258,42 @@
           ]
         },
         {
-          "onestop_id": "o-gcqr-eliteservices",
-          "name": "Elite Services",
-          "website": "http://www.elitecoachessalemoor.co.uk",
+          "onestop_id": "o-gcw2j-bullockcoaches",
+          "name": "Bullock Coaches",
+          "website": "http://www.coach-trips-manchester.co.uk",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ELI"
+              "gtfs_agency_id": "BUL"
             }
           ]
         },
         {
-          "onestop_id": "o-gcw0-ukcoachwayslimited",
-          "name": "UK Coachways Limited",
-          "website": "http://www.ukcoachways.co.uk",
+          "onestop_id": "o-gcw3-lancashireunited",
+          "name": "Transdev Lancashire United",
+          "website": "http://www.lancashirebus.co.uk",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "UKC"
+              "gtfs_agency_id": "LUL"
             }
           ]
         },
         {
-          "onestop_id": "o-gcw9-yorkshiretiger",
-          "name": "Yorkshire Tiger",
-          "website": "http://yorkshiretiger.co.uk",
+          "onestop_id": "o-gcw3-rosso",
+          "name": "Rosso",
+          "website": "http://www.rossobus.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "HBC"
+              "gtfs_agency_id": "RDT"
             }
           ]
         },
         {
-          "onestop_id": "o-gcq-highpeakbuses",
-          "name": "High Peak Buses",
-          "website": "http://www.highpeakbuses.com",
+          "onestop_id": "o-gcw3-travelassistservices",
+          "name": "Travel Assist Services",
+          "website": "http://www.travelassist.org/bus-services",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "HGP"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcw-stagecoach",
-          "name": "Stagecoach",
-          "website": "https://www.stagecoachbus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GMS"
+              "gtfs_agency_id": "TAS"
             }
           ]
         },
@@ -319,12 +308,22 @@
           ]
         },
         {
-          "onestop_id": "o-gcw0-prestonbus",
-          "name": "Preston Bus",
-          "website": "http://www.prestonbus.co.uk",
+          "onestop_id": "o-gcw9-firstyorkshirewest",
+          "name": "First West Yorkshire",
+          "website": "http://www.firstgroup.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "PBS"
+              "gtfs_agency_id": "CAL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcw9-yorkshiretiger",
+          "name": "Yorkshire Tiger",
+          "website": "http://yorkshiretiger.co.uk",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HBC"
             }
           ]
         }

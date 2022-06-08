@@ -1,0 +1,55 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-sr-atac~romatpl~trenitalia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://romamobilita.it/sites/default/files/rome_static_gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://romamobilita.it/en/technologies/open-data/dataset",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sr2-atac",
+          "name": "ATAC",
+          "website": "http://atac.roma.it",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "atac"
+            },
+            {
+              "feed_onestop_id": "f-sr-atac~romatpl~trenitalia~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-sr2y-romatpl",
+          "name": "Roma TPL",
+          "website": "http://www.romatpl.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "romatpl"
+            },
+            {
+              "feed_onestop_id": "f-sr-atac~romatpl~trenitalia~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sr-atac~romatpl~trenitalia~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://romamobilita.it/sites/default/files/rome_rtgtfs_vehicle_positions_feed.pb",
+        "realtime_trip_updates": "https://romamobilita.it/sites/default/files/rome_rtgtfs_trip_updates_feed.pb",
+        "realtime_alerts": "https://romamobilita.it/sites/default/files/rome_rtgtfs_service_alerts_feed.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

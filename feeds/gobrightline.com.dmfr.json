@@ -2,10 +2,10 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-brightline~trails",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://gobrightline.com/gtfs/gtfs.zip"
+        "static_current": "http://feed.gobrightline.com/bl_gtfs.zip"
       },
       "operators": [
         {
@@ -14,14 +14,26 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "BRIGHTLINE"
+            },
+            {
+              "feed_onestop_id": "f-brightline~trails~rt"
             }
           ],
           "tags": {
-            "wikidata_id": "Q27012668",
-            "twitter_general": "GoBrightline"
+            "twitter_general": "GoBrightline",
+            "wikidata_id": "Q27012668"
           }
         }
       ]
+    },
+    {
+      "id": "f-brightline~trails~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://feed.gobrightline.com/position_updates.pb",
+        "realtime_trip_updates": "http://feed.gobrightline.com/trip_updates.pb",
+        "realtime_alerts": "http://feed.gobrightline.com/alerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

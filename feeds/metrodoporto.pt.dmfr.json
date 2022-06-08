@@ -2,19 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-ez3f-metrodoporto",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.metrodoporto.pt/uploads/document/file/470/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-ez3f-metrodoporto",
+          "name": "Metro do Porto",
+          "website": "http://www.metrodoporto.pt",
           "tags": {
             "needs_agency_id": "f-ez3f-metrodoporto"
-          },
-          "name": "Metro do Porto",
-          "website": "http://www.metrodoporto.pt"
+          }
         }
       ]
     }

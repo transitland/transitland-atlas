@@ -2,34 +2,58 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9y69-embark",
+      "supersedes_ids": [
+        "f-embarknorman~ok"
+      ],
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://embarkok.com/data/gtfs/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "embark"
+        "static_current": "https://embarkok.com/data/gtfs/google_transit.zip"
       },
       "license": {
         "url": "https://embarkok.com/business/developer-resources/developer-tou"
       },
+      "tags": {
+        "gtfs_data_exchange": "embark"
+      },
       "operators": [
         {
           "onestop_id": "o-9y69-embark",
-          "tags": {
-            "us_ntd_id": "60017",
-            "wikidata_id": "Q6824747",
-            "twitter_general": "embarkok"
-          },
-          "name": "Embark",
+          "supersedes_ids": [
+            "o-embarknorman~ok"
+          ],
+          "name": "Central Oklahoma Transportation and Parking Authority",
+          "short_name": "EMBARK",
           "website": "http://embarkok.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "embark-ok-us"
+            },
+            {
+              "feed_onestop_id": "f-embarknorman~ok~rt"
             }
-          ]
+          ],
+          "tags": {
+            "developer_site": "https://embarkok.com/business/developer-resources/",
+            "twitter_general": "embarkok",
+            "us_ntd_id": "60017",
+            "wikidata_id": "Q6824747"
+          }
         }
       ]
+    },
+    {
+      "id": "f-embarknorman~ok~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://app.mecatran.com/utw/ws/gtfsfeed/vehicles/embarkok",
+        "realtime_trip_updates": "https://app.mecatran.com/utw/ws/gtfsfeed/realtime/embarkok"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "apiKey",
+        "info_url": "https://embarkok.com/business/developer-resources/developer-registration"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

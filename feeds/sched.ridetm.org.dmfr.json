@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9vff-fortworthtransportationauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://sched.ridetm.org/gtfs/fwtatransitdata.zip"
       },
@@ -11,7 +11,6 @@
         "url": "https://ridetrinitymetro.org/gtfs-data/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Data provided by Trinity Metro is not warranted by Trinity Metro for accuracy or completeness and data is subject to change without notice."
       },
       "tags": {
@@ -20,13 +19,13 @@
       "operators": [
         {
           "onestop_id": "o-9vff-fortworthtransportationauthority",
-          "tags": {
-            "us_ntd_id": "60007",
-            "wikidata_id": "Q5472408",
-            "twitter_general": "TrinityMetro"
-          },
           "name": "Trinity Metro",
-          "short_name": "FWTA"
+          "short_name": "FWTA",
+          "tags": {
+            "twitter_general": "TrinityMetro",
+            "us_ntd_id": "60007",
+            "wikidata_id": "Q5472408"
+          }
         }
       ]
     }

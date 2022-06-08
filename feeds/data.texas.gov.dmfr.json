@@ -2,38 +2,31 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9v6-capitalmetro",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://data.texas.gov/download/r4v4-vz24/application/zip"
       },
       "license": {
         "url": "https://www.capmetro.org/metrolabs/",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "capital-metro"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-capitalmetro~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "https://data.texas.gov/download/rmk2-acnw/application/octet-stream"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9v6-capitalmetro",
-      "tags": {
-        "us_ntd_id": "60048",
-        "wikidata_id": "Q587830",
-        "twitter_general": "capmetroatx"
-      },
       "name": "Capital Metro",
       "associated_feeds": [
         {
@@ -42,7 +35,13 @@
         {
           "feed_onestop_id": "f-capitalmetro~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "capmetroatx",
+        "us_ntd_id": "60048",
+        "wikidata_id": "Q587830"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

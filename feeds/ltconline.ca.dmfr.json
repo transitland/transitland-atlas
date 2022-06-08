@@ -2,33 +2,56 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpwh-londontransit",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.ltconline.ca/gtfsfeed/google_transit.zip"
+        "static_current": "http://www.londontransit.ca/gtfsfeed/google_transit.zip"
       },
       "license": {
-        "url": "http://www.ltconline.ca/CommissionInfo.htm",
+        "url": "https://www.londontransit.ca/open-data/ltcs-open-data-terms-of-use/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
-        "redistribute": "yes"
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes"
       },
-      "operators": [
+      "tags": {
+        "mdb_source_id": "2"
+      }
+    },
+    {
+      "id": "f-dpwh-londontransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://gtfs.ltconline.ca/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "http://gtfs.ltconline.ca/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "http://gtfs.ltconline.ca/Alert/Alerts.pb"
+      },
+      "license": {
+        "url": "https://www.londontransit.ca/open-data/ltcs-open-data-terms-of-use/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dpwh-londontransit",
+      "name": "London Transit",
+      "short_name": "LTC",
+      "website": "https://www.londontransit.ca",
+      "associated_feeds": [
         {
-          "onestop_id": "o-dpwh-londontransit",
-          "name": "London Transit",
-          "short_name": "LTC",
-          "website": "http://www.ltconline.ca",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "LTC -2017 NOVEMBER  Schedules"
-            },
-            {
-              "gtfs_agency_id": "LTC -2017 SEPTEMBER  Schedules rev 3.0"
-            }
-          ]
+          "feed_onestop_id": "f-dpwh-londontransit"
+        },
+        {
+          "feed_onestop_id": "f-dpwh-londontransit~rt"
         }
-      ]
+      ],
+      "tags": {
+        "omd_provider_id": "london-transit-commission"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

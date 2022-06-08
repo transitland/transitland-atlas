@@ -2,8 +2,40 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-9qh-victorville~ca~us",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/vvta.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/victorville-ca-us/victorville-ca-us.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://vvta.org/developers/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh-victorvalleytransitauthority",
+          "name": "Victor Valley Transit Authority",
+          "short_name": "VVTA",
+          "website": "https://www.vvta.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-victorvalleytransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "VVTransit",
+            "us_ntd_id": "90148",
+            "wikidata_id": "Q7926418"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-atomic~city~transit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/atomic.zip"
       },
@@ -17,15 +49,15 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "6R03-60215",
-            "twitter_general": "losalamos"
+            "twitter_general": "losalamos",
+            "us_ntd_id": "6R03-60215"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-davenport~citi~bus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/davenportcitibus.zip"
       },
@@ -34,16 +66,34 @@
           "onestop_id": "o-9zrs-citibus",
           "name": "Citibus",
           "tags": {
+            "twitter_general": "cityofdavenport",
             "us_ntd_id": "70009",
-            "wikidata_id": "Q5230228",
-            "twitter_general": "cityofdavenport"
+            "wikidata_id": "Q5230228"
           }
         }
       ]
     },
     {
+      "id": "f-dq259-ncsu~wolfline~nc~us",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/ncsu.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq259-ncsuwolfline",
+          "name": "NCSU Wolfline",
+          "tags": {
+            "twitter_general": "NCStateTranspo",
+            "us_ntd_id": "40147",
+            "wikidata_id": "Q8030170"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dqb0q-charlottesvilleareatransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.transloc.com/gtfs/charlottesville.zip"
       },
@@ -53,12 +103,6 @@
       "operators": [
         {
           "onestop_id": "o-dqb0q-charlottesvilleareatransit",
-          "tags": {
-            "wikidata_id": "Q5086235",
-            "us_ntd_id": "30036",
-            "omd_provider_id": "charlottesville-area-transit",
-            "twitter_general": "RideWithCAT"
-          },
           "name": "Charlottesville Area Transit",
           "short_name": "CAT",
           "website": "http://www.charlottesville.org/transit",
@@ -66,9 +110,76 @@
             {
               "gtfs_agency_id": "1"
             }
-          ]
+          ],
+          "tags": {
+            "omd_provider_id": "charlottesville-area-transit",
+            "twitter_general": "RideWithCAT",
+            "us_ntd_id": "30036",
+            "wikidata_id": "Q5086235"
+          }
         }
       ]
+    },
+    {
+      "id": "f-gary~public~transportation~in~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/gptc.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gary~public~transportation~in~us",
+          "name": "Gary Public Transportation Corporation",
+          "tags": {
+            "us_ntd_id": "50045",
+            "wikidata_id": "Q5525788"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-linktransit~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/linktransit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-linktransit~nc~us",
+          "name": "Link Transit",
+          "tags": {
+            "us_ntd_id": "40252"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rides~mass~transit~district~il~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/rmtd.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rides~mass~transit~district~il~us",
+          "name": "Rides Mass Transit District",
+          "tags": {
+            "us_ntd_id": "50211"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-victorvalleytransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ontime.vvta.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ontime.vvta.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ontime.vvta.org/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

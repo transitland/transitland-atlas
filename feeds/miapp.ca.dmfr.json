@@ -2,31 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dpz2-miway",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.miapp.ca/GTFS/google_transit.zip?#"
       },
       "license": {
         "url": "http://www5.mississauga.ca/research_catalogue/CityofMississauga_TermsofUse.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "miway"
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-miway~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://www.miapp.ca/GTFS_RT/TripUpdate/TripUpdates.pb",
-        "realtime_vehicle_positions": "https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb"
+        "realtime_vehicle_positions": "https://www.miapp.ca/GTFS_RT/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://www.miapp.ca/GTFS_RT/TripUpdate/TripUpdates.pb"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dpz2-miway",
@@ -34,13 +32,14 @@
       "website": "http://www.miway.ca",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-miway~rt"
+          "gtfs_agency_id": "mississauga-on-ca",
+          "feed_onestop_id": "f-dpz2-miway"
         },
         {
-          "feed_onestop_id": "f-dpz2-miway",
-          "gtfs_agency_id": "mississauga-on-ca"
+          "feed_onestop_id": "f-miway~rt"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

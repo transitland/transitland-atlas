@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u2ed-wienerlinien~wlb",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.wienerlinien.at/ogd_realtime/doku/ogd/gtfs/gtfs.zip"
       },
@@ -12,16 +12,6 @@
       },
       "operators": [
         {
-          "onestop_id": "o-u2ed-wienerlinien",
-          "name": "Wiener Linien",
-          "website": "https://www.wienerlinien.at/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u2e9-wlb",
           "name": "Wiener Lokalbahnen",
           "short_name": "WLB",
@@ -29,6 +19,16 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "2"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u2ed-wienerlinien",
+          "name": "Wiener Linien",
+          "website": "https://www.wienerlinien.at/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
             }
           ]
         }

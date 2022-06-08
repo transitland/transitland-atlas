@@ -2,35 +2,50 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-c2kx-spokanetransitauthority",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.spokanetransit.com/gtfs"
-      },
-      "tags": {
-        "gtfs_data_exchange": "spokane-transit-authority"
       },
       "license": {
         "url": "https://www.spokanetransit.com/about-sta/developers-terms-of-use"
       },
+      "tags": {
+        "gtfs_data_exchange": "spokane-transit-authority"
+      },
       "operators": [
         {
           "onestop_id": "o-c2kx-spokanetransitauthority",
-          "tags": {
-            "wikidata_id": "Q7578886",
-            "us_ntd_id": "00002",
-            "twitter_general": "spokanetransit"
-          },
           "name": "Spokane Transit Authority",
           "short_name": "STA",
           "website": "http://www.spokanetransit.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "STA"
+            },
+            {
+              "feed_onestop_id": "f-spokanetransitauthority~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "spokanetransit",
+            "us_ntd_id": "2",
+            "wikidata_id": "Q7578886"
+          }
         }
       ]
+    },
+    {
+      "id": "f-spokanetransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsbridge.spokanetransit.com/realtime/vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://gtfsbridge.spokanetransit.com/realtime/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://gtfsbridge.spokanetransit.com/realtime/Alert/Alerts.pb"
+      },
+      "license": {
+        "url": "https://www.spokanetransit.com/developers-terms-of-use/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

@@ -2,341 +2,23 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
-      "id": "f-9rbm-albanytransit~or~us",
-      "urls": {
-        "static_historic": [
-          "http://oregon-gtfs.com/gtfs_data/albanytransit-or-us/albanytransit-or-us.zip"
-        ]
-      },
-      "license": {
-        "url": "http://oregon-gtfs.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "albanytransit-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rbmy-albanytransitsystem",
-          "tags": {
-            "us_ntd_id": "00061",
-            "twitter_general": "cityofalbany"
-          },
-          "name": "Albany Transit System",
-          "short_name": "ATS",
-          "website": "https://www.cityofalbany.net/departments/public-works/transportation/albany-transit-system",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "456"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9rbm-linn~bentonloop",
-          "name": "Linn-Benton Loop",
-          "website": "http://www.cityofalbany.net/departments/public-works/transportation/linn-benton-loop",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "457"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9r92-basin~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/basin-or-us/basin-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "basin-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "basin-transit-service"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r9-klamathtribes",
-          "name": "Klamath Tribes",
-          "website": "http://klamathtribes.org/administration/community-services/transportation-program/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "215"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9r92-basintransitservice",
-          "tags": {
-            "us_ntd_id": "0R02-00339"
-          },
-          "name": "Basin Transit Service",
-          "website": "http://www.basintransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "131"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb-benton~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/benton-or-us/benton-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "benton-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "benton-county-transportation"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb-bentoncountytransportation",
-          "tags": {
-            "us_ntd_id": "00065"
-          },
-          "name": "Benton County Transportation",
-          "website": "https://www.co.benton.or.us/publicworks/page/county-public-transportation-services-about-us",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "148"
-            },
-            {
-              "feed_onstop_id": "f-9rb-benton~or~us~alerts"
-            },
-            {
-              "feed_onstop_id": "f-9rb-benton~or~us~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20f-bluestar~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/bluestar-or-us/bluestar-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "bluestar-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "blue-star-bus"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20f-bluestarbus",
-          "name": "Blue Star Bus",
-          "website": "http://www.bluestarbus.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "169"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c209-canbytransit~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/canbytransit-or-us/canbytransit-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "canbytransit-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c209-canbyareatransit",
-          "tags": {
-            "us_ntd_id": "0R02-00330",
-            "wikidata_id": "Q5031301"
-          },
-          "name": "Canby Area Transit",
-          "website": "http://www.ci.canby.or.us/transportation/routes.htm",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "227"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb-caravan~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/caravan-or-us/caravan-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "caravan-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "caravan-airport-transportation"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb-caravanairporttransportation",
-          "name": "Caravan Airport Transportation",
-          "website": "http://www.caravanairporttransportation.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "58"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rc-cascadeseast~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/cascadeseast-or-us/cascadeseast-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "cascadeseast-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "cascades-east-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rc-cascadeseasttransit",
-          "tags": {
-            "us_ntd_id": "00057",
-            "twitter_general": "ridecet"
-          },
-          "name": "Cascades East Transit",
-          "website": "http://www.cascadeseasttransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "61"
-            },
-            {
-              "feed_onestop_id": "f-9rc-cascadeseast~or~us~rt"
-            },
-            {
-              "feed_onestop_id": "f-9rc-cascadeseast~or~us~rt~alerts"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20f-cccxpress~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/cccxpress-or-us/cccxpress-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "cccxpress-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20f-cccxpress",
-          "name": "CCC Xpress",
-          "website": "https://www.clackamas.edu/Transportation/ShuttleSchedule/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "256"
-            }
-          ],
-          "tags": {
-            "twitter_general": "ClackCollege"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb-citytocityshuttle~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/citytocityshuttle-or-us/citytocityshuttle-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "citytocityshuttle-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb-city2cityshuttle",
-          "name": "City2City Shuttle",
-          "website": "http://www.city2cityshuttle.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "266"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-9px-cooscounty~or~us",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/cooscounty-or-us/cooscounty-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cooscounty-or-us/cooscounty-or-us.zip"
       },
       "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
-        "feed_id": "cooscounty-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "coos-county-area-transit"
+        "gtfs_data_exchange": "coos-county-area-transit",
+        "managed_by": "trillium"
       },
       "operators": [
         {
           "onestop_id": "o-9px-cooscountyareatransit",
-          "tags": {
-            "us_ntd_id": "0R02-00307"
-          },
           "name": "Coos County Area Transit",
           "short_name": "CCAT",
           "website": "http://www.coostransit.org/",
@@ -349,18 +31,1434 @@
       ]
     },
     {
+      "id": "f-9px-currypublictransit",
       "spec": "gtfs",
-      "id": "f-9r9-craterlaketrolley~or~us",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/craterlaketrolley-or-us/craterlaketrolley-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
       },
       "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
-        "feed_id": "craterlaketrolley-or-us",
+        "gtfs_data_exchange": "curry-public-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9px-currypublictransit",
+          "name": "Curry Public Transit",
+          "website": "https://currypublictransit.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "827"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00308"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9pz-lincolncounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/lincolncounty-or-us/lincolncounty-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "lincoln-county-transit",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9pz-lincolncountytransit",
+          "name": "Lincoln County Transit",
+          "website": "https://www.co.lincoln.or.us/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "89"
+            },
+            {
+              "feed_onestop_id": "f-9pz-lincolncounty~or~us~rt~alerts"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00310"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9pz-lincolncounty~or~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/lincolncounty-or-us/service_alerts.proto"
+      }
+    },
+    {
+      "id": "f-9pzdp-rhodyexpress~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/rhodyexpress-or-us/rhodyexpress-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "rhody-express",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9pzdp-rhodyexpress",
+          "name": "Rhody Express",
+          "website": "https://www.ltd.org/system-map/route_901/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "185"
+            }
+          ],
+          "tags": {
+            "twitter_general": "lanetransit",
+            "us_ntd_id": "00007",
+            "wikidata_id": "Q6485453"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9r-peoplemover~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/peoplemover-or-us/peoplemover-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "people-mover",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r-peoplemover",
+          "name": "People Mover",
+          "website": "http://www.grantcountypeoplemover.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "59"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9r8-josephinecounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/josephinecounty-or-us/josephinecounty-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r8-josephinecommunitytransit",
+          "name": "Josephine Community Transit",
+          "short_name": "JCT",
+          "website": "http://www.co.josephine.or.us/Page.asp?NavID=628",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "94"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00059"
+          }
+        },
+        {
+          "onestop_id": "o-9r83-roguevalleycommuterline",
+          "name": "Rogue Valley Commuter Line",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "225"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9r8m-umpquatransit~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/umpquatransit-or-us/umpquatransit-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "u-trans",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r8m-u~trans",
+          "name": "U-Trans",
+          "website": "https://umpquatransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "92"
+            }
+          ],
+          "tags": {
+            "twitter_general": "UmpquaTransit",
+            "us_ntd_id": "0R02-00296",
+            "wikidata_id": "Q7802245"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9r92-basin~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/basin-or-us/basin-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "basin-transit-service",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r9-klamathtribes",
+          "name": "Klamath Tribes",
+          "website": "https://klamathtribes.org/quail-trail-bus-schedule/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "215"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9r92-basintransitservice",
+          "name": "Basin Transit Service",
+          "website": "https://www.basintransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "131"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00339"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rb-benton~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/benton-or-us/benton-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "benton-county-transportation",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rb-bentoncountytransportation",
+          "name": "Benton Area Transit",
+          "website": "https://www.co.benton.or.us/ridethebat",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "148"
+            },
+            {
+              "feed_onestop_id": "f-9rb-benton~or~us~alerts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9rb-benton~or~us~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/benton-or-us/service_alerts.proto"
+      }
+    },
+    {
+      "id": "f-9rb-caravan~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/caravan-or-us/caravan-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "caravan-airport-transportation",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rb-caravanairporttransportation",
+          "name": "Caravan Airport Transportation",
+          "website": "https://www.caravanairporttransportation.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "58"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9rb-citytocityshuttle~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/citytocityshuttle-or-us/citytocityshuttle-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rb-city2cityshuttle",
+          "name": "City2City Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-9rb-diamondexpress~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/diamondexpress-or-us/diamondexpress-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "diamond-express",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rb-diamondexpress",
+          "name": "Diamond Express",
+          "website": "https://www.ltd.org/system-map/route_900/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "184"
+            }
+          ],
+          "tags": {
+            "twitter_general": "lanetransit",
+            "us_ntd_id": "00007",
+            "wikidata_id": "Q6485453"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rb-oregonexpressshuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/oregonexpressshuttle-or-us/oregonexpressshuttle-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rb-oregonexpressshuttle",
+          "name": "Oregon Express Shuttle",
+          "website": "https://groometransportation.com/portland-airport/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "690"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9rb-pacificcrest~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/pacificcrest-or-us/pacificcrest-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rb-pacificcrestlines",
+          "name": "Pacific Crest Lines",
+          "website": "https://pacificcrestbuslines.net/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "187"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9rb3p-southlanewheels~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/southlanewheels-or-us/southlanewheels-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "south-lane-wheels",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rb3p-southlanewheels",
+          "name": "South Lane Wheels",
+          "website": "https://southlanetransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "130"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9rbm-albanytransit~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/albanytransit-or-us/albanytransit-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rbm-linn~bentonloop",
+          "name": "Linn Benton Loop",
+          "website": "https://loop.cityofalbany.net/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "457"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9rbm-linx",
+          "name": "Lebanon Inter-Neighborhood Express",
+          "short_name": "LINX",
+          "website": "https://www.ci.lebanon.or.us/LINX",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1526"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-9rbmy-albanytransitsystem",
+          "name": "Albany Transit System",
+          "short_name": "ATS",
+          "website": "https://www.cityofalbany.net/pw/transportation/albany-transit-system",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "456"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cityofalbany",
+            "us_ntd_id": "00061"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rbm-corvallis~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/corvallis-or-us/corvallis-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "corvallis-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rbm-corvallistransitsystem",
+          "name": "Corvallis Transit System",
+          "short_name": "CTS",
+          "website": "http://www.CorvallisTransit.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "445"
+            },
+            {
+              "feed_onestop_id": "f-corvallis~or~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cityofcorvallis",
+            "us_ntd_id": "47"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rbs-linnshuttle~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/linnshuttle-or-us/linnshuttle-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "linn-shuttle",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rbs-linnshuttle",
+          "name": "Linn Shuttle",
+          "website": "https://www.linnshuttle.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "91"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00348",
+            "wikidata_id": "Q25001269"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rc-cascadeseast~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cascadeseast-or-us/cascadeseast-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "cascades-east-transit",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rc-cascadeseasttransit",
+          "name": "Cascades East Transit",
+          "short_name": "CET",
+          "website": "https://www.caravanairporttransportation.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "61"
+            },
+            {
+              "feed_onestop_id": "f-9rc-cascadeseast~or~us~rt"
+            },
+            {
+              "feed_onestop_id": "f-9rc-cascadeseast~or~us~rt~alerts"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridecet",
+            "us_ntd_id": "57"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rc-cascadeseast~or~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/cascadeseast-or-us/service_alerts.proto"
+      }
+    },
+    {
+      "id": "f-9rc-cobreeze~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cobreeze-or-us/cobreeze-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rc-centraloregonbreeze",
+          "name": "Central Oregon Breeze",
+          "website": "http://cobreeze.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "47"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00326"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rc-eugenetobend~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/eugenetobend-or-us/eugenetobend-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "eugene-to-bend"
+      }
+    },
+    {
+      "id": "f-9ruf-mcacs~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/mcacs-or-us/mcacs-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9ruf-malheurcouncilonaging~communityservices",
+          "name": "Malheur Council on Aging & Community Services",
+          "website": "https://www.mcoacs.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "269"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-astoria~riverfront~trolley",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/astoria-or-us/astoria-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-astoria~riverfront~trolley",
+          "name": "Astoria Riverfront Trolley",
+          "website": "https://old300.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "915"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-buenavistaferry~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/buenavistaferry-or-us/buenavistaferry-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-buenavistaferry~or~us",
+          "name": "Buena Vista Ferry",
+          "website": "https://www.co.marion.or.us/PW/ferries/Pages/buenavista.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1734"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c0p-sunsetempiretransportationdistrict",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/clatsopcounty-or-us/clatsopcounty-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c0p-sunsetempiretransportationdistrict",
+          "name": "Sunset Empire Transportation District",
+          "website": "https://www.nworegontransit.org/agencies/sunset-empire-transportation-district/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "253"
+            },
+            {
+              "feed_onestop_id": "f-sunsetempiretransportationdistrict~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00331",
+            "wikidata_id": "Q7641258"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20-columbiacountyrider",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/columbiacounty-or-us/columbiacounty-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20-columbiacountyrider",
+          "name": "Columbia County Rider",
+          "short_name": "CCR",
+          "website": "https://www.nworegontransit.org/agencies/columbia-county-rider/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "57"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00375"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20-tillamook~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/tillamookcounty-or-us/tillamookcounty-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c0p-tillamookcountytransportationdistrict",
+          "name": "Tillamook County Transportation District",
+          "short_name": "The Wave",
+          "website": "http://www.nworegontransit.org/agencies/tillamook-county-transportation-district/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22"
+            },
+            {
+              "feed_onestop_id": "f-c20-tillamook~or~us~rt~alerts"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00296",
+            "wikidata_id": "Q7802245"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20-tillamook~or~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto"
+      }
+    },
+    {
+      "id": "f-c20-wilsonville~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      }
+    },
+    {
+      "id": "f-c20-yamhillcounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/yamhill-or-us/yamhill-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20-yamhillcountytransitarea",
+          "name": "Yamhill County Transit Area",
+          "short_name": "YCTA",
+          "website": "https://ycbus.org/",
+          "tags": {
+            "us_ntd_id": "0R02-00321",
+            "wikidata_id": "Q60770365"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c208u-woodburn~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/woodburn-or-us/woodburn-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c208u-woodburntransit",
+          "name": "Woodburn Transit",
+          "website": "https://www.woodburn-or.gov/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "129"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c209-canbytransit~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbytransit-or-us/canbytransit-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c209-canbyareatransit",
+          "name": "Canby Area Transit",
+          "website": "https://www.canbyoregon.gov/area-transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "227"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c20c-sctd~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/sctd-or-us/sctd-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20c-southclackamastransportationdistrict",
+          "name": "South Clackamas Transportation District",
+          "short_name": "SCTD",
+          "website": "http://sctd.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "473"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00301",
+            "wikidata_id": "Q7566833"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20d-rideconnection~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "ride-connection",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20d-rideconnection",
+          "name": "Ride Connection",
+          "website": "https://rideconnection.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "133"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ride_connection"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20dz-washingtonparkshuttle~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/washingtonparkshuttle-or-us/washingtonparkshuttle-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20dz-washingtonparkshuttle",
+          "name": "Washington Park Shuttle",
+          "website": "https://explorewashingtonpark.org/free-shuttle/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "501"
+            },
+            {
+              "feed_onestop_id": "f-c20dz-washingtonparkshuttle~or~us~alerts"
+            }
+          ],
+          "tags": {
+            "twitter_general": "explorewapark"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20dz-washingtonparkshuttle~or~us~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/washingtonparkshuttle-or-us/service_alerts.proto"
+      }
+    },
+    {
+      "id": "f-c20ep-swanisland~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/swanisland-or-us/swanisland-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "swan-island-tma",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20ep-swanislandtma",
+          "name": "Swan Island TMA",
+          "website": "https://www.pcc.edu/transportation/alternatives/shuttles/swan-island-evening-shuttle/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "162"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c20f-bluestar~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/bluestar-or-us/bluestar-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "blue-star-bus"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20f-bluestarbus",
+          "name": "Blue Star Bus",
+          "website": "https://www.bluestarbus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "169"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c20f-cccxpress~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cccxpress-or-us/cccxpress-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20f-cccxpress",
+          "name": "CCC Xpress",
+          "website": "https://www.clackamas.edu/campus-life/transportation",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "256"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ClackCollege"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20fb-ceic~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/ceic-or-us/ceic-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20fb-wateravenueshuttle",
+          "name": "Water Avenue Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-c21-hoodriver~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "columbia-area-transit",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c21-columbiaareatransit",
+          "name": "Columbia Area Transit",
+          "short_name": "CAT",
+          "website": "https://www.ridecatbus.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "37"
+            }
+          ],
+          "tags": {
+            "twitter_general": "HRCATBUS",
+            "us_ntd_id": "0R02-00319",
+            "wikidata_id": "Q96375303"
+          }
+        },
+        {
+          "onestop_id": "o-c21-thelink",
+          "name": "The Link",
+          "website": "https://www.mcedd.org/transportation/the-link-public-transit/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1491"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c214-sandy~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/sandy-or-us/sandy-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c213-mthoodexpress",
+          "name": "Mt. Hood Express",
+          "website": "https://www.mthoodexpress.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "188"
+            }
+          ],
+          "tags": {
+            "twitter_general": "Mthoodexpress",
+            "wikidata_id": "Q6924938"
+          }
+        },
+        {
+          "onestop_id": "o-c214-sandyareametro",
+          "name": "Sandy Area Metro",
+          "website": "https://www.ci.sandy.or.us/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "86"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CityofSandyOR",
+            "us_ntd_id": "0R02-00389",
+            "wikidata_id": "Q7417136"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c25-ctuir~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/ctuir-or-us/ctuir-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "kayak-public-transit",
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c25-kayakpublictransit",
+          "name": "Kayak Public Transit",
+          "website": "https://ctuir.org/departments/tribal-planning-office/kayak-public-transit/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "451"
+            }
+          ],
+          "tags": {
+            "twitter_general": "kayaktransit"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c25v-milton~freewater~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/milton-freewater-or-us/milton-freewater-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c25v-cityofmilton~freewater",
+          "name": "City of Milton-Freewater",
+          "website": "https://www.mfcity.com/public_transportation",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "397"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c2h-northeast~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/northeast-or-us/northeast-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c2h-northeastoregonpublictransit",
+          "name": "Northeast Oregon Public Transit",
+          "website": "https://ccno.org/publictransit/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "157"
+            }
+          ],
+          "tags": {
+            "twitter_general": "neotransit"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-canbyferry~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/canbyferry-or-us/canbyferry-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-canbyferry~or~us",
+          "name": "Canby Ferry",
+          "website": "https://www.clackamas.us/roads/ferry.html#faresandhours",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1731"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-clackamascounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-clackamascounty~or~us",
+          "name": "Clackamas County Social Services",
+          "website": "https://www.clackamas.us/h3s/connects-shuttle",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1807"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-harneycounty",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/harneycounty-or-us/harneycounty-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-harneycounty",
+          "name": "Harney County",
+          "website": "http://w.co.harney.or.us",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1748"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-klamath~shuttle~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
         "managed_by": "trillium"
       },
       "operators": [
@@ -377,933 +1475,162 @@
       ]
     },
     {
+      "id": "f-lcog~linklane",
       "spec": "gtfs",
-      "id": "f-klamath~shuttle~or~us",
       "urls": {
-        "static_current": "https://oregon-gtfs.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
-      }
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/lcog-or-us/lcog-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lcog~linklane",
+          "name": "Link Lane",
+          "website": "https://link-lane.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "907"
+            }
+          ]
+        }
+      ]
     },
     {
-      "spec": "gtfs",
       "id": "f-pendleton~or~us",
-      "urls": {
-        "static_current": "https://oregon-gtfs.com/gtfs_data/pendleton-or-us/pendleton-or-us.zip"
-      }
-    },
-    {
       "spec": "gtfs",
-      "id": "f-9rb-diamondexpress~or~us",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/diamondexpress-or-us/diamondexpress-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/pendleton-or-us/pendleton-or-us.zip"
       },
       "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
-        "feed_id": "diamondexpress-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "diamond-express"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb-diamondexpress",
-          "tags": {
-            "us_ntd_id": "00007",
-            "wikidata_id": "Q6485453",
-            "twitter_general": "lanetransit"
-          },
-          "name": "Diamond Express",
-          "website": "http://www.ltd.org/diamondex/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "184"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rc-eugenetobend~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/eugenetobend-or-us/eugenetobend-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "eugenetobend-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "eugene-to-bend"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c21-hoodriver~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/hoodriver-or-us/hoodriver-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "hoodriver-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "columbia-area-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c21-columbiaareatransit",
-          "tags": {
-            "us_ntd_id": "0R02-00319",
-            "wikidata_id": "Q96375303",
-            "twitter_general": "HRCATBUS"
-          },
-          "name": "Columbia Area Transit",
-          "short_name": "CAT",
-          "website": "http://community.gorge.net/hrctd/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "37"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c215-columbiagorgeexpress",
-          "name": "Columbia Gorge Express",
-          "website": "http://columbiagorgeexpress.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "531"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9r8-josephinecounty~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/josephinecounty-or-us/josephinecounty-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "josephinecounty-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "o-9r8-josephinecommunitytransit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r8-josephinecommunitytransit",
-          "tags": {
-            "us_ntd_id": "00059"
-          },
-          "name": "Josephine Community Transit",
-          "website": "http://www.co.josephine.or.us/Page.asp?NavID=628",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "94"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-9r83-roguevalleycommuterline",
-          "tags": {
-            "us_ntd_id": "00059"
-          },
-          "name": "Rogue Valley Commuter Line",
-          "website": "http://www.co.josephine.or.us/page.asp?navid=1718",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "225"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9pz-lincolncounty~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/lincolncounty-or-us/lincolncounty-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "lincolncounty-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "lincoln-county-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9pz-lincolncountytransit",
-          "tags": {
-            "us_ntd_id": "0R02-00310"
-          },
-          "name": "Lincoln County Transit",
-          "website": "http://www.co.lincoln.or.us/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "89"
-            },
-            {
-              "feed_onstop_id": "f-9pz-lincolncounty~or~us~rt"
-            },
-            {
-              "feed_onestop_id": "f-9pz-lincolncounty~or~us~rt~alerts"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rbs-linnshuttle~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/linnshuttle-or-us/linnshuttle-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "linnshuttle-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "linn-shuttle"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rbs-linnshuttle",
-          "tags": {
-            "us_ntd_id": "0R02-00348",
-            "wikidata_id": "Q25001269"
-          },
-          "name": "Linn Shuttle",
-          "website": "http://www.linnshuttle.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "91"
-            },
-            {
-              "feed_onestop_id": "f-9rbs-linnshuttle~or~us~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9ruf-mcacs~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/mcacs-or-us/mcacs-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "mcacs-or-us",
         "managed_by": "trillium"
       },
       "operators": [
         {
-          "onestop_id": "o-9ruf-malheurcouncilonaging~communityservices",
-          "name": "Malheur Council on Aging & Community Services",
-          "website": "http://www.mcoainfo.org/hoursopen/transportation-program",
+          "onestop_id": "o-pendleton~or~us",
+          "name": "Let'er Bus",
+          "website": "https://pendleton.or.us/transportation",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "269"
+              "gtfs_agency_id": "1496"
             }
           ]
         }
       ]
     },
     {
+      "id": "f-philomathconnection~or~us",
       "spec": "gtfs",
-      "id": "f-c25v-milton~freewater~or~us",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/milton-freewater-or-us/milton-freewater-or-us.zip"
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/philomathconnection-or-us/philomathconnection-or-us.zip"
+        ]
       },
       "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "milton-freewater-or-us",
-        "managed_by": "trillium"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-c25v-cityofmilton~freewater",
-          "name": "City of Milton-Freewater",
-          "website": "http://www.mfcity.com/transport",
+          "onestop_id": "o-9rbm-philomathconnection",
+          "name": "Philomath Connection",
+          "website": "https://www.corvallisoregon.gov/cts/page/cts-route-philomath-connection",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "397"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c2h-northeast~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/northeast-or-us/northeast-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "northeast-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "Northeast Oregon Public Transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c2h6-wallowacommunityconnection",
-          "name": "Wallowa Community Connection",
-          "website": "http://www.neotransit.org/Wallowa/Commuter.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "160"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c2h-northeastoregonpublictransit",
-          "name": "Northeast Oregon Public Transit",
-          "website": "http://neotransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "157"
+              "gtfs_agency_id": "1760"
             }
           ],
           "tags": {
-            "twitter_general": "neotransit"
+            "twitter_general": "cityofcorvallis",
+            "us_ntd_id": "00047"
           }
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-9r-peoplemover~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/peoplemover-or-us/peoplemover-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "peoplemover-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "people-mover"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r-peoplemover",
-          "name": "People Mover",
-          "website": "http://www.grantcountypeoplemover.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "59"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9pzdp-rhodyexpress~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/rhodyexpress-or-us/rhodyexpress-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "rhodyexpress-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "rhody-express"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9pzdp-rhodyexpress",
-          "tags": {
-            "us_ntd_id": "00007",
-            "wikidata_id": "Q6485453",
-            "twitter_general": "lanetransit"
-          },
-          "name": "Rhody Express",
-          "website": "http://www.ltd.org/rhody/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "185"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20d-rideconnection~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/rideconnection-or-us/rideconnection-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "rideconnection-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "ride-connection"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20d-rideconnection",
-          "name": "Ride Connection",
-          "website": "http://www.rideconnection.org/Ride/Home.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "133"
-            }
-          ],
-          "tags": {
-            "twitter_general": "ride_connection"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c214-sandy~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/sandy-or-us/sandy-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "sandy-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "o-c214-sandyareametro"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c213-mthoodexpress",
-          "tags": {
-            "wikidata_id": "Q6924938",
-            "twitter_general": "Mthoodexpress"
-          },
-          "name": "Mt. Hood Express",
-          "website": "http://www.mthoodexpress.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "188"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c214-sandyareametro",
-          "tags": {
-            "us_ntd_id": "0R02-00389",
-            "wikidata_id": "Q7417136",
-            "twitter_general": "CityofSandyOR"
-          },
-          "name": "Sandy Area Metro",
-          "website": "http://www.ci.sandy.or.us/index.asp?Type=B_BASIC&SEC={BF6D9F91-1204-479D-B3A5-B12572DA8DD1}",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "86"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb3p-southlanewheels~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/southlanewheels-or-us/southlanewheels-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "southlanewheels-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "south-lane-wheels"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb3p-southlanewheels",
-          "name": "South Lane Wheels",
-          "website": "http://southlanewheels.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "130"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20ep-swanisland~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/swanisland-or-us/swanisland-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "swanisland-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "swan-island-tma"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20ep-swanislandtma",
-          "name": "Swan Island TMA",
-          "website": "https://swanislandtma.wordpress.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "162"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20-tillamook~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/tillamook-or-us/tillamook-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "tillamook-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20-columbiacountyrider",
-          "tags": {
-            "us_ntd_id": "0R02-00375"
-          },
-          "name": "Columbia County Rider",
-          "website": "http://www.columbiacountyrider.com/?referrer=gtfs",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "57"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c0p-tillamookcountytransportationdistrict",
-          "tags": {
-            "us_ntd_id": "0R02-00296",
-            "wikidata_id": "Q7802245"
-          },
-          "name": "Tillamook County Transportation District",
-          "short_name": "The Wave",
-          "website": "http://www.nworegontransit.org/agencies/tillamook-county-transportation-district/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "22"
-            },
-            {
-              "feed_onstop_id": "f-c20-tillamook~or~us~rt"
-            },
-            {
-              "feed_onstop_id": "f-c20-tillamook~or~us~rt~alerts"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c0p-sunsetempiretransportationdistrict",
-          "tags": {
-            "us_ntd_id": "0R02-00331",
-            "wikidata_id": "Q7641258"
-          },
-          "name": "Sunset Empire Transportation District",
-          "website": "http://www.ridethebus.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "253"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9r8m-umpquatransit~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/umpquatransit-or-us/umpquatransit-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "umpquatransit-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "u-trans"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r8m-u~trans",
-          "name": "U-Trans",
-          "website": "http://www.umpquatransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "92"
-            }
-          ],
-          "tags": {
-            "twitter_general": "UmpquaTransit"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c208u-woodburn~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/woodburn-or-us/woodburn-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "woodburn-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c208u-woodburntransit",
-          "tags": {
-            "us_ntd_id": "0R02-00360"
-          },
-          "name": "Woodburn Transit",
-          "website": "http://www.ci.woodburn.or.us/?q=transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "129"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20-yamhillcounty~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/yamhill-or-us/yamhill-or-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "feed_id": "yamhillcounty-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20-yamhillcountytransitarea",
-          "tags": {
-            "us_ntd_id": "0R02-00321",
-            "wikidata_id": "Q60770365"
-          },
-          "name": "Yamhill County Transit Area",
-          "website": "http://www.yctransitarea.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "268"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rc-cobreeze~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/cobreeze-or-us/cobreeze-or-us.zip"
-      },
-      "tags": {
-        "feed_id": "cobreeze-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rc-centraloregonbreeze",
-          "tags": {
-            "us_ntd_id": "0R02-00326"
-          },
-          "name": "Central Oregon Breeze",
-          "website": "http://cobreeze.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "47"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rbm-corvallis~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/corvallis-or-us/corvallis-or-us.zip"
-      },
-      "tags": {
-        "feed_id": "corvallis-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "corvallis-transit-system"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rbm-corvallistransitsystem",
-          "tags": {
-            "us_ntd_id": "00047",
-            "twitter_general": "cityofcorvallis"
-          },
-          "name": "Corvallis Transit System",
-          "short_name": "CTS",
-          "website": "http://www.CorvallisTransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "445"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c25-ctuir~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/ctuir-or-us/ctuir-or-us.zip"
-      },
-      "tags": {
-        "feed_id": "ctuir-or-us",
-        "managed_by": "trillium",
-        "gtfs_data_exchange": "kayak-public-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c25-kayakpublictransit",
-          "name": "Kayak Public Transit",
-          "website": "http://ctuir.org/tribal-services/planning/kayak-public-transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "451"
-            }
-          ],
-          "tags": {
-            "twitter_general": "kayaktransit"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb-pacificcrest~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/pacificcrest-or-us/pacificcrest-or-us.zip"
-      },
-      "tags": {
-        "feed_id": "pacificcrest-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb-pacificcrestlines",
-          "name": "Pacific Crest Lines",
-          "website": "http://www.highdesert-point.com/eugene-to-bend/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "187"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20c-sctd~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/sctd-or-us/sctd-or-us.zip"
-      },
-      "tags": {
-        "feed_id": "sctd-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20c-southclackamastransportationdistrict",
-          "tags": {
-            "us_ntd_id": "0R02-00301",
-            "wikidata_id": "Q7566833"
-          },
-          "name": "South Clackamas Transportation District",
-          "short_name": "SCTD",
-          "website": "http://sctd.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "473"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20dz-washingtonparkshuttle~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/washingtonparkshuttle-or-us/washingtonparkshuttle-or-us.zip"
-      },
-      "tags": {
-        "feed_id": "washingtonparkshuttle-or-us",
-        "managed_by": "trillium"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20dz-washingtonparkshuttle",
-          "name": "Washington Park Shuttle",
-          "website": "http://explorewashingtonpark.org/getting-here/#shuttle",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "501"
-            },
-            {
-              "feed_onstop_id": "f-c20dz-washingtonparkshuttle~or~us~rt"
-            },
-            {
-              "feed_onstop_id": "f-c20dz-washingtonparkshuttle~or~us~alerts"
-            }
-          ],
-          "tags": {
-            "twitter_general": "explorewapark"
-          }
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-9rb-oregonexpressshuttle",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/oregonexpressshuttle-or-us/oregonexpressshuttle-or-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb-oregonexpressshuttle",
-          "name": "Oregon Express Shuttle",
-          "website": "http://www.oregonexpressshuttle.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "690"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c20fb-ceic~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/ceic-or-us/ceic-or-us.zip"
-      },
-      "tags": {
-        "feed_id": "ceic-or-us"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20fb-wateravenueshuttle",
-          "name": "Water Avenue Shuttle",
-          "website": "http://ceic.cc/shuttle/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1475"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-point~or-us",
-      "supersedes_ids": ["f-9rb-cascadespoint~or~us", "f-9r-easternpoint~or~us", "f-c20-northwestpoint~or~us", "f-9r2-southwestpoint~or~us", "f-9rc-highdesertpoint~or~us"],
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/point-or-us/point-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
       },
       "operators": [
         {
           "onestop_id": "o-point~or~us",
           "name": "The POINT",
           "website": "http://oregon-point.com",
-          "supersedes_ids": ["o-9rb-cascadespoint", "o-9r-easternpoint", "o-c20-northwestpoint", "o-9r2-southwestpoint", "o-9rc-highdesertpoint"]
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "45"
+            }
+          ]
         }
       ]
     },
     {
+      "id": "f-shuttle~oregon",
       "spec": "gtfs",
-      "id": "f-canbyferry~or~us",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/canbyferry-or-us/canbyferry-or-us.zip"
-      }
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/shuttleoregon-or-us/shuttleoregon-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-shuttle~oregon",
+          "name": "Shuttle Oregon",
+          "website": "https://shuttleoregon.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "923"
+            }
+          ]
+        }
+      ]
     },
     {
-      "spec": "gtfs",
       "id": "f-wahkiakumferry~or~us",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/wahkiakumferry-or-us/wahkiakumferry-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-or-us/wahkiakumferry-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
       },
       "operators": [
         {
           "onestop_id": "o-c20q82-wahkiakumferry",
           "name": "Wahkiakum Ferry",
+          "website": "https://www.co.wahkiakum.wa.us/252/Ferry",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1732"
@@ -1316,47 +1643,31 @@
       ]
     },
     {
+      "id": "f-wheatlandferry~or~us",
       "spec": "gtfs",
-      "id": "f-buenavistaferry~or~us",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/buenavistaferry-or-us/buenavistaferry-or-us.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-philomathconnection~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/philomathconnection-or-us/philomathconnection-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/wheatlandferry-or-us/wheatlandferry-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "managed_by": "trillium"
       },
       "operators": [
         {
-          "onestop_id": "o-9rbm-philomathconnection",
-          "name": "Philomath Connection",
+          "onestop_id": "o-wheatlandferry~or~us",
+          "name": "Wheatland Ferry",
+          "website": "https://www.co.marion.or.us/PW/ferries/Pages/wheatlandhours.aspx",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1760"
+              "gtfs_agency_id": "1733"
             }
-          ],
-          "tags": {
-            "us_ntd_id": "00047",
-            "twitter_general": "cityofcorvallis"
-          }
+          ]
         }
       ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-wheatlandferry~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/wheatlandferry-or-us/wheatlandferry-or-us.zip"
-      }
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-clackamascounty~or~us",
-      "urls": {
-        "static_current": "http://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip"
-      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

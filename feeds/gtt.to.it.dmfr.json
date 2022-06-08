@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-u0j-torino",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.gtt.to.it/open_data/gtt_gtfs.zip"
       },
@@ -23,17 +23,6 @@
           ]
         },
         {
-          "onestop_id": "o-u0j2-gruppotorinesetrasporti",
-          "name": "GTT Servizio Urbano",
-          "short_name": "GTT",
-          "website": "http://www.gtt.to.it/cms/percorari/urbano",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "U"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u0j-gttservizioextraurbano",
           "name": "GTT servizio extraurbano",
           "short_name": "GTT",
@@ -41,6 +30,17 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "GTT_E"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u0j2-gruppotorinesetrasporti",
+          "name": "GTT Servizio Urbano",
+          "short_name": "GTT",
+          "website": "http://www.gtt.to.it/cms/percorari/urbano",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "U"
             }
           ]
         },

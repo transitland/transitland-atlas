@@ -2,36 +2,17 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9zv-twin~cities~minnesota",
+      "spec": "gtfs",
       "urls": {
-        "static_current": "https://svc.metrotransit.org/mtgtfs/gtfs.zip",
-        "static_planned": [
-          "https://svc.metrotransit.org/mtgtfs/next/gtfs.zip"
-        ]
+        "static_current": "https://svc.metrotransit.org/mtgtfs/gtfs.zip"
       },
       "license": {
         "url": "https://svc.metrotransit.org",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
-        {
-          "onestop_id": "o-9zvx-southwesttransit",
-          "tags": {
-            "us_ntd_id": "50518",
-            "wikidata_id": "Q7565334",
-            "twitter_general": "SWTransit"
-          },
-          "name": "SouthWest Transit",
-          "website": "http://www.swtransit.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6"
-            }
-          ]
-        },
         {
           "onestop_id": "o-9zv-metrotransit",
           "name": "Metro Transit",
@@ -41,10 +22,28 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "50027",
-            "wikidata_id": "Q3307442",
             "twitter_general": "MetroTransitMN",
-            "twitter_service_alerts": "MT_MN_Alerts"
+            "twitter_service_alerts": "MT_MN_Alerts",
+            "us_ntd_id": "50027",
+            "wikidata_id": "Q3307442"
+          }
+        },
+        {
+          "onestop_id": "o-9zvx-southwesttransit",
+          "name": "SouthWest Transit",
+          "website": "http://www.swtransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6"
+            },
+            {
+              "feed_onestop_id": "f-twin~cities~minnesota~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "SWTransit",
+            "us_ntd_id": "50518",
+            "wikidata_id": "Q7565334"
           }
         },
         {
@@ -58,49 +57,22 @@
           ]
         },
         {
-          "onestop_id": "o-cbj8-maplegrove",
-          "tags": {
-            "us_ntd_id": "50517",
-            "wikidata_id": "Q6753895",
-            "twitter_general": "maplegrovemngov"
-          },
-          "name": "Maple Grove",
-          "website": "http://www.ci.maple-grove.mn.us",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-cbj8-plymouth",
-          "tags": {
-            "us_ntd_id": "50516",
-            "wikidata_id": "Q7205829",
-            "twitter_general": "PlymouthMN_gov"
-          },
-          "name": "Plymouth",
-          "website": "http://www2.ci.plymouth.mn.us",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-9zvxy-universityofminnesota",
-          "tags": {
-            "us_ntd_id": "50515",
-            "wikidata_id": "Q7895789",
-            "twitter_general": "umnpts"
-          },
           "name": "University of Minnesota",
           "website": "http://www.umn.edu",
           "associated_feeds": [
             {
               "gtfs_agency_id": "11"
+            },
+            {
+              "feed_onestop_id": "f-twin~cities~minnesota~rt"
             }
-          ]
+          ],
+          "tags": {
+            "twitter_general": "umnpts",
+            "us_ntd_id": "50515",
+            "wikidata_id": "Q7895789"
+          }
         },
         {
           "onestop_id": "o-cbj-other",
@@ -111,12 +83,48 @@
               "gtfs_agency_id": "15"
             }
           ]
+        },
+        {
+          "onestop_id": "o-cbj8-maplegrove",
+          "name": "Maple Grove",
+          "website": "http://www.ci.maple-grove.mn.us",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4"
+            },
+            {
+              "feed_onestop_id": "f-twin~cities~minnesota~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "maplegrovemngov",
+            "us_ntd_id": "50517",
+            "wikidata_id": "Q6753895"
+          }
+        },
+        {
+          "onestop_id": "o-cbj8-plymouth",
+          "name": "Plymouth",
+          "website": "http://www2.ci.plymouth.mn.us",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5"
+            },
+            {
+              "feed_onestop_id": "f-twin~cities~minnesota~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "PlymouthMN_gov",
+            "us_ntd_id": "50516",
+            "wikidata_id": "Q7205829"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-twin~cities~minnesota~rt",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://svc.metrotransit.org/mtgtfs/vehiclepositions.pb",
         "realtime_trip_updates": "https://svc.metrotransit.org/mtgtfs/tripupdates.pb",
@@ -125,30 +133,29 @@
       "license": {
         "url": "https://svc.metrotransit.org",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9zvw-metro",
-      "tags": {
-        "us_ntd_id": "50027",
-        "omd_provider_id": "metro-transit"
-      },
       "name": "Metro Transit",
       "website": "http://www.metrotransit.org",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-9zv-twin~cities~minnesota",
-          "gtfs_agency_id": "2"
+          "gtfs_agency_id": "2",
+          "feed_onestop_id": "f-9zv-twin~cities~minnesota"
         },
         {
           "feed_onestop_id": "f-twin~cities~minnesota~rt"
         }
-      ]
+      ],
+      "tags": {
+        "omd_provider_id": "metro-transit",
+        "us_ntd_id": "50027"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

@@ -2,20 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9qfyf-jumparoundcarson",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://r.peaktransit.com/res/76/google_transit.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9qfyf-jumparoundcarson",
-          "tags": {
-            "us_ntd_id": "90215",
-            "twitter_general": "carsoncitygov"
-          },
           "name": "Jump Around Carson",
-          "short_name": "JAC"
+          "short_name": "JAC",
+          "tags": {
+            "twitter_general": "carsoncitygov",
+            "us_ntd_id": "90215"
+          }
         }
       ]
     }

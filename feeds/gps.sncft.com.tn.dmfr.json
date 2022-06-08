@@ -2,20 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-sn-tunis~banlieues",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://gps.sncft.com.tn/gps/gtfs_ALL.ZIP"
       },
       "operators": [
         {
-          "onestop_id": "o-snx3-tunis~uabt~banlieuetunis",
-          "name": "UABT-Banlieue Tunis",
+          "onestop_id": "o-sn-tunis~uagl~grandeligne",
+          "name": "UAGL-Grande Ligne",
           "short_name": "SNCFT",
-          "website": "http://www.sncft.com.tn/fr/banlieue_tunis/horaire.php",
+          "website": "http://www.sncft.com.tn",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "3"
             }
           ]
         },
@@ -31,13 +31,13 @@
           ]
         },
         {
-          "onestop_id": "o-sn-tunis~uagl~grandeligne",
-          "name": "UAGL-Grande Ligne",
+          "onestop_id": "o-snx3-tunis~uabt~banlieuetunis",
+          "name": "UABT-Banlieue Tunis",
           "short_name": "SNCFT",
-          "website": "http://www.sncft.com.tn",
+          "website": "http://www.sncft.com.tn/fr/banlieue_tunis/horaire.php",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "3"
+              "gtfs_agency_id": "2"
             }
           ]
         }

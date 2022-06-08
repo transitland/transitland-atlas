@@ -2,24 +2,23 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
+      "id": "f-saintpetersburg~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://transport.orgp.spb.ru/Portal/transport/internalapi/gtfs/realtime/vehicle"
+      }
+    },
+    {
       "id": "f-udt-Петербургский~метрополитен",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://transport.orgp.spb.ru/Portal/transport/internalapi/gtfs/feed.zip"
       },
       "tags": {
         "manual_import": "true"
       }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-saintpetersburg~rt",
-      "urls": {
-        "realtime_vehicle_positions": "http://transport.orgp.spb.ru/Portal/transport/internalapi/gtfs/realtime/vehicle"
-      }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-udt-Петербургский~метрополитен",
@@ -30,10 +29,11 @@
           "feed_onestop_id": "f-saintpetersburg~rt"
         },
         {
-          "feed_onestop_id": "f-udt-Петербургский~метрополитен",
-          "gtfs_agency_id": "orgp"
+          "gtfs_agency_id": "orgp",
+          "feed_onestop_id": "f-udt-Петербургский~метрополитен"
         }
       ]
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

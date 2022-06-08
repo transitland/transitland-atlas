@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dqc-virginiarailwayexpress",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.vre.org/gtfs/google_transit.zip"
       },
@@ -12,21 +12,17 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-vre~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://www.vre.org/gtfs-realtime/TripUpdateFeed",
-        "realtime_vehicle_positions": "https://www.vre.org/gtfs-realtime/VehiclePositionFeed"
+        "realtime_vehicle_positions": "https://www.vre.org/gtfs-realtime/VehiclePositionFeed",
+        "realtime_trip_updates": "https://www.vre.org/gtfs-realtime/TripUpdateFeed"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dqc-virginiarailwayexpress",
-      "tags": {
-        "us_ntd_id": "30073"
-      },
       "name": "Virginia Railway Express",
       "short_name": "VRE",
       "associated_feeds": [
@@ -36,7 +32,11 @@
         {
           "feed_onestop_id": "f-vre~rt"
         }
-      ]
+      ],
+      "tags": {
+        "us_ntd_id": "30073"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

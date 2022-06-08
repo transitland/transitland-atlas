@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q54-goldcoasttransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.goldcoasttransit.org/images/GTFS/GTFS.zip"
       },
@@ -13,15 +13,29 @@
       "operators": [
         {
           "onestop_id": "o-9q54-goldcoasttransit",
-          "tags": {
-            "us_ntd_id": "90035",
-            "wikidata_id": "Q5578666",
-            "twitter_general": "goldcoastbus"
-          },
           "name": "Gold Coast Transit",
-          "short_name": "GCT"
+          "short_name": "GCT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-goldcoasttransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "goldcoastbus",
+            "us_ntd_id": "90035",
+            "wikidata_id": "Q5578666"
+          }
         }
       ]
+    },
+    {
+      "id": "f-goldcoasttransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

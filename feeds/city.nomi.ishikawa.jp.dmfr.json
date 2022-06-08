@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-xn3p-のみバス",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.city.nomi.ishikawa.jp/data/open/cnt/3/5145/1/GTFSnomi2018.zip"
       },
@@ -11,17 +11,16 @@
         "url": "https://creativecommons.org/licenses/by/4.0/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Using data (c) Nomi City"
       },
       "operators": [
         {
           "onestop_id": "o-xn3p-nomi~のみバス",
+          "name": "のみバス",
+          "website": "http://www.city.nomi.ishikawa.jp/kikaku/communiybus.html",
           "tags": {
             "needs_agency_id": "f-xn3p-のみバス"
-          },
-          "name": "のみバス",
-          "website": "http://www.city.nomi.ishikawa.jp/kikaku/communiybus.html"
+          }
         }
       ]
     }

@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9v1z-viametropolitantransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.viainfo.net/BusService/google_transit.zip"
       },
@@ -11,7 +11,6 @@
         "url": "https://www.viainfo.net/developers-resources/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "redistribute": "yes",
         "attribution_text": "Data provided by VIA"
       },
       "tags": {
@@ -19,35 +18,35 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-via~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://gtfs.viainfo.net/tripupdate/tripupdates.pb",
-        "realtime_vehicle_positions": "http://gtfs.viainfo.net/vehicle/vehiclepositions.pb"
+        "realtime_vehicle_positions": "http://gtfs.viainfo.net/vehicle/vehiclepositions.pb",
+        "realtime_trip_updates": "http://gtfs.viainfo.net/tripupdate/tripupdates.pb"
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-9v1z-viametropolitantransit",
-      "tags": {
-        "us_ntd_id": "60011",
-        "wikidata_id": "Q7906973",
-        "twitter_general": "Via_Transit"
-      },
       "name": "VIA Metropolitan Transit",
       "short_name": "VIA",
       "website": "http://www.viainfo.net",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-via~rt"
+          "gtfs_agency_id": "1",
+          "feed_onestop_id": "f-9v1z-viametropolitantransit"
         },
         {
-          "feed_onestop_id": "f-9v1z-viametropolitantransit",
-          "gtfs_agency_id": "1"
+          "feed_onestop_id": "f-via~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "Via_Transit",
+        "us_ntd_id": "60011",
+        "wikidata_id": "Q7906973"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }

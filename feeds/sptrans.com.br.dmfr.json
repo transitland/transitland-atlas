@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-6gy-sptrans",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.sptrans.com.br/umbraco/Surface/PerfilDesenvolvedor/BaixarGTFS",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/sao-paulo-sptrans.zip?raw=true"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-6gy-sptrans",
+          "name": "São Paulo Transporte",
+          "short_name": "SPTRANS",
+          "website": "http://www.sptrans.com.br/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "mdb_source_id": "8",
+            "wikidata_id": "Q7392689"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

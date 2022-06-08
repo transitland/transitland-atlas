@@ -2,62 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-q-transperth~transalbany~transbunbury~transbusselton~transgera",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://www.transperth.wa.gov.au/TimetablePDFs/GoogleTransit/Production/google_transit.zip"
       },
       "operators": [
-        {
-          "onestop_id": "o-qd46-transbunbury",
-          "name": "TransBunbury",
-          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "3"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-qdw-transgoldfields",
-          "name": "TransGoldfields",
-          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "16"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-qskk-transhedland",
-          "name": "TransHedland",
-          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "27"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-qe8f6-transcarnarvon",
-          "name": "TransCarnarvon",
-          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "26"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-qd1b-transbusselton",
-          "name": "TransBusselton",
-          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6"
-            }
-          ]
-        },
         {
           "onestop_id": "o-q9gbf-transalbany",
           "name": "TransAlbany",
@@ -78,6 +28,26 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "TRA-TRA"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-qd1b-transbusselton",
+          "name": "TransBusselton",
+          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-qd46-transbunbury",
+          "name": "TransBunbury",
+          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3"
             }
           ]
         },
@@ -156,12 +126,42 @@
           ]
         },
         {
+          "onestop_id": "o-qdw-transgoldfields",
+          "name": "TransGoldfields",
+          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "16"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-qe8f6-transcarnarvon",
+          "name": "TransCarnarvon",
+          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "26"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-qs74-transkarratha",
           "name": "TransKarratha",
           "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
           "associated_feeds": [
             {
               "gtfs_agency_id": "GWB-KAR"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-qskk-transhedland",
+          "name": "TransHedland",
+          "website": "http://www.pta.wa.gov.au/OurServices/RegionalTownBusServices/tabid/62/Default.aspx",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "27"
             }
           ]
         }

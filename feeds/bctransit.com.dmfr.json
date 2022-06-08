@@ -2,72 +2,97 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-bctransit~powell~river",
       "spec": "gtfs",
-      "id": "f-c29p-bctransit~centralfraservalleytransitsystem",
       "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/central-fraser-valley.zip"
+        "static_current": "https://www.bctransit.com/data/gtfs/powell-river.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-c0yu-bctransit~campbellrivertransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.bctransit.com/data/gtfs/campbell-river.zip"
       },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-central-fraser-valley-transit-system"
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-c29p-bctransit~centralfraservalleytransitsystem",
-          "name": "BC Transit - Central Fraser Valley Transit System",
-          "website": "http://www.bctransit.com/central-fraser-valley/",
+          "onestop_id": "o-c0yu-bctransit~campbellrivertransitsystem",
+          "name": "BC Transit - Campbell River Transit System",
+          "short_name": "BC Transit",
+          "website": "http://bctransit.com/campbell-river/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "6"
+              "gtfs_agency_id": "14"
             }
           ]
         }
       ]
     },
     {
+      "id": "f-c0z-bctransit~rdntransitsystem",
       "spec": "gtfs",
-      "id": "f-c29r-bctransit~chilliwacktransitsystem",
       "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/chilliwack.zip"
+        "static_current": "http://nanaimo.mapstrat.com/current/google_transit.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "bc-transit-chilliwack-transit-system"
+        "gtfs_data_exchange": "bc-transit-rdn-transit-system"
       },
       "operators": [
         {
-          "onestop_id": "o-c29r-bctransit~chilliwacktransitsystem",
-          "name": "BC Transit - Chilliwack Transit System",
-          "website": "http://www.bctransit.com/chilliwack/",
+          "onestop_id": "o-c0z-bctransit~rdntransitsystem",
+          "name": "BC Transit - RDN Transit System",
+          "website": "http://www.bctransit.com/nanaimo/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "19"
+              "gtfs_agency_id": "5",
+              "feed_onestop_id": "f-c0z-bctransit~rdntransitsystem"
+            },
+            {
+              "feed_onestop_id": "f-c0z-bctransit~rdntransitsystem~rt"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
+      "id": "f-c0z-bctransit~rdntransitsystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://nanaimo.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+        "realtime_trip_updates": "http://nanaimo.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_alerts": "http://nanaimo.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      }
+    },
+    {
       "id": "f-c0z4-bctransit~comoxvalleytransitsystem",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://comox.mapstrat.com/current/google_transit.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "bc-transit-comox-valley-transit-system"
@@ -89,198 +114,54 @@
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c342-bctransit~kamloopstransitsystem",
+      "id": "f-c0z4-bctransit~comoxvalleytransitsystem~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "http://kamloops.mapstrat.com/current/google_transit.zip"
+        "realtime_vehicle_positions": "http://comox.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+        "realtime_trip_updates": "http://comox.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_alerts": "http://comox.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-c28-bctransit~cowichanvalleyregionaltransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.bctransit.com/data/gtfs/cowichan-valley.zip"
       },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-kamloops-transit-system"
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-c342-bctransit~kamloopstransitsystem",
-          "name": "BC Transit - Kamloops Transit System",
-          "website": "http://www.bctransit.com/kamloops/",
+          "onestop_id": "o-c28-bctransit~cowichanvalleyregionaltransitsystem",
+          "name": "BC Transit - Cowichan Valley Regional Transit System",
+          "short_name": "BC Transit",
+          "website": "https://www.bctransit.com/cowichan-valley/home",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "8"
-            },
-            {
-              "feed_onestop_id": "f-c342-bctransit~kamloopstransitsystem~rt"
+              "gtfs_agency_id": "10"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c2g5-bctransit~kelownaregionaltransitsystem",
-      "urls": {
-        "static_current": "http://kelowna.mapstrat.com/current/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-kelowna-regional-transit-system"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c2g5-bctransit~kelownaregionaltransitsystem",
-          "name": "BC Transit - Kelowna Regional Transit System",
-          "website": "http://www.bctransit.com/kelowna/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7"
-            },
-            {
-              "feed_onestop_id": "f-c2g5-bctransit~kelownaregionaltransitsystem~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c0z-bctransit~rdntransitsystem",
-      "urls": {
-        "static_current": "http://nanaimo.mapstrat.com/current/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-rdn-transit-system"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c0z-bctransit~rdntransitsystem",
-          "tags": {},
-          "name": "BC Transit - RDN Transit System",
-          "website": "http://www.bctransit.com/nanaimo/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-c0z-bctransit~rdntransitsystem",
-              "gtfs_agency_id": "5"
-            },
-            {
-              "feed_onestop_id": "f-c0z-bctransit~rdntransitsystem~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c38d-bctransit~princegeorgetransitsystem",
-      "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/prince-george.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-prince-george-transit-system"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c38d-bctransit~princegeorgetransitsystem",
-          "name": "BC Transit - Prince George Transit System",
-          "website": "http://www.bctransit.com/prince-george/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "9"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c2b6v-bctransit~squamishtransitsystem",
-      "urls": {
-        "static_current": "http://squamish.mapstrat.com/current/google_transit.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-squamish-transit-system"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c2b6v-bctransit~squamishtransitsystem",
-          "name": "BC Transit - Squamish Transit System",
-          "website": "http://www.bctransit.com/squamish/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            },
-            {
-              "feed_onestop_id": "f-c2b6v-bctransit~squamishtransitsystem~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-c2b1-bctransit~sunshinecoasttransitsystem",
-      "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/sunshine-coast.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-sunshine-coast-transit-system"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c2b1-bctransit~sunshinecoasttransitsystem",
-          "name": "BC Transit - Sunshine Coast Transit System",
-          "website": "http://www.bctransit.com/sunshine-coast/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "16"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-c28-bctransit~victoriaregionaltransitsystem",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://victoria.mapstrat.com/current/google_transit.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "bc-transit-victoria-regional-transit-system"
@@ -302,16 +183,181 @@
       ]
     },
     {
+      "id": "f-c28-bctransit~victoriaregionaltransitsystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://victoria.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+        "realtime_trip_updates": "http://victoria.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_alerts": "http://victoria.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-c29p-bctransit~centralfraservalleytransitsystem",
       "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.bctransit.com/data/gtfs/central-fraser-valley.zip"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-central-fraser-valley-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c29p-bctransit~centralfraservalleytransitsystem",
+          "name": "BC Transit - Central Fraser Valley Transit System",
+          "website": "http://www.bctransit.com/central-fraser-valley/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c29p-bctransit~fraservalleyexpress",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.bctransit.com/data/gtfs/fraser-valley-express.zip"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-fraser-valley-express"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c29p-bctransit~fraservalleyexpress",
+          "name": "BC Transit - Fraser Valley Express",
+          "website": "http://www.bctransit.com/chilliwack/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c29r-bctransit~chilliwacktransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.bctransit.com/data/gtfs/chilliwack.zip"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-chilliwack-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c29r-bctransit~chilliwacktransitsystem",
+          "name": "BC Transit - Chilliwack Transit System",
+          "website": "http://www.bctransit.com/chilliwack/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "19"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c2b1-bctransit~sunshinecoasttransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.bctransit.com/data/gtfs/sunshine-coast.zip"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-sunshine-coast-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c2b1-bctransit~sunshinecoasttransitsystem",
+          "name": "BC Transit - Sunshine Coast Transit System",
+          "website": "http://www.bctransit.com/sunshine-coast/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c2b6v-bctransit~squamishtransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://squamish.mapstrat.com/current/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-squamish-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c2b6v-bctransit~squamishtransitsystem",
+          "name": "BC Transit - Squamish Transit System",
+          "website": "http://www.bctransit.com/squamish/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4"
+            },
+            {
+              "feed_onestop_id": "f-c2b6v-bctransit~squamishtransitsystem~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-c2b6v-bctransit~squamishtransitsystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://squamish.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+        "realtime_trip_updates": "http://squamish.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_alerts": "http://squamish.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      }
+    },
+    {
       "id": "f-c2bt-bctransit~whistlertransitsystem",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://whistler.mapstrat.com/current/google_transit.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "bc-transit-whistler-transit-system"
@@ -333,70 +379,29 @@
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c29p-bctransit~fraservalleyexpress",
+      "id": "f-c2bt-bctransit~whistlertransitsystem~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/fraser-valley-express.zip"
+        "realtime_vehicle_positions": "http://whistler.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+        "realtime_trip_updates": "http://whistler.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_alerts": "http://whistler.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "bc-transit-fraser-valley-express"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c29p-bctransit~fraservalleyexpress",
-          "name": "BC Transit - Fraser Valley Express",
-          "website": "http://www.bctransit.com/chilliwack/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "20"
-            }
-          ]
-        }
-      ]
+        "create_derived_product": "yes"
+      }
     },
     {
-      "spec": "gtfs",
-      "id": "f-c2u-bctransit~westkootenaytransitsystem",
-      "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/west-kootenay.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c2u-bctransit~westkootenaytransitsystem",
-          "name": "BC Transit - West Kootenay Transit System",
-          "short_name": "BC Transit",
-          "website": "http://www.bctransit.com/west-kootenay/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "11"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
       "id": "f-c2g-bctransit~vernonregionaltransitsystem",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.bctransit.com/data/gtfs/vernon.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -413,68 +418,84 @@
       ]
     },
     {
+      "id": "f-c2g5-bctransit~kelownaregionaltransitsystem",
       "spec": "gtfs",
-      "id": "f-c3fpf-bctransit~fortstjohntransitsystem",
       "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/fort-st-john.zip"
+        "static_current": "http://kelowna.mapstrat.com/current/google_transit.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-kelowna-regional-transit-system"
       },
       "operators": [
         {
-          "onestop_id": "o-c3fpf-bctransit~fortstjohntransitsystem",
-          "name": "BC Transit - Fort St John Transit System",
-          "short_name": "BC Transit",
-          "website": "http://www.bctransit.com/fort-st-john/",
+          "onestop_id": "o-c2g5-bctransit~kelownaregionaltransitsystem",
+          "name": "BC Transit - Kelowna Regional Transit System",
+          "website": "http://www.bctransit.com/kelowna/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "25"
+              "gtfs_agency_id": "7"
+            },
+            {
+              "feed_onestop_id": "f-c2g5-bctransit~kelownaregionaltransitsystem~rt"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c3ft0-bctransit~dawsoncreektransitsystem",
+      "id": "f-c2g5-bctransit~kelownaregionaltransitsystem~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/dawson-creek.zip"
+        "realtime_vehicle_positions": "http://kelowna.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+        "realtime_trip_updates": "http://kelowna.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_alerts": "http://kelowna.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-c2u-bctransit~westkootenaytransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.bctransit.com/data/gtfs/west-kootenay.zip"
+      },
+      "license": {
+        "url": "https://www.bctransit.com/open-data/terms-of-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-c3ft0-bctransit~dawsoncreektransitsystem",
-          "name": "BC Transit - Dawson Creek Transit System",
+          "onestop_id": "o-c2u-bctransit~westkootenaytransitsystem",
+          "name": "BC Transit - West Kootenay Transit System",
           "short_name": "BC Transit",
-          "website": "http://www.bctransit.com/dawson-creek/",
+          "website": "http://www.bctransit.com/west-kootenay/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "26"
+              "gtfs_agency_id": "11"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
       "id": "f-c2v9t-bctransit~cranbrooktransitsystem",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.bctransit.com/data/gtfs/cranbrook.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "operators": [
         {
@@ -491,175 +512,125 @@
       ]
     },
     {
+      "id": "f-c342-bctransit~kamloopstransitsystem",
       "spec": "gtfs",
-      "id": "f-c28-bctransit~cowichanvalleyregionaltransitsystem",
       "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/cowichan-valley.zip"
+        "static_current": "http://kamloops.mapstrat.com/current/google_transit.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-kamloops-transit-system"
       },
       "operators": [
         {
-          "onestop_id": "o-c28-bctransit~cowichanvalleyregionaltransitsystem",
-          "name": "BC Transit - Cowichan Valley Regional Transit System",
-          "short_name": "BC Transit",
-          "website": "https://www.bctransit.com/cowichan-valley/home",
+          "onestop_id": "o-c342-bctransit~kamloopstransitsystem",
+          "name": "BC Transit - Kamloops Transit System",
+          "website": "http://www.bctransit.com/kamloops/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10"
+              "gtfs_agency_id": "8"
+            },
+            {
+              "feed_onestop_id": "f-c342-bctransit~kamloopstransitsystem~rt"
             }
           ]
         }
       ]
     },
     {
-      "spec": "gtfs",
-      "id": "f-c0yu-bctransit~campbellrivertransitsystem",
-      "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/campbell-river.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c0yu-bctransit~campbellrivertransitsystem",
-          "name": "BC Transit - Campbell River Transit System",
-          "short_name": "BC Transit",
-          "website": "http://bctransit.com/campbell-river/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "14"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-bctransit~powell~river",
-      "urls": {
-        "static_current": "https://www.bctransit.com/data/gtfs/powell-river.zip"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-c0z4-bctransit~comoxvalleytransitsystem~rt",
-      "urls": {
-        "realtime_alerts": "http://comox.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
-        "realtime_trip_updates": "http://comox.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_vehicle_positions": "http://comox.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
-    },
-    {
-      "spec": "gtfs-rt",
       "id": "f-c342-bctransit~kamloopstransitsystem~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://kamloops.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
+        "realtime_vehicle_positions": "http://kamloops.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
         "realtime_trip_updates": "http://kamloops.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_vehicle_positions": "http://kamloops.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
+        "realtime_alerts": "http://kamloops.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       }
     },
     {
-      "spec": "gtfs-rt",
-      "id": "f-c2g5-bctransit~kelownaregionaltransitsystem~rt",
+      "id": "f-c38d-bctransit~princegeorgetransitsystem",
+      "spec": "gtfs",
       "urls": {
-        "realtime_alerts": "http://kelowna.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
-        "realtime_trip_updates": "http://kelowna.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_vehicle_positions": "http://kelowna.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
+        "static_current": "https://www.bctransit.com/data/gtfs/prince-george.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bc-transit-prince-george-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c38d-bctransit~princegeorgetransitsystem",
+          "name": "BC Transit - Prince George Transit System",
+          "website": "http://www.bctransit.com/prince-george/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "9"
+            }
+          ]
+        }
+      ]
     },
     {
-      "spec": "gtfs-rt",
-      "id": "f-c0z-bctransit~rdntransitsystem~rt",
-      "supersedes_ids": ["f-nanaimo~rt"],
+      "id": "f-c3fpf-bctransit~fortstjohntransitsystem",
+      "spec": "gtfs",
       "urls": {
-        "realtime_alerts": "http://nanaimo.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
-        "realtime_trip_updates": "http://nanaimo.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_vehicle_positions": "http://nanaimo.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
+        "static_current": "https://www.bctransit.com/data/gtfs/fort-st-john.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c3fpf-bctransit~fortstjohntransitsystem",
+          "name": "BC Transit - Fort St John Transit System",
+          "short_name": "BC Transit",
+          "website": "http://www.bctransit.com/fort-st-john/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "25"
+            }
+          ]
+        }
+      ]
     },
     {
-      "spec": "gtfs-rt",
-      "id": "f-c2b6v-bctransit~squamishtransitsystem~rt",
+      "id": "f-c3ft0-bctransit~dawsoncreektransitsystem",
+      "spec": "gtfs",
       "urls": {
-        "realtime_alerts": "http://squamish.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
-        "realtime_trip_updates": "http://squamish.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_vehicle_positions": "http://squamish.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
+        "static_current": "https://www.bctransit.com/data/gtfs/dawson-creek.zip"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-c28-bctransit~victoriaregionaltransitsystem~rt",
-      "urls": {
-        "realtime_alerts": "http://victoria.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
-        "realtime_trip_updates": "http://victoria.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_vehicle_positions": "http://victoria.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
+        "create_derived_product": "yes"
       },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
-    },
-    {
-      "spec": "gtfs-rt",
-      "id": "f-c2bt-bctransit~whistlertransitsystem~rt",
-      "urls": {
-        "realtime_alerts": "http://whistler.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin",
-        "realtime_trip_updates": "http://whistler.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_vehicle_positions": "http://whistler.mapstrat.com/current/gtfrealtime_VehiclePositions.bin"
-      },
-      "license": {
-        "url": "https://www.bctransit.com/open-data/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
-      }
+      "operators": [
+        {
+          "onestop_id": "o-c3ft0-bctransit~dawsoncreektransitsystem",
+          "name": "BC Transit - Dawson Creek Transit System",
+          "short_name": "BC Transit",
+          "website": "http://www.bctransit.com/dawson-creek/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "26"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

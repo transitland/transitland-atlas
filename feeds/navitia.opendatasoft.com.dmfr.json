@@ -2,29 +2,49 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-sp3e-authosa~mohnsl~oliverassl~rosanbussl~solerisauret~sgmt~tc",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://navitia.opendatasoft.com/explore/dataset/es/files/d0d9c92d0a4d85b3b7502575544f19b1/download/"
       },
       "operators": [
         {
-          "onestop_id": "o-sp3e0-utelÍnia88",
-          "name": "Ute Línia 88",
+          "onestop_id": "o-sp37-mohnsl",
+          "name": "Mohn",
           "website": "http://www.ambmobilitat.cat",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "47"
+              "gtfs_agency_id": "22"
             }
           ]
         },
         {
-          "onestop_id": "o-sp3e0-sgmt",
-          "name": "SGMT",
+          "onestop_id": "o-sp37-oliverassl",
+          "name": "Oliveras",
           "website": "http://www.ambmobilitat.cat",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "35"
+              "gtfs_agency_id": "25"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-sp37-rosanbussl",
+          "name": "Rosanbus",
+          "website": "http://www.ambmobilitat.cat",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "28"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-sp37r-solerisauret",
+          "name": "Soler i Sauret",
+          "website": "http://www.ambmobilitat.cat",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "34"
             }
           ]
         },
@@ -40,22 +60,12 @@
           ]
         },
         {
-          "onestop_id": "o-sp37-oliverassl",
-          "name": "Oliveras",
+          "onestop_id": "o-sp3e0-sgmt",
+          "name": "SGMT",
           "website": "http://www.ambmobilitat.cat",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "25"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-sp37-mohnsl",
-          "name": "Mohn",
-          "website": "http://www.ambmobilitat.cat",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "22"
+              "gtfs_agency_id": "35"
             }
           ]
         },
@@ -71,52 +81,22 @@
           ]
         },
         {
+          "onestop_id": "o-sp3e0-utelÍnia88",
+          "name": "Ute Línia 88",
+          "website": "http://www.ambmobilitat.cat",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "47"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-sp3e8-authosa",
           "name": "AUTHOSA",
           "website": "http://www.ambmobilitat.cat",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-sp37r-solerisauret",
-          "name": "Soler i Sauret",
-          "website": "http://www.ambmobilitat.cat",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "34"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-sp37-rosanbussl",
-          "name": "Rosanbus",
-          "website": "http://www.ambmobilitat.cat",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "28"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "spec": "gtfs",
-      "id": "f-sp3e-tmb",
-      "urls": {
-        "static_current": "https://navitia.opendatasoft.com/explore/dataset/es/files/5dd5c0e92f2050c35ef4b809a92c7849/download/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-sp3e-tmb",
-          "name": "Transports Metropolitans de Barcelona",
-          "short_name": "TMB",
-          "website": "http://www.tmb.cat",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "42"
             }
           ]
         }

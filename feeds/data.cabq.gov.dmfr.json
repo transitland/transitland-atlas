@@ -2,26 +2,31 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9whp-abqride",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://data.cabq.gov/transit/gtfs/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "abq-ride"
       },
       "license": {
         "url": "http://www.cabq.gov/abq-data/abq-data-disclaimer-1"
       },
+      "tags": {
+        "gtfs_data_exchange": "abq-ride"
+      },
       "operators": [
         {
           "onestop_id": "o-9whp-abqride",
+          "name": "ABQ RIDE",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-abqride~rt"
+            }
+          ],
           "tags": {
+            "twitter_general": "abqride",
             "us_ntd_id": "60019",
-            "wikidata_id": "Q580832",
-            "twitter_general": "abqride"
-          },
-          "name": "ABQ RIDE"
+            "wikidata_id": "Q580832"
+          }
         }
       ]
     }

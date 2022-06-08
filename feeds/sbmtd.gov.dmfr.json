@@ -2,23 +2,37 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-9q4g-santabarbaramtd",
+      "spec": "gtfs",
       "urls": {
         "static_current": "http://sbmtd.gov/google_transit/feed.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9q4g-santabarbaramtd",
-          "tags": {
-            "us_ntd_id": "90020",
-            "wikidata_id": "Q7419232",
-            "twitter_general": "SantaBarbaraMTD"
-          },
           "name": "Santa Barbara Metropolitan Transit District",
-          "short_name": "MTD"
+          "short_name": "MTD",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q4g~santabarbaramtd~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "SantaBarbaraMTD",
+            "us_ntd_id": "90020",
+            "wikidata_id": "Q7419232"
+          }
         }
       ]
+    },
+    {
+      "id": "f-9q4g~santabarbaramtd~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bustracker.sbmtd.gov/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://bustracker.sbmtd.gov/gtfsrt/trips",
+        "realtime_alerts": "https://bustracker.sbmtd.gov/gtfsrt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

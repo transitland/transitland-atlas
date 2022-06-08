@@ -2,8 +2,8 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dngy-transitauthorityofnorthernkentucky",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.tankbus.org/Portals/tankbus/gtfs/tank-google-transit.zip"
       },
@@ -13,22 +13,27 @@
       "operators": [
         {
           "onestop_id": "o-dngy-transitauthorityofnorthernkentucky",
-          "tags": {
-            "us_ntd_id": "40019",
-            "wikidata_id": "Q7834339",
-            "twitter_general": "tankbus"
-          },
           "name": "Transit Authority of Northern Kentucky",
-          "short_name": "TANK"
+          "short_name": "TANK",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dngy-transitauthorityofnorthernkentucky~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "tankbus",
+            "us_ntd_id": "40019",
+            "wikidata_id": "Q7834339"
+          }
         }
       ]
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-dngy-transitauthorityofnorthernkentucky~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://66.42.202.74:89/api/tripupdates",
         "realtime_vehicle_positions": "http://66.42.202.74:89/api/vehiclepositions",
+        "realtime_trip_updates": "http://66.42.202.74:89/api/tripupdates",
         "realtime_alerts": "http://66.42.202.74:89/api/servicealerts"
       },
       "license": {

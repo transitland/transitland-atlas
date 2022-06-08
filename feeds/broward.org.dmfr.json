@@ -2,26 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dhw-browardcountytransit",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://www.broward.org/bct/documents/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "broward-county-transit"
       },
       "license": {
         "url": "https://ftis.org/FTDEDisclaimer.aspx"
       },
+      "tags": {
+        "gtfs_data_exchange": "broward-county-transit"
+      },
       "operators": [
         {
           "onestop_id": "o-dhw-browardcountytransit",
+          "name": "Broward County Transit",
           "tags": {
+            "twitter_general": "BrowardTransit",
             "us_ntd_id": "40029",
-            "wikidata_id": "Q4975895",
-            "twitter_general": "BrowardTransit"
-          },
-          "name": "Broward County Transit"
+            "wikidata_id": "Q4975895"
+          }
         }
       ]
     }

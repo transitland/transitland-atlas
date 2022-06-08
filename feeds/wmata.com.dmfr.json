@@ -2,16 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "spec": "gtfs",
       "id": "f-dqc-wmata~bus",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.wmata.com/gtfs/bus-gtfs-static.zip"
       },
       "license": {
         "url": "https://developer.wmata.com/license",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "authorization": {
         "type": "header",
@@ -20,16 +19,15 @@
       }
     },
     {
-      "spec": "gtfs",
       "id": "f-dqc-wmata~rail",
+      "spec": "gtfs",
       "urls": {
         "static_current": "https://api.wmata.com/gtfs/rail-gtfs-static.zip"
       },
       "license": {
         "url": "https://developer.wmata.com/license",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribute": "yes"
+        "create_derived_product": "yes"
       },
       "authorization": {
         "type": "header",
@@ -38,12 +36,12 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-wmata~bus~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://api.wmata.com/gtfs/bus-gtfsrt-alerts.pb",
+        "realtime_vehicle_positions": "https://api.wmata.com/gtfs/bus-gtfsrt-vehiclepositions.pb",
         "realtime_trip_updates": "https://api.wmata.com/gtfs/bus-gtfsrt-tripupdates.pb",
-        "realtime_vehicle_positions": "https://api.wmata.com/gtfs/bus-gtfsrt-vehiclepositions.pb"
+        "realtime_alerts": "https://api.wmata.com/gtfs/bus-gtfsrt-alerts.pb"
       },
       "authorization": {
         "type": "header",
@@ -52,12 +50,12 @@
       }
     },
     {
-      "spec": "gtfs-rt",
       "id": "f-wmata~rail~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "https://api.wmata.com/gtfs/rail-gtfsrt-alerts.pb",
+        "realtime_vehicle_positions": "https://api.wmata.com/gtfs/rail-gtfsrt-vehiclepositions.pb",
         "realtime_trip_updates": "https://api.wmata.com/gtfs/rail-gtfsrt-tripupdates.pb",
-        "realtime_vehicle_positions": "https://api.wmata.com/gtfs/rail-gtfsrt-vehiclepositions.pb"
+        "realtime_alerts": "https://api.wmata.com/gtfs/rail-gtfsrt-alerts.pb"
       },
       "authorization": {
         "type": "header",
@@ -66,16 +64,9 @@
       }
     }
   ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0",
   "operators": [
     {
       "onestop_id": "o-dqc-met",
-      "tags": {
-        "us_ntd_id": "30030",
-        "wikidata_id": "Q171221",
-        "twitter_general": "wmata",
-        "twitter_service_alerts": "metrorailinfo"
-      },
       "name": "Washington Metropolitan Area Transit Authority",
       "short_name": "WMATA",
       "website": "http://www.wmata.com/tripplanner",
@@ -92,7 +83,14 @@
         {
           "feed_onestop_id": "f-wmata~rail~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "wmata",
+        "twitter_service_alerts": "metrorailinfo",
+        "us_ntd_id": "30030",
+        "wikidata_id": "Q171221"
+      }
     }
-  ]
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
