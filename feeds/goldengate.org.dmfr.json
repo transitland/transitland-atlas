@@ -8,9 +8,34 @@
         "static_current": "https://realtime.goldengate.org/gtfsstatic/GTFSTransitData.zip"
       },
       "tags": {
-        "gtfs_data_exchange": "golden-gate-transit",
-        "exclude_from_global_query": "true"
-      }
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "golden-gate-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qb-goldengatetransit",
+          "name": "Golden Gate Bridge, Highway and Transportation District",
+          "short_name": "GGT",
+          "website": "http://www.goldengate.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GG",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "GG",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
+          "tags": {
+            "omd_provider_id": "golden-gate-bridge-highway-transportation-district",
+            "twitter_general": "GGBridge",
+            "twitter_service_alerts": "GGBridgeAlerts",
+            "us_ntd_id": "90016",
+            "wikidata_id": "Q525895"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
