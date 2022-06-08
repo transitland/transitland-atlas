@@ -2,15 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "id": "f-9q8z-goldengateferry",
+      "id": "f-sf~bay~area~rg",
+      "supersedes_ids": [
+        "f-9q8z-goldengateferry",
+        "f-9q9j-dumbartonexpress",
+        "f-9qc2-trideltatransit",
+        "f-9q9p-sanfranciscobayferry",
+        "f-9qc-vinenapacounty",
+        "f-9qb-smart",
+        "f-9qc60-vacavillecitycoach",
+        "f-9q9jy-unioncitytransit",
+        "f-sfo~airtrain~shuttles",
+        "f-9qbdx-santarosacitybus",
+        "f-9q9-acealtamontcorridorexpress"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=GF"
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=RG"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
@@ -22,39 +36,22 @@
         "info_url": "https://511.org/open-data/token"
       },
       "tags": {
-        "gtfs_data_exchange": "golden-gate-ferry",
         "managed_by": "mtc-ca"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q8z-goldengateferry",
-          "name": "Golden Gate Ferry",
-          "website": "http://www.goldengateferry.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GF"
-            }
-          ],
-          "tags": {
-            "twitter_general": "GGBridge",
-            "twitter_service_alerts": "GGBridgeAlerts",
-            "wikidata_id": "Q5579447"
-          }
-        }
-      ]
+      }
     },
     {
-      "id": "f-9q8zm-blue~goldfleet",
-      "spec": "gtfs",
+      "id": "f-sf~bay~area~rgrt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_historic": [
-          "http://api.511.org/transit/datafeeds?operator_id=BG"
-        ]
+        "realtime_vehicle_positions": "https://api.511.org/Transit/VehiclePositions?&agency=RG",
+        "realtime_trip_updates": "https://api.511.org/Transit/TripUpdates?&agency=RG",
+        "realtime_alerts": "https://api.511.org/Transit/servicealerts?&agency=RG"
       },
       "license": {
         "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_text": "data provided by 511.org",
@@ -64,114 +61,147 @@
         "type": "query_param",
         "param_name": "api_key",
         "info_url": "https://511.org/open-data/token"
-      },
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-9q8-samtrans",
+      "name": "San Mateo County Transit District",
+      "short_name": "samTrans",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q8-samtrans"
+        },
+        {
+          "gtfs_agency_id": "SM",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SM",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
       "tags": {
-        "gtfs_data_exchange": "blue-gold-fleet",
-        "managed_by": "mtc-ca",
-        "status": "archived"
-      },
+        "omd_provider_id": "samtrans",
+        "twitter_general": "SamTrans",
+        "us_ntd_id": "90009",
+        "wikidata_id": "Q7407040"
+      }
+    },
+    {
+      "onestop_id": "o-9q8y-sfmta",
+      "name": "San Francisco Municipal Transportation Agency",
+      "short_name": "SFMTA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q8y-sfmta"
+        },
+        {
+          "gtfs_agency_id": "SF",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SF",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "sfmta",
+        "twitter_general": "sfmta_muni",
+        "us_ntd_id": "90015",
+        "wikidata_id": "Q1140138"
+      }
+    },
+    {
+      "onestop_id": "o-9q8yn-sanfranciscointernationalairport",
+      "name": "San Francisco International Airport",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SI",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "twitter_general": "flySFO",
+        "wikidata_id": "Q8688"
+      }
+    },
+    {
+      "onestop_id": "o-9q8z-goldengateferry",
       "name": "Golden Gate Ferry",
       "website": "http://www.goldengateferry.org",
       "associated_feeds": [
         {
-          "onestop_id": "o-9q8zm-blue~goldfleet",
-          "name": "Blue & Gold Fleet",
-          "website": "http://www.blueandgoldfleet.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BG"
-            }
-          ],
-          "tags": {
-            "omd_provider_id": "blue-gold-fleet",
-            "twitter_general": "bgfleet",
-            "wikidata_id": "Q4928780"
-          }
+          "gtfs_agency_id": "GF",
+          "feed_onestop_id": "f-sf~bay~area~rg"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "GGBridge",
+        "twitter_service_alerts": "GGBridgeAlerts",
+        "wikidata_id": "Q5579447"
+      }
     },
     {
-      "id": "f-9q8zmw-angelislandtiburonferry",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=AT"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
-      },
-      "tags": {
-        "omd_provider_id": "golden-gate-bridge-highway-transportation-district",
-        "wikidata_id": "Q525895",
-        "us_ntd_id": "90016",
-        "twitter_general": "GGBridge",
-        "twitter_service_alerts": "GGBridgeAlerts"
-      },
-      "short_name": "GGT",
-      "name": "Golden Gate Bridge, Highway and Transportation District",
-      "website": "http://www.goldengate.org",
+      "onestop_id": "o-9q9-acealtamontcorridorexpress",
+      "supersedes_ids": [
+        "o-9q9-altamontcorridorexpress"
+      ],
+      "name": "ACE Altamont Corridor Express",
+      "website": "http://www.acerail.com/",
       "associated_feeds": [
         {
-          "onestop_id": "o-9q8zmw-angelislandtiburonferry",
-          "name": "Angel Island Tiburon Ferry",
-          "website": "http://www.angelislandferry.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "AT"
-            }
-          ],
-          "tags": {
-            "twitter_general": "AITFerry",
-            "wikidata_id": "Q4762195"
-          }
+          "gtfs_agency_id": "CE",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "CE",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "ACE_train",
+        "us_ntd_id": "90182",
+        "wikidata_id": "Q434302"
+      }
     },
     {
-      "id": "f-9q8zn-alcatrazhornblowerferry",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=HF"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
-      },
+      "onestop_id": "o-9q9-actransit",
+      "name": "Alameda-Contra Costa Transit District",
+      "short_name": "AC Transit",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9-actransit"
+        },
+        {
+          "feed_onestop_id": "f-actransit~rt"
+        },
+        {
+          "gtfs_agency_id": "AC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "AC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
       "tags": {
-        "us_ntd_id": "90003",
-        "omd_provider_id": "bart",
-        "wikidata_id": "Q610120",
-        "twitter_general": "sfbart",
-        "twitter_service_alerts": "SFBARTalert"
-      },
+        "twitter_general": "rideact",
+        "us_ntd_id": "90014",
+        "wikidata_id": "Q4353850"
+      }
+    },
+    {
+      "onestop_id": "o-9q9-bart",
       "name": "Bay Area Rapid Transit",
       "short_name": "BART",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-bart~rt"
+          "feed_onestop_id": "f-9q9-bart"
         },
         {
-          "feed_onestop_id": "f-9q9-bart"
+          "feed_onestop_id": "f-bart~rt"
         },
         {
           "gtfs_agency_id": "BA",
@@ -181,104 +211,344 @@
           "gtfs_agency_id": "BA",
           "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
-      ]
+      ],
+      "tags": {
+        "omd_provider_id": "bart",
+        "twitter_general": "sfbart",
+        "twitter_service_alerts": "SFBARTalert",
+        "us_ntd_id": "90003",
+        "wikidata_id": "Q610120"
+      }
+    },
+    {
+      "onestop_id": "o-9q9-caltrain",
+      "name": "Caltrain",
+      "website": "http://www.caltrain.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9-caltrain"
+        },
+        {
+          "gtfs_agency_id": "CT",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "CT",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "caltrain",
+        "twitter_general": "Caltrain",
+        "twitter_service_alerts": "CaltrainAlerts",
+        "us_ntd_id": "90134",
+        "wikidata_id": "Q166817"
+      }
+    },
+    {
+      "onestop_id": "o-9q9-vta",
+      "name": "Santa Clara Valley Transportation Authority",
+      "short_name": "VTA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9-vta"
+        },
+        {
+          "gtfs_agency_id": "SC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "VTA",
+        "twitter_service_alerts": "VTAservice",
+        "us_ntd_id": "90013",
+        "wikidata_id": "Q1456861"
+      }
+    },
+    {
+      "onestop_id": "o-9q9j-commuteorgshuttles",
+      "name": "Commute.org Shuttles",
+      "website": "http://www.commute.org",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "936",
+          "feed_onestop_id": "f-9q9j-commute~ca~us"
+        },
+        {
+          "gtfs_agency_id": "CM",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SMCountyCommute",
+        "wikidata_id": "Q7162971"
+      }
+    },
+    {
+      "onestop_id": "o-9q9j-dumbartonexpress",
+      "name": "Dumbarton Express",
+      "website": "http://www.dumbartonexpress.com",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "DE",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "DE",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "rideact",
+        "wikidata_id": "Q5313687"
+      }
+    },
+    {
+      "onestop_id": "o-9q9jy-unioncitytransit",
+      "name": "Union City Transit",
+      "website": "http://www.uctransit.org",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "UC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "UC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "UnionCityCA_Gov",
+        "us_ntd_id": "90161",
+        "wikidata_id": "Q7885556"
+      }
+    },
+    {
+      "onestop_id": "o-9q9p-countyconnection",
+      "name": "County Connection",
+      "short_name": "CCCTA",
+      "website": "http://www.countyconnection.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9p-countyconnection"
+        },
+        {
+          "gtfs_agency_id": "CC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "CC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "cccta",
+        "us_ntd_id": "90078",
+        "wikidata_id": "Q5177640"
+      }
     },
     {
       "onestop_id": "o-9q9p-sanfranciscobayferry",
-      "tags": {
-        "us_ntd_id": "90225",
-        "wikidata_id": "Q7413935",
-        "twitter_general": "SFBayFerry",
-        "twitter_service_alerts": "SFBFBayAlerts"
-      },
       "name": "San Francisco Bay Ferry",
       "website": "http://www.sanfranciscobayferry.com",
       "associated_feeds": [
         {
-          "onestop_id": "o-9q9-acealtamontcorridorexpress",
-          "name": "Altamont Corridor Express",
-          "short_name": "ACE",
-          "website": "http://www.acerail.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CE"
-            },
-            {
-              "feed_onestop_id": "f-acealtamontcorridorexpress~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "ACE_train",
-            "us_ntd_id": "90182",
-            "wikidata_id": "Q434302"
-          }
+          "gtfs_agency_id": "SB",
+          "feed_onestop_id": "f-sf~bay~area~rg"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "SFBayFerry",
+        "twitter_service_alerts": "SFBFBayAlerts",
+        "us_ntd_id": "90225",
+        "wikidata_id": "Q7413935"
+      }
     },
     {
-      "id": "f-9q9j-dumbartonexpress",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=DE"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
-      },
-      "tags": {
-        "managed_by": "mtc-ca"
-      },
-      "operators": [
+      "onestop_id": "o-9q9p3-emerygo~round",
+      "name": "Emery Go-Round",
+      "website": "http://www.emerygoround.com/",
+      "associated_feeds": [
         {
-          "onestop_id": "o-9q9j-dumbartonexpress",
-          "name": "Dumbarton Express",
-          "website": "http://www.dumbartonexpress.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "DE"
-            }
-          ],
-          "tags": {
-            "twitter_general": "rideact",
-            "wikidata_id": "Q5313687"
-          }
+          "gtfs_agency_id": "573",
+          "feed_onestop_id": "f-9q9p3-emerygoround"
+        },
+        {
+          "gtfs_agency_id": "EM",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "EM",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "emeryvilleca",
+        "wikidata_id": "Q5370986"
+      }
     },
     {
-      "id": "f-9q9jy-unioncitytransit",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=UC"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
-      },
+      "onestop_id": "o-9q9q-wheelsbus",
+      "name": "Livermore Amador Valley Transit Authority",
+      "short_name": "Wheels Bus",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9q-wheelsbus"
+        },
+        {
+          "gtfs_agency_id": "WH",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "WH",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
       "tags": {
-        "wikidata_id": "Q510836",
-        "twitter_general": "CapitolCorridor"
-      },
+        "twitter_general": "wheelsbus",
+        "us_ntd_id": "90144",
+        "wikidata_id": "Q7950139"
+      }
+    },
+    {
+      "onestop_id": "o-9qb-goldengatetransit",
+      "name": "Golden Gate Bridge, Highway and Transportation District",
+      "short_name": "GGT",
+      "website": "http://www.goldengate.org",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qb-goldengatetransit"
+        },
+        {
+          "gtfs_agency_id": "GG",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "golden-gate-bridge-highway-transportation-district",
+        "twitter_general": "GGBridge",
+        "twitter_service_alerts": "GGBridgeAlerts",
+        "us_ntd_id": "90016",
+        "wikidata_id": "Q525895"
+      }
+    },
+    {
+      "onestop_id": "o-9qb-smart",
+      "name": "SMART",
+      "website": "http://www.transit.511.org/schedules?m1=A&m2=bus&cid=SA",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SA",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SA",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "smarttrain",
+        "us_ntd_id": "90299",
+        "wikidata_id": "Q7562166"
+      }
+    },
+    {
+      "onestop_id": "o-9qb-sonomacountytransit",
+      "name": "Sonoma County Transit",
+      "website": "http://www.sctransit.com",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "175",
+          "feed_onestop_id": "f-9qb-sonomacounty~ca~us"
+        },
+        {
+          "gtfs_agency_id": "SO",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SO",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SoCo_TPW",
+        "us_ntd_id": "90089",
+        "wikidata_id": "Q7562177"
+      }
+    },
+    {
+      "onestop_id": "o-9qbb-marintransit",
+      "name": "Marin County Transit District",
+      "short_name": "MCTD",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qbb-marintransit"
+        },
+        {
+          "gtfs_agency_id": "MA",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "MA",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "marintransit",
+        "us_ntd_id": "90234",
+        "wikidata_id": "Q6763758"
+      }
+    },
+    {
+      "onestop_id": "o-9qbc9-petalumatransit",
+      "name": "Petaluma Transit",
+      "website": "http://cityofpetaluma.net/pubworks/transit-sub.html",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "267",
+          "feed_onestop_id": "f-9qbc9-petalumatransit~petaluma~ca~us"
+        },
+        {
+          "gtfs_agency_id": "PE",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "PE",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "petalumatransit",
+        "us_ntd_id": "90213",
+        "wikidata_id": "Q7171668"
+      }
+    },
+    {
+      "onestop_id": "o-9qbdx-santarosacitybus",
+      "name": "Santa Rosa CityBus",
+      "website": "http://ci.santa-rosa.ca.us/departments/transit/CityBus/Pages/default.aspx",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SR",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SR",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SRCITYBUS",
+        "us_ntd_id": "90017",
+        "wikidata_id": "Q7419876"
+      }
+    },
+    {
+      "onestop_id": "o-9qc-capitolcorridor",
       "name": "Capitol Corridor Joint Powers Authority",
       "short_name": "Capitol Corridor",
       "website": "http://www.capitolcorridor.org",
@@ -295,15 +565,14 @@
           "gtfs_agency_id": "AM",
           "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "CapitolCorridor",
+        "wikidata_id": "Q510836"
+      }
     },
     {
       "onestop_id": "o-9qc-fairfieldandsuisuntransit",
-      "tags": {
-        "us_ntd_id": "90092",
-        "wikidata_id": "Q5430409",
-        "twitter_general": "fast_transit"
-      },
       "name": "Fairfield and Suisun Transit",
       "short_name": "FAST",
       "website": "http://www.fasttransit.org/",
@@ -320,15 +589,15 @@
           "gtfs_agency_id": "FS",
           "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "fast_transit",
+        "us_ntd_id": "90092",
+        "wikidata_id": "Q5430409"
+      }
     },
     {
       "onestop_id": "o-9qc-vinenapacounty",
-      "tags": {
-        "us_ntd_id": "90088",
-        "wikidata_id": "Q7907027",
-        "twitter_general": "vinetransit"
-      },
       "name": "Vine (Napa County)",
       "website": "http://www.ridethevine.com/vine",
       "associated_feeds": [
@@ -340,91 +609,113 @@
           "gtfs_agency_id": "VN",
           "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
-      ]
-    },
-    {
-      "onestop_id": "o-9q9-vta",
+      ],
       "tags": {
-        "us_ntd_id": "90013",
-        "wikidata_id": "Q1456861",
-        "twitter_general": "VTA",
-        "twitter_service_alerts": "VTAservice"
-      },
-      "name": "Santa Clara Valley Transportation Authority",
-      "short_name": "VTA",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-9q9-vta"
-        },
-        {
-          "gtfs_agency_id": "SC",
-          "feed_onestop_id": "f-sf~bay~area~rg"
-        },
-        {
-          "gtfs_agency_id": "SC",
-          "feed_onestop_id": "f-sf~bay~area~rg~rt"
-        }
-      ]
-    },
-    {
-      "onestop_id": "o-9q8y-sfmta",
-      "tags": {
-        "us_ntd_id": "90015",
-        "omd_provider_id": "sfmta",
-        "wikidata_id": "Q1140138",
-        "twitter_general": "sfmta_muni"
-      },
-      "name": "San Francisco Municipal Transportation Agency",
-      "short_name": "SFMTA",
-      "associated_feeds": [
-        {
-          "onestop_id": "o-9q8yn-sanfranciscointernationalairport",
-          "name": "San Francisco International Airport",
-          "short_name": "SFO",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SI"
-            }
-          ],
-          "tags": {
-            "twitter_general": "flySFO",
-            "wikidata_id": "Q8688"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-sf~bay~area~rg",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=RG"
-      },
-      "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
-      },
-      "tags": {
-        "managed_by": "mtc-ca",
-        "manual_import": "true"
+        "twitter_general": "vinetransit",
+        "us_ntd_id": "90088",
+        "wikidata_id": "Q7907027"
       }
     },
     {
-      "id": "f-unioncitytransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://uctransit.info/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://uctransit.info/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://uctransit.info/gtfs-rt/alerts"
+      "onestop_id": "o-9qc-westcatwesterncontracosta",
+      "name": "WestCat (Western Contra Costa)",
+      "website": "http://www.westcat.org/index.html",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "392",
+          "feed_onestop_id": "f-9qc-westcat~ca~us"
+        },
+        {
+          "gtfs_agency_id": "WC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "twitter_general": "wccta",
+        "us_ntd_id": "90159",
+        "wikidata_id": "Q7984179"
+      }
+    },
+    {
+      "onestop_id": "o-9qc0-soltrans",
+      "name": "Solano County Transit",
+      "short_name": "SolTrans",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qc0-soltrans~ca~us"
+        },
+        {
+          "gtfs_agency_id": "ST",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "ST",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SolTransRide",
+        "us_ntd_id": "90232",
+        "wikidata_id": "Q16984743"
+      }
+    },
+    {
+      "onestop_id": "o-9qc2-trideltatransit",
+      "name": "Tri Delta Transit",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "3D",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "3D",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "TriDeltaTransit",
+        "us_ntd_id": "90162",
+        "wikidata_id": "Q7839840"
+      }
+    },
+    {
+      "onestop_id": "o-9qc3-riovistadeltabreeze",
+      "name": "Rio Vista Delta Breeze",
+      "website": "http://www.riovistacity.com/transit/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "RV",
+          "feed_onestop_id": "f-9qc3-datatrilliumtransitcom"
+        },
+        {
+          "gtfs_agency_id": "RV",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "RV",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "cityofriovista",
+        "us_ntd_id": "9R02-91014",
+        "wikidata_id": "Q7335361"
+      }
+    },
+    {
+      "onestop_id": "o-9qc60-vacavillecitycoach",
+      "name": "Vacaville City Coach",
+      "website": "http://www.citycoach.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "VC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "twitter_general": "coach_city",
+        "us_ntd_id": "90155",
+        "wikidata_id": "Q7907915"
       }
     }
   ],
