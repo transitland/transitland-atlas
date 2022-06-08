@@ -8,8 +8,42 @@
         "static_current": "https://marintransit.org/data/google_transit.zip"
       },
       "tags": {
-        "gtfs_data_exchange": "marin-transit",
-        "exclude_from_global_query": "true"
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "marin-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qbb-marintransit",
+          "name": "Marin County Transit District",
+          "short_name": "Marin Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9qbb-marintransit~rt"
+            },
+            {
+              "gtfs_agency_id": "MA",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "MA",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "marintransit",
+            "us_ntd_id": "90234",
+            "wikidata_id": "Q6763758"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qbb-marintransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://marintransit.net/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://marintransit.net/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://marintransit.net/gtfs-rt/alerts"
       }
     }
   ],
