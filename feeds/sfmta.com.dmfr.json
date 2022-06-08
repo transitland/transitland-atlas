@@ -15,9 +15,32 @@
         "share_alike_optional": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "san-francisco-municipal-transportation-agency",
-        "exclude_from_global_query": "true"
-      }
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "san-francisco-municipal-transportation-agency"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q8y-sfmta",
+          "name": "San Francisco Municipal Transportation Agency",
+          "short_name": "SFMTA",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SF",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "SF",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
+          "tags": {
+            "omd_provider_id": "sfmta",
+            "twitter_general": "sfmta_muni",
+            "us_ntd_id": "90015",
+            "wikidata_id": "Q1140138"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
