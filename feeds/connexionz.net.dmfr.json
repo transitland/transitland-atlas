@@ -65,8 +65,8 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "soltrans",
-        "status": "outdated"
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "soltrans"
       },
       "operators": [
         {
@@ -74,6 +74,14 @@
           "name": "Solano County Transit",
           "short_name": "SolTrans",
           "associated_feeds": [
+            {
+              "gtfs_agency_id": "ST",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "ST",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            },
             {
               "feed_onestop_id": "f-soltrans~rt"
             }

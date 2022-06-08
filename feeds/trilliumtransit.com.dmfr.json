@@ -660,6 +660,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "exclude_from_global_query": "true"
+      },
       "operators": [
         {
           "onestop_id": "o-9q9hy-mvgomountainview",
@@ -672,6 +675,14 @@
             },
             {
               "feed_onestop_id": "f-9q9hy-mountainview~rt"
+            },
+            {
+              "gtfs_agency_id": "MV",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "MV",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
             }
           ],
           "tags": {
@@ -699,14 +710,21 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "exclude_from_global_query": "true"
+      },
       "operators": [
         {
           "onestop_id": "o-9q9j-commuteorgshuttles",
           "name": "Commute.org Shuttles",
-          "website": "https://commute.org/shuttles/",
+          "website": "http://www.commute.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "936"
+            },
+            {
+              "gtfs_agency_id": "CM",
+              "feed_onestop_id": "f-sf~bay~area~rg"
             }
           ],
           "tags": {
@@ -726,6 +744,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "exclude_from_global_query": "true"
+      },
       "operators": [
         {
           "onestop_id": "o-9q9p3-emerygo~round",
@@ -737,6 +758,14 @@
             },
             {
               "feed_onestop_id": "f-emerygo~round~rt"
+            },
+            {
+              "gtfs_agency_id": "EM",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "EM",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
             }
           ],
           "tags": {
@@ -907,14 +936,25 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "exclude_from_global_query": "true"
+      },
       "operators": [
         {
           "onestop_id": "o-9qbc9-petalumatransit",
           "name": "Petaluma Transit",
-          "website": "https://transit.cityofpetaluma.net/",
+          "website": "http://cityofpetaluma.net/pubworks/transit-sub.html",
           "associated_feeds": [
             {
               "gtfs_agency_id": "267"
+            },
+            {
+              "gtfs_agency_id": "PE",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "PE",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
             }
           ],
           "tags": {
@@ -1057,10 +1097,6 @@
             {
               "gtfs_agency_id": "WC",
               "feed_onestop_id": "f-sf~bay~area~rg"
-            },
-            {
-              "gtfs_agency_id": "WC",
-              "feed_onestop_id": "f-sf~bay~area~rg~rt"
             }
           ],
           "tags": {
@@ -1110,6 +1146,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "exclude_from_global_query": "true",
         "gtfs_data_exchange": "rio-vista-delta-breeze"
       },
       "operators": [
@@ -1120,6 +1157,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "5"
+            },
+            {
+              "gtfs_agency_id": "RV",
+              "feed_onestop_id": "f-sf~bay~area~rg"
             }
           ],
           "tags": {
@@ -7296,13 +7337,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/maderactc-ca-us/service_alerts.proto"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qd-maderacountyconnection",
-          "name": "Madera County Connection"
-        }
-      ]
+      }
     },
     {
       "id": "f-middletown~ct~us",
