@@ -7,20 +7,30 @@
       "urls": {
         "static_current": "http://webwatch.lavta.org/TMGTFSRealTimeWebService/GTFS-Static/google_transit.zip"
       },
-      "tags": {
-        "exclude_from_global_query": "true"
-      },
       "license": {
         "url": "http://www.wheelsbus.com/lavta-developer-license-agreement/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "Visit http://www.wheelsbus.com/ for more information."
       },
+      "tags": {
+        "exclude_from_global_query": "true"
+      },
       "operators": [
         {
           "onestop_id": "o-9q9q-wheelsbus",
-          "name": "Livermore Amador Valley Transit Authority",
+          "name": "Livermore Amador Valley Transit Authority (LAVTA)",
           "short_name": "Wheels Bus",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WH",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "WH",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "wheelsbus",
             "us_ntd_id": "90144",
