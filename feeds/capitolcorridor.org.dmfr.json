@@ -7,15 +7,15 @@
       "urls": {
         "static_current": "https://www.capitolcorridor.org/googletransit/GTFS.zip"
       },
-      "tags": {
-        "exclude_from_global_query": "true"
-      },
       "license": {
         "url": "https://www.capitolcorridor.org/developer_resources/#terms",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true"
       },
       "operators": [
         {
@@ -26,6 +26,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "Capitol Corridor"
+            },
+            {
+              "gtfs_agency_id": "AM",
+              "feed_onestop_id": "f-sf~bay~area~rg"
             }
           ],
           "tags": {
