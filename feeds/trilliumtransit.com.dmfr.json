@@ -2952,22 +2952,20 @@
       "id": "f-auburntransit~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/auburntransit-ca-us/auburntransit-ca-us.zip"
+        "static_historic": ["https://data.trilliumtransit.com/gtfs/auburntransit-ca-us/auburntransit-ca-us.zip"]
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "status": "outdated"
+      },      
       "operators": [
         {
           "onestop_id": "o-9qcvk-auburntransit",
           "name": "Auburn Transit",
           "website": "https://www.auburn.ca.gov/192/Transit-Services",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1593"
-            }
-          ],
           "tags": {
             "us_ntd_id": "9R02-91032"
           }
@@ -6992,22 +6990,20 @@
       "id": "f-gulfcoastcenter~tx~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/gulfcoastcenter-tx-us/gulfcoastcenter-tx-us.zip"
+        "static_historic": ["https://data.trilliumtransit.com/gtfs/gulfcoastcenter-tx-us/gulfcoastcenter-tx-us.zip"]
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "status": "outdated"
+      },      
       "operators": [
         {
           "onestop_id": "o-gulfcoastcenter~tx~us",
           "name": "Connect Transit",
-          "website": "https://www.gulfcoasttransitdistrict.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "540"
-            }
-          ]
+          "website": "https://www.gulfcoasttransitdistrict.com/"
         }
       ]
     },
@@ -8302,7 +8298,30 @@
           ]
         }
       ]
-    }
+    },
+    {
+      "id": "f-miamibeach",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/miamibeach-fl-us/miamibeach-fl-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-miamibeach",
+          "name": "City of Miami Beach",
+          "website": "https://www.miamibeachfl.gov/city-hall/transportation/trolley/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2362"
+            }
+          ]
+        }
+      ]
+    }   
   ],
   "operators": [
     {
