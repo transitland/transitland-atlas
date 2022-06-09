@@ -18,6 +18,7 @@
         "share_alike_optional": "yes"
       },
       "tags": {
+        "exclude_from_global_query": "true",
         "gtfs_data_exchange": "caltrain"
       },
       "operators": [
@@ -25,6 +26,16 @@
           "onestop_id": "o-9q9-caltrain",
           "name": "Caltrain",
           "website": "http://www.caltrain.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CT",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "CT",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
           "tags": {
             "omd_provider_id": "caltrain",
             "twitter_general": "Caltrain",

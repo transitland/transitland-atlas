@@ -15,7 +15,7 @@
         "share_alike_optional": "yes"
       },
       "tags": {
-        "managed_by": "mtc-ca"
+        "exclude_from_global_query": "true"
       },
       "operators": [
         {
@@ -26,6 +26,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "Capitol Corridor"
+            },
+            {
+              "gtfs_agency_id": "AM",
+              "feed_onestop_id": "f-sf~bay~area~rg"
             }
           ],
           "tags": {

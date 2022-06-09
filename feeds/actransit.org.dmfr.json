@@ -18,6 +18,9 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
         "attribution_instructions": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use."
+      },
+      "tags": {
+        "exclude_from_global_query": "true"
       }
     },
     {
@@ -40,9 +43,6 @@
         "type": "query_param",
         "param_name": "token",
         "info_url": "https://api.actransit.org/transit/Account/Register"
-      },
-      "tags": {
-        "notes": "Requires API key."
       }
     }
   ],
@@ -57,6 +57,14 @@
         },
         {
           "feed_onestop_id": "f-actransit~rt"
+        },
+        {
+          "gtfs_agency_id": "AC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "AC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
       ],
       "tags": {

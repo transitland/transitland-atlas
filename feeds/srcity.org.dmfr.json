@@ -11,6 +11,7 @@
         ]
       },
       "tags": {
+        "exclude_from_global_query": "true",
         "gtfs_data_exchange": "citybus"
       },
       "operators": [
@@ -21,6 +22,14 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "SRCityBus"
+            },
+            {
+              "gtfs_agency_id": "SR",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "SR",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
             }
           ],
           "tags": {

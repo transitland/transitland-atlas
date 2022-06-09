@@ -7,6 +7,9 @@
       "urls": {
         "static_current": "https://gtfs.vta.org/gtfs_vta.zip"
       },
+      "tags": {
+        "exclude_from_global_query": "true"
+      },
       "operators": [
         {
           "onestop_id": "o-9q9-vta",
@@ -15,10 +18,15 @@
           "website": "https://www.vta.org/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-vta~rt"
+              "gtfs_agency_id": "SC",
+              "feed_onestop_id": "f-sf~bay~area~rg"
             },
             {
-              "feed_onestop_id": "o-9q9-vta"
+              "gtfs_agency_id": "SC",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            },
+            {
+              "feed_onestop_id": "f-vta~rt"
             }
           ],
           "tags": {
