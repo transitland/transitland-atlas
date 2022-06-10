@@ -10,9 +10,11 @@
           "https://lbtransit.box.com/shared/static/a29r6bewfz8xnxjyd9w16orcz4d0zect.zip"
         ]
       },
+      "license": {
+        "url": "https://ridelbt.com/gtfs-feed/"
+      },
       "tags": {
-        "gtfs_data_exchange": "long-beach-transit",
-        "unstable_url": "true"
+        "gtfs_data_exchange": "long-beach-transit"
       },
       "operators": [
         {
@@ -36,9 +38,9 @@
       "id": "f-longbeachtransit~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://206.128.158.171/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
-        "realtime_trip_updates": "http://206.128.158.171/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "gbfs_system_alerts": "http://206.128.158.171/TMGTFSRealTimeWebService/Alert/Alerts.pb"
+        "realtime_vehicle_positions": "https://lbtgtfs.lbtransit.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://lbtgtfs.lbtransit.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "gbfs_system_alerts": "https://lbtgtfs.lbtransit.com/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       }
     }
   ],
