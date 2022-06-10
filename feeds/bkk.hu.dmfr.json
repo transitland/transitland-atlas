@@ -5,11 +5,16 @@
       "id": "f-u2m-bkk",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.bkk.hu/gtfs/budapest_gtfs.zip"
+        "static_current": "https://go.bkk.hu/api/static/v1/public-gtfs/budapest_gtfs.zip",
+        "static_historic": [
+          "https://www.bkk.hu/gtfs/budapest_gtfs.zip"
+        ]
+      },
+      "license": {
+        "url": "https://opendata.bkk.hu/"
       },
       "tags": {
-        "gtfs_data_exchange": "bkk",
-        "manual_import": "true"
+        "gtfs_data_exchange": "bkk"
       },
       "operators": [
         {
@@ -20,10 +25,27 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "BKK"
+            },
+            {
+              "feed_onestop_id": "f-u2m-bkk~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-u2m-bkk~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://go.bkk.hu/api/query/v1/ws/gtfs-rt/full/VehiclePositions.pb",
+        "realtime_trip_updates": "https://go.bkk.hu/api/query/v1/ws/gtfs-rt/full/TripUpdates.pb",
+        "realtime_alerts": "https://go.bkk.hu/api/query/v1/ws/gtfs-rt/full/Alerts.pb"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key",
+        "info_url": "https://opendata.bkk.hu/data-sources"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
