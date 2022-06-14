@@ -5,16 +5,22 @@
       "id": "f-burt~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb",
-        "realtime_trip_updates": "http://opendata.burlington.ca/gtfs-rt/GTFS_TripUpdates.pb",
-        "realtime_alerts": "http://opendata.burlington.ca/gtfs-rt/GTFS_ServiceAlerts.pb"
+        "realtime_vehicle_positions": "https://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://opendata.burlington.ca/gtfs-rt/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://opendata.burlington.ca/gtfs-rt/GTFS_ServiceAlerts.pb"
+      },
+      "license": {
+        "url": "https://www.burlington.ca/en/services-for-you/resources/initiative%20projects/open_data/termsofuse.pdf"
       }
     },
     {
       "id": "f-dpxq-burlingtontransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://opendata.burlington.ca/gtfs-rt/GTFS_Data.zip"
+        "static_current": "https://opendata.burlington.ca/gtfs-rt/GTFS_Data.zip"
+      },
+      "license": {
+        "url": "https://www.burlington.ca/en/services-for-you/resources/initiative%20projects/open_data/termsofuse.pdf"
       },
       "tags": {
         "gtfs_data_exchange": "burlington-transit"
@@ -34,7 +40,10 @@
           "gtfs_agency_id": "BURT",
           "feed_onestop_id": "f-dpxq-burlingtontransit"
         }
-      ]
+      ],
+      "tags": {
+        "developer_site": "https://navburl-burlington.opendata.arcgis.com/documents/transit-schedule-data-gtfs/explore"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
