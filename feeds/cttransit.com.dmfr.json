@@ -2,56 +2,42 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "id": "f-cttransithartford~rt",
-      "spec": "gtfs-rt",
+      "id": "f-cttransit~hartford~line",
+      "spec": "gtfs",
       "urls": {
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
+        "static_current": "http://www.hartfordline.com/files/gtfs/gtfs.zip"
       },
-      "tags": {
-        "notes": "Possibly blocking Amazon/EC2 address space."
+      "license": {
+        "url": "https://www.cttransit.com/about/developers/terms-of-use"
       }
     },
     {
-      "id": "f-dr79-cttransit~stamford",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.cttransit.com/sites/default/files/gtfs/googlect_transit.zip"
-      },
-      "license": {
-        "url": "https://www.cttransit.com/about/developers/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr79-cttransit~stamford",
-          "name": "CTTransit - Stamford",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dr79-cttransit~stamford~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10055",
-            "wikidata_id": "Q5161640"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dr79-cttransit~stamford~rt",
+      "id": "f-cttransit~rt",
+      "supersedes_ids": [
+        "f-cttransithartford~rt",
+        "f-drkj-cttransit~newbritain~rt",
+        "f-drkj-cttransit~newbritain~bristol~rt",
+        "f-dr79-cttransit~stamford~rt",
+        "f-drk5-cttransit~newhaven~rt",
+        "f-drkh-cttransit~waterbury~meriden~rt",
+        "f-drkhr-cttransit~meriden~rt"
+      ],
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
         "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
         "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
+      },
+      "license": {
+        "url": "https://www.cttransit.com/about/developers/terms-of-use"
       }
     },
     {
       "id": "f-drk-cttransit~hartford",
+      "supersedes_ids": [
+        "f-dr79-cttransit~stamford",
+        "f-drkhr-cttransit~meriden"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.cttransit.com/sites/default/files/gtfs/googlect_transit.zip"
@@ -60,183 +46,36 @@
         "url": "https://www.cttransit.com/about/developers/terms-of-use",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-cttransit~stamford",
-          "name": "CTTransit- Stamford",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "googlestam_transit"
-            }
-          ],
-          "tags": {
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10056",
-            "wikidata_id": "Q5161640"
-          }
-        },
-        {
-          "onestop_id": "o-drk5-cttransit~newhaven",
-          "name": "CTTransit - New Haven",
-          "website": "http://www.cttransit.com",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-drk5-cttransit~newhaven~rt"
-            }
-          ],
-          "tags": {
-            "needs_agency_id": "f-drk-cttransit~hartford",
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10056",
-            "wikidata_id": "Q5161638"
-          }
-        },
-        {
-          "onestop_id": "o-drkh-cttransit~waterbury~meriden",
-          "name": "CTTransit - Waterbury-Meriden",
-          "website": "http://www.cttransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "google_wa-me_transit"
-            },
-            {
-              "feed_onestop_id": "f-drkh-cttransit~waterbury~meriden~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10128",
-            "wikidata_id": "Q7057991"
-          }
-        },
-        {
-          "onestop_id": "o-drkj-cttransit~newbritain",
-          "name": "CTTransit - New Britain",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "googlenb_transit"
-            },
-            {
-              "feed_onestop_id": "f-drkj-cttransit~newbritain~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10045",
-            "wikidata_id": "Q5161636"
-          }
-        },
-        {
-          "onestop_id": "o-drkj-cttransit~newbritain~bristol",
-          "name": "CTTransit - New Britain-Bristol",
-          "website": "http://www.cttransit.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            },
-            {
-              "feed_onestop_id": "f-drkj-cttransit~newbritain~bristol~rt"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "10130"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-drk5-cttransit~newhaven~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
-      }
-    },
-    {
-      "id": "f-drkh-cttransit~waterbury~meriden~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
-      }
-    },
-    {
-      "id": "f-drkhr-cttransit~meriden",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.cttransit.com/sites/default/files/gtfs/googlect_transit.zip"
-      },
-      "license": {
-        "url": "https://www.cttransit.com/about/developers/terms-of-use",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "removed"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drkhr-cttransit~meriden",
-          "name": "CTTransit - Meriden",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-drkhr-cttransit~meriden~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "cttransit",
-            "us_ntd_id": "10128",
-            "wikidata_id": "Q7057991"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-drkhr-cttransit~meriden~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
-      }
-    },
-    {
-      "id": "f-drkj-cttransit~newbritain~bristol~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
-      }
-    },
-    {
-      "id": "f-drkj-cttransit~newbritain~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
       }
     }
   ],
   "operators": [
     {
-      "onestop_id": "o-drk-cttransit~hartford",
-      "name": "CTTransit - Hartford",
+      "onestop_id": "o-cttransit",
+      "supersedes_ids": [
+        "o-drk-cttransit~hartford",
+        "o-dr7-cttransit~stamford",
+        "o-drk5-cttransit~newhaven",
+        "o-drkh-cttransit~waterbury~meriden",
+        "o-drkj-cttransit~newbritain",
+        "o-drkj-cttransit~newbritain~bristol"
+      ],
+      "name": "Connecticut Department of Transportation (ConnDOT)",
+      "short_name": "CTtransit",
       "website": "http://www.cttransit.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-cttransithartford~rt"
+          "feed_onestop_id": "f-cttransit~hartford~line"
         },
         {
-          "gtfs_agency_id": "googleha_transit",
+          "feed_onestop_id": "f-cttransit~rt"
+        },
+        {
           "feed_onestop_id": "f-drk-cttransit~hartford"
         }
       ],
       "tags": {
+        "developer_site": "https://www.cttransit.com/about/developers",
         "twitter_general": "cttransit",
         "us_ntd_id": "10048",
         "wikidata_id": "Q5161635"
