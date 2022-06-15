@@ -37,11 +37,11 @@
       }
     },
     {
-      "id": "f-mtamaryland~rt",
+      "id": "f-mtamaryland~marc~train~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://gtfsrt.mta.maryland.gov:8888/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
-        "realtime_trip_updates": "http://gtfsrt.mta.maryland.gov:8888/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb"
+        "realtime_vehicle_positions": "https://mdotmta-gtfs-rt.s3.amazonaws.com/MARC+RT/marc.pb",
+        "realtime_trip_updates": "https://mdotmta-gtfs-rt.s3.amazonaws.com/MARC+RT/marc.pb"
       }
     }
   ],
@@ -49,7 +49,7 @@
     {
       "onestop_id": "o-dqc-marylandtransitadministration",
       "name": "Maryland Transit Administration",
-      "short_name": "MTA",
+      "short_name": "MDOT MTA",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-dq-mtamaryland~bus"
@@ -67,10 +67,11 @@
           "feed_onestop_id": "f-dq-mtamaryland~subwaylink"
         },
         {
-          "feed_onestop_id": "f-mtamaryland~rt"
+          "feed_onestop_id": "f-mtamaryland~marc~train~rt"
         }
       ],
       "tags": {
+        "developer_site": "https://www.mta.maryland.gov/developer-resources",
         "twitter_general": "mtamaryland",
         "us_ntd_id": "30034",
         "wikidata_id": "Q1863801"
