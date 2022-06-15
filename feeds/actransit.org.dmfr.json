@@ -22,28 +22,6 @@
       "tags": {
         "exclude_from_global_query": "true"
       }
-    },
-    {
-      "id": "f-actransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "http://api.actransit.org/transit/gtfsrt/vehicles",
-        "realtime_trip_updates": "http://api.actransit.org/transit/gtfsrt/tripupdates",
-        "realtime_alerts": "http://api.actransit.org/transit/gtfsrt/alerts"
-      },
-      "license": {
-        "url": "http://www.actransit.org/data-terms-and-conditions/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_instructions": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token",
-        "info_url": "https://api.actransit.org/transit/Account/Register"
-      }
     }
   ],
   "operators": [
@@ -54,9 +32,6 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-9q9-actransit"
-        },
-        {
-          "feed_onestop_id": "f-actransit~rt"
         },
         {
           "gtfs_agency_id": "AC",
