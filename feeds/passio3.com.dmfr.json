@@ -2,6 +2,81 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-alabama~am~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/aamu/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-audible",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/audible/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-chapman~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/chapman/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-clemson~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/clemson/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-columbia~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/columbia/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-dhvrs-bullrunner",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/usf/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://github.com/CUTR-at-USF/bullrunner-gtfs-realtime-generator/raw/master/bullrunner-gtfs.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dhvrs-usfbullrunner",
+          "name": "USF Bull Runner",
+          "website": "http://www.usf.edu/administrative-services/parking",
+          "tags": {
+            "twitter_general": "usfpts"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dn5b-georgiatechtrolley~stingershuttles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/gatech/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "http://documents.atlantaregional.com/transitdata/gtfs_GT.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn5b-georgiatechtrolley~stingershuttles",
+          "name": "Georgia Tech Stinger Bus",
+          "website": "https://pts.gatech.edu/",
+          "tags": {
+            "twitter_general": "gt_park_trans"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnwe-radford~va~us",
       "spec": "gtfs",
       "urls": {
@@ -26,6 +101,147 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-eastern~virginia~medical~school",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/evms/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-emory~hospital~midtown",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/emory/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-epta~wv",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/epta/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-epta~wv",
+          "name": "Eastern Panhandle Transit Authority",
+          "short_name": "EPTA",
+          "website": "https://www.eptawv.com"
+        }
+      ]
+    },
+    {
+      "id": "f-florida~gulf~coast~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/fgcu/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-fresno~state~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/fresno/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-harvard~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/harvard/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-hoboken~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/hoboken/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-los~angeles~world~airport",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/lawa/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-mercy~college",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/mercy/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-miller~transportation~in~ky",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/miller/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-ncat~nc",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/ncat/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-new~york~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/nyu/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-north~fork~area~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/northfork/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-ozark~regional~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/ozark/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-university~new~mexico",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/unm/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-university~of~chicago",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/chicago/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-university~of~connecticut",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/uconn/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-uw~milwaukee",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/milwaukee/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-westmar~atlanta~ga",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/westmar/passioTransit/gtfs/google_transit.zip"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
