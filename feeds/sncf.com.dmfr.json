@@ -1,0 +1,112 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-u0-sncf~intercites",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/export-intercites-gtfs-last.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL",
+        "url": "https://data.sncf.com/pages/cgu/A1#A1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-u0-sncf~ter",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/export-ter-gtfs-last.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL",
+        "url": "https://data.sncf.com/pages/cgu/A1#A1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-u0-sncf~tgv",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/export_gtfs_voyages.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL",
+        "url": "https://data.sncf.com/pages/cgu/A1#A1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-u0-sncf~transilien~rer",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/transilien-gtfs.zip",
+        "static_historic": [
+          "http://medias.sncf.com/sncfcom/open-data/gtfs/gtfs-routes-last.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODbL",
+        "url": "https://data.sncf.com/pages/cgu/A1#A1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u09-rer",
+          "name": "RATP",
+          "short_name": "RER",
+          "website": "http://www.ratp.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IDFM:71"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u09-transilien",
+          "name": "SNCF",
+          "short_name": "Transilien",
+          "website": "http://www.transilien.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IDFM:1046"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u-sncf",
+      "name": "Société nationale des chemins de fer français Voyageurs",
+      "short_name": "SNCFVoyageurs ",
+      "website": "http://www.sncf.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u0-sncf~intercites"
+        },
+        {
+          "feed_onestop_id": "f-u0-sncf~ter"
+        },
+        {
+          "feed_onestop_id": "f-u0-sncf~tgv"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
