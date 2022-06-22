@@ -5,18 +5,21 @@
       "id": "f-c3r1-red~deer~alberta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://webmap.reddeer.ca/transit/google_transit.zip"
+        "static_current": "https://data.reddeer.ca/datasets/gtfsdatafeed/download/zip"
+      },
+      "license": {
+        "url": "https://data.reddeer.ca/About",
+        "use_without_attribution": "no",
+        "attribution_instructions": "Contains information licensed under the Open Government Licence – The City of Red Deer"
       },
       "operators": [
         {
           "onestop_id": "o-c3r1-red~deer~alberta",
           "name": "Red Deer Transit",
           "website": "http://www.reddeer.ca/city-services/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RDT"
-            }
-          ]
+          "tags": {
+            "wikidata_id": "Q7304013"
+          }
         }
       ]
     }
