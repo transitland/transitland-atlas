@@ -3,12 +3,17 @@
   "feeds": [
     {
       "id": "f-c3x-edmontontransitsystem",
+      "supersedes_ids": [
+        "f-c3x2-strathconacountytransit",
+        "f-c3x1-stalberttransit"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.edmonton.ca/TMGTFSRealTimeWebService/GTFS/gtfs.zip"
       },
       "license": {
-        "url": "https://www.edmonton.ca/transportation/Web-version2.1-OpenDataAgreement.pdf"
+        "url": "https://www.edmonton.ca/sites/default/files/public-files/assets/Web-version2.1-OpenDataAgreement.pdf",
+        "use_without_attribution": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "edmonton-transit-system"
@@ -35,10 +40,34 @@
       "website": "http://www.takeets.com",
       "associated_feeds": [
         {
+          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-c3x-edmontontransitsystem"
         },
         {
           "feed_onestop_id": "f-ets~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-c3x1-stalberttransit",
+      "name": "St. Albert Transit",
+      "short_name": "StAT",
+      "website": "http://www.ridestat.ca",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "2",
+          "feed_onestop_id": "f-c3x-edmontontransitsystem"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-c3x2-strathconacountytransit",
+      "name": "Strathcona County Transit",
+      "website": "http://www.strathcona.ca/transit",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "4",
+          "feed_onestop_id": "f-c3x-edmontontransitsystem"
         }
       ]
     }
