@@ -1,0 +1,47 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-mountain~line~az",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mountainline.usetransit.com/api/1/public/gtfs/4/gtfs.zip"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mountain~line~az",
+          "name": "Northern Arizona Intergovernmental Public Transportation Authority (NAIPTA)",
+          "short_name": "Mountain Line",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-mountain~line~az~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "FLGMountainLine",
+            "us_ntd_id": "90219",
+            "wikidata_id": "Q6925071"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-mountain~line~az~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mountainline.usetransit.com/api/1/public/gtfs/4/VehiclePositions.pb",
+        "realtime_trip_updates": "https://mountainline.usetransit.com/api/1/public/gtfs/4/TripUpdates.pb",
+        "realtime_alerts": "https://mountainline.usetransit.com/api/1/public/gtfs/4/Alerts.pb"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
