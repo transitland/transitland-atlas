@@ -5,7 +5,7 @@
       "id": "f-9qdc-gis4ufresnogov",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://gis4u.fresno.gov/downloads/fax_gtfs.zip"
+        "static_current": "https://gis4u.fresno.gov/downloads/zip/fax_gtfs.zip"
       },
       "operators": [
         {
@@ -16,6 +16,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "01"
+            },
+            {
+              "feed_onestop_id": "f-9qdc-gis4ufresnogov~rt"
             }
           ],
           "tags": {
@@ -25,6 +28,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9qdc-gis4ufresnogov~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gis4u.fresno.gov/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://gis4u.fresno.gov/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://gis4u.fresno.gov/TMGTFSRealTimeWebService/Alert/Alerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
