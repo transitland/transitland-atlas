@@ -213,6 +213,27 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://passio3.com/towson/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-towson~loop",
+          "name": "Towson Loop",
+          "website": "https://www.baltcoloop.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-towson~loop~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-towson~loop~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/towson/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/towson/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/towson/passioTransit/gtfs/realtime/serviceAlerts"
       }
     },
     {
