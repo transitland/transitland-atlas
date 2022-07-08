@@ -2,6 +2,31 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-9q5-govcbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://govcbus.com/gtfs"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      },
+      "tags": {
+        "exclude_from_global_query": "true"
+      }
+    },
+    {
+      "id": "f-9q5-govcbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
       "id": "f-9q5-vctc~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -18,7 +43,10 @@
               "gtfs_agency_id": "607"
             },
             {
-              "feed_onestop_id": "f-9q5-vctc~ca~us~rt"
+              "feed_onestop_id": "f-9q5-govcbus"
+            },
+            {
+              "feed_onestop_id": "f-9q5-govcbus~rt"
             }
           ],
           "tags": {
@@ -28,18 +56,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "f-9q5-vctc~ca~us~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://govcbus.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://govcbus.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://govcbus.com/gtfs-rt/alerts"
-      },
-      "license": {
-        "url": "https://gtfs-directory.syncromatics.com/"
-      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
