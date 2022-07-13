@@ -1,0 +1,82 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-zenbus~bordeaux~navettes~aeroport",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=bordeaux-navettes-aeroport"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bordeaux~navettes~aeroport",
+          "name": "Bordeaux - Navettes aéroport - 30 Direct",
+          "website": "https://30direct.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~bordeaux~navettes~aeroport"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~bordeaux~navettes~aeroport~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~bordeaux~navettes~aeroport~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~paris~saclay",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=caee"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-paris~saclay",
+          "name": "Paris Saclay",
+          "website": "http://www.paris-saclay.com/vivre-ici/mobilite/navettes-gratuites-418.html",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~paris~saclay"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~paris~saclay~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~paris~saclay~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
