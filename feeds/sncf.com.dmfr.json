@@ -16,6 +16,21 @@
         "share_alike_optional": "no"
       }
     },
+   {
+      "id": "f-u0-sncf~intercites~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/sncf-ic-gtfs-rt-trip-updates"
+      },
+      "license": {
+        "spdx_identifier": "ODbL",
+        "url": "https://data.sncf.com/pages/cgu/A1#A1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no"
+      }
+    },
     {
       "id": "f-u0-sncf~ter",
       "spec": "gtfs",
@@ -31,11 +46,41 @@
         "share_alike_optional": "no"
       }
     },
+   {
+      "id": "f-u0-sncf~ter~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/sncf-ter-gtfs-rt-trip-updates"
+      },
+      "license": {
+        "spdx_identifier": "ODbL",
+        "url": "https://data.sncf.com/pages/cgu/A1#A1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no"
+      }
+    },
     {
       "id": "f-u0-sncf~tgv",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/export_gtfs_voyages.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL",
+        "url": "https://data.sncf.com/pages/cgu/A1#A1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no"
+      }
+    },
+   {
+      "id": "f-u0-sncf~tgv~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/sncf-tgv-gtfs-rt-trip-updates"
       },
       "license": {
         "spdx_identifier": "ODbL",
@@ -100,10 +145,19 @@
           "feed_onestop_id": "f-u0-sncf~intercites"
         },
         {
+          "feed_onestop_id": "f-u0-sncf~intercites~rt"
+        },
+        {
           "feed_onestop_id": "f-u0-sncf~ter"
         },
         {
+          "feed_onestop_id": "f-u0-sncf~ter~rt"
+        },
+        {
           "feed_onestop_id": "f-u0-sncf~tgv"
+        },
+        {
+          "feed_onestop_id": "f-u0-sncf~tgv~rt"
         }
       ]
     }
