@@ -2,6 +2,28 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-ez-renfecercanias",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://data.renfe.com/dataset/77525d66-f095-46d0-80c0-37f735d4342f/resource/6f1523c6-a9e3-48e3-9ace-bb107a762be6/download/fomento_transit.zip",
+        "static_historic": [
+          "https://elchesemueve.com/renfe/gtfs.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ez-renfecercanias",
+          "name": "Renfe Cercanias",
+          "website": "http://www.renfe.com/viajeros/cercanias/index.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1071VC"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-ez-renfeoperadora",
       "spec": "gtfs",
       "urls": {
@@ -16,14 +38,17 @@
       "operators": [
         {
           "onestop_id": "o-ez-renfeoperadora",
-          "name": "RENFE OPERADORA",
+          "name": "Renfe-Operadora",
           "short_name": "Renfe",
           "website": "http://www.renfe.com",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1071"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q2476154"
+          }
         }
       ]
     }
