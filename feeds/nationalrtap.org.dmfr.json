@@ -2,6 +2,34 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-9qd-fresnocounty~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7869/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/fresnocounty-ca-us/fresnocounty-ca-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "fresno-county-rural-transit-agency",
+        "status": "outdated"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qd-fresnocountyruraltransitagency",
+          "name": "Fresno County Rural Transit Agency",
+          "short_name": "FCRTA",
+          "tags": {
+            "us_ntd_id": "9R02-91007"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9t9e-cityofsierravista",
       "spec": "gtfs",
       "urls": {
