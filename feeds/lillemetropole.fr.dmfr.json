@@ -5,11 +5,35 @@
       "id": "f-ilevia~lille~fr",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://opendata.lillemetropole.fr/api/datasets/1.0/transport_arret_transpole-point/alternative_exports/gtfs_zip/"
+        "static_current": "https://opendata.lillemetropole.fr/api/datasets/1.0/transport_arret_transpole-point/alternative_exports/gtfszip"
       },
       "license": {
         "spdx_identifier": "etalab-2.0",
         "url": "https://opendata.lillemetropole.fr/explore/dataset/transport_arret_transpole-point/information/"
+      }
+    },
+    {
+      "id": "f-ilevia~lille~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/ilevia-lille-gtfs-rt"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-ilevia~lille~fr",
+      "name": "Ilévia",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-ilevia~lille~fr"
+        },
+        {
+          "feed_onestop_id": "f-ilevia~lille~fr~rt"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q117215"
       }
     }
   ],
