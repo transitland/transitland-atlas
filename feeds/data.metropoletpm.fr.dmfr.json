@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-spsj-rmtt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.metropoletpm.fr/explore/dataset/donnees-gtfs-du-reseau-de-bus-mistral/files/8e7042ab297b42f9dcc58f3db5326376/download/"
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Open_Licence.pdf"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spsj-rmtt",
+          "name": "Réseau Mistral",
+          "short_name": "RMTT",
+          "website": "https://www.reseaumistral.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
