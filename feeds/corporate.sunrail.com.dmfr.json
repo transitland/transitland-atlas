@@ -5,20 +5,27 @@
       "id": "f-djn-floridadepartmentoftransportation",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://corporate.sunrail.com/wp-content/uploads/2016/05/google_transit.zip"
+        "static_current": "https://corporate.sunrail.com/gtfs/google_transit.zip",
+        "static_historic": [
+          "http://corporate.sunrail.com/wp-content/uploads/2016/05/google_transit.zip"
+        ]
       },
       "license": {
         "url": "http://corporate.sunrail.com/about-sunrail/gtfs-data-download/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "mdb_source_id": "626"
+      },
       "operators": [
         {
           "onestop_id": "o-djn-floridadepartmentoftransportation",
-          "name": "Florida Department of Transportation",
+          "name": "Central Florida Commuter Rail Commission",
           "short_name": "SunRail",
           "tags": {
-            "us_ntd_id": "40232"
+            "us_ntd_id": "40232",
+            "wikidata_id": "Q3503715"
           }
         }
       ]
