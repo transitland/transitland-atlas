@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-dnq-charlotteareatransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfsrealtime.ridetransit.org/GTFSStatic/api/GTFSDownload",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/charlotte-cats.zip?raw=true"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq-charlotteareatransitsystem",
+          "name": "Charlotte Area Transit System",
+          "short_name": "CATS",
+          "website": "http://www.ridetransit.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnq-charlotteareatransitsystem~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CATSRideTransit",
+            "us_ntd_id": "40008",
+            "wikidata_id": "Q5085831"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq-charlotteareatransitsystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrealtime.ridetransit.org/GTFSRealTime/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://gtfsrealtime.ridetransit.org/GTFSRealTime/TripUpdate/Tripupdates.pb",
+        "realtime_alerts": "https://gtfsrealtime.ridetransit.org/GTFSRealTime/Alerts/Alerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
