@@ -249,35 +249,6 @@
       ]
     },
     {
-      "id": "f-9q4-smat~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/smat-ca-us/smat-ca-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q4-santamariaareatransit",
-          "name": "Santa Maria Area Transit",
-          "short_name": "SMAT",
-          "website": "http://www.cityofsantamaria.org/home/showdocument?id=6159",
-          "tags": {
-            "twitter_general": "City_SantaMaria",
-            "us_ntd_id": "90087",
-            "wikidata_id": "Q7419673"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9q4q-guadalupeflyer",
       "spec": "gtfs",
       "urls": {
@@ -5243,6 +5214,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "189"
+            },
+            {
+              "feed_onestop_id": "f-dp9k-waukeshacounty~wi~us~rt"
             }
           ],
           "tags": {
@@ -5251,6 +5225,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dp9k-waukeshacounty~wi~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mywaukeshametro.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://mywaukeshametro.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://mywaukeshametro.com/gtfs-rt/alerts"
+      }
     },
     {
       "id": "f-dpc4-oshkosh~wi~us",
