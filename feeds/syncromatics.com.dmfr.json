@@ -1,0 +1,78 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-countyofkauai~transportationagency~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://thekauaibus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://thekauaibus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://thekauaibus.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-kauai",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://thekauaibus.com/gtfs",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/kaua'i_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-87yt-countyofkauai~transportationagency",
+          "name": "County of Kaua'i - Transportation Agency",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Kauai"
+            },
+            {
+              "feed_onestop_id": "f-countyofkauai~transportationagency~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "9R03-90237",
+            "wikidata_id": "Q7744015"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-lafayette~la",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://lts.syncromatics.com/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lafayette~la",
+          "name": "Lafayette Transit System",
+          "website": "http://www.ridelts.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-lafayette~la"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60038",
+            "wikidata_id": "Q6471610"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-lafayette~la~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lts.syncromatics.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://lts.syncromatics.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://lts.syncromatics.com/gtfs-rt/alerts"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
