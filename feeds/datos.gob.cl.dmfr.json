@@ -2,19 +2,27 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "id": "f-63h-sociedaddetransporteslinean5sa~sociedaddetransporteaaleman",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://datos.gob.cl/dataset/cef4c471-2837-412b-a78e-1d4c6a261bf9/resource/7887a7e7-9af6-4fc8-b19f-8ff4ea474d1c/download/temuco24nov16.zip"
-      }
-    },
-    {
       "id": "f-63h7-sociedaddetransporteslinean5sa~sociedaddetransporteaalema",
+      "supersedes_ids": [
+        "f-63h-sociedaddetransporteslinean5sa~sociedaddetransporteaaleman"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/cef4c471-2837-412b-a78e-1d4c6a261bf9/resource/7887a7e7-9af6-4fc8-b19f-8ff4ea474d1c/download/temuco24nov16.zip"
+        "static_historic": [
+          "http://datos.gob.cl/dataset/cef4c471-2837-412b-a78e-1d4c6a261bf9/resource/7887a7e7-9af6-4fc8-b19f-8ff4ea474d1c/download/temuco24nov16.zip"
+        ]
       },
       "operators": [
+        {
+          "onestop_id": "o-63h-fesub",
+          "name": "Fesub",
+          "website": "http://www.victoriatemuco.cl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5233"
+            }
+          ]
+        },
         {
           "onestop_id": "o-63h7-edetransportesdepasajeroslíneanuevesa",
           "name": "Empresa de Transportes de Pasajeros Línea Nueve",
@@ -111,7 +119,9 @@
       "id": "f-63tn-abatemolinaltda~sotratalsa~taxutalsa",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/22fa7b82-50ec-4c85-aa89-709a8e0dd268/resource/f4526a2f-dd8e-4943-ab12-be997ce04fbb/download/talca1sep16.zip"
+        "static_historic": [
+          "http://datos.gob.cl/dataset/22fa7b82-50ec-4c85-aa89-709a8e0dd268/resource/f4526a2f-dd8e-4943-ab12-be997ce04fbb/download/talca1sep16.zip"
+        ]
       },
       "operators": [
         {
@@ -150,7 +160,9 @@
       "id": "f-63vt-trans~ohiggins",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/22cb7071-34f2-46dc-8c2d-dd9b86e9c32f/resource/65b65c20-a4ab-4cca-ba55-d2ef5bbb9605/download/rancagua1feb16.zip"
+        "static_historic": [
+          "http://datos.gob.cl/dataset/22cb7071-34f2-46dc-8c2d-dd9b86e9c32f/resource/65b65c20-a4ab-4cca-ba55-d2ef5bbb9605/download/rancagua1feb16.zip"
+        ]
       },
       "operators": [
         {
@@ -219,10 +231,13 @@
       "id": "f-66jc-transantiago~metrodesantiago",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/5e8bb1f8-f0a5-4719-a877-38543545505b/resource/28cd894d-a3f0-4cdc-8e8e-317e1cac6c88/download/gtfsv33tc.zip"
+        "static_current": "https://datos.gob.cl/dataset/5e8bb1f8-f0a5-4719-a877-38543545505b/resource/8b3f2451-810d-463a-bafb-3a25a9e6b0c8/download/gtfs-v74-po20220827.zip"
       },
       "license": {
-        "url": "http://datos.gob.cl/dataset/33245/resource/7ebb56a3-b7c3-40d6-a5c7-a6e4ebc1421e"
+        "url": "https://datos.gob.cl/dataset/33245/resource/8b3f2451-810d-463a-bafb-3a25a9e6b0c8"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -261,7 +276,9 @@
       "id": "f-66jh-vinabussa~trolebuseschilesa~busesdelgranvalparaisosa~topt",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/9e74dc7e-9a58-41a1-8ccf-422b979173a8/resource/ae8d306d-7a47-4c9f-bdf0-d608bc33df40/download/valparaiso1feb16.zip"
+        "static_historic": [
+          "http://datos.gob.cl/dataset/9e74dc7e-9a58-41a1-8ccf-422b979173a8/resource/ae8d306d-7a47-4c9f-bdf0-d608bc33df40/download/valparaiso1feb16.zip"
+        ]
       },
       "operators": [
         {
@@ -350,7 +367,9 @@
       "id": "f-66tm-liserco~lincosur~lisanco",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/c77c9a50-6dd1-449d-b5ab-947ec0139b31/resource/a4edcf07-0657-456d-bbbc-54b2aec1de8d/download/coquimbo10feb16.zip"
+        "static_historic": [
+          "http://datos.gob.cl/dataset/c77c9a50-6dd1-449d-b5ab-947ec0139b31/resource/a4edcf07-0657-456d-bbbc-54b2aec1de8d/download/coquimbo10feb16.zip"
+        ]
       },
       "tags": {
         "unstable_url": "true"
@@ -392,7 +411,9 @@
       "id": "f-67vc-transantofagasta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://datos.gob.cl/dataset/90e39a55-42d0-445e-b9d5-c73c07c6579b/resource/9111f713-0bbd-449f-ad65-4e3fce1583be/download/antofagasta5feb16.zip"
+        "static_historic": [
+          "http://datos.gob.cl/dataset/90e39a55-42d0-445e-b9d5-c73c07c6579b/resource/9111f713-0bbd-449f-ad65-4e3fce1583be/download/antofagasta5feb16.zip"
+        ]
       },
       "operators": [
         {
@@ -404,23 +425,6 @@
               "gtfs_agency_id": "1586"
             }
           ]
-        }
-      ]
-    }
-  ],
-  "operators": [
-    {
-      "onestop_id": "o-63h-fesub",
-      "name": "Fesub",
-      "website": "http://www.victoriatemuco.cl/",
-      "associated_feeds": [
-        {
-          "gtfs_agency_id": "5233",
-          "feed_onestop_id": "f-63h-sociedaddetransporteslinean5sa~sociedaddetransporteaaleman"
-        },
-        {
-          "gtfs_agency_id": "5233",
-          "feed_onestop_id": "f-63h7-sociedaddetransporteslinean5sa~sociedaddetransporteaalema"
         }
       ]
     }
