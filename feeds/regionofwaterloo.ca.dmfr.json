@@ -5,7 +5,7 @@
       "id": "f-dpwz-grandrivertransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip"
+        "static_current": "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip"
       },
       "license": {
         "url": "http://www.regionofwaterloo.ca/en/regionalGovernment/OpenDataLicence.asp",
@@ -31,6 +31,14 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-grt~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions",
+        "realtime_trip_updates": "http://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
