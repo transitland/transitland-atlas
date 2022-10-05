@@ -5,10 +5,18 @@
       "id": "f-9vrf-neworleansrta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://transitfeeds-data.s3-us-west-1.amazonaws.com/public/feeds/new-orleans-regional-transit-authority/336/20170801/gtfs.zip"
+        "static_current": "https://www.norta.com/OpnesourceData/Download",
+        "static_historic": [
+          "https://transitfeeds-data.s3-us-west-1.amazonaws.com/public/feeds/new-orleans-regional-transit-authority/336/20170801/gtfs.zip"
+        ]
       },
       "license": {
-        "url": "https://www.norta.com/Business-Center/Developer-Information"
+        "url": "https://www.norta.com/help-and-contacts/business-information/open-transit-data-(otd)"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key",
+        "info_url": "https://www.norta.com/help-and-contacts/business-information/open-transit-data-(otd)"
       },
       "operators": [
         {
