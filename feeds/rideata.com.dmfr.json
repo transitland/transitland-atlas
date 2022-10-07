@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-area~transit~authority~north~central~pa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rideata.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-area~transit~authority~north~central~pa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rideata.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://rideata.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://rideata.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-area~transit~authority~north~central~pa",
+      "name": "Area Transit Authority",
+      "short_name": "ATA",
+      "website": "http://rideata.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-area~transit~authority~north~central~pa"
+        },
+        {
+          "feed_onestop_id": "f-area~transit~authority~north~central~pa~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
