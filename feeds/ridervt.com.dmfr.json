@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-river~valley~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://my.ridervt.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-river~valley~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://my.ridervt.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://my.ridervt.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://my.ridervt.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-river~valley~transit~authority",
+      "name": "River Valley Transit",
+      "short_name": "RVTA",
+      "website": "https://www.ridervt.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-river~valley~transit~authority"
+        },
+        {
+          "feed_onestop_id": "f-river~valley~transit~authority~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
