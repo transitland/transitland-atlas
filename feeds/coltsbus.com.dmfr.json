@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-county~of~lackawanna~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://coltsivl.availtec.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-county~of~lackawanna~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://coltsivl.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://coltsivl.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://coltsivl.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-county~of~lackawanna~transit",
+      "name": "County of Lackawanna Transit System",
+      "short_name": "COLTS",
+      "website": "https://coltsbus.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-county~of~lackawanna~transit"
+        },
+        {
+          "feed_onestop_id": "f-county~of~lackawanna~transit~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
