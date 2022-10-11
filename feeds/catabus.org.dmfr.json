@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-crawford~area~transportation~authority~pa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://catabus.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-crawford~area~transportation~authority~pa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://catabus.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://catabus.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://catabus.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-crawford~area~transportation~authority~pa",
+      "name": "Crawford Area Transportation Authority",
+      "short_name": "CATA",
+      "website": "https://catabus.org",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-crawford~area~transportation~authority~pa"
+        },
+        {
+          "feed_onestop_id": "f-crawford~area~transportation~authority~pa~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
