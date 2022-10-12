@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-indiana~county~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://indigobus.availtec.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-indiana~county~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://indigobus.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://indigobus.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://indigobus.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-indiana~county~transit~authority",
+      "name": "Indiana County Transit Authority",
+      "short_name": "INDIGO",
+      "website": "https://www.indigobus.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-indiana~county~transit~authority"
+        },
+        {
+          "feed_onestop_id": "f-indiana~county~transit~authority~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
