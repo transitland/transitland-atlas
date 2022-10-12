@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-hazleton~public~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://realtimehpts.availtec.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-hazleton~public~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtimehpts.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://realtimehpts.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://realtimehpts.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-hazleton~public~transit",
+      "name": "Hazleton Public Transit",
+      "short_name": "HPT",
+      "website": "https://www.ridehpt.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-hazleton~public~transit"
+        },
+        {
+          "feed_onestop_id": "f-hazleton~public~transit~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
