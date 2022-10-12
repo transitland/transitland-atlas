@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-butler~transit~authority~pa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://butlerivl.availtec.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-butler~transit~authority~pa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://butlerivl.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://butlerivl.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://butlerivl.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-butler~transit~authority~pa",
+      "name": "Butler Transit Authority",
+      "short_name": "BTA",
+      "website": "https://www.butlertransitauthority.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-butler~transit~authority~pa"
+        },
+        {
+          "feed_onestop_id": "f-butler~transit~authority~pa~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
