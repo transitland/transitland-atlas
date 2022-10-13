@@ -1,0 +1,45 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-montebello~bus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mbl.rideralerts.com/infopoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/montebello-ca-us/montebello-ca-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh1-montebellobuslines",
+          "name": "Montebello Bus Lines",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-montebello~bus~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "MontebelloBus",
+            "us_ntd_id": "90041",
+            "wikidata_id": "Q6905005"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-montebello~bus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mbl.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://mbl.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://mbl.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
