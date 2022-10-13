@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-altoona~metro~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://amtran.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-altoona~metro~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://amtran.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://amtran.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://amtran.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-altoona~metro~transit",
+      "name": "Altoona Metro Transit",
+      "short_name": "AMTRAN",
+      "website": "https://www.amtran.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-altoona~metro~transit"
+        },
+        {
+          "feed_onestop_id": "f-altoona~metro~transit~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

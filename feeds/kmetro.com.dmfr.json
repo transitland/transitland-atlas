@@ -14,6 +14,11 @@
         {
           "onestop_id": "o-dpe0-kalamazoometrotransit",
           "name": "Kalamazoo Metro Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpe0-kalamazoometrotransit~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "Metrokzoo",
             "us_ntd_id": "50035",
@@ -21,6 +26,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dpe0-kalamazoometrotransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://trackmybus.kmetro.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://trackmybus.kmetro.org/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://trackmybus.kmetro.org/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

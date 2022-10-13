@@ -7336,6 +7336,11 @@
         {
           "onestop_id": "o-9qh1-montebellobuslines",
           "name": "Montebello Bus Lines",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-montebello~bus~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "MontebelloBus",
             "us_ntd_id": "90041",
@@ -7343,6 +7348,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-montebello~bus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mbl.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://mbl.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://mbl.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     },
     {
       "id": "f-moorpark~city~transit",

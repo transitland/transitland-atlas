@@ -17,6 +17,11 @@
           "onestop_id": "o-drk-pvta",
           "name": "Pioneer Valley Transit Authority",
           "short_name": "PVTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-drk-pvta~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "pvta",
             "us_ntd_id": "10008",
@@ -24,6 +29,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-drk-pvta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bustracker.pvta.com/infopoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://bustracker.pvta.com/infopoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://bustracker.pvta.com/infopoint/GTFS-Realtime.ashx?Type=Alert"
+      },
+      "license": {
+        "url": "https://pvta.com/usageAgreement.php"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

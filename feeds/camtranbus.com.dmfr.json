@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-cambria~county~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://live.camtranbus.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-cambria~county~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://live.camtranbus.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://live.camtranbus.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://live.camtranbus.com/InfoPoint/GTFS-Realtime.ashx?&Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-cambria~county~transit~authority",
+      "name": "Cambria County Transit Authority",
+      "short_name": "CamTran",
+      "website": "https://www.camtranbus.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-cambria~county~transit~authority"
+        },
+        {
+          "feed_onestop_id": "f~cambria~county~transit~authority~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
