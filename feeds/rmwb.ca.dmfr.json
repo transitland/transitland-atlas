@@ -1,0 +1,36 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-regional~municipality~of~wood~buffalo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rmwb.gtfsrt.civilia.ca/gtfs"
+      }
+    },
+    {
+      "id": "f-regional~municipality~of~wood~buffalo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rmwb.gtfsrt.civilia.ca/pb/vehiclePositions.pb",
+        "realtime_trip_updates": "https://rmwb.gtfsrt.civilia.ca/pb/tripUpdates.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-regional~municipality~of~wood~buffalo",
+      "name": "Regional Municipality of Wood Buffalo Transit",
+      "website": "https://www.rmwb.ca/en/transit/transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-regional~municipality~of~wood~buffalo"
+        },
+        {
+          "feed_onestop_id": "f-regional~municipality~of~wood~buffalo~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
