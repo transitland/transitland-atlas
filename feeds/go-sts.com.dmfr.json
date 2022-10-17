@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-schuylkill~transportation~system",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://sts.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-schuylkill~transportation~system~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://sts.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://sts.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://sts.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-schuylkill~transportation~system",
+      "name": "Schuylkill Transportation System",
+      "short_name": "STS",
+      "website": "https://go-sts.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-schuylkill~transportation~system"
+        },
+        {
+          "feed_onestop_id": "f-schuylkill~transportation~system~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
