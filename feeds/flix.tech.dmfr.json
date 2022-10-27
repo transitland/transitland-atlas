@@ -1,0 +1,67 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-9-flixbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs.gis.flix.tech/gtfs_generic_us.zip"
+      }
+    },
+    {
+      "id": "f-u-flixbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs.gis.flix.tech/gtfs_generic_eu.zip",
+        "static_historic": [
+          "https://transport.beta.gouv.fr/resources/11681/download",
+          "http://data.ndovloket.nl/flixbus/flixbus-eu.zip"
+        ]
+      },
+      "tags": {
+        "mdb_source_id": "853"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-greyhound~flix",
+      "name": "Greyhound",
+      "website": "https://www.greyhound.com",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "GREYHOUND-us",
+          "feed_onestop_id": "f-9-flixbus"
+        },
+        {
+          "gtfs_agency_id": "GREYHOUND-eu",
+          "feed_onestop_id": "f-q-flixbus"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-u-flixbus",
+      "name": "Flixbus",
+      "website": "https://www.flixbus.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "FLIXBUS-us",
+          "feed_onestop_id": "f-9-flixbus"
+        },
+        {
+          "gtfs_agency_id": "FLIXTRAIN-us",
+          "feed_onestop_id": "f-9-flixbus"
+        },
+        {
+          "gtfs_agency_id": "FLIXBUS-eu",
+          "feed_onestop_id": "f-q-flixbus"
+        },
+        {
+          "gtfs_agency_id": "FLIXTRAIN-eu",
+          "feed_onestop_id": "f-q-flixbus"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
