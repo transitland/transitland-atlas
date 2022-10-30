@@ -1,25 +1,27 @@
 {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
-    "feeds": [
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-9q9-taps",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://pinpointavl.com/TAPS-GTFS.zip"
+      },
+      "languages": [
+        "en-US"
+      ],
+      "operators": [
         {
-            "id": "f-9q9-taps",
-            "spec": "gtfs",
-            "urls": {
-                "static_current": "https://pinpointavl.com/TAPS-GTFS.zip"
-            },
-            "operators": [
-                {
-                    "name": "UC Santa Cruz Transportation & Parking Services",
-                    "short_name": "TAPS",
-                    "onestop_id": "f-9q9-taps",
-                    "website": "https://taps.ucsc.edu/",
-                    "tags": {
-                        "twitter_general": "ucsc_taps"
-                    }
-                }
-            ],
-            "languages": ["en-US"]
+          "onestop_id": "f-9q9-taps",
+          "name": "UC Santa Cruz Transportation & Parking Services",
+          "short_name": "TAPS",
+          "website": "https://taps.ucsc.edu/",
+          "tags": {
+            "twitter_general": "ucsc_taps"
+          }
         }
-    ],
-    "license_spdx_identifier": "CDLA-Permissive-1.0"
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
