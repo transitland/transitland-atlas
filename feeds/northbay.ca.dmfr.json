@@ -15,9 +15,27 @@
         {
           "onestop_id": "o-north~bay~transit",
           "name": "North Bay Transit",
-          "website": "https://www.northbay.ca/services-payments/north-bay-transit/"
+          "website": "https://www.northbay.ca/services-payments/north-bay-transit/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-north~bay~transit"
+            },
+            {
+              "feed_onestop_id": "f-north~bay~transit~rt"
+            }
+          ]
+          
         }
       ]
+    },
+    {
+      "id": "f-north~bay~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://northbay.tmix.se/gtfs-realtime/alerts.pb",
+        "realtime_trip_updates": "https://northbay.tmix.se/gtfs-realtime/tripupdates.pb",
+        "realtime_vehicle_positions": "https://northbay.tmix.se/gtfs-realtime/vehicleupdates.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
