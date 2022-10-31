@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-keolis~orleans~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://chouette.enroute.mobi/api/v1/datas/keolis_orleans.gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-keolis~orleans~gr",
+          "name": "Transports de l'agglomération orléanaise",
+          "short_name": "TAO Orléans",
+          "website": "https://www.tao-mobilites.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-keolis~orleans~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-keolis~orleans~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://ara-api.enroute.mobi/tao/gtfs/trip-updates"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
