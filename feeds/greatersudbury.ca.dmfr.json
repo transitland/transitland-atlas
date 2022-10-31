@@ -5,7 +5,10 @@
       "id": "f-f0q2-greatersudburytransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.greatersudbury.ca/image/opendata/gtfs.zip"
+        "static_current": "https://sudbury.tmix.se/gtfs/gtfs.zip",
+        "static_historic": [
+          "http://www.greatersudbury.ca/image/opendata/gtfs.zip"
+        ]
       },
       "license": {
         "url": "http://www.greatersudbury.ca/inside-city-hall/open-data/licence/"
@@ -14,9 +17,26 @@
         {
           "onestop_id": "o-f0q2-greatersudburytransit",
           "name": "Greater Sudbury Transit",
-          "website": "http://www.greatersudbury.ca/living/transit/"
+          "website": "http://www.greatersudbury.ca/living/transit/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-f0q2-greatersudburytransit"
+            },
+            {
+              "feed_onestop_id": "f-f0q2-greatersudburytransit~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-f0q2-greatersudburytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://sudbury.tmix.se/gtfs-realtime/vehiclepositions.pb",
+        "realtime_trip_updates": "https://sudbury.tmix.se/gtfs-realtime/tripupdates.pb",
+        "realtime_alerts": "https://sudbury.tmix.se/gtfs-realtime/alerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
