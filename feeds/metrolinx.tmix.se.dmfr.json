@@ -6,6 +6,30 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-cornwall.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cornwall~on~ca",
+          "name": "Cornwall Transit",
+          "website": "https://www.cornwall.ca/en/live-here/cornwall-transit.aspx",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cornwall~on~ca"
+            },
+            {
+              "feed_onestop_id": "f-cornwall~on~ca~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-cornwall~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-cornwall/alerts.pb",
+        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-cornwall/vehiclepositions.pb",
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-cornwall/tripupdates.pb"
       }
     },
     {
@@ -13,6 +37,30 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-milton.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-milton~on~ca",
+          "name": "Milton Transit",
+          "website": "https://www.milton.ca/en/living-in-milton/transit.aspx",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-milton~on~ca"
+            },
+            {
+              "feed_onestop_id": "f-milton~on~ca~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-milton~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-milton/alerts.pb",
+        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-milton/vehiclepositions.pb",
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-milton/tripupdates.pb"
       }
     }
   ],
