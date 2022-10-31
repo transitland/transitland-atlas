@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-north~bay~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://northbay.tmix.se/gtfs/gtfs.zip",
+        "static_historic": [
+          "https://secure.cityofnorthbay.ca/Share/_StatisticsCanada_40F07578-A1E3-42A9-9A67-8D65777F3D57/google_transit_Sept2021_COVID-19.zip",
+          "https://secure.cityofnorthbay.ca/Share/_StatisticsCanada_40F07578-A1E3-42A9-9A67-8D65777F3D57/google_transit_March2020.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-north~bay~transit",
+          "name": "North Bay Transit",
+          "website": "https://www.northbay.ca/services-payments/north-bay-transit/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-north~bay~transit"
+            },
+            {
+              "feed_onestop_id": "f-north~bay~transit~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-north~bay~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://northbay.tmix.se/gtfs-realtime/vehicleupdates.pb",
+        "realtime_trip_updates": "https://northbay.tmix.se/gtfs-realtime/tripupdates.pb",
+        "realtime_alerts": "https://northbay.tmix.se/gtfs-realtime/alerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
