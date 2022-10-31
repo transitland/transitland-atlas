@@ -1,0 +1,46 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-western~reserve~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://myvalleystops.wrtaonline.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/western-reserve-transit-authority.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpq9-westernreservetransitauthority",
+          "name": "Western Reserve Transit Authority",
+          "short_name": "WRTA",
+          "website": "https://www.wrtaonline.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-western~reserve~transit~authority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "WRTAbus",
+            "us_ntd_id": "50024",
+            "wikidata_id": "Q7988244"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-western~reserve~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://myvalleystops.wrtaonline.com/infopoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://myvalleystops.wrtaonline.com/infopoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://myvalleystops.wrtaonline.com/infopoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

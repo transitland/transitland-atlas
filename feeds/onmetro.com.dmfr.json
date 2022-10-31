@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-omaha~metro",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://drive.google.com/uc?export=download&id=1CtljMG4EgKsOF9yiSKpPDrMuZyGa1ykY",
+        "static_historic": [
+          "https://s3.amazonaws.com/omaha-metro/TrapezeExport/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9z7d-root",
+          "name": "Transit Authority of the City of Omaha",
+          "short_name": "Omaha Metro",
+          "tags": {
+            "twitter_general": "rideORBT",
+            "us_ntd_id": "70002",
+            "wikidata_id": "Q6824485"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

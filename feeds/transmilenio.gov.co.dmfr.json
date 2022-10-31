@@ -1,0 +1,94 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-d2g6-transmilenio~troncal~transmilenio~alimentadores~transmile",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://storage.googleapis.com/gtfs-estaticos/GTFS-2022-10-13.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/sdm-bogota-co.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.arcgis.com/home/item.html?id=5cbd3053f4f546c6aafd3fd1c375e309"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-d2g6-transmilenio~alimentadores",
+          "name": "Transmilenio - Alimentadores (feeders)",
+          "website": "http://www.sitp.gov.co",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "4"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-d2g6-transmilenio~cable",
+          "name": "Transmilenio - Cable",
+          "website": "https://www.transmilenio.gov.co/TransMiCable/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-d2g6-transmilenio~complementaria",
+          "name": "Transmilenio - Complementaria",
+          "website": "http://www.sitp.gov.co",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-d2g6-transmilenio~dual",
+          "name": "Transmilenio - Dual (doors on both sides)",
+          "website": "http://www.sitp.gov.co",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-d2g6-transmilenio~especial",
+          "name": "Transmilenio - Especial",
+          "website": "http://www.sitp.gov.co",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "6"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-d2g6-transmilenio~troncal",
+          "name": "Transmilenio - Troncal (trunk)",
+          "website": "http://www.sitp.gov.co",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-d2g6-transmilenio~urbana",
+          "name": "Transmilenio - Urbana (city)",
+          "website": "http://www.sitp.gov.co",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

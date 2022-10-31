@@ -91,6 +91,33 @@
       "license": {
         "url": "https://rideart.org/gtfs/"
       }
+    },
+    {
+      "id": "f-ucla~bruinbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://uclabruinbus.tripshot.com/v1/gtfs.zip?regionId=CA558DDC-D7F2-4B48-9CAC-DEEA1134F820"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ucla~bruinbus",
+          "name": "UCLA BruinBus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-ucla~bruinbus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-ucla~bruinbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://uclabruinbus.tripshot.com/v1/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+        "realtime_trip_updates": "https://uclabruinbus.tripshot.com/v1/gtfs/realtime/tripUpdate/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+        "realtime_alerts": "https://uclabruinbus.tripshot.com/v1/gtfs/realtime/serviceAlert/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
