@@ -5,7 +5,10 @@
       "id": "f-9qj-sunlinetransitagency",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.sunline.org/transit/google_transit.zip"
+        "static_current": "http://infopoint.sunline.org/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "http://www.sunline.org/transit/google_transit.zip"
+        ]
       },
       "tags": {
         "gtfs_data_exchange": "sunline-transit-agency"
@@ -15,6 +18,11 @@
           "onestop_id": "o-9qj-sunlinetransitagency",
           "name": "SunLine Transit Agency",
           "short_name": "SunLine",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9qj-sunlinetransitagency~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "sunlinetransit",
             "us_ntd_id": "90079",
@@ -22,6 +30,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9qj-sunlinetransitagency~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://infopoint.sunline.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://infopoint.sunline.org/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://infopoint.sunline.org/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
