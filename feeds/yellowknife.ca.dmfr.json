@@ -1,0 +1,25 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-yellowknife~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cityexplorer.yellowknife.ca/gtfs/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.yellowknife.ca/en/doing-business/doing-business-open-data.aspx",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-yellowknife~transit",
+          "name": "Yellowknife Transit",
+          "website": "https://www.yellowknife.ca/en/living-here/transit.aspx"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
