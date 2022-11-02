@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-la~rochelle~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.pigma.org/public/opendata/nouvelle_aquitaine_mobilites/publication/ca_la_rochelle-aggregated-gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-lro-nva-m"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-la~rochelle~fr",
+          "name": "La Rochelle",
+          "short_name": "Yélo",
+          "website": "https://yelo.agglo-larochelle.fr/"
+        }
+      ]
+    },
+    {
+      "id": "f-stcl~limoges~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.pigma.org/public/opendata/nouvelle_aquitaine_mobilites/publication/ca_limoges_metropole-aggregated-gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-lim-nva-m"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-stcl~limoges~fr",
+          "name": "Société de Transports en Commun de Limoges Métropole",
+          "short_name": "Limoges Réseau TCL",
+          "website": "https://www.stcl.fr/"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
