@@ -69,6 +69,14 @@
       }
     },
     {
+      "id": "f-orangeville~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-orangeville/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-orangeville/alerts.pb"
+      }
+    },
+    {
       "id": "f-orangeville~transit~ca",
       "spec": "gtfs",
       "urls": {
@@ -76,14 +84,6 @@
         "static_historic": [
           "https://www.arcgis.com/sharing/rest/content/items/2ea26a0198014e338284445e2e17f15c/data"
         ]
-      }
-    },
-    {
-      "id": "f-orangeville~on~ca~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-orangeville/tripupdates.pb",
-        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-orangeville/alerts.pb"
       }
     },
     {
@@ -285,10 +285,10 @@
           "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
         },
         {
-          "feed_onestop_id": "f-orangeville~transit~ca"
+          "feed_onestop_id": "f-orangeville~on~ca~rt"
         },
         {
-          "feed_onestop_id": "f-orangeville~on~ca~rt"
+          "feed_onestop_id": "f-orangeville~transit~ca"
         }
       ]
     },
