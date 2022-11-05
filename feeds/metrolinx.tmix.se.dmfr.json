@@ -2,34 +2,55 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
+      "id": "f-metrolinx~gtfs~rt~vehicles",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-belleville/vehiclepositions.pb"
+      }
+    },
+    {
+      "id": "f-belleville~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://metrolinx.tmix.se/gtfs/gtfs-belleville.zip"
+      }
+    },
+    {
+      "id": "f-belleville~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-belleville/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-belleville/alerts.pb"
+      }
+    },
+    {
       "id": "f-cornwall~on~ca",
       "spec": "gtfs",
       "urls": {
         "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-cornwall.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-cornwall~on~ca",
-          "name": "Cornwall Transit",
-          "website": "https://www.cornwall.ca/en/live-here/cornwall-transit.aspx",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-cornwall~on~ca"
-            },
-            {
-              "feed_onestop_id": "f-cornwall~on~ca~rt"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "f-cornwall~on~ca~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-cornwall/vehiclepositions.pb",
         "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-cornwall/tripupdates.pb",
         "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-cornwall/alerts.pb"
+      }
+    },
+    {
+      "id": "f-kawartha~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-kawartha.zip"
+      }
+    },
+    {
+      "id": "f-kawartha~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-kawartha/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-kawartha/alerts.pb"
       }
     },
     {
@@ -37,32 +58,370 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-milton.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-milton~on~ca",
-          "name": "Milton Transit",
-          "website": "https://www.milton.ca/en/living-in-milton/transit.aspx",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-milton~on~ca"
-            },
-            {
-              "feed_onestop_id": "f-milton~on~ca~rt"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "f-milton~on~ca~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-milton/vehiclepositions.pb",
         "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-milton/tripupdates.pb",
         "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-milton/alerts.pb"
       }
+    },
+    {
+      "id": "f-orangeville~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-orangeville.zip",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/2ea26a0198014e338284445e2e17f15c/data"
+        ]
+      }
+    },
+    {
+      "id": "f-orangeville~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-orangeville/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-orangeville/alerts.pb"
+      }
+    },
+    {
+      "id": "f-orillia~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-orillia.zip",
+        "static_historic": [
+          "https://www.orillia.ca/en/city-hall/resources/Engineering/google_transit.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-orillia~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-orillia/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-orillia/alerts.pb"
+      }
+    },
+    {
+      "id": "f-stthomas~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-stthomas.zip"
+      }
+    },
+    {
+      "id": "f-stthomas~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-stthomas/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-stthomas/alerts.pb"
+      }
+    },
+    {
+      "id": "f-sarnia~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-sarnia.zip"
+      }
+    },
+    {
+      "id": "f-sarnia~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-sarnia/tripupdates.pb",
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-sarnia/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-sarnia/alerts.pb"
+      }
+    },
+    {
+      "id": "f-saultstemarie~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-saultstemarie.zip"
+      }
+    },
+    {
+      "id": "f-saultstemarie~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-saultstemarie/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-saultstemarie/alerts.pb"
+      }
+    },
+    {
+      "id": "f-simcoe~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-simcoe.zip"
+      }
+    },
+    {
+      "id": "f-simcoe~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-simcoe/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-simcoe/alerts.pb"
+      }
+    },
+    {
+      "id": "f-stratford~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-stratford.zip"
+      }
+    },
+    {
+      "id": "f-stratford~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-stratford/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-stratford/alerts.pb"
+      }
+    },
+    {
+      "id": "f-temiskaming~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-temiskaming.zip"
+      }
+    },
+    {
+      "id": "f-temiskaming~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-temiskaming/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-temiskaming/alerts.pb"
+      }
+    },
+    {
+      "id": "f-timmins~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://metrolinx.tmix.se/gtfs/gtfs-timmins.zip"
+      }
+    },
+    {
+      "id": "f-timmins~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-timmins/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-timmins/alerts.pb"
+      }
     }
   ],
+  "operators": [
+    {
+      "onestop_id": "o-belleville~on~ca",
+      "name": "Belleville Transit",
+      "website": "https://www.belleville.ca/en/walk-ride-and-drive/transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-belleville~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-belleville~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-cornwall~on~ca",
+      "name": "Cornwall Transit",
+      "website": "https://www.cornwall.ca/en/live-here/cornwall-transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-cornwall~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-cornwall~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kawartha~on~ca",
+      "name": "Lindsay Transit",
+      "website": "https://www.kawarthalakes.ca/en/living-here/lindsay-transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kawartha~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-kawartha~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-milton~on~ca",
+      "name": "Milton Transit",
+      "website": "https://www.milton.ca/en/living-in-milton/transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-milton~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-milton~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-orangeville~on~ca",
+      "name": "Orangeville Transit",
+      "website": "https://www.orangeville.ca/en/living-here/transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-orangeville~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-orangeville~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-orillia~on~ca",
+      "name": "Orillia Transit",
+      "website": "https://www.orillia.ca/en/transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-orillia~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-orillia~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-stthomas~on~ca",
+      "name": "Railway City Transit",
+      "website": "https://www.stthomas.ca/living_here/transit_system",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-stthomas~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-stthomas~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-sarnia~on~ca",
+      "name": "Sarnia Transit",
+      "website": "https://www.sarnia.ca/living-here/getting-around/sarnia-transit/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-sarnia~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-sarnia~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-saultstemarie~on~ca",
+      "name": "Sault Ste. Marie Transit",
+      "website": "https://saultstemarie.ca/Government/City-Departments/Community-Development-Enterprise-Services/Community-Services/Transit/Bus-Routes-and-Schedules.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-saultstemarie~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-saultstemarie~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-simcoe~on~ca",
+      "name": "Simcoe County LINX",
+      "short_name": "LINX",
+      "website": "https://www.simcoe.ca/dpt/linx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-simcoe~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-simcoe~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-stratford~on~ca",
+      "name": "Stratford Transit",
+      "website": "https://www.stratford.ca/en/live-here/transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-stratford~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-stratford~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-temiskaming~on~ca",
+      "name": "Temiskaming Transit",
+      "website": "https://www.temiskamingshores.ca/en/resident/transit.aspx",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-temiskaming~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-temiskaming~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-timmins~on~ca",
+      "name": "Timmins Transit",
+      "website": "https://www.timmins.ca/our_services/timmins_transit",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-timmins~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-timmins~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    }
+  ],
+  
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
