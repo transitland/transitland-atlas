@@ -1,0 +1,53 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-f2hf-sociétédetransportdesherbrooke",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.sts.qc.ca:8443/gtfs/client/GTFS_clients.zip",
+        "static_historic": [
+          "https://www.donneesquebec.ca/recherche/dataset/e82b9141-09d8-4f85-af37-d84937bc2503/resource/b7f43b2a-2557-4e3b-ba12-5a5c6d4de5b1/download/gtfssherbrooke.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f2hf-serviceopérépartaxisdesherbrooke",
+          "name": "Service opéré par Taxis de Sherbrooke",
+          "website": "https://www.sts.qc.ca/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-f2hf-sociétédetransportdesherbrooke~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-f2hf-sociétédetransportdesherbrooke",
+          "name": "Société de Transport de Sherbrooke",
+          "website": "https://www.sts.qc.ca/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-f2hf-sociétédetransportdesherbrooke~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f2hf-sociétédetransportdesherbrooke~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs.sts.qc.ca:8443/gtfsrt/vehiclePositions.pb",
+        "realtime_trip_updates": "https://gtfs.sts.qc.ca:8443/gtfsrt/tripUpdates.pb",
+        "realtime_alerts": "https://gtfs.sts.qc.ca:8443/gtfsrt/Alerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
