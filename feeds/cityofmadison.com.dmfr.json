@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-madison~wi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://transitdata.cityofmadison.com/GTFS/mmt_gtfs.zip"
+      }
+    },
+    {
+      "id": "f-madison~wi~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://transitdata.cityofmadison.com/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "http://transitdata.cityofmadison.com/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "http://transitdata.cityofmadison.com/Alert/Alerts.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-madison~wi~us",
+      "name": "Metro Transit",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-madison~wi~us"
+        },
+        {
+          "feed_onestop_id": "f-madison~wi~us~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "mymetrobus",
+        "us_ntd_id": "50005",
+        "wikidata_id": "Q6728045"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
