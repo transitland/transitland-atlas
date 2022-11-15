@@ -2,38 +2,42 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
   "feeds": [
     {
-      "id": "f-madison~wi~us",
+      "id": "f-dp8m-metrotransit~cityofmadison",
       "spec": "gtfs",
       "urls": {
         "static_current": "http://transitdata.cityofmadison.com/GTFS/mmt_gtfs.zip"
       },
       "license": {
-        "url": "http://transitdata.cityofmadison.com/MetroTransitDataTermsOfUse.pdf"
+        "url": "http://www.cityofmadison.com/metro/Apps/terms.cfm",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "metro-transit"
       }
     },
     {
-      "id": "f-madison~wi~us~rt",
+      "id": "f-madison~rt",
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "http://transitdata.cityofmadison.com/Vehicle/VehiclePositions.pb",
         "realtime_trip_updates": "http://transitdata.cityofmadison.com/TripUpdate/TripUpdates.pb",
         "realtime_alerts": "http://transitdata.cityofmadison.com/Alert/Alerts.pb"
-      },
-      "license": {
-        "url": "http://transitdata.cityofmadison.com/MetroTransitDataTermsOfUse.pdf"
       }
     }
   ],
   "operators": [
     {
-      "onestop_id": "o-madison~wi~us",
+      "onestop_id": "o-dp8m-metrotransit~cityofmadison",
       "name": "City of Madison Metro Transit",
+      "website": "http://www.mymetrobus.com",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-madison~wi~us"
+          "gtfs_agency_id": "MMT",
+          "feed_onestop_id": "f-dp8m-metrotransit~cityofmadison"
         },
         {
-          "feed_onestop_id": "f-madison~wi~us~rt"
+          "feed_onestop_id": "f-madison~rt"
         }
       ],
       "tags": {
