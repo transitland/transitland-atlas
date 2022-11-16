@@ -743,7 +743,10 @@
       "id": "f-newburgh~bus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oc-otp-gtfs.s3.amazonaws.com/newburgh.zip"
+        "static_current": "https://oc-otp-gtfs.s3.amazonaws.com/GTFSPublic.zip",
+        "static_historic": [
+          "https://oc-otp-gtfs.s3.amazonaws.com/newburgh.zip"
+        ]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -755,15 +758,24 @@
       "operators": [
         {
           "onestop_id": "o-dr7k-transitorange~newburghlocaltransit",
-          "name": "Transit Orange / Newburgh Local Transit",
+          "name": "TransitOrange Newburgh",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "NewburghAreaTransit-Orange-NY-US"
+              "gtfs_agency_id": "OCNYNB"
             }
           ],
           "tags": {
             "us_ntd_id": "20216"
           }
+        },
+        {
+          "onestop_id": "o-transitorange~middletown",
+          "name": "TransitOrange Middletown",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OCNYMID"
+            }
+          ]
         }
       ]
     },
