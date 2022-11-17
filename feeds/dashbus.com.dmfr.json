@@ -5,7 +5,7 @@
       "id": "f-dqchv-alexandriatransitcompanydash",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dashbus.com/google_transit.zip"
+        "static_current": "https://dashbus.com/google_transit.zip"
       },
       "operators": [
         {
@@ -13,6 +13,11 @@
           "name": "Alexandria Transit Company",
           "short_name": "DASH",
           "website": "http://www.dashbus.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dqchv-alexandriatransitcompanydash~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "dashbus",
             "us_ntd_id": "30071",
@@ -20,6 +25,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dqchv-alexandriatransitcompanydash~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtime.prod.dash.obaweb.org/agency/71/tripUpdates",
+        "realtime_trip_updates": "https://realtime.prod.dash.obaweb.org/agency/71/tripUpdates",
+        "realtime_alerts": "https://realtime.prod.dash.obaweb.org/agency/71/tripUpdates"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
