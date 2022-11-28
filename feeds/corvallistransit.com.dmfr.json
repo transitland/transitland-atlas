@@ -1,0 +1,82 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-9rbm-corvallis~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.corvallistransit.com/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/corvallis-or-us/corvallis-or-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "corvallis-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rbm-corvallistransitsystem",
+          "name": "Corvallis Transit System",
+          "short_name": "CTS",
+          "website": "https://www.corvallisoregon.gov/cts",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "445"
+            },
+            {
+              "feed_onestop_id": "f-corvallis~or~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cityofcorvallis",
+            "us_ntd_id": "47"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-corvallis~or~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
+      "id": "f-philomath~corvallis~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.corvallistransit.com/rtt/public/resource/gtfs_PC.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-philomath~corvallis~or~us",
+          "name": "Philomath Connection",
+          "short_name": "PC",
+          "website": "https://www.corvallisoregon.gov/cts/page/cts-route-philomath-connection",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-philomath~corvallis~or~us~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-philomath~corvallis~or~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition?ProjectID=PC",
+        "realtime_trip_updates": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/tripupdate?ProjectID=PC",
+        "realtime_alerts": "http://www.corvallistransit.com/rtt/public/utility/gtfsrealtime.aspx/alert?ProjectID=PC"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
