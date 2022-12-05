@@ -218,7 +218,7 @@ FEED_TAGS = [
     {"onestop_id":"f-9q7-kerncounty~ca~us","tags":{"feed_id": "kerncounty-ca-us", "managed_by": "trillium", "gtfs_data_exchange": "kern-regional-transit"}},
     {"onestop_id":"f-9muq-lagunabeach~ca~us","tags":{"feed_id": "lagunabeach-ca-us", "demo_feed": "true", "managed_by": "trillium", "gtfs_data_exchange": "laguna-beach-transit"}},
     {"onestop_id":"f-9qb-laketransit~ca~us","tags":{"feed_id": "laketransit-ca-us", "managed_by": "trillium", "gtfs_data_exchange": "lake-transit"}},
-    {"onestop_id":"f-c26-linktransit~wa~us","tags":{"feed_id": "linktransit-wa-us", "managed_by": "trillium", "gtfs_data_exchange": "link-transit"}},
+    {"onestop_id":"f-c26-linktransit~wa~us","tags":{"feed_id": "linktransit-wa-us", "gtfs_data_exchange": "link-transit"}},
     {"onestop_id":"f-9qb-mendocino~ca~us","tags":{"feed_id": "mendocino-ca-us", "managed_by": "trillium", "gtfs_data_exchange": "mendocino-transit-authority"}},
     {"onestop_id":"f-9qd-mercedthebus~ca~us","tags":{"feed_id": "mercedthebus-ca-us", "managed_by": "trillium", "gtfs_data_exchange": "the-bus"}},
     {"onestop_id":"f-drt7-merrimackvalley~ma~us","tags":{"feed_id": "merrimackvalley-ma-us", "managed_by": "trillium", "gtfs_data_exchange": "merrimack-valley-regional-transit-authority"}},

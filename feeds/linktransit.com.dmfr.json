@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-c26-linktransit~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://link.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "feed_id": "linktransit-wa-us",
+        "gtfs_data_exchange": "link-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c26-linktransit",
+          "name": "Link Transit",
+          "website": "https://www.linktransit.com/",
+          "tags": {
+            "twitter_general": "LinkTransit",
+            "us_ntd_id": "00043",
+            "wikidata_id": "Q25000891"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
