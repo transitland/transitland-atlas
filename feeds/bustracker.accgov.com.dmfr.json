@@ -1,0 +1,37 @@
+{
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+    "feeds": [
+      {
+        "id": "f-athens~clarke~county~ga",
+        "spec": "gtfs",
+        "urls": {
+          "static_current": "https://bustracker.accgov.com/InfoPoint/GTFS-Zip.ashx"
+        },
+        "operators": [
+          {
+            "onestop_id": "o-dnh9-athensclarkecountytransit",
+            "name": "Athens Clarke County Transit",
+            "website": "https://www.accgov.com/199/Transit",
+            "associated_feeds": [
+              {
+                "gtfs_agency_id": "0"
+              },
+              {
+                "feed_onestop_id": "f-athens~clarke~county~ga~rt"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "f-athens~clarke~county~ga~rt",
+        "spec": "gtfs",
+        "urls": {
+          "realtime_vehicle_positions": "https://bustracker.accgov.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+          "realtime_trip_updates": "https://bustracker.accgov.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+          "realtime_alerts": "https://bustracker.accgov.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+        }
+      }
+    ],
+    "license_spdx_identifier": "CDLA-Permissive-1.0"
+  }
