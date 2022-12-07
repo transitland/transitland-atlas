@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-danville~il~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.ridedmt.org/home/showpublisheddocument/1979/637745570215009224",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/danville-il-us.zip"
+        ]
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dp1s-danvillemasstransit",
+      "name": "Danville Mass Transit ",
+      "short_name": "DMT",
+      "website": "Danville Mass Transit ",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-danville~il~us"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
