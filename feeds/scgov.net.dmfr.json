@@ -5,8 +5,9 @@
       "id": "f-dhv-sarasotacountyareatransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=457A0",
+        "static_current": "https://scatmyride.tripsparkhost.com/gtfs/2022WinterV2/google_transit.zip",
         "static_historic": [
+          "https://ftis.org/PostFileDownload.aspx?id=457A0",
           "ftp://ftp.scgov.net/pub/scat/SCATGTFS.zip",
           "https://www.scgov.net/SCAT/Google/sarasotacounty-fl-us2016Nov.zip"
         ]
@@ -20,6 +21,14 @@
           "onestop_id": "o-dhv-sarasotacountyareatransit",
           "name": "Sarasota County Area Transit",
           "short_name": "SCAT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dhv-sarasotacountyareatransit"
+            },
+            {
+              "feed_onestop_id": "f-dhv-sarasotacountyareatransit~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "SRQCountyGov",
             "us_ntd_id": "40046",
@@ -27,6 +36,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dhv-sarasotacountyareatransit~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://scatmyride.tripsparkhost.com/gtfs/Realtime/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://scatmyride.tripsparkhost.com/gtfs/Realtime/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://scatmyride.tripsparkhost.com/gtfs/Realtime/GTFS_ServiceAlerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
