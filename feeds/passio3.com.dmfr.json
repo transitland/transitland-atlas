@@ -193,6 +193,14 @@
           "onestop_id": "o-kootenai~citylink",
           "name": "Citylink",
           "website": "https://www.kcgov.us/486/Transit-Services",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-kootenai~citylink"
+            },
+            {
+              "feed_onestop_id": "f-kootenai~citylink~rural"
+            }
+          ],
           "tags": {
             "us_ntd_id": "00055",
             "wikidata_id": "Q22058969"
@@ -200,6 +208,13 @@
         }
       ]
     },
+    {
+      "id": "f-kootenai~citylink~rural",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/citylinkrural/passioTransit/gtfs/google_transit.zip"
+      }
+    }
     {
       "id": "f-los~angeles~world~airport",
       "spec": "gtfs",
