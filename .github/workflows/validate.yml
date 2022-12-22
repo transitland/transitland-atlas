@@ -22,7 +22,7 @@ jobs:
         sudo mv transitland /usr/local/bin
     - name: Validate against DMFR schema
       run: |
-        wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json -O dmfr.schema.json
+        wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json -O dmfr.schema.json
         npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
     - name: Lint against the opinionated DMFR format
       run: |
