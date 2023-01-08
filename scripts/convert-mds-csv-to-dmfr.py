@@ -19,7 +19,7 @@ for row in list(cr):
         feed["urls"]["gbfs_auto_discovery"] = row["gbfs_api_url"]
     feeds.append(feed)
 dmfr = {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
     "feeds": feeds,
     "license_spdx_identifier": "CDLA-Permissive-1.0",
 }
