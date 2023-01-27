@@ -2,6 +2,44 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-zenbus~bigorre~mongie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=bigorre-mongie"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~bigorre~mongie",
+          "name": "Skibus",
+          "website": "https://www.haute-bigorre.fr/vivre-sur-le-territoire/mobilite/se-deplacer-sans-voiture/se-deplacer-vers-la-mongie/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~bigorre~mongie"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~bigorre~mongie~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~bigorre~mongie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=bigorre-mongie",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=bigorre-mongie"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~bordeaux~navettes~aeroport",
       "spec": "gtfs",
       "urls": {
@@ -33,6 +71,44 @@
       "urls": {
         "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport",
         "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~mont~tremblant",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tcmt6w8qbuxm"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mont~tremblant",
+          "name": "Bus Mont-Tremblant",
+          "website": "https://www.villedemont-tremblant.qc.ca/citoyens/transport/bus-mont-tremblant",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~mont~tremblant"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~mont~tremblant~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~mont~tremblant~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tcmt6w8qbuxm",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tcmt6w8qbuxm"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -109,44 +185,6 @@
       "urls": {
         "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=saint-jean-sur-richelieu",
         "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=saint-jean-sur-richelieu"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      }
-    },
-    {
-      "id": "f-zenbus~mont~tremblant",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tcmt6w8qbuxm"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-zenbus~mont~tremblant",
-          "name": "Bus Mont-Tremblant",
-          "website": "https://www.villedemont-tremblant.qc.ca/citoyens/transport/bus-mont-tremblant",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~mont~tremblant"
-            },
-            {
-              "feed_onestop_id": "f-zenbus~mont~tremblant~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-zenbus~mont~tremblant~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tcmt6w8qbuxm",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tcmt6w8qbuxm"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
