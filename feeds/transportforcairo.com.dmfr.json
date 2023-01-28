@@ -1,0 +1,48 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "feeds": [
+    {
+      "id": "f-cairo~buses",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.transportforcairo.com/documents/41/download"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-NC-4.0",
+        "url": "https://data.transportforcairo.com/documents/42",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "Transport for Cairo"
+      }
+    },
+    {
+      "id": "f-stq4-nationalauthorityfortunnels",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.transportforcairo.com/documents/42/download"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-NC-4.0",
+        "url": "https://data.transportforcairo.com/documents/42",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "Transport for Cairo"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-stq4-nationalauthorityfortunnels",
+          "name": "Cairo Metro",
+          "website": "http://cairometro.gov.eg/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NAT"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
