@@ -1,0 +1,45 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-dpsby4-detroitpeoplemover",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/ivyrze/dtc-gtfs/releases/latest/download/gtfs-static.zip",
+        "static_historic": [
+          "https://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/PeopleMoverGTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/ivyrze/dtc-gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpsby4-detroitpeoplemover",
+          "name": "Detroit People Mover",
+          "short_name": "DPM",
+          "website": "http://www.thepeoplemover.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpsby4-detroitpeoplemover~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1201543"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dpsby4-detroitpeoplemover~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://github.com/ivyrze/dtc-gtfs/raw/main/gtfs-rt/alerts.pb"
+      },
+      "license": {
+        "url": "https://github.com/ivyrze/dtc-gtfs"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
