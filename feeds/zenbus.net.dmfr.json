@@ -2,6 +2,32 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-mont~tremblant~qc~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tcmt6w8qbuxm"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mont~tremblant~qc~ca",
+          "name": "Bus Mont-Tremblant",
+          "website": "https://www.villedemont-tremblant.qc.ca/citoyens/transport/bus-mont-tremblant",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~mont~tremblant"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~mont~tremblant~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-zenbus~bigorre~mongie",
       "spec": "gtfs",
       "urls": {
@@ -76,32 +102,6 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/"
       }
-    },
-    {
-      "id": "f-zenbus~mont~tremblant",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tcmt6w8qbuxm"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-zenbus~mont~tremblant",
-          "name": "Bus Mont-Tremblant",
-          "website": "https://www.villedemont-tremblant.qc.ca/citoyens/transport/bus-mont-tremblant",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~mont~tremblant"
-            },
-            {
-              "feed_onestop_id": "f-zenbus~mont~tremblant~rt"
-            }
-          ]
-        }
-      ]
     },
     {
       "id": "f-zenbus~mont~tremblant~rt",
