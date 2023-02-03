@@ -17,6 +17,41 @@
       }
     },
     {
+      "id": "f-denver~rtd~bustang",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.rtd-denver.com/files/gtfs/bustang-co-us.zip"
+      },
+      "license": {
+        "url": "https://www.rtd-denver.com/business-center/open-spatial-data/gtfs-license-agreement",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-denver~rtd~bustang",
+          "name": "Bustang",
+          "website": "https://ridebustang.com/bustang/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-denver~rtd~bustang~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-denver~rtd~bustang~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.rtd-denver.com/files/bustang/gtfs-rt/Bustang_VehiclePosition.pb",
+        "realtime_trip_updates": "https://www.rtd-denver.com/files/bustang/gtfs-rt/Bustang_TripUpdate.pb"
+      },
+      "license": {
+        "url": "https://www.rtd-denver.com/business-center/open-spatial-data/gtfs-realtime-license-agreement"
+      }
+    },
+    {
       "id": "f-rtddenver~rt",
       "spec": "gtfs-rt",
       "urls": {

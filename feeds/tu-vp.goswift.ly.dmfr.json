@@ -134,8 +134,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/via/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/via/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/via/gtfs-rt-alerts"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/via/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -199,8 +198,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/flint-hills-ata/gtfs-rt-vehicle-positions/",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/flint-hills-ata/gtfs-rt-trip-updates/",
-        "realtime_alerts": "https://api.goswift.ly/real-time/flint-hills-ata/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/flint-hills-ata/gtfs-rt-trip-updates/"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -296,8 +294,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/central-transit-wa/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/central-transit-wa/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/central-transit-wa/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/central-transit-wa/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -361,8 +358,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/cu-boulder/gtfs-rt-vehicle-positions/",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/cu-boulder/gtfs-rt-trip-updates/",
-        "realtime_alerts": "https://api.goswift.ly/real-time/cu-boulder/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/cu-boulder/gtfs-rt-trip-updates/"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -378,8 +374,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/dc-streetcar/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/dc-streetcar/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/dc-streetcar/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/dc-streetcar/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -459,8 +454,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/rtamaryland/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/rtamaryland/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/rtamaryland/gtfs-rt-alerts"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/rtamaryland/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -540,8 +534,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/indygo/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/indygo/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/indygo/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/indygo/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -617,11 +610,30 @@
       }
     },
     {
-      "id": "f-metro~losangeles~rt",
+      "id": "f-metro~losangeles~bus~rt",
+      "supersedes_ids": [
+        "f-metro~losangeles~rt"
+      ],
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/lametro/gtfs-rt-vehicle-positions",
         "realtime_trip_updates": "https://api.goswift.ly/real-time/lametro/gtfs-rt-trip-updates"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
+      "id": "f-metro~losangeles~rail~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.goswift.ly/real-time/lametro-rail/gtfs-rt-vehicle-positions",
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/lametro-rail/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -653,8 +665,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/gold-country-stage/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/gold-country-stage/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/gold-country-stage/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/gold-country-stage/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -670,8 +681,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/nctd/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/nctd/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/nctd/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/nctd/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -687,8 +697,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/detroit-m1-rail/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/detroit-m1-rail/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/detroit-m1-rail/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/detroit-m1-rail/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -704,8 +713,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/las-vegas-rtc/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/las-vegas-rtc/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/las-vegas-rtc/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/las-vegas-rtc/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -817,8 +825,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/detroit-smartbus/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/detroit-smartbus/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/detroit-smartbus/gtfs-rt-alerts/"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/detroit-smartbus/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -850,8 +857,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.goswift.ly/real-time/bluego/gtfs-rt-vehicle-positions",
-        "realtime_trip_updates": "https://api.goswift.ly/real-time/bluego/gtfs-rt-trip-updates",
-        "realtime_alerts": "https://api.goswift.ly/real-time/bluego/gtfs-rt-alerts"
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/bluego/gtfs-rt-trip-updates"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
