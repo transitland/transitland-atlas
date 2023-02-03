@@ -3138,7 +3138,22 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/brightline-fl-us/brightline-fl-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-brightline~fl~us",
+          "name": "Brightline",
+          "website": "https://www.gobrightline.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-brightline~fl~us~rt"
+            },
+            {
+              "feed_onestop_id": "f-brightline~fl~us~rt~alerts"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-bristol~va~us",
