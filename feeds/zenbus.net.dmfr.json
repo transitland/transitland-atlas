@@ -57,8 +57,8 @@
       "id": "f-zenbus~bigorre~mongie~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=bigorre-mongie",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=bigorre-mongie"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=bigorre-mongie",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=bigorre-mongie"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -133,8 +133,8 @@
       "id": "f-zenbus~coeur~de~tarentaise~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=coeur-de-tarentaise",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=coeur-de-tarentaise"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=coeur-de-tarentaise",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=coeur-de-tarentaise"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -221,8 +221,8 @@
       "id": "f-zenbus~saint~jean~sur~richelieu~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=saint-jean-sur-richelieu",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=saint-jean-sur-richelieu"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=saint-jean-sur-richelieu",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=saint-jean-sur-richelieu"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -259,8 +259,46 @@
       "id": "f-zenbus~valmorel~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=valmorel",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=valmorel"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=valmorel",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=valmorel"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~val~d~isere",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=valdisere"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~val~d~isere",
+          "name": "Navettes Val d'Isere",
+          "website": "https://www.valdisere.com/guide-du-village/plan-navettes/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~val~d~isere"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~val~d~isere~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~val~d~isere~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=valdisere",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=valdisere"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
