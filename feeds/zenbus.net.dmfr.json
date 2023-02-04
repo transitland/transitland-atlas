@@ -228,6 +228,44 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/"
       }
+    },
+    {
+      "id": "f-zenbus~valmorel",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=valmorel"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~valmorel",
+          "name": "Navettes Valmorel",
+          "website": "https://www.valmorel.com/guide-et-infos-pratiques/navettes/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~valmorel"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~valmorel~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~valmorel~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=valmorel",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=valmorel"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
