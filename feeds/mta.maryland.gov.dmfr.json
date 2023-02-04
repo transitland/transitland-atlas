@@ -5,43 +5,65 @@
       "id": "f-dq-mtamaryland~bus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_localbus.zip"
+        "static_current": "https://feeds.mta.maryland.gov/gtfs/local-bus",
+        "static_historic": [
+          "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_localbus.zip"
+        ]
       }
     },
     {
       "id": "f-dq-mtamaryland~commuterbus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_commuterbus.zip"
+        "static_current": "https://feeds.mta.maryland.gov/gtfs/commuter-bus",
+        "static_historic": [
+          "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_commuterbus.zip"
+        ]
       }
     },
     {
       "id": "f-dq-mtamaryland~marc",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_marc.zip"
+        "static_current": "https://feeds.mta.maryland.gov/gtfs/marc",
+        "static_historic": [
+          "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_marc.zip"
+        ]
       }
     },
     {
       "id": "f-dq-mtamaryland~raillink",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_lightrail.zip"
+        "static_current": "https://feeds.mta.maryland.gov/gtfs/light-rail",
+        "static_historic": [
+          "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_lightrail.zip"
+        ]
       }
     },
     {
       "id": "f-dq-mtamaryland~subwaylink",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_metro.zip"
+        "static_current": "https://feeds.mta.maryland.gov/gtfs/metro",
+        "static_historic": [
+          "https://mdotmta-gtfs.s3.amazonaws.com/mdotmta_gtfs_metro.zip"
+        ]
       }
     },
     {
       "id": "f-mtamaryland~marc~train~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://mdotmta-gtfs-rt.s3.amazonaws.com/MARC%20RT/marc.pb",
-        "realtime_trip_updates": "https://mdotmta-gtfs-rt.s3.amazonaws.com/MARC%20RT/marc.pb"
+        "realtime_vehicle_positions": "https://mdotmta-gtfs-rt.s3.amazonaws.com/MARC%20RT/marc-vp.pb",
+        "realtime_trip_updates": "https://mdotmta-gtfs-rt.s3.amazonaws.com/MARC%20RT/marc-tu.pb"
+      }
+    },
+    {
+      "id": "f-mtamaryland~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://feeds.mta.maryland.gov/alerts.pb"
       }
     }
   ],
@@ -55,7 +77,13 @@
           "feed_onestop_id": "f-dq-mtamaryland~bus"
         },
         {
+          "feed_onestop_id": "f-dq-mtamaryland~bus~rt"
+        },
+        {
           "feed_onestop_id": "f-dq-mtamaryland~commuterbus"
+        },
+        {
+          "feed_onestop_id": "f-dq-mtamaryland~commuterbus~rt"
         },
         {
           "feed_onestop_id": "f-dq-mtamaryland~marc"
@@ -64,10 +92,19 @@
           "feed_onestop_id": "f-dq-mtamaryland~raillink"
         },
         {
+          "feed_onestop_id": "f-dq-mtamaryland~raillink~rt"
+        },
+        {
           "feed_onestop_id": "f-dq-mtamaryland~subwaylink"
         },
         {
+          "feed_onestop_id": "f-dq-mtamaryland~subwaylink~rt"
+        },
+        {
           "feed_onestop_id": "f-mtamaryland~marc~train~rt"
+        },
+        {
+          "feed_onestop_id": "f-mtamaryland~rt~alerts"
         }
       ],
       "tags": {
