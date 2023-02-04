@@ -2,6 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-9q-easternsierra~ca~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.goswift.ly/real-time/esta/gtfs-rt-alerts"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
       "id": "f-9qhc-beaumont~ca~us~rt~alerts",
       "spec": "gtfs-rt",
       "urls": {
@@ -66,6 +81,21 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "https://api.goswift.ly/real-time/avalon/gtfs-rt-alerts"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
+      "id": "f-baytowntrolley~fl~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.goswift.ly/real-time/bay-town-trolley/gtfs-rt-alerts"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
@@ -152,6 +182,21 @@
       }
     },
     {
+      "id": "f-dqc-thebusofprincegeorgescounty~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.goswift.ly/real-time/prince-george-thebus/gtfs-rt-alerts"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
       "id": "f-dqcq-regionaltransportationagencyofcentralmaryland~rt~alerts",
       "spec": "gtfs-rt",
       "urls": {
@@ -182,6 +227,21 @@
       }
     },
     {
+      "id": "f-dru-vttranslines~vt~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.goswift.ly/real-time/vermont-translines/gtfs-rt-alerts"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
       "id": "f-goose~creek~transit~rt~alerts",
       "spec": "gtfs-rt",
       "urls": {
@@ -201,6 +261,36 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "https://api.goswift.ly/real-time/indygo/gtfs-rt-alerts/"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
+      "id": "f-lasvegasloop~nv~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.goswift.ly/real-time/city-las-vegas/gtfs-rt-alerts"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
+      }
+    },
+    {
+      "id": "f-lubbock~tx~us~rt~alerts",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.goswift.ly/real-time/lubbock-citibus/gtfs-rt-alerts"
       },
       "license": {
         "url": "https://www.goswift.ly/api-license"
