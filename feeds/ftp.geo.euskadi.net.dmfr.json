@@ -2,23 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
-      "id": "f-ezty-metrobilbao",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/MetroBilbao/google_transit.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "metro-bilbao"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-ezty-metrobilbao",
-          "name": "Metro Bilbao",
-          "website": "http://www.metrobilbao.com"
-        }
-      ]
-    },
-    {
       "id": "f-ezty-bizkaibus",
       "spec": "gtfs",
       "urls": {
@@ -32,6 +15,23 @@
           "onestop_id": "o-ezty-bizkaibus",
           "name": "Bizkaibus",
           "website": "https://web.bizkaia.eus/eu/web/bizkaibus"
+        }
+      ]
+    },
+    {
+      "id": "f-ezty-metrobilbao",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "ftp://ftp.geo.euskadi.net/cartografia/Transporte/Moveuskadi/MetroBilbao/google_transit.zip"
+      },
+      "tags": {
+        "gtfs_data_exchange": "metro-bilbao"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ezty-metrobilbao",
+          "name": "Metro Bilbao",
+          "website": "http://www.metrobilbao.com"
         }
       ]
     },
