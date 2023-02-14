@@ -39,38 +39,6 @@
       ]
     },
     {
-      "id": "f-dr1b-harfordtransitlink",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
-      },
-      "license": {
-        "url": "http://mdtrip.org/About/DeveloperResources.aspx",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "harford-transit-link"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr1b-harfordtransitlink",
-          "name": "Harford Transit LINK",
-          "website": "http://www.harfordtransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HarfordTransit"
-            }
-          ],
-          "tags": {
-            "twitter_general": "HarfordCountyMD",
-            "us_ntd_id": "30074",
-            "wikidata_id": "Q5657016"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-dr4-septa~bus",
       "spec": "gtfs",
       "urls": {
@@ -172,6 +140,9 @@
     },
     {
       "id": "f-qw3zwf-monkeyforestubudshuttle",
+      "supersedes_ids": [
+        "f-u-ruterbuss~ruterbåt~rutertrikk~rutertbane~buss~tog~båt~flytog"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/joakimsk/pt-data-ubud/blob/master/feed/ubud_shuttle.zip?raw=true",
@@ -239,114 +210,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "NAT"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-u-ruterbuss~ruterbåt~rutertrikk~rutertbane~buss~tog~båt~flytog",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/joakimsk/pt-data-ubud/blob/master/feed/ubud_shuttle.zip?raw=true"
-      },
-      "license": {
-        "url": "https://data.norge.no/nlod/en/2.0",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Powered by Ruter As"
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u-buss",
-          "name": "Buss",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4-båt",
-          "name": "Båt",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FF"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4-tog",
-          "name": "Tog",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4x-flybuss",
-          "name": "Flybuss",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4x-flytog",
-          "name": "Flytog",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "FT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4x-ruterbuss",
-          "name": "RuterBuss",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RB"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4x-ruterbåt",
-          "name": "RuterBåt",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RF"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4xs-rutertbane",
-          "name": "RuterTBane",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RT"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u4xs-rutertrikk",
-          "name": "RuterTrikk",
-          "website": "http://www.ruter.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RS"
             }
           ]
         }
