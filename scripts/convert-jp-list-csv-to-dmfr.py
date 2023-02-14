@@ -32,7 +32,12 @@ feeds = []
 for row in list(cr):
     if row["fixed_current_url"] in existing_feeds_to_skip:
         continue
-    if row["fixed_current_basename"]:
+    if row["fixed_current_url"].startswith("https://openmobilitydata.org"):
+        continue
+
+    if row["fixed_current_basename"] == "gtfs":
+        name = row["feed_id"]
+    elif row["fixed_current_basename"]:
         name = (
             row["fixed_current_basename"]
             .lower()
@@ -40,11 +45,9 @@ for row in list(cr):
             .replace("-", "~")
             .replace(".", "~")
         )
-    elif row["fixed_current_url"].startswith("https://toyama-pref.box.com"):
-        filename = re.search("static/(.+).zip$", row["fixed_current_url"])[1]
-        name = f"toyama~pref~{filename}"
     else:
-        raise Exception("Cannot determine name for a feed")
+        name = row["feed_id"]
+
     feed = {
         "spec": "gtfs",
         "id": f"f-{name}~jp",
