@@ -30,12 +30,14 @@ decoded_content = r.content.decode("utf-8")
 cr = csv.DictReader(decoded_content.splitlines(), delimiter=",")
 feeds = []
 for row in list(cr):
+    # skip some feeds
     if row["fixed_current_url"] in existing_feeds_to_skip:
         continue
     if row["fixed_current_url"].startswith("https://openmobilitydata.org"):
         continue
 
-    if row["fixed_current_basename"] == "gtfs":
+    # name for Onestop ID
+    if row["fixed_current_basename"] in ["GTFS-JP", "GTFS"]:
         name = row["feed_id"]
     elif row["fixed_current_basename"]:
         name = (
@@ -53,6 +55,8 @@ for row in list(cr):
         "id": f"f-{name}~jp",
         "urls": {"static_current": row["fixed_current_url"]},
     }
+
+    # license
     if row["license_name"] == "CC BY 4.0":
         feed["license"] = {
             "spdx_identifier": "CC-BY-4.0",
