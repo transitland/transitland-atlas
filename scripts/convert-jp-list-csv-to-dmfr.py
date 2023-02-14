@@ -23,6 +23,8 @@ existing_feeds_to_skip = [
     "http://www3.unobus.co.jp/opendata/GTFS-JP.zip",
 ]
 
+existing_names_to_skip = []
+
 r = requests.get(
     "https://raw.githubusercontent.com/tshimada291/gtfs-jp-list-datecheck/main/GTFS_fixedURL.csv"
 )
@@ -50,6 +52,14 @@ for row in list(cr):
     else:
         name = row["feed_id"]
 
+    # the source CSV has some rows with fixed_current_basename
+    # we will only take the first feed URL for each
+    if name in existing_names_to_skip:
+        continue
+    else:
+        existing_names_to_skip.append(name)
+
+    # prepare feed record
     feed = {
         "spec": "gtfs",
         "id": f"f-{name}~jp",
