@@ -6,7 +6,7 @@ import json
 import requests
 import re
 
-# http POST https://transit.land/api/v2/query apikey:Zy8N3gC2ZHMm5A5Yog3V1oe21xhKMa4Q query="{agencies(where: {adm0_iso: \"JP\"}) {feed_version {feed {urls {static_current}}}}}" | jq '.data.agencies[] .feed_version.feed.urls.static_current' | uniq
+# http POST https://transit.land/api/v2/query apikey:XXXX query="{agencies(where: {adm0_iso: \"JP\"}) {feed_version {feed {urls {static_current}}}}}" | jq '.data.agencies[] .feed_version.feed.urls.static_current' | uniq
 existing_feeds_to_skip = [
     "http://codeforkobe.github.io/kobe-transit/kobe_subway_gtfs.zip",
     "http://www.city.nomi.ishikawa.jp/data/open/cnt/3/5145/1/GTFSnomi2018.zip",
