@@ -16,10 +16,7 @@ jobs:
         pip install pipenv
         cd scripts && pipenv install
     - name: Install transitland-lib
-      run: |
-        wget https://github.com/interline-io/transitland-lib/releases/download/v0.11.1/transitland-linux -O transitland
-        chmod a+rx transitland
-        sudo mv transitland /usr/local/bin
+      run: scripts/install-transitland-lib.sh
     - name: Fetch latest data
       run: |-
         cd scripts && pipenv run python convert-gbfs-csv-to-dmfr.py > ../feeds/nabsa.github.com.dmfr.json

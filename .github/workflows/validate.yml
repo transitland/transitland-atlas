@@ -16,10 +16,7 @@ jobs:
         pip install pipenv
         cd scripts && pipenv install
     - name: Install transitland-lib
-      run: |
-        wget https://github.com/interline-io/transitland-lib/releases/download/v0.11.1/transitland-linux -O transitland
-        chmod a+rx transitland
-        sudo mv transitland /usr/local/bin
+      run: scripts/install-transitland-lib.sh
     - name: Validate against DMFR schema
       run: |
         wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json -O dmfr.schema.json
