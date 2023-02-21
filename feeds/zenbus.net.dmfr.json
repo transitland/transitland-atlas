@@ -76,6 +76,47 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/"
       }
+    },
+    {
+      "id": "f-zenbus~sitac~calais",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=sitac-calais-rt"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-sitac-calais-gtfs-gtfs-rt/?locale=en",
+        "share_alike_optional": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~sitac~calais",
+          "name": "Syndicat Intercommunal des Transports urbains de l'Agglomération du Calaisis",
+          "short_name": "SITAC",
+          "website": "https://www.sitac-calais-opale-bus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~sitac~calais~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q28494587"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~sitac~calais~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=sitac-calais-rt",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=sitac-calais-rt"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-sitac-calais-gtfs-gtfs-rt/?locale=en",
+        "share_alike_optional": "no"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
