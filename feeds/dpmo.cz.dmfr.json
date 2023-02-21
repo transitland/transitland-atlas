@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-u2u6-dpmo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u2u6-dpmo",
+      "name": "Dopravní podnik města Olomouce, a.s.",
+      "short_name": "DPMO",
+      "website": "https://dpmo.cz",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u2u6-dpmo"
+        }
+      ],
+      "tags": {
+        "twitter_general": "DPMO_official",
+        "wikidata_id": "Q11822108"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
