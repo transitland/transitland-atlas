@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-lebanon~transit~pa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://realtime.lebanontransit.org/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-lebanon~transit~pa~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtime.lebanontransit.org/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://realtime.lebanontransit.org/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://realtime.lebanontransit.org/InfoPoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-lebanon~transit~pa~us",
+      "name": "Lebanon Transit",
+      "short_name": "LT",
+      "website": "https://lebanontransit.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-lebanon~transit~pa~us"
+        },
+        {
+          "feed_onestop_id": "f-lebanon~transit~pa~us~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "Lebanon_Transit",
+        "us_ntd_id": "30095",
+        "wikidata_id": "Q5177878"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
