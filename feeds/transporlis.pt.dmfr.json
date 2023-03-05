@@ -101,28 +101,6 @@
       ]
     },
     {
-      "id": "f-eyck-transtejo",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=4&u=web",
-        "static_historic": [
-          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/4/gtfs_4.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyck-transtejo",
-          "name": "Transtejo Soflusa",
-          "website": "http://www.transtejo.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-eyckr-metrodelisboa",
       "spec": "gtfs",
       "urls": {
@@ -147,6 +125,9 @@
     },
     {
       "id": "f-eycs0-soflusa",
+      "supersedes_ids": [
+        "f-eyck-transtejo"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=4&u=web",
@@ -157,6 +138,9 @@
       "operators": [
         {
           "onestop_id": "o-eycs0-soflusa",
+          "supersedes_ids": [
+            "o-eyck-transtejo"
+          ],
           "name": "Soflusa",
           "website": "http://www.transtejo.pt/",
           "associated_feeds": [
