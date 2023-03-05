@@ -2,89 +2,136 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-kouvola~fi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/219.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-mikkeli~fi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/227.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-pohjois~pohjanmaan~ely~keskus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/113.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-pohjois~savon~ely~keskus~iisalmi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/181.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-pohjois~savon~ely~keskus~joensuu",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/183.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-pohjois~savon~ely~keskus~kikkeli",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/184.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-pohjois~savon~ely~keskus~kuopio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/182.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-rovaniemi~fi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/237.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-salo~fi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/239.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
       "id": "f-ud-autolinjatoy~erantanenoy~kuljetusmikkonenky~tilausliikenneh",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/lappeenranta.zip"
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/225.zip",
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/lappeenranta.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-udu-toimiventoky",
-          "name": "Toimi Vento",
-          "website": "http://www.toimivento.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6933"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udu4-kuljetusmikkonenky",
-          "name": "Kuljetus Mikkonen",
-          "website": "http://www.kuljetusmikkonen.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "50278"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udu5-erantanenoy",
-          "name": "E. RANTANEN",
-          "website": "http://erantanen.fi",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7000"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udu5-tilausliikennehÄnninenoy",
-          "name": "Tilauslikenne Hänninen",
-          "website": "http://www.tilausliikennehanninen.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "42580"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udu7-joutsenonauto~jakuljetuspalveluoy",
-          "name": "Joutesenon Auto - Ja Kuljetuspalvelu",
-          "website": "http://www.jakp.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "51683"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-ud9-helsinginseudunliikenne",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs/hsl.zip"
+        "static_current": "https://infopalvelut.storage.hsldev.com/gtfs/hsl.zip"
       },
       "license": {
-        "url": "http://developer.reittiopas.fi/pages/en/home.php",
-        "use_without_attribution": "yes",
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.hsl.fi/en/hsl/open-data",
+        "use_without_attribution": "no",
         "create_derived_product": "yes"
-      },
-      "tags": {
-        "manual_import": "true"
       },
       "operators": [
         {
           "onestop_id": "o-ud9-helsinginseudunliikenne",
           "name": "Helsingin seudun liikenne",
           "short_name": "HSL",
-          "website": "http://www.hsl.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HSL"
-            }
-          ]
+          "website": "http://www.hsl.fi/"
         }
       ]
     },
@@ -92,481 +139,163 @@
       "id": "f-udc-lehdonliikenneoy~hämebusoy~pekolanliikenneoy~mikkolanliike",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/hameenlinna.zip"
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/203.zip",
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/hameenlinna.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-udc-interkuljetusoy",
-          "name": "Inter Kuljetus",
-          "website": "http://www.interkuljetus.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "70334"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc-pekolanliikenneoy",
-          "name": "Pekolan Liikenne",
-          "website": "http://www.pekolanliikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6875"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc-vekkaliikenneoy",
-          "name": "Vekka Liikenne",
-          "website": "http://www.vekkaliikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6957"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc6-lehdonliikenneoy",
-          "name": "Lehdon Liikenne",
-          "website": "http://www.lehdonliikenne.fi",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6757"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc6-ventoniemioy",
-          "name": "Ventoniemi",
-          "website": "http://www.ventoniemi.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6966"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc6-yhdysliikenneoy",
-          "name": "Yhdysliikenne",
-          "website": "http://www.pekolanliikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6981"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc7-mikkolanliikenneoy",
-          "name": "Mikkolan Liikenne",
-          "website": "http://testi.mikkolan-liikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7634"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc7-valkeakoskenliikenneoy",
-          "name": "Valkeakosken Liikenne",
-          "website": "http://www.valkeakoskenliikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "71985"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udc73-hämebusoy",
-          "name": "HämeBus",
-          "website": "http://www.hamebus.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "72656"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-udf-r~kioski~koivistonautooy~lehtimäenliikenneoy~järvisenliike",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/lahti.zip"
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/223.zip",
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/lahti.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-udf-lehtimäenliikenneoy",
-          "name": "Lehtimäen Liikenne",
-          "website": "http://www.lehtimakigroup.fi",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6758"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udf-r~kioski",
-          "name": "R-Kioski",
-          "website": "http://www.r-kioski.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "8888"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udf4-koivistonautooy",
-          "name": "Koiviston Auto",
-          "website": "http://www.koivistonauto.fi",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6741"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udf5-bustraveloyreissuruoti",
-          "name": "Bus Travel Oy Reissu Ruoti",
-          "website": "http://www.reissuruoti.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7345"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udf6bh-matkahuoltooy",
-          "name": "Matkahuolto",
-          "website": "https://www.matkahuolto.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "99999"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udfm-järvisenliikenneoy",
-          "name": "Järvisen Liikenne",
-          "website": "http://jarvisenliikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "23098"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-udg-oypohjolanliikenneab~etelä~suomenlinjaliikenneoy~jyrkiläoy",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/kotka.zip"
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/217.zip",
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/kotka.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-udfb-pyhtäänkuljetuspalvelutoy",
-          "name": "Pyhtään Kuljetuspalvelut",
-          "website": "http://www.pyhtaankuljetuspalvelut.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "99500"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg0-etelä~suomenlinjaliikenneoy",
-          "name": "Etelä-Suomen Linjaliikenne",
-          "website": "http://www.savonlinjat.fi",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7399"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg0-jyrkiläoy",
-          "name": "Jyrkilä",
-          "website": "http://www.jyrkila.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "46947"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg2-liikennevuorelaoy",
-          "name": "Liikenne Vuorela",
-          "website": "http://www.liikennevuorela.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6773"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-udg-oypohjolanliikenneab~etelä~suomenlinjaliikenneoy~linjaliik",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/kvl.zip"
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/kvl.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-udfc-elimäenliikenneoy",
-          "name": "Elimäen Liikenne",
-          "website": "http://www.elimaenliikenne.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7192"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udff-matkatoimistomatka~majuriky",
-          "name": "Matkatoimisto Matka-Majuri Ky",
-          "website": "http://matka-majuri.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "46075"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg-etelä~suomenlinjaliikenneoy",
-          "name": "Etelä-Suomen Linjaliikenne",
-          "website": "http://www.savonlinjat.fi",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7399"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg-linjaliikennemarttilaurilaoy",
-          "name": "Linjaliikenne Martti Laurila",
-          "website": "http://marttilaurila.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6804"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg1-anjalankoskenlinjaoy",
-          "name": "Anjalankosken Linja",
-          "website": "http://anjalankoskenlinja.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7327"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg1-kymencharterlineoy",
-          "name": "Kymen Charterline",
-          "website": "http://www.bussimatkatoimisto.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "18580"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg4-kariväisänenky",
-          "name": "Kari Väisänen Ky",
-          "website": "http://www.autoyhtiotkvaisanen.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "44303"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-udg4-linja~autoliikenneppuolakkaky",
-          "name": "Linja-autoliikenne P. Puolakka Ky",
-          "website": "http://www.puolakka.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6783"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-ue4-jyväskylänliikenneoy~koivurantaoy~tilausajotmennÄÄnbussill",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/209.zip",
+        "static_historic": [
+          "http://data.jyvaskyla.fi/tiedostot/linkkidata.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-ue4d-savonlinjaoy",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/keski-suomen_ely.zip"
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/keski-suomen_ely.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-ue4d-savonlinjaoy",
-          "name": "Savonlinja",
-          "website": "http://www.savonlinjat.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6903"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-ue5-linja~karjalaoy~oypohjolanliikenneab~kuopionliikenneoy~jää",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/kuopio.zip"
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/221.zip",
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/kuopio.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-ue5r-erkkiitkonenoy",
-          "name": "Erkki Itkonen Oy",
-          "website": "http://erkki-itkonen-oy.kuljettaa.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6685"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-ue5z-linja~autoliikeeahonenky",
-          "name": "Linja-autoliike E Ahonen",
-          "website": "http://www.eahonen.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6778"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-ue7-savo~karjalanlinjaoy~oypohjolanliikenneab~liikennemheikura",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/kajaani.zip"
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/211.zip",
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/kajaani.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-ue7-kajaanintila~autotoy",
-          "name": "Kajaanin Tila-autot",
-          "website": "http://www.kajaanintila-autot.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "44757"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-ue7m-linja~autoliikeyrjÖmakkonen~kumpp",
-          "name": "Linja-autoliike Yrjö Makkonen & Kumpp.",
-          "website": "http://www.linja-autoliikeymakkonen.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6790"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-ue7t-kilpailutuskäynnissä",
-          "name": "Kilpailutus käynnissä",
-          "website": "http://www.hankintailmoitukset.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "9999"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-ue7t-liikennemheikuraoy",
-          "name": "Liikenne M. Heikura",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "52126"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-ued-oulunjoukkoliikenne",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/229.zip",
+        "static_historic": [
+          "http://www.transitdata.fi/oulu/google_transit.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-ueh-posely",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/posjoe.zip"
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/posjoe.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-ueh-pohjolanmatka",
-          "name": "Pohjolan Matka",
-          "website": "http://www.pohjolanmatka.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7180"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-ueh-posely",
-          "name": "POSELY",
-          "website": "http://www.liikennevirasto.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     },
     {
       "id": "f-ueh-savo~karjalanlinjaoy~linja~karjalaoy~ely~pohjolanturistiau",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dev.hsl.fi/gtfs.waltti/posely_joensuu.zip"
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/207.zip",
+        "static_historic": [
+          "http://dev.hsl.fi/gtfs.waltti/posely_joensuu.zip"
+        ]
       },
-      "operators": [
-        {
-          "onestop_id": "o-ueh-pohjolanturistiautooy",
-          "name": "Pohjolan Turistiauto",
-          "website": "http://www.pohjolanmatka.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7180"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-uej-ely",
-          "name": "ELY",
-          "website": "http://www.liikennevirasto.fi",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-uej-linja~karjalaoy",
-          "name": "Linja-Karjala",
-          "website": "http://savonlinja-yhtiot.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6791"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-uej-savo~karjalanlinjaoy",
-          "name": "Savo-Karjalan Linja",
-          "website": "http://www.savokarjalanlinja.fi/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6902"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
+    },
+    {
+      "id": "f-vaasa~fi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://tvv.fra1.digitaloceanspaces.com/249.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.waltti.fi/docs#gtfs-static-packages"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
