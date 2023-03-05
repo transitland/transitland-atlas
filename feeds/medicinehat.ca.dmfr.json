@@ -1,0 +1,37 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-medicine~hat~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://medicinehat.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-medicine~hat~transit",
+          "name": "Medicine Hat Transit",
+          "website": "https://www.medicinehat.ca/en/roads-parking-and-transportation/transit.aspx",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-medicine~hat~transit"
+            },
+            {
+              "feed_onestop_id": "f-medicine~hat~transit~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-medicine~hat~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://medicinehat.tmix.se/gtfs-realtime/vehicleupdates.pb",
+        "realtime_trip_updates": "https://medicinehat.tmix.se/gtfs-realtime/tripupdates.pb",
+        "realtime_alerts": "https://medicinehat.tmix.se/gtfs-realtime/alerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
