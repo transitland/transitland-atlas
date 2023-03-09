@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-c2qf-mountainline",
@@ -15,6 +15,11 @@
           "onestop_id": "o-c2qf-mountainline",
           "name": "Missoula Urban Transportation District (MUTD)",
           "short_name": "Mountain Line",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c2qf-mountainline"
+            }
+          ],
           "tags": {
             "twitter_general": "mslabus",
             "us_ntd_id": "80009",
@@ -22,6 +27,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-c2qf-mountainline~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bt.mountainline.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://bt.mountainline.com/gtfsrt/trips",
+        "realtime_alerts": "https://bt.mountainline.com/gtfsrt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

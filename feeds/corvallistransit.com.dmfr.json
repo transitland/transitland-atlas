@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9rbm-corvallis~or~us",
@@ -52,7 +52,10 @@
       "id": "f-philomath~corvallis~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.corvallistransit.com/rtt/public/resource/gtfs_PC.zip"
+        "static_current": "http://www.corvallistransit.com/rtt/public/resource/gtfs_PC.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/philomathconnection-or-us/philomathconnection-or-us.zip"
+        ]
       },
       "operators": [
         {

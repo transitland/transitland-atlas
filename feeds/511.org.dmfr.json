@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-sf~bay~area~rg",
@@ -31,8 +31,7 @@
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
       },
       "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
+        "type": "replace_url",
         "info_url": "https://511.org/open-data/token"
       },
       "tags": {
@@ -58,8 +57,7 @@
         "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
       },
       "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
+        "type": "replace_url",
         "info_url": "https://511.org/open-data/token"
       }
     }

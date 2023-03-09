@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-mid~mon~valley~transit~authority~pa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mmvta.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-mid~mon~valley~transit~authority~pa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mmvta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://mmvta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://mmvta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-mid~mon~valley~transit~authority~pa",
+      "name": "Mid Mon Valley Transit Authority",
+      "short_name": "MMVTA",
+      "website": "https://mmvta.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-mid~mon~valley~transit~authority~pa"
+        },
+        {
+          "feed_onestop_id": "f-mid~mon~valley~transit~authority~pa~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "mmvta",
+        "us_ntd_id": "30061",
+        "wikidata_id": "Q6840978"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

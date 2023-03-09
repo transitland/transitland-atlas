@@ -39,6 +39,17 @@ for row in onestop_ids:
     print(f"ERROR: improperly formatted Feed Onestop ID: {osid}")
     fail_the_build = True
 
+# check uniqueness of urls.static_current
+c.execute('''
+  SELECT json_extract(urls, '$.static_current') from current_feeds
+''')
+results = c.fetchall()
+urls = list(filter(None, [url_match[0] for url_match in results]))
+duplicate_urls = set([x for x in urls if urls.count(x) > 1])
+if len(duplicate_urls) > 0:
+    print(f"ERROR: more than one feed has the same value defined for urls.static_current: {duplicate_urls}")
+    fail_the_build = True
+
 # check operator onestop_id uniqueness
 c.execute('''
   SELECT onestop_id from current_operators

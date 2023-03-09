@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9qh-victorville~ca~us",
@@ -77,7 +77,10 @@
       "id": "f-davenport~citi~bus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/davenportcitibus.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/davenport-ia-us/davenport-ia-us.zip",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/davenportcitibus.zip"
+        ]
       },
       "operators": [
         {

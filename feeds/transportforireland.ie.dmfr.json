@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-ashbourneconnect~ie",
@@ -831,7 +831,10 @@
       "id": "f-gc3q-lallycoachhire",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_lallycoach.zip"
+        "static_current": "https://www.transportforireland.ie/transitData/google_transit_lallycoaches.zip",
+        "static_historic": [
+          "https://www.transportforireland.ie/transitData/google_transit_lallycoach.zip"
+        ]
       },
       "license": {
         "url": "https://data.gov.ie/licence",

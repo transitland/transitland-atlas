@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9q6-kcapta~ca~us",
@@ -151,6 +151,42 @@
         "realtime_vehicle_positions": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
         "realtime_trip_updates": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
+      "id": "f-muskegon~area~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://muskegon.connexionz.net/rtt/public/utility/gtfs.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-muskegon~area~transit",
+          "name": "Muskegon Area Transit System",
+          "short_name": "MATS",
+          "website": "https://matsbus.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-muskegon~area~transit"
+            },
+            {
+              "feed_onestop_id": "f-muskegon~area~transit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "50037",
+            "wikidata_id": "Q6942749"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-muskegon~area~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://muskegon.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://muskegon.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://muskegon.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
       }
     },
     {

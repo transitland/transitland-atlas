@@ -1,0 +1,70 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-eyck-carris",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A1.zip",
+        "static_historic": [
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/1/gtfs_1.zip"
+        ]
+      },
+      "license": {
+        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
+      }
+    },
+    {
+      "id": "f-eyck-carris~a2",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A2.zip"
+      },
+      "license": {
+        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
+      }
+    },
+    {
+      "id": "f-eyck-carris~a3",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A3.zip"
+      },
+      "license": {
+        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
+      }
+    },
+    {
+      "id": "f-eyck-carris~a4",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A4.zip"
+      },
+      "license": {
+        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-eyck-carris",
+      "name": "Carris Metropolitana",
+      "website": "https://www.carrismetropolitana.pt/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-eyck-carris"
+        },
+        {
+          "feed_onestop_id": "f-eyck-carris~a2"
+        },
+        {
+          "feed_onestop_id": "f-eyck-carris~a3"
+        },
+        {
+          "feed_onestop_id": "f-eyck-carris~a4"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

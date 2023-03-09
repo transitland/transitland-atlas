@@ -1,0 +1,39 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-cars~région~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.itinisere.fr/fr/donnees-open-data/169/OpenData/Download?fileName=CG38.GTFS.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-cars-region-isere-38"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cars~région~fr",
+          "name": "Cars Région Isère",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cars~région~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-cars~région~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://www.itinisere.fr/ftp/GtfsRT/GtfsRT.CG38.pb"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-cars-region-isere-38"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
