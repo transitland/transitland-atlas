@@ -5,7 +5,10 @@
       "id": "f-dr1-rabbittransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.rabbittransit.org/infopoint/gtfs/google_transit.zip"
+        "static_current": "https://realtime.rabbittransit.org/InfoPoint/GTFS-Zip.ashx",
+        "static_historic": [
+          "http://www.rabbittransit.org/infopoint/gtfs/google_transit.zip"
+        ]
       },
       "operators": [
         {
@@ -14,7 +17,8 @@
           "website": "http://www.rabbittransit.org",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "0"
+              "gtfs_agency_id": "0",
+              "feed_onestop_id": "f-dr1-rabbittransit~rt"
             }
           ],
           "tags": {
@@ -24,6 +28,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dr1-rabbittransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtime.rabbittransit.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://realtime.rabbittransit.org/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://realtime.rabbittransit.org/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
