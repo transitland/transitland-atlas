@@ -77,6 +77,42 @@
       ]
     },
     {
+      "id": "f-dnq9-ckrider~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/concordk/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/ckrider-nc-us/ckrider-nc-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq9-concordkannapolisareatransit",
+          "name": "Concord Kannapolis Area Transit",
+          "short_name": "CKRider",
+          "website": "https://ckrider.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnq9-ckrider~nc~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40167",
+            "wikidata_id": "Q5158814"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq9-ckrider~nc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/concordk/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/concordk/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/concordk/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-dnwe-radford~va~us",
       "spec": "gtfs",
       "urls": {
