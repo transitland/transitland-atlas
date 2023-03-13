@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-9qh1-norwalktransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nts.rideralerts.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/nts-ca-us/nts-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh1-norwalktransitsystem",
+          "name": "Norwalk Transit System",
+          "short_name": "NTS",
+          "website": "http://www.ci.norwalk.ca.us/city-hall/departments/norwalk-transit-system-nts",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9qh1-norwalktransitsystem~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CityofNorwalkCA",
+            "us_ntd_id": "90022",
+            "wikidata_id": "Q7060799"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qh1-norwalktransitsystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://nts.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://nts.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://nts.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
