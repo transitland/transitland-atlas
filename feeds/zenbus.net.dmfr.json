@@ -28,6 +28,44 @@
       ]
     },
     {
+      "id": "f-zenbus~alpe~huez",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=alpe-huez"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~alpe~huez",
+          "name": "Navettes l'Alpe d'Huez",
+          "website": "https://www.alpedhuez-resalp.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~alpe~huez"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~alpe~huez~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~alpe~huez~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=alpe-huez",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=alpe-huez"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~bigorre~mongie",
       "spec": "gtfs",
       "urls": {
