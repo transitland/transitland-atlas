@@ -32,14 +32,21 @@
       "id": "f-u0g-tec",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://gtfs.irail.be/tec/tec-gtfs.zip"
+        "static_current": "https://opendata.tec-wl.be/Current%20GTFS/TEC-GTFS.zip",
+        "static_historic": [
+          "http://gtfs.irail.be/tec/tec-gtfs.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://www.transportdata.be/dataset/tec-gtfs"
       },
       "operators": [
         {
           "onestop_id": "o-u0g-tec",
           "name": "Transport en Commun",
           "short_name": "TEC",
-          "website": "http://www.infotec.be",
+          "website": "http://www.letec.be",
           "associated_feeds": [
             {
               "gtfs_agency_id": "TEC"

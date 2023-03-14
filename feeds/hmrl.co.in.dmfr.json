@@ -2,10 +2,10 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
-      "id": "f-mmts~hyderabad",
+      "id": "f-hmrl~hyderabad",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://drive.google.com/uc?export=download&id=1Hiv3FLp40cLXPPi9Ne8rO8m1W9hjBPs3"
+        "static_current": "https://drive.google.com/uc?export=download&id=1q8hqxY6WVZYYqd2LE8vNNQ4RjFPkfORJ"
       },
       "license": {
         "url": "https://hmrl.co.in/open-data.html",
@@ -14,6 +14,24 @@
         "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
         "attribution_text": "Contains data provided by Hyderabad Metro Rail Ltd."
+      }
+    },
+    {
+      "id": "f-mmts~hyderabad",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.telangana.gov.in/sites/default/files/Open_Data_MMTS_Hyd.zip",
+        "static_historic": [
+          "https://drive.google.com/uc?export=download&id=1Hiv3FLp40cLXPPi9Ne8rO8m1W9hjBPs3"
+        ]
+      },
+      "license": {
+        "url": "https://data.telangana.gov.in/dataset/gtfs-mmts-hyderabad",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Contains data provided by MMTS."
       }
     }
   ],

@@ -10,27 +10,33 @@
         "realtime_alerts": "https://realtimemetro.availtec.com/infopoint/GTFS-Realtime.ashx?&Type=Alert"
       },
       "license": {
-        "url": "https://www.akronmetro.org/gtfs-and-shapefiles.aspx"
+        "url": "https://www.yourmetrobus.org/gtfs-and-shapefiles.aspx",
+        "commercial_use_allowed": "yes"
       }
     },
     {
       "id": "f-dpq-metro",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.akronmetro.org/Data/Sites/2/gtfs-data/akronmetrogtfs.zip"
+        "static_current": "https://www.yourmetrobus.org/Data/Sites/2/gtfs-data/metro_rta_gtfs_winter_2023.zip",
+        "static_historic": [
+          "https://www.akronmetro.org/Data/Sites/2/gtfs-data/akronmetrogtfs.zip"
+        ]
       },
       "license": {
-        "url": "https://www.akronmetro.org/gtfs-and-shapefiles.aspx"
+        "url": "https://www.yourmetrobus.org/gtfs-and-shapefiles.aspx",
+        "commercial_use_allowed": "yes"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
           "onestop_id": "o-dpq-metro",
           "name": "Akron Metro Regional Transit Authority",
-          "website": "http://www.akronmetro.org",
+          "short_name": "METRO",
+          "website": "https://www.yourmetrobus.org/",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            },
             {
               "feed_onestop_id": "f-akronmetro~rt"
             }

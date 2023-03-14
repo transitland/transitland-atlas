@@ -8,6 +8,7 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#1/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -20,6 +21,7 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#10/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -32,6 +34,7 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#6/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -44,9 +47,46 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#5/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-r1-ptv~buses~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://data-exchange-api.vicroads.vic.gov.au/opendata/v1/gtfsr/metrobus-tripupdates"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://discover.data.vic.gov.au/dataset/gtfsr-metro-buses-trip-updates",
+        "use_without_attribution": "no"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data-exchange.vicroads.vic.gov.au/docs/services/vehicle-position-trip-update-opendata/operations/metro-bus-trip-updates"
+      }
+    },
+    {
+      "id": "f-r1-ptv~trains~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://data-exchange-api.vicroads.vic.gov.au/opendata/v1/gtfsr/metrotrain-vehicleposition-updates",
+        "realtime_trip_updates": "https://data-exchange-api.vicroads.vic.gov.au/opendata/v1/gtfsr/metrotrain-tripupdates",
+        "realtime_alerts": "https://data-exchange-api.vicroads.vic.gov.au/opendata/v1/gtfsr/metrotrain-servicealerts"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://discover.data.vic.gov.au/dataset/gtfsr-metro-trains-vehicle-positions",
+        "use_without_attribution": "no"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data-exchange.vicroads.vic.gov.au/docs/services/vehicle-position-trip-update-opendata/operations/metro-train-service-alerts"
       }
     },
     {
@@ -56,18 +96,7 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#2/google_transit.zip"
       },
       "license": {
-        "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
-      }
-    },
-    {
-      "id": "f-r1r-ptv~2",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#4/google_transit.zip"
-      },
-      "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -75,11 +104,15 @@
     },
     {
       "id": "f-r1r-ptv~4",
+      "supersedes_ids": [
+        "f-r1r-ptv~2"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#4/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -92,6 +125,20 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#8/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-r1r-ptv~9",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#9/google_transit.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -104,6 +151,7 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#3/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -116,6 +164,7 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#11/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -128,6 +177,7 @@
         "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#7/google_transit.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -142,47 +192,42 @@
       "website": "http://www.ptv.vic.gov.au",
       "associated_feeds": [
         {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1-ptv"
         },
         {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1-ptv~10"
         },
         {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1-ptv~3"
         },
         {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1-ptv~5"
         },
         {
-          "gtfs_agency_id": "1",
+          "feed_onestop_id": "f-r1-ptv~buses~rt"
+        },
+        {
+          "feed_onestop_id": "f-r1-ptv~trains~rt"
+        },
+        {
           "feed_onestop_id": "f-r1r-ptv"
         },
         {
-          "gtfs_agency_id": "1",
-          "feed_onestop_id": "f-r1r-ptv~2"
-        },
-        {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1r-ptv~4"
         },
         {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1r-ptv~8"
         },
         {
-          "gtfs_agency_id": "1",
+          "feed_onestop_id": "f-r1r-ptv~9"
+        },
+        {
           "feed_onestop_id": "f-r1r0-ptv"
         },
         {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1r1-ptv~11"
         },
         {
-          "gtfs_agency_id": "1",
           "feed_onestop_id": "f-r1r2-ptv~7"
         }
       ]

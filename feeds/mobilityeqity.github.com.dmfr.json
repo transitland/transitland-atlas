@@ -67,6 +67,9 @@
     },
     {
       "id": "f-dqc-stmarystransitsystem",
+      "supersedes_ids": [
+        "f-st~marys~md"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
@@ -415,6 +418,41 @@
       ]
     },
     {
+      "id": "f-dr1b-harfordtransitlink",
+      "supersedes_ids": [
+        "f-hartford~county~md"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
+      },
+      "license": {
+        "url": "http://mdtrip.org/About/DeveloperResources.aspx",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "harford-transit-link"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr1b-harfordtransitlink",
+          "name": "Harford Transit LINK",
+          "website": "http://www.harfordtransit.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HarfordTransit"
+            }
+          ],
+          "tags": {
+            "twitter_general": "HarfordCountyMD",
+            "us_ntd_id": "30074",
+            "wikidata_id": "Q5657016"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dr41-ceciltransit",
       "spec": "gtfs",
       "urls": {
@@ -447,36 +485,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "f-hartford~county~md",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
-      }
-    },
-    {
-      "id": "f-st~marys~md",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
-      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

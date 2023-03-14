@@ -2,6 +2,74 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-alternéo~reunion",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/b3cb4731-a954-4e77-b9f4-80bd36da3281"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/donnees-du-reseau-alterneo"
+      }
+    },
+    {
+      "id": "f-citura~grand~reims",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/092e2a5c-cc75-462b-ae24-6c667ce6a345"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/parcours-arrets-et-horaires-theoriques-du-reseau-de-transport-citura-de-la-communaute-urbaine-du-grand-reims-gtfs/"
+      }
+    },
+    {
+      "id": "f-dunkerque~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/18ee1aa1-27a8-44a1-957e-199f940c7e90"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transports-reseau-dk-bus-de-la-communaute-urbaine-de-dunkerque-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-eurostar",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/9089b550-696e-4ae0-87b5-40ea55a14292",
+        "static_historic": [
+          "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/eurostar.zip"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/eurostar-gtfs"
+      }
+    },
+    {
+      "id": "f-karouest~reunion",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/de34f476-4dc1-482c-9d0a-4b710537e691"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/reseau-karouest"
+      }
+    },
+    {
+      "id": "f-nouvelle-calédonie~tanéo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/b0dc18ac-0ede-459f-bc63-034f0b1091e8"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/reseau-taneo-1"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
       "id": "f-sp9x-libellus",
       "spec": "gtfs",
       "urls": {
@@ -390,6 +458,18 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-troyes~tcat~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/79151f50-b842-4fa9-a4b5-046c0029417b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-tcat-troyes-champagne-metropole-1",
+        "share_alike_optional": "no"
+      }
     },
     {
       "id": "f-u0kz-optymo~belfort",

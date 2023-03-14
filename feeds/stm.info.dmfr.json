@@ -21,10 +21,21 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "STM"
+            },
+            {
+              "feed_onestop_id": "f-f25d-socitdetransportdemontral~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-f25d-socitdetransportdemontral~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.stm.info:8443/pub/od/gtfs-rt/ic/v2/vehiclePositions",
+        "realtime_trip_updates": "https://api.stm.info:8443/pub/od/gtfs-rt/ic/v2/tripUpdates"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

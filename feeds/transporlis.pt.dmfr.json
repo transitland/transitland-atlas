@@ -2,10 +2,20 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-carristur~pt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=71&u=web"
+      }
+    },
+    {
       "id": "f-eyc-cp",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/3/gtfs_3.zip"
+        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=3&u=web",
+        "static_historic": [
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/3/gtfs_3.zip"
+        ]
       },
       "operators": [
         {
@@ -23,14 +33,15 @@
     },
     {
       "id": "f-eyce-fertagus",
+      "supersedes_ids": [
+        "f-sulfertagus"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/13/gtfs_13.zip"
-      },
-      "license": {
-        "url": "http://www.opendefinition.org/licenses/cc-zero",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=13&u=web",
+        "static_historic": [
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/13/gtfs_13.zip"
+        ]
       },
       "operators": [
         {
@@ -49,7 +60,10 @@
       "id": "f-eyce-tst",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/11/gtfs_11.zip"
+        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=11&u=web",
+        "static_historic": [
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/11/gtfs_11.zip"
+        ]
       },
       "operators": [
         {
@@ -66,34 +80,12 @@
       ]
     },
     {
-      "id": "f-eyck-carris",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/1/gtfs_1.zip"
-      },
-      "license": {
-        "url": "http://opendefinition.org/licenses/cc-zero/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyck-carris",
-          "name": "Carris",
-          "website": "http://www.carris.pt",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-eyck-rodoviáriadelisboa",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/61/gtfs_61.zip"
+        "static_historic": [
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/61/gtfs_61.zip"
+        ]
       },
       "operators": [
         {
@@ -109,34 +101,13 @@
       ]
     },
     {
-      "id": "f-eyck-transtejo",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/4/gtfs_4.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyck-transtejo",
-          "name": "Transtejo",
-          "website": "http://www.transtejo.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-eyckr-metrodelisboa",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/2/gtfs_2.zip"
-      },
-      "license": {
-        "url": "http://opendefinition.org/licenses/cc-zero/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=2&u=web",
+        "static_historic": [
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/2/gtfs_2.zip"
+        ]
       },
       "operators": [
         {
@@ -154,19 +125,22 @@
     },
     {
       "id": "f-eycs0-soflusa",
+      "supersedes_ids": [
+        "f-eyck-transtejo"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/14/gtfs_14.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/",
-        "use_without_attribution": "no",
-        "create_derived_product": "unknown",
-        "attribution_text": "Transtejo & Soflusa"
+        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=4&u=web",
+        "static_historic": [
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/14/gtfs_14.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-eycs0-soflusa",
+          "supersedes_ids": [
+            "o-eyck-transtejo"
+          ],
           "name": "Soflusa",
           "website": "http://www.transtejo.pt/",
           "associated_feeds": [
@@ -178,10 +152,10 @@
       ]
     },
     {
-      "id": "f-sulfertagus",
+      "id": "f-transportes~colectivos~do~barreiro~pt",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/21/gtfs_21.zip"
+        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=41&u=web"
       }
     }
   ],
