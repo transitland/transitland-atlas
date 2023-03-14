@@ -242,6 +242,44 @@
       }
     },
     {
+      "id": "f-zenbus~puteaux",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/rt/poll.proto?dataset=buseolien"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~puteaux",
+          "name": "Buséolien",
+          "website": "https://www.puteaux.fr/Cadre-de-vie/Transports/Transports-en-commun",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~puteaux"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~puteaux~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~puteaux~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=buseolien",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=buseolien"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~saint~jean~sur~richelieu",
       "spec": "gtfs",
       "urls": {
@@ -321,44 +359,6 @@
       }
     },
     {
-      "id": "f-zenbus~transavold",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=transavold-stavold"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-zenbus~transavold",
-          "name": "Transavold",
-          "website": "https://www.transavold.com/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~transavold"
-            },
-            {
-              "feed_onestop_id": "f-zenbus~transavold~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-zenbus~transavold~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=transavold-stavold",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=transavold-stavold"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      }
-    },
-    {
       "id": "f-zenbus~tignes",
       "spec": "gtfs",
       "urls": {
@@ -390,6 +390,44 @@
       "urls": {
         "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tignes",
         "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tignes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~transavold",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=transavold-stavold"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~transavold",
+          "name": "Transavold",
+          "website": "https://www.transavold.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~transavold"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~transavold~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~transavold~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=transavold-stavold",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=transavold-stavold"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
