@@ -1,0 +1,51 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-dp4j-citybus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bus.gocitybus.com/GTFSRT/citybus-lafayette-in-us.zip",
+        "static_historic": [
+          "https://gocitybus.com/gtfs-gis-data-download",
+          "https://data.trilliumtransit.com/gtfs/citybus-lafayette-in-us/citybus-lafayette-in-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp4j-citybus",
+          "name": "CityBus of Greater Lafayette Indiana",
+          "short_name": "CityBus",
+          "website": "http://www.gocitybus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "9eca155d-a6ad-42b1-8ad5-4888c7c42aaa"
+            },
+            {
+              "feed_onestop_id": "f-dp4j-citybus~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "gocitybus",
+            "us_ntd_id": "50051",
+            "wikidata_id": "Q5600598"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dp4j-citybus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bus.gocitybus.com/GTFSRT/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://bus.gocitybus.com/GTFSRT/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://bus.gocitybus.com/GTFSRT/GTFS_ServiceAlerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
