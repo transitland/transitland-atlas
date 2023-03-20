@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-dnh0-gwinnettcountytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://realtimegwinnett.availtec.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/gwinnettcountytransit-ga-us/gwinnettcountytransit-ga-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnh0-gwinnettcountytransit",
+          "name": "Ride Gwinnett",
+          "website": "https://www.gwinnettcounty.com/web/gwinnett/Departments/Transportation/GwinnettCountyTransit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnh0-gwinnettcountytransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridegwinnett",
+            "us_ntd_id": "40138",
+            "wikidata_id": "Q5623666"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnh0-gwinnettcountytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtimegwinnett.availtec.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://realtimegwinnett.availtec.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://realtimegwinnett.availtec.com/InfoPoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
