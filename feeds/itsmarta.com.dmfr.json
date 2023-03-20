@@ -3,7 +3,9 @@
   "feeds": [
     {
       "id": "f-dnh-marta",
-      "supersedes_ids": ["f-dn5bpc-atlantastreetcar"],
+      "supersedes_ids": [
+        "f-dn5bpc-atlantastreetcar"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.itsmarta.com/google_transit_feed/google_transit.zip"
@@ -14,15 +16,13 @@
       "operators": [
         {
           "onestop_id": "o-dnh-metropolitanatlantarapidtransitauthority",
-          "supersedes_ids": ["o-dn5bpc-atlantastreetcar"],
+          "supersedes_ids": [
+            "o-dn5bpc-atlantastreetcar"
+          ],
           "name": "Metropolitan Atlanta Rapid Transit Authority",
           "short_name": "MARTA",
           "website": "http://www.itsmarta.com",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "MARTA",
-              "feed_onestop_id": "f-dnh-marta"
-            },
             {
               "feed_onestop_id": "f-dnh-marta~rt"
             }
