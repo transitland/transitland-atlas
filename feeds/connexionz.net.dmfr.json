@@ -52,6 +52,15 @@
       ]
     },
     {
+      "id": "f-9q6-sanluisobisporegionaltransitauthority~pasoroblesexpress~so~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
       "id": "f-9qc0-soltrans~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -145,12 +154,26 @@
           "name": "Yamhill County Transit Area",
           "short_name": "YCTA",
           "website": "https://ycbus.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c20-yamhillcounty~or~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "0R02-00321",
             "wikidata_id": "Q60770365"
           }
         }
       ]
+    },
+    {
+      "id": "f-c20-yamhillcounty~or~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
     },
     {
       "id": "f-dr5r-nycferry",
@@ -232,6 +255,7 @@
       "id": "f-nycferry~rt",
       "spec": "gtfs-rt",
       "urls": {
+        "realtime_vehicle_positions": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
         "realtime_trip_updates": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
       }
