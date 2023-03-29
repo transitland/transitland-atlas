@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-aléop~pays~de~la~loire",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://donnees.paysdelaloire.fr/data/pdl.zip"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-circuits-des-lignes-de-transports-aleop-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-aléop~pays~de~la~loire",
+          "name": "Transport Régional en Pays de la Loire",
+          "short_name": "Aléop",
+          "website": "https://aleop.paysdelaloire.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-aléop~pays~de~la~loire~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-aléop~pays~de~la~loire~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.transport.data.gouv.fr/resource/aleop-pdl-gtfs-rt-vehicle-position",
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/aleop-pdl-gtfs-rt-trip-update",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/aleop-pdl-gtfs-rt-alerts"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-circuits-des-lignes-de-transports-aleop-1"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
