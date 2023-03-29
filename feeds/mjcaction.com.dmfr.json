@@ -423,15 +423,19 @@
       "id": "f-santa~ynez~valley~transit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
+        "static_current": "https://app.mecatran.com/urb/ws/feed/c2l0ZT1zeXZ0O2NsaWVudD1zZWxmO2V4cGlyZT07dHlwZT1ndGZzO2tleT00MjcwNzQ0ZTY4NTAzOTMyMDIxMDdjNzI0MDRkMzYyNTM4MzI0YzI0",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-9q4s-a11214029",
-          "name": "A11214029",
+          "name": "Santa Ynez Valley Transit",
+          "website": "https://www.syvt.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "11214031"
+              "feed_onestop_id": "f-santa~ynez~valley~transit~rt"
             }
           ],
           "tags": {
@@ -440,6 +444,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-santa~ynez~valley~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=santa-ynez-valley-transit"
+      }
     },
     {
       "id": "f-sierra~vista~az",
