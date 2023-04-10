@@ -15,7 +15,7 @@
           "onestop_id": "o-9q6-kingsarearuraltransit",
           "name": "Kings Area Rural Transit",
           "short_name": "KART",
-          "website": "http://mykartbus.com/",
+          "website": "https://www.kartbus.org",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-kingsarearuraltransit~rt"
@@ -178,6 +178,43 @@
         "realtime_vehicle_positions": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
         "realtime_trip_updates": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
+      "id": "f-dp9e-belleurbansystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://racine.connexionz.net/rtt/public/utility/gtfs.aspx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/racine-wi-us/racine-wi-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp9e-belleurbansystem",
+          "name": "Racine Transit",
+          "short_name": "RYDE",
+          "website": "https://www.cityofracine.org/Racine-Transit/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dp9e-belleurbansystem"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CityofRacine",
+            "us_ntd_id": "50006",
+            "wikidata_id": "Q4883698"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dp9e-belleurbansystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://racine.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://racine.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://racine.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
       }
     },
     {
