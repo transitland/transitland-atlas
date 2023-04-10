@@ -9,15 +9,14 @@
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://stanrta.org/preview-gtfs.zip",
+        "static_current": "https://stanrta.rideralerts.com/InfoPoint/gtfs-zip.ashx",
         "static_historic": [
+          "https://stanrta.org/preview-gtfs.zip",
           "http://data.trilliumtransit.com/gtfs/modesto-ca-us/modesto-ca-us.zip"
         ]
       },
       "tags": {
-        "feed_id": "modesto-ca-us",
-        "gtfs_data_exchange": "modesto-area-express",
-        "managed_by": "trillium"
+        "gtfs_data_exchange": "modesto-area-express"
       },
       "operators": [
         {
@@ -48,9 +47,9 @@
       "id": "f-modestoareaexpress~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
-        "realtime_trip_updates": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate",
-        "realtime_alerts": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+        "realtime_vehicle_positions": "https://stanrta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://stanrta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://stanrta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
       }
     }
   ],
