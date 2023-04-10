@@ -1,0 +1,46 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-dp0r-citylink",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://clk.rideralerts.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/ridecitylink-il-us/ridecitylink-il-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp0r-citylink",
+          "name": "CityLink",
+          "website": "http://www.ridecitylink.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dp0r-citylink~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CityLinkPeoria",
+            "us_ntd_id": "50056",
+            "wikidata_id": "Q5600709"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dp0r-citylink~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://clk.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://clk.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://clk.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
