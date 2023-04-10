@@ -15,6 +15,11 @@
           "onestop_id": "o-9q9-santacruzmetro",
           "name": "Santa Cruz Metropolitan Transit District",
           "short_name": "METRO",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q9-scmtdcom~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "santacruzmetro",
             "us_ntd_id": "90006",
@@ -22,6 +27,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9q9-scmtdcom~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rt.scmetro.org/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://rt.scmetro.org/gtfsrt/trips",
+        "realtime_alerts": "https://rt.scmetro.org/gtfsrt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
