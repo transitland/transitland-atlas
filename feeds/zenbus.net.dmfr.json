@@ -165,6 +165,41 @@
       }
     },
     {
+      "id": "f-zenbus~car~sud",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=carsud-reunion"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~car~sud",
+          "name": "Carsud",
+          "website": "https://www.carsud.re/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~car~sud~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~car~sud~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=carsud-reunion",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=carsud-reunion"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~coeur~de~tarentaise",
       "spec": "gtfs",
       "urls": {
@@ -287,41 +322,6 @@
       "urls": {
         "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee&file=vp",
         "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee&file=tu"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      }
-    },
-    {
-      "id": "f-zenbus~puteaux",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://zenbus.net/gtfs/rt/poll.proto?dataset=buseolien"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-zenbus~puteaux",
-          "name": "Buséolien",
-          "website": "https://www.puteaux.fr/Cadre-de-vie/Transports/Transports-en-commun",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~puteaux~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-zenbus~puteaux~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=buseolien",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=buseolien"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
