@@ -18,14 +18,46 @@
           "website": "https://www.villedemont-tremblant.qc.ca/citoyens/transport/bus-mont-tremblant",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~mont~tremblant"
-            },
-            {
               "feed_onestop_id": "f-zenbus~mont~tremblant~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-zenbus~alesy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=alesy"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~alesy",
+          "name": "Ales'Y",
+          "website": "https://www.alesy.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~alesy~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~alesy~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=alesy",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=alesy"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
     },
     {
       "id": "f-zenbus~alpe~huez",
@@ -43,9 +75,6 @@
           "name": "Navettes l'Alpe d'Huez",
           "website": "https://www.alpedhuez-resalp.com/",
           "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~alpe~huez"
-            },
             {
               "feed_onestop_id": "f-zenbus~alpe~huez~rt"
             }
@@ -82,9 +111,6 @@
           "website": "https://www.haute-bigorre.fr/vivre-sur-le-territoire/mobilite/se-deplacer-sans-voiture/se-deplacer-vers-la-mongie/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~bigorre~mongie"
-            },
-            {
               "feed_onestop_id": "f-zenbus~bigorre~mongie~rt"
             }
           ]
@@ -120,9 +146,6 @@
           "website": "https://30direct.com",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~bordeaux~navettes~aeroport"
-            },
-            {
               "feed_onestop_id": "f-zenbus~bordeaux~navettes~aeroport~rt"
             }
           ]
@@ -157,9 +180,6 @@
           "name": "Navettes Coeur de Tarentaise",
           "website": "https://www.coeurdetarentaise.fr/navettes/",
           "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~coeur~de~tarentaise"
-            },
             {
               "feed_onestop_id": "f-zenbus~coeur~de~tarentaise~rt"
             }
@@ -208,9 +228,6 @@
           "website": "https://tum-mende.fr/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~mendois"
-            },
-            {
               "feed_onestop_id": "f-zenbus~mendois~rt"
             }
           ]
@@ -258,9 +275,6 @@
           "website": "http://www.paris-saclay.com/vivre-ici/mobilite/navettes-gratuites-418.html",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~paris~saclay"
-            },
-            {
               "feed_onestop_id": "f-zenbus~paris~saclay~rt"
             }
           ]
@@ -296,9 +310,6 @@
           "website": "https://www.puteaux.fr/Cadre-de-vie/Transports/Transports-en-commun",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~puteaux"
-            },
-            {
               "feed_onestop_id": "f-zenbus~puteaux~rt"
             }
           ]
@@ -333,9 +344,6 @@
           "name": "Saint Jean Sur Richelieu",
           "website": "https://sjsr.ca/transport-collectif/",
           "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~saint~jean~sur~richelieu"
-            },
             {
               "feed_onestop_id": "f-zenbus~saint~jean~sur~richelieu~rt"
             }
@@ -413,9 +421,6 @@
           "website": "https://www.tignes.net/guide-station/navettes",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~tignes"
-            },
-            {
               "feed_onestop_id": "f-zenbus~tignes~rt"
             }
           ]
@@ -450,9 +455,6 @@
           "name": "Transavold",
           "website": "https://www.transavold.com/",
           "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~transavold"
-            },
             {
               "feed_onestop_id": "f-zenbus~transavold~rt"
             }
@@ -489,9 +491,6 @@
           "website": "https://www.valmorel.com/guide-et-infos-pratiques/navettes/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~valmorel"
-            },
-            {
               "feed_onestop_id": "f-zenbus~valmorel~rt"
             }
           ]
@@ -526,9 +525,6 @@
           "name": "Navettes Val d'Isere",
           "website": "https://www.valdisere.com/guide-du-village/plan-navettes/",
           "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~val~d~isere"
-            },
             {
               "feed_onestop_id": "f-zenbus~val~d~isere~rt"
             }
