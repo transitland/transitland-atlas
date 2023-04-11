@@ -364,6 +364,41 @@
       }
     },
     {
+      "id": "f-zenbus~sankeo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/2afffa1f-aa4a-4fe4-9802-4b5f82bb96c6"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~sankeo",
+          "name": "Sankeo",
+          "website": "https://www.sankeo.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~sankeo~scolaire~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~sankeo~scolaire~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sankeo-scolaire",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=sankeo-scolaire"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~sitac~calais",
       "spec": "gtfs",
       "urls": {
