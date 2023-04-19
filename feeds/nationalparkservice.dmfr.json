@@ -2,10 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-9w8-grca~southrimshuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nps.gov/external-resources/gtfs/grca/south-rim-shuttle-service.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9w8-grca~southrimshuttle",
+          "name": "Grand Canyon South Rim Shuttle",
+          "short_name": "Grand Canyon South Rim Shuttle",
+          "website": "https://www.nps.gov/grca/planyourvisit/shuttle-buses.htm"
+        }
+      ]
+    },    {
       "id": "f-9xhvw-townofestespark",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://nationalparkservice.github.io/nps-gtfs/romo-epshuttles/shuttles/gtfs.zip"
+        "static_historic": "https://nationalparkservice.github.io/nps-gtfs/romo-epshuttles/shuttles/gtfs.zip"
       },
       "operators": [
         {
@@ -28,7 +42,7 @@
       "id": "f-dpmf-nps~cuva~scenic~rail",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://nationalparkservice.github.io/nps-gtfs/cuva/scenic-rail/gtfs.zip"
+        "static_historic": "http://nationalparkservice.github.io/nps-gtfs/cuva/scenic-rail/gtfs.zip"
       },
       "license": {
         "url": "https://creativecommons.org/publicdomain/zero/1.0/",
@@ -52,7 +66,7 @@
       "id": "f-drt8-nps~boha~ferries",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://nationalparkservice.github.io/nps-gtfs/boha/ferries/gtfs.zip"
+        "static_historic": "http://nationalparkservice.github.io/nps-gtfs/boha/ferries/gtfs.zip"
       },
       "license": {
         "url": "https://creativecommons.org/publicdomain/zero/1.0/",
