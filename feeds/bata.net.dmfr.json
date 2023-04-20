@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-bay~area~transportation~authority~mi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://batabustracker.com/gtfs",
+        "static_historic": [
+          "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7480/BATA_GTFS.zip"
+        ]
+      },
+      "tags": {
+        "us_ntd_id": "5R03-50413",
+        "wikidata_id": "Q20710576"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpg-bayareatransportationauthority",
+          "name": "Bay Area Transportation Authority",
+          "short_name": "BATA",
+          "website": "https://www.bata.net/"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
