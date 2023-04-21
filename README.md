@@ -32,7 +32,7 @@ Includes feeds in the following data specifications (specs):
     * If a file exists, use that file, otherwise create a new empty DMFR file.
     * To create a new file, you can use `example.com.dmfr.json` as a starting point, which contains the basic schema and an example feed.
     * Feeds exist as an array in the `feeds` property of a DMFR file.
-2. Propose a new Onestop ID for the feed (see [below](#onestopids))
+2. Propose a new Onestop ID for the feed (see [below](#onestop-ids))
     * Feed Onestop ID's begins with `f-` and continues with a unique string, like the transit operator's name
     * Use lowercase, alphanumeric unicode characters  in the name component
     * Use `~` instead of spaces or other punctuation
