@@ -107,41 +107,6 @@
       }
     },
     {
-      "id": "f-zenbus~toutenbus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=toutenbus"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-zenbus~toutenbus",
-          "name": "Tout'enbus",
-          "website": "https://www.toutenbus.fr/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~toutenbus~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-zenbus~toutenbus~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=toutenbus",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=toutenbus"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
-      }
-    },
-    {
       "id": "f-zenbus~auch",
       "spec": "gtfs",
       "urls": {
@@ -751,6 +716,41 @@
       "urls": {
         "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tignes",
         "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tignes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~toutenbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=toutenbus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~toutenbus",
+          "name": "Tout'enbus",
+          "website": "https://www.toutenbus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~toutenbus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~toutenbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=toutenbus",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=toutenbus"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
