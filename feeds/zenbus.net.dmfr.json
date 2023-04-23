@@ -578,6 +578,41 @@
       }
     },
     {
+      "id": "f-zenbus~respire",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=iledere75923021"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~respire",
+          "name": "RespiRe",
+          "website": "https://la.charente-maritime.fr/routes-transports/re-navettes-pont-et-villages",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~respire~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~respire~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=iledere75923021",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=iledere75923021"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~ritmo",
       "spec": "gtfs",
       "urls": {
