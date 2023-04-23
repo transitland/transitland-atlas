@@ -5,7 +5,10 @@
       "id": "f-capitalareatransit~pa",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://findmycatbus.com/gtfs"
+        "static_current": "https://cat.rideralerts.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://findmycatbus.com/gtfs"
+        ]
       },
       "operators": [
         {
@@ -15,7 +18,7 @@
           "website": "https://www.cattransit.com",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-capitalareatransit~pa"
+              "feed_onestop_id": "f-capitalareatransit~pa~rt"
             }
           ],
           "tags": {
@@ -30,9 +33,9 @@
       "id": "f-capitalareatransit~pa~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://findmycatbus.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://findmycatbus.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://findmycatbus.com/gtfs-rt/alerts"
+        "realtime_vehicle_positions": "https://cat.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://cat.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://cat.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=alert"
       }
     }
   ],
