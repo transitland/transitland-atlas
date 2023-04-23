@@ -389,6 +389,42 @@
       }
     },
     {
+      "id": "f-zenbus~mayenne",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=maybus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mayenne",
+          "name": "Transport collectif de la Ville de Mayenne",
+          "short_name": "May'bus",
+          "website": "https://www.ville-mayenne.fr/utile/deplacement/transports-commun/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~mayenne~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~mayenne~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=maybus",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=maybus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~mendois",
       "spec": "gtfs",
       "urls": {
