@@ -282,6 +282,41 @@
       ]
     },
     {
+      "id": "f-zenbus~ile~de~re",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=iledere-rna"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~ile~de~re",
+          "name": "Transports Nouvelle-Aquitaine",
+          "website": "https://transports.nouvelle-aquitaine.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~ile~de~re~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~ile~de~re~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=iledere-rna",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=iledere-rna"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~mendois~rt",
       "spec": "gtfs-rt",
       "urls": {
