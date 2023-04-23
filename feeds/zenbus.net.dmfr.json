@@ -472,6 +472,42 @@
       }
     },
     {
+      "id": "f-zenbus~moselle~et~madon",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=moselle-et-madon"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~moselle~et~madon",
+          "name": "Transport en Moselle et Madon",
+          "short_name": "T'MM",
+          "website": "https://www.cc-mosellemadon.fr/fr/t-mm.html",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~moselle~et~madon~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~moselle~et~madon~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=moselle-et-madon",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=moselle-et-madon"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~oloron~sainte~marie",
       "spec": "gtfs",
       "urls": {
