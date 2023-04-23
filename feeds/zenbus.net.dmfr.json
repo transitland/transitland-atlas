@@ -647,6 +647,41 @@
       }
     },
     {
+      "id": "f-zenbus~sel~et~vermois",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=sel-et-vermois"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~sel~et~vermois",
+          "name": "Navette Sel et Vermois",
+          "website": "https://www.cc-seletvermois.fr/la-navette/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~sel~et~vermois~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~sel~et~vermois~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sel-et-vermois",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=sel-et-vermois"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~sitac~calais",
       "spec": "gtfs",
       "urls": {
