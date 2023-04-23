@@ -238,7 +238,7 @@
         {
           "onestop_id": "o-zenbus~capbus",
           "name": "Cap'bus",
-          "website": "https://www.capbus.fr//",
+          "website": "https://www.capbus.fr/",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-zenbus~capbus~rt"
@@ -739,6 +739,41 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-zenbus~saintes",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=buss-cdasaintes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~saintes",
+          "name": "Buss",
+          "website": "https://www.buss-saintes.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~saintes~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~saintes~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=buss-cdasaintes",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=buss-cdasaintes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
     },
     {
       "id": "f-zenbus~sankeo~scolaire~rt",
