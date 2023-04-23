@@ -829,6 +829,41 @@
       }
     },
     {
+      "id": "f-zenbus~tempobus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=16i2434229"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~tempobus",
+          "name": "Tempobus",
+          "website": "https://www.tempobus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~tempobus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~tempobus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=16i2434229",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=16i2434229"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~tignes",
       "spec": "gtfs",
       "urls": {
