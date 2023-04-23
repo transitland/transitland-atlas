@@ -932,6 +932,41 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/"
       }
+    },
+    {
+      "id": "f-zenbus~verdun",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=verdun-rezo"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~verdun",
+          "name": "Rezo Grand Verdun",
+          "website": "https://www.rezo-grandverdun.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~verdun~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~verdun~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=verdun-rezo&file=vp",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=verdun-rezo&file=tu"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
