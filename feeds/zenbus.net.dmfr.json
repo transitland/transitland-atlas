@@ -225,6 +225,41 @@
       }
     },
     {
+      "id": "f-zenbus~capbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=agdecapbus68429531"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~capbus",
+          "name": "Cap'bus",
+          "website": "https://www.capbus.fr//",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~capbus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~capbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=agdecapbus68429531",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=agdecapbus68429531"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~car~sud",
       "spec": "gtfs",
       "urls": {
