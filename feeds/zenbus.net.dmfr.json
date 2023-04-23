@@ -472,6 +472,41 @@
       }
     },
     {
+      "id": "f-zenbus~oloron~sainte~marie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=oloron"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~oloron~sainte~marie",
+          "name": "Navette Oloron Sainte-Marie",
+          "website": "https://www.hautbearn.fr/vivre-habiter/se-deplacer/navette-oloron-sainte-marie",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~oloron~sainte~marie~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~oloron~sainte~marie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=oloron",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=oloron"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~paris~saclay",
       "spec": "gtfs",
       "urls": {
