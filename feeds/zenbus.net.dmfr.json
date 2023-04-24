@@ -2,6 +2,229 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-mont~tremblant~qc~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tcmt6w8qbuxm"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mont~tremblant~qc~ca",
+          "name": "Bus Mont-Tremblant",
+          "website": "https://www.villedemont-tremblant.qc.ca/citoyens/transport/bus-mont-tremblant",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~mont~tremblant~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~alesy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=alesy"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~alesy",
+          "name": "Ales'Y",
+          "website": "https://www.alesy.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~alesy~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~alesy~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=alesy",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=alesy"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~alpe~huez",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=alpe-huez"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~alpe~huez",
+          "name": "Navettes l'Alpe d'Huez",
+          "website": "https://www.alpedhuez-resalp.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~alpe~huez~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~alpe~huez~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=alpe-huez",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=alpe-huez"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~arche",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=lr11-arche"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~arche",
+          "name": "Transport Arche",
+          "website": "https://www.archeagglo.fr/vivre-ici/transport-mobilite/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~arche~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~arche~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=lr11-arche",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=lr11-arche"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~astrobus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=astrobus",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=astrobus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~auch",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=auch-alliance"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~auch",
+          "name": "Reseau du Grand Auch Coeur de Gascogne",
+          "short_name": "Alliance",
+          "website": "https://www.alliance-bus.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~auch~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~auch~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=auch-alliance",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=auch-alliance"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~bernay~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=bernay",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=bernay"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~bigorre~mongie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=bigorre-mongie"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~bigorre~mongie",
+          "name": "Skibus",
+          "website": "https://www.haute-bigorre.fr/vivre-sur-le-territoire/mobilite/se-deplacer-sans-voiture/se-deplacer-vers-la-mongie/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~bigorre~mongie~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~bigorre~mongie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=bigorre-mongie",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=bigorre-mongie"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~bordeaux~navettes~aeroport",
       "spec": "gtfs",
       "urls": {
@@ -18,9 +241,6 @@
           "website": "https://30direct.com",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~bordeaux~navettes~aeroport"
-            },
-            {
               "feed_onestop_id": "f-zenbus~bordeaux~navettes~aeroport~rt"
             }
           ]
@@ -31,8 +251,361 @@
       "id": "f-zenbus~bordeaux~navettes~aeroport~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport&file=vp",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=bordeaux-navettes-aeroport&file=tu"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~capbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=agdecapbus68429531"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~capbus",
+          "name": "Cap'bus",
+          "website": "https://www.capbus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~capbus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~capbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=agdecapbus68429531",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=agdecapbus68429531"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~car~sud",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=carsud-reunion"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~car~sud",
+          "name": "Carsud",
+          "website": "https://www.carsud.re/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~car~sud~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~car~sud~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=carsud-reunion",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=carsud-reunion"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~coeur~de~tarentaise",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=coeur-de-tarentaise"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~coeur~de~tarentaise",
+          "name": "Navettes Coeur de Tarentaise",
+          "website": "https://www.coeurdetarentaise.fr/navettes/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~coeur~de~tarentaise~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~coeur~de~tarentaise~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=coeur-de-tarentaise",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=coeur-de-tarentaise"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~granville~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=granville",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=granville"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~hobus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=hobus",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=hobus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~ile~de~re",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=iledere-rna"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~ile~de~re",
+          "name": "Transports Nouvelle-Aquitaine",
+          "website": "https://transports.nouvelle-aquitaine.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~ile~de~re~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~ile~de~re~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=iledere-rna",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=iledere-rna"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~les~saisies",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=lessaiseis"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~les~saisies",
+          "name": "Navettes Les Saisies",
+          "website": "https://www.lessaisies.com/bus-albertville-navettes-intramuros-gratuites.html",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~les~saisies~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~les~saisies~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=lessaisies",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=lessaisies"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~mayenne",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=maybus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mayenne",
+          "name": "Transport collectif de la Ville de Mayenne",
+          "short_name": "May'bus",
+          "website": "https://www.ville-mayenne.fr/utile/deplacement/transports-commun/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~mayenne~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~mayenne~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=maybus",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=maybus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~mendois",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tum"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mendois",
+          "name": "Transports Urbains Mendois",
+          "website": "https://tum-mende.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~mendois~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~mendois~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tum",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tum"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~mont~tremblant~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tcmt6w8qbuxm",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tcmt6w8qbuxm"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~moselle~et~madon",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=moselle-et-madon"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~moselle~et~madon",
+          "name": "Transport en Moselle et Madon",
+          "short_name": "T'MM",
+          "website": "https://www.cc-mosellemadon.fr/fr/t-mm.html",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~moselle~et~madon~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~moselle~et~madon~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=moselle-et-madon",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=moselle-et-madon"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~oloron~sainte~marie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=oloron"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~oloron~sainte~marie",
+          "name": "Navette Oloron Sainte-Marie",
+          "website": "https://www.hautbearn.fr/vivre-habiter/se-deplacer/navette-oloron-sainte-marie",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~oloron~sainte~marie~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~oloron~sainte~marie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=oloron",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=oloron"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -56,9 +629,6 @@
           "website": "http://www.paris-saclay.com/vivre-ici/mobilite/navettes-gratuites-418.html",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-zenbus~paris~saclay"
-            },
-            {
               "feed_onestop_id": "f-zenbus~paris~saclay~rt"
             }
           ]
@@ -69,8 +639,253 @@
       "id": "f-zenbus~paris~saclay~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee&file=vp",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=caee&file=tu"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~respire",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=iledere75923021"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~respire",
+          "name": "RespiRe",
+          "website": "https://la.charente-maritime.fr/routes-transports/re-navettes-pont-et-villages",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~respire~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~respire~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=iledere75923021",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=iledere75923021"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~ritmo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=haguenau"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~ritmo",
+          "name": "Ritmo",
+          "website": "https://www.ritmo.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~ritmo~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~ritmo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=haguenau",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=haguenau"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~saintes",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=buss-cdasaintes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~saintes",
+          "name": "Buss",
+          "website": "https://www.buss-saintes.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~saintes~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~saintes~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=buss-cdasaintes",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=buss-cdasaintes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~saint~jean~sur~richelieu",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=saint-jean-sur-richelieu"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~saint~jean~sur~richelieu",
+          "name": "Saint Jean Sur Richelieu",
+          "website": "https://sjsr.ca/transport-collectif/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~saint~jean~sur~richelieu~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~saint~jean~sur~richelieu~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=saint-jean-sur-richelieu",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=saint-jean-sur-richelieu"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~sankeo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/2afffa1f-aa4a-4fe4-9802-4b5f82bb96c6"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~sankeo",
+          "name": "Sankeo",
+          "website": "https://www.sankeo.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~sankeo~scolaire~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~sankeo~scolaire~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sankeo-scolaire",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=sankeo-scolaire"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~sarlat~la~caneda",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=Sarlat"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~sarlat~la~caneda",
+          "name": "Sarlat'Bus",
+          "website": "https://perigord-voyagessarl.com/sarlat-bus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~sarlat~la~caneda~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~sarlat~la~caneda~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=Sarlat",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=Sarlat"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~sel~et~vermois",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=sel-et-vermois"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~sel~et~vermois",
+          "name": "Navette Sel et Vermois",
+          "website": "https://www.cc-seletvermois.fr/la-navette/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~sel~et~vermois~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~sel~et~vermois~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sel-et-vermois",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=sel-et-vermois"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -109,13 +924,258 @@
       "id": "f-zenbus~sitac~calais~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=sitac-calais-rt",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=sitac-calais-rt"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=sitac-calais-rt",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=sitac-calais-rt"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-sitac-calais-gtfs-gtfs-rt/?locale=en",
         "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-zenbus~tempobus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=16i2434229"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~tempobus",
+          "name": "Tempobus",
+          "website": "https://www.tempobus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~tempobus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~tempobus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=16i2434229",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=16i2434229"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~tignes",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tignes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~tignes",
+          "name": "Navettes de Tignes",
+          "website": "https://www.tignes.net/guide-station/navettes",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~tignes~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~tignes~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tignes",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tignes"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~toutenbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=toutenbus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~toutenbus",
+          "name": "Tout'enbus",
+          "website": "https://www.toutenbus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~toutenbus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~toutenbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=toutenbus",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=toutenbus"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~transavold",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=transavold-stavold"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~transavold",
+          "name": "Transavold",
+          "website": "https://www.transavold.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~transavold~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~transavold~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=transavold-stavold",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=transavold-stavold"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~valmorel",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=valmorel"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~valmorel",
+          "name": "Navettes Valmorel",
+          "website": "https://www.valmorel.com/guide-et-infos-pratiques/navettes/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~valmorel~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~valmorel~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=valmorel",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=valmorel"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~val~d~isere",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=valdisere"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~val~d~isere",
+          "name": "Navettes Val d'Isere",
+          "website": "https://www.valdisere.com/guide-du-village/plan-navettes/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~val~d~isere~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~val~d~isere~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=valdisere",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=valdisere"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
+      "id": "f-zenbus~verdun",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=verdun-rezo"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~verdun",
+          "name": "Rezo Grand Verdun",
+          "website": "https://www.rezo-grandverdun.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~verdun~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~verdun~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=verdun-rezo&file=vp",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=verdun-rezo&file=tu"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
       }
     }
   ],
