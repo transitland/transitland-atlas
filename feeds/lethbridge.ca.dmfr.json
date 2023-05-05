@@ -5,13 +5,27 @@
       "id": "f-lethbridgetransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.lethbridge.ca/OpenDataSets/GTFS_Transit_Data.zip"
+        "static_current": "https://gis.lethbridge.ca/OpenData/DataSets/GTFS_Transit_Data.zip",
+        "static_historic": [
+          "https://www.lethbridge.ca/OpenDataSets/GTFS_Transit_Data.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.arcgis.com/home/item.html?id=e5ce3aa182114d66926d06ba732fb668",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-lethbridgetransit",
           "name": "Lethbridge Transit",
-          "website": "https://www.lethbridge.ca/living-here/getting-around/Transit/Pages/default.aspx"
+          "website": "https://www.lethbridge.ca/living-here/getting-around/Transit/Pages/default.aspx",
+          "tags": {
+            "wikidata_id": "Q6533317"
+          }
         }
       ]
     }
