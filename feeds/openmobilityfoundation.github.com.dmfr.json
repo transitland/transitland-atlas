@@ -2,11 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-atom~mobility~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://mds.rideatom.com/mds"
+      }
+    },
+    {
       "id": "f-baus~mds",
       "spec": "mds",
       "urls": {
         "gbfs_auto_discovery": "https://mds.bird.co/gbfs/platform-partner/v2/baus",
         "mds_provider": "https://mds.bird.co"
+      }
+    },
+    {
+      "id": "f-bcycle~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.bcycle.com",
+        "mds_provider": "https://mds.bcycle.com"
       }
     },
     {
@@ -79,6 +94,14 @@
       }
     },
     {
+      "id": "f-gbike~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://mds.gcoo.io/gbfs",
+        "mds_provider": "https://mds.gcoo.io/"
+      }
+    },
+    {
       "id": "f-gig~mds",
       "spec": "mds",
       "urls": {
@@ -94,6 +117,13 @@
       }
     },
     {
+      "id": "f-helbiz~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://mds.helbiz.com"
+      }
+    },
+    {
       "id": "f-hopr~mds",
       "spec": "mds",
       "urls": {
@@ -105,6 +135,29 @@
       "spec": "mds",
       "urls": {
         "mds_provider": "https://api.uber.com/v0.2/emobility/mds"
+      }
+    },
+    {
+      "id": "f-kiwibot~mds",
+      "spec": "mds"
+    },
+    {
+      "id": "f-leo&go~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://mds.vulog.io/mds/fleets/LEONGO-FRLIO"
+      }
+    },
+    {
+      "id": "f-leo~explore~mds",
+      "spec": "mds"
+    },
+    {
+      "id": "f-leo~ride~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://mobile.leoriders.com/gbpf",
+        "mds_provider": "https://mobile.leoriders.com/mds"
       }
     },
     {
@@ -145,10 +198,33 @@
       }
     },
     {
+      "id": "f-poppy~mobility~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://poppy.red/mds"
+      }
+    },
+    {
       "id": "f-razor~mds",
       "spec": "mds",
       "urls": {
         "mds_provider": "https://razor-200806.appspot.com/api/v2/mds"
+      }
+    },
+    {
+      "id": "f-revel~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.gorevel.com/gbfs/v2/",
+        "mds_provider": "https://opendata.gorevel.com/opendata/mds/"
+      }
+    },
+    {
+      "id": "f-scoot~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://mds.bird.co/gbfs/",
+        "mds_provider": "https://mds.bird.co/"
       }
     },
     {
@@ -196,10 +272,48 @@
       }
     },
     {
+      "id": "f-surf~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://api.app.surf/gbfs/en",
+        "mds_provider": "https://api.app.surf/mds"
+      }
+    },
+    {
+      "id": "f-telofun~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://mds.fsmctmobility.com/api/mds/v1/"
+      }
+    },
+    {
+      "id": "f-tembici~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://api.tembici.com.br/gbfs",
+        "mds_provider": "https://api.tembici.com.br/mds"
+      }
+    },
+    {
       "id": "f-tier~mds",
       "spec": "mds",
       "urls": {
         "mds_provider": "https://partner.tier-services.io/mds"
+      }
+    },
+    {
+      "id": "f-troopy~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://gbfs.vulog.io/mds/fleets/TROOPY-FRPAR/gbfs",
+        "mds_provider": "https://mds.vulog.io/mds/fleets/TROOPY-FRPAR"
+      }
+    },
+    {
+      "id": "f-tuktuk~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://app.tuktukscooters.com/mds-feed"
       }
     },
     {
@@ -226,10 +340,32 @@
       }
     },
     {
+      "id": "f-whoosh~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://mds.whoosh.bike"
+      }
+    },
+    {
       "id": "f-wind~mds",
       "spec": "mds",
       "urls": {
         "mds_provider": "https://partners.wind.co/v1/mds"
+      }
+    },
+    {
+      "id": "f-yego~mds",
+      "spec": "mds",
+      "urls": {
+        "gbfs_auto_discovery": "https://services.rideyego.com/gbfs",
+        "mds_provider": "https://mds.yego.app/mds"
+      }
+    },
+    {
+      "id": "f-zig~zag~sharing~mds",
+      "spec": "mds",
+      "urls": {
+        "mds_provider": "https://mds.zigzagsharing.com/"
       }
     },
     {
