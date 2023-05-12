@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-alabama~am~university",
@@ -35,6 +35,23 @@
       "urls": {
         "static_current": "https://passio3.com/columbia/passioTransit/gtfs/google_transit.zip"
       }
+    },
+    {
+      "id": "f-connect~douglas~ga~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/douglas/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-connect~douglas~ga~us",
+          "name": "Connect Douglas",
+          "website": "https://connectdouglas.com/",
+          "tags": {
+            "us_ntd_id": "40082"
+          }
+        }
+      ]
     },
     {
       "id": "f-dhvrs-bullrunner",
@@ -75,6 +92,42 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dnq9-ckrider~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/concordk/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/ckrider-nc-us/ckrider-nc-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq9-concordkannapolisareatransit",
+          "name": "Concord Kannapolis Area Transit",
+          "short_name": "CKRider",
+          "website": "https://ckrider.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnq9-ckrider~nc~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40167",
+            "wikidata_id": "Q5158814"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq9-ckrider~nc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/concordk/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/concordk/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/concordk/passioTransit/gtfs/realtime/serviceAlerts"
+      }
     },
     {
       "id": "f-dnwe-radford~va~us",
@@ -180,6 +233,39 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://passio3.com/hoboken/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-kootenai~citylink",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/kootenai/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-kootenai~citylink",
+          "name": "Citylink",
+          "website": "https://www.kcgov.us/486/Transit-Services",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-kootenai~citylink"
+            },
+            {
+              "feed_onestop_id": "f-kootenai~citylink~rural"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00055",
+            "wikidata_id": "Q22058969"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-kootenai~citylink~rural",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/citylinkrural/passioTransit/gtfs/google_transit.zip"
       }
     },
     {

@@ -1,11 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9zvw-mvta~metro",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://wiki.mvta.com/files/Home/google_transit.zip"
+        "static_current": "http://ride.mvta.com/InfoPoint/GTFS-Zip.ashx",
+        "static_historic": [
+          "http://wiki.mvta.com/files/Home/google_transit.zip"
+        ]
       },
       "operators": [
         {
@@ -15,7 +18,10 @@
           "website": "http://www.mvta.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-9zvw-mvta~metro~rt"
             }
           ],
           "tags": {
@@ -26,6 +32,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9zvw-mvta~metro~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://ride.mvta.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://ride.mvta.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://ride.mvta.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

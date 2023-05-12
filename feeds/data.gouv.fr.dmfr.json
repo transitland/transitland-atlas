@@ -1,6 +1,180 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
+    {
+      "id": "f-alternéo~reunion",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/b3cb4731-a954-4e77-b9f4-80bd36da3281"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/donnees-du-reseau-alterneo"
+      }
+    },
+    {
+      "id": "f-chamonix~bus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/f6f8a444-15d5-4a6f-a23d-37f2a3a28f8e"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/chamonix-bus-1"
+      }
+    },
+    {
+      "id": "f-citura~grand~reims",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/092e2a5c-cc75-462b-ae24-6c667ce6a345"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/parcours-arrets-et-horaires-theoriques-du-reseau-de-transport-citura-de-la-communaute-urbaine-du-grand-reims-gtfs/"
+      }
+    },
+    {
+      "id": "f-dunkerque~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/18ee1aa1-27a8-44a1-957e-199f940c7e90"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transports-reseau-dk-bus-de-la-communaute-urbaine-de-dunkerque-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-eurostar",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/9089b550-696e-4ae0-87b5-40ea55a14292",
+        "static_historic": [
+          "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/eurostar.zip"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/eurostar-gtfs"
+      }
+    },
+    {
+      "id": "f-karouest~reunion",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/de34f476-4dc1-482c-9d0a-4b710537e691"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/reseau-karouest"
+      }
+    },
+    {
+      "id": "f-nouvelle-calédonie~tanéo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/b0dc18ac-0ede-459f-bc63-034f0b1091e8"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/reseau-taneo-1"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-reseau~interurbain~cars~region~ain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/6bf922eb-0ae4-495a-a40a-2f9011075cb4"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-ain-01",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-reseau~interurbain~cars~region~ardeche",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/c5db45bb-d3f2-490f-92ac-b03712b19af7"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-ardeche-07",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-reseau~interurbain~cars~region~express",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/e3e4b601-ab0e-4351-bcad-52810565e31e"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-express",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-reseau~interurbain~cars~region~haute~savoie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/9e380b23-507c-4692-a587-3a45a8626eb0"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-haute-savoie-74",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-reseau~interurbain~cars~region~loire",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/facd0086-9c97-423c-b0fe-1dca58797ca8"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-loire-42",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-reseau~interurbain~cars~region~savoie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/f1e7c3d0-7f92-4c91-b603-d9ba7d1ff2dd"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-savoie-73",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-reseau~maelis~montlucon~communaute",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/9d38fdb9-0e19-4a38-a22a-2f91f10da415"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-maelis-montlucon-communaute-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-saint~etienne~stas",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/8b3e71e2-1155-4fb0-bf4a-cdddbb496e29"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-horaires-theoriques-gtfs-du-reseau-de-transport-de-la-metropole-de-saint-etienne-stas",
+        "share_alike_optional": "no"
+      }
+    },
     {
       "id": "f-sp9x-libellus",
       "spec": "gtfs",
@@ -42,7 +216,7 @@
           "website": "https://www.caen.aeroport.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "11"
+              "gtfs_agency_id": "AEROPORT_CAEN"
             }
           ]
         },
@@ -62,7 +236,7 @@
           "website": "http://altobus.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "07"
+              "gtfs_agency_id": "ALTOBUS"
             }
           ]
         },
@@ -72,7 +246,7 @@
           "website": "http://www.argentan.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "06"
+              "gtfs_agency_id": "ARGENTANBUS"
             }
           ]
         },
@@ -82,7 +256,10 @@
           "website": "https://www.astrobus.info",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "05"
+              "gtfs_agency_id": "ASTROBUS"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~astrobus~rt"
             }
           ]
         },
@@ -102,7 +279,7 @@
           "website": "http://www.ville-bagnolesdelorne.com/transport-environnement/transport-public",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BDO"
+              "gtfs_agency_id": "BAGNOLES"
             }
           ]
         },
@@ -112,7 +289,10 @@
           "website": "http://www.bernay27.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BERNAY"
+              "gtfs_agency_id": "BMOB"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~bernay~rt"
             }
           ]
         },
@@ -122,7 +302,7 @@
           "website": "https://cauxseine.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BOLBEC"
+              "gtfs_agency_id": "REZOBUS"
             }
           ]
         },
@@ -132,7 +312,7 @@
           "website": "https://www.bayeux.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "04"
+              "gtfs_agency_id": "BYBUS"
             }
           ]
         },
@@ -142,7 +322,7 @@
           "website": "https://www.sngo.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CAPE27"
+              "gtfs_agency_id": "SNGO"
             }
           ]
         },
@@ -152,7 +332,7 @@
           "website": "http://semo-mobilite.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CASE"
+              "gtfs_agency_id": "SEMO"
             }
           ]
         },
@@ -162,7 +342,7 @@
           "website": "https://www.virenormandie.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "18"
+              "gtfs_agency_id": "AMIBUS"
             }
           ]
         },
@@ -172,7 +352,7 @@
           "website": "https://cosibus.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CTN"
+              "gtfs_agency_id": "COSIBUS"
             }
           ]
         },
@@ -182,7 +362,7 @@
           "website": "https://www.stradibus.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "DIEPPE"
+              "gtfs_agency_id": "DEEPMOB"
             }
           ]
         },
@@ -192,7 +372,7 @@
           "website": "http://www.ficibus.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "FECAMP"
+              "gtfs_agency_id": "FICIBUS"
             }
           ]
         },
@@ -202,7 +382,10 @@
           "website": "https://www.hobus.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "13"
+              "gtfs_agency_id": "HOBUS"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~hobus~rt"
             }
           ]
         },
@@ -212,7 +395,7 @@
           "website": "https://www.ville-pont-audemer.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "PONTAUDEMER"
+              "gtfs_agency_id": "LEBUS"
             }
           ]
         },
@@ -222,7 +405,7 @@
           "website": "https://www.transports-lia.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CODAH"
+              "gtfs_agency_id": "LIA"
             }
           ]
         },
@@ -232,7 +415,7 @@
           "website": "http://www.bienvenueaumontsaintmichel.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "16"
+              "gtfs_agency_id": "NAVETTESMICHEL"
             }
           ]
         },
@@ -242,7 +425,7 @@
           "website": "https://nemus.flers-agglo.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "15"
+              "gtfs_agency_id": "NEMUS"
             }
           ]
         },
@@ -252,7 +435,10 @@
           "website": "https://www.ville-granville.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "23"
+              "gtfs_agency_id": "NEVA"
+            },
+            {
+              "feed_onestop_id": "f-zenbus~granville~rt"
             }
           ]
         },
@@ -262,7 +448,7 @@
           "website": "https://www.normandie.fr/horaires-et-itineraires",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "03"
+              "gtfs_agency_id": "NOMAD14"
             }
           ]
         },
@@ -272,7 +458,7 @@
           "website": "https://www.normandie.fr/horaires-et-itineraires",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CG27"
+              "gtfs_agency_id": "NOMAD27"
             }
           ]
         },
@@ -282,7 +468,7 @@
           "website": "https://www.normandie.fr/horaires-et-itineraires",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10"
+              "gtfs_agency_id": "NOMAD50"
             }
           ]
         },
@@ -302,7 +488,7 @@
           "website": "https://www.normandie.fr/horaires-et-itineraires",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "09"
+              "gtfs_agency_id": "NOMAD61"
             }
           ]
         },
@@ -312,7 +498,7 @@
           "website": "https://www.normandie.fr/horaires-et-itineraires",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CG76"
+              "gtfs_agency_id": "NOMAD76"
             }
           ]
         },
@@ -322,7 +508,7 @@
           "website": "http://www.saint-lo-agglo.fr/transports-urbains-de-saint-l%C3%B4-agglo-tusa",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "12"
+              "gtfs_agency_id": "SLAM"
             }
           ]
         },
@@ -332,7 +518,7 @@
           "website": "https://www.sncf.com/fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "01"
+              "gtfs_agency_id": "SNCF"
             }
           ]
         },
@@ -342,7 +528,7 @@
           "website": "https://www.stenaline.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "14"
+              "gtfs_agency_id": "STENALINE"
             }
           ]
         },
@@ -352,7 +538,7 @@
           "website": "https://www.capcotentin.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "COT"
+              "gtfs_agency_id": "ZEPHIR"
             }
           ]
         },
@@ -362,7 +548,7 @@
           "website": "https://www.transurbain.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "GEA"
+              "gtfs_agency_id": "TRANSURBAIN"
             }
           ]
         },
@@ -372,7 +558,7 @@
           "website": "https://www.twisto.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "02"
+              "gtfs_agency_id": "TWISTO"
             }
           ]
         },
@@ -382,7 +568,43 @@
           "website": "http://www.yvetot.fr/?q=node/94",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "YVETOT"
+              "gtfs_agency_id": "VIKIBUS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-troyes~tcat~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/79151f50-b842-4fa9-a4b5-046c0029417b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-tcat-troyes-champagne-metropole-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-u0kz-optymo~belfort",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/797c424e-7d28-4e65-84f6-6677e47d8a6e"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0kz-optymo~belfort",
+          "name": "Optymo - Belfort",
+          "short_name": "Optymo",
+          "website": "https://www.optymo.fr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
             }
           ]
         }

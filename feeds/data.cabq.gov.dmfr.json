@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9whp-abqride",
@@ -16,10 +16,14 @@
       "operators": [
         {
           "onestop_id": "o-9whp-abqride",
-          "name": "ABQ RIDE",
+          "name": "City of Albuquerque Transit Department",
+          "short_name": "ABQ RIDE",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-abqride~rt"
+            },
+            {
+              "feed_onestop_id": "f-abqride~rt~alerts"
             }
           ],
           "tags": {

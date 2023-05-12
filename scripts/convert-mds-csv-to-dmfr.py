@@ -9,6 +9,8 @@ decoded_content = r.content.decode("utf-8")
 cr = csv.DictReader(decoded_content.splitlines(), delimiter=",")
 feeds = []
 for row in list(cr):
+    if len(row["mds_api_url"]) == 0: 
+        continue
     name = row["provider_name"].lower().replace(" ", "~")
     feed = {
         "spec": "mds",
@@ -19,7 +21,7 @@ for row in list(cr):
         feed["urls"]["gbfs_auto_discovery"] = row["gbfs_api_url"]
     feeds.append(feed)
 dmfr = {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
     "feeds": feeds,
     "license_spdx_identifier": "CDLA-Permissive-1.0",
 }

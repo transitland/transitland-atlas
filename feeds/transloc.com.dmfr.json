@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9qh-victorville~ca~us",
@@ -77,7 +77,10 @@
       "id": "f-davenport~citi~bus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/davenportcitibus.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/davenport-ia-us/davenport-ia-us.zip",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/davenportcitibus.zip"
+        ]
       },
       "operators": [
         {
@@ -87,6 +90,33 @@
             "twitter_general": "cityofdavenport",
             "us_ntd_id": "70009",
             "wikidata_id": "Q5230228"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dn5fv-cherokeeareatransportationsystemcats",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/cherokee.zip",
+        "static_historic": [
+          "http://documents.atlantaregional.com/transitdata/gtfs_CATS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn5fv-cherokeeareatransportationsystemcats",
+          "name": "Cherokee Area Transportation System",
+          "short_name": "CATS",
+          "website": "http://www.cherokeega.com/transportation/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CATS"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cherokee_ga",
+            "us_ntd_id": "40161"
           }
         }
       ]

@@ -1,6 +1,29 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
+    {
+      "id": "f-pkp~intercity~pl",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/pkpic.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://mkuran.pl/gtfs/",
+        "attribution_text": "Stop positions (stop_lat and stop_lon) are based on data by © OpenStreetMap contributors"
+      }
+    },
+    {
+      "id": "f-pol~regio~pl",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/polregio.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://mkuran.pl/gtfs/"
+      }
+    },
     {
       "id": "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa",
       "spec": "gtfs",

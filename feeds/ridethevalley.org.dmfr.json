@@ -1,11 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-c2hzc-lewistontransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://ridethevalley.org/lewistontransitsystem.zip"
+        "static_current": "https://ridethevalley.org/gtfs.zip",
+        "static_historic": [
+          "http://ridethevalley.org/lewistontransitsystem.zip"
+        ]
       },
       "operators": [
         {

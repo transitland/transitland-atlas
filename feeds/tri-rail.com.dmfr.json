@@ -1,17 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-dhx-tri~rail",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.tri-rail.com/GTDF/Current/google_transit.zip",
+        "static_current": "https://www.tri-rail.com/gtdf/google_transit.zip",
         "static_historic": [
           "http://www.tri-rail.com/GTDF/Current/google_transit.zip"
         ]
-      },
-      "license": {
-        "url": "https://ftis.org/FTDEDisclaimer.aspx"
       },
       "tags": {
         "gtfs_data_exchange": "tri-rail"
@@ -19,11 +16,12 @@
       "operators": [
         {
           "onestop_id": "o-dhx-tri~rail",
-          "name": "Tri-Rail",
+          "name": "South Florida Regional Transportation Authority",
+          "short_name": "Tri-Rail",
           "website": "http://tri-rail.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "tri-rail"
+              "feed_onestop_id": "f-dhx-tri~rail~rt"
             }
           ],
           "tags": {
@@ -33,6 +31,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dhx-tri~rail~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://gtfsr.tri-rail.com/download.aspx?file=position_updates.pb",
+        "realtime_trip_updates": "http://gtfsr.tri-rail.com/download.aspx?file=trip_updates.pb",
+        "realtime_alerts": "http://gtfsr.tri-rail.com/download.aspx?file=alerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

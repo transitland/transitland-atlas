@@ -1,33 +1,34 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9q9-modesto~ca~us",
       "supersedes_ids": [
-        "f-9q9y-escalon~ca~us"
+        "f-9q9y-escalon~ca~us",
+        "f-9qd-stanislaus~ca~us"
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.modestoareaexpress.com/preview-gtfs.zip",
+        "static_current": "https://stanrta.rideralerts.com/InfoPoint/gtfs-zip.ashx",
         "static_historic": [
+          "https://stanrta.org/preview-gtfs.zip",
           "http://data.trilliumtransit.com/gtfs/modesto-ca-us/modesto-ca-us.zip"
         ]
       },
       "tags": {
-        "feed_id": "modesto-ca-us",
-        "gtfs_data_exchange": "modesto-area-express",
-        "managed_by": "trillium"
+        "gtfs_data_exchange": "modesto-area-express"
       },
       "operators": [
         {
           "onestop_id": "o-9q9-modestoareaexpress",
-          "name": "Modesto Area Express",
-          "short_name": "MAX",
-          "website": "http://www.modestoareaexpress.com/",
+          "supersedes_ids": [
+            "o-9q9-stanislausmetroaltransit",
+            "o-9q9vz-ceresareatransit"
+          ],
+          "name": "Stanislaus Regional Transit Authority (StanRTA)",
+          "short_name": "The S",
+          "website": "https://stanrta.org/",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "95"
-            },
             {
               "feed_onestop_id": "f-modestoareaexpress~rt"
             }
@@ -46,9 +47,9 @@
       "id": "f-modestoareaexpress~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
-        "realtime_trip_updates": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Tripupdate",
-        "realtime_alerts": "https://max.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+        "realtime_vehicle_positions": "https://stanrta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://stanrta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://stanrta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
       }
     }
   ],

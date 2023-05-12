@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9q611-morrobaytransit",
@@ -158,36 +158,6 @@
       ]
     },
     {
-      "id": "f-c25y-valleytransit",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "http://mjcaction.com/MJC_GTFS_Public/valley_google_transit.zip"
-        ]
-      },
-      "license": {
-        "url": "http://mjcaction.com/MJC_GTFS_Public/Valley_Transit_Data_Terms_of_Use.pdf"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c25y-valleytransit",
-          "name": "Valley Transit",
-          "website": "http://www.valleytransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "walla2"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "00064"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-c28-clallamtransitsystem",
       "spec": "gtfs",
       "urls": {
@@ -323,6 +293,9 @@
           "associated_feeds": [
             {
               "feed_onestop_id": "f-central~transit~wa~rt"
+            },
+            {
+              "feed_onestop_id": "f-central~transit~wa~rt~alerts"
             }
           ]
         }
@@ -450,15 +423,19 @@
       "id": "f-santa~ynez~valley~transit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
+        "static_current": "https://app.mecatran.com/urb/ws/feed/c2l0ZT1zeXZ0O2NsaWVudD1zZWxmO2V4cGlyZT07dHlwZT1ndGZzO2tleT00MjcwNzQ0ZTY4NTAzOTMyMDIxMDdjNzI0MDRkMzYyNTM4MzI0YzI0",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-9q4s-a11214029",
-          "name": "A11214029",
+          "name": "Santa Ynez Valley Transit",
+          "website": "https://www.syvt.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "11214031"
+              "feed_onestop_id": "f-santa~ynez~valley~transit~rt"
             }
           ],
           "tags": {
@@ -467,6 +444,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-santa~ynez~valley~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=santa-ynez-valley-transit"
+      }
     },
     {
       "id": "f-sierra~vista~az",

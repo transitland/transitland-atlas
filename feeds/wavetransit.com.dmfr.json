@@ -1,11 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-dq0d-wavetransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.wavetransit.com/gtransit/google_transit.zip"
+        "static_current": "https://drive.google.com/u/0/uc?id=18zwweT64NI5O_goGVc_h-OGTTShfiacG&export=download",
+        "static_historic": [
+          "https://www.wavetransit.com/gtransit/google_transit.zip"
+        ]
       },
       "operators": [
         {
@@ -14,7 +17,7 @@
           "website": "http://www.wavetransit.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "WTA"
+              "feed_onestop_id": "f-dq0d-wavetransit~seahawk~shuttle"
             }
           ],
           "tags": {
@@ -24,6 +27,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dq0d-wavetransit~seahawk~shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://drive.google.com/u/0/uc?id=1w_7Ma9B9-aA-iBTWz3gxwGlORXPjppQ-&export=download"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

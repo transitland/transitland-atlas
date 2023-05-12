@@ -1,11 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9qc-sanjoaquinrtd",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://sjrtd.com/RTD-GTFS/RTD-GTFS.zip"
+        "static_current": "https://sanjoaquinrtd.com/RTD-GTFS/RTD-GTFS.zip",
+        "static_historic": [
+          "http://sjrtd.com/RTD-GTFS/RTD-GTFS.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-3.0",

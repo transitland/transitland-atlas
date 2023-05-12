@@ -1,11 +1,11 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9q6-kcapta~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.kartbus.org/data/gtfs.zip",
+        "static_current": "http://kart.connexionz.net/rtt/public/utility/gtfs.aspx",
         "static_historic": [
           "http://data.trilliumtransit.com/gtfs/kcapta-ca-us/kcapta-ca-us.zip"
         ]
@@ -15,7 +15,7 @@
           "onestop_id": "o-9q6-kingsarearuraltransit",
           "name": "Kings Area Rural Transit",
           "short_name": "KART",
-          "website": "http://mykartbus.com/",
+          "website": "https://www.kartbus.org",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-kingsarearuraltransit~rt"
@@ -43,6 +43,11 @@
           "name": "San Luis Obispo Regional Transit Authority",
           "short_name": "SLORTA",
           "website": "http://www.slorta.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q6-sanluisobisporegionaltransitauthority~pasoroblesexpress~so~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "slortatransit",
             "us_ntd_id": "90206",
@@ -50,6 +55,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9q6-sanluisobisporegionaltransitauthority~pasoroblesexpress~so~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
     },
     {
       "id": "f-9qc0-soltrans~ca~us",
@@ -92,6 +106,118 @@
       ]
     },
     {
+      "id": "f-9z70-lincolnstartran",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://startran.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "http://lincoln.ne.gov/city/pworks/startran/feed/gtfs.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9z70-lincolnstartran",
+          "name": "StarTran",
+          "website": "https://lincoln.ne.gov/city/pworks/startran/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-9z70-lincolnstartran~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cityoflincoln",
+            "us_ntd_id": "70001",
+            "wikidata_id": "Q7600574"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9z70-lincolnstartran~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://startran.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://startran.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://startran.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
+      "id": "f-c20-yamhillcounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://ycta.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/yamhill-or-us/yamhill-or-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c20-yamhillcountytransitarea",
+          "name": "Yamhill County Transit Area",
+          "short_name": "YCTA",
+          "website": "https://ycbus.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c20-yamhillcounty~or~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "0R02-00321",
+            "wikidata_id": "Q60770365"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c20-yamhillcounty~or~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://ycta.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
+      "id": "f-dp9e-belleurbansystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://racine.connexionz.net/rtt/public/utility/gtfs.aspx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/racine-wi-us/racine-wi-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp9e-belleurbansystem",
+          "name": "Racine Transit",
+          "short_name": "RYDE",
+          "website": "https://www.cityofracine.org/Racine-Transit/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dp9e-belleurbansystem"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CityofRacine",
+            "us_ntd_id": "50006",
+            "wikidata_id": "Q4883698"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dp9e-belleurbansystem~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://racine.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://racine.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://racine.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
       "id": "f-dr5r-nycferry",
       "spec": "gtfs",
       "urls": {
@@ -132,9 +258,46 @@
       }
     },
     {
+      "id": "f-muskegon~area~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://muskegon.connexionz.net/rtt/public/utility/gtfs.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-muskegon~area~transit",
+          "name": "Muskegon Area Transit System",
+          "short_name": "MATS",
+          "website": "https://matsbus.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-muskegon~area~transit"
+            },
+            {
+              "feed_onestop_id": "f-muskegon~area~transit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "50037",
+            "wikidata_id": "Q6942749"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-muskegon~area~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://muskegon.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://muskegon.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://muskegon.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
       "id": "f-nycferry~rt",
       "spec": "gtfs-rt",
       "urls": {
+        "realtime_vehicle_positions": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
         "realtime_trip_updates": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://nycferry.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
       }

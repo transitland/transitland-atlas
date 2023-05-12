@@ -1,11 +1,13 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9q8y-sfmta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfs.sfmta.com/transitdata/google_transit.zip"
+        "static_historic": [
+          "https://gtfs.sfmta.com/transitdata/google_transit.zip"
+        ]
       },
       "license": {
         "url": "http://www.sfmta.com/about-sfmta/reports/gtfs-transit-data",

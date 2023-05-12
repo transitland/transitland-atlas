@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-bamako~sotrama",
@@ -56,6 +56,26 @@
       ]
     },
     {
+      "id": "f-kigali~dry",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/kigali/-/raw/main/GTFS%20Datasets/Kigali_GTFS.zip"
+      },
+      "license": {
+        "url": "https://gitlab.com/digitaltransport/data/africa/kigali/-/blob/main/README.md"
+      }
+    },
+    {
+      "id": "f-kinshasa~dry",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/kinshasa/-/raw/main/GTFS%20Datasets/Kinshasa_GTFS.zip"
+      },
+      "license": {
+        "url": "https://gitlab.com/digitaltransport/data/africa/kinshasa/-/blob/main/README.md"
+      }
+    },
+    {
       "id": "f-kzf-nairobi~saccos",
       "spec": "gtfs",
       "urls": {
@@ -81,38 +101,18 @@
       "id": "f-s0wz-socatur~taxisco",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://git.digitaltransport4africa.org/places/douala/raw/master/GTFS-SYSTRA/GTFS-SYSTRA.zip"
+        "static_current": "https://gitlab.com/digitaltransport/data/africa/douala/-/raw/master/GTFS-SYSTRA/GTFS-SYSTRA.zip",
+        "static_historic": [
+          "https://git.digitaltransport4africa.org/places/douala/raw/master/GTFS-SYSTRA/GTFS-SYSTRA.zip"
+        ]
       },
       "license": {
-        "url": "https://git.digitaltransport4africa.org/places/douala/blob/master/LICENSE",
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://gitlab.com/digitaltransport/data/africa/douala/-/blob/master/LICENSE",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-s0wz-socatur",
-          "name": "Socatur",
-          "website": "http://www.douala.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-s0wz-taxisco",
-          "name": "Taxis Co",
-          "website": "http://www.douala.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        }
-      ]
+        "create_derived_product": "yes",
+        "share_alike_optional": "no"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

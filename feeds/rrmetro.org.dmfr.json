@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-9ynm-centralarkansastransitauthority",
@@ -15,6 +15,14 @@
           "onestop_id": "o-9ynm-centralarkansastransitauthority",
           "name": "Rock Region Metro",
           "website": "https://rrmetro.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "64"
+            },
+            {
+              "feed_onestop_id": "f-9ynm-centralarkansastransitauthority~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "rrmetro",
             "us_ntd_id": "60033",
@@ -22,6 +30,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9ynm-centralarkansastransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rrmetrotrack.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://rrmetrotrack.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://rrmetrotrack.org/gtfs-rt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

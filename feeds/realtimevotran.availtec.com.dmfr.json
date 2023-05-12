@@ -1,6 +1,34 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
+    {
+      "id": "f-djn-votran",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://realtimevotran.availtec.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://ftis.org/PostFileDownload.aspx?id=509A0",
+          "https://ftis.org/PostFileDownload.aspx?id=425A0",
+          "http://www.votran.org/core/fileparse.php/6120/urlt/google_transit_3.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djn-votran",
+          "name": "Votran",
+          "website": "http://www.votran.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-votran~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40032",
+            "wikidata_id": "Q7941092"
+          }
+        }
+      ]
+    },
     {
       "id": "f-votran~rt",
       "spec": "gtfs-rt",

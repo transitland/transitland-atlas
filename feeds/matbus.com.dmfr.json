@@ -1,16 +1,23 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-cb74-matbus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.matbus.com/gtfs/google/google_transit.zip"
+        "static_current": "https://download.matbus.com/1/gtfs.zip",
+        "static_historic": [
+          "http://www.matbus.com/gtfs/google/google_transit.zip"
+        ]
+      },
+      "license": {
+        "url": "https://matbus.com/contact-us/general-transit-feed-specification-gtfs-data"
       },
       "operators": [
         {
           "onestop_id": "o-cb74-matbus",
-          "name": "MATBUS",
+          "name": "Fargo Moorhead Metro Area Transit",
+          "short_name": "MATBUS",
           "website": "http://www.matbus.com/",
           "associated_feeds": [
             {

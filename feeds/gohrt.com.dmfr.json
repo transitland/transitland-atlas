@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-dq9-hrt",
@@ -18,6 +18,14 @@
           "onestop_id": "o-dq9-hamptonroadstransithrt",
           "name": "Hampton Roads Transit (HRT)",
           "website": "http://www.gohrt.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dq9-hrt"
+            },
+            {
+              "feed_onestop_id": "f-dq9-hrt~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "gohrt_com",
             "us_ntd_id": "30083",
@@ -25,6 +33,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dq9-hrt~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_trip_updates": "https://gtfs.gohrt.com/gtfs-rt/TripUpdates.pb",
+        "realtime_alerts": "https://gtfs.gohrt.com/gtfs-rt/Alerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

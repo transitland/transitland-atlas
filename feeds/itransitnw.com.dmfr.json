@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-c25y-valleytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://itransitnw.com/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/valley_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c25y-valleytransit",
+          "name": "Valley Transit",
+          "website": "http://www.valleytransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c25y-valleytransit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00064",
+            "wikidata_id": "Q28451485"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c25y-valleytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://itransitnw.com/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://itransitnw.com/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://itransitnw.com/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

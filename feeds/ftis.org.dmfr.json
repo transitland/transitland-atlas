@@ -1,12 +1,13 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-dh-lakeland",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=313A0",
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=531A0",
         "static_historic": [
+          "https://ftis.org/PostFileDownload.aspx?id=313A0",
           "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
         ]
       },
@@ -26,36 +27,6 @@
           ],
           "tags": {
             "us_ntd_id": "40031"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dht-collierareatransit~cat",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=396A0",
-        "static_historic": [
-          "http://www.ftis.org/PostFileDownload.aspx?id=164A0"
-        ]
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dht-collierareatransit~cat",
-          "name": "Collier Area Transit",
-          "short_name": "CAT",
-          "website": "http://www.gocatbus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "40140",
-            "wikidata_id": "Q5147158"
           }
         }
       ]
@@ -111,40 +82,6 @@
             "twitter_general": "gainesvillegov",
             "us_ntd_id": "40030",
             "wikidata_id": "Q5517264"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-djn-votran",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=509A0",
-        "static_historic": [
-          "https://ftis.org/PostFileDownload.aspx?id=425A0",
-          "http://www.votran.org/core/fileparse.php/6120/urlt/google_transit_3.zip"
-        ]
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-djn-votran",
-          "name": "Votran",
-          "website": "http://www.votran.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0",
-              "feed_onestop_id": "f-djn-votran"
-            },
-            {
-              "feed_onestop_id": "f-votran~rt"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "40032",
-            "wikidata_id": "Q7941092"
           }
         }
       ]

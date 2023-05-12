@@ -1,19 +1,22 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-regional~municipality~of~wood~buffalo",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rmwb.gtfsrt.civilia.ca/gtfs"
+        "static_current": "https://rmwb-gtfsrt.civilia.ca/gtfs",
+        "static_historic": [
+          "https://rmwb.gtfsrt.civilia.ca/gtfs"
+        ]
       }
     },
     {
       "id": "f-regional~municipality~of~wood~buffalo~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://rmwb.gtfsrt.civilia.ca/pb/vehiclePositions.pb",
-        "realtime_trip_updates": "https://rmwb.gtfsrt.civilia.ca/pb/tripUpdates.pb"
+        "realtime_vehicle_positions": "https://rmwb-gtfsrt.civilia.ca/pb/vehiclePositions.pb",
+        "realtime_trip_updates": "https://rmwb-gtfsrt.civilia.ca/pb/tripUpdates.pb"
       }
     }
   ],

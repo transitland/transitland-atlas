@@ -1,0 +1,143 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-auckland~transport~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.at.govt.nz/realtime/legacy/vehiclelocations",
+        "realtime_trip_updates": "https://api.at.govt.nz/realtime/legacy/tripupdates",
+        "realtime_alerts": "https://api.at.govt.nz/realtime/legacy/servicealerts"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://dev-portal.at.govt.nz"
+      }
+    },
+    {
+      "id": "f-rck-gowest~sealinkgroup~atairporter~atmetro~thepartybuscompany",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.at.govt.nz/gtfs.zip",
+        "static_historic": [
+          "https://cdn01.at.govt.nz/data/gtfs.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://at.govt.nz/about-us/at-data-sources/general-transit-feed-specification/",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rck-ritchiestransport",
+          "name": "Ritchies Transport",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RTH"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckm-atmetro",
+          "name": "AT Metro",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AM"
+            },
+            {
+              "feed_onestop_id": "f-auckland~transport~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q20065309"
+          }
+        },
+        {
+          "onestop_id": "o-rckm-gobus",
+          "name": "Go Bus",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GBT"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckp-bayescoachlines",
+          "name": "Bayes Coachlines",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BAYES"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckq-belaireferries",
+          "name": "Belaire Ferries",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BFL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckq-birkenheadtransport",
+          "name": "Birkenhead Transport",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BTL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckq-fullersferries",
+          "name": "Fullers Ferries",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FGL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckq-howickandeastern",
+          "name": "Howick and Eastern",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HE"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckq-sealinkpineharbour",
+          "name": "SeaLink Pine Harbour",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SLPH"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rckqx-waihekebuscompany",
+          "name": "Waiheke Bus Company",
+          "website": "http://www.aucklandtransport.govt.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "WBC"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

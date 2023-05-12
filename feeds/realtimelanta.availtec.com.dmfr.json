@@ -1,0 +1,46 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-dr4r-lanta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://realtimelanta.availtec.com/InfoPoint/GTFS-Zip.ashx",
+        "static_historic": [
+          "https://github.com/LANTA-Transportation-Authority/GTFS-data/blob/master/lanta_gtfs_feed.zip?raw=true"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr4r-lanta",
+          "name": "Lehigh and Northampton Transportation Authority",
+          "short_name": "LANTA",
+          "website": "https://www.lantabus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-dr4r-lanta~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "lantalv",
+            "us_ntd_id": "30010",
+            "wikidata_id": "Q6518871"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr4r-lanta~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtimelanta.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://realtimelanta.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://realtimelanta.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

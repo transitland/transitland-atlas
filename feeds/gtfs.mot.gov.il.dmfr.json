@@ -1,14 +1,17 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-sv-גלים~מועצהאזוריתגולן~אפיקים~דןצפון~דןבדרום~דןבארשבע~ירושלים",
       "spec": "gtfs",
       "urls": {
-        "static_current": "ftp://gtfs.mot.gov.il/israel-public-transportation.zip"
+        "static_current": "https://gtfs.mot.gov.il/gtfsfiles/israel-public-transportation.zip",
+        "static_historic": [
+          "ftp://gtfs.mot.gov.il/israel-public-transportation.zip"
+        ]
       },
       "license": {
-        "url": "https://www.gov.il/BlobFolder/generalpage/gtfs_general_transit_feed_specifications/he/GTFS_Developer_Information_2021.08.03.pdf"
+        "url": "https://www.gov.il/BlobFolder/generalpage/gtfs_general_transit_feed_specifications/he/GTFS_Developer_Information_2022.07.27.pdf"
       }
     }
   ],

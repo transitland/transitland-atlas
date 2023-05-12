@@ -1,11 +1,17 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
       "id": "f-dqcj1-fairfaxcue",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.fairfaxva.gov/Home/ShowDocument?id=6713"
+        "static_current": "https://www.fairfaxva.gov/home/showpublisheddocument/19191/638017594116830000",
+        "static_historic": [
+          "http://www.fairfaxva.gov/Home/ShowDocument?id=6713"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
