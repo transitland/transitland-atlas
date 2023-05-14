@@ -424,6 +424,42 @@
       }
     },
     {
+      "id": "f-zenbus~laurentides",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=linter"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~laurentides",
+          "name": "L'Inter des Laurentides",
+          "short_name": "TaCL",
+          "website": "https://www.transportlaurentides.ca",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~laurentides~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~laurentides~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=linter",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=linter"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-zenbus~les~saisies",
       "spec": "gtfs",
       "urls": {
