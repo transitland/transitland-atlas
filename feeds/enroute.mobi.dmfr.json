@@ -2,6 +2,46 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
+      "id": "f-gbrw-irigo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://chouette.enroute.mobi/api/v1/datas/Irigo/gtfs.zip",
+        "static_historic": [
+          "http://docdata.angers.fr/mobilite/Keolis_Irigo_Angers_20170911-20171223.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/angers-loire-metropole-reseau-irigo-gtfs-gtfs-rt",
+        "share_alike_optional": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gbrw-irigo",
+          "name": "Irigo",
+          "website": "http://bustram.irigo.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-gbrw-irigo~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-gbrw-irigo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/irigo-angers-gtfs-rt-trip-update",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/irigo-angers-gtfs-rt-alerts"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/angers-loire-metropole-reseau-irigo-gtfs-gtfs-rt",
+        "share_alike_optional": "no"
+      }
+    },
+    {
       "id": "f-keolis~orleans~fr",
       "spec": "gtfs",
       "urls": {
