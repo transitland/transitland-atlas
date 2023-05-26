@@ -10,8 +10,14 @@
       "operators": [
         {
           "onestop_id": "o-9y68-clevelandarearapidtransitcart",
-          "name": "Cleveland Area Rapid Transit",
+          "name": "Campus Area Rapid Transit",
           "short_name": "CART",
+          "website": "https://www.ou.edu/cart",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9y68-clevelandarearapidtransitcart~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "CARTNORMAN",
             "us_ntd_id": "60096",
@@ -19,6 +25,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9y68-clevelandarearapidtransitcart~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.cartgps.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://www.cartgps.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://www.cartgps.com/gtfs-rt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
