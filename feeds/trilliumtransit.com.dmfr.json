@@ -1917,6 +1917,9 @@
     },
     {
       "id": "f-9w0md-cottonwood~az~us",
+      "supersedes_ids": [
+        "f-9w0q-verdelynx~az~us"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/cottonwood-az-us/cottonwood-az-us.zip"
@@ -1932,41 +1935,15 @@
       "operators": [
         {
           "onestop_id": "o-9w0md-cottonwoodareatransit",
+          "supersedes_ids": [
+            "o-9w0q-verdelynx"
+          ],
           "name": "Cottonwood Area Transit",
           "short_name": "CAT",
           "website": "https://cottonwoodaz.gov/161/Cottonwood-Area-Transit-CAT",
           "associated_feeds": [
             {
               "gtfs_agency_id": "64"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "9R01-91010"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9w0q-verdelynx~az~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cottonwood-az-us/cottonwood-az-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "cottonwood-area-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9w0q-verdelynx",
-          "name": "Verde Lynx",
-          "website": "https://verdeshuttle.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "65"
             }
           ],
           "tags": {
