@@ -1,0 +1,43 @@
+{
+  "feeds": [
+    {
+      "id": "f-dnq-dcrides",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dcridestracker.com/gtfs"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-dnq-dcrides~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://dcridestracker.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://dcridestracker.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://dcridestracker.com/gtfs-rt/alerts"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dnq-dcrides",
+      "name": "Davidson County Transportation System",
+      "short_name": "DC Rides",
+      "website": "https://www.co.davidson.nc.us/258/Transportation",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dnq-dcrides"
+        },
+        {
+          "feed_onestop_id": "f-dnq-dcrides~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "DavcoTrans",
+        "us_ntd_id": "40131"
+      }
+    }
+  ]
+}
