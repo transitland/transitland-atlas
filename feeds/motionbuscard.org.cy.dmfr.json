@@ -1,0 +1,115 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-emel~limassol~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C6_google_transit.zip&rel=True"
+      }
+    },
+    {
+      "id": "f-osypa~pafos~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C2_google_transit.zip&rel=True"
+      }
+    },
+    {
+      "id": "f-osea~famagusta~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C4_google_transit.zip&rel=True"
+      }
+    },
+    {
+      "id": "f-intercity~buses~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C5_google_transit.zip&rel=True"
+      }
+    },
+    {
+      "id": "f-npt~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C9_google_transit.zip&rel=True"
+      }
+    },
+    {
+      "id": "f-lpt~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C10_google_transit.zip&rel=True"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-emel~limassol~cy",
+      "name": "EMEL (Limassol)",
+      "website": "http://en.limassolbuses.com/",
+      "short_name": "EMEL",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-emel~limassol~cy"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-osypa~pafos~cy",
+      "name": "OSYPA (Pafos)",
+      "website": "https://www.pafosbuses.com/",
+      "short_name": "OSYPA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-osypa~pafos~cy"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-osea~famagusta~cy",
+      "name": "OSEA (Famagusta)",
+      "website": "https://www.osea.com.cy/",
+      "short_name": "OSEA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-osea~famagusta~cy"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-intercity~buses~cy",
+      "name": "Intercity buses",
+      "website": "https://intercity-buses.com/",
+      "short_name": "Intercity buses",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-intercity~buses~cy"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-npt~cy",
+      "name": "NICOSIA PUBLIC TRANSPORT",
+      "website": "https://publictransport.com.cy/",
+      "short_name": "NPT",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-npt~cy"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-lpt~cy",
+      "name": "LARNACA PUBLIC TRANSPORT",
+      "website": "https://publictransport.com.cy/",
+      "short_name": "LPT",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-lpt~cy"
+        }
+      ]
+    }
+  ]
+}
