@@ -9,24 +9,17 @@
       }
     },
     {
-      "id": "f-osypa~pafos~cy",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C2_google_transit.zip&rel=True"
-      }
-    },
-    {
-      "id": "f-osea~famagusta~cy",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C4_google_transit.zip&rel=True"
-      }
-    },
-    {
       "id": "f-intercity~buses~cy",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C5_google_transit.zip&rel=True"
+      }
+    },
+    {
+      "id": "f-lpt~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C10_google_transit.zip&rel=True"
       }
     },
     {
@@ -37,10 +30,17 @@
       }
     },
     {
-      "id": "f-lpt~cy",
+      "id": "f-osea~famagusta~cy",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C10_google_transit.zip&rel=True"
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C4_google_transit.zip&rel=True"
+      }
+    },
+    {
+      "id": "f-osypa~pafos~cy",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.motionbuscard.org.cy/opendata/downloadfile?file=GTFS%5C2_google_transit.zip&rel=True"
       }
     }
   ],
@@ -48,8 +48,8 @@
     {
       "onestop_id": "o-emel~limassol~cy",
       "name": "EMEL (Limassol)",
-      "website": "http://en.limassolbuses.com/",
       "short_name": "EMEL",
+      "website": "http://en.limassolbuses.com/",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-emel~limassol~cy"
@@ -57,32 +57,10 @@
       ]
     },
     {
-      "onestop_id": "o-osypa~pafos~cy",
-      "name": "OSYPA (Pafos)",
-      "website": "https://www.pafosbuses.com/",
-      "short_name": "OSYPA",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-osypa~pafos~cy"
-        }
-      ]
-    },
-    {
-      "onestop_id": "o-osea~famagusta~cy",
-      "name": "OSEA (Famagusta)",
-      "website": "https://www.osea.com.cy/",
-      "short_name": "OSEA",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-osea~famagusta~cy"
-        }
-      ]
-    },
-    {
       "onestop_id": "o-intercity~buses~cy",
       "name": "Intercity buses",
-      "website": "https://intercity-buses.com/",
       "short_name": "Intercity buses",
+      "website": "https://intercity-buses.com/",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-intercity~buses~cy"
@@ -90,10 +68,21 @@
       ]
     },
     {
+      "onestop_id": "o-lpt~cy",
+      "name": "LARNACA PUBLIC TRANSPORT",
+      "short_name": "LPT",
+      "website": "https://publictransport.com.cy/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-lpt~cy"
+        }
+      ]
+    },
+    {
       "onestop_id": "o-npt~cy",
       "name": "NICOSIA PUBLIC TRANSPORT",
-      "website": "https://publictransport.com.cy/",
       "short_name": "NPT",
+      "website": "https://publictransport.com.cy/",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-npt~cy"
@@ -101,13 +90,24 @@
       ]
     },
     {
-      "onestop_id": "o-lpt~cy",
-      "name": "LARNACA PUBLIC TRANSPORT",
-      "website": "https://publictransport.com.cy/",
-      "short_name": "LPT",
+      "onestop_id": "o-osea~famagusta~cy",
+      "name": "OSEA (Famagusta)",
+      "short_name": "OSEA",
+      "website": "https://www.osea.com.cy/",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-lpt~cy"
+          "feed_onestop_id": "f-osea~famagusta~cy"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-osypa~pafos~cy",
+      "name": "OSYPA (Pafos)",
+      "short_name": "OSYPA",
+      "website": "https://www.pafosbuses.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-osypa~pafos~cy"
         }
       ]
     }
