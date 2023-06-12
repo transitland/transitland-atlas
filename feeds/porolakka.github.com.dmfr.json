@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-HanedaINL_ShuttleBus20230528",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/porolakka/TokyoINTL_FSB_gtfs-test_20230528/raw/main/gtfs.zip"
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/deed"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-HanedaINL_ShuttleBus20230528",
+          "name": "羽田空港無料シャトルバス",
+          "website": "https://tokyo-haneda.com/access/travel_between_terminals/index.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HanedaINL_ShuttleBus"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
