@@ -21,6 +21,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "Metrolink"
+            },
+            {
+              "feed_onestop_id": "f-metrolinktrains~rt"
             }
           ],
           "tags": {
@@ -30,6 +33,19 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-metrolinktrains~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://metrolink-gtfsrt.gbsdigital.us/feed/gtfsrt-vehicles",
+        "realtime_trip_updates": "https://metrolink-gtfsrt.gbsdigital.us/feed/gtfsrt-trips"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "X-Api-Key",
+        "info_url": "https://metrolinktrains.com/about/gtfs/gtfs-rt-access/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
