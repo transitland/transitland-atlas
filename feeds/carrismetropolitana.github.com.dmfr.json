@@ -3,42 +3,21 @@
   "feeds": [
     {
       "id": "f-eyck-carris",
+      "supersedes_ids": [
+        "f-sulfertagus",
+        "f-eyce-tst",
+        "f-eyck-rodoviáriadelisboa",
+        "f-eyck-carris~a2",
+        "f-eyck-carris~a3",
+        "f-eyck-carris~a4"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A1.zip",
+        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/live/CarrisMetropolitana.zip",
         "static_historic": [
+          "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A1.zip",
           "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/1/gtfs_1.zip"
         ]
-      },
-      "license": {
-        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
-      }
-    },
-    {
-      "id": "f-eyck-carris~a2",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A2.zip"
-      },
-      "license": {
-        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
-      }
-    },
-    {
-      "id": "f-eyck-carris~a3",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A3.zip"
-      },
-      "license": {
-        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
-      }
-    },
-    {
-      "id": "f-eyck-carris~a4",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A4.zip"
       },
       "license": {
         "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
@@ -53,15 +32,6 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-eyck-carris"
-        },
-        {
-          "feed_onestop_id": "f-eyck-carris~a2"
-        },
-        {
-          "feed_onestop_id": "f-eyck-carris~a3"
-        },
-        {
-          "feed_onestop_id": "f-eyck-carris~a4"
         }
       ]
     }

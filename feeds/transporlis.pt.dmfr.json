@@ -2,13 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
   "feeds": [
     {
-      "id": "f-carristur~pt",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=71&u=web"
-      }
-    },
-    {
       "id": "f-eyc-cp",
       "spec": "gtfs",
       "urls": {
@@ -33,9 +26,6 @@
     },
     {
       "id": "f-eyce-fertagus",
-      "supersedes_ids": [
-        "f-sulfertagus"
-      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=13&u=web",
@@ -51,50 +41,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "13"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-eyce-tst",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=11&u=web",
-        "static_historic": [
-          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/11/gtfs_11.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyce-tst",
-          "name": "Transportes Sul do Tejo",
-          "short_name": "TST",
-          "website": "http://www.tsuldotejo.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "11"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-eyck-rodoviáriadelisboa",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/61/gtfs_61.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyck-rodoviáriadelisboa",
-          "name": "Rodoviária de Lisboa",
-          "website": "http://www.rodoviariadelisboa.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "61"
             }
           ]
         }
