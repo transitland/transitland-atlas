@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-barta~pa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://busfinder.bartabus.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/barta.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-barta~pa",
+          "name": "Berks Area Regional Transportation Authority",
+          "short_name": "BARTA",
+          "website": "https://www.bartabus.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-barta~pa~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "30024",
+            "wikidata_id": "Q4892231"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-barta~pa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://busfinder.bartabus.com/Infopoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://busfinder.bartabus.com/Infopoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://busfinder.bartabus.com/Infopoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
