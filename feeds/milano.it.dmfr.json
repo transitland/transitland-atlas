@@ -5,10 +5,14 @@
       "id": "f-u0nd-comunedimilano",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.amat-mi.it/downloads/gtfs/gtfs.zip"
+        "static_current": "https://dati.comune.milano.it/gtfs.zip",
+        "static_historic": [
+          "https://www.amat-mi.it/downloads/gtfs/gtfs.zip"
+        ]
       },
       "license": {
-        "url": "http://creativecommons.org/licenses/by/4.0/legalcode",
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://dati.comune.milano.it/dataset/ds929-orari-del-trasporto-pubblico-locale-nel-comune-di-milano-in-formato-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
       },
@@ -17,12 +21,7 @@
           "onestop_id": "o-u0nd-comunedimilano",
           "name": "Azienda Trasporti Milanesi",
           "short_name": "ATM",
-          "website": "http://www.atm.it/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "AMAT_Milan_feed"
-            }
-          ]
+          "website": "http://www.atm.it/"
         }
       ]
     }
