@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-rrta~pa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://busfinder.redrosetransit.com/Infopoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rrta.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rrta~pa",
+          "name": "Red Rose Transit Authority",
+          "short_name": "RRTA",
+          "website": "https://www.redrosetransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rrta~pa~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "30018",
+            "wikidata_id": "Q7304963"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rrta~pa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://busfinder.redrosetransit.com/Infopoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://busfinder.redrosetransit.com/Infopoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://busfinder.redrosetransit.com/Infopoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
