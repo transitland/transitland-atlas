@@ -38,61 +38,6 @@
       ]
     },
     {
-      "id": "f-dr4-septa~bus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/septadev/GTFS/releases/latest/download/gtfs_public.zip#google_bus.zip"
-      },
-      "license": {
-        "url": "http://www3.septa.org/developer/"
-      },
-      "tags": {
-        "gtfs_data_exchange": "septa"
-      }
-    },
-    {
-      "id": "f-dr4-septa~rail",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/septadev/GTFS/releases/latest/download/gtfs_public.zip#google_rail.zip"
-      },
-      "license": {
-        "url": "http://www3.septa.org/developer/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "septa"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr4-septa",
-          "name": "Southeastern Pennsylvania Transportation Authority",
-          "short_name": "SEPTA",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dr4-septa~bus"
-            },
-            {
-              "gtfs_agency_id": "SEPTA",
-              "feed_onestop_id": "f-dr4-septa~rail"
-            },
-            {
-              "feed_onestop_id": "f-septa~rail~rt"
-            },
-            {
-              "feed_onestop_id": "f-septa~rt"
-            }
-          ],
-          "tags": {
-            "omd_provider_id": "septa",
-            "us_ntd_id": "30019",
-            "wikidata_id": "Q2037863"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-ebzz-accratrotro",
       "spec": "gtfs",
       "urls": {
