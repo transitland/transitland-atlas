@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.4.1.json",
+  "feeds": [
+    {
+      "id": "f-zenbus~toutenbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-rt.infra-hubup.fr/toutenbus/current/revision/gtfs",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=toutenbus"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~toutenbus",
+          "name": "Tout'enbus",
+          "website": "https://www.toutenbus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zenbus~toutenbus~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zenbus~toutenbus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/toutenbus/realtime",
+        "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/toutenbus/realtime"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
