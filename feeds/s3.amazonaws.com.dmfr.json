@@ -46,6 +46,40 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-gbqc-france~impulsyon",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ratpdev-mosaic-prod-bucket-raw.s3-eu-west-1.amazonaws.com/19/exports/2/gtfs.zip",
+        "static_historic": [
+          "http://data.nantes.fr/fileadmin/data/datastore/pdl/GTFS/J386.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-impulsyon-a-la-roche-sur-yon",
+        "share_alike_optional": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gbqc-france~impulsyon",
+          "name": "Impulsyon",
+          "website": "https://www.impulsyon.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-gbqc-france~impulsyon~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-gbqc-france~impulsyon~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/la-roche-sur-yon-ct-gtfs-rt-alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
