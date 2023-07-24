@@ -1,0 +1,25 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-a~coruna~es",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "ftp://ftp.coruna.es/gtfs/busurbano-coruna-es.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://datos.coruna.gal/dataset/autobuses-urbanos",
+        "use_without_attribution": "no"
+      },
+      "authorization": {
+        "type": "replace_url",
+        "info_url": "https://datos.coruna.gal/dataset/autobuses-urbanos"
+      },
+      "tags": {
+        "manual_fetch": "true"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
