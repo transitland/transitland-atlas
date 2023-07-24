@@ -332,21 +332,6 @@
       }
     },
     {
-      "id": "f-autobús~interurbano~de~navarra~es",
-      "name": "Autobús interurbano de Navarra",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://nap.mitma.es/Files/Detail/963"
-      },
-      "license": {
-        "url": "https://nap.mitma.es/licencia-datos",
-        "attribution_text": "Powered by MITMA: http://www.mitma.es"
-      },
-      "tags": {
-        "manual_fetch": "true"
-      }
-    },
-    {
       "id": "f-autobús~interurbano~de~tenerife~es",
       "name": "Autobús interurbano de Tenerife",
       "spec": "gtfs",
@@ -542,41 +527,11 @@
       }
     },
     {
-      "id": "f-autobús~urbano~de~madrid~es",
-      "name": "Autobús urbano de Madrid",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://nap.mitma.es/Files/Detail/896"
-      },
-      "license": {
-        "url": "https://nap.mitma.es/licencia-datos",
-        "attribution_text": "Powered by MITMA: http://www.mitma.es"
-      },
-      "tags": {
-        "manual_fetch": "true"
-      }
-    },
-    {
       "id": "f-autobús~urbano~de~mataró~es",
       "name": "Autobús urbano de Mataró",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://nap.mitma.es/Files/Detail/972"
-      },
-      "license": {
-        "url": "https://nap.mitma.es/licencia-datos",
-        "attribution_text": "Powered by MITMA: http://www.mitma.es"
-      },
-      "tags": {
-        "manual_fetch": "true"
-      }
-    },
-    {
-      "id": "f-autobús~urbano~de~málaga~es",
-      "name": "Autobús urbano de Málaga",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://nap.mitma.es/Files/Detail/1293"
       },
       "license": {
         "url": "https://nap.mitma.es/licencia-datos",
@@ -797,6 +752,33 @@
       }
     },
     {
+      "id": "f-eysb-empresamalagueñadetransportes",
+      "name": "Autobús urbano de Málaga",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.mitma.es/Files/Detail/1293",
+        "static_historic": [
+          "https://datosabiertos.malaga.eu/recursos/transporte/EMT/lineasYHorarios/google_transit_txt.zip",
+          "http://joseflorido.com/emt_fixed.zip"
+        ]
+      },
+      "license": {
+        "url": "https://nap.mitma.es/licencia-datos",
+        "attribution_text": "Powered by MITMA: http://www.mitma.es"
+      },
+      "tags": {
+        "manual_fetch": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eysb-empresamalagueñadetransportes",
+          "name": "Empresa Malagueña de Transportes",
+          "short_name": "EMT",
+          "website": "http://www.emtmalaga.es/"
+        }
+      ]
+    },
+    {
       "id": "f-ezp8-emtvalencia",
       "name": "Autobús urbano de Valencia",
       "spec": "gtfs",
@@ -827,6 +809,25 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-ezw-automÓvilesrÍoalhamasa~elcartelabargaalberto~autobusesparr",
+      "name": "Autobús interurbano de Navarra",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.mitma.es/Files/Detail/963",
+        "static_historic": [
+          "https://datosabiertos.navarra.es/es/dataset/ebfb5edd-0cd9-4b31-b0d9-8bc2d25e2493/resource/d3c1c89a-5d4c-4c25-97b5-66da663d3691/download/gtfs.zip",
+          "http://www.navarra.es/appsext/DescargarFichero/default.aspx?codigoAcceso=OpenData&fichero=TransporteInterurbano/gtfs.zip"
+        ]
+      },
+      "license": {
+        "url": "https://nap.mitma.es/licencia-datos",
+        "attribution_text": "Powered by MITMA: http://www.mitma.es"
+      },
+      "tags": {
+        "manual_fetch": "true"
+      }
     },
     {
       "id": "f-ezw5f-tuvisa~euskotran",
