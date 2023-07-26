@@ -46,6 +46,13 @@
       "urls": {
         "static_current": "https://gitlab.com/LACMTA/gtfs_lax/-/archive/master/gtfs_lax-master.zip?path=la_county"
       }
+    },
+    {
+      "id": "f-metro~losangeles~alerts",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_alerts": "https://s3.amazonaws.com/la-alerts-prod/alerts.pb"
+      }
     }
   ],
   "operators": [
@@ -59,6 +66,9 @@
         },
         {
           "feed_onestop_id": "f-9q5-metro~losangeles~rail"
+        },
+        {
+          "feed_onestop_id": "f-metro~losangeles~alerts"
         },
         {
           "feed_onestop_id": "f-metro~losangeles~bus~rt"
