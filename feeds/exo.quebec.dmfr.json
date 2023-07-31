@@ -2,12 +2,19 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-f25d-exo~reseaudetransportmetropolitain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exo.quebec/xdata/trains/google_transit.zip"
+      }
+    },
+    {
       "id": "f-exo~reseaudetransportmetropolitain~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://opendata.rtm.quebec:2539/ServiceGTFSR/VehiclePosition.pb",
-        "realtime_trip_updates": "http://opendata.rtm.quebec:2539/ServiceGTFSR/TripUpdate.pb",
-        "realtime_alerts": "http://opendata.rtm.quebec:2539/ServiceGTFSR/Alert.pb"
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
@@ -30,19 +37,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f25-exo~citsorel~varennes~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=citsv",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=citsv",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=citsv"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25-exo~citsorel~varennes",
-          "name": "EXO - Sorel-Varennes",
-          "website": "http://www.citsv.amt.qc.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITSV"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f253-exo~citsud~ouest",
@@ -55,20 +68,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f253-exo~citsud~ouest~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=citso",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=citso",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=citso"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f253-exo~citsud~ouest",
-          "name": "EXO - Sud-ouest",
-          "short_name": "CITSO",
-          "website": "http://citso.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITSO"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f256-exo~citlapresquîle",
@@ -81,19 +99,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f256-exo~citlapresquîle~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=citpi",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=citpi",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=citpi"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f256-exo~citlapresquîle",
-          "name": "EXO - La Presqu'île",
-          "website": "http://www.citlapresquile.qc.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITPI"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f257-exo~citlaurentides",
@@ -106,19 +130,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f257-exo~citlaurentides~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=citla",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=citla",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=citla"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f257-exo~citlaurentides",
-          "name": "EXO - Laurentides",
-          "website": "http://www.citl.qc.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITLA"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f259-exo~citduhaut~saint~laurent",
@@ -131,19 +161,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f259-exo~citduhaut~saint~laurent~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=cithsl",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=cithsl",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=cithsl"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f259-exo~citduhaut~saint~laurent",
-          "name": "EXO - Haut-Saint-Laurent",
-          "website": "http://www.cithsl.amt.qc.ca/index.asp",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITHSL"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f25d-exo~richelain~roussillon",
@@ -156,19 +192,7 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f25d-exo~richelain~roussillon",
-          "name": "EXO - Richelain / Roussillon",
-          "website": "https://exo.quebec/fr/planifier-trajet/autobus/LRRS",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "LRRS"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "f-f25d-exo~richelain~roussillon~rt",
@@ -189,13 +213,6 @@
       }
     },
     {
-      "id": "f-f25d-exo~reseaudetransportmetropolitain",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://exo.quebec/xdata/trains/google_transit.zip"
-      }
-    },
-    {
       "id": "f-f25f-exo~citchambly~richelieu~carignan",
       "spec": "gtfs",
       "urls": {
@@ -206,19 +223,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f25f-exo~citchambly~richelieu~carignan~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=citcrc",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=citcrc",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=citcrc"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25f-exo~citchambly~richelieu~carignan",
-          "name": "EXO - Chambly-Richelieu-Carignan",
-          "website": "http://www.monblus.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITCRC"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f25g-exo~citvallée~du~richelieu",
@@ -231,19 +254,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f25g-exo~citvallée~du~richelieu~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=citvr",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=citvr",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=citvr"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25g-exo~citvallée~du~richelieu",
-          "name": "EXO - Vallée-du-Richelieu",
-          "website": "http://www.citvr.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITVR"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f25g-exo~omitsainte~julie",
@@ -256,19 +285,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f25g-exo~omitsainte~julie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=omitsju",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=omitsju",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=omitsju"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25g-exo~omitsainte~julie",
-          "name": "EXO - Sainte-Julie",
-          "website": "http://transport.ville.sainte-julie.qc.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "OMITSJU"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f25s-exo~mrclesmoulinsurbis",
@@ -281,19 +316,25 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f25s-exo~mrclesmoulinsurbis~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=mrclm",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=mrclm",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=mrclm"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25s-exo~mrclesmoulinsurbis",
-          "name": "EXO - Terrebonne-Mascouche",
-          "website": "http://urbis.lesmoulins.ca/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MRCLM"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f25u-exo~mrcdelassomption",
@@ -306,34 +347,194 @@
         "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-f25u-exo~mrcdelassomption~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=mrclasso",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=mrclasso",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=mrclasso"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25u-exo~mrcdelassomption",
-          "name": "EXO - L'Assomption",
-          "website": "http://www.gortcr.info/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MRCLASSO"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     }
   ],
   "operators": [
     {
       "onestop_id": "o-f25-exo~reseaudetransportmetropolitain",
       "name": "EXO - Réseau de transport métropolitain",
-      "short_name": "AMT",
+      "short_name": "Trains",
       "website": "https://exo.quebec/fr/planifier-trajet/train",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-exo~reseaudetransportmetropolitain~rt"
-        },
-        {
           "gtfs_agency_id": "TRAINS",
           "feed_onestop_id": "f-f25d-exo~reseaudetransportmetropolitain"
+        },
+        {
+          "feed_onestop_id": "f-exo~reseaudetransportmetropolitain~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f25-exo~citsorel~varennes",
+      "name": "EXO - Sorel-Varennes",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/CITSV",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CITSV",
+          "feed_onestop_id": "f-f25-exo~citsorel~varennes"
+        },
+        {
+          "feed_onestop_id": "f-f25-exo~citsorel~varennes~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f253-exo~citsud~ouest",
+      "name": "EXO - Sud-ouest",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/CITSO",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CITSO",
+          "feed_onestop_id": "f-f253-exo~citsud~ouest"
+        },
+        {
+          "feed_onestop_id": "f-f253-exo~citsud~ouest~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f256-exo~citlapresquîle",
+      "name": "EXO - La Presqu'île",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/CITPI",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CITPI",
+          "feed_onestop_id": "f-f256-exo~citlapresquîle"
+        },
+        {
+          "feed_onestop_id": "f-f256-exo~citlapresquîle~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f257-exo~citlaurentides",
+      "name": "EXO - Laurentides",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/LRRS",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CITLA",
+          "feed_onestop_id": "f-f257-exo~citlaurentides"
+        },
+        {
+          "feed_onestop_id": "f-f257-exo~citlaurentides~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f259-exo~citduhaut~saint~laurent",
+      "name": "EXO - Haut-Saint-Laurent",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/CITHSL",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CITHSL",
+          "feed_onestop_id": "f-f259-exo~citduhaut~saint~laurent"
+        },
+        {
+          "feed_onestop_id": "f-f259-exo~citduhaut~saint~laurent~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f25d-exo~richelain~roussillon",
+      "name": "EXO - Richelain / Roussillon",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/LRRS",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "LRRS",
+          "feed_onestop_id": "f-f25d-exo~richelain~roussillon"
+        },
+        {
+          "feed_onestop_id": "f-f25d-exo~richelain~roussillon~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f25f-exo~citchambly~richelieu~carignan",
+      "name": "EXO - Chambly-Richelieu-Carignan",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/CITCRC",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CITCRC",
+          "feed_onestop_id": "f-f25f-exo~citchambly~richelieu~carignan"
+        },
+        {
+          "feed_onestop_id": "f-f25f-exo~citchambly~richelieu~carignan~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f25g-exo~citvallée~du~richelieu",
+      "name": "EXO - Vallée-du-Richelieu",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/CITVR",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CITVR",
+          "feed_onestop_id": "f-f25g-exo~citvallée~du~richelieu"
+        },
+        {
+          "feed_onestop_id": "f-f25g-exo~citvallée~du~richelieu~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f25g-exo~omitsainte~julie",
+      "name": "EXO - Sainte-Julie",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/OMITSJU",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "OMITSJU",
+          "feed_onestop_id": "f-f25g-exo~omitsainte~julie"
+        },
+        {
+          "feed_onestop_id": "f-f25g-exo~omitsainte~julie~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f25s-exo~mrclesmoulinsurbis",
+      "name": "EXO - Terrebonne-Mascouche",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/MRCLM",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "MRCLM",
+          "feed_onestop_id": "f-f25s-exo~mrclesmoulinsurbis"
+        },
+        {
+          "feed_onestop_id": "f-f25s-exo~mrclesmoulinsurbis~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-f25u-exo~mrcdelassomption",
+      "name": "EXO - L'Assomption",
+      "website": "https://exo.quebec/fr/planifier-trajet/autobus/MRCLASSO",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "MRCLASSO",
+          "feed_onestop_id": "f-f25u-exo~mrcdelassomption"
+        },
+        {
+          "feed_onestop_id": "f-f25u-exo~mrcdelassomption~rt"
         }
       ]
     }
