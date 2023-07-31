@@ -146,10 +146,10 @@
       ]
     },
     {
-      "id": "f-f25d-exo~citlerichelain",
+      "id": "f-f25d-exo~richelain~roussillon",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://exo.quebec/xdata/citlr/google_transit.zip"
+        "static_current": "https://exo.quebec/xdata/lrrs/google_transit.zip"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
@@ -159,41 +159,34 @@
       },
       "operators": [
         {
-          "onestop_id": "o-f25d-exo~citlerichelain",
-          "name": "EXO - Le Richelain",
-          "website": "http://www.citrichelain.com/",
+          "onestop_id": "o-f25d-exo~richelain~roussillon",
+          "name": "EXO - Richelain / Roussillon",
+          "website": "https://exo.quebec/fr/planifier-trajet/autobus/LRRS",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CITLR"
+              "gtfs_agency_id": "LRRS"
             }
           ]
         }
       ]
     },
     {
-      "id": "f-f25d-exo~citroussillon",
-      "spec": "gtfs",
+      "id": "f-f25d-exo~richelain~roussillon~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://exo.quebec/xdata/citrous/google_transit.zip"
+        "realtime_vehicle_positions": "https://opendata.exo.quebec/ServiceGTFSR/VehiclePosition.pb?agency=lrrs",
+        "realtime_trip_updates": "https://opendata.exo.quebec/ServiceGTFSR/TripUpdate.pb?agency=lrrs",
+        "realtime_alerts": "https://opendata.exo.quebec/ServiceGTFSR/Alert.pb?agency=lrrs"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.donneesquebec.ca/fr/licence/#cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
+        "url": "https://exo.quebec/en/about/open-data"
       },
-      "operators": [
-        {
-          "onestop_id": "o-f25d-exo~citroussillon",
-          "name": "EXO - Roussillon",
-          "website": "http://www.citroussillon.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CITROUS"
-            }
-          ]
-        }
-      ]
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://exo.quebec/en/about/open-data/RequestAccessForm"
+      }
     },
     {
       "id": "f-f25d-exo~reseaudetransportmetropolitain",
