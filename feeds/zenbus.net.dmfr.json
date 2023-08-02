@@ -2,6 +2,111 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-f25s-mrc~montcalm",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=mrc-montcalm"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mrc~montcalm",
+          "name": "MRC de Montcalm",
+          "website": "https://www.mrcmontcalm.com/services/citoyens/transport-collectif-et-adapte",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-f25s-mrc~montcalm~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f25s-mrc~montcalm~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=mrc-montcalm",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=mrc-montcalm"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },  
+    {
+      "id": "f-f2hj-stc~pierre-de~saurel",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=pierre-de-saurel"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~stc~pierre-de~saurel",
+          "name": "Société de transport collectif de Pierre-De Saurel",
+          "website": "https://stcpierredesaurel.ca/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-f2hj-stc~pierre~de~saurel~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f2hj-stc~pierre~de-saurel~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=pierre-de-saurel",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=pierre-de-saurel"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },   
+    {
+      "id": "f-f252-mrc~haut~saint~laurent",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=haut-saint-laurent"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mrc~haut~saint~laurent",
+          "name": "MRC du Haut-Saint-Laurent",
+          "website": "https://mrchsl.com/services/transport",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-f252~mrc~haut~saint~laurent~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-f252~mrc~haut~saint~laurent~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=haut-saint-laurent",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=haut-saint-laurent"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+      }
+    },
+    {
       "id": "f-mont~tremblant~qc~ca",
       "spec": "gtfs",
       "urls": {
