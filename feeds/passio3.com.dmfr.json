@@ -37,6 +37,38 @@
       }
     },
     {
+      "id": "f-concho~valley~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/conchovt/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-concho~valley~tx~us",
+          "name": "Concho Valley Transit District",
+          "short_name": "CVTD",
+          "website": "https://www.cvtd.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-concho~valley~tx~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60102"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-concho~valley~tx~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/conchovt/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/conchovt/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/conchovt/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-connect~douglas~ga~us",
       "spec": "gtfs",
       "urls": {
