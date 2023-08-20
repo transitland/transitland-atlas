@@ -1,0 +1,30 @@
+{
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+    "feeds": [
+        {
+            "id": "f-eyckr-carris",
+            "spec": "gtfs",
+            "urls": {
+                "static_current": "https://gateway.carris.pt/gateway/gtfs/api/v2.11/GTFS",
+                "static_historic": [
+                    "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/1/gtfs_1.zip"
+                ]
+            },
+            "license": {
+                "url": "https://dadosabertos.cm-lisboa.pt/dataset/informacao-sobre-transportes-publicos-da-cidade-de-lisboa-carris"
+            }
+        }
+    ],
+    "operators": [
+        {
+            "onestop_id": "o-eyckr-carris",
+            "name": "CARRIS",
+            "website": "https://www.carris.pt/",
+            "associated_feeds": [
+                {
+                    "feed_onestop_id": "f-eyckr-carris"
+                }
+            ]
+        }
+    ]
+}

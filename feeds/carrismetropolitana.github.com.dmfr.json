@@ -1,40 +1,39 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
-  "feeds": [
-    {
-      "id": "f-eyck-carris",
-      "supersedes_ids": [
-        "f-sulfertagus",
-        "f-eyce-tst",
-        "f-eyck-rodoviáriadelisboa",
-        "f-eyck-carris~a2",
-        "f-eyck-carris~a3",
-        "f-eyck-carris~a4"
-      ],
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/carrismetropolitana/gtfs/raw/live/CarrisMetropolitana.zip",
-        "static_historic": [
-          "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A1.zip",
-          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/1/gtfs_1.zip"
-        ]
-      },
-      "license": {
-        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
-      }
-    }
-  ],
-  "operators": [
-    {
-      "onestop_id": "o-eyck-carris",
-      "name": "Carris Metropolitana",
-      "website": "https://www.carrismetropolitana.pt/",
-      "associated_feeds": [
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+    "feeds": [
         {
-          "feed_onestop_id": "f-eyck-carris"
+            "id": "f-eyck-carris",
+            "supersedes_ids": [
+                "f-sulfertagus",
+                "f-eyce-tst",
+                "f-eyck-rodoviáriadelisboa",
+                "f-eyck-carris~a2",
+                "f-eyck-carris~a3",
+                "f-eyck-carris~a4"
+            ],
+            "spec": "gtfs",
+            "urls": {
+                "static_current": "https://github.com/carrismetropolitana/gtfs/raw/live/CarrisMetropolitana.zip",
+                "static_historic": [
+                    "https://github.com/carrismetropolitana/gtfs/raw/latest/CM_GTFS_A1.zip"
+                ]
+            },
+            "license": {
+                "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
+            }
         }
-      ]
-    }
-  ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+    ],
+    "operators": [
+        {
+            "onestop_id": "o-eyck-carris",
+            "name": "Carris Metropolitana",
+            "website": "https://www.carrismetropolitana.pt/",
+            "associated_feeds": [
+                {
+                    "feed_onestop_id": "f-eyck-carris"
+                }
+            ]
+        }
+    ],
+    "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
