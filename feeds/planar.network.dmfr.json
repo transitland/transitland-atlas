@@ -5,7 +5,9 @@
       "id": "f-gc-rail~delivery~group~planar~gtfs",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/gb-rail-latest.zip"
+        "static_historic": [
+          "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/gb-rail-latest.zip"
+        ]
       },
       "license": {
         "url": "http://data.atoc.org/licence-restrictions",
@@ -13,9 +15,6 @@
         "create_derived_product": "unknown",
         "attribution_text": "Source: RSP",
         "attribution_instructions": "This licence is subject to all users being made aware that RSP is the source of the data, either through the inclusion of a conspicuous clickable hyperlink to the Rail Delivery Group website at www.raildeliverygroup.com or by including at least one of the following statements on your website or application: \"Timetable/Fares/London Terminals data under licence from RSP\"; \"Timetable/Fares/London Terminals data: RSP\"; or \"Source: RSP\"."
-      },
-      "tags": {
-        "manual_import": "true"
       },
       "operators": [
         {
