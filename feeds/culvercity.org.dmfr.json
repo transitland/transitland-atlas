@@ -18,18 +18,35 @@
       },
       "tags": {
         "unstable_url": "true"
-      },
-      "operators": [
+      }
+    },
+    {
+      "id": "f-culvercitybus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://nextccbus.org/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://nextccbus.org/gtfsrt/trips",
+        "realtime_alerts": "https://nextccbus.org/gtfsrt/alerts"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-9q5c-culvercitybus",
+      "name": "Culver CityBus",
+      "associated_feeds": [
         {
-          "onestop_id": "o-9q5c-culvercitybus",
-          "name": "Culver CityBus",
-          "tags": {
-            "twitter_general": "culvercitybus",
-            "us_ntd_id": "90039",
-            "wikidata_id": "Q5193719"
-          }
+          "feed_onestop_id": "f-9q5c-culvercitybus"
+        },
+        {
+          "feed_onestop_id": "f-culvercitybus~rt"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "culvercitybus",
+        "us_ntd_id": "90039",
+        "wikidata_id": "Q5193719"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
