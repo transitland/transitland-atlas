@@ -16,6 +16,39 @@
       }
     },
     {
+      "id": "f-billings~mt~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/billings/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-billings~mt~us",
+          "name": "Billings Metropolitan Transit",
+          "short_name": "MET",
+          "website": "https://www.billingsmt.gov/3042/MET",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-billings~mt~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "80004",
+            "wikidata_id": "Q4911950"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-billings~mt~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/billings/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/billings/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/billings/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-chapman~university",
       "spec": "gtfs",
       "urls": {
