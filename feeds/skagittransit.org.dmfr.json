@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-skagit~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://strweb.skagittransit.org/GTFS/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-skagit~wa~us",
+          "name": "Skagit Transit",
+          "website": "https://www.skagittransit.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-skagit~wa~us~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-skagit~wa~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://strweb.skagittransit.org/GTFS/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://strweb.skagittransit.org/GTFS/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://strweb.skagittransit.org/GTFS/GTFS_ServiceAlerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
