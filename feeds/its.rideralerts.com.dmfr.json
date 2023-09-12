@@ -1,0 +1,45 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-c22e-intercitytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://its.rideralerts.com/InfoPoint/GTFS-Zip.ashx",
+        "static_historic": [
+          "https://gtfs.sound.obaweb.org/prod/19_gtfs.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "intercity-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22e-intercitytransit",
+          "name": "Intercity Transit",
+          "website": "http://www.Intercitytransit.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-intercitytransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "intercitytransi",
+            "us_ntd_id": "19",
+            "wikidata_id": "Q2493414"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-intercitytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://its.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://its.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://its.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
