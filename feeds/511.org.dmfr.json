@@ -2,6 +2,59 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-9q8y-sfmta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SF",
+        "static_historic": [
+          "https://gtfs.sfmta.com/transitdata/google_transit.zip"
+        ]
+      },
+      "license": {
+        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "san-francisco-municipal-transportation-agency",
+        "manual_import": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q8y-sfmta",
+          "name": "San Francisco Municipal Transportation Agency",
+          "short_name": "SFMTA",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SF",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "SF",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
+          "tags": {
+            "omd_provider_id": "sfmta",
+            "twitter_general": "sfmta_muni",
+            "us_ntd_id": "90015",
+            "wikidata_id": "Q1140138"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-sf~bay~area~rg",
       "supersedes_ids": [
         "f-9q8z-goldengateferry",
