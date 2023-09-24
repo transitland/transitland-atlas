@@ -49,14 +49,15 @@
       "id": "f-9q9hy-mountainview",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mtma.tripshot.com/v1/gtfs/feed/mvgo",
+        "static_current": "https://mvgo.org/data/gtfs.zip",
         "static_historic": [
+          "https://mtma.tripshot.com/v1/gtfs/feed/mvgo",
           "https://data.trilliumtransit.com/gtfs/mountainview-ca-us/mountainview-ca-us.zip"
         ]
       },
       "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "spdx_identifier": "ODC-By-1.0",
+        "url": "https://mvgo.org/developers/"
       },
       "operators": [
         {
@@ -92,6 +93,10 @@
         "realtime_vehicle_positions": "https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=VehiclePosition",
         "realtime_trip_updates": "https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=TripUpdate",
         "realtime_alerts": "https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=Alert"
+      },
+      "license": {
+        "spdx_identifier": "ODC-By-1.0",
+        "url": "https://mvgo.org/developers/"
       }
     },
     {
