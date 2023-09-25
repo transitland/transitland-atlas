@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dqcx8-charmcitycirculator",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://transportation.baltimorecity.gov/gtfsfile",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/CCC_GTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "https://transportation.baltimorecity.gov/charm-city-circulator/developer-resources"
+      },
+      "tags": {
+        "gtfs_data_exchange": "charm-city-circulator"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqcx8-charmcitycirculator",
+          "name": "Charm City Circulator",
+          "short_name": "CCC",
+          "website": "http://www.charmcitycirculator.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "twitter_general": "charmcitycirc",
+            "us_ntd_id": "30201",
+            "wikidata_id": "Q5086389"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

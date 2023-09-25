@@ -1,0 +1,51 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-u1-delijn",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.delijn.be/gtfs/static/v3/gtfs_transit.zip",
+        "static_historic": [
+          "http://gtfs.irail.be/de-lijn/de_lijn-gtfs.zip"
+        ]
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.delijn.be/signup"
+      },
+      "tags": {
+        "gtfs_data_exchange": "de-lijn"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u1-delijn",
+          "name": "De Lijn",
+          "website": "http://www.delijn.be",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u1-delijn~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u1-delijn~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://api.delijn.be/gtfs/v3/realtime"
+      },
+      "license": {
+        "url": "https://apimgmtst4bhvk6dmooiyuka.blob.core.windows.net/content/MediaLibrary/Site/OpenData%20licentie%20-%20Licentie%20voor%20gratis%20hergebruik-1.pdf"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.delijn.be/signup"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

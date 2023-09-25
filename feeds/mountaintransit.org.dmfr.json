@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-9qhf-bigbear~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/mountaintransit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/bigbear-ca-us/bigbear-ca-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.mountaintransit.org/developers-gtfs-data/"
+      },
+      "tags": {
+        "gtfs_data_exchange": "mountain-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qhf-mountaintransit",
+          "name": "Mountain Transit",
+          "website": "https://www.mountaintransit.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "44"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "9R02-91012",
+            "wikidata_id": "Q6924864"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

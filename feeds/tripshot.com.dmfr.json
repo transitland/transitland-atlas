@@ -46,6 +46,60 @@
       }
     },
     {
+      "id": "f-9q9hy-mountainview",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mvgo.org/data/gtfs.zip",
+        "static_historic": [
+          "https://mtma.tripshot.com/v1/gtfs/feed/mvgo",
+          "https://data.trilliumtransit.com/gtfs/mountainview-ca-us/mountainview-ca-us.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODC-By-1.0",
+        "url": "https://mvgo.org/developers/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q9hy-mvgomountainview",
+          "name": "MVgo",
+          "website": "https://mvgo.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "533"
+            },
+            {
+              "feed_onestop_id": "f-9q9hy-mountainview~rt"
+            },
+            {
+              "gtfs_agency_id": "MV",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "MV",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "MvgoShuttle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9q9hy-mountainview~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=VehiclePosition",
+        "realtime_trip_updates": "https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=TripUpdate",
+        "realtime_alerts": "https://mtma.tripshot.com/v1/gtfs/realtime/feed/mvgo?types=Alert"
+      },
+      "license": {
+        "spdx_identifier": "ODC-By-1.0",
+        "url": "https://mvgo.org/developers/"
+      }
+    },
+    {
       "id": "f-9qh0-anaheim~ca~us",
       "spec": "gtfs",
       "urls": {

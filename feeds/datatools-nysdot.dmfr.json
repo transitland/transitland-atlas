@@ -1098,6 +1098,35 @@
       ]
     },
     {
+      "id": "f-schoharie~county~public~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Schoharie_County_Public_Transit.zip"
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-schoharie~county~public~transit",
+          "name": "Schoharie County Transit",
+          "website": "https://ridescpt.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SCPT-Schoharie-ny-us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "2R02-20926"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-schuyler~county~public~transit",
       "spec": "gtfs",
       "urls": {
