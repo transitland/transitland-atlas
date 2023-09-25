@@ -1,0 +1,56 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dh-lakeland",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ftis.org/PostFileDownload.aspx?id=531A0",
+        "static_historic": [
+          "https://ftis.org/PostFileDownload.aspx?id=313A0",
+          "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dh-lakeland",
+          "name": "Lakeland Area Mass Transit District",
+          "short_name": "Citrus Connection",
+          "website": "http://www.ridecitrus.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dh-lakeland~rt"
+            },
+            {
+              "feed_onestop_id": "f-lakeland~passio"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40031",
+            "wikidata_id": "Q5122884"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dh-lakeland~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.ccbusinfo.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://www.ccbusinfo.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://www.ccbusinfo.com/InfoPoint/gtfs-realtime.ashx?type=alert"
+      }
+    },
+    {
+      "id": "f-lakeland~passio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/citrusconn/passioTransit/gtfs/google_transit.zip"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
