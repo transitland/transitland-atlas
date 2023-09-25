@@ -891,21 +891,7 @@
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7k-transitorange~newburghlocaltransit",
-          "name": "Transit Orange / Newburgh Local Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NewburghAreaTransit-Orange-NY-US"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20216"
-          }
-        }
-      ]
+      }
     },
     {
       "id": "f-niagra~county~ny",
@@ -1306,6 +1292,24 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
+    },
+    {
+      "id": "f-transit~orange~ny~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oc-otp-gtfs.s3.amazonaws.com/GTFSPublic.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr7k-transitorange~newburghlocaltransit",
+          "name": "TransitOrange",
+          "short_name": "TO",
+          "website": "https://www.ridetransitorange.com/",
+          "tags": {
+            "us_ntd_id": "20216"
+          }
+        }
+      ]
     },
     {
       "id": "f-village~of~cooperstown~trolley",
