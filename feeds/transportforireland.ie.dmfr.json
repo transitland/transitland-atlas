@@ -110,34 +110,6 @@
       ]
     },
     {
-      "id": "f-gc-busÉireann",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Bus_Eireann.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_buseireann.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc-busÉireann",
-          "name": "Bus Éireann",
-          "website": "http://www.buseireann.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "01"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-gc-citylink",
       "spec": "gtfs",
       "urls": {
@@ -957,28 +929,6 @@
       ]
     },
     {
-      "id": "f-gc6-irishrail~irishrail~irishrail~irishrail",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Irish_Rail.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_irishrail.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc-irishrail",
-          "name": "Irish Rail",
-          "website": "http://www.irishrail.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "02SO"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-gc6-johnkearns",
       "spec": "gtfs",
       "urls": {
@@ -1291,31 +1241,6 @@
       ]
     },
     {
-      "id": "f-gc7-dublinbus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Dublin_Bus.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_dublinbus.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc7-dublinbus",
-          "name": "Dublin Bus",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "978"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-gc7-wexfordbus",
       "spec": "gtfs",
       "urls": {
@@ -1472,34 +1397,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "999"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc7x-luas",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_LUAS.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_luas.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc7x-luas",
-          "name": "Luas",
-          "website": "https://www.luas.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "10000"
             }
           ]
         }
@@ -1903,22 +1800,6 @@
       }
     },
     {
-      "id": "f-goahead~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_GoAhead.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_goahead.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
       "id": "f-goaodma~ie",
       "spec": "gtfs",
       "urls": {
@@ -1929,6 +1810,22 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
+      }
+    },
+    {
+      "id": "f-national~transport~authority~ie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.nationaltransport.ie/gtfsr/v2/Vehicles",
+        "realtime_trip_updates": "https://api.nationaltransport.ie/gtfsr/v2/TripUpdates"
+      },
+      "license": {
+        "url": "https://developer.nationaltransport.ie/usagepolicy"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "x-api-key",
+        "info_url": "https://developer.nationaltransport.ie/"
       }
     },
     {
@@ -1945,43 +1842,98 @@
       }
     },
     {
-      "id": "f-vdv~bus~eireann",
+      "id": "f-transport~for~ireland~realtime~operators",
+      "supersedes_ids": [
+        "f-gc7-dublinbus",
+        "f-goahead~ie",
+        "f-gc-busÉireann",
+        "f-gc7x-luas",
+        "f-gc6-irishrail~irishrail~irishrail~irishrail",
+        "f-waterford~ie"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/VDVBus%20Eireann.zip"
+        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Realtime.zip"
       },
       "license": {
         "url": "https://data.gov.ie/licence",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
-      "id": "f-vdv~dublin~bus~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/VDVDublin%20Bus.zip"
       },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
-      "id": "f-waterford~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/BusWaterford.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
+      "operators": [
+        {
+          "onestop_id": "o-gc-busÉireann",
+          "name": "Bus Éireann",
+          "website": "https://www.buseireann.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7778008"
+            },
+            {
+              "gtfs_agency_id": "7778020"
+            },
+            {
+              "feed_onestop_id": "f-national~transport~authority~ie~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc-irishrail",
+          "name": "Iarnród Éireann / Irish Rail",
+          "website": "https://www.irishrail.ie/en-ie/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7778017"
+            },
+            {
+              "feed_onestop_id": "f-national~transport~authority~ie~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc7-dublinbus",
+          "name": "Bus Átha Cliath - Dublin Bus",
+          "website": "https://www.dublinbus.ie/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7778019"
+            },
+            {
+              "feed_onestop_id": "f-national~transport~authority~ie~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc7x-luas",
+          "name": "LUAS",
+          "website": "https://luas.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7778014"
+            },
+            {
+              "feed_onestop_id": "f-national~transport~authority~ie~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-go~ahead~ireland",
+          "name": "Go-Ahead Ireland",
+          "website": "https://www.goaheadireland.ie/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7778006"
+            },
+            {
+              "gtfs_agency_id": "7778021"
+            },
+            {
+              "feed_onestop_id": "f-national~transport~authority~ie~rt"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-westlink~coaches~ie",
