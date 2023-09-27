@@ -309,6 +309,39 @@
       }
     },
     {
+      "id": "f-dqcm2-dcstreetcar",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mjcaction.com/MJC_GTFS_Public/dcstreetcar_gtfs.zip",
+        "static_historic": [
+          "http://data.trilliumtransit.com/gtfs/dcstreetcar-dc-us/dcstreetcar-dc-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqcm2-dcstreetcar",
+          "name": "DC Streetcar",
+          "website": "http://www.dcstreetcar.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "dc-streetcar"
+            },
+            {
+              "feed_onestop_id": "f-dcstreetcar~rt"
+            },
+            {
+              "feed_onestop_id": "f-dcstreetcar~rt~alerts"
+            }
+          ],
+          "tags": {
+            "twitter_general": "dcstreetcar",
+            "us_ntd_id": "30012",
+            "wikidata_id": "Q3537231"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-express-arrow",
       "spec": "gtfs",
       "urls": {

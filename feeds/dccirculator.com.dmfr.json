@@ -21,9 +21,6 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
-      "tags": {
-        "unstable_url": "yes"
-      },
       "operators": [
         {
           "onestop_id": "o-dqcjr-dccirculator",
@@ -31,8 +28,7 @@
           "website": "http://www.dccirculator.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "45",
-              "feed_onestop_id": "f-dqcjr-dccirculator"
+              "feed_onestop_id": "f-dqcjr-dccirculator~rt"
             }
           ],
           "tags": {
@@ -44,37 +40,22 @@
       ]
     },
     {
-      "id": "f-dqcm2-dcstreetcar",
-      "spec": "gtfs",
+      "id": "f-dqcjr-dccirculator~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://mjcaction.com/MJC_GTFS_Public/dcstreetcar_gtfs.zip",
-        "static_historic": [
-          "http://data.trilliumtransit.com/gtfs/dcstreetcar-dc-us/dcstreetcar-dc-us.zip"
-        ]
+        "realtime_vehicle_positions": "https://dccirculatorbustime.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://dccirculatorbustime.com/gtfsrt/trips",
+        "realtime_alerts": "https://dccirculatorbustime.com/gtfsrt/alerts"
       },
-      "operators": [
-        {
-          "onestop_id": "o-dqcm2-dcstreetcar",
-          "name": "DC Streetcar",
-          "website": "http://www.dcstreetcar.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "dc-streetcar"
-            },
-            {
-              "feed_onestop_id": "f-dcstreetcar~rt"
-            },
-            {
-              "feed_onestop_id": "f-dcstreetcar~rt~alerts"
-            }
-          ],
-          "tags": {
-            "twitter_general": "dcstreetcar",
-            "us_ntd_id": "30012",
-            "wikidata_id": "Q3537231"
-          }
-        }
-      ]
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://octo.dc.gov/page/district-columbia-data-policy",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
