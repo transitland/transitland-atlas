@@ -179,6 +179,23 @@
       }
     },
     {
+      "id": "f-mta~nyc~rt~bustime",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://gtfsrt.prod.obanyc.com/alerts",
+        "realtime_vehicle_positions": "https://gtfsrt.prod.obanyc.com/vehiclePositions",
+        "realtime_trip_updates": "https://gtfsrt.prod.obanyc.com/tripUpdates"
+      },
+      "license": {
+        "url": "https://api.mta.info/#/DataFeedAgreement"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key",
+        "info_url": "https://bt.mta.info/wiki/Developers/GTFSRt"
+      }
+    },
+    {
       "id": "f-mta~nyc~rt~lirr",
       "spec": "gtfs-rt",
       "urls": {
