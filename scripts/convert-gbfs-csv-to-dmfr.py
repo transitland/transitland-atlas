@@ -4,7 +4,8 @@ import re
 import requests
 from collections import OrderedDict
 
-r = requests.get("https://github.com/NABSA/gbfs/raw/master/systems.csv")
+# TODO: change the following back to MobilityData/gbfs after https://github.com/MobilityData/gbfs/pull/550 is accepted
+r = requests.get("https://raw.githubusercontent.com/drewda/gbfs/patch-1/systems.csv")
 decoded_content = r.content.decode("utf-8")
 cr = csv.DictReader(decoded_content.splitlines(), delimiter=",")
 feeds = []
