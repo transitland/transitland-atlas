@@ -2,32 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-gcpv-transportforlondon",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://storage.googleapis.com/teleport-gtfs/tflgtfs_nobus.zip"
-      },
-      "license": {
-        "url": "https://tfl.gov.uk/corporate/terms-and-conditions/transport-data-service",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Powered by TfL Open Data, Contains OS data © Crown copyright and database rights 2016"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcpv-transportforlondon",
-          "name": "Transport For London",
-          "short_name": "TfL",
-          "website": "https://tfl.gov.uk",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "tfl"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-u4x-rb",
       "spec": "gtfs",
       "urls": {
