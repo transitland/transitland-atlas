@@ -5,16 +5,45 @@
       "id": "f-u36r-zditmszczecin",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.zditm.szczecin.pl/rozklady/GTFS/latest/google_gtfs.zip"
+        "static_current": "https://www.zditm.szczecin.pl/storage/gtfs/gtfs.zip",
+        "static_historic": [
+          "https://www.zditm.szczecin.pl/rozklady/GTFS/latest/google_gtfs.zip"
+        ]
       },
-      "operators": [
+      "license": {
+        "url": "https://www.zditm.szczecin.pl/pl/zditm/dla-programistow/gtfs"
+      }
+    },
+    {
+      "id": "f-u36r-zditmszczecin~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.zditm.szczecin.pl/storage/gtfs/gtfs-rt-vehicles.pb",
+        "realtime_trip_updates": "https://www.zditm.szczecin.pl/storage/gtfs/gtfs-rt-trips.pb",
+        "realtime_alerts": "https://www.zditm.szczecin.pl/storage/gtfs/gtfs-rt-alerts.pb"
+      },
+      "license": {
+        "url": "https://www.zditm.szczecin.pl/pl/zditm/dla-programistow/gtfs"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u36r-zditmszczecin",
+      "name": "Zarząd Dróg i Transportu Miejskiego",
+      "short_name": "ZDiTM",
+      "website": "https://www.zditm.szczecin.pl",
+      "associated_feeds": [
         {
-          "onestop_id": "o-u36r-zditmszczecin",
-          "name": "Zarząd Dróg i Transportu Miejskiego",
-          "short_name": "ZDiTM",
-          "website": "http://www.zditm.szczecin.pl"
+          "feed_onestop_id": "f-u36r-zditmszczecin"
+        },
+        {
+          "feed_onestop_id": "f-u36r-zditmszczecin~rt"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q62534866"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
