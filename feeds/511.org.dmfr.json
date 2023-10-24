@@ -55,6 +55,47 @@
       ]
     },
     {
+      "id": "f-9qc-capitolcorridor",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.capitolcorridor.org/googletransit/GTFS.zip"
+      },
+      "license": {
+        "url": "https://www.capitolcorridor.org/developer_resources/#terms",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc-capitolcorridor",
+          "name": "Capitol Corridor Joint Powers Authority",
+          "short_name": "Capitol Corridor",
+          "website": "http://www.capitolcorridor.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Capitol Corridor"
+            },
+            {
+              "gtfs_agency_id": "AM",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CapitolCorridor",
+            "wikidata_id": "Q510836"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-sf~bay~area~rg",
       "supersedes_ids": [
         "f-9q8z-goldengateferry",
@@ -151,12 +192,16 @@
       "supersedes_ids": [
         "o-9q9-altamontcorridorexpress"
       ],
-      "name": "ACE Altamont Corridor Express",
+      "name": "Altamont Corridor Express",
+      "short_name": "ACE",
       "website": "http://www.acerail.com/",
       "associated_feeds": [
         {
           "gtfs_agency_id": "CE",
           "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
       ],
       "tags": {
@@ -212,6 +257,9 @@
         {
           "gtfs_agency_id": "SB",
           "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
       ],
       "tags": {
