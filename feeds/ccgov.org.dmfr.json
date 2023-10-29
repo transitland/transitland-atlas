@@ -1,0 +1,36 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dr41-ceciltransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.ccgov.org/home/showpublisheddocument/50900/638330494895530000",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Cecil_GTFS.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "cecil-transit",
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr41-ceciltransit",
+          "name": "Cecil Transit",
+          "website": "https://www.ccgov.org/government/community-services/cecil-transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "30108",
+            "wikidata_id": "Q52162155"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
