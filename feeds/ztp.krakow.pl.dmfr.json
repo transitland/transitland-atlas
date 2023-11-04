@@ -2,42 +2,76 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-ztp~krakow~bus",
+      "id": "f-u2yh-ztp~krakow~bus",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.ztp.krakow.pl/GTFS_KRK_A.zip"
       },
       "tags": {
         "mdb_source_id": "1326"
-      }
+      },
+      "supersedes_ids": [
+        "f-ztp~krakow~bus"
+      ]
     },
     {
-      "id": "f-ztp~krakow~bus~rt",
+      "id": "f-u2yh-ztp~krakow~bus~rt",
       "spec": "gtfs",
       "urls": {
         "realtime_vehicle_positions": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",
         "realtime_trip_updates": "https://gtfs.ztp.krakow.pl/TripUpdates_A.pb",
         "realtime_alerts": "https://gtfs.ztp.krakow.pl/ServiceAlerts_A.pb"
-      }
+      },
+      "supersedes_ids": [
+        "f-ztp~krakow~bus~rt"
+      ]
     },
     {
-      "id": "f-ztp~krakow~tram",
+      "id": "f-u2yh-ztp~krakow~tram",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.ztp.krakow.pl/GTFS_KRK_T.zip"
       },
       "tags": {
         "mdb_source_id": "1270"
-      }
+      },
+      "supersedes_ids": [
+        "f-ztp~krakow~tram"
+      ]
     },
     {
-      "id": "f-ztp~krakow~tram~rt",
+      "id": "f-u2yh-ztp~krakow~tram~rt",
       "spec": "gtfs",
       "urls": {
         "realtime_vehicle_positions": "https://gtfs.ztp.krakow.pl/VehiclePositions_T.pb",
         "realtime_trip_updates": "https://gtfs.ztp.krakow.pl/TripUpdates_T.pb",
         "realtime_alerts": "https://gtfs.ztp.krakow.pl/ServiceAlerts_T.pb"
-      }
+      },
+      "supersedes_ids": [
+        "f-ztp~krakow~tram~rt"
+      ]
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u2yh-ztp~krakow",
+      "name": "Zarząd Transportu Publicznego w Krakowie",
+      "short_name": "ZTP Kraków",
+      "website": "https://ztp.krakow.pl/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u2yh-ztp~krakow~bus"
+        },
+        {
+          "feed_onestop_id": "f-u2yh-ztp~krakow~bus~rt"
+        },
+        {
+          "feed_onestop_id": "f-u2yh-ztp~krakow~tram"
+        },
+        {
+          "feed_onestop_id": "f-u2yh-ztp~krakow~tram~rt"
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

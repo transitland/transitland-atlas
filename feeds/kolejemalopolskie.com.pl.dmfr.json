@@ -2,11 +2,37 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-koleje~małopolskie",
+      "id": "f-u2y-koleje~małopolskie",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://kolejemalopolskie.com.pl/rozklady_jazdy/kml-ska-gtfs.zip"
+      },
+      "supersedes_ids": [
+        "f-koleje~małopolskie"
+      ]
+    },
+    {
+      "id": "f-u2y-koleje~małopolskie~ald",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://kolejemalopolskie.com.pl/rozklady_jazdy/ald-gtfs.zip"
       }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u2y-koleje~małopolskie",
+      "name": "Koleje Małopolskie",
+      "short_name": "KMŁ",
+      "website": "https://www.kolejemalopolskie.com.pl/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u2y-koleje~małopolskie"
+        },
+        {
+          "feed_onestop_id": "f-u2y-koleje~małopolskie~ald"
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
