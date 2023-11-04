@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-u3t-skm~trojmiasto",
+      "name": "SKM Trójmiasto GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.skm.pkp.pl/gtfs-mi-kpd.zip"
+      },
+      "license": {
+        "url": "https://bip.skm.pkp.pl/otwarte-dane",
+        "commercial_use_allowed": "yes",
+        "use_without_attribution": "no",
+        "attribution_text": "PKP Szybka Kolej Miejska w Trójmieście Sp. z o.o."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3t-pkp~skm~trojmiasto",
+          "name": "PKP Szybka Kolej Miejska w Trójmieście Sp. z o.o.",
+          "short_name": "SKMT",
+          "website": "https://www.skm.pkp.pl/"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

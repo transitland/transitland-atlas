@@ -1,0 +1,25 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-u2v-koleje~slaskie",
+      "name": "Koleje Śląskie GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://koleje-ks.pl/gtfs/2022-2023.zip",
+        "static_planned": [
+          "https://koleje-ks.pl/gtfs/2023-2024.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2v-koleje~slaskie",
+          "name": "Koleje Śląskie",
+          "short_name": "KŚL",
+          "website": "https://www.kolejeslaskie.com/"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
