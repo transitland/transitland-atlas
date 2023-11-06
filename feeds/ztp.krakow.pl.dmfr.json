@@ -3,6 +3,7 @@
   "feeds": [
     {
       "id": "f-ztp~krakow~bus",
+      "name": "Kraków Bus GTFS",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.ztp.krakow.pl/GTFS_KRK_A.zip"
@@ -13,6 +14,7 @@
     },
     {
       "id": "f-ztp~krakow~bus~rt",
+      "name": "Kraków Bus GTFS-RT",
       "spec": "gtfs",
       "urls": {
         "realtime_vehicle_positions": "https://gtfs.ztp.krakow.pl/VehiclePositions_A.pb",
@@ -22,6 +24,7 @@
     },
     {
       "id": "f-ztp~krakow~tram",
+      "name": "Kraków Tram GTFS",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.ztp.krakow.pl/GTFS_KRK_T.zip"
@@ -32,12 +35,35 @@
     },
     {
       "id": "f-ztp~krakow~tram~rt",
+      "name": "Kraków Tram GTFS-RT",
       "spec": "gtfs",
       "urls": {
         "realtime_vehicle_positions": "https://gtfs.ztp.krakow.pl/VehiclePositions_T.pb",
         "realtime_trip_updates": "https://gtfs.ztp.krakow.pl/TripUpdates_T.pb",
         "realtime_alerts": "https://gtfs.ztp.krakow.pl/ServiceAlerts_T.pb"
       }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u2yh-ztp~krakow",
+      "name": "Zarząd Transportu Publicznego w Krakowie",
+      "short_name": "ZTP Kraków",
+      "website": "https://ztp.krakow.pl/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-ztp~krakow~bus"
+        },
+        {
+          "feed_onestop_id": "f-ztp~krakow~bus~rt"
+        },
+        {
+          "feed_onestop_id": "f-ztp~krakow~tram"
+        },
+        {
+          "feed_onestop_id": "f-ztp~krakow~tram~rt"
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
