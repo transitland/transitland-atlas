@@ -3,72 +3,67 @@
   "feeds": [
     {
       "id": "f-u3h4-mpkautobusy~mpktramwaje~dla~sevibussiechnice~dlawiszniama",
+      "name": "Wrocław GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.wroclaw.pl/open-data/87b09b32-f076-4475-8ec9-6020ed1f9ac0/1513602900.0_OtwartyWroclaw_rozklad_jazdy_GTFS.zip"
+        "static_current": "https://www.wroclaw.pl/open-data/87b09b32-f076-4475-8ec9-6020ed1f9ac0/OtwartyWroclaw_rozklad_jazdy_GTFS.zip",
+        "static_historic": [
+          "https://www.wroclaw.pl/open-data/87b09b32-f076-4475-8ec9-6020ed1f9ac0/1513602900.0_OtwartyWroclaw_rozklad_jazdy_GTFS.zip"
+        ]
       },
       "license": {
         "url": "http://www.wroclaw.pl/open-data/index.php/warunki-korzystania"
       },
       "operators": [
         {
-          "onestop_id": "o-u35g-sevibus~dlamiękinia",
-          "name": "Sevibus/DLA Miękinia",
-          "website": "http://www.sevibus.pl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3h4-dla~sevibussiechnice",
-          "name": "DLA Sevibus Siechnice",
+          "onestop_id": "o-u3h4-dla",
+          "supersedes_ids": [
+            "o-u35g-sevibus~dlamiękinia",
+            "o-u3h4-dla~sevibussiechnice",
+            "o-u3h5-sevibus~dladługołęka",
+            "o-u3h55-dlawiszniamała"
+          ],
+          "name": "Dolnośląskie Linie Autobusowe Sp. z o.o.",
           "short_name": "DLA",
-          "website": "http://www.dla.com.pl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3h4-mpkautobusy",
-          "name": "MPK Autobusy",
-          "website": "http://www.mpk.wroc.pl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3h4-mpktramwaje",
-          "name": "MPK Tramwaje",
-          "website": "http://www.mpk.wroc.pl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "3"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3h5-sevibus~dladługołęka",
-          "name": "Sevibus/DLA Długołęka",
-          "website": "http://www.sevibus.pl",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u3h55-dlawiszniamała",
-          "name": "DLA Wisznia Mała",
-          "website": "http://www.dla.com.pl",
+          "website": "https://dla.com.pl/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "5"
+            },
+            {
+              "gtfs_agency_id": "11"
+            },
+            {
+              "gtfs_agency_id": "14"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3h4-klosok",
+          "name": "KŁOSOK Sp. z o.o. sp. k.",
+          "short_name": "KŁOSOK",
+          "website": "https://klosok.eu/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "15"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3h4-mpk~wroclaw",
+          "supersedes_ids": [
+            "o-u3h4-mpkautobusy",
+            "o-u3h4-mpktramwaje"
+          ],
+          "name": "Miejskie Przedsiębiorstwo Komunikacyjne Sp. z o.o. (Wrocław)",
+          "short_name": "MPK Wrocław",
+          "website": "https://mpk.wroc.pl/kontakt",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2"
+            },
+            {
+              "gtfs_agency_id": "3"
             }
           ]
         }
