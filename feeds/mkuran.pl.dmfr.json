@@ -2,71 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-u3q-warszawski~transport~publiczny",
-      "name": "Warszawa GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/warsaw.zip",
-        "static_historic": [
-          "https://mkuran.pl/feed/ztm/ztm-latest.zip"
-        ]
-      },
-      "license": {
-        "url": "https://www.ztm.waw.pl/pliki-do-pobrania/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Bus shapes based on data by: © OpenStreetMap contributors"
-      },
-      "supersedes_ids": [
-        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
-      ]
-    },
-    {
-      "id": "f-u3q-warszawski~transport~publiczny~rt~positions",
-      "name": "Warszawa GTFS-RT (Vehicle Positions)",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/warsaw/vehicles.pb"
-      },
-      "license": {
-        "url": "https://api.um.warszawa.pl/index.php?wcag=true&opc=5,1,0,0,"
-      }
-    },
-    {
-      "id": "f-u3q-warszawski~transport~publiczny~rt~alerts",
-      "name": "Warszawa GTFS (Alerts)",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/warsaw/alerts.pb"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      }
-    },
-    {
-      "id": "f-pol~regio~pl",
-      "name": "PolRegio GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/polregio.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC0-1.0",
-        "url": "https://mkuran.pl/gtfs/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-pol~regio",
-          "name": "PolRegio",
-          "website": "https://polregio.pl/"
-        }
-      ]
-    },
-    {
       "id": "f-pkp~intercity~pl",
       "name": "PKP Intercity GTFS",
       "spec": "gtfs",
@@ -88,175 +23,52 @@
       ]
     },
     {
-      "id": "f-u3-kolejemazowieckie",
-      "name": "Koleje Mazowieckie GTFS",
+      "id": "f-pol~regio~pl",
+      "name": "PolRegio GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/kolejemazowieckie.zip"
+        "static_current": "https://mkuran.pl/gtfs/polregio.zip"
       },
       "license": {
-        "url": "https://bip.mazowieckie.com.pl/pl/ponowne-wykorzystywanie-informacji-sektora-publicznego"
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://mkuran.pl/gtfs/"
       },
       "operators": [
         {
-          "onestop_id": "o-u3q-kolejemazowieckie",
-          "name": "Koleje Mazowieckie",
-          "short_name": "KM",
-          "website": "http://www.mazowieckie.com.pl/"
-        }
-      ],
-      "supersedes_ids": [
-        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
-      ]
-    },
-    {
-      "id": "f-u3qb-warszawskakolejdojazdowa",
-      "name": "Warszawska Kolej Dojazdowa GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/wkd.zip",
-        "static_historic": [
-          "https://mkuran.pl/feed/wkd/wkd-latest.zip"
-        ]
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "supersedes_ids": [
-        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
-      ]
-    },
-    {
-      "id": "f-u3qb-warszawskakolejdojazdowa~rt",
-      "name": "Warszawska Kolej Dojazdowa GTFS-RT",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://mkuran.pl/gtfs/wkd.pb"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      }
-    },
-    {
-      "id": "f-u3h-koleje~dolnoslaskie",
-      "name": "Koleje Dolnośląskie GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/kolejedolnoslaskie.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3h-koleje~dolnoslaskie",
-          "name": "Koleje Dolnośląskie",
-          "short_name": "KD",
-          "website": "https://kolejedolnoslaskie.pl/"
+          "onestop_id": "o-pol~regio",
+          "name": "PolRegio",
+          "website": "https://polregio.pl/"
         }
       ]
     },
     {
-      "id": "f-u3qc-komunikacjamiejskaŁomiankispzoo",
-      "name": "Łomianki GTFS",
+      "id": "f-u2vh-rybnik",
+      "name": "Rybnik GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/lomianki.zip",
-        "static_historic": [
-          "https://mkuran.pl/feed/kml/kml-latest.zip"
-        ]
+        "static_current": "https://mkuran.pl/gtfs/rybnik.zip"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-u3qc-komunikacjamiejskaŁomianki",
-          "name": "Komunikacja Miejska Łomianki",
-          "short_name": "KMŁ",
-          "website": "http://kmlomianki.info/",
-          "supersedes_ids": [
-            "o-u3qc-komunikacjamiejskaŁomiankispzoo"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-u3t-gdansk~gdynia",
-      "name": "Trójmiasto (Gdańsk, Gdynia, Sopot) combined GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/tricity.zip"
-      },
-      "license": {
-        "url": "http://opendefinition.org/licenses/cc-by/",
-        "spdx_identifier": "CC-BY-4.0"
-      }
-    },
-    {
-      "id": "f-u3ky-bydgoszcz",
-      "name": "Bydgoszcz GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/bydgoszcz.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3ky-zdmikp~bydgoszcz",
-          "name": "Zarząd Dróg Miejskich i Komunikacji Publicznej w Bydgoszczy",
-          "short_name": "ZDMiKP Bydgoszcz",
-          "website": "https://www.zdmikp.bydgoszcz.pl/"
-        }
-      ]
-    },
-    {
-      "id": "f-u3ph-radom",
-      "name": "Radom GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/radom.zip"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3ph-mzdik~radom",
-          "name": "Miejski Zarząd Dróg i Komunikacji w Radomiu",
-          "short_name": "MZDiK Radom",
-          "website": "http://www.mzdik.radom.pl"
+          "onestop_id": "o-u2vh-ztz~rybnik",
+          "name": "Zarząd Transportu Zbiorowego w Rybniku",
+          "short_name": "ZTZ Rybnik",
+          "website": "http://www.ztz.rybnik.pl/"
         }
       ]
     },
     {
       "id": "f-u2zs-rzeszow",
+      "supersedes_ids": [
+        "f-u2zs-mpk~rzeszówspzoo"
+      ],
       "name": "Rzeszów GTFS",
       "spec": "gtfs",
       "urls": {
@@ -272,34 +84,142 @@
           "short_name": "ZTM Rzeszów",
           "website": "https://ztm.rzeszow.pl/"
         }
-      ],
-      "supersedes_ids": [
-        "f-u2zs-mpk~rzeszówspzoo"
       ]
     },
     {
-      "id": "f-u905-lublin",
-      "name": "Lublin GTFS",
+      "id": "f-u3-kolejemazowieckie",
+      "supersedes_ids": [
+        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
+      ],
+      "name": "Koleje Mazowieckie GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/lublin.zip",
-        "static_historic": [
-          "http://iplaner.pl/cvs2gtfs/lublin/GTFS_lublin/GTFS_lublin.zip"
-        ]
+        "static_current": "https://mkuran.pl/gtfs/kolejemazowieckie.zip"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "url": "https://bip.mazowieckie.com.pl/pl/ponowne-wykorzystywanie-informacji-sektora-publicznego"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3q-kolejemazowieckie",
+          "name": "Koleje Mazowieckie",
+          "short_name": "KM",
+          "website": "http://www.mazowieckie.com.pl/"
+        }
+      ]
+    },
+    {
+      "id": "f-u3d4-swinoujscie",
+      "name": "Świnoujście GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/swinoujscie.zip"
+      },
+      "license": {
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-u905-lublin",
-          "name": "Zarząd Transportu Miejskiego w Lublinie",
-          "short_name": "ZTM Lublin",
-          "website": "https://www.ztm.lublin.eu/"
+          "onestop_id": "o-u3d4-ka~swinoujscie",
+          "name": "Komunikacja Autobusowa sp. z o.o. (Świnoujście)",
+          "short_name": "KA Świnoujście",
+          "website": "https://ka.swinoujscie.pl/"
+        }
+      ]
+    },
+    {
+      "id": "f-u3h-koleje~dolnoslaskie",
+      "name": "Koleje Dolnośląskie GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/kolejedolnoslaskie.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3h-koleje~dolnoslaskie",
+          "name": "Koleje Dolnośląskie",
+          "short_name": "KD",
+          "website": "https://kolejedolnoslaskie.pl/"
+        }
+      ]
+    },
+    {
+      "id": "f-u3ky-bydgoszcz",
+      "name": "Bydgoszcz GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/bydgoszcz.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3ky-zdmikp~bydgoszcz",
+          "name": "Zarząd Dróg Miejskich i Komunikacji Publicznej w Bydgoszczy",
+          "short_name": "ZDMiKP Bydgoszcz",
+          "website": "https://www.zdmikp.bydgoszcz.pl/"
+        }
+      ]
+    },
+    {
+      "id": "f-u3me-wloclawek",
+      "name": "Włocławek GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/wloclawek.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f3me-mpk~wloclawek",
+          "name": "Miejskie Przedsiębiorstwo Komunikacyjne Sp. z o.o. (Włocławek)",
+          "short_name": "MPK Włocławek",
+          "website": "https://mpk.com.pl/"
+        }
+      ]
+    },
+    {
+      "id": "f-u3mj-torun",
+      "name": "Toruń GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/torun.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u3mj-um~torun",
+          "name": "Urząd Miasta Torunia",
+          "short_name": "UM Toruń",
+          "website": "https://www.torun.pl/pl/rozklad/mzk/"
         }
       ]
     },
@@ -323,94 +243,136 @@
       ]
     },
     {
-      "id": "f-u3mj-torun",
-      "name": "Toruń GTFS",
+      "id": "f-u3ph-radom",
+      "name": "Radom GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/torun.zip"
+        "static_current": "https://mkuran.pl/gtfs/radom.zip"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-u3mj-um~torun",
-          "name": "Urząd Miasta Torunia",
-          "short_name": "UM Toruń",
-          "website": "https://www.torun.pl/pl/rozklad/mzk/"
+          "onestop_id": "o-u3ph-mzdik~radom",
+          "name": "Miejski Zarząd Dróg i Komunikacji w Radomiu",
+          "short_name": "MZDiK Radom",
+          "website": "http://www.mzdik.radom.pl"
         }
       ]
     },
     {
-      "id": "f-u2vh-rybnik",
-      "name": "Rybnik GTFS",
+      "id": "f-u3q-warszawski~transport~publiczny",
+      "supersedes_ids": [
+        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
+      ],
+      "name": "Warszawa GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/rybnik.zip"
+        "static_current": "https://mkuran.pl/gtfs/warsaw.zip",
+        "static_historic": [
+          "https://mkuran.pl/feed/ztm/ztm-latest.zip"
+        ]
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
+        "url": "https://www.ztm.waw.pl/pliki-do-pobrania/",
+        "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u2vh-ztz~rybnik",
-          "name": "Zarząd Transportu Zbiorowego w Rybniku",
-          "short_name": "ZTZ Rybnik",
-          "website": "http://www.ztz.rybnik.pl/"
-        }
-      ]
+        "attribution_text": "Bus shapes based on data by: © OpenStreetMap contributors"
+      }
     },
     {
-      "id": "f-u3sy-wejherowo",
-      "name": "Wejherowo GTFS",
-      "spec": "gtfs",
+      "id": "f-u3q-warszawski~transport~publiczny~rt~alerts",
+      "name": "Warszawa GTFS (Alerts)",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/wejherowo.zip"
+        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/warsaw/alerts.pb"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3sy-mzk~wejherowo",
-          "name": "Miejski Zakład Komunikacji Wejherowo Sp. z o.o.",
-          "short_name": "MZK Wejherowo",
-          "website": "https://mzkwejherowo.pl/"
-        }
-      ]
+      }
     },
     {
-      "id": "f-u3me-wloclawek",
-      "name": "Włocławek GTFS",
-      "spec": "gtfs",
+      "id": "f-u3q-warszawski~transport~publiczny~rt~positions",
+      "name": "Warszawa GTFS-RT (Vehicle Positions)",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/wejherowo.zip"
+        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/warsaw/vehicles.pb"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "url": "https://api.um.warszawa.pl/index.php?wcag=true&opc=5,1,0,0,"
+      }
+    },
+    {
+      "id": "f-u3qb-warszawskakolejdojazdowa",
+      "supersedes_ids": [
+        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
+      ],
+      "name": "Warszawska Kolej Dojazdowa GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/wkd.zip",
+        "static_historic": [
+          "https://mkuran.pl/feed/wkd/wkd-latest.zip"
+        ]
+      },
+      "license": {
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
+      }
+    },
+    {
+      "id": "f-u3qb-warszawskakolejdojazdowa~rt",
+      "name": "Warszawska Kolej Dojazdowa GTFS-RT",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://mkuran.pl/gtfs/wkd.pb"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
+      }
+    },
+    {
+      "id": "f-u3qc-komunikacjamiejskaŁomiankispzoo",
+      "name": "Łomianki GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/lomianki.zip",
+        "static_historic": [
+          "https://mkuran.pl/feed/kml/kml-latest.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-f3me-mpk~wloclawek",
-          "name": "Miejskie Przedsiębiorstwo Komunikacyjne Sp. z o.o. (Włocławek)",
-          "short_name": "MPK Włocławek",
-          "website": "https://mpk.com.pl/"
+          "onestop_id": "o-u3qc-komunikacjamiejskaŁomianki",
+          "supersedes_ids": [
+            "o-u3qc-komunikacjamiejskaŁomiankispzoo"
+          ],
+          "name": "Komunikacja Miejska Łomianki",
+          "short_name": "KMŁ",
+          "website": "http://kmlomianki.info/"
         }
       ]
     },
@@ -422,8 +384,8 @@
         "static_current": "https://mkuran.pl/gtfs/lomza.zip"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
@@ -438,27 +400,39 @@
       ]
     },
     {
-      "id": "f-u3d4-swinoujscie",
-      "name": "Świnoujście GTFS",
+      "id": "f-u3sy-wejherowo",
+      "name": "Wejherowo GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/swinoujscie.zip"
+        "static_current": "https://mkuran.pl/gtfs/wejherowo.zip"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-u3d4-ka~swinoujscie",
-          "name": "Komunikacja Autobusowa sp. z o.o. (Świnoujście)",
-          "short_name": "KA Świnoujście",
-          "website": "https://ka.swinoujscie.pl/"
+          "onestop_id": "o-u3sy-mzk~wejherowo",
+          "name": "Miejski Zakład Komunikacji Wejherowo Sp. z o.o.",
+          "short_name": "MZK Wejherowo",
+          "website": "https://mzkwejherowo.pl/"
         }
       ]
+    },
+    {
+      "id": "f-u3t-gdansk~gdynia",
+      "name": "Trójmiasto (Gdańsk, Gdynia, Sopot) combined GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/tricity.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "http://opendefinition.org/licenses/cc-by/"
+      }
     },
     {
       "id": "f-u3x7-gizycko",
@@ -468,8 +442,8 @@
         "static_current": "https://mkuran.pl/gtfs/gizycko.zip"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
@@ -491,8 +465,8 @@
         "static_current": "https://mkuran.pl/gtfs/elk.zip"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
@@ -503,16 +477,42 @@
       "name": "Ełk GTFS-RT",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://mkuran.pl/gtfs/elk.pb",
-        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/elk.pb"
+        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/elk.pb",
+        "realtime_trip_updates": "https://mkuran.pl/gtfs/elk.pb"
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
       }
+    },
+    {
+      "id": "f-u905-lublin",
+      "name": "Lublin GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mkuran.pl/gtfs/lublin.zip",
+        "static_historic": [
+          "http://iplaner.pl/cvs2gtfs/lublin/GTFS_lublin/GTFS_lublin.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u905-lublin",
+          "name": "Zarząd Transportu Miejskiego w Lublinie",
+          "short_name": "ZTM Lublin",
+          "website": "https://www.ztm.lublin.eu/"
+        }
+      ]
     }
   ],
   "operators": [
@@ -526,10 +526,10 @@
           "feed_onestop_id": "f-u3q-warszawski~transport~publiczny"
         },
         {
-          "feed_onestop_id": "f-u3q-warszawski~transport~publiczny~rt~positions"
+          "feed_onestop_id": "f-u3q-warszawski~transport~publiczny~rt~alerts"
         },
         {
-          "feed_onestop_id": "f-u3q-warszawski~transport~publiczny~rt~alerts"
+          "feed_onestop_id": "f-u3q-warszawski~transport~publiczny~rt~positions"
         }
       ]
     },
