@@ -2,71 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-u3q-warszawski~transport~publiczny",
-      "name": "Warszawa GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/warsaw.zip",
-        "static_historic": [
-          "https://mkuran.pl/feed/ztm/ztm-latest.zip"
-        ]
-      },
-      "license": {
-        "url": "https://www.ztm.waw.pl/pliki-do-pobrania/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Bus shapes based on data by: © OpenStreetMap contributors"
-      },
-      "supersedes_ids": [
-        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
-      ]
-    },
-    {
-      "id": "f-u3q-warszawski~transport~publiczny~rt~positions",
-      "name": "Warszawa GTFS-RT (Vehicle Positions)",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/warsaw/vehicles.pb"
-      },
-      "license": {
-        "url": "https://api.um.warszawa.pl/index.php?wcag=true&opc=5,1,0,0,"
-      }
-    },
-    {
-      "id": "f-u3q-warszawski~transport~publiczny~rt~alerts",
-      "name": "Warszawa GTFS (Alerts)",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/warsaw/alerts.pb"
-      },
-      "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      }
-    },
-    {
-      "id": "f-pol~regio~pl",
-      "name": "PolRegio GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/polregio.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC0-1.0",
-        "url": "https://mkuran.pl/gtfs/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-pol~regio",
-          "name": "PolRegio",
-          "website": "https://polregio.pl/"
-        }
-      ]
-    },
-    {
       "id": "f-pkp~intercity~pl",
       "name": "PKP Intercity GTFS",
       "spec": "gtfs",
@@ -92,7 +27,7 @@
       "name": "PolRegio GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/kolejemazowieckie.zip"
+        "static_current": "https://mkuran.pl/gtfs/polregio.zip"
       },
       "license": {
         "spdx_identifier": "CC0-1.0",
@@ -171,9 +106,6 @@
           "short_name": "KM",
           "website": "http://www.mazowieckie.com.pl/"
         }
-      ],
-      "supersedes_ids": [
-        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
       ]
     },
     {
@@ -186,7 +118,6 @@
       "license": {
         "spdx_identifier": "CC0-1.0",
         "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "spdx_identifier": "CC0-1.0",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes"
