@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-tracy~tracer",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.cityoftracy.org/home/showpublisheddocument/16626/638342536313270000",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/tracy-tracer.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q9ws-tracer",
+          "name": "City of Tracy",
+          "short_name": "TRACER",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1490"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cityoftracy",
+            "us_ntd_id": "90197",
+            "wikidata_id": "Q7831176"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
