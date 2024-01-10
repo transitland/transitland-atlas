@@ -86,7 +86,7 @@
           "website": "https://pvvta.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "75"
+              "feed_onestop_id": "f-9myr-paloverdevalley~ca~us~rt"
             }
           ]
         }
@@ -387,30 +387,6 @@
           "tags": {
             "us_ntd_id": "90287",
             "wikidata_id": "Q7128670"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9q5bf-lawndale~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cityoflawndale-ca-us/cityoflawndale-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q5bf-lawndalebeat",
-          "name": "Lawndale Beat",
-          "website": "https://www.lawndalecity.org/cms/One.aspx?portalId=16676137&pageId=17108147",
-          "tags": {
-            "us_ntd_id": "90280"
           }
         }
       ]
@@ -2325,10 +2301,7 @@
           "website": "https://www.coralville.org/166/Bus-Schedules-Route-Maps",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "795"
-            },
-            {
-              "feed_onestop_id": "f-coralvilletransit~rt"
+              "feed_onestop_id": "f-iowacitytransitsystem~rt"
             }
           ],
           "tags": {
@@ -2357,7 +2330,7 @@
           "website": "https://transportation.uiowa.edu/cambus",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-universityofiowa~cambus~rt"
+              "feed_onestop_id": "f-iowacitytransitsystem~rt"
             }
           ],
           "tags": {
@@ -3647,15 +3620,6 @@
       }
     },
     {
-      "id": "f-coralvilletransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      }
-    },
-    {
       "id": "f-corridorrides",
       "spec": "gtfs",
       "urls": {
@@ -4346,7 +4310,7 @@
           "website": "https://www.townofchapelhill.org/government/departments-services/transit",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "243"
+              "feed_onestop_id": "f-dnru-chapel~hill~transit~nc~us~rt"
             }
           ],
           "tags": {
@@ -4626,15 +4590,6 @@
       ]
     },
     {
-      "id": "f-dp9k-waukeshacounty~wi~us~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://mywaukeshametro.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://mywaukeshametro.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://mywaukeshametro.com/gtfs-rt/alerts"
-      }
-    },
-    {
       "id": "f-dpc4-oshkosh~wi~us",
       "spec": "gtfs",
       "urls": {
@@ -4678,6 +4633,11 @@
         {
           "onestop_id": "o-dpc5-valleytransit",
           "name": "Valley Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpc5-valleytransit~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "50001",
             "wikidata_id": "Q7912245"
@@ -6502,15 +6462,6 @@
       ]
     },
     {
-      "id": "f-iowacitytransitsystem~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      }
-    },
-    {
       "id": "f-iowa~city~transit",
       "spec": "gtfs",
       "urls": {
@@ -6560,15 +6511,6 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/kananshuttle-ca-us/kananshuttle-ca-us.zip"
-      }
-    },
-    {
-      "id": "f-keywesttransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://kwtransit.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://kwtransit.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://kwtransit.com/gtfs-rt/alerts"
       }
     },
     {
@@ -7478,7 +7420,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "91092"
+            "us_ntd_id": "91092",
+            "wikidata_id": "Q7568609"
           }
         }
       ]
@@ -7663,24 +7606,6 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/unitedcap-mn-us/unitedcap-mn-us.zip"
-      }
-    },
-    {
-      "id": "f-universityofiowa~cambus~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      }
-    },
-    {
-      "id": "f-vailtransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://ride.vailgov.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://ride.vailgov.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://ride.vailgov.com/gtfs-rt/alerts"
       }
     },
     {

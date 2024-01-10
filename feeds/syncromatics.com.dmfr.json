@@ -2,6 +2,108 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-9myr-paloverdevalley~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridepvvta.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ridepvvta.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ridepvvta.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-9myr-paloverdevalley~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridepvvta.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ridepvvta.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ridepvvta.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-9q5bf-lawndale~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridelawndalebeat.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/cityoflawndale-ca-us/cityoflawndale-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5bf-lawndalebeat",
+          "name": "Lawndale Beat",
+          "website": "https://www.lawndalecity.org/cms/One.aspx?portalId=16676137&pageId=17108147",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q5bf-lawndale~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90280"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9q5bf-lawndale~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridelawndalebeat.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ridelawndalebeat.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ridelawndalebeat.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-9qd-mercedthebus~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://thebuslive.com/gtfs-rt/vehiclepositions",
+        "realtime_alerts": "https://thebuslive.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-9qh-victorville~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ontime.vvta.org/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/victorville-ca-us/victorville-ca-us.zip",
+          "https://api.transloc.com/gtfs/vvta.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://vvta.org/developers/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh-victorvalleytransitauthority",
+          "name": "Victor Valley Transit Authority",
+          "short_name": "VVTA",
+          "website": "https://www.vvta.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-victorvalleytransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "VVTransit",
+            "us_ntd_id": "90148",
+            "wikidata_id": "Q7926418"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-countyofkauai~transportationagency~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -11,6 +113,150 @@
       },
       "license": {
         "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-dnkk-knoxvilleareatransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://knoxville.syncromatics.com/gtfs",
+        "static_historic": [
+          "http://www.knoxvilletn.gov/UserFiles/Servers/Server_109478/File/KAT/gtfs-kat.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.knoxvilletn.gov/government/opendata/knoxville_area_transit_kat_gtfs_feed"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnkk-knoxvilleareatransit",
+          "name": "Knoxville Area Transit",
+          "short_name": "KAT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnkk-knoxvilleareatransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "kat_bus",
+            "us_ntd_id": "40002",
+            "wikidata_id": "Q6423650"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnkk-knoxvilleareatransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://knoxville.syncromatics.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://knoxville.syncromatics.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://knoxville.syncromatics.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://www.knoxvilletn.gov/government/opendata/knoxville_area_transit_kat_gtfs_feed"
+      }
+    },
+    {
+      "id": "f-dnr-piedmontauthorityforregionaltransportation~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://partbustracker.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://partbustracker.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://partbustracker.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-dnru-chapel~hill~transit~nc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mychtransit.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://mychtransit.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://mychtransit.org/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-dp9k-waukeshacounty~wi~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mywaukeshametro.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://mywaukeshametro.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://mywaukeshametro.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-dpc5-valleytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridemyvalleytransit.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ridemyvalleytransit.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ridemyvalleytransit.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-hele~on~hi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://myheleonbus.org/gtfs",
+        "static_historic": [
+          "https://www.heleonbus.hawaiicounty.gov/home/showpublisheddocument/304851/638157643541400000",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/hele-on.zip",
+          "http://www.heleonbus.org/transit-info-and-statistics/MTA_FEED4.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.heleonbus.hawaiicounty.gov/resources/document-library-and-links/general-transit-feed-specifications-gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hele~on~hi",
+          "name": "County of Hawai'i Mass Transit Agency",
+          "short_name": "Hele-On Bus",
+          "website": "https://www.heleonbus.hawaiicounty.gov/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-hele~on~hi~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "9R03-91080",
+            "wikidata_id": "Q59314153"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-hele~on~hi~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://myheleonbus.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://myheleonbus.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://myheleonbus.org/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-iowacitytransitsystem~rt",
+      "supersedes_ids": [
+        "f-universityofiowa~cambus~rt",
+        "f-coralvilletransit~rt"
+      ],
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
       }
     },
     {
@@ -42,6 +288,59 @@
       ]
     },
     {
+      "id": "f-kenosha~wi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://kenoshatransit.com/gtfs",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/kenosha-wi-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp9d-cityofkenosha",
+          "name": "City of Kenosha",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-kenosha~wi~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "city_of_kenosha",
+            "us_ntd_id": "50003",
+            "wikidata_id": "Q6391318"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-kenosha~wi~us~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://kenoshatransit.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://kenoshatransit.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://kenoshatransit.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-keywesttransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://kwtransit.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://kwtransit.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://kwtransit.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
       "id": "f-lafayette~la",
       "spec": "gtfs",
       "urls": {
@@ -71,6 +370,129 @@
         "realtime_vehicle_positions": "https://lts.syncromatics.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://lts.syncromatics.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://lts.syncromatics.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-merrimackvalley~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://meva.syncromatics.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://meva.syncromatics.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://meva.syncromatics.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
+      "id": "f-redondo~beach~cities~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://redondobeachBCT.com/gtfs",
+        "static_historic": [
+          "https://www.redondo.org/civicax/filebank/blobdload.aspx?BlobID=33555"
+        ]
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5b-beachcitiestransit~cityofredondobeach",
+          "name": "Beach Cities Transit - City of Redondo Beach",
+          "short_name": "BCT",
+          "website": "https://www.redondo.org/departments/community_services/transit/bus_schedules/index.php",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BCT"
+            },
+            {
+              "feed_onestop_id": "f-redondo~beach~cities~transit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RedondoBeachBCT",
+            "us_ntd_id": "90214",
+            "wikidata_id": "Q4875696"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-redondo~beach~cities~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://redondobeachbct.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://redondobeachbct.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://redondobeachbct.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-southmetroarearegionaltransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mysmartbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://mysmartbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://mysmartbus.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-sportran~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://sportranbus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://sportranbus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://sportranbus.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-tutigerride~md",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.tutigerride.com/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tutigerride~md",
+          "name": "Towson University",
+          "short_name": "TUTigerRide",
+          "website": "https://www.towson.edu/parking/shuttle/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tutigerride~md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-tutigerride~md~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.tutigerride.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://www.tutigerride.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://www.tutigerride.com/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-vailtransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ride.vail.gov/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ride.vail.gov/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ride.vail.gov/gtfs-rt/alerts"
+      }
+    },
+    {
+      "id": "f-victorvalleytransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ontime.vvta.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ontime.vvta.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ontime.vvta.org/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
       }
     }
   ],
