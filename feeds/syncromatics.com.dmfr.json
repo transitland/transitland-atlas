@@ -107,6 +107,47 @@
       ]
     },
     {
+      "id": "f-kenosha~wi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://kenoshatransit.com/gtfs",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/kenosha-wi-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp9d-cityofkenosha",
+          "name": "City of Kenosha",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-kenosha~wi~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "city_of_kenosha",
+            "us_ntd_id": "50003",
+            "wikidata_id": "Q6391318"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-kenosha~wi~us~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://kenoshatransit.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://kenoshatransit.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://kenoshatransit.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
       "id": "f-lafayette~la",
       "spec": "gtfs",
       "urls": {
