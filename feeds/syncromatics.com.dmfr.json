@@ -26,6 +26,48 @@
       }
     },
     {
+      "id": "f-dnkk-knoxvilleareatransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://knoxville.syncromatics.com/gtfs",
+        "static_historic": [
+          "http://www.knoxvilletn.gov/UserFiles/Servers/Server_109478/File/KAT/gtfs-kat.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.knoxvilletn.gov/government/opendata/knoxville_area_transit_kat_gtfs_feed"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnkk-knoxvilleareatransit",
+          "name": "Knoxville Area Transit",
+          "short_name": "KAT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnkk-knoxvilleareatransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "kat_bus",
+            "us_ntd_id": "40002",
+            "wikidata_id": "Q6423650"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnkk-knoxvilleareatransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://knoxville.syncromatics.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://knoxville.syncromatics.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://knoxville.syncromatics.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://www.knoxvilletn.gov/government/opendata/knoxville_area_transit_kat_gtfs_feed"
+      }
+    },
+    {
       "id": "f-dnru-chapel~hill~transit~nc~us~rt",
       "spec": "gtfs-rt",
       "urls": {
