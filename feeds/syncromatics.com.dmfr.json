@@ -322,6 +322,35 @@
       }
     },
     {
+      "id": "f-tutigerride~md",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.tutigerride.com/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tutigerride~md",
+          "name": "Towson University",
+          "short_name": "TUTigerRide",
+          "website": "https://www.towson.edu/parking/shuttle/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tutigerride~md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-tutigerride~md~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.tutigerride.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://www.tutigerride.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://www.tutigerride.com/gtfs-rt/alerts"
+      }
+    },
+    {
       "id": "f-victorvalleytransitauthority~rt",
       "spec": "gtfs-rt",
       "urls": {
