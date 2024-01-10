@@ -178,6 +178,49 @@
         "realtime_trip_updates": "https://lts.syncromatics.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://lts.syncromatics.com/gtfs-rt/alerts"
       }
+    },
+    {
+      "id": "f-redondo~beach~cities~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://redondobeachBCT.com/gtfs",
+        "static_historic": [
+          "https://www.redondo.org/civicax/filebank/blobdload.aspx?BlobID=33555"
+        ]
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5b-beachcitiestransit~cityofredondobeach",
+          "name": "Beach Cities Transit - City of Redondo Beach",
+          "short_name": "BCT",
+          "website": "https://www.redondo.org/departments/community_services/transit/bus_schedules/index.php",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BCT"
+            },
+            {
+              "feed_onestop_id": "f-redondo~beach~cities~transit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RedondoBeachBCT",
+            "us_ntd_id": "90214",
+            "wikidata_id": "Q4875696"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-redondo~beach~cities~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://redondobeachbct.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://redondobeachbct.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://redondobeachbct.com/gtfs-rt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
