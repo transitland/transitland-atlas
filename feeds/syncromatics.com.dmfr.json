@@ -26,6 +26,50 @@
       }
     },
     {
+      "id": "f-hele~on~hi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://myheleonbus.org/gtfs",
+        "static_historic": [
+          "https://www.heleonbus.hawaiicounty.gov/home/showpublisheddocument/304851/638157643541400000",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/hele-on.zip",
+          "http://www.heleonbus.org/transit-info-and-statistics/MTA_FEED4.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.heleonbus.hawaiicounty.gov/resources/document-library-and-links/general-transit-feed-specifications-gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hele~on~hi",
+          "name": "County of Hawai'i Mass Transit Agency",
+          "short_name": "Hele-On Bus",
+          "website": "https://www.heleonbus.hawaiicounty.gov/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-hele~on~hi~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "9R03-91080",
+            "wikidata_id": "Q59314153"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-hele~on~hi~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://myheleonbus.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://myheleonbus.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://myheleonbus.org/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://gtfs-directory.syncromatics.com/"
+      }
+    },
+    {
       "id": "f-kauai",
       "spec": "gtfs",
       "urls": {
