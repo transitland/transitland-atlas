@@ -392,30 +392,6 @@
       ]
     },
     {
-      "id": "f-9q5bf-lawndale~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cityoflawndale-ca-us/cityoflawndale-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q5bf-lawndalebeat",
-          "name": "Lawndale Beat",
-          "website": "https://www.lawndalecity.org/cms/One.aspx?portalId=16676137&pageId=17108147",
-          "tags": {
-            "us_ntd_id": "90280"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9q5cx-montereypark~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -4657,6 +4633,11 @@
         {
           "onestop_id": "o-dpc5-valleytransit",
           "name": "Valley Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpc5-valleytransit~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "50001",
             "wikidata_id": "Q7912245"
@@ -7439,7 +7420,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "91092"
+            "us_ntd_id": "91092",
+            "wikidata_id": "Q7568609"
           }
         }
       ]
