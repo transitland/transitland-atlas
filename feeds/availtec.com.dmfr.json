@@ -1,0 +1,47 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-9ydy-wichitatransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bus.wichitatransit.org/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit.zip?raw=true"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit-license.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9ydy-wichitatransit",
+          "name": "Wichita Transit",
+          "website": "http://www.wichitatransit.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9ydy-wichitatransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "wichitatransit",
+            "us_ntd_id": "70015",
+            "wikidata_id": "Q7998172"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9ydy-wichitatransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bus.wichitatransit.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://bus.wichitatransit.org/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://bus.wichitatransit.org/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
