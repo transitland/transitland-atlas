@@ -7,43 +7,41 @@
       "urls": {
         "static_current": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/GTFS.zip"
       },
-      "languages": ["fr-FR"],
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-gtfs",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no",
-        "attribution_text": "Montpellier Mediterranée Métropole"
-      }
-    },{
+        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spfb-tam~montpellier",
+          "name": "Transports de l'agglomération de Montpellier",
+          "short_name": "TaM",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-spfb-tam~montpellier"
+            },{
+              "feed_onestop_id": "f-spfb-tam~montpellier-rt"            
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1753254"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-spfb-tam~montpellier-rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/VehiclePosition.pb",
         "realtime_trip_updates": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/TripUpdate.pb",
-        "realtime_alerts": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/Alert.pb"
+        "realtime_alerts": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/Alert.pb",
+        "realtime_vehicle_positions": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/VehiclePosition.pb"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-temps-reel",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no",
-        "attribution_text": "Montpellier Mediterranée Métropole"
+        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-temps-reel"
       }
     }
   ],
-  "operators": [
-    {
-      "onestop_id": "o-spfb-tam~montpellier",
-      "name": "Transports de l'agglomération de Montpellier",
-      "short_name": "TaM"
-    }
-  ],
-  "license_spdx_identifier": "ODbL-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
