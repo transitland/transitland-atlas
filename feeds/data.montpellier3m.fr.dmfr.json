@@ -1,0 +1,66 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-spfb-tam~montpellier",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/GTFS.zip",
+        "static_historic": ["https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_GTFS.zip"]
+      },
+      "languages": ["fr-FR"],
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-gtfs",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no",
+        "attribution_text": "Montpellier Mediterranée Métropole"
+      }
+    },{
+      "id": "f-spfb-tam~montpellier-rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/TripUpdate.pb",
+        "realtime_alerts": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/Alert.pb",
+        "realtime_vehicle_positions": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/VehiclePosition.pb"
+      },
+      "languages": ["fr-FR"],
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-temps-reel",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no",
+        "attribution_text": "Montpellier Mediterranée Métropole"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-spfb-tam~montpellier",
+      "tags": {
+        "wikidata_id": "Q1753254",
+        "twitter_general": "tamvoyages",
+        "twitter_service_alerts": "tamvoyages"
+      },
+      "name": "Transports de l'agglomération de Montpellier",
+      "short_name": "TaM",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-spfb-tam~montpellier",
+          "gtfs_agency_id": "TAM"
+        },
+        {
+          "feed_onestop_id": "f-spfb-tam~montpellier-rt",
+          "gtfs_agency_id": "TAM"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "ODbL-1.0"
+}
