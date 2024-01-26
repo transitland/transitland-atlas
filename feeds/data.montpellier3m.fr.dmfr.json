@@ -5,24 +5,8 @@
       "id": "f-spfb-tam~montpellier",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/GTFS.zip"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-gtfs"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spfb-tam~montpellier",
-          "name": "Transports de l'agglomération de Montpellier",
-          "short_name": "TaM",
-          "associated_feeds": [
-          {
-              "feed_onestop_id": "f-spfb-tam~montpellier~rt"            
-            }
-          ]
-        }
-      ]
+        "static_current": "https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_GTFS.zip"
+      }
     },
     {
       "id": "f-spfb-tam~montpellier~rt",
@@ -31,11 +15,23 @@
         "realtime_vehicle_positions": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/VehiclePosition.pb",
         "realtime_trip_updates": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/TripUpdate.pb",
         "realtime_alerts": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/Alert.pb"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-temps-reel"
       }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-spfb-tam~montpellier",
+      "name": "Transports de l'agglomération de Montpellier",
+      "short_name": "TAM",
+      "website": "https://www.tam-voyages.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-spfb-tam~montpellier"
+        },
+        {
+          "feed_onestop_id": "f-spfb-tam~montpellier~rt"
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
