@@ -6,30 +6,24 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_GTFS.zip"
-      }
-    },
-    {
-      "id": "f-spfb-tam~montpellier~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/VehiclePosition.pb",
-        "realtime_trip_updates": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/TripUpdate.pb",
-        "realtime_alerts": "https://data.montpellier3m.fr/TAM_MMM_GTFSRT/Alert.pb"
-      }
-    }
-  ],
-  "operators": [
-    {
-      "onestop_id": "o-spfb-tam~montpellier",
-      "name": "Transports de l'agglomération de Montpellier",
-      "short_name": "TAM",
-      "website": "https://www.tam-voyages.com/",
-      "associated_feeds": [
+      },
+      "license": {
+        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-gtfs",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Montpellier Mediterranée Métropole"
+      },
+      "operators": [
         {
-          "feed_onestop_id": "f-spfb-tam~montpellier"
-        },
-        {
-          "feed_onestop_id": "f-spfb-tam~montpellier~rt"
+          "onestop_id": "o-spfb-tam~montpellier",
+          "name": "Transports de l'agglomération de Montpellier",
+          "short_name": "TAM",
+          "website": "http://www.tam-voyages.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
         }
       ]
     }
