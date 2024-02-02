@@ -3,10 +3,12 @@
   "feeds": [
     {
       "id": "f-djmu-jacksonvilletransportationauthority",
+      "description": "Transitland has to fetch this feed using a custom script. To manually download the feed go to https://ride.jtafla.com/gtfs-archive",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://ride.jtafla.com/gtfs-archive/gtfs.zip",
-        "static_historic": ["https://schedules.jtafla.com/schedulesgtfs/download"]
+        "static_historic": [
+          "https://schedules.jtafla.com/schedulesgtfs/download"
+        ]
       },
       "license": {
         "url": "https://ftis.org/FTDEDisclaimer.aspx"
