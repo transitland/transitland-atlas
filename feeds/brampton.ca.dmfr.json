@@ -5,13 +5,16 @@
       "id": "f-dpz2-bramptontransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.brampton.ca/EN/City-Hall/OpenGov/Open-Data-Catalogue/Documents/Google_Transit.zip"
+        "static_current": "https://www.arcgis.com/sharing/rest/content/items/a355aabd5a8c490186bdce559c9c75fb/data",
+        "static_historic": [
+          "http://www.brampton.ca/EN/City-Hall/OpenGov/Open-Data-Catalogue/Documents/Google_Transit.zip"
+        ]
       },
       "license": {
-        "url": "http://www.brampton.ca/EN/City-Hall/OpenGov/Open-Data-Catalogue/Pages/Terms-of-Use.aspx",
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://brampton.maps.arcgis.com/home/item.html?id=a355aabd5a8c490186bdce559c9c75fb",
         "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Copyright © YEAR, The City of Brampton (All rights reserved)."
+        "create_derived_product": "yes"
       },
       "tags": {
         "gtfs_data_exchange": "brampton-transit"
@@ -21,12 +24,27 @@
           "onestop_id": "o-dpz2-bramptontransit",
           "name": "Brampton Transit",
           "website": "http://www.bramptontransit.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpz2-bramptontransit~rt"
+            }
+          ],
           "tags": {
+            "developer_site": "https://geohub.brampton.ca/pages/brampton-transit",
             "omd_provider_id": "brampton-transit",
             "wikidata_id": "Q4956262"
           }
         }
       ]
+    },
+    {
+      "id": "f-dpz2-bramptontransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://nextride.brampton.ca:81/API/VehiclePositions?format=gtfs.proto",
+        "realtime_trip_updates": "https://nextride.brampton.ca:81/API/TripUpdates?format=gtfs.proto",
+        "realtime_alerts": "https://nextride.brampton.ca:81/API/ServiceAlerts?format=gtfs.proto"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
