@@ -2,35 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-9ydy-wichitatransit",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit.zip?raw=true"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/wichita-transit-license.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9ydy-wichitatransit",
-          "name": "Wichita Transit",
-          "website": "http://www.wichitatransit.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            }
-          ],
-          "tags": {
-            "twitter_general": "wichitatransit",
-            "us_ntd_id": "70015",
-            "wikidata_id": "Q7998172"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-augusta~ga~us",
       "spec": "gtfs",
       "urls": {
@@ -84,7 +55,9 @@
       "id": "f-danville~il~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/danville-il-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/danville-il-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -99,7 +72,9 @@
       "id": "f-djjt-suntran~fl~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/suntran-fl-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/suntran-fl-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -242,41 +217,12 @@
       ]
     },
     {
-      "id": "f-kenosha~wi~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/kenosha-wi-us.zip"
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes",
-        "commercial_use_allowed": "no",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dp9d-cityofkenosha",
-          "name": "City of Kenosha",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1738"
-            }
-          ],
-          "tags": {
-            "twitter_general": "city_of_kenosha",
-            "us_ntd_id": "50003",
-            "wikidata_id": "Q6391318"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-lacrosse~wi~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lacrosse-wi-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lacrosse-wi-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -291,7 +237,9 @@
       "id": "f-lasvegasmonorail~nv~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lasvegasmonorail-nv-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lasvegasmonorail-nv-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -316,7 +264,9 @@
       "id": "f-piercecountyferries~wa~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/piercecountyferries-wa-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/piercecountyferries-wa-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -346,7 +296,9 @@
       "id": "f-rockland~ny~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rockland-ny-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rockland-ny-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -361,7 +313,9 @@
       "id": "f-seattlemonorail~wa~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/seattlemonorail-wa-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/seattlemonorail-wa-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -376,7 +330,9 @@
       "id": "f-shuttleum~md~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/shuttleum-md-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/shuttleum-md-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -403,33 +359,12 @@
       ]
     },
     {
-      "id": "f-stark~area~regional~transit~authority",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/stark-area-regional-transit-authority.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dpq-sarta",
-          "name": "SARTA",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            }
-          ],
-          "tags": {
-            "twitter_general": "SARTAonline",
-            "us_ntd_id": "50011",
-            "wikidata_id": "Q7601948"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-steamshipauthority~ma~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/steamshipauthority-ma-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/steamshipauthority-ma-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -465,34 +400,12 @@
       ]
     },
     {
-      "id": "f-tracy~tracer",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/tracy-tracer.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9ws-tracer",
-          "name": "City of Tracy",
-          "short_name": "TRACER",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1490"
-            }
-          ],
-          "tags": {
-            "twitter_general": "cityoftracy",
-            "us_ntd_id": "90197",
-            "wikidata_id": "Q7831176"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-uga~ga~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/uga-ga-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/uga-ga-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",
@@ -523,7 +436,9 @@
       "id": "f-unh~nh~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/unh-nh-us.zip"
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/unh-nh-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md",

@@ -86,7 +86,7 @@
           "website": "https://pvvta.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "75"
+              "feed_onestop_id": "f-9myr-paloverdevalley~ca~us~rt"
             }
           ]
         }
@@ -387,30 +387,6 @@
           "tags": {
             "us_ntd_id": "90287",
             "wikidata_id": "Q7128670"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9q5bf-lawndale~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cityoflawndale-ca-us/cityoflawndale-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q5bf-lawndalebeat",
-          "name": "Lawndale Beat",
-          "website": "https://www.lawndalecity.org/cms/One.aspx?portalId=16676137&pageId=17108147",
-          "tags": {
-            "us_ntd_id": "90280"
           }
         }
       ]
@@ -1465,44 +1441,6 @@
       ]
     },
     {
-      "id": "f-9r0-redding~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/redding-ca-us/redding-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "redding-area-bus-authority"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r0-reddingareabusauthority",
-          "name": "Redding Area Bus Authority",
-          "short_name": "RABA",
-          "website": "https://www.cityofredding.org/departments/redding-area-bus-authority",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "25"
-            },
-            {
-              "feed_onestop_id": "f-9r0-redding~ca~us~rt"
-            },
-            {
-              "feed_onestop_id": "f-9r0-redding~ca~us~rt~alerts"
-            }
-          ],
-          "tags": {
-            "twitter_general": "cityofredding",
-            "us_ntd_id": "90093",
-            "wikidata_id": "Q7305617"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9r0-redding~ca~us~rt~alerts",
       "spec": "gtfs-rt",
       "urls": {
@@ -2359,10 +2297,7 @@
           "website": "https://www.coralville.org/166/Bus-Schedules-Route-Maps",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "795"
-            },
-            {
-              "feed_onestop_id": "f-coralvilletransit~rt"
+              "feed_onestop_id": "f-iowacitytransitsystem~rt"
             }
           ],
           "tags": {
@@ -2391,7 +2326,7 @@
           "website": "https://transportation.uiowa.edu/cambus",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-universityofiowa~cambus~rt"
+              "feed_onestop_id": "f-iowacitytransitsystem~rt"
             }
           ],
           "tags": {
@@ -2846,6 +2781,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-bermuda~bm",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/bermuda-bm/bermuda-bm.zip"
+      }
     },
     {
       "id": "f-bettendorf~ia~us",
@@ -3681,15 +3623,6 @@
       }
     },
     {
-      "id": "f-coralvilletransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      }
-    },
-    {
       "id": "f-corridorrides",
       "spec": "gtfs",
       "urls": {
@@ -4328,38 +4261,6 @@
       ]
     },
     {
-      "id": "f-dnrg-cary~transit~nc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cary-transit-nc-us/cary-transit-nc-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "cary-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnrg-carytransit",
-          "name": "Cary Transit",
-          "short_name": "GoCary",
-          "website": "https://gocary.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "242"
-            }
-          ],
-          "tags": {
-            "twitter_general": "TownofCary",
-            "us_ntd_id": "40143",
-            "wikidata_id": "Q5005923"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-dnru-chapel~hill~transit~nc~us",
       "spec": "gtfs",
       "urls": {
@@ -4380,45 +4281,13 @@
           "website": "https://www.townofchapelhill.org/government/departments-services/transit",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "243"
+              "feed_onestop_id": "f-dnru-chapel~hill~transit~nc~us~rt"
             }
           ],
           "tags": {
             "twitter_general": "chapelhillgov",
             "us_ntd_id": "40051",
             "wikidata_id": "Q5073024"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dnru-durham~area~transit~authority~nc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/durham-area-transit-authority-nc-us/durham-area-transit-authority-nc-us.zip"
-      },
-      "license": {
-        "url": "https://godurhamtransit.org/developer-terms-and-condition",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnru-godurham",
-          "name": "GoDurham",
-          "website": "https://godurhamtransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "241"
-            },
-            {
-              "feed_onestop_id": "f-dnru-durham~area~transit~authority~nc~us~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "godurhamtransit",
-            "us_ntd_id": "40087",
-            "wikidata_id": "Q5316462"
           }
         }
       ]
@@ -4660,15 +4529,6 @@
       ]
     },
     {
-      "id": "f-dp9k-waukeshacounty~wi~us~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://mywaukeshametro.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://mywaukeshametro.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://mywaukeshametro.com/gtfs-rt/alerts"
-      }
-    },
-    {
       "id": "f-dpc4-oshkosh~wi~us",
       "spec": "gtfs",
       "urls": {
@@ -4712,6 +4572,11 @@
         {
           "onestop_id": "o-dpc5-valleytransit",
           "name": "Valley Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpc5-valleytransit~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "50001",
             "wikidata_id": "Q7912245"
@@ -4821,35 +4686,6 @@
       ]
     },
     {
-      "id": "f-dq25-capital~area~transit~nc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/capital-area-transit-nc-us/capital-area-transit-nc-us.zip"
-      },
-      "license": {
-        "url": "https://goraleigh.org/developer-terms-and-conditions",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dq25-goraleigh",
-          "name": "GoRaleigh",
-          "website": "https://goraleigh.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "224"
-            }
-          ],
-          "tags": {
-            "twitter_general": "GoRaleighNC",
-            "us_ntd_id": "40007",
-            "wikidata_id": "Q5035469"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-dq2s-tarriver~nc~us",
       "spec": "gtfs",
       "urls": {
@@ -4935,6 +4771,9 @@
     },
     {
       "id": "f-dr-coachcompany~ma~us",
+      "supersedes_ids": [
+        "f-drt-coachcompany"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/coachcompany-ma-us/coachcompany-ma-us.zip"
@@ -6465,6 +6304,13 @@
       ]
     },
     {
+      "id": "f-guemesislandferry~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/guemesislandferry-wa-us/guemesislandferry-wa-us.zip"
+      }
+    },
+    {
       "id": "f-gulfcoastcenter~tx~us",
       "spec": "gtfs",
       "urls": {
@@ -6534,15 +6380,6 @@
       ]
     },
     {
-      "id": "f-iowacitytransitsystem~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      }
-    },
-    {
       "id": "f-iowa~city~transit",
       "spec": "gtfs",
       "urls": {
@@ -6592,15 +6429,6 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/kananshuttle-ca-us/kananshuttle-ca-us.zip"
-      }
-    },
-    {
-      "id": "f-keywesttransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://kwtransit.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://kwtransit.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://kwtransit.com/gtfs-rt/alerts"
       }
     },
     {
@@ -7488,7 +7316,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "91092"
+            "us_ntd_id": "91092",
+            "wikidata_id": "Q7568609"
           }
         }
       ]
@@ -7673,24 +7502,6 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/unitedcap-mn-us/unitedcap-mn-us.zip"
-      }
-    },
-    {
-      "id": "f-universityofiowa~cambus~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
-      }
-    },
-    {
-      "id": "f-vailtransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://ride.vailgov.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://ride.vailgov.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://ride.vailgov.com/gtfs-rt/alerts"
       }
     },
     {

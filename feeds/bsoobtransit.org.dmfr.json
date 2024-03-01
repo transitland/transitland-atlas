@@ -3,15 +3,17 @@
   "feeds": [
     {
       "id": "f-biddeford~saco~old~orchard~beach",
+      "supersedes_ids": [
+        "f-bsoob~me~us"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://bsoobtransit.org/wp-content/uploads/2023/04/BSOOB-GTFS.zip",
+        "static_current": "https://gtfs.remix.com/bsoob_transit_biddeford_me_us.zip",
         "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/bsoob-me-us/bsoob-me-us.zip",
+          "https://bsoobtransit.org/wp-content/uploads/2023/04/BSOOB-GTFS.zip",
           "https://bsoobtransit.org/wp-content/uploads/2022/10/BSOOB-GTFS.zip"
         ]
-      },
-      "tags": {
-        "unstable_url": "true"
       },
       "operators": [
         {

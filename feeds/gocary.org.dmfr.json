@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dnrg-cary~transit~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.gocary.org/_GTFS",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/cary-transit-nc-us/cary-transit-nc-us.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "cary-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnrg-carytransit",
+          "name": "Cary Transit",
+          "short_name": "GoCary",
+          "website": "https://gocary.org/"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

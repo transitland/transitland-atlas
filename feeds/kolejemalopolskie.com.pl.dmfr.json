@@ -3,10 +3,35 @@
   "feeds": [
     {
       "id": "f-koleje~małopolskie",
+      "name": "Koleje Małopolskie GTFS",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://kolejemalopolskie.com.pl/rozklady_jazdy/kml-ska-gtfs.zip"
       }
+    },
+    {
+      "id": "f-u2y-koleje~małopolskie~ald",
+      "name": "Koleje Małopolskie ALD GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://kolejemalopolskie.com.pl/rozklady_jazdy/ald-gtfs.zip"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u2y-koleje~małopolskie",
+      "name": "Koleje Małopolskie",
+      "short_name": "KMŁ",
+      "website": "https://www.kolejemalopolskie.com.pl/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u2y-koleje~małopolskie"
+        },
+        {
+          "feed_onestop_id": "f-u2y-koleje~małopolskie~ald"
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
