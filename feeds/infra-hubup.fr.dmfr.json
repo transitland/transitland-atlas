@@ -36,6 +36,61 @@
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel"
       }
+    },
+    {
+      "id": "f-hubup~saint-hyacinthe",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-rt.infra-hubup.fr/lpdlestd/current/revision/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hubup~saint-hyacinthe",
+          "name": "Ville de Saint-Hyacinthe",
+          "short_name": "VSH",
+          "website": "https://www.st-hyacinthe.ca/services-aux-citoyens/transport-collectif",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-hubup~saint-hyacinthe~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-hubup~saint-hyacinthe~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/lpdlestd/realtime",
+        "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/toutenbus/realtime"
+      }
+    },
+    {
+      "id": "f-hubup~mrc~haut-saint-laurent",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-rt.infra-hubup.fr/mrchsl/current/revision/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mrc~haut~saint~laurent",
+          "name": "MRC du Haut-Saint-Laurent",
+          "website": "https://mrchsl.com/services/transport",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-hubup~mrc~haut-saint-laurent~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-hubup~mrc~haut-saint-laurent~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/mrchsl/realtime",
+        "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/mrchsl/realtime"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
