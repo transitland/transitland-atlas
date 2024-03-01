@@ -1929,7 +1929,7 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/outrider-co-us/outrider-co-us.zip",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/bustang-co-us/bustang-co-us.zip"
+          "https://data.trilliumtransit.com/gtfs/bustang-co-us/bustang-co-us-.zip"
         ]
       },
       "license": {
@@ -1942,6 +1942,39 @@
       "operators": [
         {
           "onestop_id": "o-9x-bustang",
+          "name": "Bustang Outrider",
+          "website": "https://ridebustang.com/outrider/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "249"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RideBustang",
+            "wikidata_id": "Q85749670"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9x-bustang~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/outrider-co-us/outrider-co-us.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/bustang-co-us/bustang-co-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "bustang"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9xx-bustang",
           "name": "Bustang Outrider",
           "website": "https://ridebustang.com/outrider/",
           "associated_feeds": [
