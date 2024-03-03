@@ -9,6 +9,35 @@
       }
     },
     {
+      "id": "f-arcadia~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/ArcadiaCity/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/arcadia-ca-us/arcadia-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/arcadia-ca-us/arcadia-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh44-arcadiatransit",
+          "name": "Arcadia Transit",
+          "tags": {
+            "us_ntd_id": "90044"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-arcadia~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/ArcadiaCity/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/ArcadiaCity/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/ArcadiaCity/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-audible",
       "spec": "gtfs",
       "urls": {
