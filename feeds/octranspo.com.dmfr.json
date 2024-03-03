@@ -1,0 +1,32 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-f24-octranspo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.octranspo.com/files/google_transit.zip"
+      },
+      "license": {
+        "url": "https://www.octranspo.com/en/plan-your-trip/travel-tools/developers/dev-terms",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "oc-transpo"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f24-octranspo",
+          "name": "Ottawa-Carleton Regional Transit Commission",
+          "short_name": "OC Transpo",
+          "website": "http://www.octranspo.com"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

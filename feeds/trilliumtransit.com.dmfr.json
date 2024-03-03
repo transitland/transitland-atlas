@@ -2787,6 +2787,13 @@
       ]
     },
     {
+      "id": "f-bermuda~bm",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/bermuda-bm/bermuda-bm.zip"
+      }
+    },
+    {
       "id": "f-bettendorf~ia~us",
       "spec": "gtfs",
       "urls": {
@@ -4258,38 +4265,6 @@
       ]
     },
     {
-      "id": "f-dnrg-cary~transit~nc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cary-transit-nc-us/cary-transit-nc-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "cary-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnrg-carytransit",
-          "name": "Cary Transit",
-          "short_name": "GoCary",
-          "website": "https://gocary.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "242"
-            }
-          ],
-          "tags": {
-            "twitter_general": "TownofCary",
-            "us_ntd_id": "40143",
-            "wikidata_id": "Q5005923"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-dnru-chapel~hill~transit~nc~us",
       "spec": "gtfs",
       "urls": {
@@ -4317,38 +4292,6 @@
             "twitter_general": "chapelhillgov",
             "us_ntd_id": "40051",
             "wikidata_id": "Q5073024"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dnru-durham~area~transit~authority~nc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/durham-area-transit-authority-nc-us/durham-area-transit-authority-nc-us.zip"
-      },
-      "license": {
-        "url": "https://godurhamtransit.org/developer-terms-and-condition",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnru-godurham",
-          "name": "GoDurham",
-          "website": "https://godurhamtransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "241"
-            },
-            {
-              "feed_onestop_id": "f-dnru-durham~area~transit~authority~nc~us~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "godurhamtransit",
-            "us_ntd_id": "40087",
-            "wikidata_id": "Q5316462"
           }
         }
       ]
@@ -4747,35 +4690,6 @@
       ]
     },
     {
-      "id": "f-dq25-capital~area~transit~nc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/capital-area-transit-nc-us/capital-area-transit-nc-us.zip"
-      },
-      "license": {
-        "url": "https://goraleigh.org/developer-terms-and-conditions",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dq25-goraleigh",
-          "name": "GoRaleigh",
-          "website": "https://goraleigh.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "224"
-            }
-          ],
-          "tags": {
-            "twitter_general": "GoRaleighNC",
-            "us_ntd_id": "40007",
-            "wikidata_id": "Q5035469"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-dq2s-tarriver~nc~us",
       "spec": "gtfs",
       "urls": {
@@ -4861,6 +4775,9 @@
     },
     {
       "id": "f-dr-coachcompany~ma~us",
+      "supersedes_ids": [
+        "f-drt-coachcompany"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/coachcompany-ma-us/coachcompany-ma-us.zip"
@@ -6391,6 +6308,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-guemesislandferry~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/guemesislandferry-wa-us/guemesislandferry-wa-us.zip"
+      }
     },
     {
       "id": "f-gulfcoastcenter~tx~us",

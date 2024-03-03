@@ -447,7 +447,10 @@
       "id": "f-dreh-gloversvilletransitservices",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Gloversville_Transit_Services.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Gloversville_Transit_System.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Gloversville_Transit_Services.zip"
+        ]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -497,36 +500,6 @@
           ],
           "tags": {
             "us_ntd_id": "20213"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-drew-greaterglensfallstransitsystem",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Greater_Glens_Falls_Transit_System.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-drew-greaterglensfallstransitsystem",
-          "name": "Greater Glens Falls Transit System",
-          "website": "https://www.cityofglensfalls.com/60/Greater-Glens-Falls-Transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "GGFT-Warren-ny-us"
-            }
-          ],
-          "tags": {
-            "twitter_general": "ggftransit",
-            "us_ntd_id": "20120"
           }
         }
       ]
@@ -1116,7 +1089,10 @@
       "id": "f-schuyler~county~public~transit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Schuyler_County_Public_Transit.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Schuyler_County_Transit.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Schuyler_County_Public_Transit.zip"
+        ]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",

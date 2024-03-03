@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-djn1-fl~iridetrolley",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://buswhere.com/iridetrolley/gtfs/schedule",
+        "static_historic": [
+          "https://data.omnimodal.io/gtfs/iride-fl-us/iride-fl-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djn1-fl~iridetrolley",
+          "name": "I-RIDE Trolley",
+          "short_name": "I-RIDE",
+          "website": "https://www.internationaldriveorlando.com/iride-trolley/"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
