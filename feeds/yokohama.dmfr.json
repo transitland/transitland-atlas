@@ -1,0 +1,65 @@
+{
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+    "feeds": [
+      {
+        "id": "f-横浜市-municipal-subway",
+        "spec": "gtfs",
+        "urls": {
+          "static_current": "https://api.odpt.org/api/v4/files/YokohamaMunicipal/data/YokohamaMunicipal-Train-GTFS.zip?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b"
+        },
+        "license": {
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      },
+      {
+        "id": "f-横浜市-municipal-bus",
+        "spec": "gtfs",
+        "urls": {
+          "static_current": "https://api.odpt.org/api/v4/files/YokohamaMunicipal/data/YokohamaMunicipal-Bus-GTFS.zip?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b"
+        },
+        "license": {
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      },
+      {
+        "id": "f-横浜市-municipal-subway-rt",
+        "spec": "gtfs-rt",
+        "urls": {
+          "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalTrain_vehicle?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b",
+          "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalTrain_trip_update?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b",
+          "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalTrain_alert?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b"
+        }
+      },
+      {
+        "id": "f-横浜市-municipal-bus-rt",
+        "spec": "gtfs-rt",
+        "urls": {
+          "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalBus_vehicle?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b",
+          "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalBus_trip_update?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b",
+          "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalBus_alert?acl:consumerKey=71ad06bfddd29d607b4d361685c0942a115415cfd6c33b4d19dd550cd4d0961b"
+        }
+      }
+    ],
+    "operators": [
+      {
+        "onestop_id": "o-横浜市",
+        "name": "横浜市 Municipal Subway",
+        "short_name": "OCTA",
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-横浜市-municipal-subway"
+          },
+          {
+            "feed_onestop_id": "f-横浜市-municipal-subway-rt"
+          },
+          {
+            "feed_onestop_id": "f-横浜市-municipal-bus"
+          },
+          {
+            "feed_onestop_id": "f-横浜市-municipal-bus-rt"
+          }
+        ]
+      }
+    ],
+    "license_spdx_identifier": "CDLA-Permissive-1.0"
+  }
