@@ -2,6 +2,61 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-hubup~mrc~haut~saint~laurent",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-rt.infra-hubup.fr/mrchsl/current/revision/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zenbus~mrc~haut~saint~laurent",
+          "name": "MRC du Haut-Saint-Laurent",
+          "website": "https://mrchsl.com/services/transport",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-hubup~mrc~haut~saint~laurent~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-hubup~mrc~haut~saint~laurent~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/mrchsl/realtime",
+        "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/mrchsl/realtime"
+      }
+    },
+    {
+      "id": "f-hubup~saint-hyacinthe",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-rt.infra-hubup.fr/lpdlestd/current/revision/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hubup~saint-hyacinthe",
+          "name": "Ville de Saint-Hyacinthe",
+          "short_name": "VSH",
+          "website": "https://www.st-hyacinthe.ca/services-aux-citoyens/transport-collectif",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-hubup~saint-hyacinthe~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-hubup~saint-hyacinthe~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/lpdlestd/realtime",
+        "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/toutenbus/realtime"
+      }
+    },
+    {
       "id": "f-zenbus~toutenbus",
       "spec": "gtfs",
       "urls": {
