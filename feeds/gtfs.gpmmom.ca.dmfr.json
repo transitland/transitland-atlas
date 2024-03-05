@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "id": "f-reseau~express~metropolitain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.gpmmom.ca/gtfs/gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.donneesquebec.ca/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-reseau~express~metropolitain",
+      "name": "Réseau express métropolitain",
+      "short_name": "REM",
+      "website": "https://rem.info/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-reseau~express~metropolitain"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}
