@@ -2,6 +2,38 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-9qh-victorville~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/vvta.zip",
+        "static_historic": [
+          "https://ontime.vvta.org/gtfs",
+          "https://data.trilliumtransit.com/gtfs/victorville-ca-us/victorville-ca-us.zip",
+          "https://api.transloc.com/gtfs/vvta.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://vvta.org/developers/"
+      },
+      "tags": {
+        "notes": "VVTA says their official static feed is served by Transloc; Synchromatics also serves a Trillium-created static feed go with RT, but static feed contents are quite different"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh-victorvalleytransitauthority",
+          "name": "Victor Valley Transit Authority",
+          "short_name": "VVTA",
+          "website": "https://www.vvta.org",
+          "tags": {
+            "twitter_general": "VVTransit",
+            "us_ntd_id": "90148",
+            "wikidata_id": "Q7926418"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9t9p7-universityofaz~cattran~freeshuttleservice",
       "spec": "gtfs",
       "urls": {
