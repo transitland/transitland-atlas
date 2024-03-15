@@ -50,7 +50,7 @@ if len(duplicate_urls) > 0:
     print(f"ERROR: more than one feed has the same value defined for urls.static_current: {duplicate_urls}")
     fail_the_build = True
 
-# check operator onestop_id uniqueness
+# check operator onestop_id uniqueness and format
 c.execute('''
   SELECT onestop_id from current_operators
 ''')
@@ -64,6 +64,8 @@ for row in onestop_ids:
   if dashcount == 0 or dashcount > 2:
     valid = False
   if len(osid) > 0 and osid[0] != "o":
+    valid = False
+  if '' in osid.split('-'):
     valid = False
   if not valid:
     print(f"ERROR: improperly formatted Operator Onestop ID: {osid}")
