@@ -3,6 +3,7 @@ import subprocess
 import sys
 import os
 import sqlite3
+import json
 
 fail_the_build = False
 
@@ -50,7 +51,7 @@ if len(duplicate_urls) > 0:
     print(f"ERROR: more than one feed has the same value defined for urls.static_current: {duplicate_urls}")
     fail_the_build = True
 
-# check operator onestop_id uniqueness
+# check operator onestop_id uniqueness and format
 c.execute('''
   SELECT onestop_id from current_operators
 ''')
@@ -65,9 +66,35 @@ for row in onestop_ids:
     valid = False
   if len(osid) > 0 and osid[0] != "o":
     valid = False
+  if '' in osid.split('-'):
+    valid = False
   if not valid:
     print(f"ERROR: improperly formatted Operator Onestop ID: {osid}")
     fail_the_build = True
+
+# check associated_feeds[].feed_onstop_id format
+c.execute('''
+  SELECT onestop_id, associated_feeds from current_operators
+''')
+operators = c.fetchall()
+for o in operators:
+  operator_onestop_id = o[0]
+  associated_feeds = json.loads(o[1])
+  if operator_onestop_id == None or associated_feeds == None:
+    continue
+  for associated_feed in associated_feeds:
+    valid = True
+    associated_feed_onestop_id = associated_feed['feed_onestop_id']
+    dashcount = associated_feed_onestop_id.count("-")
+    if len(associated_feed_onestop_id) == 0:
+      valid = False
+    if dashcount == 0 or dashcount > 2:
+      valid = False
+    if len(associated_feed_onestop_id) > 0 and associated_feed_onestop_id[0] != "f":
+      valid = False
+    if not valid:
+      print(f"ERROR: improperly formatted feed Onestop ID: {associated_feed_onestop_id} in the associated_feeds block for operator {operator_onestop_id}")
+      fail_the_build = True
 
 if fail_the_build:
   sys.exit(1)
