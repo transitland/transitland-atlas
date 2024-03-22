@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-9q611-morrobaytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.morrobayca.gov/DocumentCenter/View/18183/Morro-Bay-GTFS",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/morrobay_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q611-morrobaytransit",
+          "name": "Morro Bay Transit",
+          "short_name": "MBT",
+          "website": "http://www.morro-bay.ca.us/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MBT"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

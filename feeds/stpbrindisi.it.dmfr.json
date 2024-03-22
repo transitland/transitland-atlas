@@ -11,9 +11,6 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes"
       },
-      "tags": {
-        "unstable_url": "true"
-      },
       "operators": [
         {
           "onestop_id": "o-s-societàtrasportipubblicibrindisi",
@@ -22,11 +19,48 @@
           "website": "http://www.stpbrindisi.it",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "feed_onestop_id": "f-s-societàtrasportipubblicibrindisi~brindisi"
+            },
+            {
+              "feed_onestop_id": "f-s-societàtrasportipubblicibrindisi~extraurbano"
+            },
+            {
+              "feed_onestop_id": "f-s-societàtrasportipubblicibrindisi~francavilla"
+            },
+            {
+              "feed_onestop_id": "f-s-societàtrasportipubblicibrindisi~ostuni"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-s-societàtrasportipubblicibrindisi~brindisi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.stpbrindisi.it/attachments/article/963/Urbano_Brindisi.zip"
+      }
+    },
+    {
+      "id": "f-s-societàtrasportipubblicibrindisi~extraurbano",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.stpbrindisi.it/attachments/article/963/Extraurbano.zip"
+      }
+    },
+    {
+      "id": "f-s-societàtrasportipubblicibrindisi~francavilla",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.stpbrindisi.it/attachments/article/963/Urbano_Francavilla.zip"
+      }
+    },
+    {
+      "id": "f-s-societàtrasportipubblicibrindisi~ostuni",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.stpbrindisi.it/attachments/article/963/Urbano_Ostuni.zip"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
