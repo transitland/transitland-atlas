@@ -25,11 +25,25 @@ jobs:
         find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
     - name: Validate feeds
       run: cd scripts && python validate-feeds.py
-    - name: Commit and push if it changed
+    - name: "If any changes: Create a branch, commit, and PR"
       run: |-
         git config user.name "Automated Bot"
         git config user.email "info@interline.io"
-        git add -A
-        timestamp=$(date -u)
-        git commit -m "Updated MDS feeds from https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/providers.csv at ${timestamp}" || exit 0
-        git push
+        if ! git_status_output="$(git status --porcelain)"; then
+            error_code="$?"
+            echo "'git status' had an error: $error_code" 
+            exit 1
+        elif [ -z "$git_status_output" ]; then
+            echo "Working directory is clean."
+        else
+            echo "Working directory has UNCOMMITTED CHANGES."
+            BRANCH_NAME=mds-$(date +%F)
+            git checkout -b ${BRANCH_NAME}
+            git add -A
+            git commit -m "Updated MDS feeds from https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/providers.csv at $(date -u)"
+            git push --set-upstream origin ${BRANCH_NAME}
+            gh pr create --title "Automatic update of MDS feeds" --fill-verbose
+        fi
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
