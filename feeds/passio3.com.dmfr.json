@@ -45,6 +45,38 @@
       }
     },
     {
+      "id": "f-beckley~wv~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/beckley/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-beckley~wv~us",
+          "name": "New River Transit Authority",
+          "short_name": "NRT",
+          "website": "https://newrivertransitauthority.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-beckley~wv~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "30199"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-beckley~wv~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/beckley/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/beckley/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/beckley/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-billings~mt~us",
       "spec": "gtfs",
       "urls": {
