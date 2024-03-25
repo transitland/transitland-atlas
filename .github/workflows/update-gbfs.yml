@@ -41,7 +41,7 @@ jobs:
             git checkout -b ${BRANCH_NAME}
             git add -A
             git commit -m "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"
-            git push --set-upstream origin {BRANCH_NAME}
+            git push --set-upstream origin ${BRANCH_NAME}
             gh pr create --fill-first
         fi
       env:
