@@ -37,10 +37,11 @@ jobs:
             echo "Working directory is clean."
         else
             echo "Working directory has UNCOMMITTED CHANGES."
-            git checkout -b gbfs-$(date +%F)
+            BRANCH_NAME=gbfs-$(date +%F)
+            git checkout -b ${BRANCH_NAME}
             git add -A
             git commit -m "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"
-            git push
+            git push --set-upstream origin {BRANCH_NAME}
             gh pr create --fill-first
         fi
       env:
