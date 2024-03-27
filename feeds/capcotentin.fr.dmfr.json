@@ -1,41 +1,43 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
-  "feeds": [
-    {
-      "id": "f-cap~cotentin~transit",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.data.gouv.fr/fr/datasets/r/2e97c9b3-a59f-42dd-9b9e-a232fa771f21",
-      },
-      "license": {
-        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
-      },
-    {
-      "id": "f-cap~cotentin~transit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt",
-        "realtime_trip_updates": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt",
-        "realtime_alerts": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt"
-      },
-      "license": {
-        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
-      }
-  ],
-  "operators": [
-    {
-      "onestop_id": "o-cap~cotentin~transit",
-      "name": "Cap Cotentin",
-      "website": "https://www.capcotentin.fr",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-cap~cotentin~transit"
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+    "feeds": [
+      {
+        "id": "f-cap~cotentin~transit",
+        "spec": "gtfs",
+        "urls": {
+          "static_current": "https://www.data.gouv.fr/fr/datasets/r/2e97c9b3-a59f-42dd-9b9e-a232fa771f21",
         },
-        {
-          "feed_onestop_id": "f-cap~cotentin~transit~rt"
+        "license": {
+          "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
         }
-      ]
-    }
-  ],
-  "license_spdx_identifier": "CDLA-Permissive-1.0"
+      }, 
+      {
+        "id": "f-cap~cotentin~transit~rt",
+        "spec": "gtfs-rt",
+        "urls": {
+          "realtime_vehicle_positions": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt",
+          "realtime_trip_updates": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt",
+          "realtime_alerts": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt"
+        },
+        "license": {
+          "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+        }
+      }
+    ],
+    "operators": [
+      {
+        "onestop_id": "o-cap~cotentin~transit",
+        "name": "Cap Cotentin",
+        "website": "https://www.capcotentin.fr",
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-cap~cotentin~transit"
+          },
+          {
+            "feed_onestop_id": "f-cap~cotentin~transit~rt"
+          }
+        ]
+      }
+    ],
+    "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
