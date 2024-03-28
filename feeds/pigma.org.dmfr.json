@@ -2,6 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-gironde~interurbain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.pigma.org/public/opendata/nouvelle_aquitaine_mobilites/publication/gironde-aggregated-gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://doc.transport.data.gouv.fr/presentation-et-mode-demploi-du-pan/conditions-dutilisation-des-donnees/licence-odbl"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gironde~cars~regionaux",
+          "name": "Cars Régionaux 33 - Gironde",
+          "website": "https://www.nouvelle-aquitaine.fr"
+        }
+      ]
+    },
+    {
       "id": "f-la~rochelle~fr",
       "spec": "gtfs",
       "urls": {
@@ -17,6 +35,450 @@
           "name": "La Rochelle",
           "short_name": "Yélo",
           "website": "https://yelo.agglo-larochelle.fr/"
+        }
+      ]
+    },
+    {
+      "id": "f-naq~pigma",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.pigma.org/public/opendata/nouvelle_aquitaine_mobilites/publication/naq-aggregated-gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://doc.transport.data.gouv.fr/presentation-et-mode-demploi-du-pan/conditions-dutilisation-des-donnees/licence-odbl"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-agglobus",
+          "name": "Agglo'Bus (Grand Guéret)",
+          "website": "http://www.grandgueretmobilite.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_GRAND_GUERET:Operator:AggloBus"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-biscabus",
+          "name": "Biscabus (Biscarrosse)",
+          "website": "http://www.trans-landes.fr/biscabus",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BISCARROSSE:Operator:1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-buss",
+          "name": "BUSS (Saintes)",
+          "website": "https://www.buss-saintes.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_SAINTES:Operator:BUSS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-cali",
+          "name": "La Cali (Libourne)",
+          "website": "https://www.calibus.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_DU_LIBOURNAIS:Operator:La Cali (Libourne)"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-carabus",
+          "name": "Carabus (Royan Atlantique)",
+          "website": "http://www.carabus-transport.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_ROYAN_ATLANTIQUE:Operator:TDRA"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ccm",
+          "name": "CCM (Montesquieu)",
+          "website": "https://www.cc-montesquieu.fr/vivre/deplacements/navette",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MONTESQUIEU:Operator:MONTESQUIEU"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-charente~cars~regionaux",
+          "name": "Cars Régionaux 16 - Charente",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CHARENTE:Operator:16"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-charente~maritime~cars~regionaux",
+          "name": "Cars Régionaux 17 - Charente Maritime",
+          "website": "https://transports.nouvelle-aquitaine.fr/fr/lignes-routieres/Les-lignes-routieres-en-charente-maritime",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CHARENTE_MARITIME:Operator:17"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-correze~cars~regionaux",
+          "name": "Cars Régionaux 19 - Correze",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CORREZE:Operator:19"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-couralin",
+          "name": "COURALIN - Grand DAX (RRTL)",
+          "website": "https://www.trans-landes.fr/couralin/couralin_LReg.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_GRAND_DAX:Operator:1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-creuse~cars~regionaux",
+          "name": "Cars Régionaux 23 - Creuse",
+          "website": "https://faure-autocars-19.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CREUSE:Operator:23"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-deux~sevres~cars~regionaux",
+          "name": "Cars régionaux 79 - Deux Sèvres",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "DEUX_SEVRES:Operator:79"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-dordogne~cars~regionaux",
+          "name": "Cars régionaux 24 - Dordogne",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "DORDOGNE:Operator:24"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-evalys~mobilites",
+          "name": "Evalys Mobilites (Val de Garonne)",
+          "website": "https://www.evalys-mobilites.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_VAL_DE_GARONNE:Operator:1"
+            },
+            {
+              "gtfs_agency_id": "CA_VAL_DE_GARONNE:Operator:vdg:Company:2"
+            },
+            {
+              "gtfs_agency_id": "CA_VAL_DE_GARONNE:Operator:vdg:Company:3"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gironde~cars~regionaux",
+          "name": "Cars Régionaux 33 - Gironde",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GIRONDE:Operator:33"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-haute~vienne~cars~regionaux",
+          "name": "Cars Régionaux 87 - Haute Vienne",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HAUTE_VIENNE:Operator:87"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-idelis",
+          "name": "IDELIS (Pau)",
+          "website": "https://www.idelis.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_PAU_BEARN_PYRENEES:Operator:IDE_PlEsp1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-landes~cars~regionaux",
+          "name": "Cars Régionaux 40 – Landes",
+          "website": "https://transports.nouvelle-aquitaine.fr/cars-regionaux/reseau-et-horaires/landes",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LANDES:Operator:8"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-la~rochelle~fr",
+          "name": "La Rochelle",
+          "short_name": "Yélo",
+          "website": "https://yelo.agglo-larochelle.fr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_LA_ROCHELLE:Operator:1"
+            },
+            {
+              "gtfs_agency_id": "CA_LA_ROCHELLE:Operator:YELO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-libeo",
+          "name": "Libeo (Brive)",
+          "website": "https://www.libeo-brive.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_BASSIN_DE_BRIVE:Operator:TB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-lot~et~garonne~cars~regionaux",
+          "name": "Cars Régionaux 47 - Lot et Garonne",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LOT_ET_GARONNE:Operator:47"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-mobius",
+          "name": "Mobius (Grand Angoulême)",
+          "website": "https://www.stga.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_GRAND_ANGOULEME:Operator:1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-nomad~cars~normandie~ter",
+          "name": "NOMAD CARS Normandie TER",
+          "website": "https://www.normandie.fr/horaires-et-itineraires",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "REGION"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-peribus",
+          "name": "Peribus (Grand Perigueux)",
+          "website": "https://peribus.grandperigueux.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_GRAND_PERIGUEUX:Operator:1"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-proxbus",
+          "name": "Proxbus (Jalle Eau Bourde)",
+          "website": "https://jalleeaubourde.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "JALLE_EAU_BOURDE:Operator:jalle_eau_bourde"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-pyrenees~atlantiques~cars~regionaux",
+          "name": "Cars Régionaux 64 - Pyrénées Atlantiques",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PYRENEES_ATLANTIQUES:Operator:64"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rbus",
+          "name": "R'bus (Rochefort Océan)",
+          "website": "https://www.rbus-transport.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_ROCHEFORT_OCEAN:Operator:RBUS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rbus~aix",
+          "name": "Service Maritime de l'Île-d'Aix",
+          "website": "http://service-maritime-iledaix.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_ROCHEFORT_OCEAN:Operator:RBUSAIX"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-stcl~limoges~fr",
+          "name": "Société de Transports en Commun de Limoges Métropole",
+          "short_name": "Limoges Réseau TCL",
+          "website": "https://www.stcl.fr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_LIMOGES_METROPOLE:Operator:STCLM"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-tac",
+          "name": "TAC (Grand Châtellerault)",
+          "website": "http://www.bustac.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_GRAND_CHATELLERAULT:Operator:001"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-tanlib",
+          "name": "Tanlib",
+          "website": "https://tanlib.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_DU_NIORTAIS:Operator:TAN"
+            },
+            {
+              "gtfs_agency_id": "CA_DU_NIORTAIS:Operator:TAN_RESA"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-tbm",
+          "name": "TBM (Bordeaux Métropole)",
+          "website": "http://www.infotbm.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-ezzx-tbc~rt"
+            },
+            {
+              "gtfs_agency_id": "BORDEAUX_METROPOLE:Operator:1",
+              "feed_onestop_id": "f-naq~pigma"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-tma",
+          "name": "TMA (Mont de Marsan)",
+          "website": "https://www.reseautma.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_DU_MARSAN:Operator:M2M"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-transcom",
+          "name": "TRANSCOM",
+          "website": "http://www.transcom.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_GRAND_COGNAC:Operator:2"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-trema",
+          "name": "Trema (Agglo2B)",
+          "website": "https://www.agglo2b.fr/transports-mobilite/lignes-interurbaines",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_BOCAGE_BRESSUIRAIS:Operator:TREMA"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-tub",
+          "name": "TUB",
+          "website": "https://www.la-cab.fr/transports-urbains-bergeracois-tub",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_BERGERACOISE:Operator:COMMUNAUTE D'AGGLOMERATION BERGERACOISE"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-tut",
+          "name": "TUT",
+          "website": "http://www.tulleagglo.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_TULLE:Operator:TUT"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-txiktxak",
+          "name": "TXIK TXAK",
+          "website": "https://www.txiktxak.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CA_PAYS_BASQUE:Operator:TXIKTXAK"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-vienne~cars~regionaux",
+          "name": "Cars Régionaux 86 - Vienne",
+          "website": "https://www.nouvelle-aquitaine.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VIENNE:Operator:86"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-vitalis",
+          "name": "Vitalis (Grand Poitiers)",
+          "website": "http://www.vitalis-poitiers.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GRAND_POITIERS:Operator:1"
+            },
+            {
+              "gtfs_agency_id": "GRAND_POITIERS:Operator:2"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-yego",
+          "name": "YEGO (Macs)",
+          "website": "http://www.mobi-macs.org/fr/yego.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MACS:Operator:9"
+            }
+          ]
         }
       ]
     },
