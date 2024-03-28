@@ -3,22 +3,30 @@
   "feeds": [
     {
       "id": "f-ezzx-tbc",
+      "supersedes_ids": [
+        "f-ezzx-tbc~bus"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://data.bordeaux-metropole.fr/files.php?gid=67&format=14"
+        "static_current": "https://bdx.mecatran.com/utw/ws/gtfsfeed/static/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt",
+        "static_historic": [
+          "http://data.bordeaux-metropole.fr/files.php?gid=67&format=14"
+        ]
       },
       "license": {
-        "url": "http://data.bordeaux-metropole.fr/cgu_consult"
+        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
       }
     },
     {
-      "id": "f-ezzx-tbc~bus",
-      "spec": "gtfs",
+      "id": "f-ezzx-tbc~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "http://data.bordeaux-metropole.fr/files.php?gid=68&format=14"
+        "realtime_vehicle_positions": "https://bdx.mecatran.com/utw/ws/gtfsfeed/vehicles/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt",
+        "realtime_trip_updates": "https://bdx.mecatran.com/utw/ws/gtfsfeed/realtime/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt",
+        "realtime_alerts": "https://bdx.mecatran.com/utw/ws/gtfsfeed/alerts/bordeaux?apiKey=opendata-bordeaux-metropole-flux-gtfs-rt"
       },
       "license": {
-        "url": "http://data.bordeaux-metropole.fr/cgu_consult"
+        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
       }
     }
   ],
@@ -34,8 +42,7 @@
           "feed_onestop_id": "f-ezzx-tbc"
         },
         {
-          "gtfs_agency_id": "1",
-          "feed_onestop_id": "f-ezzx-tbc~bus"
+          "feed_onestop_id": "f-ezzx-tbc~rt"
         }
       ]
     }
