@@ -2,6 +2,31 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-bellflower~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.calitp.org/production/BellflowerGTFS.zip",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/bellflower-ca-us/bellflower-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/bellflower-ca-us/bellflower-ca-us.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://gtfs.calitp.org/",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5bz-bellflowerbus",
+          "name": "Bellflower Bus",
+          "tags": {
+            "us_ntd_id": "90254"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9q4q-guadalupeflyer",
       "spec": "gtfs",
       "urls": {
@@ -123,6 +148,18 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://gtfs.calitp.org/production/LassenRuralBusandDialARideFlex.zip"
+      }
+    },
+    {
+      "id": "f-havasu~landing~ferry",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.calitp.org/production/HavasuLandingFerryGTFS.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://gtfs.calitp.org/",
+        "use_without_attribution": "no"
       }
     },
     {
