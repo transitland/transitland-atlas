@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+        "id": "f-9mu-irvine~california~usa",
+        "spec": "gtfs",
+        "urls": {
+          "static_current": "https://passio3.com/irvine/passioTransit/gtfs/google_transit.zip"
+        },
+        "license": {
+          "url": "http://www.octa.net/News-and-Resources/Open-Data/Overview/"
+        }
+      },
+      {
+        "id": "f-irvine~california~usa~rt",
+        "spec": "gtfs-rt",
+        "urls": {
+          "realtime_vehicle_positions": "https://passio3.com/irvine/passioTransit/gtfs/realtime/vehiclePositions",
+          "realtime_trip_updates": "https://passio3.com/irvine/passioTransit/gtfs/realtime/tripUpdates",
+          "realtime_alerts": "https://passio3.com/irvine/passioTransit/gtfs/realtime/serviceAlerts"
+        }
+      }
+    ],
+    "operators": [
+      {
+        "onestop_id": "o-9mu-irvine~california~usa",
+        "name": "City of Irvine",
+        "short_name": "OCTA",
+        "associated_feeds": [
+          {
+          "feed_onestop_id": "f-9mu-irvine~california~usa"
+        },
+        {
+          "feed_onestop_id": "f-irvine~california~usa~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
