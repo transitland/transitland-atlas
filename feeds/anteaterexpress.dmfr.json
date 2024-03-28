@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-anteaterexpress",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/CatenaryMaps/zotgtfs/raw/main/anteater_gtfs.zip"
+      }
+    },
+    {
+      "id": "f-anteaterexpress~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://kactusapi.kylerchin.com/gtfsrtasjson/?feed=f-anteaterexpress~rt&category=vehicles",
+        "realtime_trip_updates": "https://kactusapi.kylerchin.com/gtfsrtasjson/?feed=f-anteaterexpress~rt&category=trips",
+        "realtime_alerts": "https://kactusapi.kylerchin.com/gtfsrtasjson/?feed=f-anteaterexpress~rt&category=alerts"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-anteaterexpress",
+      "name": "UC Irvine Anteater Express",
+      "short_name": "Anteater Express",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-anteaterexpress"
+        },
+        {
+          "feed_onestop_id": "f-anteaterexpress~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "UCIrvine"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
