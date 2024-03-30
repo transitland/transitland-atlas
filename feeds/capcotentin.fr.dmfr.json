@@ -1,0 +1,51 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-cap~cotentin",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/2e97c9b3-a59f-42dd-9b9e-a232fa771f21"
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "notes": "The f-cap~cotentin feed is a subset of f-sp9x-normandie feed in data.gouv.fr.dmfr.json, and f-cap~cotentin~rt is the RT feed linked to it. Ids in the GTFS-RT only map to the static feed in f-cap~cotentin, not these in f-sp9x-normandie."
+      }
+    },
+    {
+      "id": "f-cap~cotentin~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt",
+        "realtime_trip_updates": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt",
+        "realtime_alerts": "https://pysae.com/api/v2/groups/transdev-cotentin/gtfs-rt"
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-cap~cotentin",
+      "name": "Cap Cotentin",
+      "website": "https://www.capcotentin.fr",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-cap~cotentin"
+        },
+        {
+          "feed_onestop_id": "f-cap~cotentin~rt"
+        },
+        {
+          "gtfs_agency_id": "ZEPHIR",
+          "feed_onestop_id": "f-sp9x-normandie"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
