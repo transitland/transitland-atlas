@@ -543,6 +543,40 @@
       }
     },
     {
+      "id": "f-rosemead~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/rosemead/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/rosemead-ca-us/rosemead-ca-us.zip",
+          "http://data.trilliumtransit.com/gtfs/rosemead-ca-us/rosemead-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh1b-rosemeadexplorer",
+          "name": "Rosemead Explorer",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rosemead~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90289"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rosemead~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/rosemead/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/rosemead/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/rosemead/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-stevens~point~wi",
       "spec": "gtfs",
       "urls": {
