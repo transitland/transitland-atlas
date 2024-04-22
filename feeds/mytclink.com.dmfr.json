@@ -10,10 +10,18 @@
       "operators": [
         {
           "onestop_id": "o-djz-tricountylink",
-          "name": "TriCounty Link",
+          "supersedes_ids": [
+            "o-djz4-tricountylink"
+          ],
+          "name": "Berkeley-Charleston-Dorchester TriCounty Link",
+          "short_name": "TriCounty Link",
           "associated_feeds": [
             {
               "gtfs_agency_id": "161"
+            },
+            {
+              "gtfs_agency_id": "656",
+              "feed_onestop_id": "f-djz4-carta~sc~us"
             },
             {
               "feed_onestop_id": "f-tricounty~link~sc~us~rt"
