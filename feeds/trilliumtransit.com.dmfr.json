@@ -2593,10 +2593,41 @@
     },
     {
       "id": "f-asotincounty~wa~us",
+      "supersedes_ids": [
+        "f-c2hzc-lewistontransitsystem"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/asotincounty-wa-us/asotincounty-wa-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-",
+          "name": "Asotin County PTBA",
+          "website": "https://ridethevalley.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2275"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00051"
+          }
+        },
+        {
+          "onestop_id": "o-c2hzc-lewistontransitsystem",
+          "name": "Lewiston Transit System",
+          "website": "https://ridethevalley.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "2276"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00048"
+          }
+        }
+      ]
     },
     {
       "id": "f-auburntransit~ca~us",
