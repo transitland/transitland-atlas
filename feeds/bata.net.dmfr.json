@@ -19,9 +19,23 @@
           "onestop_id": "o-dpg-bayareatransportationauthority",
           "name": "Bay Area Transportation Authority",
           "short_name": "BATA",
-          "website": "https://www.bata.net/"
+          "website": "https://www.bata.net/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-bay~area~transportation~authority~mi~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-bay~area~transportation~authority~mi~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://batabustracker.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://batabustracker.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://batabustracker.com/gtfs-rt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
