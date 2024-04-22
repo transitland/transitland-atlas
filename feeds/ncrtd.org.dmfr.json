@@ -11,18 +11,20 @@
         ]
       },
       "license": {
-        "url": "https://www.ncrtd.org/gtfs-feed.aspx"
-      },
-      "tags": {
-        "unstable_url": "true"
+        "url": "https://www.ncrtd.org/services/gtfs-feed/"
       },
       "operators": [
         {
           "onestop_id": "o-9wk-ncrtd",
-          "name": "NCRTD",
+          "name": "North Central Regional Transit District",
+          "short_name": "NCRTD",
+          "website": "https://www.ncrtd.org",
           "associated_feeds": [
             {
               "gtfs_agency_id": "NCRTD"
+            },
+            {
+              "feed_onestop_id": "f-ncrtd~nm~rt"
             }
           ],
           "tags": {
@@ -32,6 +34,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-ncrtd~nm~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bluebustracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://bluebustracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://bluebustracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
