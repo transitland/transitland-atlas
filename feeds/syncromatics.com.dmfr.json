@@ -149,6 +149,40 @@
       }
     },
     {
+      "id": "f-downey~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridedowneylink.com/gtfs",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/downey-ca-us/downey-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/downey-ca-us/downey-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5cp-downeylink",
+          "name": "DowneyLINK",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-downey~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90263"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-downey~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridedowneylink.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ridedowneylink.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ridedowneylink.com/gtfs-rt/alerts"
+      }
+    },
+    {
       "id": "f-dp9k-waukeshacounty~wi~us~rt",
       "spec": "gtfs-rt",
       "urls": {

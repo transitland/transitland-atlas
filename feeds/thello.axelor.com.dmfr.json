@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-thello",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://thello.axelor.com/public/gtfs/gtfs.zip"
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+      }
+    },
+    {
+      "id": "f-thello~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://thello.axelor.com/public/gtfs/GTFS-RT.bin"
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-thello",
+      "name": "Trenitalia France",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-thello"
+        },
+        {
+          "feed_onestop_id": "f-thello~rt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

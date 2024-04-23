@@ -360,6 +360,24 @@
       ]
     },
     {
+      "id": "f-dq0v-jacksonvilletransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/jacksonville/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq0v-jacksonvilletransit",
+          "name": "City of Jacksonville",
+          "short_name": "Jacksonville Transit",
+          "website": "https://www.jacksonvillenc.gov/921/Transit",
+          "tags": {
+            "us_ntd_id": "40166"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-eastern~virginia~medical~school",
       "spec": "gtfs",
       "urls": {
@@ -372,21 +390,6 @@
       "urls": {
         "static_current": "https://passio3.com/emory/passioTransit/gtfs/google_transit.zip"
       }
-    },
-    {
-      "id": "f-epta~wv",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://passio3.com/epta/passioTransit/gtfs/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-epta~wv",
-          "name": "Eastern Panhandle Transit Authority",
-          "short_name": "EPTA",
-          "website": "https://www.eptawv.com"
-        }
-      ]
     },
     {
       "id": "f-florida~gulf~coast~university",
@@ -540,6 +543,40 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://passio3.com/ozark/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-rosemead~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/rosemead/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/rosemead-ca-us/rosemead-ca-us.zip",
+          "http://data.trilliumtransit.com/gtfs/rosemead-ca-us/rosemead-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh1b-rosemeadexplorer",
+          "name": "Rosemead Explorer",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rosemead~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90289"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rosemead~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/rosemead/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/rosemead/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/rosemead/passioTransit/gtfs/realtime/serviceAlerts"
       }
     },
     {

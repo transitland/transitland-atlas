@@ -15,8 +15,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "fresno-county-rural-transit-agency",
-        "status": "outdated"
+        "gtfs_data_exchange": "fresno-county-rural-transit-agency"
       },
       "operators": [
         {
@@ -118,6 +117,41 @@
       ]
     },
     {
+      "id": "f-epta~wv",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11735/EPTA_WV_GTFS.zip",
+        "static_historic": [
+          "https://passio3.com/epta/passioTransit/gtfs/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-epta~wv",
+          "name": "Eastern Panhandle Transit Authority",
+          "short_name": "EPTA",
+          "website": "https://www.eptawv.com"
+        }
+      ]
+    },
+    {
+      "id": "f-maricopa~express~az",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11713/met_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-maricopa~express~az",
+          "name": "Maricopa Express Transit",
+          "short_name": "MET",
+          "tags": {
+            "us_ntd_id": "91106"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-reno~county~ks~us",
       "spec": "gtfs",
       "urls": {
@@ -129,6 +163,23 @@
           "name": "Reno County Area Transit",
           "short_name": "RCAT",
           "website": "https://www.renogov.org/222/Reno-County-Area-Transit-RCAT"
+        }
+      ]
+    },
+    {
+      "id": "f-rock~hill~sc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11718/myriderockhill-sc-us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rock~hill~sc~us",
+          "name": "My Ride Rock Hill",
+          "website": "https://myriderockhill.com",
+          "tags": {
+            "us_ntd_id": "40270"
+          }
         }
       ]
     },
