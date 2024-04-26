@@ -5,22 +5,23 @@
       "id": "f-dpx-wwwnftacom",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.nfta.com/metro/__googletransit/google_transit.zip"
+        "static_current": "https://metro.nfta.com/__googletransit/google_transit.zip",
+        "static_historic": [
+          "http://www.nfta.com/metro/__googletransit/google_transit.zip"
+        ]
       },
       "license": {
-        "url": "http://metro.nfta.com/Contact/Developers.aspx",
-        "use_without_attribution": "unknown",
-        "create_derived_product": "yes"
+        "url": "https://metro.nfta.com/contact-us/developer-tools"
       },
       "operators": [
         {
           "onestop_id": "o-dpx-nfta~metro",
           "name": "Niagara Frontier Transportation Authority",
-          "short_name": "NFTA",
+          "short_name": "NFTA Metro",
           "website": "http://www.nfta.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "MET"
+              "feed_onestop_id": "f-dpx-wwwnftacom~rail"
             }
           ],
           "tags": {
@@ -30,6 +31,16 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dpx-wwwnftacom~rail",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://metro.nfta.com/__googletransit/rail/google_transit.zip"
+      },
+      "license": {
+        "url": "https://metro.nfta.com/contact-us/developer-tools"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
