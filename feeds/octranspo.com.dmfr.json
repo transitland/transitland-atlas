@@ -5,7 +5,10 @@
       "id": "f-f24-octranspo",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.octranspo.com/files/google_transit.zip"
+        "static_current": "https://oct-gtfs-emasagcnfmcgeham.z01.azurefd.net/public-access/GTFSExport.zip",
+        "static_historic": [
+          "https://www.octranspo.com/files/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.octranspo.com/en/plan-your-trip/travel-tools/developers/dev-terms",
@@ -23,9 +26,30 @@
           "onestop_id": "o-f24-octranspo",
           "name": "Ottawa-Carleton Regional Transit Commission",
           "short_name": "OC Transpo",
-          "website": "http://www.octranspo.com"
+          "website": "http://www.octranspo.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-f24-octranspo~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q3347525"
+          }
         }
       ]
+    },
+    {
+      "id": "f-f24-octranspo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://nextrip-public-api.azure-api.net/octranspo/gtfs-rt-vp/v1/VehiclePositions",
+        "realtime_trip_updates": "https://nextrip-public-api.azure-api.net/octranspo/gtfs-rt-tp/v1/TripUpdates"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://nextrip-public-api.developer.azure-api.net/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

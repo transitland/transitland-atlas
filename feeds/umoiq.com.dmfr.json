@@ -1,0 +1,20 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-9q9y-escalon~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://webservices.umoiq.com/api/gtfs-rt/v1/GTFS/escalon"
+      },
+      "license": {
+        "url": "https://www.cityofescalon.org/government/departments/transit_service"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

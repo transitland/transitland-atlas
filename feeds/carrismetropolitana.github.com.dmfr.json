@@ -22,13 +22,37 @@
       "license": {
         "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
       }
+    },
+    {
+      "id": "f-carris~metropolitana~pt~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://api.carrismetropolitana.pt/vehicles.pb",
+        "realtime_alerts": "http://api.carrismetropolitana.pt/alerts.pb"
+      },
+      "license": {
+        "url": "https://dados.gov.pt/pt/datasets/gtfs-carris-metropolitana/"
+      }
     }
   ],
   "operators": [
     {
       "onestop_id": "o-eyck-carris",
       "name": "Carris Metropolitana",
-      "website": "https://www.carrismetropolitana.pt/"
+      "short_name": "CMetropolitana",
+      "website": "https://www.carrismetropolitana.pt/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-carris~metropolitana~pt"
+        },
+        {
+          "feed_onestop_id": "f-carris~metropolitana~pt~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "CMetropolitana_",
+        "wikidata_id": "Q111611112"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
