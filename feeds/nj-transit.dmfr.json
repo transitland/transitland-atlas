@@ -26,6 +26,20 @@
       "tags": {
         "gtfs_data_exchange": "new-jersey-transit"
       }
+    },
+    {
+      "id": "f-nj~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://pcsdata.njtransit.com/api/GTFS/getvehiclepositions",
+        "realtime_alerts": "https://pcsdata.njtransit.com/api/GTFS/getalerts"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "tags": {
+        "gtfs_data_exchange": "new-jersey-transit"
+      }
     }
   ],
   "operators": [
@@ -41,6 +55,9 @@
         {
           "gtfs_agency_id": "NJT",
           "feed_onestop_id": "f-dr5-nj~transit~rail"
+        },
+        {
+          "feed_onestop_id": "f-nj~transit~rt"
         }
       ],
       "tags": {
