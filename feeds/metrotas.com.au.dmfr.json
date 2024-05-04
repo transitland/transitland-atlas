@@ -2,22 +2,46 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-r22-metrotasmania",
+      "id": "f-south-metrotasmania",
       "spec": "gtfs",
       "urls": {
         "static_current": [
-          "http://www.metrotas.com.au/wp-content/uploads/transit/Hobart/google_transit.zip",
-          "http://www.metrotas.com.au/wp-content/uploads/transit/Launceston/google_transit.zip",
+          "http://www.metrotas.com.au/wp-content/uploads/transit/Hobart/google_transit.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-north-metrotasmania",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": [
+          "http://www.metrotas.com.au/wp-content/uploads/transit/Launceston/google_transit.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-northwest-metrotasmania",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": [
           "http://www.metrotas.com.au/wp-content/uploads/transit/Burnie/google_transit.zip"
         ]
-      },
+      }
+    }
+  ],
       "operators": [
         {
-          "onestop_id": "o-r22-metrotasmania",
+          "onestop_id": "o-south-metrotasmania",
           "name": "Metro Tasmania",
           "short_name": "Metro",
           "website": "http://www.metrotas.com.au",
           "associated_feeds": [
+            {
+              "f-north-metrotasmania"
+            },
+            {
+              "f-northwest-metrotasmania"
+            }
             {
               "gtfs_agency_id": "MTS"
             }
@@ -25,6 +49,5 @@
         }
       ]
     }
-  ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
