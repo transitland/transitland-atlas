@@ -18,6 +18,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "51"
+            },
+            {
+              "feed_onestop_id": "f-amtrak~rt"
             }
           ],
           "tags": {
@@ -178,6 +181,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-amtrak~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://birch.catenarymaps.org/gtfsrt/amtrak/vehiclepositions",
+        "realtime_trip_updates": "https://birch.catenarymaps.org/gtfsrt/amtrak/tripupdates"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
