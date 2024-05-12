@@ -7,23 +7,46 @@
       "urls": {
         "static_current": "https://www.gocary.org/_GTFS",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/cary-transit-nc-us/cary-transit-nc-us.zip"
+          "http://data.trilliumtransit.com/gtfs/cary-transit-nc-us/cary-transit-nc-us.zip"
         ]
+      },
+      "license": {
+        "url": "https://gocary.org/developer-resources",
+        "use_without_attribution": "no",
+        "attribution_text": "Except as otherwise noted, the content of this section is licensed under the Creative Commons Attribution 3.0 License"
       },
       "tags": {
         "gtfs_data_exchange": "cary-transit"
-      },
-      "operators": [
+      }
+    },
+    {
+      "id": "f-dnrg-cary~transit~nc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.gocarylive.org/gtfs/Realtime/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://www.gocarylive.org/gtfs/Realtime/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://www.gocarylive.org/gtfs/Realtime/GTFS_ServiceAlerts.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dnrg-carytransit",
+      "name": "GoCary",
+      "website": "https://gocary.org/",
+      "associated_feeds": [
         {
-          "onestop_id": "o-dnrg-carytransit",
-          "name": "Cary Transit",
-          "short_name": "GoCary",
-          "website": "https://gocary.org/",
-          "tags": {
-            "us_ntd_id": "40143"
-          }
+          "feed_onestop_id": "f-dnrg-cary~transit~nc~us"
+        },
+        {
+          "feed_onestop_id": "f-dnrg-cary~transit~nc~us~rt"
         }
-      ]
+      ],
+      "tags": {
+        "developer_site": "https://gocary.org/developer-resources",
+        "us_ntd_id": "40143",
+        "wikidata_id": "Q5005923"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

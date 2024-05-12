@@ -1,0 +1,51 @@
+{
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+    "feeds": [
+      {
+        "id": "f-dnru-chapel~hill~transit~nc~us",
+        "spec": "gtfs",
+        "urls": {
+          "static_current": "http://mychtransit.org/gtfs",
+          "static_historic": [
+            "http://data.trilliumtransit.com/gtfs/chapel-hill-transit-nc-us/chapel-hill-transit-nc-us.zip"
+          ]
+        },
+        "license": {
+          "use_without_attribution": "yes",
+          "create_derived_product": "yes"
+        }
+      },
+      {
+        "id": "f-dnru-chapel~hill~transit~nc~us~rt",
+        "spec": "gtfs-rt",
+        "urls": {
+          "realtime_vehicle_positions": "http://mychtransit.org/gtfs-rt/vehiclepositions",
+          "realtime_trip_updates": "http://mychtransit.org/gtfs-rt/tripupdates",
+          "realtime_alerts": "http://mychtransit.org/gtfs-rt/alerts"
+        }
+      }
+    ],
+    "operators": [
+      {
+        "onestop_id": "o-dnru-chapelhilltransit",
+        "name": "Chapel Hill Transit",
+        "short_name": "CHT",
+        "website": "https://www.townofchapelhill.org/government/departments-services/transit",
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-dnru-chapel~hill~transit~nc~us"
+          },
+          {
+            "feed_onestop_id": "f-dnru-chapel~hill~transit~nc~us~rt"
+          }
+        ],
+        "tags": {
+          "developer_site": "https://gtfs-directory.syncromatics.com/",
+          "twitter_general": "chapelhillgov",
+          "us_ntd_id": "40051",
+          "wikidata_id": "Q5073024"
+        }
+      }
+    ],
+    "license_spdx_identifier": "CDLA-Permissive-1.0"
+  }
