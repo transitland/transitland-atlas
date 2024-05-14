@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-colt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.lovgov.org/home/showpublisheddocument/60528/638463705101400000"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-colt",
+          "name": "City of Loveland Transit (COLT)",
+          "website": "https://www.lovgov.org/services/public-works/bus-service",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-colt"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
