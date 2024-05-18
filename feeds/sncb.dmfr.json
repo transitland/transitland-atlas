@@ -1,0 +1,40 @@
+{
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+    "feeds": [
+      {
+        "id": "f-sncb",
+        "spec": "gtfs",
+        "urls": {
+          "static_current": "https://sncb-opendata.hafas.de/gtfs/static/c21ac6758dd25af84cca5b707f3cb3de"
+        },
+        "license": {
+          "url": "https://www.belgiantrain.be/fr/3rd-party-services/mobility-service-providers/public-data/use-our-data/"
+        }
+      },
+      {
+        "id": "f-sncb~rt",
+        "spec": "gtfs-rt",
+        "urls": {
+          "realtime_vehicle_positions": "https://sncb-opendata.hafas.de/gtfs/realtime/c21ac6758dd25af84cca5b707f3cb3de",
+          "realtime_trip_updates": "https://sncb-opendata.hafas.de/gtfs/realtime/c21ac6758dd25af84cca5b707f3cb3de",
+          "realtime_alerts": "https://sncb-opendata.hafas.de/gtfs/realtime/c21ac6758dd25af84cca5b707f3cb3de"
+        }
+      }
+    ],
+    "operators": [
+      {
+        "onestop_id": "o-sncb",
+        "name": "Société nationale des chemins de fer belges",
+        "short_name": "SNCB",
+        "associated_feeds": [
+          {
+            "feed_onestop_id": "f-sncb"
+          },
+          {
+            "feed_onestop_id": "f-sncb~rt"
+          }
+        ]
+      }
+    ],
+    "license_spdx_identifier": "CDLA-Permissive-1.0"
+  }
