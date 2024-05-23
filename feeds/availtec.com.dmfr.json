@@ -41,6 +41,37 @@
         "realtime_trip_updates": "https://bus.wichitatransit.org/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
         "realtime_alerts": "https://bus.wichitatransit.org/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
       }
+    },
+    {
+      "id": "f-wave~mobile~al~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://realtimemobile.availtec.com/infopoint/gtfs-zip.ashx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-wave~mobile~al~us",
+          "name": "City of Mobile",
+          "short_name": "The Wave Transit System",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-wave~mobile~al~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40043"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-wave~mobile~al~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtimemobile.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://realtimemobile.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://realtimemobile.availtec.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
