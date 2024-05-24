@@ -21,6 +21,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "2"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
+              "gtfs_agency_id": "2"
             }
           ]
         },
@@ -30,6 +34,10 @@
           "website": "http://adelaidemetro.com.au/Timetables-Maps/Special-Services/School-Services",
           "associated_feeds": [
             {
+              "gtfs_agency_id": "41"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
               "gtfs_agency_id": "41"
             }
           ]
@@ -41,6 +49,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "4"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
+              "gtfs_agency_id": "4"
             }
           ]
         },
@@ -50,6 +62,10 @@
           "website": "http://adelaidemetro.com.au/Timetables-Maps/Special-Services",
           "associated_feeds": [
             {
+              "gtfs_agency_id": "72"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
               "gtfs_agency_id": "72"
             }
           ]
@@ -61,6 +77,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "7"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
+              "gtfs_agency_id": "7"
             }
           ]
         },
@@ -70,6 +90,10 @@
           "website": "http://adelaidemetro.com.au/Timetables-Maps/Special-Services/School-Services",
           "associated_feeds": [
             {
+              "gtfs_agency_id": "71"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
               "gtfs_agency_id": "71"
             }
           ]
@@ -81,6 +105,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "51"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
+              "gtfs_agency_id": "51"
             }
           ]
         },
@@ -90,6 +118,10 @@
           "website": "http://adelaidemetro.com.au/",
           "associated_feeds": [
             {
+              "gtfs_agency_id": "5"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
               "gtfs_agency_id": "5"
             }
           ]
@@ -101,10 +133,23 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "52"
+            },
+            {
+              "feed_onestop_id": "f-adelaidemetro~rt",
+              "gtfs_agency_id": "52"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-adelaidemetro~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs.adelaidemetro.com.au/v1/realtime/vehicle_positions",
+        "realtime_trip_updates": "https://gtfs.adelaidemetro.com.au/v1/realtime/trip_updates",
+        "realtime_service_alerts": "https://gtfs.adelaidemetro.com.au/v1/realtime/service_alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
