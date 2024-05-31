@@ -101,12 +101,6 @@ def process_feeds(outfile):
         'last_ok_fetch_response_code',
         'most_recent_feed_version_sha1',
         'most_recent_feed_version_fetched_at',
-        'adm0_name0',
-        'adm1_name0',
-        'adm0_name1',
-        'adm1_name1',
-        'adm0_name2',
-        'adm1_name2',
     ]
     tags = ['status','unstable_url','manual_import']
     for tag in tags:
