@@ -2,30 +2,74 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-rb6-metrochristchurch",
+      "id": "f-rb1g2-metrotimaru",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://metroinfo.co.nz/Documents/gtfs.zip"
+        "static_historic": [
+          "http://rtt.metroinfo.org.nz/rtt/public/utility/gtfs.aspx?ProjectID=TIUMETRO"
+        ]
+      },
+      "tags": {
+        "status": "archived"
+      }
+    },
+    {
+      "id": "f-rb6b-metrochristchurch",
+      "supersedes_ids": [
+        "f-rb6-metrochristchurch"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://apis.metroinfo.co.nz/rti/gtfs/v1/gtfs.zip",
+        "static_historic": [
+          "http://metroinfo.co.nz/Documents/gtfs.zip",
+          "http://rtt.metroinfo.org.nz/rtt/public/utility/gtfs.aspx"
+        ]
       },
       "license": {
-        "url": "https://creativecommons.org/licenses/by/3.0/nz/",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use."
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.metroinfo.co.nz/about/developer-resources/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://apidevelopers.metroinfo.co.nz/"
+      },
+      "tags": {
+        "gtfs_data_exchange": "metro-christchurch"
       },
       "operators": [
         {
-          "onestop_id": "o-rb6-metrochristchurch",
+          "onestop_id": "o-rb6b-metrochristchurch",
+          "supersedes_ids": [
+            "o-rb6-metrochristchurch"
+          ],
           "name": "Metro Christchurch",
-          "short_name": "Metro",
           "website": "http://metroinfo.org.nz",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "feed_onestop_id": "f-rb6b-metrochristchurch~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q7258007"
+          }
         }
       ]
+    },
+    {
+      "id": "f-rb6b-metrochristchurch~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://apis.metroinfo.co.nz/rti/gtfsrt/v1/vehicle-positions.pb",
+        "realtime_trip_updates": "https://apis.metroinfo.co.nz/rti/gtfsrt/v1/trip-updates.pb",
+        "realtime_alerts": "https://apis.metroinfo.co.nz/rti/gtfsrt/v1/service-alerts.pb"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://apidevelopers.metroinfo.co.nz/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
