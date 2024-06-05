@@ -41,6 +41,11 @@ query($after:Int) {
                 id
                 agency_id
                 agency_name
+                places {
+                    rank
+                    adm0_name
+                    adm1_name
+                }
             }
         }
     }
@@ -100,6 +105,10 @@ def process_feeds(outfile):
     tags = ['status','unstable_url','manual_import']
     for tag in tags:
         keys.append('tag_'+tag)
+    places_count = 5
+    for i in range(places_count):
+        keys.append(f"adm0_name{i}")
+        keys.append(f"adm1_name{i}")        
 
     with open(outfile, 'w', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=keys)
@@ -111,8 +120,18 @@ def process_feeds(outfile):
             row['spec'] = ent.get('spec')
             feed_state_fv = (ent.get('feed_state') or {}).get('feed_version')
             if feed_state_fv:
-                agencies = [i.get('agency_name') for i in feed_state_fv.get('agencies', [])]
+                agencies = [i.get('agency_name') for i in (feed_state_fv.get('agencies') or [])]
                 row['agencies'] = ', '.join(agencies)
+                # Include places ordered by rank
+                check_places = {}
+                for agency in (feed_state_fv.get('agencies') or []):
+                    for place in (agency.get('places') or []):
+                        key = (place.get('adm0_name'), place.get('adm1_name'))
+                        check_places[key] = place.get('rank')
+                ranked_places = [i[0] for i in sorted(check_places.items(), reverse=True, key=lambda x:x[1])]
+                for (i,check_place) in enumerate(ranked_places[:places_count]):
+                    row[f"adm0_name{i}"] = check_place[0]
+                    row[f"adm1_name{i}"] = check_place[1]
             if first(ent.get('feed_fetches')):
                 fetch = first(ent.get('feed_fetches'))
                 row['last_fetch_at'] = fetch.get('fetched_at')
