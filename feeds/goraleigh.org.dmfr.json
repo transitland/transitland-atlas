@@ -5,28 +5,17 @@
       "id": "f-dq25-capital~area~transit~nc~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://goraleigh.org/sites/default/files/gtfsexport.zip",
+        "static_current": "https://goraleigh.org/gr_gtfs",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/capital-area-transit-nc-us/capital-area-transit-nc-us.zip"
+          "https://data.trilliumtransit.com/gtfs/capital-area-transit-nc-us/capital-area-transit-nc-us.zip",
+          "https://goraleigh.org/sites/default/files/gtfsexport.zip"
         ]
       },
       "license": {
         "url": "https://goraleigh.org/developer-terms-and-conditions",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dq25-goraleigh",
-          "name": "GoRaleigh",
-          "website": "https://goraleigh.org/",
-          "tags": {
-            "twitter_general": "GoRaleighNC",
-            "us_ntd_id": "40007",
-            "wikidata_id": "Q5035469"
-          }
-        }
-      ]
+        "use_without_attribution": "no",
+        "attribution_text": "Except as otherwise noted, the content of this section is licensed under the Creative Commons Attribution 3.0 License"
+      }
     },
     {
       "id": "f-dq25-capital~area~transit~nc~us~rt",
@@ -35,11 +24,27 @@
         "realtime_vehicle_positions": "https://www.goraleighlive.org/gtfsrt/vehicles",
         "realtime_trip_updates": "https://www.goraleighlive.org/gtfsrt/trips",
         "realtime_alerts": "https://www.goraleighlive.org/gtfsrt/alerts"
-      },
-      "license": {
-        "url": "https://goraleigh.org/developer-terms-and-conditions",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dq25-goraleigh",
+      "name": "GoRaleigh",
+      "website": "https://goraleigh.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dq25-capital~area~transit~nc~us"
+        },
+        {
+          "feed_onestop_id": "f-dq25-capital~area~transit~nc~us~rt"
+        }
+      ],
+      "tags": {
+        "developer_site": "https://goraleigh.org/developer-resources",
+        "twitter_general": "GoRaleighNC",
+        "us_ntd_id": "40007",
+        "wikidata_id": "Q5035469"
       }
     }
   ],
