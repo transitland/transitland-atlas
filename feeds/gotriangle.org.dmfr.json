@@ -1,0 +1,53 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dnr-tta~regionalbus~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gotriangle.org/gtfs",
+        "static_historic": [
+          "https://gotriangle.tripsparkhost.com/gtfs/",
+          "https://data.trilliumtransit.com/gtfs/tta-regionalbus-nc-us/tta-regionalbus-nc-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://gotriangle.org/developer-terms-and-conditions",
+        "use_without_attribution": "no",
+        "attribution_text": "Except as otherwise noted, the content of this section is licensed under the Creative Commons Attribution 3.0 License"
+      }
+    },
+    {
+      "id": "f-dnr-tta~regionalbus~nc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gotriangle.tripsparkhost.com/gtfs/Realtime/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://gotriangle.tripsparkhost.com/gtfs/Realtime/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://gotriangle.tripsparkhost.com/gtfs/Realtime/GTFS_ServiceAlerts.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dnr-gotriangle",
+      "name": "Research Triangle Regional Public Transportation Authority",
+      "short_name": "GoTriangle",
+      "website": "https://gotriangle.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dnr-tta~regionalbus~nc~us"
+        },
+        {
+          "feed_onestop_id": "f-dnr-tta~regionalbus~nc~us~rt"
+        }
+      ],
+      "tags": {
+        "developer_site": "https://gotriangle.org/developer-resources",
+        "twitter_general": "GoTriangle",
+        "us_ntd_id": "40108",
+        "wikidata_id": "Q7840091"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
