@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-baton~rouge~cats",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cats.rideralerts.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/f-baton~rouge~cats.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-baton~rouge~cats",
+          "name": "Capital Area Transit System",
+          "short_name": "CATS",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-baton~rouge~cats~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60022",
+            "wikidata_id": "Q5035470"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-baton~rouge~cats~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cats.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://cats.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://cats.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
