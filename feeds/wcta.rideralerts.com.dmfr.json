@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-westmoreland~pa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://wcta.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-westmoreland~pa~us",
+          "name": "Westmoreland County Transit Authority",
+          "short_name": "WT",
+          "website": "https://www.westmorelandtransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-westmoreland~pa~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "30044"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-westmoreland~pa~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://wcta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://wcta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://wcta.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
