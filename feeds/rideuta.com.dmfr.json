@@ -19,6 +19,11 @@
           "onestop_id": "o-9x0-utahtransitauthority",
           "name": "Utah Transit Authority",
           "short_name": "UTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9x0-uta~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "RideUTA",
             "us_ntd_id": "80001",
@@ -26,6 +31,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9x0-uta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://apps.rideuta.com/tms/gtfs/Vehicle",
+        "realtime_trip_updates": "https://apps.rideuta.com/tms/gtfs/TripUpdate",
+        "realtime_alerts": "https://apps.rideuta.com/tms/gtfs/Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
