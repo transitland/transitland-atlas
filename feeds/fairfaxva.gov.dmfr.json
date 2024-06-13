@@ -5,20 +5,26 @@
       "id": "f-dqcj1-fairfaxcue",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.fairfaxva.gov/home/showpublisheddocument/19191/637855188504310763",
+        "static_current": "https://www.fairfaxcounty.gov/connector/sites/connector/files/Assets/connector_gtfs.zip",
         "static_historic": [
+          "https://www.fairfaxva.gov/home/showpublisheddocument/19191/637855188504310763",
           "http://www.fairfaxva.gov/Home/ShowDocument?id=6713",
           "https://www.fairfaxva.gov/home/showpublisheddocument/19191/638017594116830000"
         ]
       },
-      "tags": {
-        "unstable_url": "true"
+      "license": {
+        "url": "https://www.fairfaxcounty.gov/connector/bustracker/data"
       },
       "operators": [
         {
           "onestop_id": "o-dqcj1-fairfaxcue",
           "name": "Fairfax CUE Bus",
           "short_name": "CUE",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dqcj1-fairfaxcue~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "CityofFFXCUE",
             "us_ntd_id": "30058",
@@ -26,6 +32,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dqcj1-fairfaxcue~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.fairfaxcounty.gov/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://www.fairfaxcounty.gov/gtfsrt/trips",
+        "realtime_alerts": "https://www.fairfaxcounty.gov/gtfsrt/alerts"
+      },
+      "license": {
+        "url": "https://www.fairfaxcounty.gov/connector/bustracker/data"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
