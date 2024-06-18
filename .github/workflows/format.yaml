@@ -1,0 +1,32 @@
+name: Apply opinionated DMFR format to PRs
+on: [pull_request, push]
+jobs:
+  format:
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install transitland-lib
+      run: scripts/install-transitland-lib.sh
+    - name: Format in the opinionated DMFR format
+      run: |
+        find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
+    - name: "If any changes: commit and push"
+      run: |-
+        git config user.name "Automated Bot"
+        git config user.email "info@interline.io"
+        if ! git_status_output="$(git status --porcelain)"; then
+            error_code="$?"
+            echo "'git status' had an error: $error_code" 
+            exit 1
+        elif [ -z "$git_status_output" ]; then
+            echo "Working directory is clean."
+        else
+            echo "Working directory has UNCOMMITTED CHANGES."
+            git add -A
+            git commit -m "Apply opinionated DMFR format"
+            git push
+        fi
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
