@@ -272,38 +272,6 @@
       ]
     },
     {
-      "id": "f-dnrm-elonexpress",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://passio3.com/elon/passioTransit/gtfs/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnrm-elonexpress",
-          "name": "Elon University",
-          "short_name": "Elon Express",
-          "website": "https://www.elon.edu/u/fa/transportation/buses-shuttles/elonexpress/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dnrm-elonexpress"
-            },
-            {
-              "feed_onestop_id": "f-dnrm-elonexpress~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-dnrm-elonexpress~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://passio3.com/elon/passioTransit/gtfs/realtime/vehiclePositions",
-        "realtime_trip_updates": "https://passio3.com/elon/passioTransit/gtfs/realtime/tripUpdates",
-        "realtime_alerts": "https://passio3.com/elon/passioTransit/gtfs/realtime/serviceAlerts"
-      }
-    },
-    {
       "id": "f-dnq8-ninertransit",
       "spec": "gtfs",
       "urls": {
@@ -373,6 +341,38 @@
         "realtime_vehicle_positions": "https://passio3.com/concordk/passioTransit/gtfs/realtime/vehiclePositions",
         "realtime_trip_updates": "https://passio3.com/concordk/passioTransit/gtfs/realtime/tripUpdates",
         "realtime_alerts": "https://passio3.com/concordk/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
+      "id": "f-dnrm-elonexpress",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/elon/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnrm-elonexpress",
+          "name": "Elon University",
+          "short_name": "Elon Express",
+          "website": "https://www.elon.edu/u/fa/transportation/buses-shuttles/elonexpress/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnrm-elonexpress"
+            },
+            {
+              "feed_onestop_id": "f-dnrm-elonexpress~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-dnrm-elonexpress~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/elon/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/elon/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/elon/passioTransit/gtfs/realtime/serviceAlerts"
       }
     },
     {
