@@ -7,14 +7,12 @@
       "urls": {
         "static_current": "https://passio3.com/irvine/passioTransit/gtfs/google_transit.zip"
       },
-      "license": {
-        "url": "http://www.octa.net/News-and-Resources/Open-Data/Overview/"
-      },
       "operators": [
         {
           "onestop_id": "o-9mu-irvine~ca~us",
           "name": "City of Irvine",
-          "short_name": "OCTA",
+          "short_name": "Irvine CONNECT",
+          "website": "https://www.cityofirvine.org/transportation/irvine-connect",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-irvine~ca~us~rt"
@@ -274,6 +272,41 @@
       ]
     },
     {
+      "id": "f-dnq8-ninertransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/uncc/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq8-ninertransit",
+          "name": "UNC Charlotte",
+          "short_name": "Niner Transit",
+          "website": "https://pats.charlotte.edu/transportation/niner-transit-bus-service/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnq8-ninertransit"
+            },
+            {
+              "feed_onestop_id": "f-dnq8-ninertransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CLT_PATS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq8-ninertransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/uncc/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/uncc/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/uncc/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-dnq9-ckrider~nc~us",
       "spec": "gtfs",
       "urls": {
@@ -287,7 +320,7 @@
         {
           "onestop_id": "o-dnq9-concordkannapolisareatransit",
           "name": "Concord Kannapolis Area Transit",
-          "short_name": "CKRider",
+          "short_name": "Rider",
           "website": "https://ckrider.com/",
           "associated_feeds": [
             {
@@ -308,6 +341,38 @@
         "realtime_vehicle_positions": "https://passio3.com/concordk/passioTransit/gtfs/realtime/vehiclePositions",
         "realtime_trip_updates": "https://passio3.com/concordk/passioTransit/gtfs/realtime/tripUpdates",
         "realtime_alerts": "https://passio3.com/concordk/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
+      "id": "f-dnrm-elonexpress",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/elon/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnrm-elonexpress",
+          "name": "Elon University",
+          "short_name": "Elon Express",
+          "website": "https://www.elon.edu/u/fa/transportation/buses-shuttles/elonexpress/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnrm-elonexpress"
+            },
+            {
+              "feed_onestop_id": "f-dnrm-elonexpress~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-dnrm-elonexpress~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/elon/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/elon/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/elon/passioTransit/gtfs/realtime/serviceAlerts"
       }
     },
     {
@@ -371,11 +436,25 @@
           "name": "City of Jacksonville",
           "short_name": "Jacksonville Transit",
           "website": "https://www.jacksonvillenc.gov/921/Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dq0v-jacksonvilletransit~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "40166"
           }
         }
       ]
+    },
+    {
+      "id": "f-dq0v-jacksonvilletransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/jacksonville/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/jacksonville/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/jacksonville/passioTransit/gtfs/realtime/serviceAlerts"
+      }
     },
     {
       "id": "f-dq259-ncsu~wolfline~nc~us",
@@ -389,7 +468,8 @@
       "operators": [
         {
           "onestop_id": "o-dq259-ncsuwolfline",
-          "name": "NCSU Wolfline",
+          "name": "North Carolina State University",
+          "short_name": "Wolfline",
           "tags": {
             "twitter_general": "NCStateTranspo",
             "us_ntd_id": "40147",
@@ -516,6 +596,27 @@
       "urls": {
         "static_current": "https://passio3.com/citylinkrural/passioTransit/gtfs/google_transit.zip"
       }
+    },
+    {
+      "id": "f-las~cruces~road~runner",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/roadrunner/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/lascrucesroadrunner_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9tsp-roadrunnertransit",
+          "name": "RoadRUNNER Transit",
+          "tags": {
+            "twitter_general": "clcgov",
+            "us_ntd_id": "60049",
+            "wikidata_id": "Q7339261"
+          }
+        }
+      ]
     },
     {
       "id": "f-los~angeles~world~airport",

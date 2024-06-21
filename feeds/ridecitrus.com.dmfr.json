@@ -2,40 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-dh-lakeland",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://ftis.org/PostFileDownload.aspx?id=531A0",
-        "static_historic": [
-          "https://ftis.org/PostFileDownload.aspx?id=313A0",
-          "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
-        ]
-      },
-      "tags": {
-        "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dh-lakeland",
-          "name": "Lakeland Area Mass Transit District",
-          "short_name": "Citrus Connection",
-          "website": "http://www.ridecitrus.com/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dh-lakeland~rt"
-            },
-            {
-              "feed_onestop_id": "f-lakeland~passio"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "40031",
-            "wikidata_id": "Q5122884"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-dh-lakeland~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -46,10 +12,35 @@
     },
     {
       "id": "f-lakeland~passio",
+      "supersedes_ids": [
+        "f-dh-lakeland"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://passio3.com/citrusconn/passioTransit/gtfs/google_transit.zip"
-      }
+        "static_current": "https://passio3.com/citrusconn/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://ftis.org/PostFileDownload.aspx?id=531A0",
+          "https://ftis.org/PostFileDownload.aspx?id=313A0",
+          "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dh-lakeland",
+          "name": "Lakeland Area Mass Transit District",
+          "short_name": "Citrus Connection",
+          "website": "http://www.ridecitrus.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dh-lakeland~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40031",
+            "wikidata_id": "Q5122884"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
