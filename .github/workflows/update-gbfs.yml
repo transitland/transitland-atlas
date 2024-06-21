@@ -43,6 +43,7 @@ jobs:
             git commit -m "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"
             git push --set-upstream origin ${BRANCH_NAME}
             gh pr create --title "Automatic update of GBFS feeds" --fill-verbose
+            gh workflow run validate.yml --ref ${BRANCH_NAME}
         fi
       env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
