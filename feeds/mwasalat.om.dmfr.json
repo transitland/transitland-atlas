@@ -1,47 +1,47 @@
 {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
-    "feeds": [
-      {
-        "id": "f-mwasalat",
-        "spec": "gtfs",
-        "urls": {
-          "static_current": "https://app.mwasalat.om/tmsp/data/gtfs/gtfs.zip"
-        },
-        "languages": [
-            "en-OM",
-            "ar-OM"
-        ],
-        "license": {
-            "url": "https://opendata.om/2021/odo-open-data-principles/",
-            "use_without_attribution": "no",
-            "attribution_instructions": "Credit the Source and provide a Link to the License",
-            "commercial_use_allowed": "yes",
-            "spdx_identifier": "CC-BY-4.0"
-        },
-        "operators": [
-            {
-                "onestop_id": "o-mwasalat~rt",
-                "name": "Oman National Transport Company",
-                "short_name": "Mwasalat",
-                "website": "https://mwasalat.om",
-                "associated_feeds": [
-                    {
-                        "feed_onestop_id": "f-mwasalat"
-                    },
-                    {
-                        "feed_onestop_id": "f-mwasalat~rt"
-                    }
-                ]
-            }
-        ]
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-mwasalat",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://app.mwasalat.om/tmsp/data/gtfs/gtfs.zip"
       },
-      {
-        "id": "f-mwasalat~rt",
-        "spec": "gtfs-rt",
-        "urls": {
-            "realtime_trip_updates": "https://app.mwasalat.om/tmsp/data/gtfs/trip-updates.pb",
-            "realtime_vehicle_positions": "https://app.mwasalat.om/tmsp/data/gtfs/vehicle-positions.pb"
+      "languages": [
+        "ar-OM",
+        "en-OM"
+      ],
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.om/2021/odo-open-data-principles/",
+        "use_without_attribution": "no",
+        "commercial_use_allowed": "yes",
+        "attribution_instructions": "Credit the Source and provide a Link to the License"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mwasalat~rt",
+          "name": "Oman National Transport Company",
+          "short_name": "Mwasalat",
+          "website": "https://mwasalat.om",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-mwasalat"
+            },
+            {
+              "feed_onestop_id": "f-mwasalat~rt"
+            }
+          ]
         }
+      ]
+    },
+    {
+      "id": "f-mwasalat~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://app.mwasalat.om/tmsp/data/gtfs/vehicle-positions.pb",
+        "realtime_trip_updates": "https://app.mwasalat.om/tmsp/data/gtfs/trip-updates.pb"
       }
-    ]
-  }
+    }
+  ]
+}
