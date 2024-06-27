@@ -525,7 +525,6 @@ FEED_TAGS = [
     {"onestop_id":"f-eyckr-metrodelisboa","tags":{"source_webpage": "http://www.transporlis.pt/Default.aspx?tabid=254&language=pt-PT&codOp=13"}},
     {"onestop_id":"f-9r0-redding~ca~us","tags":{"feed_id": "redding-ca-us", "managed_by": "trillium", "gtfs_data_exchange": "redding-area-bus-authority"}},
     {"onestop_id":"f-9q5-vctc~ca~us","tags":{"feed_id": "vctc-ca-us"}},
-    {"onestop_id":"f-9mgve-avalon~ca~us","tags":{"feed_id": "avalon-ca-us"}},
     {"onestop_id":"f-9y7v-metropolitantulsatransitauthority","tags":{"gtfs_data_exchange": "metropolitan-tulsa-transit-authority"}},
     {"onestop_id":"f-f25g-omitsainte~julie","tags":{"gtfs_data_exchange": "omit-sainte-julie"}},
     {"onestop_id":"f-66tm-liserco~lincosur~lisanco","tags":{"unstable_url": "true"}},
