@@ -1,0 +1,65 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-spg1-tango",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/9f5fa77b-30b7-4520-a17c-db2122339612"
+      },
+      "languages": [
+        "fr"
+      ],
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "Should mention the source (at least, the name of the “Grantor”) and the date of the most recent update of the reused “Information”. Specifically, the “Reuser” may satisfy this condition by pointing, via a hypertext link, to the source of “the Information” and so supplying an actual acknowledgement of its authorship."
+      }
+    },
+    {
+      "id": "f-spg1-tango~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://92.103.236.106:8085/ProfilGtfsRt2_0RSProducer-TANGO/VehiclePosition.pb",
+        "realtime_trip_updates": "http://92.103.236.106:8085/ProfilGtfsRt2_0RSProducer-TANGO/TripUpdate.pb",
+        "realtime_alerts": "http://92.103.236.106:8085/ProfilGtfsRt2_0RSProducer-TANGO/Alerts.pb"
+      },
+      "languages": [
+        "fr"
+      ],
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "Should mention the source (at least, the name of the “Grantor”) and the date of the most recent update of the reused “Information”. Specifically, the “Reuser” may satisfy this condition by pointing, via a hypertext link, to the source of “the Information” and so supplying an actual acknowledgement of its authorship."
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-spg1-tango",
+      "name": "Transdev Nîmes Mobilités",
+      "short_name": "Tango",
+      "website": "https://www.tangobus.fr/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-spg1-tango"
+        },
+        {
+          "feed_onestop_id": "f-spg1-tango~rt"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q3537956"
+      }
+    }
+  ],
+  "license_spdx_identifier": "etalab-2.0"
+}
