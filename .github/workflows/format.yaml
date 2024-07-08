@@ -13,8 +13,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        ref: ${{ github.ref_name }}
-        repository: ${{github.event.pull_request.head.repo.full_name}}
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Format in the opinionated DMFR format
@@ -34,7 +32,7 @@ jobs:
             echo "Working directory has UNCOMMITTED CHANGES."
             git add -A
             git commit -m "Apply opinionated DMFR format"
-            git push
+            git push origin HEAD:${GITHUB_HEAD_REF}
         fi
       env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
