@@ -42,15 +42,15 @@ jobs:
             issue_number: context.issue.number,
             owner: 'transitland',
             repo: 'transitland-atlas',
-            body: `***This PR includes a file that doesn't fully meet the "opinionated" DMFR format***
+            body: '***This PR includes a file that does not exactly follow the "opinionated" DMFR format***
 
             transitland-lib recommends the following changes:
-            ```
+
+            ```diff
             ${{ steps.git-diff.outputs.GIT_DIFF }}
             ```
             
             You can use a code/text editor to make this change. Or use [transitland-lib](https://github.com/interline-io/transitland-lib/blob/main/dmfr-command.md). Or just wait and a maintainer will be glad to fix this.
 
-            Thanks for contributing to Transitland Atlas!
-            `
+            Thanks for contributing to Transitland Atlas!'
           })
