@@ -31,9 +31,9 @@ jobs:
             echo "Working directory is clean."
         else
             echo "Working directory has UNCOMMITTED CHANGES."
-            echo "GIT_DIFF<<$EOF" >> $GITHUB_OUTPUT
-            git diff >> $GITHUB_OUTPUT
-            echo "$EOF" >> $GITHUB_OUTPUT
+            echo "GIT_DIFF<<EOF" >> "$GITHUB_OUTPUT"
+            git diff >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
         fi
     - uses: actions/github-script@v7
       with:
