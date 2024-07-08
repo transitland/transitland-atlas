@@ -1,4 +1,4 @@
-name: Apply opinionated DMFR format to PRs
+name: Comment on PRs that need DMFR formatting changes
 on: 
   pull_request:
     paths:
@@ -20,10 +20,9 @@ jobs:
     - name: Format in the opinionated DMFR format
       run: |
         find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
-    - name: "If any changes: commit and push"
+    - name: "If any changes, run and store git diff"
+      id: git-diff
       run: |-
-        git config user.name "Automated Bot"
-        git config user.email "drew@interline.io"
         if ! git_status_output="$(git status --porcelain)"; then
             error_code="$?"
             echo "'git status' had an error: $error_code" 
@@ -32,10 +31,24 @@ jobs:
             echo "Working directory is clean."
         else
             echo "Working directory has UNCOMMITTED CHANGES."
-            git add -A
-            git commit -m "Apply opinionated DMFR format"
-            git push origin HEAD:${GITHUB_HEAD_REF}
+            echo "GIT_DIFF=$(git diff)" >> "$GITHUB_OUTPUT"
         fi
-      env:
-          GH_TOKEN: ${{ secrets.ATLAS_REPO_GH_PERSONAL_ACCESS_TOKEN }}
+    - uses: actions/github-script@v7
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: 'transitland',
+            repo: 'transitland-atlas',
+            body: `***This PR includes a file that doesn't fully meet the "opinionated" DMFR format***
 
+            transitland-lib recommends the following changes:
+            ```
+            ${{ steps.git-diff.outputs.GIT_DIFF }}
+            ```
+            
+            You can use a code/text editor to make this change. Or use [transitland-lib](https://github.com/interline-io/transitland-lib/blob/main/dmfr-command.md). Or just wait and a maintainer will be glad to fix this.
+
+            Thanks for contributing to Transitland Atlas!
+            `
+          })
