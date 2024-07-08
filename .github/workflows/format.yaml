@@ -23,7 +23,7 @@ jobs:
     - name: "If any changes: commit and push"
       run: |-
         git config user.name "Automated Bot"
-        git config user.email "info@interline.io"
+        git config user.email "drew@interline.io"
         if ! git_status_output="$(git status --porcelain)"; then
             error_code="$?"
             echo "'git status' had an error: $error_code" 
