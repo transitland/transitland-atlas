@@ -37,5 +37,5 @@ jobs:
             git push origin HEAD:${GITHUB_HEAD_REF}
         fi
       env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.ATLAS_REPO_GH_PERSONAL_ACCESS_TOKEN }}
 
