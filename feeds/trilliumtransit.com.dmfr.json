@@ -5,28 +5,18 @@
       "id": "f-9mgve-avalon~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/avalon-ca-us/avalon-ca-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/avalon-ca-us/avalon-ca-us.zip"
+        ]
       },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+      "tags": {
+        "status": "archived"
       },
       "operators": [
         {
           "onestop_id": "o-9mgve-avalontransit",
           "name": "Avalon Transit",
           "website": "http://www.cityofavalon.com/transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "622"
-            },
-            {
-              "feed_onestop_id": "f-avalon~ca~rt"
-            },
-            {
-              "feed_onestop_id": "f-avalon~ca~rt~alerts"
-            }
-          ],
           "tags": {
             "twitter_general": "avalongov",
             "us_ntd_id": "90249"
