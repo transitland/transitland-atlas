@@ -37,6 +37,7 @@ jobs:
             echo "EOF" >> "$GITHUB_OUTPUT"
         fi
     - uses: actions/github-script@v7
+      if: ${{ steps.git-diff.outputs.GIT_DIFF != null }}
       with:
         script: |
           github.rest.issues.createComment({
