@@ -1,28 +1,28 @@
 {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
-    "feeds": [
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-transportes~colectivos~do~barreiro~pt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.tcbarreiro.pt/front/files/sample_gtfs/GTFS-TCB_24.zip",
+        "static_historic": [
+          "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=41&u=web"
+        ]
+      },
+      "operators": [
         {
-            "id": "f-transportes~colectivos~do~barreiro~pt",
-            "spec": "gtfs",
-            "urls": {
-                "static_current": "https://www.tcbarreiro.pt/front/files/sample_gtfs/GTFS-TCB_24.zip",
-                "static_historic": [
-                    "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=41&u=web"
-                ]
-            },
-            "operators": [
-                {
-                    "onestop_id": "o-eyce-transportescolectivosdobarreiro",
-                    "name": "Transportes Coletivos do Barreiro",
-                    "short_name": "TCB",
-                    "website": "https://www.tcbarreiro.pt/",
-                    "associated_feeds": [
-                        {
-                            "gtfs_agency_id": "8"
-                        }
-                    ]
-                }
-            ]
+          "onestop_id": "o-eyce-transportescolectivosdobarreiro",
+          "name": "Transportes Coletivos do Barreiro",
+          "short_name": "TCB",
+          "website": "https://www.tcbarreiro.pt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "8"
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }
