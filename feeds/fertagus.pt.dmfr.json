@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-eyce-fertagus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.fertagus.pt/GTFSTMLzip/Fertagus_GTFS.zip",
+        "static_historic": [
+          "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=13&u=web",
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/13/gtfs_13.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eyce-fertagus",
+          "name": "Fertagus",
+          "website": "https://www.fertagus.pt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
