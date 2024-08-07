@@ -1,0 +1,85 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dpz8-ttc",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://opendata.toronto.ca/toronto.transit.commission/ttc-routes-and-schedules/OpenData_TTC_Schedules.zip"
+      },
+      "license": {
+        "url": "https://open.toronto.ca/dataset/ttc-routes-and-schedules/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Contains information licensed under the Open Government Licence - Toronto"
+      }
+    },
+    {
+      "id": "f-dpz8-ttc~surface",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ckan0.cf.opendata.inter.prod-toronto.ca/dataset/bd4809dd-e289-4de8-bbde-c5c00dafbf4f/resource/28514055-d011-4ed7-8bb0-97961dfe2b66/download/SurfaceGTFS.zip"
+      },
+      "license": {
+        "url": "https://open.toronto.ca/dataset/surface-routes-and-schedules-for-bustime/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Contains information licensed under the Open Government Licence - Toronto"
+      },
+      "tags": {
+        "notes": "static feed to go along with real-time feed; limited to buses and surface trains; for subways see f-dpz8-ttc"
+      }
+    },
+    {
+      "id": "f-dpz8-ttc~surface~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bustime.ttc.ca/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://bustime.ttc.ca/gtfsrt/trips",
+        "realtime_alerts": "https://bustime.ttc.ca/gtfsrt/alerts"
+      },
+      "license": {
+        "url": "https://open.toronto.ca/dataset/ttc-bustime-real-time-next-vehicle-arrival-nvas/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Contains information licensed under the Open Government Licence - Toronto"
+      },
+      "tags": {
+        "notes": "matches with static data in f-dpz8-ttc~surface"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dpz8-ttc",
+      "name": "Toronto Transit Comission",
+      "short_name": "TTC",
+      "website": "http://www.ttc.ca",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dpz8-ttc"
+        },
+        {
+          "feed_onestop_id": "f-dpz8-ttc~surface"
+        },
+        {
+          "feed_onestop_id": "f-dpz8-ttc~surface~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "ttc",
+        "wikidata_id": "Q17978"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
