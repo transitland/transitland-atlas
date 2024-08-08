@@ -1,0 +1,64 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-adirondack~trailways~adt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://maps.tds.ai/storage/gtfs-feeds/ADT/fb551f94ffd56bb15e28e862f/gtfs.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Adirondack_Trailways-ADT.zip"
+        ]
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-adirondack~trailways~nyt",
+      "supersedes_ids": [
+        "f-trailways~nyt~ny"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://maps.tds.ai/storage/gtfs-feeds/NYT/7e1471b726c71d51c6b0e7a91/gtfs.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Trailways-NYT.zip",
+          "https://s3.amazonaws.com/datatools-511ny/public/Adirondack_Trailways-NYT.zip"
+        ]
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    },
+    {
+      "id": "f-adirondack~trailways~phk",
+      "supersedes_ids": [
+        "f-trailways~phk~ny"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://maps.tds.ai/storage/gtfs-feeds/PHK/eba281e4f43646a5b3b711ede/gtfs.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Adirondack_Trailways-PHK.zip"
+        ]
+      },
+      "license": {
+        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
