@@ -1,0 +1,51 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-manteca~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/manteca-ca-us/manteca-ca-us.zip",
+          "https://www.ci.manteca.ca.us/mantecatransit/googletransit/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-manteca~transit",
+          "name": "Manteca Transit",
+          "website": "http://www.mantecatransit.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-manteca~transit~flex"
+            },
+            {
+              "feed_onestop_id": "f-manteca~transit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90217"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-manteca~transit~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/manteca-ca-us/manteca-ca-us--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-manteca~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/alerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
