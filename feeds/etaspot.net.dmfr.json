@@ -2,6 +2,48 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-dnfq-bloomingtontransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/bloomingtontransit.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://data.bloomington.in.gov/dataset/5aca3228-b81b-4572-a45c-b05a30053949/resource/16145a82-0959-4922-93ae-14dcee02950c/download/export-2022-06-30t15-37-11.zip",
+          "https://data.bloomington.in.gov/dataset/5aca3228-b81b-4572-a45c-b05a30053949/resource/16145a82-0959-4922-93ae-14dcee02950c/download/googletransitfeed.zip",
+          "https://data.bloomington.in.gov/download/gief-ttiy/application%2Fx-zip-compressed"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "bloomington-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnfq-bloomingtontransit",
+          "name": "Bloomington Transit",
+          "short_name": "BT",
+          "website": "http://bloomingtontransit.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnfq-bloomingtontransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "BT_Transit",
+            "us_ntd_id": "50110",
+            "wikidata_id": "Q4928359"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnfq-bloomingtontransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/bloomingtontransit.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/bloomingtontransit.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/bloomingtontransit.etaspot.net/alerts.pb"
+      }
+    },
+    {
       "id": "f-manteca~transit",
       "spec": "gtfs",
       "urls": {
