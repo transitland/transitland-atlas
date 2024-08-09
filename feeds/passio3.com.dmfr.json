@@ -675,6 +675,27 @@
         "static_historic": [
           "https://api.transloc.com/gtfs/rit.zip"
         ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rochester~institute~of~technology",
+          "name": "Rochester Institute of Technology",
+          "short_name": "RIT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rochester~institute~of~technology~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-rochester~institute~of~technology~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/ritech/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/ritech/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/ritech/passioTransit/gtfs/realtime/serviceAlerts"
       }
     },
     {
