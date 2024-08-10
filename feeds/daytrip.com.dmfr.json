@@ -1,0 +1,49 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dt~it",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.daytrip.com/gtfs_it.zip"
+      },
+      "languages": [
+        "en-US"
+      ],
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "use_without_attribution": "no"
+      }
+    },
+    {
+      "id": "f-dt~pt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.daytrip.com/gtfs_pt.zip"
+      },
+      "languages": [
+        "en-US"
+      ],
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "use_without_attribution": "no"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-daytrip~shuttle",
+      "name": "Daytrip Shuttle",
+      "website": "https://daytrip.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dt~it"
+        },
+        {
+          "feed_onestop_id": "f-dt~pt"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
