@@ -1,0 +1,103 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dht-collierareatransit~cat",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cat.cadavl.com:4431/CAT/GTFS/GTFS_CAT.zip",
+        "static_historic": [
+          "https://www.ridecat.com/gtfs-2/",
+          "https://ftis.org/PostFileDownload.aspx?id=396A0",
+          "http://www.ftis.org/PostFileDownload.aspx?id=164A0"
+        ]
+      },
+      "license": {
+        "url": "https://www.ridecat.com/gtfs/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dht-collierareatransit~cat",
+          "name": "Collier Area Transit",
+          "short_name": "CAT",
+          "website": "http://www.gocatbus.com",
+          "tags": {
+            "us_ntd_id": "40140",
+            "wikidata_id": "Q5147158"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnjq-greenlink",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://greenlink.cadavl.com:5053/GTA/GTFS/GTFS_GTA.zip",
+        "static_historic": [
+          "https://trackgreenlink.com/gtfs"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnjq-greenlink",
+          "name": "Greenlink",
+          "website": "http://www.ridegreenlink.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnjq-greenlink~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridegreenlink",
+            "us_ntd_id": "40053"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnjq-greenlink~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/VehiclePosition.pb",
+        "realtime_trip_updates": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/TripUpdate.pb",
+        "realtime_alerts": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/Alert.pb"
+      }
+    },
+    {
+      "id": "f-rochester~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.rpt.cadavl.com/RPT/GTFS/GTFS_RPT.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/rochester-mn-us/rochester.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9zy4-rochesterpublictransit",
+          "name": "Rochester Public Transit",
+          "short_name": "RPT",
+          "website": "https://www.rochestermn.gov/departments/rochester-public-transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rochester~mn~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "50092"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rochester~mn~us~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/Alert.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
