@@ -62,6 +62,40 @@
         "realtime_trip_updates": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/TripUpdate.pb",
         "realtime_alerts": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/Alert.pb"
       }
+    },
+    {
+      "id": "f-rochester~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.rpt.cadavl.com/RPT/GTFS/GTFS_RPT.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/rochester-mn-us/rochester.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9zy4-rochesterpublictransit",
+          "name": "Rochester Public Transit",
+          "short_name": "RPT",
+          "website": "https://www.rochestermn.gov/departments/rochester-public-transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rochester~mn~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "50092"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rochester~mn~us~rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/Alert.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
