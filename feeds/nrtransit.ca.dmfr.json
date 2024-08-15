@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dpx-townofforterietransitsystem~niagarafallstransit~niagarapar",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://68.71.24.110/gtfs/GTFSExport.zip",
+        "static_historic": [
+          "https://maps.niagararegion.ca/googletransit/NiagaraRegionTransit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpxt-niagararegiontransit",
+          "name": "Niagara Region Transit",
+          "website": "https://nrtransit.ca/"
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
