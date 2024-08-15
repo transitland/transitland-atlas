@@ -1,35 +1,30 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
       "id": "f-str~qc~ca",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.donneesquebec.ca/recherche/dataset/transport-collectif/resource/bd4021ba-d3ae-4d3b-b8fd-016405166761",
+        "static_current": "https://www.donneesquebec.ca/recherche/dataset/d2d92b84-4361-42f0-81eb-3c395bc54597/resource/bd4021ba-d3ae-4d3b-b8fd-016405166761/download/gtfsrimouskibus.zip",
         "static_historic": [
           "https://data.trilliumtransit.com/gtfs/str-qc-ca/str-qc-ca.zip"
         ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.donneesquebec.ca/licence/#cc-by",
+        "url": "https://www.donneesquebec.ca/recherche/dataset/transport-collectif/resource/bd4021ba-d3ae-4d3b-b8fd-016405166761",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
-      }
-    }
-  ],
-  "operators": [
-    {
-      "onestop_id": "o-str~qc~ca",
-      "name": "Société des Transports de Rimouski",
-      "short_name": "Citébus",
-      "website": "https://www.rimouskibus.com/",
-      "associated_feeds": [
+      },
+      "operators": [
         {
-          "feed_onestop_id": "f-str~qc~ca"
+          "onestop_id": "o-str~qc~ca",
+          "name": "Société des Transports de Rimouski",
+          "short_name": "Citébus",
+          "website": "https://www.rimouskibus.com/"
         }
       ]
     }
   ],
-  "license_spdx_identifier": "CC0-1.0"
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
