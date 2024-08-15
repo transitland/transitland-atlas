@@ -1,0 +1,45 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dpxj-hamiltonstreetrailway",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://opendata.hamilton.ca/GTFS-Static/Summer2024_GTFSstatic.zip",
+        "static_historic": [
+          "http://googlehsrdocs.hamilton.ca/"
+        ]
+      },
+      "license": {
+        "url": "https://open.hamilton.ca/documents/6eeccf172c824c2db0484aea54ed7fe4/explore",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Contains public sector Data made available under the City of Hamilton's Open Data Licence"
+      },
+      "tags": {
+        "gtfs_data_exchange": "hamilton-street-railway"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpxj-hamiltonstreetrailway",
+          "name": "Hamilton Street Railway",
+          "short_name": "HSR",
+          "website": "http://www.hamilton.ca/hsr",
+          "tags": {
+            "wikidata_id": "Q3126462"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dpxj-hamiltonstreetrailway~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://opendata.hamilton.ca/GTFS-RT/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://opendata.hamilton.ca/GTFS-RT/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://opendata.hamilton.ca/GTFS-RT/GTFS_ServiceAlerts.pb"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
