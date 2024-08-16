@@ -17,6 +17,11 @@
         {
           "onestop_id": "o-dhw-browardcountytransit",
           "name": "Broward County Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dhw-browardcountytransit~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "BrowardTransit",
             "us_ntd_id": "40029",
@@ -24,6 +29,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dhw-browardcountytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bctmyride-buspas.com:8080/GTFS/VehiclePositions",
+        "realtime_trip_updates": "https://bctmyride-buspas.com:8080/GTFS/TripUpdates"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
