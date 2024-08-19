@@ -2,6 +2,30 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-9qx5-suntran",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/suntran-st-george-ut-us.zip",
+        "static_historic": [
+          "http://www.fivecounty.utah.gov/transit/google_transit.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "suntran"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qx5-suntran",
+          "name": "SunTran",
+          "tags": {
+            "twitter_general": "Cityofstgeorge",
+            "us_ntd_id": "80026",
+            "wikidata_id": "Q19878145"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-augusta~ga~us",
       "spec": "gtfs",
       "urls": {
@@ -76,6 +100,32 @@
             "us_ntd_id": "40120",
             "wikidata_id": "Q5123847"
           }
+        }
+      ]
+    },
+    {
+      "id": "f-dn5bpr-atlanticstationshuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/atlantic-station-ga-us.zip",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/61dca73994b746ac97eae8c0f83fdedc/data#Atlantic_Station_new-20200526T125751Z-4803f8a3-5b12-42f5-8f07-d7917af156d5-3ae3ebe9-4a54-46b9-9ff7-f93285129896",
+          "http://documents.atlantaregional.com/transitdata/gtfs_Atlantic.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.atlantaregional.com/datasets/61dca73994b746ac97eae8c0f83fdedc/about",
+        "use_without_attribution": "no"
+      },
+      "tags": {
+        "gtfs_data_exchange": "atlantic-station-shuttle"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn5bpr-atlanticstationshuttle",
+          "name": "Atlantic Station Shuttle",
+          "website": "http://asap-plus.com"
         }
       ]
     },
