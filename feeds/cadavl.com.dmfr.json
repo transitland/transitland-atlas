@@ -64,6 +64,50 @@
       }
     },
     {
+      "id": "f-green~bay~wi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://greenbaywi.gov/DocumentCenter/View/12124/Transit-Data-August-2024",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/green-bay-wi-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://greenbaywi.gov/496/Transit-Data-Developer",
+        "use_without_attribution": "yes",
+        "attribution_text": "Data provided under license granted by the City of Green Bay, Metro Transit.",
+        "attribution_instructions": "Licensee shall have the option, but not the obligation, to credit City for the Data. If the Licensee so chooses, the credit line should be placed as close to the actual Data information as reasonably possible."
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpcm-greenbaymetro",
+          "name": "Green Bay Metro",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-green~bay~wi~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "GBmetro",
+            "us_ntd_id": "50002",
+            "wikidata_id": "Q3116073"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-green~bay~wi~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gbm.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GBM/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gbm.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GBM/TripUpdate.pb",
+        "realtime_alerts": "https://gbm.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GBM/Alert.pb"
+      }
+    },
+    {
       "id": "f-rochester~mn~us",
       "spec": "gtfs",
       "urls": {
