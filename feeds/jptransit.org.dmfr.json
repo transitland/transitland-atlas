@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-jefferson~parish",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://drive.google.com/uc?export=download&id=1ciIHkphOZuZdK1H5rcJGqM463jp0jZb7",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/f-jefferson~parish.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-jefferson~parish",
+          "name": "Jefferson Parish Transit",
+          "short_name": "JP Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-jefferson~parish~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60088",
+            "wikidata_id": "Q6175697"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-jefferson~parish~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://jetapp.jptransit.org/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://jetapp.jptransit.org/gtfsrt/trips",
+        "realtime_alerts": "https://jetapp.jptransit.org/gtfsrt/alerts"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
