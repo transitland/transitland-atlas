@@ -2,6 +2,23 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-metlink~nz~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.opendata.metlink.org.nz/v1/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://api.opendata.metlink.org.nz/v1/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://api.opendata.metlink.org.nz/v1/gtfs-rt/servicealerts"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "x-api-key",
+        "info_url": "https://opendata.metlink.org.nz/getting-started"
+      }
+    },
+    {
       "id": "f-rbs-gowellington~tranzitcoachlines~paraparaumutaxisltd~kapitic",
       "spec": "gtfs",
       "urls": {
@@ -25,6 +42,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "RAIL"
+            },
+            {
+              "feed_onestop_id": "f-metlink~nz~rt"
             }
           ]
         },
@@ -35,6 +55,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "EBYW"
+            },
+            {
+              "feed_onestop_id": "f-metlink~nz~rt"
             }
           ]
         },
@@ -45,6 +68,21 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "GOW"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-rbsm-nzbus",
+          "name": "NZ Bus",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NBM"
+            },
+            {
+              "gtfs_agency_id": "NBE"
+            },
+            {
+              "feed_onestop_id": "f-metlink~nz~rt"
             }
           ]
         },
@@ -115,6 +153,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "TZWA"
+            },
+            {
+              "gtfs_agency_id": "TZE"
             }
           ]
         },
