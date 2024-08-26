@@ -8,9 +8,13 @@
         "static_current": "http://transitdata.cityofmadison.com/GTFS/mmt_gtfs.zip"
       },
       "license": {
-        "url": "http://www.cityofmadison.com/metro/Apps/terms.cfm",
+        "url": "http://transitdata.cityofmadison.com/MetroTransitDataTermsOfUse.pdf",
         "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Data provided under license granted by City of Madison, WI, Metro Transit."
       },
       "tags": {
         "gtfs_data_exchange": "metro-transit"
@@ -20,9 +24,18 @@
       "id": "f-madison~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://transitdata.cityofmadison.com/Vehicle/VehiclePositions.pb",
-        "realtime_trip_updates": "http://transitdata.cityofmadison.com/TripUpdate/TripUpdates.pb",
-        "realtime_alerts": "http://transitdata.cityofmadison.com/Alert/Alerts.pb"
+        "realtime_vehicle_positions": "https://metromap.cityofmadison.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://metromap.cityofmadison.com/gtfsrt/trips",
+        "realtime_alerts": "https://metromap.cityofmadison.com/gtfsrt/alerts"
+      },
+      "license": {
+        "url": "http://transitdata.cityofmadison.com/MetroTransitDataTermsOfUse.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Data provided under license granted by City of Madison, WI, Metro Transit."
       }
     }
   ],
