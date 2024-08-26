@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-fredericksburg~regional~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://fredericksburgva.gov/DocumentCenter/View/26509/GTFS-Q1-24",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/d1483daba66d43358e29682c91907817/data"
+        ]
+      },
+      "tags": {
+        "mdb_source_id": "1299"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-fredericksburg~regional~transit",
+          "name": "Fredericksburg Regional Transit",
+          "short_name": "FXBGO!",
+          "website": "https://fredericksburgva.gov/1992/Fredericksburg-Regional-Transit",
+          "tags": {
+            "us_ntd_id": "30079"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
