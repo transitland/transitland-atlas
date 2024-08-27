@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-djjk-citruscounty~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.citrusbocc.com/document_center/Department/Community%20Services/Support%20Services/Transit/GTFS%20Text%20Files/GTFS%20Info%202-2-24.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/citruscounty-fl-us/citruscounty-fl-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.citrusbocc.com/departments/community_services/transit_services/transit_documents.php#outer-253"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djjk-orangelinebuscitruscountytransit",
+          "name": "Citrus County Transit",
+          "short_name": "Orange Line Bus",
+          "website": "http://www.citruscountytransit.com/",
+          "tags": {
+            "twitter_general": "citrusbocc",
+            "wikidata_id": "Q5122888"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
