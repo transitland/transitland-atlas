@@ -466,6 +466,11 @@
           "onestop_id": "o-dq259-ncsuwolfline",
           "name": "North Carolina State University",
           "short_name": "Wolfline",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dq259-ncsu~wolfline~nc~us~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "NCStateTranspo",
             "us_ntd_id": "40147",
@@ -473,6 +478,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dq259-ncsu~wolfline~nc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/ncstateuni/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/ncstateuni/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/ncstateuni/passioTransit/gtfs/realtime/serviceAlerts"
+      }
     },
     {
       "id": "f-eastern~virginia~medical~school",
