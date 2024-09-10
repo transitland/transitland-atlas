@@ -67,6 +67,25 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.nps.gov/external-resources/gtfs/brca/bryce-canyon-shuttle.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bryce~canyon~shuttle",
+          "name": "Bryce Canyon National Park Shuttle",
+          "website": "https://www.nps.gov/brca/planyourvisit/shuttle.htm",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-bryce~canyon~shuttle~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-bryce~canyon~shuttle~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://brycecanyonshuttle.com/subscriptions/gtfsrt/vehicles.ashx"
       }
     },
     {
