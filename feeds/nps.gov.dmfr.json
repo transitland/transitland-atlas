@@ -20,6 +20,35 @@
       ]
     },
     {
+      "id": "f-acadia~national~park~island~explorer",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/acad/island-explorer.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-acadia~national~park~island~explorer",
+          "name": "Acadia National Park",
+          "short_name": "Island Explorer",
+          "website": "https://www.nps.gov/acad/planyourvisit/island-explorer.htm",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-acadia~national~park~island~explorer~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-acadia~national~park~island~explorer~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://islandexplorertracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://islandexplorertracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=TripUpdate",
+        "realtime_alerts": "https://islandexplorertracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=Alert"
+      }
+    },
+    {
       "id": "f-bandelier~national~monument~shuttle",
       "spec": "gtfs",
       "urls": {
