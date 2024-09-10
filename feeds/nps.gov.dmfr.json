@@ -20,6 +20,42 @@
       ]
     },
     {
+      "id": "f-acadia~national~park~island~explorer",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/acad/island-explorer.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-acadia~national~park~island~explorer",
+          "name": "Acadia National Park",
+          "short_name": "Island Explorer",
+          "website": "https://www.nps.gov/acad/planyourvisit/island-explorer.htm",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-acadia~national~park~island~explorer~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-acadia~national~park~island~explorer~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://islandexplorertracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://islandexplorertracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=TripUpdate",
+        "realtime_alerts": "https://islandexplorertracker.availtec.com/InfoPoint/GTFS-Realtime.ashx?&Type=Alert"
+      }
+    },
+    {
+      "id": "f-bandalier~national~monument",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/band/bandalier-national-monument.zip"
+      }
+    },
+    {
       "id": "f-bandelier~national~monument~shuttle",
       "spec": "gtfs",
       "urls": {
@@ -38,6 +74,32 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.nps.gov/external-resources/gtfs/brca/bryce-canyon-shuttle.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bryce~canyon~shuttle",
+          "name": "Bryce Canyon National Park Shuttle",
+          "website": "https://www.nps.gov/brca/planyourvisit/shuttle.htm",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-bryce~canyon~shuttle~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-bryce~canyon~shuttle~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://brycecanyonshuttle.com/subscriptions/gtfsrt/vehicles.ashx"
+      }
+    },
+    {
+      "id": "f-denali~national~park",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/dena/dena-shuttle.zip"
       }
     },
     {
@@ -92,6 +154,34 @@
       ]
     },
     {
+      "id": "f-fort~matanzas~national~monument",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/foma/foma-ferry-service.zip"
+      }
+    },
+    {
+      "id": "f-fort~sumter~national~historic~park",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/fosu/fosu-ferry-service.zip"
+      }
+    },
+    {
+      "id": "f-giant~forest~shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/seki/giant-forest-shuttle.zip"
+      }
+    },
+    {
+      "id": "f-glacier~national~park",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/glac/going-to-the-sun-road-shuttle.zip"
+      }
+    },
+    {
       "id": "f-grand~canyon~nps~south~rim",
       "spec": "gtfs",
       "urls": {
@@ -124,6 +214,13 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.nps.gov/external-resources/gtfs/yose/mariposa-grove-shuttle-service.zip"
+      }
+    },
+    {
+      "id": "f-statue~of~liberty~ferries",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/stli/statue-of-liberty-ferries.zip"
       }
     },
     {
