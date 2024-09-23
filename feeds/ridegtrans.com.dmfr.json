@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-gtrans~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridegtrans.com/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/gtrans-ca-us/gtrans-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5b-gtrans",
+          "name": "City of Gardena",
+          "short_name": "GTrans",
+          "website": "http://ridegtrans.com/",
+          "tags": {
+            "twitter_general": "RideGTrans",
+            "us_ntd_id": "90042",
+            "wikidata_id": "Q5522428"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
