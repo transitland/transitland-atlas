@@ -34,6 +34,12 @@ query($after:Int) {
     id
     onestop_id
     spec
+    urls {
+        static_current
+        realtime_vehicle_positions
+        realtime_trip_updates
+        realtime_alerts
+    }
     tags
     feed_state {
         feed_version {
@@ -92,6 +98,10 @@ def process_feeds(outfile):
     keys = [
         'onestop_id',
         'spec',
+        'urls.static_current',
+        'urls.realtime_vehicle_positions',
+        'urls.realtime_trip_updates',
+        'urls.realtime_alerts',
         'agencies',
         'last_fetch_at',
         'last_fetch_success',
@@ -118,6 +128,10 @@ def process_feeds(outfile):
             row = {}
             row['onestop_id'] = ent.get('onestop_id')
             row['spec'] = ent.get('spec')
+            row['urls.static_current'] = ent.get('urls').get('static_current')
+            row['urls.realtime_vehicle_positions'] = ent.get('urls').get('realtime_vehicle_positions')
+            row['urls.realtime_trip_updates'] = ent.get('urls').get('realtime_trip_updates')
+            row['urls.realtime_alerts'] = ent.get('urls').get('realtime_alerts')
             feed_state_fv = (ent.get('feed_state') or {}).get('feed_version')
             if feed_state_fv:
                 agencies = [i.get('agency_name') for i in (feed_state_fv.get('agencies') or [])]
