@@ -27,6 +27,33 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dp73-citilink",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/citilink_fortwayne_in_us.zip",
+        "static_historic": [
+          "https://hosted-gtfs-feeds.s3.amazonaws.com/Citilink-FW/gtfs.zip",
+          "http://jump.nextinsight.com/gtfs/ni_citilink/google_transit.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "citilink"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp73-citilink",
+          "name": "Fort Wayne Public Transportation Corporation",
+          "short_name": "Citilink",
+          "website": "http://www.fwcitilink.com/",
+          "tags": {
+            "twitter_general": "FWCitilink",
+            "us_ntd_id": "50044",
+            "wikidata_id": "Q5472275"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
