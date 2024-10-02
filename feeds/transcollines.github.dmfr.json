@@ -2,7 +2,10 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-f244-RITC~Transcollines",
+      "id": "f-f244-ritc~transcollines",
+      "supersedes_ids": [
+        "f-f244-RITC~Transcollines"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/transcollines/gtfs/raw/master/transcollines-qc-ca-fares.zip",
@@ -18,7 +21,10 @@
       },
       "operators": [
         {
-          "onestop_id": "o-f244-RITC~Transcollines",
+          "onestop_id": "o-f244-ritc~transcollines",
+          "supersedes_ids": [
+            "o-f244-RITC~Transcollines"
+          ],
           "name": "Régie intermunicipale de transport des Collines",
           "short_name": "Transcollines",
           "website": "http://transcollines.ca"
