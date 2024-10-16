@@ -36,6 +36,8 @@ for row in onestop_ids:
     valid = False
   if len(osid) > 0 and osid[0] != "f":
     valid = False
+  if osid != osid.lower():
+    valid = False
   if not valid:
     print(f"ERROR: improperly formatted Feed Onestop ID: {osid}")
     fail_the_build = True
