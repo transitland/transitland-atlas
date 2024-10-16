@@ -105,6 +105,24 @@
       }
     },
     {
+      "id": "f-bowvalley~ab~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bowvalley.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/roamtransit-banff-ab-ca/roamtransit-banff-ab-ca.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-bowvalley~ab~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://bowvalley.tmix.se/gtfs-realtime/tripupdates.pb",
+        "realtime_alerts": "https://bowvalley.tmix.se/gtfs-realtime/alerts.pb"
+      }
+    },
+    {
       "id": "f-sarnia~on~ca",
       "spec": "gtfs",
       "urls": {
@@ -386,6 +404,20 @@
         },
         {
           "feed_onestop_id": "f-stthomas~on~ca~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-c3j-roamtransit",
+      "name": "Bow Valley Regional Transit Services Commission",
+      "short_name": "Roam Transit",
+      "website": "https://roamtransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-bowvalley~ab~ca"
+        },
+        {
+          "feed_onestop_id": "f-bowvalley~ab~ca~rt"
         }
       ]
     },
