@@ -163,21 +163,6 @@
       }
     },
     {
-      "id": "f-s-trenitalia",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/4f85393b-357d-443d-8378-65de4198505f/download/trenitalia.gtfs"
-      },
-      "license": {
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "https://dati.toscana.it/"
-      },
-      "tags": {
-        "unstable_url": "true"
-      }
-    },
-    {
       "id": "f-s-urbanoareametropolitanafiorentina",
       "spec": "gtfs",
       "urls": {
@@ -330,6 +315,26 @@
         "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-trenitaliaspa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/4f85393b-357d-443d-8378-65de4198505f/download/trenitalia.gtfs",
+        "static_historic": [
+          "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/4f85393b-357d-443d-8378-65de4198505f/download/trenitalia.gtfs"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "http://www.opendefinition.org/licenses/cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "trenitalia",
         "unstable_url": "true"
       }
     },
@@ -1189,6 +1194,30 @@
       },
       "tags": {
         "unstable_url": "true"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-s-trenitalia",
+      "supersedes_ids": [
+        "o-u0j-trenitalia"
+      ],
+      "name": "Trenitalia",
+      "website": "http://www.trenitalia.it",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u0j-trenitalia"
+        },
+        {
+          "feed_onestop_id": "f-sp-trenitaliaspa"
+        },
+        {
+          "feed_onestop_id": "f-spn-trenitalia"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q286650"
       }
     }
   ],
