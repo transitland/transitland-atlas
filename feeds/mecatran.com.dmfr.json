@@ -31,6 +31,35 @@
         "url": "https://transport.data.gouv.fr/datasets/reseau-lio-occitanie",
         "share_alike_optional": "no"
       }
+    },
+    {
+      "id": "f-spez-paysdaixmobilite",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://app.mecatran.com/utw/ws/gtfsfeed/static/mamp?apiKey=60327e505a214c77303f52206f11483069257343",
+        "static_historic": [
+          "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=CPA"
+        ]
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "mdb_source_id": "2127"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spez-paysdaixmobilite",
+          "name": "Pays d'Aix mobilité",
+          "short_name": "LeCar",
+          "website": "http://www.lepilote.com",
+          "tags": {
+            "wikidata_id": "Q3537963"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
