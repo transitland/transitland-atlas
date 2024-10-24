@@ -11,7 +11,7 @@
         ]
       },
       "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
@@ -55,13 +55,64 @@
       ]
     },
     {
+      "id": "f-9q8z-goldengateferry",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=GF"
+      },
+      "license": {
+        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "golden-gate-ferry",
+        "manual_import": "true"
+      }
+    },
+    {
+      "id": "f-9q9j-dumbartonexpress",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=DE"
+      },
+      "license": {
+        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true"
+      }
+    },
+    {
       "id": "f-9qc-capitolcorridor",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.capitolcorridor.org/googletransit/GTFS.zip"
       },
       "license": {
-        "url": "https://www.capitolcorridor.org/developer_resources/#terms",
+        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -98,8 +149,6 @@
     {
       "id": "f-sf~bay~area~rg",
       "supersedes_ids": [
-        "f-9q8z-goldengateferry",
-        "f-9q9j-dumbartonexpress",
         "f-9qc2-trideltatransit",
         "f-9q9p-sanfranciscobayferry",
         "f-9qc-vinenapacounty",
@@ -115,7 +164,7 @@
         "static_current": "http://api.511.org/transit/datafeeds?operator_id=RG"
       },
       "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
@@ -141,7 +190,7 @@
         "realtime_alerts": "https://api.511.org/Transit/servicealerts?agency=RG"
       },
       "license": {
-        "url": "http://assets.511.org/pdf/nextgen/developers/511_Data_Agreement_Final.pdf",
+        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
@@ -176,6 +225,9 @@
       "name": "Golden Gate Ferry",
       "website": "http://www.goldengateferry.org",
       "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q8z-goldengateferry"
+        },
         {
           "gtfs_agency_id": "GF",
           "feed_onestop_id": "f-sf~bay~area~rg"
@@ -215,6 +267,9 @@
       "name": "Dumbarton Express",
       "website": "http://www.dumbartonexpress.com",
       "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9j-dumbartonexpress"
+        },
         {
           "gtfs_agency_id": "DE",
           "feed_onestop_id": "f-sf~bay~area~rg"
