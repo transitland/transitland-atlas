@@ -131,6 +131,31 @@
       }
     },
     {
+      "id": "f-9q9p-sanfranciscobayferry",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SB"
+      },
+      "license": {
+        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "data provided by 511.org",
+        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true"
+      }
+    },
+    {
       "id": "f-9qc-capitolcorridor",
       "spec": "gtfs",
       "urls": {
@@ -199,7 +224,6 @@
     {
       "id": "f-sf~bay~area~rg",
       "supersedes_ids": [
-        "f-9q9p-sanfranciscobayferry",
         "f-9qc-vinenapacounty",
         "f-9qb-smart",
         "f-9qc60-vacavillecitycoach",
@@ -360,6 +384,9 @@
       "name": "San Francisco Bay Ferry",
       "website": "http://www.sanfranciscobayferry.com",
       "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9p-sanfranciscobayferry"
+        },
         {
           "gtfs_agency_id": "SB",
           "feed_onestop_id": "f-sf~bay~area~rg"
