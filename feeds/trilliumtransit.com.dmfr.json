@@ -7010,6 +7010,9 @@
     },
     {
       "id": "f-smart~ca~us",
+      "supersedes_ids": [
+        "f-9qb-smart"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/smart-ca-us/smart-ca-us.zip"
@@ -7019,37 +7022,9 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "exclude_from_global_query": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qb-sonomamarinarearailtransit",
-          "name": "Sonoma Marin Area Rail Transit",
-          "short_name": "SMART",
-          "website": "https://www.sonomamarintrain.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1535"
-            },
-            {
-              "gtfs_agency_id": "SA",
-              "feed_onestop_id": "f-sf~bay~area~rg"
-            },
-            {
-              "gtfs_agency_id": "SA",
-              "feed_onestop_id": "f-sf~bay~area~rg~rt"
-            },
-            {
-              "feed_onestop_id": "f-smart~ca~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "smarttrain",
-            "us_ntd_id": "90299",
-            "wikidata_id": "Q7562166"
-          }
-        }
-      ]
+        "exclude_from_global_query": "true",
+        "manual_import": "true"
+      }
     },
     {
       "id": "f-smart~mn~us",
