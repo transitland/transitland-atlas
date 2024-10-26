@@ -299,8 +299,7 @@
     {
       "id": "f-sf~bay~area~rg",
       "supersedes_ids": [
-        "f-sfo~airtrain~shuttles",
-        "f-9qbdx-santarosacitybus"
+        "f-sfo~airtrain~shuttles"
       ],
       "spec": "gtfs",
       "urls": {
@@ -503,6 +502,29 @@
       "name": "Santa Rosa CityBus",
       "website": "http://ci.santa-rosa.ca.us/departments/transit/CityBus/Pages/default.aspx",
       "associated_feeds": [
+        {
+          "gtfs_agency_id": "SR",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SR",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SRCITYBUS",
+        "us_ntd_id": "90017",
+        "wikidata_id": "Q7419876"
+      }
+    },
+    {
+      "onestop_id": "o-9qbdx-santarosacitybus",
+      "name": "Santa Rosa CityBus",
+      "website": "http://ci.santa-rosa.ca.us/departments/transit/CityBus/Pages/default.aspx",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SRCityBus"
+        },
         {
           "gtfs_agency_id": "SR",
           "feed_onestop_id": "f-sf~bay~area~rg"
