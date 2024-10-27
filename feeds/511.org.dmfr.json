@@ -2,6 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-9q8-samtrans",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.samtrans.com/Assets/GTFS/samtrans/ST-GTFS.zip"
+      },
+      "license": {
+        "url": "http://www.samtrans.com/Developer.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "unknown",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
       "id": "f-9q8y-sfmta",
       "spec": "gtfs",
       "urls": {
@@ -28,31 +47,25 @@
       "tags": {
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "san-francisco-municipal-transportation-agency",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q8yy-missionbaytma~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/missionbaytma-ca-us/missionbaytma-ca-us.zip"
       },
-      "operators": [
-        {
-          "onestop_id": "o-9q8y-sfmta",
-          "name": "San Francisco Municipal Transportation Agency",
-          "short_name": "SFMTA",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SF",
-              "feed_onestop_id": "f-sf~bay~area~rg"
-            },
-            {
-              "gtfs_agency_id": "SF",
-              "feed_onestop_id": "f-sf~bay~area~rg~rt"
-            }
-          ],
-          "tags": {
-            "omd_provider_id": "sfmta",
-            "twitter_general": "sfmta_muni",
-            "us_ntd_id": "90015",
-            "wikidata_id": "Q1140138"
-          }
-        }
-      ]
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
     },
     {
       "id": "f-9q8z-goldengateferry",
@@ -77,7 +90,24 @@
       "tags": {
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "golden-gate-ferry",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q8zr-tidelinewatertaxi~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/tidelinewatertaxi-ca-us/tidelinewatertaxi-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -102,7 +132,93 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q9-actransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.actransit.org/transit/gtfs/download?token=2512B81107A09D2DC44895CDDC650D47",
+        "static_historic": [
+          "http://www.actransit.org/wp-content/uploads/GTFSFall18.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "http://www.actransit.org/data-terms-and-conditions/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use."
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q9-bart",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.bart.gov/dev/schedules/google_transit.zip"
+      },
+      "license": {
+        "url": "http://www.bart.gov/schedules/developers/developer-license-agreement",
+        "use_without_attribution": "yes",
+        "create_derived_product": "unknown"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "airbart",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q9-vta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.vta.org/gtfs_vta.zip"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q9hy-mountainview",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mvgo.org/data/gtfs.zip",
+        "static_historic": [
+          "https://mtma.tripshot.com/v1/gtfs/feed/mvgo",
+          "https://data.trilliumtransit.com/gtfs/mountainview-ca-us/mountainview-ca-us.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODC-By-1.0",
+        "url": "https://mvgo.org/developers/"
+      }
+    },
+    {
+      "id": "f-9q9j-commute~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/commute-ca-us/commute-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -127,7 +243,8 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -152,7 +269,20 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q9p-countyconnection",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://cccta.org/GTFS/google_transit.zip"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -177,7 +307,115 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q9p3-emerygoround",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/emerygoround-ca-us/emerygoround-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9q9q-wheelsbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://webwatch.lavta.org/TMGTFSRealTimeWebService/GTFS-Static/google_transit.zip"
+      },
+      "license": {
+        "url": "http://www.wheelsbus.com/lavta-developer-license-agreement/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Visit http://www.wheelsbus.com/ for more information."
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9qb-goldengatetransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://realtime.goldengate.org/gtfsstatic/GTFSTransitData.zip"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "golden-gate-transit"
+      }
+    },
+    {
+      "id": "f-9qb-sonomacounty~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/sonomacounty-ca-us/sonomacounty-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "cloverdale-transit",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9qbb-marintransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://marintransit.org/data/google_transit.zip"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "marin-transit",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9qbc9-petalumatransit~petaluma~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/petalumatransit-petaluma-ca-us/petalumatransit-petaluma-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9qbdx-santarosacitybus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://srcity.org/DocumentCenter/View/21635/google_transit",
+        "static_historic": [
+          "ftp://ftp.ci.santa-rosa.ca.us/SantaRosaCityBus/google_transit.zip"
+        ]
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "citybus",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -222,6 +460,23 @@
       ]
     },
     {
+      "id": "f-9qc-fairfield~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/fairfield-ca-us/fairfield-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "fairfield-and-suisun-transit",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
       "id": "f-9qc-vinenapacounty",
       "spec": "gtfs",
       "urls": {
@@ -243,7 +498,44 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9qc-westcat~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/westcat-ca-us/westcat-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9qc0-soltrans~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://soltrans.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/soltrans-ca-us/soltrans-ca-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "soltrans",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -268,7 +560,25 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
+    },
+    {
+      "id": "f-9qc3-riovistadeltabreeze",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/riovista-ca-us/riovista-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "gtfs_data_exchange": "rio-vista-delta-breeze",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -293,7 +603,8 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -318,7 +629,8 @@
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
       }
     },
     {
@@ -367,12 +679,80 @@
         "type": "replace_url",
         "info_url": "https://511.org/open-data/token"
       }
+    },
+    {
+      "id": "f-smart~ca~us",
+      "supersedes_ids": [
+        "f-9qb-smart"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/smart-ca-us/smart-ca-us.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
     }
   ],
   "operators": [
     {
+      "onestop_id": "o-9q8-samtrans",
+      "name": "San Mateo County Transit District",
+      "short_name": "samTrans",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q8-samtrans"
+        },
+        {
+          "gtfs_agency_id": "SM",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SM",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "samtrans",
+        "twitter_general": "SamTrans",
+        "us_ntd_id": "90009",
+        "wikidata_id": "Q7407040"
+      }
+    },
+    {
+      "onestop_id": "o-9q8y-sfmta",
+      "name": "San Francisco Municipal Transportation Agency",
+      "short_name": "SFMTA",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q8y-sfmta"
+        },
+        {
+          "gtfs_agency_id": "SF",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SF",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "sfmta",
+        "twitter_general": "sfmta_muni",
+        "us_ntd_id": "90015",
+        "wikidata_id": "Q1140138"
+      }
+    },
+    {
       "onestop_id": "o-9q8yn-sanfranciscointernationalairport",
       "name": "San Francisco International Airport",
+      "short_name": "SFO",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-sfo~airtrain~shuttles"
@@ -385,6 +765,27 @@
       "tags": {
         "twitter_general": "flySFO",
         "wikidata_id": "Q8688"
+      }
+    },
+    {
+      "onestop_id": "o-9q8yy-missionbaytma",
+      "name": "Mission Bay TMA",
+      "website": "https://www.missionbaytma.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q8yy-missionbaytma~ca~us"
+        },
+        {
+          "gtfs_agency_id": "MB",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "mission-bay-tma",
+        "twitter_general": "MissionBayTMA"
       }
     },
     {
@@ -404,6 +805,24 @@
         "twitter_general": "GGBridge",
         "twitter_service_alerts": "GGBridgeAlerts",
         "wikidata_id": "Q5579447"
+      }
+    },
+    {
+      "onestop_id": "o-9q8zr-tidelinewatertaxi",
+      "name": "Tideline Water Taxi",
+      "website": "https://tidelinetickets.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q8zr-tidelinewatertaxi~ca~us"
+        },
+        {
+          "gtfs_agency_id": "TD",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "tideline-water-taxi",
+        "twitter_general": "tidelinesf"
       }
     },
     {
@@ -430,6 +849,119 @@
         "twitter_general": "ACE_train",
         "us_ntd_id": "90182",
         "wikidata_id": "Q434302"
+      }
+    },
+    {
+      "onestop_id": "o-9q9-actransit",
+      "name": "Alameda-Contra Costa Transit District",
+      "short_name": "AC Transit",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9-actransit"
+        },
+        {
+          "gtfs_agency_id": "AC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "AC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "rideact",
+        "us_ntd_id": "90014",
+        "wikidata_id": "Q4353850"
+      }
+    },
+    {
+      "onestop_id": "o-9q9-bart",
+      "name": "Bay Area Rapid Transit",
+      "short_name": "BART",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9-bart"
+        },
+        {
+          "gtfs_agency_id": "BA",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "BA",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "bart",
+        "twitter_general": "sfbart",
+        "twitter_service_alerts": "SFBARTalert",
+        "us_ntd_id": "90003",
+        "wikidata_id": "Q610120"
+      }
+    },
+    {
+      "onestop_id": "o-9q9-vta",
+      "name": "Santa Clara Valley Transportation Authority",
+      "short_name": "VTA",
+      "website": "https://www.vta.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9-vta"
+        },
+        {
+          "gtfs_agency_id": "SC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "VTA",
+        "twitter_service_alerts": "VTAservice",
+        "us_ntd_id": "90013",
+        "wikidata_id": "Q1456861"
+      }
+    },
+    {
+      "onestop_id": "o-9q9hy-mvgomountainview",
+      "name": "Mountain View Transportation Management Association",
+      "short_name": "MVgo",
+      "website": "https://mvgo.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9hy-mountainview"
+        },
+        {
+          "gtfs_agency_id": "MV",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "MV",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "MvgoShuttle"
+      }
+    },
+    {
+      "onestop_id": "o-9q9j-commuteorgshuttles",
+      "name": "Commute.org Shuttles",
+      "website": "http://www.commute.org",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9j-commute~ca~us"
+        },
+        {
+          "gtfs_agency_id": "CM",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SMCountyCommute",
+        "wikidata_id": "Q7162971"
       }
     },
     {
@@ -477,6 +1009,27 @@
       }
     },
     {
+      "onestop_id": "o-9q9p-countyconnection",
+      "name": "County Connection",
+      "short_name": "CCCTA",
+      "website": "http://www.countyconnection.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "CC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "CC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "cccta",
+        "us_ntd_id": "90078",
+        "wikidata_id": "Q5177640"
+      }
+    },
+    {
       "onestop_id": "o-9q9p-sanfranciscobayferry",
       "name": "San Francisco Bay Ferry",
       "website": "http://www.sanfranciscobayferry.com",
@@ -497,6 +1050,101 @@
         "twitter_service_alerts": "SFBFBayAlerts",
         "us_ntd_id": "90225",
         "wikidata_id": "Q7413935"
+      }
+    },
+    {
+      "onestop_id": "o-9q9p3-emerygo~round",
+      "name": "Emery Go-Round",
+      "website": "https://emerygoround.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9p3-emerygoround"
+        },
+        {
+          "gtfs_agency_id": "EM",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "EM",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "emeryvilleca",
+        "wikidata_id": "Q5370986"
+      }
+    },
+    {
+      "onestop_id": "o-9q9q-wheelsbus",
+      "name": "Livermore Amador Valley Transit Authority (LAVTA)",
+      "short_name": "Wheels Bus",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9q9q-wheelsbus"
+        },
+        {
+          "gtfs_agency_id": "WH",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "WH",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "wheelsbus",
+        "us_ntd_id": "90144",
+        "wikidata_id": "Q7950139"
+      }
+    },
+    {
+      "onestop_id": "o-9qb-goldengatetransit",
+      "name": "Golden Gate Bridge, Highway and Transportation District",
+      "short_name": "GGT",
+      "website": "http://www.goldengate.org",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qb-goldengatetransit"
+        },
+        {
+          "gtfs_agency_id": "GG",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "GG",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "omd_provider_id": "golden-gate-bridge-highway-transportation-district",
+        "twitter_general": "GGBridge",
+        "twitter_service_alerts": "GGBridgeAlerts",
+        "us_ntd_id": "90016",
+        "wikidata_id": "Q525895"
+      }
+    },
+    {
+      "onestop_id": "o-9qb-sonomacountytransit",
+      "name": "Sonoma County Transit",
+      "short_name": "SCT",
+      "website": "https://sctransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qb-sonomacounty~ca~us"
+        },
+        {
+          "gtfs_agency_id": "SO",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "SO",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SoCo_TPW",
+        "us_ntd_id": "90089",
+        "wikidata_id": "Q7562177"
       }
     },
     {
@@ -523,23 +1171,49 @@
       }
     },
     {
-      "onestop_id": "o-9qbdx-santarosacitybus",
-      "name": "Santa Rosa CityBus",
-      "website": "http://ci.santa-rosa.ca.us/departments/transit/CityBus/Pages/default.aspx",
+      "onestop_id": "o-9qbb-marintransit",
+      "name": "Marin County Transit District",
+      "short_name": "Marin Transit",
       "associated_feeds": [
         {
-          "gtfs_agency_id": "SR",
+          "feed_onestop_id": "f-9qbb-marintransit"
+        },
+        {
+          "gtfs_agency_id": "MA",
           "feed_onestop_id": "f-sf~bay~area~rg"
         },
         {
-          "gtfs_agency_id": "SR",
+          "gtfs_agency_id": "MA",
           "feed_onestop_id": "f-sf~bay~area~rg~rt"
         }
       ],
       "tags": {
-        "twitter_general": "SRCITYBUS",
-        "us_ntd_id": "90017",
-        "wikidata_id": "Q7419876"
+        "twitter_general": "marintransit",
+        "us_ntd_id": "90234",
+        "wikidata_id": "Q6763758"
+      }
+    },
+    {
+      "onestop_id": "o-9qbc9-petalumatransit",
+      "name": "Petaluma Transit",
+      "website": "http://cityofpetaluma.net/pubworks/transit-sub.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qbc9-petalumatransit~petaluma~ca~us"
+        },
+        {
+          "gtfs_agency_id": "PE",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "PE",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "petalumatransit",
+        "us_ntd_id": "90213",
+        "wikidata_id": "Q7171668"
       }
     },
     {
@@ -563,6 +1237,30 @@
         "twitter_general": "SRCITYBUS",
         "us_ntd_id": "90017",
         "wikidata_id": "Q7419876"
+      }
+    },
+    {
+      "onestop_id": "o-9qc-fairfieldandsuisuntransit",
+      "name": "Fairfield and Suisun Transit",
+      "short_name": "FAST",
+      "website": "https://fasttransit.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qc-fairfield~ca~us"
+        },
+        {
+          "gtfs_agency_id": "FS",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "FS",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "fast_transit",
+        "us_ntd_id": "90092",
+        "wikidata_id": "Q5430409"
       }
     },
     {
@@ -590,6 +1288,52 @@
       }
     },
     {
+      "onestop_id": "o-9qc-westcatwesterncontracosta",
+      "name": "Western Contra Costa Area Transit",
+      "short_name": "WestCat",
+      "website": "https://www.westcat.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qc-westcat~ca~us"
+        },
+        {
+          "gtfs_agency_id": "WC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "wccta",
+        "us_ntd_id": "90159",
+        "wikidata_id": "Q7984179"
+      }
+    },
+    {
+      "onestop_id": "o-9qc0-soltrans",
+      "name": "Solano County Transit",
+      "short_name": "SolTrans",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qc0-soltrans~ca~us"
+        },
+        {
+          "gtfs_agency_id": "ST",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "ST",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "SolTransRide",
+        "us_ntd_id": "90232",
+        "wikidata_id": "Q16984743"
+      }
+    },
+    {
       "onestop_id": "o-9qc2-trideltatransit",
       "name": "Tri Delta Transit",
       "associated_feeds": [
@@ -609,6 +1353,25 @@
         "twitter_general": "TriDeltaTransit",
         "us_ntd_id": "90162",
         "wikidata_id": "Q7839840"
+      }
+    },
+    {
+      "onestop_id": "o-9qc3-riovistadeltabreeze",
+      "name": "Rio Vista Delta Breeze",
+      "website": "https://www.riovistacity.com/delta-breeze-transit-system/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qc3-riovistadeltabreeze"
+        },
+        {
+          "gtfs_agency_id": "RV",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "twitter_general": "cityofriovista",
+        "us_ntd_id": "9R02-91014",
+        "wikidata_id": "Q7335361"
       }
     },
     {
