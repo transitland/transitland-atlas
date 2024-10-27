@@ -46,47 +46,6 @@
       }
     },
     {
-      "id": "f-9q9hy-mountainview",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mvgo.org/data/gtfs.zip",
-        "static_historic": [
-          "https://mtma.tripshot.com/v1/gtfs/feed/mvgo",
-          "https://data.trilliumtransit.com/gtfs/mountainview-ca-us/mountainview-ca-us.zip"
-        ]
-      },
-      "license": {
-        "spdx_identifier": "ODC-By-1.0",
-        "url": "https://mvgo.org/developers/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9hy-mvgomountainview",
-          "name": "MVgo",
-          "website": "https://mvgo.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "533"
-            },
-            {
-              "feed_onestop_id": "f-9q9hy-mountainview~rt"
-            },
-            {
-              "gtfs_agency_id": "MV",
-              "feed_onestop_id": "f-sf~bay~area~rg"
-            },
-            {
-              "gtfs_agency_id": "MV",
-              "feed_onestop_id": "f-sf~bay~area~rg~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "MvgoShuttle"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9q9hy-mountainview~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -97,6 +56,9 @@
       "license": {
         "spdx_identifier": "ODC-By-1.0",
         "url": "https://mvgo.org/developers/"
+      },
+      "tags": {
+        "notes": "Transitland instead consumes f-sf~bay~area~rg~rt"
       }
     },
     {
