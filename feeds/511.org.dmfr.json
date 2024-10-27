@@ -432,32 +432,10 @@
         "share_alike_optional": "yes"
       },
       "tags": {
-        "exclude_from_global_query": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc-capitolcorridor",
-          "name": "Capitol Corridor Joint Powers Authority",
-          "short_name": "Capitol Corridor",
-          "website": "http://www.capitolcorridor.org",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "Capitol Corridor"
-            },
-            {
-              "gtfs_agency_id": "AM",
-              "feed_onestop_id": "f-sf~bay~area~rg"
-            },
-            {
-              "feed_onestop_id": "f-sf~bay~area~rg~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "CapitolCorridor",
-            "wikidata_id": "Q510836"
-          }
-        }
-      ]
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+      }
     },
     {
       "id": "f-9qc-fairfield~ca~us",
@@ -1237,6 +1215,28 @@
         "twitter_general": "SRCITYBUS",
         "us_ntd_id": "90017",
         "wikidata_id": "Q7419876"
+      }
+    },
+    {
+      "onestop_id": "o-9qc-capitolcorridor",
+      "name": "Capitol Corridor Joint Powers Authority",
+      "short_name": "Capitol Corridor",
+      "website": "http://www.capitolcorridor.org",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-9qc-capitolcorridor"
+        },
+        {
+          "gtfs_agency_id": "AM",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "twitter_general": "CapitolCorridor",
+        "wikidata_id": "Q510836"
       }
     },
     {
