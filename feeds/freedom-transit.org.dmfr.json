@@ -5,15 +5,33 @@
       "id": "f-freedom~transit~pa~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.freedom-transit.org/GTFS/FREEDOMTRANSIT_GTFS.zip"
+        "static_current": "https://freedom.rideralerts.com/InfoPoint/gtfs-zip.ashx"
       },
+          {
+      "id": "f-freedom~transit~pa~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://freedom.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://freedom.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://freedom.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
       "operators": [
         {
           "onestop_id": "o-freedom~transit~pa~us",
           "name": "Freedom Transit",
           "tags": {
             "us_ntd_id": "30111",
-            "wikidata_id": "Q16986841"
+            "wikidata_id": "Q16986841",
+            "associated_feeds": [
+        {
+          "feed_onestop_id": "f-freedom~transit~pa~us"
+        },
+        {
+          "feed_onestop_id": "f-freedom~transit~pa~us~rt"
+        }
+      ]
           }
         }
       ]
