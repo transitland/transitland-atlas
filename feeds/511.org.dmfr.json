@@ -107,7 +107,8 @@
       "tags": {
         "exclude_from_global_query": "true",
         "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg",
+        "status": "archived"
       }
     },
     {
@@ -315,7 +316,10 @@
       "id": "f-9q9p3-emerygoround",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/emerygoround-ca-us/emerygoround-ca-us.zip"
+        "static_current": "http://api.511.org/transit/datafeeds?operator_id=EM",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/emerygoround-ca-us/emerygoround-ca-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
