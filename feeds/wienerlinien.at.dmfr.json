@@ -5,10 +5,11 @@
       "id": "f-u2ed-wienerlinien~wlb",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.wienerlinien.at/ogd_realtime/doku/ogd/gtfs/gtfs.zip"
+        "static_current": "https://www.wienerlinien.at/ogd_realtime/doku/ogd/gtfs/gtfs.zip"
       },
       "license": {
-        "spdx_identifier": "CC-BY-4.0"
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.gv.at/katalog/dataset/wiener-linien-fahrplandaten-gtfs-wien"
       },
       "operators": [
         {
@@ -18,9 +19,12 @@
           "website": "https://www.wlb.at/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "03"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q335971"
+          }
         },
         {
           "onestop_id": "o-u2ed-wienerlinien",
@@ -28,9 +32,12 @@
           "website": "https://www.wienerlinien.at/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "04"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q668849"
+          }
         }
       ]
     }
