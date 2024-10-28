@@ -33,7 +33,9 @@
       "id": "f-9px-currypublictransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
+        ]
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
@@ -41,7 +43,8 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "curry-public-transit"
+        "gtfs_data_exchange": "curry-public-transit",
+        "status": "outdated"
       },
       "operators": [
         {
@@ -192,6 +195,39 @@
               "gtfs_agency_id": "225"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "f-9r88-rogue~valley~transportation~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/rvtd-or-us/rvtd-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r88-rogue~valley~transportation~district",
+          "name": "Rogue Valley Transportation District",
+          "short_name": "RVTD",
+          "website": "https://rvtd.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "981"
+            },
+            {
+              "feed_onestop_id": "f-rogue~valley~transportation~district~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridervtd",
+            "us_ntd_id": "00034",
+            "wikidata_id": "Q7359553"
+          }
         }
       ]
     },
@@ -525,7 +561,9 @@
       "id": "f-9rc-cascadeseast~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cascadeseast-or-us/cascadeseast-or-us.zip"
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cascadeseast-or-us/cascadeseast-or-us.zip"
+        ]
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
@@ -533,7 +571,8 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "cascades-east-transit"
+        "gtfs_data_exchange": "cascades-east-transit",
+        "status": "outdated"
       },
       "operators": [
         {
@@ -607,7 +646,8 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "eugene-to-bend"
+        "gtfs_data_exchange": "eugene-to-bend",
+        "status": "archived"
       }
     },
     {
@@ -784,7 +824,7 @@
       "id": "f-c20-wilsonville~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/wilsonville-or-us/wilsonville-or-us.zip"
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
@@ -1306,12 +1346,17 @@
       "id": "f-klamath~shuttle~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
+        ]
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "status": "outdated"
       },
       "operators": [
         {
@@ -1447,12 +1492,17 @@
       "id": "f-wahkiakumferry~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-or-us/wahkiakumferry-or-us.zip"
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-or-us/wahkiakumferry-or-us.zip"
+        ]
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "status": "archived"
       },
       "operators": [
         {
