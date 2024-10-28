@@ -2,29 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-eyckr-metrodelisboa",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=2&u=web",
-        "static_historic": [
-          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/2/gtfs_2.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-eyckr-metrodelisboa",
-          "name": "Metro de Lisboa",
-          "short_name": "Metro",
-          "website": "http://www.metrolisboa.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-eycs0-soflusa",
       "supersedes_ids": [
         "f-eyck-transtejo"
