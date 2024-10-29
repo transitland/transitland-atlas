@@ -303,47 +303,25 @@
       "id": "f-dr10-carrolltransitsystem~carrollareatransitsystemcats",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Carroll_GTFS.zip"
-      },
-      "license": {
-        "url": "http://www.mdtrip.org/commuter-tools/developer-resources/"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11384/GTFS.zip",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Carroll_GTFS.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-dr1-carrolltransitsystem",
-          "name": "Carroll Transit System",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CTS"
-            }
+          "supersedes_ids": [
+            "o-dr10-carrolltransitsystem",
+            "o-dr12-carrollareatransitsystemcats"
           ],
+          "name": "Carroll Transit System",
+          "website": "https://www.carrollcountymd.gov/government/directory/public-works/carroll-transit-system/",
           "tags": {
             "twitter_general": "CarrollCoMD",
             "us_ntd_id": "30092",
             "wikidata_id": "Q85750789"
           }
-        },
-        {
-          "onestop_id": "o-dr10-carrolltransitsystem",
-          "name": "Carroll Transit System",
-          "short_name": "CTS",
-          "website": "http://www.carrolltransitsystem.com/routes-schedules.asp",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-dr12-carrollareatransitsystemcats",
-          "name": "Carroll Area Transit System",
-          "short_name": "CATS",
-          "website": "http://www.carrolltransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
         }
       ]
     },
