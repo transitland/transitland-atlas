@@ -71,13 +71,18 @@ def main(input_csv, output_csv, output_dmfr_json, max_workers):
         with open(input_csv, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                feed_urls.append(row)
+                if row["Weblink"]:
+                    # Clean up feed URL
+                    if row["Weblink"].startswith('https://urldefense.com/v3/__'):
+                        row["Weblink"] = re.sub(r'^https://urldefense\.com/v3/__', '', row["Weblink"])
+                        row["Weblink"] = re.sub(r'__.*$', '', row["Weblink"])
+                    feed_urls.append(row)
 
         no_result_json_objects = []
 
         # Process feed URLs
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_row = {executor.submit(query_feed, row["Weblink"]): row for row in feed_urls if row["Weblink"].strip()}
+            future_to_row = {executor.submit(query_feed, row["Weblink"]): row for row in feed_urls}
             for future in tqdm(concurrent.futures.as_completed(future_to_row), total=len(feed_urls), desc="Processing feed URLs"):
                 row = future_to_row[future]
                 feed_url = row["Weblink"].strip()
