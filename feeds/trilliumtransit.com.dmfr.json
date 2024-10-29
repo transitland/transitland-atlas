@@ -3208,42 +3208,21 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-king--flex-v2.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-catholiccommunity~wa~us",
-          "name": "Catholic Community Services",
-          "website": "https://ccsww.org/"
-        }
-      ]
+      }
     },
     {
       "id": "f-catholiccommunity~wa~us~northwest",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-northwest--flex-v2.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-catholiccommunity~wa~us",
-          "name": "Catholic Community Services",
-          "website": "https://ccsww.org/"
-        }
-      ]
+      }
     },
     {
       "id": "f-catholiccommunity~wa~us~southwest",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-southwest--flex-v2.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-catholiccommunity~wa~us",
-          "name": "Catholic Community Services",
-          "website": "https://ccsww.org/"
-        }
-      ]
+      }
     },
     {
       "id": "f-cctbus~mn~us",
@@ -7271,6 +7250,22 @@
         {
           "gtfs_agency_id": "966",
           "feed_onestop_id": "f-greenride~co~us"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-catholiccommunity~wa~us",
+      "name": "Catholic Community Services",
+      "website": "https://ccsww.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-catholiccommunity~wa~us~king"
+        },
+        {
+          "feed_onestop_id": "f-catholiccommunity~wa~us~northwest"
+        },
+        {
+          "feed_onestop_id": "f-catholiccommunity~wa~us~southwest"
         }
       ]
     }
