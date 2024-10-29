@@ -7,4 +7,6 @@ wget https://www.transit.dot.gov/sites/fta.dot.gov/files/2024-10/2023%20GTFS%20W
 in2csv 2023\ GTFS\ Weblinks.xlsx > 2023-gtfs-weblinks.csv
 
 python check-ntd-urls.py 2023-gtfs-weblinks.csv > 2023-gtfs-weblinks-checked.csv
+
+pipenv run python check-ntd-urls.py
 ```
