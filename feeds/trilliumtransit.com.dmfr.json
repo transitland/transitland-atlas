@@ -2269,6 +2269,11 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/amtrakvermonter-vt-us/amtrakvermonter-vt-us.zip"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This individual agency feed is fetched and archived but not imported."
       }
     },
     {
@@ -2492,7 +2497,14 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/bentcounty-co-us/bentcounty-co-us--flex-v2.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wy-bentcountytransportation",
+          "name": "Bent County Transit",
+          "website": "https://www.bentcounty.net/residents/transportation.php#.YkObZxBKhxg"
+        }
+      ]
     },
     {
       "id": "f-bermuda~bm",
@@ -2731,17 +2743,17 @@
       ]
     },
     {
-      "id": "f-browncounty~mn~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/browncounty-mn-us/browncounty-mn-us.zip"
-      }
-    },
-    {
       "id": "f-broomfield~co~us",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/broomfield-co-us/broomfield-co-us--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-browncounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/browncounty-mn-us/browncounty-mn-us.zip"
       }
     },
     {
@@ -3200,34 +3212,48 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-king--flex-v2.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-catholiccommunity~wa~us",
+          "name": "Catholic Community Services",
+          "website": "https://ccsww.org/"
+        }
+      ]
     },
     {
       "id": "f-catholiccommunity~wa~us~northwest",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-northwest--flex-v2.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-catholiccommunity~wa~us",
+          "name": "Catholic Community Services",
+          "website": "https://ccsww.org/"
+        }
+      ]
     },
     {
       "id": "f-catholiccommunity~wa~us~southwest",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-southwest--flex-v2.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-catholiccommunity~wa~us",
+          "name": "Catholic Community Services",
+          "website": "https://ccsww.org/"
+        }
+      ]
     },
     {
       "id": "f-cctbus~mn~us",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/cctbus-mn-us/cctbus-mn-us.zip"
-      }
-    },
-    {
-      "id": "f-chapelhilltransit~nc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/chapel-hill-transit-nc-us/chapel-hill-transit-nc-us.zip"
       }
     },
     {
@@ -3356,13 +3382,6 @@
           "website": "https://www.ridethecapitalt.org/"
         }
       ]
-    },
-    {
-      "id": "f-cityoflawndale~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cityoflawndale-ca-us/cityoflawndale-ca-us.zip"
-      }
     },
     {
       "id": "f-cityofloveland~co~us",
