@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-grtc~va",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridegrtc.com/media/routes/gtfs.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/grtc.zip"
+        ]
+      },
+      "license": {
+        "url": "http://ridegrtc.com/gtfs-files-developer-license-agreement-and-terms-of-use"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-greater~richmond~transit~company",
+          "name": "Greater Richmond Transit Company",
+          "short_name": "GRTC",
+          "website": "https://ridegrtc.com/",
+          "tags": {
+            "us_ntd_id": "30006",
+            "wikidata_id": "Q5600732"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
