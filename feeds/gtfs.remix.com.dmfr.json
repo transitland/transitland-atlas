@@ -2,6 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-atomic~city~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/act_los_alamos_nm_us.zip",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/atomic.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wkk-atomiccitytransit",
+          "name": "Atomic City Transit",
+          "tags": {
+            "twitter_general": "losalamos",
+            "us_ntd_id": "60215"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-biddeford~saco~old~orchard~beach",
       "supersedes_ids": [
         "f-bsoob~me~us"
