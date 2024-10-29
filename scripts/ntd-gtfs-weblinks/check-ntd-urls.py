@@ -13,6 +13,23 @@ import re
 GRAPHQL_ENDPOINT = "https://transit.land/api/v2/query"
 
 # Example GraphQL query template to get information about a feed
+
+# Example GraphQL query template to get information about an operator
+OPERATOR_QUERY = """
+query ($operator_name: String!) {
+  operators(where: {search: $operator_name}) {
+    onestop_id
+    name
+    search_rank
+    feeds {
+      onestop_id
+      urls {
+        static_current
+      }
+    }
+  }
+}
+"""
 FEED_QUERY = """
 query ($feed_url: String!) {
   feeds(where: {source_url: {url: $feed_url}}) {
@@ -42,6 +59,32 @@ def query_feed(feed_url):
         raise Exception(f"GraphQL query failed: {response.status_code}\n{response.text}")
 
 # Function to create a JSON object for feeds with no matching results
+def query_operator(operator_name):
+    headers = {
+        "Content-Type": "application/json",
+        "apikey": os.getenv("TRANSITLAND_API_KEY")
+    }
+
+    variables = {"operator_name": operator_name}
+
+    response = requests.post(
+        GRAPHQL_ENDPOINT,
+        json={"query": OPERATOR_QUERY, "variables": variables},
+        headers=headers
+    )
+
+    if response.status_code == 200:
+        response_json = response.json()
+        operators = response_json.get("data", {}).get("operators", [])
+        if len(operators) == 0:
+            return False, None
+        best_operator = max(operators, key=lambda op: op.get("search_rank", 0))
+        if float(best_operator.get("search_rank", 0)) > 0.5:
+            return True, best_operator
+        return False, None
+    else:
+        raise Exception(f"GraphQL query failed: {response.status_code} {response.text}")
+
 def create_json_object(row, feed_url):
     agency_name = row["Agency Name"]
     agency_name_id = re.sub(r'[^a-zA-Z0-9]+', '~', agency_name).lower()
@@ -124,6 +167,14 @@ def main(input_csv, output_csv, output_dmfr_json, max_workers):
             writer = csv.DictWriter(csvfile, fieldnames=output_fieldnames)
             writer.writeheader()
             writer.writerows(feed_urls)
+
+        # Verify each operator before writing JSON objects to a file
+        for json_object in no_result_json_objects:
+            operator_name = json_object["operators"][0]["name"]
+            likely_match_found, best_operator = query_operator(operator_name)
+            if likely_match_found:
+                json_object["operators"][0]["likely_match_operator_link"] = f"https://www.transit.land/operators/{best_operator['onestop_id']}"
+                json_object["operators"][0]["likely_match_full"] = best_operator
 
         # Write JSON objects to a file
         with open(output_dmfr_json, mode='w') as jsonfile:
