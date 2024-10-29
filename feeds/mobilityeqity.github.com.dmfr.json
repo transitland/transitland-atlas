@@ -250,28 +250,18 @@
       "id": "f-dqfd7-oceancitytransporation",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/OC_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+        "static_current": "https://api.tost.app/v1/gtfs/download?agencyId=83f7d05c-6ba1-495a-9add-194833634688",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/OC_GTFS.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-dqfd7-oceancitytransporation",
           "name": "Ocean City Transportation",
           "website": "http://oceancitymd.gov/oc/departments/public-works/transportation/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ],
           "tags": {
-            "us_ntd_id": "3R03-30155",
+            "us_ntd_id": "30155",
             "wikidata_id": "Q54933081"
           }
         }
