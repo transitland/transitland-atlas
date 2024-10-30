@@ -292,29 +292,6 @@
       ]
     },
     {
-      "id": "f-dr73-tappanzeeexpress",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-nysdot/public/TappanZee_Express.zip"
-      },
-      "tags": {
-        "status": "archived"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr73-tappanzeeexpress",
-          "name": "TappanZee Express",
-          "short_name": "TZx",
-          "website": "http://www.rocklandbus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TZEXpress-Rockland-ny-us"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-dr8-accessallegany",
       "spec": "gtfs",
       "urls": {
@@ -744,6 +721,9 @@
       "operators": [
         {
           "onestop_id": "o-dr73-lowerhudsonvalleytransit",
+          "supersedes_ids": [
+            "o-dr73-tappanzeeexpress"
+          ],
           "name": "Lower Hudson Transit Link",
           "short_name": "Hudson Link",
           "associated_feeds": [
@@ -1007,6 +987,28 @@
           ],
           "tags": {
             "us_ntd_id": "2R02-20968"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rockland~ny~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/TOR_Transport_of_Rockland.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rockland-ny-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rockland~ny~us",
+          "name": "Transport of Rockland",
+          "short_name": "TOR",
+          "website": "https://www.rocklandcountyny.gov/departments/public-transportation/transport-of-rockland-tor",
+          "tags": {
+            "us_ntd_id": "20084",
+            "wikidata_id": "Q7835144"
           }
         }
       ]
