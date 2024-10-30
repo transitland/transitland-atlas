@@ -42,8 +42,12 @@ def remove_duplicate_urls(data):
     unique_data = []
     for row in data:
         url = row.get('url')
-        if url in unique_urls:
-            logging.error(f"Duplicate URL found and removed: {url}")
+        if '?rid=next' in url:
+            logging.warn(f"URL found with '?rid=next' and removed: {url}")
+        elif '_next.zip' in url:
+            logging.warn(f"URL found with '_next.zip' and removed: {url}")
+        elif url in unique_urls:
+            logging.warn(f"Duplicate URL found and removed: {url}")
         else:
             unique_urls.add(url)
             unique_data.append(row)
