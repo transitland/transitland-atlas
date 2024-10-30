@@ -1,0 +1,49 @@
+name: Update GBFS
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: |
+        pip install pipenv
+        cd scripts && pipenv install
+    - name: Install transitland-lib
+      run: scripts/install-transitland-lib.sh
+    - name: Fetch latest data
+      run: |-
+        cd scripts && pipenv run python convert-jp-list-csv-to-dmfr.py
+    - name: Format in the opinionated DMFR format
+      run: |
+        find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
+    - name: Validate feeds
+      run: cd scripts && python validate-feeds.py
+    - name: "If any changes: Create a branch, commit, and PR"
+      run: |-
+        git config user.name "Automated Bot"
+        git config user.email "info@interline.io"
+        if ! git_status_output="$(git status --porcelain)"; then
+            error_code="$?"
+            echo "'git status' had an error: $error_code" 
+            exit 1
+        elif [ -z "$git_status_output" ]; then
+            echo "Working directory is clean."
+        else
+            echo "Working directory has UNCOMMITTED CHANGES."
+            BRANCH_NAME=gbfs-$(date +%F)
+            git checkout -b ${BRANCH_NAME}
+            git add -A
+            git commit -m "Updated Japanese feeds from This feed record is managed in https://github.com/tshimada291/gtfs-jp-list-datecheck/blob/main/GTFS_fixedURL_LastModified.csv at $(date -u)"
+            git push --set-upstream origin ${BRANCH_NAME}
+            gh pr create --title "Automatic update of Japanese GTFS feeds" --fill-verbose
+            gh workflow run validate.yml --ref ${BRANCH_NAME}
+        fi
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
