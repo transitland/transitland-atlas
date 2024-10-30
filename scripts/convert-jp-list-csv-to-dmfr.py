@@ -26,7 +26,6 @@ existing_feed_urls_to_skip = [
 
 # Collection to store created DMFR records
 created_dmfr_records = []
-checked_or_added_feeds = set()
 
 def load_csv_from_url(csv_url):
     response = requests.get(csv_url)
@@ -35,6 +34,7 @@ def load_csv_from_url(csv_url):
     reader = csv.DictReader(lines)
     data = [row for row in reader]
     return data
+
 
 # Remove duplicate URLs from data
 def remove_duplicate_urls(data):
@@ -49,13 +49,22 @@ def remove_duplicate_urls(data):
             unique_data.append(row)
     return unique_data
 
+
 def create_dmfr_record(feed_url, label, license_name, new_dmfr):
     label = label.strip().lower()
-    label = re.sub(r'\(.*?\)|\[.*?\]', '', label) # remove [gtfs-data], [HODaP], and (HODaP)
+    label = re.sub(r'\(.*?\)|\[.*?\]', '', label)  # remove [gtfs-data], [HODaP], and (HODaP)
     label = re.sub(r'[()\[\]（）「」『』、。“”‘’]', '', label)
     label = re.sub(r'\s+|・|〜', '~', label)
     label = label.strip('~')
     onestop_id = f"f-{label}"
+
+    # Ensure there are no duplicate IDs by appending a tilde and digit if necessary
+    existing_ids = {feed['id'] for feed in new_dmfr.get('feeds', [])}
+    counter = 1
+    original_id = onestop_id
+    while onestop_id in existing_ids:
+        onestop_id = f"{original_id}~{counter}"
+        counter += 1
 
     # Determine SPDX identifier and additional license properties based on license name
     spdx_identifier = None
@@ -83,6 +92,7 @@ def create_dmfr_record(feed_url, label, license_name, new_dmfr):
     }
     new_dmfr.setdefault("feeds", []).append(dmfr)
 
+
 # Load existing DMFR from URL
 def load_existing_dmfr(dmfr_url):
     response = requests.get(dmfr_url)
@@ -90,15 +100,16 @@ def load_existing_dmfr(dmfr_url):
     dmfr_data = response.json()
     return dmfr_data
 
+
 # Check if a feed URL exists in the existing DMFR records
 def check_for_feed_in_existing_dmfr(feed_url, existing_dmfr):
     for feed in existing_dmfr.get("feeds", []):
         if feed.get("urls", {}).get("static_current") == feed_url:
             logging.info(f"Feed URL found in existing DMFR: {feed_url}")
-            checked_or_added_feeds.add(feed.get("id"))
-            return True
+            return True, feed
     logging.info(f"Feed URL not found in existing DMFR: {feed_url}")
-    return False
+    return False, None
+
 
 if __name__ == "__main__":
     # Set up logging
@@ -129,8 +140,10 @@ if __name__ == "__main__":
                 logging.info("Skipping a feed URL that is managed in a different DMFR file")
                 continue
             if feed_url:
-                result = check_for_feed_in_existing_dmfr(feed_url, existing_dmfr)
-                if not result:
+                result, feed = check_for_feed_in_existing_dmfr(feed_url, existing_dmfr)
+                if result and feed:
+                    new_dmfr.setdefault("feeds", []).append(feed)
+                else:
                     create_dmfr_record(feed_url, label, license_name, new_dmfr)
 
     output_path = '../feeds/tshimada291.github.com.dmfr.json'
