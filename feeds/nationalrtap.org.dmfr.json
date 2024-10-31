@@ -57,6 +57,27 @@
       ]
     },
     {
+      "id": "f-9w-navajotransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5372/Navajo_Transit_GTFS.zip",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/navajo_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9w-navajotransitsystem",
+          "name": "Navajo Transit System",
+          "website": "https://navajotransit.navajo-nsn.gov/",
+          "tags": {
+            "us_ntd_id": "90005",
+            "wikidata_id": "Q104868592"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-ata~bus~ks",
       "spec": "gtfs",
       "urls": {
@@ -82,6 +103,31 @@
           "tags": {
             "us_ntd_id": "70053",
             "wikidata_id": "Q16974066"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq5-greenwaypublictransportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7944/UpdateGTFS_Feed_Greenway.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-greenway.zip?raw=true"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-regional-transit-authority-license.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq5-greenwaypublictransportation",
+          "name": "Greenway Public Transportation",
+          "website": "http://www.mygreenway.org/",
+          "tags": {
+            "us_ntd_id": "40172"
           }
         }
       ]
@@ -120,6 +166,57 @@
       ]
     },
     {
+      "id": "f-dpsk-masstransportationauthorityflint",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5191/google_transit.zip",
+        "static_historic": [
+          "https://www.mtaflint.org/wp-content/media/google_transit_2023.zip",
+          "https://www.mtaflint.org/wp-content/media/stops.zip",
+          "https://www.mtaflint.org/wp-content/media/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpsk-masstransportationauthorityflint",
+          "name": "Mass Transportation Authority Flint",
+          "short_name": "MTA Flint",
+          "website": "http://www.mtaflint.org",
+          "tags": {
+            "twitter_general": "MTAflint",
+            "us_ntd_id": "50032",
+            "wikidata_id": "Q5459534"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr10-carrolltransitsystem~carrollareatransitsystemcats",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11384/GTFS.zip",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Carroll_GTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr1-carrolltransitsystem",
+          "supersedes_ids": [
+            "o-dr10-carrolltransitsystem",
+            "o-dr12-carrollareatransitsystemcats"
+          ],
+          "name": "Carroll Transit System",
+          "website": "https://www.carrollcountymd.gov/government/directory/public-works/carroll-transit-system/",
+          "tags": {
+            "twitter_general": "CarrollCoMD",
+            "us_ntd_id": "30092",
+            "wikidata_id": "Q85750789"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-epta~wv",
       "spec": "gtfs",
       "urls": {
@@ -150,6 +247,24 @@
           "short_name": "MET",
           "tags": {
             "us_ntd_id": "91106"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-marquette~county~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/0/MQT_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-marquette~county~transit~authority",
+          "name": "Marquette County Transit Authority",
+          "short_name": "Marq-Tran",
+          "website": "https://marq-tran.com/",
+          "tags": {
+            "us_ntd_id": "50427"
           }
         }
       ]

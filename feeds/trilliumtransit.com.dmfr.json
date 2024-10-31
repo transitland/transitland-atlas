@@ -390,39 +390,6 @@
       ]
     },
     {
-      "id": "f-9q5cx-montereypark~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/montereypark-ca-us/montereypark-ca-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q5cx-spiritbus",
-          "name": "Spirit Bus",
-          "website": "http://www.montereypark.ca.gov/549/Spirit-Bus",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "509"
-            }
-          ],
-          "tags": {
-            "twitter_general": "CityofMPK",
-            "us_ntd_id": "90286",
-            "wikidata_id": "Q6905333"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9q5d-simivalleytransit",
       "spec": "gtfs",
       "urls": {
@@ -1394,34 +1361,6 @@
               "gtfs_agency_id": "556"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "f-9vxz-jatran~ms~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/jatran-ms-us/jatran-ms-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "jatran",
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9vxz-jatran",
-          "name": "JATRAN",
-          "website": "https://www.jacksonms.gov/transportation/",
-          "tags": {
-            "us_ntd_id": "50034",
-            "wikidata_id": "Q6117777"
-          }
         }
       ]
     },
@@ -4174,6 +4113,10 @@
               "gtfs_agency_id": "189"
             },
             {
+              "gtfs_agency_id": "2356",
+              "feed_onestop_id": "f-coach~usa"
+            },
+            {
               "feed_onestop_id": "f-dp9k-waukeshacounty~wi~us~rt"
             }
           ],
@@ -6167,6 +6110,25 @@
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/maderactc-ca-us/service_alerts.proto"
       }
+    },
+    {
+      "id": "f-makah",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/makah-wa-us/makah-wa-us.zip",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/makah_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-makah~tribal~council",
+          "name": "Makah Tribal Council",
+          "tags": {
+            "us_ntd_id": "36"
+          }
+        }
+      ]
     },
     {
       "id": "f-megabus~us",

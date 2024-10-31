@@ -250,28 +250,18 @@
       "id": "f-dqfd7-oceancitytransporation",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/OC_GTFS.zip"
-      },
-      "license": {
-        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+        "static_current": "https://api.tost.app/v1/gtfs/download?agencyId=83f7d05c-6ba1-495a-9add-194833634688",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/OC_GTFS.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-dqfd7-oceancitytransporation",
           "name": "Ocean City Transportation",
           "website": "http://oceancitymd.gov/oc/departments/public-works/transportation/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ],
           "tags": {
-            "us_ntd_id": "3R03-30155",
+            "us_ntd_id": "30155",
             "wikidata_id": "Q54933081"
           }
         }
@@ -305,89 +295,6 @@
             "twitter_general": "WashingtonCoMD",
             "us_ntd_id": "30042",
             "wikidata_id": "Q5177638"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dr10-carrolltransitsystem~carrollareatransitsystemcats",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Carroll_GTFS.zip"
-      },
-      "license": {
-        "url": "http://www.mdtrip.org/commuter-tools/developer-resources/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr1-carrolltransitsystem",
-          "name": "Carroll Transit System",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CTS"
-            }
-          ],
-          "tags": {
-            "twitter_general": "CarrollCoMD",
-            "us_ntd_id": "30092",
-            "wikidata_id": "Q85750789"
-          }
-        },
-        {
-          "onestop_id": "o-dr10-carrolltransitsystem",
-          "name": "Carroll Transit System",
-          "short_name": "CTS",
-          "website": "http://www.carrolltransitsystem.com/routes-schedules.asp",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-dr12-carrollareatransitsystemcats",
-          "name": "Carroll Area Transit System",
-          "short_name": "CATS",
-          "website": "http://www.carrolltransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-dr1b-harfordtransitlink",
-      "supersedes_ids": [
-        "f-hartford~county~md"
-      ],
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Harford_GTFS.zip"
-      },
-      "license": {
-        "url": "http://mdtrip.org/About/DeveloperResources.aspx",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "harford-transit-link"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr1b-harfordtransitlink",
-          "name": "Harford Transit LINK",
-          "website": "http://www.harfordtransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "HarfordTransit"
-            }
-          ],
-          "tags": {
-            "twitter_general": "HarfordCountyMD",
-            "us_ntd_id": "30074",
-            "wikidata_id": "Q5657016"
           }
         }
       ]
