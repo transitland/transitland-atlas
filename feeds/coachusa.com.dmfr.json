@@ -2,10 +2,16 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
-      "id": "f-coach~usa",
+      "id": "f-megabus~us",
+      "supersedes_ids": [
+        "f-coach~usa"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.prod.coachusa.com/gtfs"
+        "static_current": "https://api.prod.coachusa.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/megabus-us/megabus-us.zip"
+        ]
       },
       "operators": [
         {
