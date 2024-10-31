@@ -108,6 +108,24 @@
       ]
     },
     {
+      "id": "f-dnkc-cherokeetransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11723/ecbi_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnkc-cherokeetransit",
+          "name": "Eastern Band of Cherokee Indians Public Transit",
+          "short_name": "Cherokee Transit",
+          "website": "https://www.cherokeetransit.com/",
+          "tags": {
+            "us_ntd_id": "44913"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnq5-greenwaypublictransportation",
       "spec": "gtfs",
       "urls": {
@@ -124,7 +142,8 @@
       "operators": [
         {
           "onestop_id": "o-dnq5-greenwaypublictransportation",
-          "name": "Greenway Public Transportation",
+          "name": "Western Piedmont Regional Transit Authority",
+          "short_name": "Greenway Public Transportation",
           "website": "http://www.mygreenway.org/",
           "tags": {
             "us_ntd_id": "40172"
@@ -133,10 +152,30 @@
       ]
     },
     {
+      "id": "f-dnr-orangecountync",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11645/GTFS-TRIPS_93684d71_2024-02-19-18-41-06.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnr-orangecountync",
+          "name": "Orange County Public Transportation",
+          "website": "https://www.orangecountync.gov/3117/Public-Transit",
+          "tags": {
+            "us_ntd_id": "40231"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnr-piedmontauthorityforregionaltransportation",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5137/gtfs.zip"
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5137/gtfs.zip",
+        "static_historic": [
+          "https://partbustracker.com/gtfs"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
@@ -152,6 +191,7 @@
           "onestop_id": "o-dnr-piedmontauthorityforregionaltransportation",
           "name": "Piedmont Authority for Regional Transportation",
           "short_name": "PART",
+          "website": "https://www.partnc.org/",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-dnr-piedmontauthorityforregionaltransportation~rt"
