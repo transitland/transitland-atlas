@@ -263,7 +263,10 @@
       "id": "f-c28-bctransit~victoriaregionaltransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://victoria.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=48",
+        "static_historic": [
+          "http://victoria.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -278,9 +281,9 @@
       "id": "f-c28-bctransit~victoriaregionaltransitsystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://victoria.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
-        "realtime_trip_updates": "http://victoria.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_alerts": "http://victoria.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+        "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=48",
+        "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=48",
+        "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=48"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
