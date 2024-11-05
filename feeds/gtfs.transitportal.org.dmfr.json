@@ -2,6 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
   "feeds": [
     {
+      "id": "f-dn-sunwaycharters",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Sunway_Trolleys/Trolleys_20221105.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq0-sunwaycharters",
+          "name": "Sunway Charters",
+          "website": "https://sunwaycharters.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9-amtrak~amtrakcalifornia~amtrakcharteredvehicle",
+              "gtfs_agency_id": "112"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-dnk-haywoodtransit",
       "spec": "gtfs",
       "urls": {
@@ -160,6 +180,44 @@
       ]
     },
     {
+      "id": "f-dnq-icats",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Iredell%20County_97/ICATS%20Stops.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq-icats",
+          "name": "Iredell County Area Transportation System",
+          "short_name": "ICATS",
+          "website": "https://www.rideicats.com/",
+          "tags": {
+            "us_ntd_id": "40205"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq-salisburytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Salisbury%20Transit_237/Salisbury_20190924.zip",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/45036cb56c73428db025acd290e7beaa/data"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq-salisburytransit",
+          "name": "Salisbury Transit",
+          "website": "https://salisburync.gov/Government/Transit",
+          "tags": {
+            "us_ntd_id": "40233"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnq0-tacc",
       "spec": "gtfs",
       "urls": {
@@ -303,6 +361,48 @@
           "website": "https://www.cravencountync.gov/165/Transportation-CARTS",
           "tags": {
             "us_ntd_id": "40210"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dq2-great",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Greenville%20Area%20Transit_221/Greenville_20231026.zip",
+        "static_historic": [
+          "https://gtfs.transitportal.org/CurrentGTFS/Greenville%20Area%20Transit_221/Greenville_20190916.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq2-great",
+          "name": "Greenville Area Transit",
+          "short_name": "GREAT",
+          "website": "https://www.greenvillenc.gov/government/public-works/great-bus-system",
+          "tags": {
+            "us_ntd_id": "40095"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dq2-gwta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Goldsboro-Wayne_191/Goldsboro-Wayne_20231026.zip",
+        "static_historic": [
+          "https://gtfs.transitportal.org/CurrentGTFS/Goldsboro-Wayne_191/Goldsboro_20180327.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq2-gwta",
+          "name": "Goldsboro-Wayne Transportation Authority",
+          "short_name": "GWTA",
+          "website": "https://ridegwta.com/",
+          "tags": {
+            "us_ntd_id": "40132"
           }
         }
       ]
