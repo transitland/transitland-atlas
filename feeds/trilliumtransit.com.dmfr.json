@@ -2139,6 +2139,13 @@
       ]
     },
     {
+      "id": "f-adamscounty~co~us~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/adamscounty-co-us/adamscounty-co-us--flex-v2.zip"
+      }
+    },
+    {
       "id": "f-advancetransit~vt~us",
       "spec": "gtfs",
       "urls": {
@@ -2195,6 +2202,18 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-amtrakvermonter~vt~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/amtrakvermonter-vt-us/amtrakvermonter-vt-us.zip"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "manual_import": "true",
+        "notes": "This feed is fetched and archived but not imported. This route is imported via f-9-amtrak~amtrakcalifornia~amtrakcharteredvehicle"
+      }
     },
     {
       "id": "f-asotincounty~wa~us",
@@ -2268,6 +2287,13 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-bacacounty~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/bacacounty-co-us/bacacounty-co-us--flex-v2.zip"
+      }
     },
     {
       "id": "f-banning~pass~transit",
@@ -2397,6 +2423,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1645"
+            },
+            {
+              "feed_onestop_id": "f-bentcounty~co~us~flex"
             }
           ],
           "tags": {
@@ -2404,6 +2433,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-bentcounty~co~us~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/bentcounty-co-us/bentcounty-co-us--flex-v2.zip"
+      }
     },
     {
       "id": "f-bermuda~bm",
@@ -2532,6 +2568,13 @@
       }
     },
     {
+      "id": "f-boprc~nz",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/boprc-nz/boprc-nz.zip"
+      }
+    },
+    {
       "id": "f-bouldercounty~co~us",
       "spec": "gtfs",
       "urls": {
@@ -2633,6 +2676,13 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-broomfield~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/broomfield-co-us/broomfield-co-us--flex-v2.zip"
+      }
     },
     {
       "id": "f-browncounty~mn~us",
@@ -3079,15 +3129,38 @@
       ]
     },
     {
+      "id": "f-carts~ak~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/carts-ak-us/carts-ak-us.zip"
+      }
+    },
+    {
       "id": "f-cata~pa~us",
       "spec": "gtfs",
       "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/cata-pa-us/cata-pa-us--imap.zip"
-        ]
-      },
-      "tags": {
-        "status": "outdated"
+        "static_current": "https://data.trilliumtransit.com/gtfs/cata-pa-us/cata-pa-us.zip"
+      }
+    },
+    {
+      "id": "f-catholiccommunity~wa~us~king",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-king--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-catholiccommunity~wa~us~northwest",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-northwest--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-catholiccommunity~wa~us~southwest",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/catholiccommunity-wa-us/catholiccommunity-wa-us-southwest--flex-v2.zip"
       }
     },
     {
@@ -3095,6 +3168,13 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/cctbus-mn-us/cctbus-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-ccttransit~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/ccttransit-wa-us/ccttransit-wa-us.zip"
       }
     },
     {
@@ -3218,6 +3298,13 @@
       ]
     },
     {
+      "id": "f-cityofloveland~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/cityofloveland-co-us/cityofloveland-co-us--flex-v2.zip"
+      }
+    },
+    {
       "id": "f-clearcreek~co~us",
       "spec": "gtfs",
       "urls": {
@@ -3258,6 +3345,41 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/coachatlantic-pe-ca/coachatlantic-pe-ca.zip"
+      }
+    },
+    {
+      "id": "f-coasttransportation~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/coasttransportation-wa-us/coasttransportation-wa-us--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-coloradosprings~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/coloradosprings-co-us/coloradosprings-co-us--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-communityinmotion~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/communityinmotion-wa-us/communityinmotion-wa-us--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-concordareatransit~nh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/concordareatransit-nh-us/concordareatransit-nh-us--flex-v2.zip"
+      }
+    },
+    {
+      "id": "f-continuum~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/continuum-co-us/continuum-co-us--flex-v2.zip"
       }
     },
     {
@@ -7083,6 +7205,22 @@
         {
           "gtfs_agency_id": "966",
           "feed_onestop_id": "f-greenride~co~us"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-catholiccommunity~wa~us",
+      "name": "Catholic Community Services",
+      "website": "https://ccsww.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-catholiccommunity~wa~us~king"
+        },
+        {
+          "feed_onestop_id": "f-catholiccommunity~wa~us~northwest"
+        },
+        {
+          "feed_onestop_id": "f-catholiccommunity~wa~us~southwest"
         }
       ]
     }
