@@ -82,6 +82,47 @@
       }
     },
     {
+      "id": "f-keolis~dijon~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/e0dbd217-15cd-4e28-9459-211a27511a34",
+        "static_historic": [
+          "https://data.explore.divia.fr/api/datasets/1.0/gtfs-divia-mobilites/attachments/gtfs_diviamobilites_current_zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-diviamobilites"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-keolis~dijon~fr",
+          "name": "Keolis Dijon Mobilités",
+          "short_name": "DiviaMobilités",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-keolis~dijon~fr~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2361824"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-keolis~dijon~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.transport.data.gouv.fr/resource/divia-dijon-gtfs-rt-vehicle-position",
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/divia-dijon-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-diviamobilites"
+      }
+    },
+    {
       "id": "f-nouvelle-calédonie~tanéo",
       "spec": "gtfs",
       "urls": {
