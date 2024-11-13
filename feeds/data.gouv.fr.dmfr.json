@@ -640,6 +640,30 @@
       ]
     },
     {
+      "id": "f-spv-lignesdazur",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://transport.data.gouv.fr/resources/79642/download",
+        "static_historic": [
+          "http://opendata.nicecotedazur.org/data/dataset/export-quotidien-au-format-gtfs-du-reseau-de-transport-lignes-d-azur/resource/aacb4eea-d008-4b13-b17a-848b8ced7e03/download"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/export-quotidien-au-format-gtfs-du-reseau-de-transport-lignes-d-azur",
+        "use_without_attribution": "no"
+      },
+      "tags": {
+        "gtfs_data_exchange": "lignes-dazur"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spv-lignesdazur",
+          "name": "Lignes d'Azur",
+          "website": "http://www.lignesdazur.com/"
+        }
+      ]
+    },
+    {
       "id": "f-troyes~tcat~fr",
       "spec": "gtfs",
       "urls": {
@@ -662,6 +686,20 @@
       }
     },
     {
+      "id": "f-u0f7d-pastelmavilleestbelle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/43053be6-e26d-4b2c-b157-cb529c1bedeb",
+        "static_historic": [
+          "https://www.data.gouv.fr/fr/datasets/r/f360cebb-ce17-495b-aac6-05b4f52ea444",
+          "http://buspastel.fr/google_transit.zip#google_transit"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/bus-pastel-saint-quentin-horaires-2024"
+      }
+    },
+    {
       "id": "f-u0kz-optymo~belfort",
       "spec": "gtfs",
       "urls": {
@@ -669,7 +707,7 @@
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+        "url": "https://transport.data.gouv.fr/datasets/arrets-circuits-et-horaires-du-reseau-optymo-de-belfort"
       },
       "operators": [
         {
@@ -679,7 +717,10 @@
           "website": "https://www.optymo.fr/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "OPTYMO_SUB"
+            },
+            {
+              "gtfs_agency_id": "OPTYMO_URB"
             }
           ]
         }
