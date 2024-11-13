@@ -46,7 +46,22 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "notes": "PTV operational branch 3 - Metropolitan Tram"
+        "notes": "PTV operational branch 6 - Regional Bus"
+      }
+    },
+    {
+      "id": "f-r1-ptv~3~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://data-exchange-api.vicroads.vic.gov.au/opendata/gtfsr/v1/tram/servicealert"
+      },
+      "license": {
+        "url": "https://data-exchange.vicroads.vic.gov.au/api-details#api=opendata-gtfsr-tram-v1&operation=service-alert-tram"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data-exchange.vicroads.vic.gov.au/docs/services/vehicle-position-trip-update-opendata/operations/metro-bus-trip-updates"
       }
     },
     {
@@ -137,22 +152,6 @@
       }
     },
     {
-      "id": "f-r1r-ptv~8",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#8/google_transit.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "notes": "PTV operational branch 8 – Night Bus"
-      }
-    },
-    {
       "id": "f-r1r0-ptv",
       "spec": "gtfs",
       "urls": {
@@ -218,6 +217,9 @@
           "feed_onestop_id": "f-r1-ptv~3"
         },
         {
+          "feed_onestop_id": "f-r1-ptv~3~rt"
+        },
+        {
           "feed_onestop_id": "f-r1-ptv~5"
         },
         {
@@ -231,9 +233,6 @@
         },
         {
           "feed_onestop_id": "f-r1r-ptv~4"
-        },
-        {
-          "feed_onestop_id": "f-r1r-ptv~8"
         },
         {
           "feed_onestop_id": "f-r1r0-ptv"
