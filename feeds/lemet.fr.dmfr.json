@@ -5,10 +5,13 @@
       "id": "f-u0sr-lemet~proxis",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://si.metzmetropole.fr/fiches/opendata/gtfs_current.zip"
+        "static_current": "https://data.lemet.fr/documents/LEMET-gtfs.zip",
+        "static_historic": [
+          "https://si.metzmetropole.fr/fiches/opendata/gtfs_current.zip"
+        ]
       },
       "license": {
-        "url": "https://www.etalab.gouv.fr/licence-ouverte-open-licence"
+        "url": "https://transport.data.gouv.fr/datasets/fichiers-gtfs-eurometropole-de-metz"
       },
       "operators": [
         {
@@ -17,17 +20,7 @@
           "website": "http://lemet.fr",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u0sr-proxis",
-          "name": "PROXIS",
-          "website": "http://lemet.fr",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "TAMM"
             }
           ]
         }
