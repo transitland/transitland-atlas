@@ -4626,6 +4626,9 @@
     },
     {
       "id": "f-drke-ninetown~connecticut~us",
+      "supersedes_ids": [
+        "f-middletown~ct~us"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/ninetown-connecticut-us/ninetown-connecticut-us.zip"
@@ -4637,16 +4640,14 @@
       "operators": [
         {
           "onestop_id": "o-drke-9towntransit",
-          "name": "9 Town Transit",
-          "website": "https://estuarytransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "539"
-            }
+          "supersedes_ids": [
+            "o-middletown~ct~us"
           ],
+          "name": "Estuary Transit District",
+          "short_name": "River Valley Transit (RVT)",
+          "website": "https://rivervalleytransit.com/",
           "tags": {
-            "twitter_general": "9towntransit",
-            "us_ntd_id": "1R01-10140",
+            "us_ntd_id": "10140",
             "wikidata_id": "Q5401887"
           }
         }
@@ -6277,35 +6278,6 @@
             },
             {
               "feed_onestop_id": "f-miamibeach~rt~alerts"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-middletown~ct~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/middletown-ct-us/middletown-ct-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-middletown~ct~us",
-          "name": "Middletown Area Transit",
-          "short_name": "MAT",
-          "website": "https://www.middletownareatransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1803"
             }
           ]
         }
