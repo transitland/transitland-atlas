@@ -6,6 +6,10 @@ on:
       - 'feeds/*.dmfr.json'
     types: [opened, synchronize]
 
+permissions:
+  pull-requests: write  # Needed for commenting on PRs
+  contents: read       # Needed for checking out code
+
 jobs:
   validate:
     runs-on: ubuntu-latest
