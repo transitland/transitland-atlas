@@ -42,7 +42,7 @@ jobs:
           for file in $changed_files; do
             echo "Validating $file"
             if ! output=$(python scripts/check-feed-urls.py "$file" 2>&1); then
-              validation_output+="### Validation issues in $file\n\n\`\`\`\n$output\n\`\`\`\n\n"
+              validation_output+="### Validation issues in $file \n\n $output"
               echo "has_errors=true" >> $GITHUB_OUTPUT
             fi
           done
