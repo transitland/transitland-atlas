@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 from typing import Dict, Any
 
-def validate_feed_url(url: str) -> bool:
+def validate_feed_url(url: str, dmfr_path: str) -> bool:
     """
     Run transitland validate command for a given URL.
     Returns True if validation succeeds, False otherwise.
@@ -20,7 +20,7 @@ def validate_feed_url(url: str) -> bool:
         )
         
         if result.returncode != 0:
-            print(f"Validation failed for {url}")
+            print(f"Validation failed for {url} in {dmfr_path}")
             print("Error output:", result.stderr)
             return False
             
@@ -59,11 +59,11 @@ def process_dmfr(file_path: Path) -> bool:
             # Check for static_current URL
             urls = feed.get('urls', {})
             if isinstance(urls, dict) and 'static_current' in urls:
-                if not validate_feed_url(urls['static_current']):
+                if not validate_feed_url(urls['static_current'], str(file_path)):
                     all_valid = False
             elif isinstance(urls, list) and urls:
                 # Handle legacy format where urls is an array
-                if not validate_feed_url(urls[0]):
+                if not validate_feed_url(urls[0], str(file_path)):
                     all_valid = False
                     
         return all_valid
