@@ -3,15 +3,69 @@ import json
 import argparse
 import subprocess
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, List, Optional, Union, TypedDict, Literal
+import logging
+
+logger = logging.getLogger('dmfr_validator')
+
+def setup_logging() -> None:
+    """Configure the logger"""
+    handler = logging.StreamHandler()
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
+def main() -> None:
+    parser: argparse.ArgumentParser = argparse.ArgumentParser(
+        description='Validate DMFR feed URLs using transitland'
+    )
+    parser.add_argument('file_path', type=Path, help='Path to the DMFR JSON file')
+    args: argparse.Namespace = parser.parse_args()
+    
+    if not args.file_path.exists():
+        logger.error(
+            f"File Not Found",
+            extra={'code_block': f"Error: File not found: {args.file_path}"}
+        )
+        sys.exit(1)
+        
+    is_valid: bool = process_dmfr(args.file_path)
+    sys.exit(0 if is_valid else 1)
+
+class FeedUrls(TypedDict, total=False):
+    """TypedDict for the urls field in a feed"""
+    static_current: str
+    static_historic: List[str]
+    static_planned: List[str]
+    static_hypothetical: List[str]
+    realtime_vehicle_positions: str
+    realtime_trip_updates: str
+    realtime_alerts: str
+    gbfs_auto_discovery: str
+    mds_provider: str
+
+class Authorization(TypedDict):
+    """TypedDict for feed authorization"""
+    type: Literal["header", "basic_auth", "query_param", "path_segment", "replace_url"]
+    param_name: Optional[str]
+    info_url: Optional[str]
+
+class Feed(TypedDict):
+    """TypedDict for a DMFR feed entry"""
+    id: str
+    spec: Literal["gtfs", "gtfs-rt", "gbfs", "mds"]
+    urls: Union[FeedUrls, List[str]]  # List[str] for legacy format
+    authorization: Optional[Authorization]
+    name: Optional[str]
+    description: Optional[str]
+
+class DMFRFile(TypedDict):
+    """TypedDict for the root DMFR file structure"""
+    feeds: List[Feed]
+    license_spdx_identifier: Optional[str]
 
 def validate_feed_url(url: str, dmfr_path: str) -> bool:
-    """
-    Run transitland validate command for a given URL.
-    Returns True if validation succeeds, False otherwise.
-    """
     try:
-        print(f"Validating feed URL: {url}")
+        logger.info(f"Validating feed URL: {url}")
         result = subprocess.run(
             ["transitland", "validate", url],
             capture_output=True,
@@ -20,15 +74,17 @@ def validate_feed_url(url: str, dmfr_path: str) -> bool:
         )
         
         if result.returncode != 0:
-            print(f"Validation failed for {url} in {dmfr_path}")
-            print("Error output:", result.stderr)
+            logger.error(
+                f"Validation failed for {url} in {dmfr_path}\n" +
+                (result.stdout if result.stdout else result.stderr)
+            )
             return False
             
-        print("Validation successful")
+        logger.info("Validation successful")
         return True
         
     except subprocess.SubprocessError as e:
-        print(f"Error running transitland validate: {str(e)}")
+        logger.error(f"Error running transitland validate\n{str(e)}")
         return False
 
 def process_dmfr(file_path: Path) -> bool:
@@ -38,26 +94,26 @@ def process_dmfr(file_path: Path) -> bool:
     """
     try:
         with open(file_path) as f:
-            data = json.load(f)
+            data: DMFRFile = json.load(f)
             
         if not isinstance(data, dict) or 'feeds' not in data:
-            print(f"Error: {file_path} is not a valid DMFR file")
+            logger.error(f"Invalid DMFR file\nError: {file_path} is not a valid DMFR file")
             return False
             
-        feeds = data['feeds']
+        feeds: List[Feed] = data['feeds']
         if not isinstance(feeds, list):
-            print(f"Error: 'feeds' must be a list")
+            logger.error("Invalid DMFR file\nError: 'feeds' must be a list")
             return False
 
-        all_valid = True
+        all_valid: bool = True
         for feed in feeds:
             # Skip feeds that have authentication
-            if any(key in feed for key in ['authorization', 'authorization_type', 'api_key']):
-                print(f"Skipping feed (requires authentication)")
+            if 'authorization' in feed:
+                logger.info("Skipping feed\nFeed requires authentication")
                 continue
                 
             # Check for static_current URL
-            urls = feed.get('urls', {})
+            urls: Union[FeedUrls, List[str]] = feed.get('urls', {})
             if isinstance(urls, dict) and 'static_current' in urls:
                 if not validate_feed_url(urls['static_current'], str(file_path)):
                     all_valid = False
@@ -69,23 +125,12 @@ def process_dmfr(file_path: Path) -> bool:
         return all_valid
         
     except json.JSONDecodeError as e:
-        print(f"Error: Invalid JSON in {file_path}: {str(e)}")
+        logger.error(f"JSON Parse Error\nError: Invalid JSON in {file_path}: {str(e)}")
         return False
     except Exception as e:
-        print(f"Error processing {file_path}: {str(e)}")
+        logger.error(f"Processing Error\nError processing {file_path}: {str(e)}")
         return False
 
-def main():
-    parser = argparse.ArgumentParser(description='Validate DMFR feed URLs using transitland')
-    parser.add_argument('file_path', type=Path, help='Path to the DMFR JSON file')
-    args = parser.parse_args()
-    
-    if not args.file_path.exists():
-        print(f"Error: File not found: {args.file_path}")
-        sys.exit(1)
-        
-    is_valid = process_dmfr(args.file_path)
-    sys.exit(0 if is_valid else 1)
-
 if __name__ == '__main__':
+    setup_logging()
     main() 
