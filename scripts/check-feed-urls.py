@@ -5,6 +5,7 @@ import subprocess
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Union, TypedDict, Literal
 import logging
+import string
 
 logger = logging.getLogger('dmfr_validator')
 
@@ -76,9 +77,10 @@ def validate_feed_url(url: str, dmfr_path: str) -> bool:
         )
         
         if result.returncode != 0:
+            output = ''.join(c for c in (result.stdout if result.stdout else result.stderr) if c in string.printable)
             logger.error(
                 f"Validation failed for {url} in {dmfr_path}\n" +
-                (result.stdout if result.stdout else result.stderr)
+                output
             )
             return False
             
