@@ -87,6 +87,23 @@
         "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/trip_updates.pb",
         "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/mantecatransit.etaspot.net/alerts.pb"
       }
+    },
+    {
+      "id": "f-richland~county~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/rctpublic.etaspot.net/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-richland~county~transit",
+          "name": "Richland County Transit",
+          "website": "https://rctbuses.com/",
+          "tags": {
+            "us_ntd_id": "50090"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
