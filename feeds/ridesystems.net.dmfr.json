@@ -2,6 +2,30 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-dn5b-georgiatechtrolley~stingershuttles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bus.gatech.edu/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://passio3.com/gatech/passioTransit/gtfs/google_transit.zip",
+          "http://documents.atlantaregional.com/transitdata/gtfs_GT.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn5b-georgiatechtrolley~stingershuttles",
+          "supersedes_ids": [
+            "o-dn5b-georgiatechtrolley~stingershuttles"
+          ],
+          "name": "Georgia Tech Stinger Bus",
+          "website": "https://pts.gatech.edu/",
+          "tags": {
+            "twitter_general": "gt_park_trans"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnjj-clemson~sc~us",
       "spec": "gtfs",
       "urls": {
