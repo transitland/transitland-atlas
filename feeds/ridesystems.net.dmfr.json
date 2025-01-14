@@ -1,0 +1,48 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-dnjj-clemson~sc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://catbus.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/clemson-sc-us/clemson-sc-us.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "clemson-area-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnjj-clemsonareatransit",
+          "name": "Clemson Area Transit",
+          "short_name": "CATbus",
+          "tags": {
+            "twitter_general": "catclemson",
+            "us_ntd_id": "40208",
+            "wikidata_id": "Q5131543"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-jackson~mi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jacksonareatransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-jackson~mi~us",
+          "name": "Jackson Area Transportation Authority",
+          "short_name": "JATA",
+          "tags": {
+            "us_ntd_id": "50034"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
