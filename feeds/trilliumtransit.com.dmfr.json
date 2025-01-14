@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9mgve-avalon~ca~us",
@@ -2130,11 +2130,9 @@
           "name": "Allen County Regional Transit Authority",
           "short_name": "ACRTA",
           "website": "https://www.acrta.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "747"
-            }
-          ]
+          "tags": {
+            "us_ntd_id": "50093"
+          }
         }
       ]
     },
@@ -3856,35 +3854,6 @@
           ],
           "tags": {
             "us_ntd_id": "4R04-40948"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dnjj-clemson~sc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/clemson-sc-us/clemson-sc-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "clemson-area-transit",
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnjj-clemsonareatransit",
-          "name": "Clemson Area Transit",
-          "short_name": "CATbus",
-          "tags": {
-            "twitter_general": "catclemson",
-            "us_ntd_id": "40208",
-            "wikidata_id": "Q5131543"
           }
         }
       ]

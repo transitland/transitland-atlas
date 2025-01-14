@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9mu-irvine~ca~us",
@@ -110,6 +110,23 @@
       "urls": {
         "static_current": "https://passio3.com/audible/passioTransit/gtfs/google_transit.zip"
       }
+    },
+    {
+      "id": "f-bangor~me~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/bangor/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bangor~me~us",
+          "name": "Bangor Community Connector",
+          "website": "https://bangormaine.gov/634/Community-Connector",
+          "tags": {
+            "us_ntd_id": "10096"
+          }
+        }
+      ]
     },
     {
       "id": "f-beckley~wv~us",
