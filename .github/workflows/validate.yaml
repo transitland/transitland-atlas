@@ -1,5 +1,5 @@
 name: Validate
-on: [push, pull_request, workflow_dispatch]
+on: [push, pull_request_target, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
