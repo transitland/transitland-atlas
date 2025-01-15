@@ -9,6 +9,8 @@ import string
 
 logger = logging.getLogger('dmfr_validator')
 
+MAX_FEEDS_TO_CHECK = 5
+
 def setup_logging() -> None:
     """Configure the logger"""
     handler = logging.StreamHandler(sys.stdout)
@@ -110,7 +112,17 @@ def process_dmfr(file_path: Path) -> bool:
             return False
 
         all_valid: bool = True
+        feeds_checked = 0
+        total_feeds = len(feeds)
+
         for feed in feeds:
+            if feeds_checked >= MAX_FEEDS_TO_CHECK:
+                logger.warning(
+                    f"\nReached limit of {MAX_FEEDS_TO_CHECK} feeds to check. "
+                    f"Skipping remaining {total_feeds - feeds_checked} feeds."
+                )
+                break
+
             # Skip feeds that have authentication
             if 'authorization' in feed:
                 logger.info("Skipping feed\nFeed requires authentication")
@@ -119,10 +131,12 @@ def process_dmfr(file_path: Path) -> bool:
             # Check for static_current URL
             urls: Union[FeedUrls, List[str]] = feed.get('urls', {})
             if isinstance(urls, dict) and 'static_current' in urls:
+                feeds_checked += 1
                 if not validate_feed_url(urls['static_current'], str(file_path)):
                     all_valid = False
             elif isinstance(urls, list) and urls:
                 # Handle legacy format where urls is an array
+                feeds_checked += 1
                 if not validate_feed_url(urls[0], str(file_path)):
                     all_valid = False
                     
