@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-lake~charles~la~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://america.usetransit.com/api/1/public/gtfs/31/gtfs.zip?token=0bcf57ebd588bd7749168808071d365973b45d1d8"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lake~charles~la~us",
+          "name": "Lake Charles Transit",
+          "tags": {
+            "us_ntd_id": "60023",
+            "wikidata_id": "Q6475284"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-terrebonne~parish~consolidated~government",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://america.usetransit.com/api/1/public/gtfs/7/gtfs.zip?token=987dbc22d5980a4be397675617103334454552804"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-terrebonne~parish~consolidated~government",
+          "name": "Terrebonne Parish Consolidated Government",
+          "short_name": "Good Earth Transit",
+          "website": "https://www.tpcg.org/index.php?f=public_transit",
+          "tags": {
+            "us_ntd_id": "60080"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
