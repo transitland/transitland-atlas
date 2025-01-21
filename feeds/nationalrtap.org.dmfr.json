@@ -2,23 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
-      "id": "f-gila~river~indian~community",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5788/GoogleFeed.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gila~river~indian~community",
-          "name": "Gila River Transit",
-          "website": "https://www.gilarivertransit.com",
-          "tags": {
-            "us_ntd_id": "99436"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9qd-fresnocounty~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -412,6 +395,23 @@
       ]
     },
     {
+      "id": "f-gila~river~indian~community",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5788/GoogleFeed.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gila~river~indian~community",
+          "name": "Gila River Transit",
+          "website": "https://www.gilarivertransit.com",
+          "tags": {
+            "us_ntd_id": "99436"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-glasgow~ky~us",
       "spec": "gtfs",
       "urls": {
@@ -424,6 +424,24 @@
           "website": "https://cityofglasgow.gov/city_departments/public_works/transit_division/",
           "tags": {
             "us_ntd_id": "41083"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-manchester~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7841/MTA_GTFS_October_2023.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-manchester~transit~authority",
+          "name": "Manchester Transit Authority",
+          "short_name": "MTA",
+          "website": "https://mtabus.org/",
+          "tags": {
+            "us_ntd_id": "10002"
           }
         }
       ]
