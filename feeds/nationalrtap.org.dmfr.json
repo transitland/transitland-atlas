@@ -2,6 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-alexandria~la~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11288/atrans_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-alexandria~la~us",
+          "name": "Alexandria Transit System",
+          "short_name": "ATRANS",
+          "website": "https://www.cityofalexandriala.com/bus-routes-atrans",
+          "tags": {
+            "us_ntd_id": "60025"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9qd-fresnocounty~ca~us",
       "spec": "gtfs",
       "urls": {
