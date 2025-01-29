@@ -10,6 +10,8 @@ on:
 
 permissions:
   contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   validate:
@@ -18,18 +20,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # For pull_request_target, checkout base branch first
         ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.base.sha || github.sha }}
         fetch-depth: 0
 
-    # For pull_request_target, safely merge PR changes
     - name: Fetch and merge PR
       if: github.event_name == 'pull_request_target'
       run: |
         git remote add fork ${{ github.event.pull_request.head.repo.clone_url }}
         git fetch fork ${{ github.event.pull_request.head.ref }}
         
-        # Check if PR modifies sensitive directories
         if git diff --name-only FETCH_HEAD ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
           echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
           exit 1
@@ -40,40 +39,130 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+    
     - uses: actions/setup-node@v4
       with:
         node-version: '18.x'
-    - name: Install dependencies
+
+    - name: Setup environment
       run: |
-        pip install pipenv
+        # Setup Python
+        python -m pip install pipenv
         cd scripts && pipenv install
-    - name: Install transitland-lib
-      run: scripts/install-transitland-lib.sh
-    - name: Validate against DMFR schema
-      id: schema-validate
-      continue-on-error: true  # Continue to collect all validation errors
-      run: |
+        cd ..
+        
+        # Setup Node
+        npm install ajv-cli
+        
+        # Install transitland-lib
+        scripts/install-transitland-lib.sh
+        
+        # Get schema
         wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json -O dmfr.schema.json
-        npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.dmfr.json" --all-errors --verbose
 
-    - name: Lint against the opinionated DMFR format
-      id: lint
-      continue-on-error: true  # Continue to collect all validation errors
-      run: |
-        transitland dmfr lint feeds/*.dmfr.json
-
-    - name: Validate against transitland-lib
-      id: validate
+    - name: Run validations
+      id: validate-all
       continue-on-error: true
-      run: cd scripts && python validate-feeds.py
+      run: |
+        # Format check
+        find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "FORMAT_CHANGES<<EOF" >> "$GITHUB_OUTPUT"
+          git diff >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+        fi
+        
+        # Schema validation
+        if ! npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.dmfr.json" --all-errors --verbose; then
+          echo "SCHEMA_ERRORS<<EOF" >> "$GITHUB_OUTPUT"
+          npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.dmfr.json" --all-errors --verbose 2>&1 >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          FAILED=1
+        fi
+        
+        # Lint check
+        if ! transitland dmfr lint feeds/*.dmfr.json; then
+          echo "LINT_ERRORS<<EOF" >> "$GITHUB_OUTPUT"
+          transitland dmfr lint feeds/*.dmfr.json 2>&1 >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          FAILED=1
+        fi
+        
+        # Additional validations
+        if ! cd scripts && python validate-feeds.py; then
+          echo "VALIDATE_ERRORS<<EOF" >> "$GITHUB_OUTPUT"
+          cd scripts && python validate-feeds.py 2>&1 >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          FAILED=1
+        fi
+        
+        if [ -n "$FAILED" ]; then
+          exit 1
+        fi
 
-    # Fail if any validation step failed
-    - name: Check validation results
+    - name: Comment on PR
+      if: github.event_name == 'pull_request_target'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const formatChanges = '${{ steps.validate-all.outputs.FORMAT_CHANGES }}' || '';
+          const schemaErrors = '${{ steps.validate-all.outputs.SCHEMA_ERRORS }}' || '';
+          const lintErrors = '${{ steps.validate-all.outputs.LINT_ERRORS }}' || '';
+          const validateErrors = '${{ steps.validate-all.outputs.VALIDATE_ERRORS }}' || '';
+          
+          let commentBody = '## DMFR Validation Results\n\n';
+          
+          if (formatChanges) {
+            commentBody += '### Formatting Changes Required\n\n';
+            commentBody += 'The following formatting changes are needed:\n\n';
+            commentBody += '```diff\n' + formatChanges + '\n```\n\n';
+          }
+          
+          if (schemaErrors || lintErrors || validateErrors) {
+            commentBody += '### Validation Errors\n\n';
+            if (schemaErrors) commentBody += '#### Schema Validation\n```\n' + schemaErrors + '\n```\n\n';
+            if (lintErrors) commentBody += '#### Lint Checks\n```\n' + lintErrors + '\n```\n\n';
+            if (validateErrors) commentBody += '#### Additional Validations\n```\n' + validateErrors + '\n```\n\n';
+          }
+          
+          commentBody += !formatChanges && !schemaErrors && !lintErrors && !validateErrors
+            ? '✅ All checks passed!\n'
+            : '\nPlease fix the above issues and update your PR.\n';
+          
+          // Get existing bot comments
+          const botComments = await github.paginate(github.rest.issues.listComments, {
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo
+          });
+          
+          const botComment = botComments.find(comment => 
+            comment.user.type === 'Bot' && 
+            comment.body.includes('DMFR Validation Results')
+          );
+          
+          const commentParams = {
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: commentBody
+          };
+          
+          if (botComment) {
+            await github.rest.issues.updateComment({
+              ...commentParams,
+              comment_id: botComment.id
+            });
+          } else {
+            await github.rest.issues.createComment({
+              ...commentParams,
+              issue_number: context.issue.number
+            });
+          }
+
+    - name: Check final result
       if: always()
       run: |
-        if [[ "${{ steps.schema-validate.outcome }}" == "failure" || 
-              "${{ steps.lint.outcome }}" == "failure" || 
-              "${{ steps.validate.outcome }}" == "failure" ]]; then
-          echo "One or more validation steps failed"
+        if [ "${{ steps.validate-all.outcome }}" == "failure" ]; then
+          echo "Validation failed"
           exit 1
         fi
