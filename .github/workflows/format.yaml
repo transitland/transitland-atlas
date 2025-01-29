@@ -1,58 +1,118 @@
 name: Comment on PRs that need DMFR formatting changes
 on: 
+  push:
+    paths:
+      - 'feeds/**'
   pull_request_target:
     paths:
-      - '**.dmfr.json'
+      - 'feeds/**'
 permissions:
   issues: write
   pull-requests: write
+  contents: read
+
 jobs:
   format:
-    if: github.ref != 'refs/heads/main'
+    name: Check DMFR Formatting
     runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@v4
       with:
+        # Check out the base branch instead of the PR branch
+        ref: ${{ github.event.pull_request.base.sha }}
         fetch-depth: 0
-        ref: ${{ github.event.pull_request.head.sha }}
-        repository: ${{github.event.pull_request.head.repo.full_name}}
-    - name: Install transitland-lib
-      run: scripts/install-transitland-lib.sh
-    - name: Format in the opinionated DMFR format
+
+    # Fetch and merge PR changes after checking out base branch
+    - name: Fetch and merge PR
       run: |
-        find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
-    - name: "If any changes, run and store git diff"
-      id: git-diff
-      run: |-
-        if ! git_status_output="$(git status --porcelain)"; then
-            error_code="$?"
-            echo "'git status' had an error: $error_code" 
-            exit 1
-        elif [ -z "$git_status_output" ]; then
-            echo "Working directory is clean."
-        else
-            echo "Working directory has UNCOMMITTED CHANGES."
-            echo "GIT_DIFF<<EOF" >> "$GITHUB_OUTPUT"
-            git diff >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
+        git remote add fork ${{ github.event.pull_request.head.repo.clone_url }}
+        git fetch fork ${{ github.event.pull_request.head.ref }}
+        
+        # Check if PR modifies .github or scripts directories
+        if git diff --name-only FETCH_HEAD ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+          echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
+          exit 1
         fi
-    - uses: actions/github-script@v7
+        
+        git merge --no-commit fork/${{ github.event.pull_request.head.ref }}
+    
+    - name: Install transitland-lib
+      id: install
+      run: scripts/install-transitland-lib.sh
+      continue-on-error: false
+    
+    - name: Format DMFR files
+      id: format
+      run: |
+        set -euo pipefail  # Fail on any error
+        find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
+    
+    - name: Check for formatting changes
+      id: git-diff
+      run: |
+        set -euo pipefail  # Fail on any error
+        git_status_output="$(git status --porcelain)" || {
+          echo "Error running git status: $?"
+          exit 1
+        }
+        
+        if [ -z "$git_status_output" ]; then
+          echo "No formatting changes needed"
+        else
+          echo "Formatting changes required"
+          echo "GIT_DIFF<<EOF" >> "$GITHUB_OUTPUT"
+          git diff >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+        fi
+    
+    - name: Comment on PR
       if: ${{ steps.git-diff.outputs.GIT_DIFF != null }}
+      uses: actions/github-script@v7
       with:
         script: |
-          github.rest.issues.createComment({
+          // Get existing bot comments to avoid duplicates
+          const botComments = await github.paginate(github.rest.issues.listComments, {
             issue_number: context.issue.number,
-            owner: 'transitland',
-            repo: 'transitland-atlas',
-            body: `***This PR includes a file that does not exactly follow the "opinionated" DMFR format***
+            owner: context.repo.owner,
+            repo: context.repo.repo
+          });
+          
+          const botComment = botComments.find(comment => 
+            comment.user.type === 'Bot' && 
+            comment.body.includes('DMFR Format Check Results')
+          );
+          
+          const commentBody = `## DMFR Format Check Results
 
-            transitland-lib recommends the following changes:
+          This PR includes files that need formatting adjustments to follow the "opinionated" DMFR format.
 
-            \`\`\`diff
-            ${{ steps.git-diff.outputs.GIT_DIFF }}
-            \`\`\`
-            
-            You can use a code/text editor to make this change. Or use [transitland-lib](https://github.com/interline-io/transitland-lib/blob/main/dmfr-command.md). Or just wait and a maintainer will be glad to fix this.
+          ### Suggested Changes:
+          \`\`\`diff
+          ${process.env.GIT_DIFF}
+          \`\`\`
+          
+          You can apply these changes by:
+          1. Using a code editor
+          2. Running [transitland-lib](https://github.com/interline-io/transitland-lib/blob/main/dmfr-command.md) locally
+          3. Waiting for a maintainer to help
 
-            Thanks for contributing to Transitland Atlas!`
-          })
+          Thank you for contributing to Transitland Atlas! 🚀`;
+
+          if (botComment) {
+            // Update existing comment
+            await github.rest.issues.updateComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: botComment.id,
+              body: commentBody
+            });
+          } else {
+            // Create new comment
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
+          }
