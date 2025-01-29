@@ -1,5 +1,8 @@
 name: Comment on PRs that need DMFR formatting changes
 on: 
+  push:
+    paths:
+      - 'feeds/**'
   pull_request_target:
     paths:
       - 'feeds/**'
