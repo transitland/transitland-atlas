@@ -1,10 +1,42 @@
-name: Validate
-on: [push, pull_request_target, workflow_dispatch]
+name: Validate DMFR files and feed records
+on: 
+  push:
+    paths:
+      - 'feeds/**'
+  pull_request_target:
+    paths:
+      - 'feeds/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
 jobs:
-  build:
+  validate:
+    name: Validate DMFR Files
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        # For pull_request_target, checkout base branch first
+        ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.base.sha || github.sha }}
+        fetch-depth: 0
+
+    # For pull_request_target, safely merge PR changes
+    - name: Fetch and merge PR
+      if: github.event_name == 'pull_request_target'
+      run: |
+        git remote add fork ${{ github.event.pull_request.head.repo.clone_url }}
+        git fetch fork ${{ github.event.pull_request.head.ref }}
+        
+        # Check if PR modifies sensitive directories
+        if git diff --name-only FETCH_HEAD ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+          echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
+          exit 1
+        fi
+        
+        git merge --no-commit fork/${{ github.event.pull_request.head.ref }}
+
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
@@ -18,11 +50,30 @@ jobs:
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Validate against DMFR schema
+      id: schema-validate
+      continue-on-error: true  # Continue to collect all validation errors
       run: |
         wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json -O dmfr.schema.json
-        npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
+        npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.dmfr.json" --all-errors --verbose
+
     - name: Lint against the opinionated DMFR format
+      id: lint
+      continue-on-error: true  # Continue to collect all validation errors
       run: |
         transitland dmfr lint feeds/*.dmfr.json
+
     - name: Validate against transitland-lib
+      id: validate
+      continue-on-error: true
       run: cd scripts && python validate-feeds.py
+
+    # Fail if any validation step failed
+    - name: Check validation results
+      if: always()
+      run: |
+        if [[ "${{ steps.schema-validate.outcome }}" == "failure" || 
+              "${{ steps.lint.outcome }}" == "failure" || 
+              "${{ steps.validate.outcome }}" == "failure" ]]; then
+          echo "One or more validation steps failed"
+          exit 1
+        fi
