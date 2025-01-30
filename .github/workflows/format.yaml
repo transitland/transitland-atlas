@@ -1,8 +1,5 @@
 name: Comment on PRs that need DMFR formatting changes
 on: 
-  push:
-    paths:
-      - 'feeds/**'
   pull_request_target:
     paths:
       - 'feeds/**'
@@ -19,24 +16,19 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # Check out the base branch instead of the PR branch
-        ref: ${{ github.event.pull_request.base.sha }}
+        ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
 
-    # Fetch and merge PR changes after checking out base branch
-    - name: Fetch and merge PR
+    # Only needed for fork PRs - security check
+    - name: Security check for fork PRs
+      if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
       run: |
-        git remote add fork ${{ github.event.pull_request.head.repo.clone_url }}
-        git fetch fork ${{ github.event.pull_request.head.ref }}
-        
         # Check if PR modifies .github or scripts directories
-        if git diff --name-only FETCH_HEAD ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+        if git diff --name-only ${{ github.event.pull_request.head.sha }} ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
           echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
           exit 1
         fi
-        
-        git merge --no-commit fork/${{ github.event.pull_request.head.ref }}
-    
+
     - name: Install transitland-lib
       id: install
       run: scripts/install-transitland-lib.sh
