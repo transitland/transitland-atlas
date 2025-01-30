@@ -1,8 +1,5 @@
 name: Comment on PRs that need DMFR formatting changes
 on: 
-  push:
-    paths:
-      - 'feeds/**'
   pull_request_target:
     paths:
       - 'feeds/**'
@@ -19,13 +16,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # Check out the base branch instead of the PR branch
-        ref: ${{ github.event.pull_request.base.sha }}
+        # For same-repo PRs, check out the PR branch directly
+        # For fork PRs, check out the base branch
+        ref: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref || github.event.pull_request.base.sha }}
         fetch-depth: 0
 
-    # Fetch and merge PR changes after checking out base branch
+    # Only needed for fork PRs
     - name: Fetch and merge PR
+      if: ${{ github.event.pull_request && github.event.pull_request.head.repo.full_name != github.repository }}
       run: |
+        # Fork - add remote and fetch
         git remote add fork ${{ github.event.pull_request.head.repo.clone_url }}
         git fetch fork ${{ github.event.pull_request.head.ref }}
         
@@ -35,7 +35,8 @@ jobs:
           exit 1
         fi
         
-        git merge --no-commit fork/${{ github.event.pull_request.head.ref }}
+        # Merge the changes
+        git merge --no-commit FETCH_HEAD
     
     - name: Install transitland-lib
       id: install
