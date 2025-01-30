@@ -16,10 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # For same-repo PRs, check out the PR branch directly
-        # For fork PRs, check out base branch first
+        # Always check out the PR branch
         ref: ${{ github.event.pull_request.head.ref }}
-        repository: ${{ github.event.pull_request.head.repo.full_name }}
         fetch-depth: 0
 
     # Only needed for fork PRs - security check
@@ -27,7 +25,7 @@ jobs:
       if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
       run: |
         # Check if PR modifies .github or scripts directories
-        if git diff --name-only HEAD ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+        if git diff --name-only ${{ github.event.pull_request.head.sha }} ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
           echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
           exit 1
         fi
