@@ -16,8 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # Always check out the PR branch
-        ref: ${{ github.event.pull_request.head.ref }}
+        ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
 
     # Only needed for fork PRs - security check
