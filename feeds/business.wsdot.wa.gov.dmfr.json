@@ -86,6 +86,43 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-okanogan~county~transportation~nutrition",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://business.wsdot.wa.gov/Transit/csv_files/TranGO/trango.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-okanogan~county~transit~authority",
+          "name": "Okanogan County Transit Authority",
+          "short_name": "TranGO",
+          "website": "https://okanogantransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "tgo"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "405"
+          }
+        },
+        {
+          "onestop_id": "o-okanogan~county~transportation~nutrition",
+          "name": "Okanogan County Transportation & Nutrition",
+          "short_name": "OCTN",
+          "website": "https://www.octn.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "octn"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "332"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
