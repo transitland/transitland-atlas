@@ -90,6 +90,12 @@ Rules for Onestop IDs in this repository:
 - Name can include any alphanumeric characters in UTF-8
 - The only separation or punctuation character allowed in the name component is a tilde (`~`)
 
+## Enriching Transitland Atlas with external reference data
+
+We welcome help from the community to expand Transitland Atlas by reviewing external reference datasets, including:
+
+- [NTD GTFS Weblinks](./external-data-for-reference/ntd-gtfs-weblinks/readme.md)
+
 ## License
 
 All data files in this repository are made available under the [Community Data License Agreement – Permissive, Version 1.0](LICENSE.txt). This license allows you to:
