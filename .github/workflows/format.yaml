@@ -53,13 +53,15 @@ jobs:
           echo "No formatting changes needed"
         else
           echo "Formatting changes required"
-          echo "GIT_DIFF<<EOF" >> "$GITHUB_OUTPUT"
-          git diff >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          echo "Git status:"
+          echo "$git_status_output"
+          echo "Git diff:"
+          git diff
+          echo "git_diff=$(git diff)" >> "$GITHUB_OUTPUT"
         fi
     
     - name: Comment on PR
-      if: ${{ steps.git-diff.outputs.GIT_DIFF != null }}
+      if: ${{ steps.git-diff.outputs.git_diff != '' }}
       uses: actions/github-script@v7
       with:
         script: |
@@ -81,7 +83,7 @@ jobs:
 
           ### Suggested Changes:
           \`\`\`diff
-          ${process.env.GIT_DIFF}
+          ${steps.git-diff.outputs.git_diff}
           \`\`\`
           
           You can apply these changes by:
