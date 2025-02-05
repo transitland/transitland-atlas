@@ -57,7 +57,9 @@ jobs:
           echo "$git_status_output"
           echo "Git diff:"
           git diff
-          echo "git_diff=$(git diff)" >> "$GITHUB_OUTPUT"
+          echo "git_diff<<EOF" >> "$GITHUB_OUTPUT"
+          git diff >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
         fi
     
     - name: Comment on PR
@@ -78,9 +80,9 @@ jobs:
           );
           
           const commentBody = `## DMFR Format Check Results
-
+          
           This PR includes files that need formatting adjustments to follow the "opinionated" DMFR format.
-
+          
           ### Suggested Changes:
           \`\`\`diff
           ${steps.git-diff.outputs.git_diff}
@@ -90,7 +92,7 @@ jobs:
           1. Using a code editor
           2. Running [transitland-lib](https://github.com/interline-io/transitland-lib/blob/main/dmfr-command.md) locally
           3. Waiting for a maintainer to help
-
+          
           Thank you for contributing to Transitland Atlas! 🚀`;
 
           if (botComment) {
