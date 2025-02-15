@@ -53,16 +53,24 @@ jobs:
           echo "No formatting changes needed"
         else
           echo "Formatting changes required"
-          echo "GIT_DIFF<<EOF" >> "$GITHUB_OUTPUT"
+          echo "Git status:"
+          echo "$git_status_output"
+          echo "Git diff:"
+          git diff
+          echo "git_diff<<EOF" >> "$GITHUB_OUTPUT"
           git diff >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
         fi
     
     - name: Comment on PR
-      if: ${{ steps.git-diff.outputs.GIT_DIFF != null }}
+      if: ${{ steps.git-diff.outputs.git_diff != '' }}
       uses: actions/github-script@v7
+      env:
+        DIFF: ${{ steps.git-diff.outputs.git_diff }}
       with:
         script: |
+          const diff = process.env.DIFF;
+          
           // Get existing bot comments to avoid duplicates
           const botComments = await github.paginate(github.rest.issues.listComments, {
             issue_number: context.issue.number,
@@ -76,19 +84,19 @@ jobs:
           );
           
           const commentBody = `## DMFR Format Check Results
-
+          
           This PR includes files that need formatting adjustments to follow the "opinionated" DMFR format.
-
+          
           ### Suggested Changes:
           \`\`\`diff
-          ${process.env.GIT_DIFF}
+          ${diff}
           \`\`\`
           
           You can apply these changes by:
           1. Using a code editor
           2. Running [transitland-lib](https://github.com/interline-io/transitland-lib/blob/main/dmfr-command.md) locally
           3. Waiting for a maintainer to help
-
+          
           Thank you for contributing to Transitland Atlas! 🚀`;
 
           if (botComment) {
