@@ -5,24 +5,26 @@
       "id": "f-city~of~lompoc~transit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.cityoflompoc.com/home/showdocument?id=29896"
+        "static_current": "https://www.cityoflompoc.com/home/showpublisheddocument/29896/638460016396870000",
+        "static_historic": [
+          "https://www.cityoflompoc.com/home/showdocument?id=29896"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
           "onestop_id": "o-9q4-cityoflompoctransitcolt",
-          "name": "City of Lompoc Transit (COLT)",
-          "tags": {
-            "twitter_general": "CityofLompoc",
-            "us_ntd_id": "90149",
-            "wikidata_id": "Q5123760"
-          }
-        },
-        {
-          "onestop_id": "o-city~of~lompoc~transit",
+          "supersedes_ids": [
+            "o-city~of~lompoc~transit"
+          ],
           "name": "City of Lompoc Transit",
           "short_name": "COLT",
           "website": "https://www.cityoflompoc.com/government/departments/public-works/transportation/city-of-lompoc-transit",
           "tags": {
+            "twitter_general": "CityofLompoc",
+            "us_ntd_id": "90149",
             "wikidata_id": "Q5123760"
           }
         }
