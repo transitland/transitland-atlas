@@ -23,7 +23,7 @@ Includes feeds in the following data specifications (specs):
 
 - [GTFS](https://gtfs.org/reference/static)
 - [GTFS Realtime](https://gtfs.org/reference/realtime/v2/)
-- [GBFS](https://github.com/NABSA/gbfs) - automatically synchronized from https://github.com/NABSA/gbfs/blob/master/systems.csv
+- [GBFS](https://github.com/MobilityData/gbfs) - automatically synchronized from https://github.com/MobilityData/gbfs/blob/master/systems.csv
 - [MDS](https://github.com/openmobilityfoundation/mobility-data-specification) - automatically synchronized from https://github.com/openmobilityfoundation/mobility-data-specification/blob/main/providers.csv
 
 ## How to Add a New Feed
