@@ -207,6 +207,32 @@
       }
     },
     {
+      "id": "f-dpc5-valleytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridemyvalleytransit.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/valleytransit-wi-us/valleytransit-wi-us.zip",
+          "http://gis.appleton.org/DataDownload/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpc5-valleytransit",
+          "name": "Valley Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpc5-valleytransit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "50001",
+            "wikidata_id": "Q7912245"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dpc5-valleytransit~rt",
       "spec": "gtfs-rt",
       "urls": {
