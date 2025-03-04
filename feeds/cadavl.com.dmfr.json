@@ -32,8 +32,9 @@
       "id": "f-dnjq-greenlink",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://greenlink.cadavl.com:5053/GTA/GTFS/GTFS_GTA.zip",
+        "static_current": "https://gtfs.greenlink.cadavl.com/GTA/GTFS/GTFS_GTA.zip",
         "static_historic": [
+          "https://greenlink.cadavl.com:5053/GTA/GTFS/GTFS_GTA.zip",
           "https://trackgreenlink.com/gtfs"
         ]
       },
@@ -42,26 +43,12 @@
           "onestop_id": "o-dnjq-greenlink",
           "name": "Greenlink",
           "website": "http://www.ridegreenlink.com/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dnjq-greenlink~rt"
-            }
-          ],
           "tags": {
             "twitter_general": "ridegreenlink",
             "us_ntd_id": "40053"
           }
         }
       ]
-    },
-    {
-      "id": "f-dnjq-greenlink~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/VehiclePosition.pb",
-        "realtime_trip_updates": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/TripUpdate.pb",
-        "realtime_alerts": "https://greenlink.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-GTA/Alert.pb"
-      }
     },
     {
       "id": "f-green~bay~wi~us",
