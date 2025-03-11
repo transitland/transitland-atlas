@@ -5,8 +5,9 @@
       "id": "f-djwq-chathamareatransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://catchacat.org/wp-content/uploads/March-2024-GTFS-3624.zip",
+        "static_current": "https://catchacat.org/wp-content/uploads/GTFS.zip",
         "static_historic": [
+          "https://catchacat.org/wp-content/uploads/March-2024-GTFS-3624.zip",
           "https://www.catchacat.org/wp-content/uploads/CAT_GTFS_Nov2023Pick.zip#GTFS/GTFSExport.zip",
           "https://www.catchacat.org/wp-content/uploads/GTFS_Files.zip#GTFS/GTFSExport.zip",
           "https://www.catchacat.org/wp-content/uploads/GTFS_Files.zip#GTFS%207/GTFSExport.zip",
@@ -17,9 +18,6 @@
           "http://cvlassets.s3.amazonaws.com/savmetro20161107%20(1).zip"
         ]
       },
-      "tags": {
-        "unstable_url": "true"
-      },
       "operators": [
         {
           "onestop_id": "o-djwq-chathamareatransit",
@@ -28,7 +26,7 @@
           "website": "http://www.catchacat.org",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SAV"
+              "feed_onestop_id": "f-djwq-chathamareatransit~ferry"
             }
           ],
           "tags": {
@@ -39,6 +37,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-djwq-chathamareatransit~ferry",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://catchacat.org/wp-content/uploads/GTFSferry.zip"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
