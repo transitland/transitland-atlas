@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-plzen",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jizdnirady.pmdp.cz/jr/gtfs"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-pmdp",
+      "name": "Plzeňské městské dopravní podniky, a.s.",
+      "short_name": "PMDP",
+      "website": "https://www.pmdp.cz",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-plzen"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q2099900"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
