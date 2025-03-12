@@ -44,6 +44,48 @@
       ]
     },
     {
+      "id": "f-9rc-cascadeseast~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/cet/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cascadeseast-or-us/cascadeseast-or-us.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "cascades-east-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rc-cascadeseasttransit",
+          "name": "Cascades East Transit",
+          "short_name": "CET",
+          "website": "https://www.caravanairporttransportation.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "61"
+            },
+            {
+              "feed_onestop_id": "f-9rc-cascadeseast~or~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridecet",
+            "us_ntd_id": "00057"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9rc-cascadeseast~or~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/cet/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/cet/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/cet/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-9vxz-jatran~ms~us",
       "spec": "gtfs",
       "urls": {
