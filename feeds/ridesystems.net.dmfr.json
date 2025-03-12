@@ -2,6 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-brownsville~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://brownsvillemetro.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "name": "Brownsville Metro",
+          "short_name": "B Metro",
+          "website": "https://www.brownsvilletx.gov/2422/Metro",
+          "tags": {
+            "us_ntd_id": "60014",
+            "wikidata_id": "Q4976783"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-city~of~bowling~green",
       "spec": "gtfs",
       "urls": {
