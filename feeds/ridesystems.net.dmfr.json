@@ -2,6 +2,43 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-brownsville~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://brownsvillemetro.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-brownsville~tx~us",
+          "name": "Brownsville Metro",
+          "short_name": "B Metro",
+          "website": "https://www.brownsvilletx.gov/2422/Metro",
+          "tags": {
+            "us_ntd_id": "60014",
+            "wikidata_id": "Q4976783"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-city~of~bowling~green",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gobg.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-city~of~bowling~green",
+          "name": "City of Bowling Green",
+          "short_name": "GoBG Transit",
+          "website": "https://www.letsgobg.com/",
+          "tags": {
+            "us_ntd_id": "40184"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dn5b-georgiatechtrolley~stingershuttles",
       "spec": "gtfs",
       "urls": {
@@ -51,6 +88,23 @@
       ]
     },
     {
+      "id": "f-fond~du~lac",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.fonddulac.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-fond~du~lac",
+          "name": "Fond du Lac Area Transit",
+          "website": "https://www.fdl.wi.gov/transit/riding-the-bus/",
+          "tags": {
+            "us_ntd_id": "50171"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-jackson~mi~us",
       "spec": "gtfs",
       "urls": {
@@ -80,6 +134,38 @@
           "short_name": "EZ Rider",
           "tags": {
             "us_ntd_id": "60097"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-mission~viejo~shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mvshuttle.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      }
+    },
+    {
+      "id": "f-university~of~houston",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.cougarline.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      }
+    },
+    {
+      "id": "f-waco~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://wacotransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-waco~transit",
+          "name": "Waco Transit System",
+          "short_name": "WTS",
+          "website": "https://www.waco-texas.com/Departments/Transit-System",
+          "tags": {
+            "us_ntd_id": "60012"
           }
         }
       ]
