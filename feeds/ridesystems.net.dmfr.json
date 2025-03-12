@@ -2,6 +2,24 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-city~of~bowling~green",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gobg.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-city~of~bowling~green",
+          "name": "City of Bowling Green",
+          "short_name": "GoBG Transit",
+          "website": "https://www.letsgobg.com/",
+          "tags": {
+            "us_ntd_id": "40184"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dn5b-georgiatechtrolley~stingershuttles",
       "spec": "gtfs",
       "urls": {
