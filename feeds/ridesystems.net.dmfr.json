@@ -2,13 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
-      "id": "f-university~of~houston",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://www.cougarline.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
-      }
-    },
-    {
       "id": "f-brownsville~tx~us",
       "spec": "gtfs",
       "urls": {
@@ -150,6 +143,31 @@
       "urls": {
         "static_current": "https://mvshuttle.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
       }
+    },
+    {
+      "id": "f-university~of~houston",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.cougarline.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      }
+    },
+    {
+      "id": "f-waco~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://wacotransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-waco~transit",
+          "name": "Waco Transit System",
+          "short_name": "WTS",
+          "website": "https://www.waco-texas.com/Departments/Transit-System",
+          "tags": {
+            "us_ntd_id": "60012"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
