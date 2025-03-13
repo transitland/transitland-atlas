@@ -46,6 +46,15 @@ If you are using the Github web interface, you can click "Add a file -> Create a
 
 For more information on what can go into a DMFR file, see the [DMFR documentation](https://github.com/transitland/distributed-mobility-feed-registry).
 
+## Opinionated DMFR file format
+
+The Atlas repository enforces an opinionated DMFR format that extends the standard DMFR JSON schema. This format enforces:
+- Consistent JSON indentation
+- Consistent key ordering
+- A trailing line break at the end of the file (this is a change as of March 2025)
+
+This opinionated format is not part of the DMFR specification itself, but rather an additional layer of formatting rules to ensure that DMFR files in the Atlas repository only change to reflect meaningful changes in the data, not inconsequential formatting differences. This reduces the amount of lines that are likely to change in PRs in this repository. The opinionated format is applied using the `transitland dmfr format` command from the [transitland-lib](https://github.com/interline-io/transitland-lib) CLI tool and is checked by GitHub Actions on all PRs in this repo.
+
 ## How to Update an Existing Feed
 
 1. Find the DMFR file containing the feed.
@@ -63,7 +72,7 @@ Onestop ID values for feeds and operators are used to synchronize with existing 
 Operators can exist in the top-level `operators` property if a DMFR file, or nested within a feed. An operator defined in the top-level `operators` property requires an `associated_feeds` value to connect the operator with data sources. When an operator is nested within a feed, there is an implicit association that all GTFS agencies contained in that file are associated with that operator, which helps reduces complexity and maintenance.
 
 The key properties for an operator are:
-* `onestop_id`: A OnestopID value for this operator, starting with `o-`
+* `onestop_id`: A Onestop ID value for this operator, starting with `o-`
 * `name`: A formal name for the operator, such as `Bay Area Rapid Transit`
 * `short_name`: A simpler, colloqial name for an operator, such as `BART`
 * `tags`: A set of key,value string pairs that provide additional metadata and references
