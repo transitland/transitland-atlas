@@ -14,10 +14,12 @@ WARNINGS:
 
 - It's up to you to update any references to the old ID in associated_feeds arrays
 - This script doesn't look at operator Onestop IDs
+- After running the script, don't forget to apply the opinionated DMFR format
 
 
 Usage:
     python3 scripts/debug/lowercase_feed_onestop_ids.py
+    gfind ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
 """
 
 import json
