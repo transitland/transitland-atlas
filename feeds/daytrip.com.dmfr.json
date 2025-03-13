@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-dt~it",
@@ -13,6 +13,16 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "use_without_attribution": "no"
+      }
+    },
+    {
+      "id": "f-dt~mx",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.daytrip.com/gtfs_mx.zip"
+      },
+      "tags": {
+        "mbd_source_id": "2131"
       }
     },
     {
@@ -38,6 +48,9 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-dt~it"
+        },
+        {
+          "feed_onestop_id": "f-dt~mx"
         },
         {
           "feed_onestop_id": "f-dt~pt"

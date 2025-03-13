@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-fayette~area~coordinated~transportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://fact.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-fayette~area~coordinated~transportation~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://fact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://fact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://fact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-fayette~area~coordinated~transportation",
+      "name": "Fayette Area Coordinated Transportation",
+      "short_name": "FACT",
+      "website": "https://www.factbus.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-fayette~area~coordinated~transportation"
+        },
+        {
+          "feed_onestop_id": "f-fayette~area~coordinated~transportation~rt"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "30087"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

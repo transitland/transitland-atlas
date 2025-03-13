@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-alternéo~reunion",
@@ -9,6 +9,18 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/donnees-du-reseau-alterneo"
+      }
+    },
+    {
+      "id": "f-autun~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/0fd67eb8-24a4-4ae0-b98b-b442f74244e1"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-lignes-regulieres-reseau-de-transport-urbain-a-autun",
+        "share_alike_optional": "no"
       }
     },
     {
@@ -67,6 +79,57 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/reseau-karouest"
+      }
+    },
+    {
+      "id": "f-keolis~dijon~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/e0dbd217-15cd-4e28-9459-211a27511a34",
+        "static_historic": [
+          "https://data.explore.divia.fr/api/datasets/1.0/gtfs-divia-mobilites/attachments/gtfs_diviamobilites_current_zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-diviamobilites"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-keolis~dijon~fr",
+          "name": "Keolis Dijon Mobilités",
+          "short_name": "DiviaMobilités",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-keolis~dijon~fr~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2361824"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-keolis~dijon~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.transport.data.gouv.fr/resource/divia-dijon-gtfs-rt-vehicle-position",
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/divia-dijon-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-diviamobilites"
+      }
+    },
+    {
+      "id": "f-léo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/ade0bfc2-0e7a-4087-96dd-a76aeb61d196"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transports-en-commun-de-la-communaute-dagglomeration-de-lauxerrois"
       }
     },
     {
@@ -182,23 +245,21 @@
       "id": "f-sp9x-libellus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.data.gouv.fr/fr/datasets/r/66eaf639-bef7-427b-821a-9e621322b535"
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/70c9f936-129e-41f4-940a-8e6f272535d1",
+        "static_historic": [
+          "https://www.data.gouv.fr/fr/datasets/r/66eaf639-bef7-427b-821a-9e621322b535"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-du-reseau-libellus-gtfs",
+        "share_alike_optional": "no"
       },
       "operators": [
         {
           "onestop_id": "o-sp9x-libellus",
           "name": "Libellus",
-          "short_name": "Libellus",
-          "website": "http://www.libellus.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
+          "website": "http://www.libellus.org/"
         }
       ]
     },
@@ -589,6 +650,40 @@
       ]
     },
     {
+      "id": "f-spv-lignesdazur",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://transport.data.gouv.fr/resources/79642/download",
+        "static_historic": [
+          "http://opendata.nicecotedazur.org/data/dataset/export-quotidien-au-format-gtfs-du-reseau-de-transport-lignes-d-azur/resource/aacb4eea-d008-4b13-b17a-848b8ced7e03/download"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/export-quotidien-au-format-gtfs-du-reseau-de-transport-lignes-d-azur",
+        "use_without_attribution": "no"
+      },
+      "tags": {
+        "gtfs_data_exchange": "lignes-dazur"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spv-lignesdazur",
+          "name": "Lignes d'Azur",
+          "website": "http://www.lignesdazur.com/"
+        }
+      ]
+    },
+    {
+      "id": "f-tanéo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/0b65dda9-51d3-4d84-811b-8a11629a5e55"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/versions-des-horaires-theoriques-des-lignes-du-reseau-de-bus-au-format-gtfs"
+      }
+    },
+    {
       "id": "f-troyes~tcat~fr",
       "spec": "gtfs",
       "urls": {
@@ -601,6 +696,40 @@
       }
     },
     {
+      "id": "f-tréma~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/ad03b8ed-b904-4c23-aa4d-7544ea531a67"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-du-reseau-trema-gtfs"
+      }
+    },
+    {
+      "id": "f-tuc~cambrai",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/d00d1684-6980-4f84-ac38-363b6f058a68"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/donnees-gtfs-reseau-tuc-communaute-dagglomeration-de-cambrai"
+      }
+    },
+    {
+      "id": "f-u0f7d-pastelmavilleestbelle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/43053be6-e26d-4b2c-b157-cb529c1bedeb",
+        "static_historic": [
+          "https://www.data.gouv.fr/fr/datasets/r/f360cebb-ce17-495b-aac6-05b4f52ea444",
+          "http://buspastel.fr/google_transit.zip#google_transit"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/bus-pastel-saint-quentin-horaires-2024"
+      }
+    },
+    {
       "id": "f-u0kz-optymo~belfort",
       "spec": "gtfs",
       "urls": {
@@ -608,7 +737,7 @@
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/"
+        "url": "https://transport.data.gouv.fr/datasets/arrets-circuits-et-horaires-du-reseau-optymo-de-belfort"
       },
       "operators": [
         {
@@ -618,7 +747,10 @@
           "website": "https://www.optymo.fr/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "OPTYMO_SUB"
+            },
+            {
+              "gtfs_agency_id": "OPTYMO_URB"
             }
           ]
         }
@@ -632,6 +764,16 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/ce-jeu-de-donnees-contient-la-liste-des-arrets-des-horaires-et-des-parcours-theoriques-du-reseau-de-transport-urbain-et-interurbain-de-vrm"
+      }
+    },
+    {
+      "id": "f-zoom~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/7d3fd400-c55e-4994-9d85-de1dd4291dcb"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-zoom-le-grand-chalon"
       }
     }
   ],

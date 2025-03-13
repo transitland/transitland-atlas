@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-pottstown~area~rapid~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://part.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-pottstown~area~rapid~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://part.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://part.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://part.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-pottstown~area~rapid~transit",
+      "name": "Pottstown Area Rapid Transit",
+      "short_name": "PART",
+      "website": "https://pottstownarearapidtransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-pottstown~area~rapid~transit"
+        },
+        {
+          "feed_onestop_id": "f-pottstown~area~rapid~transit~rt"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "30077",
+        "wikidata_id": "Q7235394"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

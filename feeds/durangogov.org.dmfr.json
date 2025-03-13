@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-durango~transit~co",
@@ -12,6 +12,11 @@
           "onestop_id": "o-durango~transit~co",
           "name": "Durango Transit",
           "website": "https://co-durango.civicplus.com/333/Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-durango~transit~co~flex"
+            }
+          ],
           "tags": {
             "us_ntd_id": "8R01-80206"
           }

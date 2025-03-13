@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-endless~mountains~transportation~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://best.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-endless~mountains~transportation~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://best.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://best.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://best.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-endless~mountains~transportation~authority",
+      "name": "Endless Mountains Transportation Authority",
+      "short_name": "BeST Transit",
+      "website": "https://gobesttransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-endless~mountains~transportation~authority"
+        },
+        {
+          "feed_onestop_id": "f-endless~mountains~transportation~authority~rt"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "30170",
+        "wikidata_id": "Q5376177"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

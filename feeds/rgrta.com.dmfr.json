@@ -1,39 +1,100 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-dr8-rochester~geneseeregionaltransportationauthority",
-      "supersedes_ids": [
-        "f-rts~wyoming~ny"
-      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "http://scheduledata.rgrta.com/google_transit.zip"
       },
       "tags": {
         "gtfs_data_exchange": "rochester-genesee-regional-transportation-authority"
-      },
-      "operators": [
+      }
+    },
+    {
+      "id": "f-rts~genesee",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Genesee.zip"
+      }
+    },
+    {
+      "id": "f-rts~ontario",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Ontario.zip"
+      }
+    },
+    {
+      "id": "f-rts~orleans",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Orleans.zip"
+      }
+    },
+    {
+      "id": "f-rts~seneca~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Seneca.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/RTS-Seneca.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-rts~wyoming",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Wyoming.zip"
+      }
+    },
+    {
+      "id": "f-rts~wyoming~ny",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Wayne.zip"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dr8-rochester~geneseeregionaltransportationauthority",
+      "supersedes_ids": [
+        "o-dr8-regionaltransitservice",
+        "o-dr9k-rtsseneca"
+      ],
+      "name": "Rochester-Genesee Regional Transportation Authority",
+      "short_name": "RGRTA",
+      "website": "http://www.rgrta.com",
+      "associated_feeds": [
         {
-          "onestop_id": "o-dr8-rochester~geneseeregionaltransportationauthority",
-          "supersedes_ids": [
-            "o-dr8-regionaltransitservice"
-          ],
-          "name": "Rochester-Genesee Regional Transportation Authority",
-          "short_name": "RGRTA",
-          "website": "http://www.rgrta.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RGRTA"
-            }
-          ],
-          "tags": {
-            "twitter_general": "enjoyRTS",
-            "us_ntd_id": "20113",
-            "wikidata_id": "Q7353936"
-          }
+          "feed_onestop_id": "f-dr8-rochester~geneseeregionaltransportationauthority"
+        },
+        {
+          "feed_onestop_id": "f-rts~genesee"
+        },
+        {
+          "feed_onestop_id": "f-rts~ontario"
+        },
+        {
+          "feed_onestop_id": "f-rts~orleans"
+        },
+        {
+          "feed_onestop_id": "f-rts~seneca~ny"
+        },
+        {
+          "feed_onestop_id": "f-rts~wyoming"
+        },
+        {
+          "feed_onestop_id": "f-rts~wyoming~ny"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "enjoyRTS",
+        "us_ntd_id": "20113;20967;20980;20983;20934;20947",
+        "wikidata_id": "Q7353936"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

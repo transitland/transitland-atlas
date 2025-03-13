@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-u0sr-lemet~proxis",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.lemet.fr/documents/LEMET-gtfs.zip",
+        "static_historic": [
+          "https://si.metzmetropole.fr/fiches/opendata/gtfs_current.zip"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/fichiers-gtfs-eurometropole-de-metz"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0sr-lemet",
+          "name": "LE MET'",
+          "website": "http://lemet.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TAMM"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

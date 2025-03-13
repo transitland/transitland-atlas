@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-dnq-wsta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridewsta.com/gtfs",
+        "static_historic": [
+          "https://wstransit.com/wp-content/uploads/2024/01/GTFS-TRIPS_5fa76ace_2024-01-02-18-53-02.zip"
+        ]
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dnq-wsta",
+      "name": "Winston-Salem Transit Authority",
+      "short_name": "WSTA",
+      "website": "https://wstransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dnq-wsta"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "40012"
+      }
+    }
+  ]
+}

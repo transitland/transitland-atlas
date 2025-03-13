@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-west~virginia~university",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://prt.wvu.edu/files/d/fcc4abeb-9e23-477b-b648-30623cb8ad80/gtfs-3.zip",
+        "static_historic": [
+          "https://prt.wvu.edu/files/d/d42da147-665c-4dcf-93c8-f7ffd95312a0/gtfs.zip"
+        ]
+      },
+      "license": {
+        "url": "https://prt.wvu.edu/gtfs"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpp1s-wvuprt",
+          "name": "West Virginia University Morgantown Personal Rapid Transit",
+          "short_name": "WVU PRT",
+          "website": "http://transportation.wvu.edu/",
+          "tags": {
+            "us_ntd_id": "30107",
+            "wikidata_id": "Q3375714"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

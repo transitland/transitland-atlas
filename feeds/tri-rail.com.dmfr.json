@@ -1,12 +1,13 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-dhx-tri~rail",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.tri-rail.com/gtdf/google_transit.zip",
+        "static_current": "https://gtfs.tri-rail.com/gtfs.zip",
         "static_historic": [
+          "https://www.tri-rail.com/gtdf/google_transit.zip",
           "http://www.tri-rail.com/GTDF/Current/google_transit.zip"
         ]
       },

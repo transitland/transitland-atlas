@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9px-cooscounty~or~us",
@@ -33,7 +33,9 @@
       "id": "f-9px-currypublictransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
+        ]
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
@@ -41,7 +43,8 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "curry-public-transit"
+        "gtfs_data_exchange": "curry-public-transit",
+        "status": "outdated"
       },
       "operators": [
         {
@@ -192,6 +195,39 @@
               "gtfs_agency_id": "225"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "f-9r88-rogue~valley~transportation~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/rvtd-or-us/rvtd-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r88-rogue~valley~transportation~district",
+          "name": "Rogue Valley Transportation District",
+          "short_name": "RVTD",
+          "website": "https://rvtd.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "981"
+            },
+            {
+              "feed_onestop_id": "f-rogue~valley~transportation~district~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridervtd",
+            "us_ntd_id": "00034",
+            "wikidata_id": "Q7359553"
+          }
         }
       ]
     },
@@ -522,51 +558,6 @@
       ]
     },
     {
-      "id": "f-9rc-cascadeseast~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cascadeseast-or-us/cascadeseast-or-us.zip"
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "cascades-east-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rc-cascadeseasttransit",
-          "name": "Cascades East Transit",
-          "short_name": "CET",
-          "website": "https://www.caravanairporttransportation.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "61"
-            },
-            {
-              "feed_onestop_id": "f-9rc-cascadeseast~or~us~rt"
-            },
-            {
-              "feed_onestop_id": "f-9rc-cascadeseast~or~us~rt~alerts"
-            }
-          ],
-          "tags": {
-            "twitter_general": "ridecet",
-            "us_ntd_id": "57"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9rc-cascadeseast~or~us~rt~alerts",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/cascadeseast-or-us/service_alerts.proto"
-      }
-    },
-    {
       "id": "f-9rc-cobreeze~or~us",
       "spec": "gtfs",
       "urls": {
@@ -607,7 +598,8 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "eugene-to-bend"
+        "gtfs_data_exchange": "eugene-to-bend",
+        "status": "archived"
       }
     },
     {
@@ -733,6 +725,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "57"
+            },
+            {
+              "feed_onestop_id": "f-columbiacounty~or~us~flex"
             }
           ],
           "tags": {
@@ -779,39 +774,6 @@
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto"
       }
-    },
-    {
-      "id": "f-c20-wilsonville~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/wilsonville-or-us/wilsonville-or-us.zip"
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20-wilsonville~or~us",
-          "name": "South Metro Area Regional Transit",
-          "short_name": "SMART",
-          "website": "https://www.ridesmart.com/transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "101",
-              "feed_onestop_id": "f-c20-wilsonville~or~us"
-            },
-            {
-              "feed_onestop_id": "f-southmetroarearegionaltransit~rt"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "00046",
-            "wikidata_id": "Q7567940"
-          }
-        }
-      ]
     },
     {
       "id": "f-c208u-woodburn~or~us",
@@ -865,7 +827,7 @@
       "id": "f-c20c-sctd~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://oregon-gtfs.com/gtfs_data/sctd-or-us/sctd-or-us.zip",
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/sctd-or-us/sctd-or-us.zip",
         "static_historic": [
           "https://oregon-gtfs.trilliumtransit.com/gtfs_data/sctd-or-us/sctd-or-us.zip"
         ]
@@ -1040,26 +1002,6 @@
           "tags": {
             "twitter_general": "ClackCollege"
           }
-        }
-      ]
-    },
-    {
-      "id": "f-c20fb-ceic~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/ceic-or-us/ceic-or-us.zip"
-        ]
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20fb-wateravenueshuttle",
-          "name": "Water Avenue Shuttle"
         }
       ]
     },
@@ -1306,12 +1248,17 @@
       "id": "f-klamath~shuttle~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
+        ]
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "status": "outdated"
       },
       "operators": [
         {
@@ -1442,40 +1389,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "f-wahkiakumferry~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-or-us/wahkiakumferry-or-us.zip"
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20q82-wahkiakumferry",
-          "name": "Wahkiakum Ferry",
-          "website": "https://www.co.wahkiakum.wa.us/252/Ferry",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1732"
-            }
-          ],
-          "tags": {
-            "wikidata_id": "Q7959804"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-wahkiakumferry~wa~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/wahkiakumferry-wa-us/wahkiakumferry-wa-us.zip"
-      }
     },
     {
       "id": "f-wheatlandferry~or~us",

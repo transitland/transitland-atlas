@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-tulare~county~regional~transit~agency",
@@ -8,7 +8,10 @@
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/tulare-county-regional-transit-agency-tcrta-gtfs/"
+        "static_current": "https://data.trilliumtransit.com/gtfs/tcrta-ca-us/tcrta-ca-us.zip",
+        "static_historic": [
+          "https://tularecog.org/tcag/data-gis-modeling/gtfs-data/tulare-county-regional-transit-agency-tcrta-gtfs/"
+        ]
       },
       "operators": [
         {

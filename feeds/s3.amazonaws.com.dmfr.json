@@ -1,47 +1,15 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
-      "id": "f-brest~bibus",
+      "id": "f-boulonnais~marinéo",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://ratpdev-mosaic-prod-bucket-raw.s3-eu-west-1.amazonaws.com/11/exports/1/gtfs.zip",
-        "static_historic": [
-          "https://applications002.brest-metropole.fr/VIPDU72/GPB/Lot_BrestMetropole_Bibus.zip"
-        ]
+        "static_current": "https://s3.eu-west-1.amazonaws.com/files.orchestra.ratpdev.com/networks/boulogne/exports/medias.zip"
       },
       "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-des-bus-et-tramways-circulant-sur-le-territoire-de-brest-metropole"
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-de-transport-marineo"
       }
-    },
-    {
-      "id": "f-dr7-nywaterway",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/data.bytemark.co/nywaterway/nywaterway.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "ny-waterway"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr7-nywaterway",
-          "name": "NY Waterway",
-          "website": "http://www.nywaterway.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NYW",
-              "feed_onestop_id": "f-dr7-nywaterway"
-            }
-          ],
-          "tags": {
-            "twitter_general": "ridetheferry",
-            "us_ntd_id": "20190",
-            "wikidata_id": "Q6956135"
-          }
-        }
-      ]
     },
     {
       "id": "f-gary~public~transportation~in~us",
@@ -107,6 +75,26 @@
       "tags": {
         "mdb_source_id": "2026"
       }
+    },
+    {
+      "id": "f-steamshipauthority~ma~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www-steamship-assets.s3.amazonaws.com/versioned_downloadable_forms/path/google_transit.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/steamshipauthority-ma-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-steamshipauthority~ma~us",
+          "name": "Steamship Authority",
+          "website": "https://www.steamshipauthority.com/",
+          "tags": {
+            "us_ntd_id": "10183"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

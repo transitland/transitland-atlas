@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-dp8d-jts~wi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/Janesville_Transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/jts-wi-us/jts-wi-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "janesville-transit-system"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp8d-janesvilletransitsystem",
+          "name": "Janesville Transit System",
+          "short_name": "JTS",
+          "website": "https://www.janesvillewi.gov/departments-services/neighborhood-and-community-services/bus-transit-jts",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "254"
+            }
+          ],
+          "tags": {
+            "twitter_general": "City_Janesville",
+            "us_ntd_id": "50108",
+            "wikidata_id": "Q6153111"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-c2-appleline~goldline~dungenessline~grapeline",
@@ -83,6 +83,43 @@
             "twitter_general": "wsferries",
             "us_ntd_id": "35",
             "wikidata_id": "Q3500373"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-okanogan~county~transportation~nutrition",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://business.wsdot.wa.gov/Transit/csv_files/TranGO/trango.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-okanogan~county~transit~authority",
+          "name": "Okanogan County Transit Authority",
+          "short_name": "TranGO",
+          "website": "https://okanogantransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "tgo"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "405"
+          }
+        },
+        {
+          "onestop_id": "o-okanogan~county~transportation~nutrition",
+          "name": "Okanogan County Transportation & Nutrition",
+          "short_name": "OCTN",
+          "website": "https://www.octn.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "octn"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "332"
           }
         }
       ]

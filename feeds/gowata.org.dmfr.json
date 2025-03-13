@@ -1,0 +1,32 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-dq9k-wata",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.wata.cadavl.com/WATA/GTFS/GTFS_WATA.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/williamsburg-va-us/williamsburg-va-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq9k-wata",
+          "name": "Williamsburg Area Transit Authority",
+          "short_name": "WATA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-wata~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "goWATA_VA",
+            "us_ntd_id": "30076",
+            "wikidata_id": "Q8021156"
+          }
+        }
+      ]
+    }
+  ]
+}

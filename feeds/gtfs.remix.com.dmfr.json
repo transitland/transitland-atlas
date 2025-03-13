@@ -1,6 +1,26 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
+    {
+      "id": "f-atomic~city~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/act_los_alamos_nm_us.zip",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/atomic.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wkk-atomiccitytransit",
+          "name": "Atomic City Transit",
+          "tags": {
+            "twitter_general": "losalamos",
+            "us_ntd_id": "60215"
+          }
+        }
+      ]
+    },
     {
       "id": "f-biddeford~saco~old~orchard~beach",
       "supersedes_ids": [
@@ -29,6 +49,41 @@
       ]
     },
     {
+      "id": "f-blue~water~area~transportation~commission",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/bwat_porthuron_mi_us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-blue~water~area~transportation~commission",
+          "name": "Blue Water Area Transit",
+          "website": "https://bwbus.com/",
+          "tags": {
+            "us_ntd_id": "50148"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-decatur~il~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/dpts_decatur_il_us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-decatur~il~us",
+          "name": "Decatur Public Transit System",
+          "short_name": "DPTS",
+          "website": "https://decaturil.gov/249/Transit",
+          "tags": {
+            "us_ntd_id": "50061"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dp73-citilink",
       "spec": "gtfs",
       "urls": {
@@ -51,6 +106,79 @@
             "twitter_general": "FWCitilink",
             "us_ntd_id": "50044",
             "wikidata_id": "Q5472275"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dry0-cityofsouthportland",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/South_Portland_Bus_ME_US.zip",
+        "static_historic": [
+          "http://www.smttracker.com/downloads/gtfs/south-portland-me-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dry0-maine~cityofsouthportland",
+          "name": "South Portland",
+          "website": "http://www.southportland.org/departments/bus-transportation/",
+          "tags": {
+            "us_ntd_id": "10112",
+            "wikidata_id": "Q7568265"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-high~valley~transit~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/highvalleytransit_parkcity_ut_us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-high~valley~transit~district",
+          "name": "High Valley Transit",
+          "website": "https://www.highvalleytransit.org/",
+          "tags": {
+            "us_ntd_id": "88239"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-laredo~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/el_metro_laredo_transit_us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-laredo~tx~us",
+          "name": "El Metro Transit",
+          "website": "https://elmetrotransit.com/",
+          "tags": {
+            "us_ntd_id": "60009",
+            "wikidata_id": "Q5351588"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-lorain~county~oh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/Lorain_County_Transit_US.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lorain~county~oh~us",
+          "name": "Lorain County Transit",
+          "website": "https://www.loraincountyohio.gov/280/Transit",
+          "tags": {
+            "us_ntd_id": "50095"
           }
         }
       ]

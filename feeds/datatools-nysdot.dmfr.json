@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-academy~express~staten~island",
@@ -123,7 +123,10 @@
       "id": "f-chemung~c~tran",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Chemung_C_Tran.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Chemung_C_TRAN.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Chemung_C_Tran.zip"
+        ]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -288,26 +291,6 @@
             "us_ntd_id": "20178",
             "wikidata_id": "Q7879947"
           }
-        }
-      ]
-    },
-    {
-      "id": "f-dr73-tappanzeeexpress",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-nysdot/public/TappanZee_Express.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr73-tappanzeeexpress",
-          "name": "TappanZee Express",
-          "short_name": "TZx",
-          "website": "http://www.rocklandbus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "TZEXpress-Rockland-ny-us"
-            }
-          ]
         }
       ]
     },
@@ -611,7 +594,10 @@
       "id": "f-hudson~rail~link",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Hudson_Rail_Link.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Hudson_Rail_Link.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/mnrraillink-ny-us/mnrraillink-ny-us.zip"
+        ]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -741,6 +727,9 @@
       "operators": [
         {
           "onestop_id": "o-dr73-lowerhudsonvalleytransit",
+          "supersedes_ids": [
+            "o-dr73-tappanzeeexpress"
+          ],
           "name": "Lower Hudson Transit Link",
           "short_name": "Hudson Link",
           "associated_feeds": [
@@ -790,7 +779,17 @@
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr75f-middletownareatransit",
+          "name": "Middletown Area Transit",
+          "website": "https://www.ridetransitorange.com/middletown",
+          "tags": {
+            "us_ntd_id": "20216"
+          }
+        }
+      ]
     },
     {
       "id": "f-monroe~bus~lines~kiryas~joel~ny",
@@ -818,20 +817,6 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Newburgh_Beacon_Shuttle.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      }
-    },
-    {
-      "id": "f-newburgh~bus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://oc-otp-gtfs.s3.amazonaws.com/newburgh.zip"
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -1009,34 +994,23 @@
       ]
     },
     {
-      "id": "f-rts~seneca~ny",
+      "id": "f-rockland~ny~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/RTS-Seneca.zip"
-      },
-      "license": {
-        "url": "https://www.myrts.com/RGRTA-API",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/TOR_Transport_of_Rockland.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/rockland-ny-us.zip"
+        ]
       },
       "operators": [
         {
-          "onestop_id": "o-dr9k-rtsseneca",
-          "name": "RTS Seneca",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "RTS-Seneca-NY-US"
-            },
-            {
-              "feed_onestop_id": "f-rochester~geneseeregionaltransportationauthority~rt"
-            }
-          ],
+          "onestop_id": "o-rockland~ny~us",
+          "name": "Transport of Rockland",
+          "short_name": "TOR",
+          "website": "https://www.rocklandcountyny.gov/departments/public-transportation/transport-of-rockland-tor",
           "tags": {
-            "twitter_general": "enjoyRTS",
-            "us_ntd_id": "20113",
-            "wikidata_id": "Q7353936"
+            "us_ntd_id": "20084",
+            "wikidata_id": "Q7835144"
           }
         }
       ]

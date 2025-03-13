@@ -1,14 +1,18 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-texas~state~san~marcos",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gato-docs.its.txstate.edu/jcr:7afa7719-3973-4804-a666-61036a025185/TXST-20230117-v1_5-Static-Final.zip",
+        "static_current": "https://docs.gato.txst.edu/357013/gtfs.zip",
         "static_historic": [
+          "https://gato-docs.its.txstate.edu/jcr:7afa7719-3973-4804-a666-61036a025185/TXST-20230117-v1_5-Static-Final.zip",
           "https://gato-docs.its.txstate.edu/jcr:7afa7719-3973-4804-a666-61036a025185/Texas_State-20221118T180619Z-91e06767-3b45-473c-a296-d9e716028dda-f4ec3f53-4c22-400c-928d-cfb29198b6b4.zip"
         ]
+      },
+      "license": {
+        "url": "https://www.shuttle.txst.edu/about/gtfs.html"
       },
       "tags": {
         "unstable_url": "true"

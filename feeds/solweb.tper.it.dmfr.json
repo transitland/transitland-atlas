@@ -1,11 +1,15 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-srb-tperspa~bologna",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsbo&version=20240305&format=zip"
+        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsbo&version=20250227&format=zip",
+        "static_historic": [
+          "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsbo&version=20250116&format=zip",
+          "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsbo&version=20240305&format=zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-3.0",
@@ -19,7 +23,10 @@
       "id": "f-srb-tperspa~ferrara",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsfe&version=20240312&format=zip"
+        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsfe&version=20241220&format=zip",
+        "static_historic": [
+          "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gommagtfsfe&version=20240312&format=zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-3.0",
@@ -33,7 +40,10 @@
       "id": "f-srbj1-tperspa~blq~aeroporto",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gtfsmex&version=20240115&format=zip"
+        "static_current": "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gtfsmex&version=20241223&format=zip",
+        "static_historic": [
+          "https://solweb.tper.it/web/tools/open-data/open-data-download.aspx?source=solweb.tper.it&filename=gtfsmex&version=20240115&format=zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-3.0",

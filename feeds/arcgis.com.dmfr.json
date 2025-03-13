@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-dnq-gastoniatransit",
@@ -37,16 +37,28 @@
       ]
     },
     {
-      "id": "f-frederictontransit",
+      "id": "f-dqct-annapolistransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.arcgis.com/sharing/rest/content/items/36704575683245329a1b208bcbc72e72/data"
+        "static_current": "https://www.arcgis.com/sharing/rest/content/items/c307923d57ab4871aff79491b4a1bfd3/data",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Annapolis_GTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "https://city-of-annapolis-open-data-portal-annapolis.hub.arcgis.com/datasets/annapolis-gtfs/about"
+      },
+      "tags": {
+        "gtfs_data_exchange": "annapolis-transit"
       },
       "operators": [
         {
-          "onestop_id": "o-frederictontransit",
-          "name": "Fredericton Transit",
-          "website": "https://www.fredericton.ca/en/transit"
+          "onestop_id": "o-dqct-annapolistransit",
+          "name": "Annapolis Transit",
+          "tags": {
+            "us_ntd_id": "30040",
+            "wikidata_id": "Q4767978"
+          }
         }
       ]
     },

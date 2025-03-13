@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-eyckr-metrodelisboa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.metrolisboa.pt/google_transit/googleTransit.zip",
+        "static_historic": [
+          "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=2&u=web",
+          "http://www.transporlis.pt/Portals/0/OpenData/gtfs/zip/2/gtfs_2.zip"
+        ]
+      },
+      "license": {
+        "url": "https://nap-portugal.imt-ip.pt/nap/multimodalsupplydetail/186"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eyckr-metrodelisboa",
+          "name": "Metropolitano de Lisboa",
+          "short_name": "Metro",
+          "website": "http://www.metrolisboa.pt/",
+          "tags": {
+            "wikidata_id": "Q746032"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

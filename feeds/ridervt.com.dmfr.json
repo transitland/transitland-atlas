@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-river~valley~transit~authority",
@@ -21,7 +21,7 @@
   "operators": [
     {
       "onestop_id": "o-river~valley~transit~authority",
-      "name": "River Valley Transit",
+      "name": "River Valley Transit Authority",
       "short_name": "RVTA",
       "website": "https://www.ridervt.com/",
       "associated_feeds": [
@@ -31,7 +31,10 @@
         {
           "feed_onestop_id": "f-river~valley~transit~authority~rt"
         }
-      ]
+      ],
+      "tags": {
+        "us_ntd_id": "30026"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

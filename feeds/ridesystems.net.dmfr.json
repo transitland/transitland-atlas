@@ -1,0 +1,192 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-brownsville~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://brownsvillemetro.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-brownsville~tx~us",
+          "name": "Brownsville Metro",
+          "short_name": "B Metro",
+          "website": "https://www.brownsvilletx.gov/2422/Metro",
+          "tags": {
+            "us_ntd_id": "60014",
+            "wikidata_id": "Q4976783"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-city~of~bowling~green",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gobg.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-city~of~bowling~green",
+          "name": "City of Bowling Green",
+          "short_name": "GoBG Transit",
+          "website": "https://www.letsgobg.com/",
+          "tags": {
+            "us_ntd_id": "40184"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dn5b-georgiatechtrolley~stingershuttles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bus.gatech.edu/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://passio3.com/gatech/passioTransit/gtfs/google_transit.zip",
+          "http://documents.atlantaregional.com/transitdata/gtfs_GT.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn5b-georgiatechtrolley~stingershuttles",
+          "supersedes_ids": [
+            "o-dn5b-georgiatechtrolley~stingershuttles"
+          ],
+          "name": "Georgia Tech Stinger Bus",
+          "website": "https://pts.gatech.edu/",
+          "tags": {
+            "twitter_general": "gt_park_trans"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnjj-clemson~sc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://catbus.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/clemson-sc-us/clemson-sc-us.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "clemson-area-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnjj-clemsonareatransit",
+          "name": "Clemson Area Transit",
+          "short_name": "CATbus",
+          "tags": {
+            "twitter_general": "catclemson",
+            "us_ntd_id": "40208",
+            "wikidata_id": "Q5131543"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-fond~du~lac",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.fonddulac.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-fond~du~lac",
+          "name": "Fond du Lac Area Transit",
+          "website": "https://www.fdl.wi.gov/transit/riding-the-bus/",
+          "tags": {
+            "us_ntd_id": "50171"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-jackson~mi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jacksonareatransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-jackson~mi~us",
+          "name": "Jackson Area Transportation Authority",
+          "short_name": "JATA",
+          "tags": {
+            "us_ntd_id": "50034"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-midland~odessa~urban~transit~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ezrider.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-midland~odessa~urban~transit~district",
+          "name": "Midland-Odessa Urban Transit District",
+          "short_name": "EZ Rider",
+          "tags": {
+            "us_ntd_id": "60097"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-mission~viejo~shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mvshuttle.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      }
+    },
+    {
+      "id": "f-osu~stillwater~community~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://okstate.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-osu~stillwater~community~transit",
+          "name": "OSU-Stillwater Community Transit",
+          "website": "https://parking.okstate.edu/transit/",
+          "tags": {
+            "us_ntd_id": "60160"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-university~of~houston",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.cougarline.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      }
+    },
+    {
+      "id": "f-waco~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://wacotransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-waco~transit",
+          "name": "Waco Transit System",
+          "short_name": "WTS",
+          "website": "https://www.waco-texas.com/Departments/Transit-System",
+          "tags": {
+            "us_ntd_id": "60012"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

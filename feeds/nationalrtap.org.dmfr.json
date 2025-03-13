@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9qd-fresnocounty~ca~us",
@@ -32,23 +32,96 @@
       "id": "f-9t9e-cityofsierravista",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://demopro.nationalrtap.org/admin/GTFSzipFiles/3746/google_transit.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12009/VistaTransit_AZ_GTFS.zip",
+        "static_historic": [
+          "http://demopro.nationalrtap.org/admin/GTFSzipFiles/3746/google_transit.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-9t9e-cityofsierravista",
           "name": "City of Sierra Vista",
           "short_name": "Vista Transit",
-          "website": "http://www.sierravistaaz.gov/city-departments/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "Sierra Vista"
-            }
-          ],
+          "website": "https://www.sierravistaaz.gov/our-city/bus-service",
           "tags": {
             "twitter_general": "SierraVistaAZ",
             "us_ntd_id": "90239",
             "wikidata_id": "Q16984607"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9w-navajotransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5372/Navajo_Transit_GTFS.zip",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/navajo_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9w-navajotransitsystem",
+          "name": "Navajo Transit System",
+          "website": "https://navajotransit.navajo-nsn.gov/",
+          "tags": {
+            "us_ntd_id": "90005",
+            "wikidata_id": "Q104868592"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-albany~ga~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11834/ats_albany_ga_us(2).zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-albany~ga~us",
+          "name": "Albany Transit System",
+          "short_name": "ATS",
+          "website": "https://www.albanyga.gov/about-us/city-departments/albany-transit-system",
+          "tags": {
+            "us_ntd_id": "40021"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-alexandria~la~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11288/atrans_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-alexandria~la~us",
+          "name": "Alexandria Transit System",
+          "short_name": "ATRANS",
+          "website": "https://www.cityofalexandriala.com/bus-routes-atrans",
+          "tags": {
+            "us_ntd_id": "60025"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-archuleta~county",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11523/met_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-archuleta~county",
+          "name": "Mountain Express Transit",
+          "short_name": "MET",
+          "website": "https://www.archuletacounty.org/MET",
+          "tags": {
+            "us_ntd_id": "80280"
           }
         }
       ]
@@ -84,10 +157,186 @@
       ]
     },
     {
+      "id": "f-bay~metropolitan~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11684/BMTA_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bay~metropolitan~transit~authority",
+          "name": "Bay Metropolitan Transit Authority",
+          "short_name": "Bay Metro",
+          "website": "https://www.baymetro.com/",
+          "tags": {
+            "us_ntd_id": "50029"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-boston~express~bus~inc",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11782/fare_attributes.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-boston~express~bus~inc",
+          "name": "Boston Express",
+          "website": "https://www.bostonexpressbus.com/",
+          "tags": {
+            "us_ntd_id": "10133"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-carson~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11488/CTSGTSFFeedFiles(1.3.24).zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/carson-ca-us/carson-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5b-carsoncircuit",
+          "name": "Carson Circuit",
+          "tags": {
+            "us_ntd_id": "90258",
+            "wikidata_id": "Q5046916"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-city~of~kokomo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11767/CityofKokomo_Transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-city~of~kokomo",
+          "name": "City of Kokomo",
+          "website": "https://www.cityofkokomo.org/residents/public_transportation_city_line_trolley.php",
+          "tags": {
+            "us_ntd_id": "50145"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-cranberry~isles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13051/CranberryIslesGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cranberry~isles",
+          "name": "Town of Cranberry Isles Commuter Ferry",
+          "website": "https://www.cranberryisles-me.gov/public-services/transportation/",
+          "tags": {
+            "us_ntd_id": "10153"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-djq-sunshinebuscompany~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11581/fare_attributes.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/sunshinebuscompany-fl-us/sunshinebuscompany-fl-us.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "sunshine-bus-company"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djq-sunshinebuscompany",
+          "name": "Sunshine Bus Company",
+          "website": "https://sunshinebus.net/",
+          "tags": {
+            "us_ntd_id": "40155"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnkc-cherokeetransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11723/ecbi_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnkc-cherokeetransit",
+          "name": "Eastern Band of Cherokee Indians Public Transit",
+          "short_name": "Cherokee Transit",
+          "website": "https://www.cherokeetransit.com/",
+          "tags": {
+            "us_ntd_id": "44913"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq5-greenwaypublictransportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7944/UpdateGTFS_Feed_Greenway.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-greenway.zip?raw=true"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-regional-transit-authority-license.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq5-greenwaypublictransportation",
+          "name": "Western Piedmont Regional Transit Authority",
+          "short_name": "Greenway Public Transportation",
+          "website": "http://www.mygreenway.org/",
+          "tags": {
+            "us_ntd_id": "40172"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnr-orangecountync",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11645/GTFS-TRIPS_93684d71_2024-02-19-18-41-06.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnr-orangecountync",
+          "name": "Orange County Public Transportation",
+          "website": "https://www.orangecountync.gov/3117/Public-Transit",
+          "tags": {
+            "us_ntd_id": "40231"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnr-piedmontauthorityforregionaltransportation",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5137/gtfs.zip"
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5137/gtfs.zip",
+        "static_historic": [
+          "https://partbustracker.com/gtfs"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
@@ -103,6 +352,7 @@
           "onestop_id": "o-dnr-piedmontauthorityforregionaltransportation",
           "name": "Piedmont Authority for Regional Transportation",
           "short_name": "PART",
+          "website": "https://www.partnc.org/",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-dnr-piedmontauthorityforregionaltransportation~rt"
@@ -112,6 +362,98 @@
             "twitter_general": "partnc",
             "us_ntd_id": "40173",
             "wikidata_id": "Q7191491"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dpsk-masstransportationauthorityflint",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5191/google_transit.zip",
+        "static_historic": [
+          "https://www.mtaflint.org/wp-content/media/google_transit_2023.zip",
+          "https://www.mtaflint.org/wp-content/media/stops.zip",
+          "https://www.mtaflint.org/wp-content/media/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpsk-masstransportationauthorityflint",
+          "name": "Mass Transportation Authority Flint",
+          "short_name": "MTA Flint",
+          "website": "http://www.mtaflint.org",
+          "tags": {
+            "twitter_general": "MTAflint",
+            "us_ntd_id": "50032",
+            "wikidata_id": "Q5459534"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr09-washingtoncountycommuter",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11756/WCT_MD_GTFS.zip",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/WC_GTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr09-washingtoncountycommuter",
+          "name": "Washington County Transit Department",
+          "short_name": "WCT",
+          "website": "http://www.washco-md.net/transit/",
+          "tags": {
+            "twitter_general": "WashingtonCoMD",
+            "us_ntd_id": "30042",
+            "wikidata_id": "Q5177638"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dr10-carrolltransitsystem~carrollareatransitsystemcats",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11384/GTFS.zip",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Carroll_GTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr1-carrolltransitsystem",
+          "supersedes_ids": [
+            "o-dr10-carrolltransitsystem",
+            "o-dr12-carrollareatransitsystemcats"
+          ],
+          "name": "Carroll Transit System",
+          "website": "https://www.carrollcountymd.gov/government/directory/public-works/carroll-transit-system/",
+          "tags": {
+            "twitter_general": "CarrollCoMD",
+            "us_ntd_id": "30092",
+            "wikidata_id": "Q85750789"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-el~paso~county~",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11511/GTFS_EPCT.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-el~paso~county~",
+          "name": "El Paso Transportation Authority",
+          "short_name": "ETA",
+          "website": "http://www.elpasotransportationauthority.org/",
+          "tags": {
+            "us_ntd_id": "60179"
           }
         }
       ]
@@ -130,7 +472,131 @@
           "onestop_id": "o-epta~wv",
           "name": "Eastern Panhandle Transit Authority",
           "short_name": "EPTA",
-          "website": "https://www.eptawv.com"
+          "website": "https://www.eptawv.com",
+          "tags": {
+            "us_ntd_id": "30090"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-evansville~in~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11867/METS_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-evansville~in~us",
+          "name": "Metropolitan Evansville Transit System",
+          "short_name": "METS",
+          "website": "https://www.evansvillegov.org/city/department/index.php?structureid=225",
+          "tags": {
+            "us_ntd_id": "50043"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-gila~river~indian~community",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5788/GoogleFeed.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gila~river~indian~community",
+          "name": "Gila River Transit",
+          "website": "https://www.gilarivertransit.com",
+          "tags": {
+            "us_ntd_id": "99436"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-glasgow~ky~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11923/glasgow_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-glasgow~ky~us",
+          "name": "Glasgow Transit",
+          "website": "https://cityofglasgow.gov/city_departments/public_works/transit_division/",
+          "tags": {
+            "us_ntd_id": "41083"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-hall~area~transit~gainsville",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11952/hat_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hall~area~transit~gainsville",
+          "name": "Hall Area Transit",
+          "website": "https://www.gainesville.org/879/Hall-Area-Transit",
+          "tags": {
+            "us_ntd_id": "40144"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-hobbs~nm~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11543/hobbs_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hobbs~nm~us",
+          "name": "Hobbs Express",
+          "website": "https://www.hobbsnm.org/hobbs_express.html",
+          "tags": {
+            "us_ntd_id": "60190"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-logan~county~historical~society",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11544/fct_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-logan~county~historical~society",
+          "name": "First Capital Trolley",
+          "website": "https://www.firstcapitaltrolley.com/",
+          "tags": {
+            "us_ntd_id": "60214"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-manchester~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7841/MTA_GTFS_October_2023.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-manchester~transit~authority",
+          "name": "Manchester Transit Authority",
+          "short_name": "MTA",
+          "website": "https://mtabus.org/",
+          "tags": {
+            "us_ntd_id": "10002"
+          }
         }
       ]
     },
@@ -147,6 +613,130 @@
           "short_name": "MET",
           "tags": {
             "us_ntd_id": "91106"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-marquette~county~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/0/MQT_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-marquette~county~transit~authority",
+          "name": "Marquette County Transit Authority",
+          "short_name": "Marq-Tran",
+          "website": "https://marq-tran.com/",
+          "tags": {
+            "us_ntd_id": "50427"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-mashantucket~pequot~tribal~nation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11763/mptn_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mashantucket~pequot~tribal~nation",
+          "name": "Mashantucket Pequot Tribal Nation",
+          "tags": {
+            "us_ntd_id": "11152"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-maysville~ky~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11892/maysville_ky_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-maysville~ky~us",
+          "name": "City of Maysville",
+          "website": "https://www.cityofmaysvilleky.gov/departments/public_works_department/transit.php",
+          "tags": {
+            "us_ntd_id": "41032"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-municipality~of~vega~baja",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11526/MUVB_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-municipality~of~vega~baja",
+          "name": "Municipality of Vega Baja",
+          "website": "https://www.vegabaja.gov.pr/",
+          "tags": {
+            "us_ntd_id": "40117"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-nashua~transit~system",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/0/Nashua_Transit_System_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-nashua~transit~system",
+          "name": "Nashua Transit System",
+          "short_name": "NTS",
+          "website": "https://www.ridebigblue.com",
+          "tags": {
+            "us_ntd_id": "10087"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-park~county~mt~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11888/ParkCountyGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-park~county~mt~us",
+          "name": "Park County Transit",
+          "website": "https://www.parkcounty.org/Government-Departments/Transit/",
+          "tags": {
+            "us_ntd_id": "88293"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-potomac~valley~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12017/PVTA_WV_GTFS.zip"
+      },
+      "license": {
+        "url": "https://www.potomacvalleytransit.org/gtfs-feed/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-potomac~valley~transit~authority",
+          "name": "Potomac Valley Transit Authority",
+          "short_name": "PVTA",
+          "website": "https://www.potomacvalleytransit.org/",
+          "tags": {
+            "us_ntd_id": "30135"
           }
         }
       ]
@@ -184,6 +774,58 @@
       ]
     },
     {
+      "id": "f-scottsville~ky~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11892/SCOT_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-scottsville~ky~us",
+          "name": "Scottsville City Transit",
+          "website": "https://www.cityofscottsville.org/Blog/4/city-transit",
+          "tags": {
+            "us_ntd_id": "44944"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-southwestern~community~services~transportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11917/sct_agency.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-southwestern~community~services~transportation",
+          "name": "Southwestern Community Services Transportation",
+          "website": "https://www.scshelps.org/transportation/",
+          "tags": {
+            "us_ntd_id": "11156"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-springfield~oh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11869/SCAT_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-springfield~oh~us",
+          "name": "Springfield City Area Transit",
+          "short_name": "SCAT",
+          "website": "https://springfieldohio.gov/springfield-city-area-transit-scat/",
+          "tags": {
+            "us_ntd_id": "50020"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-stark~area~regional~transit~authority",
       "spec": "gtfs",
       "urls": {
@@ -202,6 +844,143 @@
             "twitter_general": "SARTAonline",
             "us_ntd_id": "50011",
             "wikidata_id": "Q7601948"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-steel~valley~regional~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5972/svrta_draft.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-steel~valley~regional~transit~authority",
+          "name": "Steel Valley Regional Transit Authority",
+          "short_name": "SVRTA",
+          "tags": {
+            "us_ntd_id": "50142"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-st~bernard~parish",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11870/sbp_sburt_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-st~bernard~parish",
+          "name": "St. Bernard Urban Rapid Transit",
+          "short_name": "SBURT",
+          "website": "https://www.sbpg.net/178/Transit",
+          "tags": {
+            "us_ntd_id": "60058"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-tangipahoa~voluntary~council~on~aging",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11510/tangipahoa_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tangipahoa~voluntary~council~on~aging",
+          "name": "Tangi Transit",
+          "website": "https://tangitransit.org/",
+          "tags": {
+            "us_ntd_id": "60196"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-unh~nh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11637/google_transit.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/unh-nh-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drtt-universityofnewhampshire",
+          "name": "University of New Hampshire",
+          "short_name": "Wildcat Transit",
+          "website": "http://www.unh.edu/transportation/wildcat-transit",
+          "tags": {
+            "us_ntd_id": "10119"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-vitran~vi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11872/vitran_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-vitran~vi~us",
+          "name": "Virgin Islands Public Transit System",
+          "short_name": "VITran",
+          "website": "https://dpw.vi.gov/about-vitran/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "vitran-STX"
+            },
+            {
+              "gtfs_agency_id": "vitran-STT"
+            },
+            {
+              "gtfs_agency_id": "vitran-STJ"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40188"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-wichita~falls~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11741/google_fallsridetransit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-wichita~falls~tx~us",
+          "name": "Wichita Falls Transit System",
+          "short_name": "Falls Ride",
+          "website": "https://www.wichitafallstx.gov/339/Falls-Ride---Public-Transportation",
+          "tags": {
+            "us_ntd_id": "60035"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-yavapai~regional~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5156/yrt_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-yavapai~regional~transit",
+          "name": "Yavapai Regional Transit",
+          "website": "https://www.yavapairegionaltransit.com/",
+          "tags": {
+            "us_ntd_id": "99419"
           }
         }
       ]

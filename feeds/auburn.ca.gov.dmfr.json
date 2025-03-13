@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-auburntransit~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.auburn.ca.gov/DocumentCenter/View/3431",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/auburntransit-ca-us/auburntransit-ca-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qcvk-auburntransit",
+          "name": "Auburn Transit",
+          "website": "https://www.auburn.ca.gov/192/Transit-Services",
+          "tags": {
+            "us_ntd_id": "91032"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,18 +1,21 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-u0-switzerland",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://opentransportdata.swiss/en/dataset/timetable-2024-gtfs2020/permalink",
+        "static_current": "https://data.opentransportdata.swiss/en/dataset/timetable-2025-gtfs2020/permalink",
         "static_historic": [
+          "https://opentransportdata.swiss/en/dataset/timetable-2024-gtfs2020/permalink",
           "https://opentransportdata.swiss/en/dataset/timetable-2023-gtfs2020/permalink",
           "https://opentransportdata.swiss/de/dataset/timetable-2022-gtfs2020/permalink"
         ]
       },
       "license": {
-        "url": "http://www.fahrplanfelder.ch/fileadmin/fap_daten_test/141214_Nutzungsbed_Fahrpland_de.pdf"
+        "url": "https://opentransportdata.swiss/en/terms-of-use/",
+        "use_without_attribution": "no",
+        "attribution_instructions": "The URL opentransportdata.swiss must be cited as the source for raw data in publications and analyses that make use of ODPCH data"
       },
       "operators": [
         {

@@ -1,4 +1,3 @@
-import re
 import subprocess
 import sys
 import os
@@ -10,7 +9,7 @@ fail_the_build = False
 # load dmfr to database
 db_filename = 'feed-validation.db'
 os.system(f"rm -f {db_filename}")
-sync_command = f"transitland dmfr sync --hide-unseen --hide-unseen-operators -dburl=sqlite3://{db_filename} ../feeds/*.dmfr.json"
+sync_command = f"transitland sync --hide-unseen --hide-unseen-operators --dburl=sqlite3://{db_filename} ../feeds/*.dmfr.json"
 sync_log = subprocess.check_output(sync_command, shell=True)
 
 for log_line in sync_log.splitlines():
@@ -87,6 +86,10 @@ for o in operators:
   for associated_feed in associated_feeds:
     valid = True
     associated_feed_onestop_id = associated_feed['feed_onestop_id']
+    if not associated_feed_onestop_id:
+      print(f"ERROR: missing feed Onestop ID in the associated_feeds block for operator {operator_onestop_id}")
+      fail_the_build = True
+      continue
     dashcount = associated_feed_onestop_id.count("-")
     if len(associated_feed_onestop_id) == 0:
       valid = False

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-glenn~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cdn.hibuwebsites.com/af26dd3d53e046cf8ce6ac6dc92e7b14/files/uploaded/glenn-transit-service-google-transit-2024-01-19.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/glenn-ca-us/glenn-ca-us.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r11-glenntransitservice",
+          "name": "Glenn Transit Service",
+          "website": "https://www.glenntransitservice.com",
+          "tags": {
+            "developer_site": "https://www.glenntransitservice.com/resources",
+            "us_ntd_id": "91088"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

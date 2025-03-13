@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-new~castle~area~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ncata.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-new~castle~area~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ncata.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://ncata.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://ncata.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-new~castle~area~transit~authority",
+      "name": "New Castle Area Transit Authority",
+      "short_name": "NCATA",
+      "website": "https://newcastletransit.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-new~castle~area~transit~authority"
+        },
+        {
+          "feed_onestop_id": "f-new~castle~area~transit~authority~rt"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "30151",
+        "wikidata_id": "Q7006399"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

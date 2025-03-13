@@ -1,0 +1,48 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-gbwc-mobibreizh",
+      "supersedes_ids": [
+        "f-brest~bibus",
+        "f-gbwc-star"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.korrigo.bzh/ftp/OPENDATA/KORRIGOBRET.gtfs.zip",
+        "static_historic": [
+          "https://exs.breizgo.cityway.fr/ftp/GTFS/MOBIBREIZHBRET.gtfs.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/base-de-donnees-multimodale-transports-publics-en-bretagne-korrigo-gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gbsg-bibus",
+          "name": "Brest Métropole",
+          "short_name": "Bibus",
+          "website": "https://www.bibus.fr/services/transport-la-demande",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BIBUS"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gbwc-star",
+          "name": "Service de Transports de l'Agglomération Rennaise",
+          "short_name": "STAR",
+          "website": "http://www.star.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "STAR"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

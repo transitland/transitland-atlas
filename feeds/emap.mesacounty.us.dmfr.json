@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9wfy-grandvalleytransit",
@@ -12,6 +12,11 @@
           "onestop_id": "o-9wfy-grandvalleytransit",
           "name": "Grand Valley Transit",
           "short_name": "GVT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-grandvalleytransit~flex"
+            }
+          ],
           "tags": {
             "us_ntd_id": "80016",
             "wikidata_id": "Q5595228"

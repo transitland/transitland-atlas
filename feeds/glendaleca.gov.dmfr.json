@@ -1,11 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9q5f-glendalebeeline",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://glendaleca.gov/Home/ShowDocument?id=29549"
+        "static_current": "https://www.glendaleca.gov/home/showdocument?id=29549",
+        "static_historic": [
+          "http://glendaleca.gov/Home/ShowDocument?id=29549"
+        ]
       },
       "tags": {
         "gtfs_data_exchange": "glendale-beeline"

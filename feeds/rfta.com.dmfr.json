@@ -1,0 +1,37 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-9wg-rfta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.rfta.com/RFTAGTFSExport.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/rfta-co-us/rfta-co-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9wg-rfta",
+          "name": "Roaring Fork Transportation Authority",
+          "short_name": "RFTA",
+          "website": "https://www.rfta.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "639"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RFTA",
+            "us_ntd_id": "8R01-80289",
+            "wikidata_id": "Q7339865"
+          }
+        }
+      ]
+    }
+  ]
+}

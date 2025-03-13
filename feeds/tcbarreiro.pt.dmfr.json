@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-transportes~colectivos~do~barreiro~pt",
@@ -10,17 +10,15 @@
           "https://www.transporlis.pt/desktopmodules/trp_opendata/ajax/downloadFile.ashx?op=41&u=web"
         ]
       },
+      "license": {
+        "url": "https://nap-portugal.imt-ip.pt/nap/multimodalsupplydetail/187"
+      },
       "operators": [
         {
           "onestop_id": "o-eyce-transportescolectivosdobarreiro",
           "name": "Transportes Coletivos do Barreiro",
           "short_name": "TCB",
-          "website": "https://www.tcbarreiro.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "8"
-            }
-          ]
+          "website": "https://www.tcbarreiro.pt/"
         }
       ]
     }

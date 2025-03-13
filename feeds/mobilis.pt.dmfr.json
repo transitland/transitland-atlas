@@ -1,0 +1,35 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-ez1-mobilis",
+      "name": "Mobilis",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://drive.google.com/uc?export=download&id=1NqcOk8IrlV73TBonJAxpzIUTjaAjF27M"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ez1-rdlis",
+          "name": "RDL RODOVIÁRIA DO LIS",
+          "short_name": "RDL",
+          "website": "https://mobilis.pt/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Mobilis"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CC0-1.0"
+}

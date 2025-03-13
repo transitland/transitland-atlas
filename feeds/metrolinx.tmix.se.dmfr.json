@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-belleville~on~ca",
@@ -14,6 +14,24 @@
       "urls": {
         "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-belleville/tripupdates.pb",
         "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-belleville/alerts.pb"
+      }
+    },
+    {
+      "id": "f-bowvalley~ab~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://bowvalley.tmix.se/gtfs-realtime/tripupdates.pb",
+        "realtime_alerts": "https://bowvalley.tmix.se/gtfs-realtime/alerts.pb"
+      }
+    },
+    {
+      "id": "f-c3j-757",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bowvalley.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/roamtransit-banff-ab-ca/roamtransit-banff-ab-ca.zip"
+        ]
       }
     },
     {
@@ -225,6 +243,20 @@
         },
         {
           "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-c3j-roamtransit",
+      "name": "Bow Valley Regional Transit Services Commission",
+      "short_name": "Roam Transit",
+      "website": "https://roamtransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-bowvalley~ab~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-c3j-757"
         }
       ]
     },

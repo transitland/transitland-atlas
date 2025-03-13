@@ -1,0 +1,46 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-u2ed-wienerlinien~wlb",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.wienerlinien.at/ogd_realtime/doku/ogd/gtfs/gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.gv.at/katalog/dataset/wiener-linien-fahrplandaten-gtfs-wien"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2e9-wlb",
+          "name": "Wiener Lokalbahnen",
+          "short_name": "WLB",
+          "website": "https://www.wlb.at/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "03"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q335971"
+          }
+        },
+        {
+          "onestop_id": "o-u2ed-wienerlinien",
+          "name": "Wiener Linien",
+          "website": "https://www.wienerlinien.at/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "04"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q668849"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

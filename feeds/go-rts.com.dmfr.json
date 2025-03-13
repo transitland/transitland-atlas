@@ -1,0 +1,39 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-djm2-regionaltransitsystem",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://go-rts.com/wp-content/uploads/2024/09/RTSGTFS_Fall2024_V1.zip",
+        "static_historic": [
+          "https://ftis.org/PostFileDownload.aspx?id=701A0",
+          "https://ftis.org/PostFileDownload.aspx?id=561A0",
+          "https://ftis.org/PostFileDownload.aspx?id=468A0",
+          "http://go-rts.com/gtfs/google_transit.zip"
+        ]
+      },
+      "license": {
+        "url": "http://go-rts.com/rts-data/"
+      },
+      "tags": {
+        "gtfs_data_exchange": "regional-transit-system",
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djm2-gainesvilleregionaltransitsystem",
+          "name": "Gainesville Regional Transit System",
+          "short_name": "RTS",
+          "website": "https://go-rts.com/",
+          "tags": {
+            "twitter_general": "gainesvillegov",
+            "us_ntd_id": "40030",
+            "wikidata_id": "Q5517264"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

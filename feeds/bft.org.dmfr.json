@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-c25p-benfranklintransit",
@@ -18,7 +18,7 @@
           "website": "http://www.bft.org",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "bft"
+              "feed_onestop_id": "f-c25p-benfranklintransit~rt"
             }
           ],
           "tags": {
@@ -27,6 +27,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-c25p-benfranklintransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://myride.bft.org/Realtime/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://myride.bft.org/Realtime/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://myride.bft.org/Realtime/GTFS_ServiceAlerts.pb"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

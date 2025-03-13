@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-dngb-lextran",
@@ -14,8 +14,7 @@
         ]
       },
       "tags": {
-        "gtfs_data_exchange": "lanta",
-        "unstable_url": "true"
+        "gtfs_data_exchange": "lanta"
       },
       "operators": [
         {
@@ -25,7 +24,7 @@
           "website": "http://lextran.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "71"
+              "feed_onestop_id": "f-dngb-lextran~rt"
             }
           ],
           "tags": {
@@ -36,6 +35,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dngb-lextran~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mystop.lextran.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://mystop.lextran.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://mystop.lextran.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

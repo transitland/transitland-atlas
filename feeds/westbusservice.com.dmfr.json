@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-wests~bus~service",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://westbusservice.com/west_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-wests~bus~service",
+          "name": "West's Bus Service",
+          "website": "https://westbusservice.com/",
+          "tags": {
+            "us_ntd_id": "10177"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

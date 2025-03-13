@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-r1-ptv",
@@ -12,6 +12,9 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 1 - Regional Train"
       }
     },
     {
@@ -25,6 +28,9 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 10 - Interstate"
       }
     },
     {
@@ -38,6 +44,24 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 6 - Regional Bus"
+      }
+    },
+    {
+      "id": "f-r1-ptv~3~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://data-exchange-api.vicroads.vic.gov.au/opendata/gtfsr/v1/tram/servicealert"
+      },
+      "license": {
+        "url": "https://data-exchange.vicroads.vic.gov.au/api-details#api=opendata-gtfsr-tram-v1&operation=service-alert-tram"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data-exchange.vicroads.vic.gov.au/docs/services/vehicle-position-trip-update-opendata/operations/metro-bus-trip-updates"
       }
     },
     {
@@ -51,6 +75,9 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 5 - Regional Coach"
       }
     },
     {
@@ -100,6 +127,9 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 2 - Metropolitan Train"
       }
     },
     {
@@ -116,36 +146,9 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
-      }
-    },
-    {
-      "id": "f-r1r-ptv~8",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "http://data.ptv.vic.gov.au/downloads/gtfs.zip#8/google_transit.zip"
-        ]
       },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
-      }
-    },
-    {
-      "id": "f-r1r-ptv~9",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "http://data.ptv.vic.gov.au/downloads/gtfs.zip#9/google_transit.zip"
-        ]
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
+      "tags": {
+        "notes": "PTV operational branch 4 - Metropolitan Bus"
       }
     },
     {
@@ -159,6 +162,9 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 3 - Metropolitan Tram"
       }
     },
     {
@@ -172,21 +178,25 @@
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 11 - SkyBus"
       }
     },
     {
       "id": "f-r1r2-ptv~7",
       "spec": "gtfs",
       "urls": {
-        "static_historic": [
-          "http://data.ptv.vic.gov.au/downloads/gtfs.zip#7/google_transit.zip"
-        ]
+        "static_current": "http://data.ptv.vic.gov.au/downloads/gtfs.zip#7/google_transit.zip"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.vic.gov.au/data/dataset/ptv-timetable-and-geographic-information-2015-gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "PTV operational branch 7 - TeleBus"
       }
     }
   ],
@@ -207,6 +217,9 @@
           "feed_onestop_id": "f-r1-ptv~3"
         },
         {
+          "feed_onestop_id": "f-r1-ptv~3~rt"
+        },
+        {
           "feed_onestop_id": "f-r1-ptv~5"
         },
         {
@@ -220,12 +233,6 @@
         },
         {
           "feed_onestop_id": "f-r1r-ptv~4"
-        },
-        {
-          "feed_onestop_id": "f-r1r-ptv~8"
-        },
-        {
-          "feed_onestop_id": "f-r1r-ptv~9"
         },
         {
           "feed_onestop_id": "f-r1r0-ptv"

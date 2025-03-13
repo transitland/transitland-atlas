@@ -1,11 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-u281z9-mvv",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.mvv-muenchen.de/fileadmin/mediapool/02-Fahrplanauskunft/03-Downloads/openData/mvv_gtfs.zip"
+        "static_current": "https://www.mvv-muenchen.de/fileadmin/mediapool/02-Fahrplanauskunft/03-Downloads/openData/mvv_ohneShape_20241004095702.zip",
+        "static_historic": [
+          "https://www.mvv-muenchen.de/fileadmin/mediapool/02-Fahrplanauskunft/03-Downloads/openData/mvv_gtfs.zip"
+        ]
       },
       "languages": [
         "de-DE"
@@ -15,6 +18,9 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {

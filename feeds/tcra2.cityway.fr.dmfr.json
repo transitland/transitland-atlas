@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-orizo~grand~avignon",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://exs.tcra2.cityway.fr/gtfs.aspx?key=UID&operatorCode=TCRA"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-et-gtfs-rt-reseau-orizo-grand-avignon"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-orizo~grand~avignon",
+          "name": "Transports en Commun Région d'Avignon",
+          "short_name": "Orizo",
+          "website": "https://www.orizo.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-orizo~grand~avignon~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q3537940"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-orizo~grand~avignon~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://export.tcra2.cityway.fr/GtfsRt/GtfsRT.TCRA.pb"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-et-gtfs-rt-reseau-orizo-grand-avignon"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

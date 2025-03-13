@@ -1,25 +1,6 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
-    {
-      "id": "f-9tvbk-carlsbadmunicipaltransitsystem",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://github.com/ethan-nelson/carlsbadnmtransit/blob/master/gtfs-odbl/carlsbadtransit-odbl.zip?raw=true"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9tvbk-carlsbadmunicipaltransitsystem",
-          "name": "Carlsbad Municipal Transit System",
-          "website": "http://cityofcarlsbadnm.com/transit.cfm",
-          "tags": {
-            "needs_agency_id": "f-9tvbk-carlsbadmunicipaltransitsystem"
-          }
-        }
-      ]
-    },
     {
       "id": "f-aquabus~bc~ca",
       "spec": "gtfs",
@@ -131,25 +112,35 @@
       ]
     },
     {
-      "id": "f-rioc~nyc",
+      "id": "f-ratbv~ro",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7707/gtfs.zip"
+        "static_current": "https://github.com/szjozsef/osm2gtfs/raw/refs/heads/master/output/gtfs/ro-ratbv.zip"
       },
       "license": {
-        "spdx_identifier": "CC-BY-SA-4.0",
-        "url": "https://github.com/laidig/rioc-gtfs/blob/master/README.md"
+        "spdx_identifier": "ODbL-1.0",
+        "share_alike_optional": "no"
       },
       "operators": [
         {
-          "onestop_id": "o-rioc~nyc",
-          "name": "Roosevelt Island Operating Corporation Tramway",
-          "short_name": "RIOC Tramway",
+          "onestop_id": "o-ratbv~ro",
+          "name": "Regia Autonomă de Transport Brașov",
+          "short_name": "RATBV",
           "tags": {
-            "wikidata_id": "Q641980"
+            "wikidata_id": "Q7258031"
           }
         }
       ]
+    },
+    {
+      "id": "f-seattlemonorail~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/Seattle-Monorail-Services/gtfs/raw/refs/heads/main/96_gtfs.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/seattlemonorail-wa-us.zip"
+        ]
+      }
     },
     {
       "id": "f-stq4-nationalauthorityfortunnels",

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-lower~anthracite~transit~system",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://lats.rideralerts.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
+      "id": "f-lower~anthracite~transit~system~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lats.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://lats.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://lats.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-lower~anthracite~transit~system",
+      "name": "Lower Anthracite Transit System",
+      "short_name": "LATS",
+      "website": "https://www.loweranthracitetransit.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-lower~anthracite~transit~system"
+        },
+        {
+          "feed_onestop_id": "f-lower~anthracite~transit~system~rt"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "30116",
+        "wikidata_id": "Q16981517"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

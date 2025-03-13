@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-djkj-starmetro",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.talgov.com/Uploads/Public/documents/starmetro/GTFS.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/starmetro-fl-us/starmetro-fl-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djkj-starmetro",
+          "name": "StarMetro",
+          "website": "https://www.talgov.com/starmetro/starmetroHome",
+          "tags": {
+            "twitter_general": "CityofTLH",
+            "us_ntd_id": "40036",
+            "wikidata_id": "Q7600550"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

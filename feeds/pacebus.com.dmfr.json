@@ -1,14 +1,17 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-dp3-pace",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://public.pacebus.com/gtfs/gtfs.zip"
+        "static_current": "https://www.pacebus.com/gtfsdownload",
+        "static_historic": [
+          "https://public.pacebus.com/gtfs/gtfs.zip"
+        ]
       },
       "license": {
-        "url": "http://www.pacebus.com/sub/about/data_services.asp",
+        "url": "https://www.pacebus.com/route-timetable-data-services",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },

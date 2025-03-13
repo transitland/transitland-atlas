@@ -1,0 +1,37 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-drkg-seatbus~ct~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/seat_preston_ct_us.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/seatbus-ct-us/seatbus-ct-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drkg-southeastareatransitdistrict",
+          "name": "Southeast Area Transit District",
+          "short_name": "SEAT",
+          "website": "https://southeastareatransitdistrict.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "978"
+            }
+          ],
+          "tags": {
+            "twitter_general": "S_E_A_T",
+            "us_ntd_id": "10040",
+            "wikidata_id": "Q7569291"
+          }
+        }
+      ]
+    }
+  ]
+}

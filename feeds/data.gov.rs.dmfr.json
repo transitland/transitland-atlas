@@ -1,6 +1,46 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
+    {
+      "id": "f-grand~dole",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/a8c743ee-e2d4-408c-ac4b-6434b6eaadf9"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-du-grand-dole"
+      }
+    },
+    {
+      "id": "f-kragujevats~rs",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.gov.rs/sr/datasets/r/015f6bd4-1428-4ed8-b41e-c73d0885c79d"
+      },
+      "license": {
+        "url": "https://data.gov.rs/sr/datasets/gtfs-kragujevats/"
+      }
+    },
+    {
+      "id": "f-nis~rs",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.gov.rs/sr/datasets/r/b8fdbafe-10af-4b1a-a647-5f50e1dd33fb"
+      },
+      "license": {
+        "url": "https://data.gov.rs/sr/datasets/javni-prevoz-i-gtfs/"
+      }
+    },
+    {
+      "id": "f-norde~grande~terre~tungt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/fr/datasets/r/4e7ac5b6-9b83-444a-add9-96a208c55b27"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/reseau-transport-urbain-du-nord-grande-terre-1"
+      }
+    },
     {
       "id": "f-sry-cityofbelgradesecretariatforpublictransport",
       "spec": "gtfs",
@@ -8,7 +48,7 @@
         "static_current": "https://data.gov.rs/sr/datasets/r/729be9a1-7ed9-453d-9a3d-68fa30f07529"
       },
       "license": {
-        "url": "https://data.gov.rs/sr/terms/"
+        "url": "https://data.gov.rs/sr/datasets/gtfs/"
       },
       "operators": [
         {
@@ -16,13 +56,31 @@
           "name": "City of Belgrade Secretariat for Public Transport",
           "short_name": "GSP Beograd",
           "website": "http://www.bgprevoz.rs",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "BGT"
-            }
-          ]
+          "tags": {
+            "wikidata_id": "Q8227578"
+          }
         }
       ]
+    },
+    {
+      "id": "f-subotitsa~rs",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.gov.rs/sr/datasets/r/c1b7db4b-cd0c-49c6-bfa1-a08dab70a446"
+      },
+      "license": {
+        "url": "https://data.gov.rs/sr/datasets/gtfs-subotitsa/"
+      }
+    },
+    {
+      "id": "f-užice~rs",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.gov.rs/sr/datasets/r/b9c72d16-6c2c-46f8-8490-78a6ceefb8d8"
+      },
+      "license": {
+        "url": "https://data.gov.rs/sr/datasets/gtfs-uzhitse/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

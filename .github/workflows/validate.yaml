@@ -1,0 +1,41 @@
+name: Validate
+on: [push, pull_request_target, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0
+
+    # Only needed for fork PRs - security check
+    - name: Security check for fork PRs
+      if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+      run: |
+        # Check if PR modifies .github or scripts directories
+        if git diff --name-only ${{ github.event.pull_request.head.sha }} ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+          echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
+          exit 1
+        fi
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+    - name: Install dependencies
+      run: |
+        pip install pipenv
+        cd scripts && pipenv install
+    - name: Install transitland-lib
+      run: scripts/install-transitland-lib.sh
+    - name: Validate against DMFR schema
+      run: |
+        wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json -O dmfr.schema.json
+        npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
+    - name: Lint against the opinionated DMFR format
+      run: |
+        transitland dmfr lint feeds/*.dmfr.json
+    - name: Validate against transitland-lib
+      run: cd scripts && python validate-feeds.py

@@ -1,0 +1,71 @@
+name: Check feed URLs in changed DMFR files
+
+on:
+  pull_request_target:
+    paths:
+      - 'feeds/*.dmfr.json'
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write  # Needed for commenting on PRs
+  contents: read       # Needed for checking out code
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install transitland-lib
+        run: scripts/install-transitland-lib.sh
+
+      - name: Get changed files and validate
+        id: validation
+        run: |
+          # Get list of changed dmfr files using GitHub's base and head refs
+          changed_files=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'feeds/*.dmfr.json')
+          
+          # Exit if no dmfr files changed
+          if [ -z "$changed_files" ]; then
+            echo "No DMFR files changed"
+            exit 0
+          fi
+          
+          validation_output=""
+          
+          # Loop through changed files
+          for file in $changed_files; do
+            echo "Validating $file"
+            if ! output=$(python scripts/check-feed-urls.py "$file" 2>&1); then
+              validation_output+="### Validation issues in $file \n\n $output"
+              echo "has_errors=true" >> $GITHUB_OUTPUT
+            fi
+          done
+          
+          # Set the validation output as a step output
+          echo "message<<EOF" >> $GITHUB_OUTPUT
+          echo "$validation_output" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR
+        if: steps.validation.outputs.has_errors == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `${{ steps.validation.outputs.message }}`
+            });
+            
+            core.setFailed('Validation failed - see PR comments for details');

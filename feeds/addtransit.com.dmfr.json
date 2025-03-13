@@ -1,22 +1,25 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-c28-thevictoriaclipper",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://addtransit.com/gtfsfile/42017/TheVictoriaClipper.zip"
+        "static_current": "https://addtransit.com/gtfsfile/42017/VictoriaClipper.zip",
+        "static_historic": [
+          "https://addtransit.com/gtfsfile/42017/TheVictoriaClipper.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.clippervacations.com/terms-conditions/",
+        "use_without_attribution": "no"
       },
       "operators": [
         {
           "onestop_id": "o-c28-thevictoriaclipper",
-          "name": "The Victoria Clipper",
-          "website": "http://www.clippervacations.com/?utm_source=AddTransit&utm_medium=GTFS",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
+          "name": "Victoria Clipper",
+          "website": "http://www.clippervacations.com/?utm_source=AddTransit&utm_medium=GTFS"
         }
       ]
     },

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-western~maine~transportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://wmtsbus.org/wp-content/uploads/2025/01/WMTS_GTFS_9.16.24.zip"
+      },
+      "license": {
+        "url": "https://wmtsbus.org/gtfs/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-western~maine~transportation",
+          "name": "Western Maine Transportation Services",
+          "short_name": "WMTS",
+          "website": "https://wmtsbus.org/",
+          "tags": {
+            "twitter_general": "wmtsbus",
+            "us_ntd_id": "10098"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

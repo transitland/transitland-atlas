@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9q60w-cityofsanluisobispotransit",
@@ -31,6 +31,188 @@
         "url": "https://transport.data.gouv.fr/datasets/reseau-lio-occitanie",
         "share_alike_optional": "no"
       }
+    },
+    {
+      "id": "f-spez-paysdaixmobilite",
+      "supersedes_ids": [
+        "f-spe-rtm",
+        "f-spey-rtm",
+        "f-s-bsdagglopole",
+        "f-s-busdeletang",
+        "f-s-ciotabus",
+        "f-s-lesbusdescigales",
+        "f-s-mtm",
+        "f-spg-envia",
+        "f-s-aixenbus",
+        "f-spewfv-ulysse",
+        "f-s-ulysse~01",
+        "f-spe-car13",
+        "f-spev-marcouline",
+        "f-spew-lesbusdelacotebleue",
+        "f-spey-leslignesdelagglo"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://app.mecatran.com/utw/ws/gtfsfeed/static/mamp?apiKey=60327e505a214c77303f52206f11483069257343",
+        "static_historic": [
+          "http://tsvc.pilote3.cityway.fr/api/Export/v1/GetExportedDataFile?ExportFormat=Gtfs&OperatorCode=CPA"
+        ]
+      },
+      "license": {
+        "url": "https://www.etalab.gouv.fr/wp-content/uploads/2014/05/Licence_Ouverte.pdf",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "mdb_source_id": "2127"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-s-aixenbus",
+          "name": "Aix en Bus",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AIX"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-s-bsdagglopole",
+          "name": "Libébus",
+          "website": "http://www.libebus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "LIB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-s-busdeletang",
+          "name": "Les Bus de l'Etang",
+          "website": "http://www.bus-de-letang.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BDE"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-s-ciotabus",
+          "name": "Ciotabus",
+          "website": "http://www.ciotabus.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CIO"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-s-lesbusdescigales",
+          "name": "Les bus des Cigales",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CIG"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-s-mtm",
+          "name": "Les bus des Collines",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "COL"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-s-ulysse",
+          "name": "Ulysse",
+          "website": "http://www.ulyssereseau.fr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ULY"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spe-car13",
+          "name": "CarTreize",
+          "website": "https://www.lecaraixmarseille.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "C13"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spev-marcouline",
+          "name": "Les bus de la Marcouline",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MRC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spew-lesbusdelacotebleue",
+          "name": "Les bus de la Côte Bleue",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CTB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spey-leslignesdelagglo",
+          "name": "Les Lignes de l'Agglo",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AUB"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spey-rtm",
+          "name": "Régie des Transports Métropolitains",
+          "short_name": "RTM",
+          "website": "http://www.rtm.fr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RTM"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-spez-paysdaixmobilite",
+          "name": "Pays d'Aix mobilité",
+          "short_name": "LeCar",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PAM"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q3537963"
+          }
+        },
+        {
+          "onestop_id": "o-spg-envia",
+          "name": "Envia",
+          "website": "http://www.lepilote.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ENV"
+            }
+          ]
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

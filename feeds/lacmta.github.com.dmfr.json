@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-artesia~ca~us",
@@ -122,6 +122,23 @@
             "twitter_general": "CityOfCudahyCA",
             "us_ntd_id": "90262"
           }
+        }
+      ]
+    },
+    {
+      "id": "f-elsegundo~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/LACMTA/los-angeles-regional-gtfs/raw/main/artesia-ca-us/elsegundo-ca-us.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/elsegundo-ca-us/elsegundo-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-elsegundo~ca~us",
+          "name": "El Segundo Transportation",
+          "website": "https://www.elsegundo.org/our-city/transportation"
         }
       ]
     },

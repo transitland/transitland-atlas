@@ -1,14 +1,16 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-de30-ati",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://ati.pr/wp-content/uploads/2016/04/google_transit.zip"
+        "static_current": "https://drive.google.com/uc?export=download&id=1bq0fZDWmKaaqgToplhy76LCabRocy_oF",
+        "static_historic": [
+          "http://ati.pr/wp-content/uploads/2016/04/google_transit.zip"
+        ]
       },
       "tags": {
-        "status": "unreachable",
         "unstable_url": "true"
       },
       "operators": [
@@ -16,7 +18,10 @@
           "onestop_id": "o-de30-ati",
           "name": "Autoridad de Transporte Integrado",
           "short_name": "ATI",
-          "website": "http://ati.pr"
+          "website": "https://www.ati.pr.gov/",
+          "tags": {
+            "us_ntd_id": "40094"
+          }
         }
       ]
     }

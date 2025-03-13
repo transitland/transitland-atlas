@@ -1,12 +1,13 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-cttransit~hartford~line",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.cttransit.com/sites/default/files/gtfs/cttransit_hlgtfs.zip",
+        "static_current": "https://ctrides.com/hlgtfs.zip",
         "static_historic": [
+          "https://www.cttransit.com/sites/default/files/gtfs/cttransit_hlgtfs.zip",
           "http://www.hartfordline.com/files/gtfs/gtfs.zip"
         ]
       },
@@ -27,9 +28,9 @@
       ],
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://s3.amazonaws.com/cttransit-realtime-prod/vehiclepositions.pb",
-        "realtime_trip_updates": "https://s3.amazonaws.com/cttransit-realtime-prod/tripupdates.pb",
-        "realtime_alerts": "https://s3.amazonaws.com/cttransit-realtime-prod/alerts.pb"
+        "realtime_vehicle_positions": "https://cttprdtmgtfs.ctttrpcloud.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://cttprdtmgtfs.ctttrpcloud.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://cttprdtmgtfs.ctttrpcloud.com/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       },
       "license": {
         "url": "https://www.cttransit.com/about/developers/terms-of-use"
@@ -55,13 +56,14 @@
       "id": "f-drk-wwwshorelineeastcom",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.cttransit.com/sites/default/files/gtfs/slegtfs.zip",
+        "static_current": "https://www.cttransit.com/sites/default/files/gtfs/slegtfs_1.zip",
         "static_historic": [
+          "https://www.cttransit.com/sites/default/files/gtfs/slegtfs.zip",
           "https://shorelineeast.com/google_transit.zip"
         ]
       },
       "license": {
-        "url": "http://www.cttransit.com/about/developers/gtfsdata/",
+        "url": "https://www.cttransit.com/about/developers/terms-of-use",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },

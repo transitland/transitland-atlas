@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-u-nmbs~sncb",
@@ -49,11 +49,39 @@
           "website": "http://www.letec.be",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "TEC"
+              "gtfs_agency_id": "B"
+            },
+            {
+              "gtfs_agency_id": "C"
+            },
+            {
+              "gtfs_agency_id": "H"
+            },
+            {
+              "gtfs_agency_id": "L"
+            },
+            {
+              "gtfs_agency_id": "N"
+            },
+            {
+              "feed_onestop_id": "f-u0g-tec~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-u0g-tec~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.tectime.be/proto/RealTime/vehicles",
+        "realtime_trip_updates": "https://gtfsrt.tectime.be/proto/RealTime/trips",
+        "realtime_alerts": "https://gtfsrt.tectime.be/proto/RealTime/Alerts"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key"
+      }
     },
     {
       "id": "f-u151-stib",

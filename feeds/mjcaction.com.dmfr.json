@@ -1,27 +1,6 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
-    {
-      "id": "f-9w-navajotransitsystem",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/navajo_google_transit.zip"
-      },
-      "tags": {
-        "managed_by": "mjc"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9w-navajotransitsystem",
-          "name": "Navajo Transit System",
-          "tags": {
-            "managed_by": "mjc",
-            "us_ntd_id": "90005",
-            "wikidata_id": "Q104868592"
-          }
-        }
-      ]
-    },
     {
       "id": "f-9wgu-gunnisonvalleyrta",
       "spec": "gtfs",
@@ -40,6 +19,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "GVRTA"
+            },
+            {
+              "feed_onestop_id": "f-gunnisonvalleyrta~co~us~flex"
             },
             {
               "feed_onestop_id": "f-gunnisonvalleyrta~rt"
@@ -247,13 +229,6 @@
       }
     },
     {
-      "id": "f-makah",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/makah_google_transit.zip"
-      }
-    },
-    {
       "id": "f-mountain~express",
       "spec": "gtfs",
       "urls": {
@@ -264,7 +239,7 @@
       "id": "f-sandusky",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/sandusky_google_transit.zip"
+        "static_current": "https://mjcaction.com/MJC_GTFS_Public/sandusky_google_transit.zip"
       },
       "operators": [
         {
@@ -337,6 +312,24 @@
       "urls": {
         "realtime_vehicle_positions": "https://lat-long-prototype.wl.r.appspot.com/vehicle-positions.pb?agency=santa-ynez-valley-transit"
       }
+    },
+    {
+      "id": "f-south~central~regional~transit~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mjcaction.com/MJC_GTFS_Public/scrtd_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-south~central~regional~transit~district",
+          "name": "South Central Regional Transit District",
+          "website": "https://scrtd.org",
+          "tags": {
+            "us_ntd_id": "66283",
+            "wikidata_id": "Q107335262"
+          }
+        }
+      ]
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"

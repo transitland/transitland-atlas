@@ -1,5 +1,5 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9r0-redding~ca~us",
@@ -60,6 +60,81 @@
           ],
           "tags": {
             "twitter_general": "hapcap"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dpsby4-detroitpeoplemover",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hosted-gtfs-feeds.s3.amazonaws.com/DPM/gtfs.zip",
+        "static_historic": [
+          "https://github.com/ivyrze/dtc-gtfs/releases/latest/download/gtfs-static.zip",
+          "https://www.detroitmi.gov/Portals/0/docs/deptoftransportation/pdfs/PeopleMoverGTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpsby4-detroitpeoplemover",
+          "name": "Detroit People Mover",
+          "short_name": "DPM",
+          "website": "http://www.thepeoplemover.com/",
+          "tags": {
+            "us_ntd_id": "50141",
+            "wikidata_id": "Q1201543"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-milford~transit~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hosted-gtfs-feeds.s3.amazonaws.com/Milford/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-milford~transit~district",
+          "name": "Milford Transit District",
+          "website": "https://www.milfordtransit.com/",
+          "tags": {
+            "us_ntd_id": "10107"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-northeastern~connecticut~transit~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hosted-gtfs-feeds.s3.amazonaws.com/NECTD/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-northeastern~connecticut~transit~district",
+          "name": "Northeastern Connecticut Transit District",
+          "short_name": "NECTD",
+          "tags": {
+            "us_ntd_id": "10156"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-northwestern~ct~transit~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hosted-gtfs-feeds.s3.amazonaws.com/NWCTD/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-northwestern~ct~transit~district",
+          "name": "Northwestern Connecticut Transit District",
+          "short_name": "NWCTD",
+          "website": "https://www.nwcttransit.com/",
+          "tags": {
+            "us_ntd_id": "10131"
           }
         }
       ]

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-dqc-stmarystransitsystem",
+      "supersedes_ids": [
+        "f-st~marys~md"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://stmgis.stmarysmd.com/Downloads/GTFS/StMarys_GTFS_5_31_22.zip",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/SM_GTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqc-stmarystransitsystem",
+          "name": "St. Mary's Transit System",
+          "short_name": "STS",
+          "website": "http://www.stmarysmd.com/dpw/STSfares.asp",
+          "tags": {
+            "twitter_general": "StMarysCoGov",
+            "us_ntd_id": "30109"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

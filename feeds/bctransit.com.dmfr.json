@@ -1,6 +1,27 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
+    {
+      "id": "f-bctransit~100~mile~house",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=34"
+      }
+    },
+    {
+      "id": "f-bctransit~ashcroft~cache~creek~clinton",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=38"
+      }
+    },
+    {
+      "id": "f-bctransit~clearwater",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=35"
+      }
+    },
     {
       "id": "f-bctransit~east~kootenay~region",
       "supersedes_ids": [
@@ -42,6 +63,27 @@
       }
     },
     {
+      "id": "f-bctransit~hazeltons",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=26"
+      }
+    },
+    {
+      "id": "f-bctransit~merritt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=37"
+      }
+    },
+    {
+      "id": "f-bctransit~mount~waddington",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=17"
+      }
+    },
+    {
       "id": "f-bctransit~north~okanagan~region",
       "supersedes_ids": [
         "f-c2g-bctransit~vernonregionaltransitsystem"
@@ -58,6 +100,13 @@
         "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=14",
         "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=14",
         "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=14"
+      }
+    },
+    {
+      "id": "f-bctransit~pemberton~valley",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=50"
       }
     },
     {
@@ -117,6 +166,34 @@
       }
     },
     {
+      "id": "f-bctransit~quesnel",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=32"
+      }
+    },
+    {
+      "id": "f-bctransit~revelstoke",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=36"
+      }
+    },
+    {
+      "id": "f-bctransit~salt~spring~island",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=39"
+      }
+    },
+    {
+      "id": "f-bctransit~smithers",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=31"
+      }
+    },
+    {
       "id": "f-bctransit~south~okanagan~similkameen",
       "spec": "gtfs",
       "urls": {
@@ -130,6 +207,13 @@
         "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=15",
         "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=15",
         "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=15"
+      }
+    },
+    {
+      "id": "f-bctransit~williams~lake",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=33"
       }
     },
     {
@@ -160,7 +244,10 @@
       "id": "f-c0z-bctransit~rdntransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://nanaimo.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=41",
+        "static_historic": [
+          "http://nanaimo.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -175,9 +262,9 @@
       "id": "f-c0z-bctransit~rdntransitsystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://nanaimo.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
-        "realtime_trip_updates": "http://nanaimo.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_alerts": "http://nanaimo.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+        "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=41",
+        "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=41",
+        "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=41"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -189,7 +276,10 @@
       "id": "f-c0z4-bctransit~comoxvalleytransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://comox.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=45",
+        "static_historic": [
+          "http://comox.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -204,9 +294,9 @@
       "id": "f-c0z4-bctransit~comoxvalleytransitsystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://comox.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
-        "realtime_trip_updates": "http://comox.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_alerts": "http://comox.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+        "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=45",
+        "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=45",
+        "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=45"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -263,7 +353,10 @@
       "id": "f-c28-bctransit~victoriaregionaltransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://victoria.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=48",
+        "static_historic": [
+          "http://victoria.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -278,9 +371,9 @@
       "id": "f-c28-bctransit~victoriaregionaltransitsystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://victoria.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
-        "realtime_trip_updates": "http://victoria.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_alerts": "http://victoria.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+        "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=48",
+        "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=48",
+        "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=48"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -319,7 +412,10 @@
       "id": "f-c2b6v-bctransit~squamishtransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://squamish.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=43",
+        "static_historic": [
+          "http://squamish.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -348,7 +444,10 @@
       "id": "f-c2bt-bctransit~whistlertransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://whistler.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=44",
+        "static_historic": [
+          "http://whistler.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -363,9 +462,9 @@
       "id": "f-c2bt-bctransit~whistlertransitsystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://whistler.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
-        "realtime_trip_updates": "http://whistler.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_alerts": "http://whistler.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+        "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=44",
+        "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=44",
+        "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=44"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -377,7 +476,10 @@
       "id": "f-c2g5-bctransit~kelownaregionaltransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://kelowna.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=47",
+        "static_historic": [
+          "http://kelowna.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -392,9 +494,9 @@
       "id": "f-c2g5-bctransit~kelownaregionaltransitsystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://kelowna.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
-        "realtime_trip_updates": "http://kelowna.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_alerts": "http://kelowna.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+        "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=47",
+        "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=47",
+        "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=47"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -430,7 +532,10 @@
       "id": "f-c342-bctransit~kamloopstransitsystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://kamloops.mapstrat.com/current/google_transit.zip"
+        "static_current": "https://bct.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/?operatorIds=46",
+        "static_historic": [
+          "http://kamloops.mapstrat.com/current/google_transit.zip"
+        ]
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -445,9 +550,9 @@
       "id": "f-c342-bctransit~kamloopstransitsystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://kamloops.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
-        "realtime_trip_updates": "http://kamloops.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
-        "realtime_alerts": "http://kamloops.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+        "realtime_vehicle_positions": "https://bct.tmix.se/gtfs-realtime/vehicleupdates.pb?operatorIds=46",
+        "realtime_trip_updates": "https://bct.tmix.se/gtfs-realtime/tripupdates.pb?operatorIds=46",
+        "realtime_alerts": "https://bct.tmix.se/gtfs-realtime/alerts.pb?operatorIds=46"
       },
       "license": {
         "url": "https://www.bctransit.com/open-data/terms-of-use",
@@ -558,6 +663,15 @@
       "name": "BCTransit",
       "associated_feeds": [
         {
+          "feed_onestop_id": "f-bctransit~100~mile~house"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~ashcroft~cache~creek~clinton"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~clearwater"
+        },
+        {
           "feed_onestop_id": "f-bctransit~east~kootenay~region"
         },
         {
@@ -570,10 +684,22 @@
           "feed_onestop_id": "f-bctransit~fraser~valley~region~rt"
         },
         {
+          "feed_onestop_id": "f-bctransit~hazeltons"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~merritt"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~mount~waddington"
+        },
+        {
           "feed_onestop_id": "f-bctransit~north~okanagan~region"
         },
         {
           "feed_onestop_id": "f-bctransit~north~okanagan~region~rt"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~pemberton~valley"
         },
         {
           "feed_onestop_id": "f-bctransit~port~alberni"
@@ -594,10 +720,25 @@
           "feed_onestop_id": "f-bctransit~prince~rupert~rt"
         },
         {
+          "feed_onestop_id": "f-bctransit~quesnel"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~revelstoke"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~salt~spring~island"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~smithers"
+        },
+        {
           "feed_onestop_id": "f-bctransit~south~okanagan~similkameen"
         },
         {
           "feed_onestop_id": "f-bctransit~south~okanagan~similkameen~rt"
+        },
+        {
+          "feed_onestop_id": "f-bctransit~williams~lake"
         },
         {
           "feed_onestop_id": "f-c0yu-bctransit~campbellrivertransitsystem"

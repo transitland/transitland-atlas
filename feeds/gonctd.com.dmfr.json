@@ -1,11 +1,14 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-9mu-northcountytransitdistrict",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.gonctd.com/google_transit.zip"
+        "static_current": "https://lfportal.nctd.org/staticGTFS/google_transit.zip",
+        "static_historic": [
+          "http://www.gonctd.com/google_transit.zip"
+        ]
       },
       "tags": {
         "gtfs_data_exchange": "north-county-transit-district"

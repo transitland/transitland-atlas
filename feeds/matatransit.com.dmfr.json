@@ -1,12 +1,13 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-memphis~area~transit~authority",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.matatransit.com/assets/2/6/MATA_GTFS_11_2021.zip",
+        "static_current": "http://mata.cadavl.com:5053/MATA/GTFS/GTFS_MATA.zip",
         "static_historic": [
+          "https://www.matatransit.com/assets/2/6/MATA_GTFS_11_2021.zip",
           "https://www.matatransit.com/assets/2/6/Memphis_TN_transitfeed2.zip",
           "https://cdn.muckrock.com/foia_files/2017/10/24/Memphis_TN_Transitfeed_GTFS_8_17.zip"
         ]
@@ -16,9 +17,10 @@
           "onestop_id": "o-memphis~area~transit~authority",
           "name": "Memphis Area Transit Authority",
           "short_name": "MATA",
+          "website": "https://www.matatransit.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "MATA"
+              "gtfs_agency_id": "1"
             }
           ],
           "tags": {

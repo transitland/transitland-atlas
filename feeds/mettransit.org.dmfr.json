@@ -1,21 +1,26 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
       "id": "f-met~transit~ia",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://mettransit.org/sites/default/files/MET_Transit_GTFS.zip"
+        "static_current": "https://www.mettransit.org/sites/default/files/GTFS_Transit_20241025.zip",
+        "static_historic": [
+          "http://mettransit.org/sites/default/files/MET_Transit_GTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.mettransit.org/how-to-use-real-time-map"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
           "onestop_id": "o-9zw3-metropolitantransitauthorityofblackhawkcounty",
           "name": "Metropolitan Transit Authority of Black Hawk County",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MET"
-            }
-          ],
+          "short_name": "MET",
           "tags": {
             "us_ntd_id": "70013",
             "wikidata_id": "Q6825282"

@@ -1,48 +1,402 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
+    {
+      "id": "f-s-atscolastico",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/8b38e763-e349-404c-a274-442312f7e3b2/download/03-atscolastico.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-colbusnonscolastico",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/61fada72-e2de-4dee-aa23-66629152fa0d/download/02-colbusnonscolastico.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-colbusscolastico",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/5fb6d2bd-8146-456a-91fe-23009ffae253/download/01-colbusscolastico.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-extraurbanoarezzo",
+      "supersedes_ids": [
+        "f-sr8-etruriamobilità"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/96d06179-eec9-47d1-9673-54b691299238/download/28-extraurbanoarezzo.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-extraurbanofirenze",
+      "supersedes_ids": [
+        "f-spzb-piùbus",
+        "f-srb-autolineemugellovaldisieve",
+        "f-srb0-autolineechiantivaldarno"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/d6dc70c1-24ca-4d18-8f9c-b266d64fe4c9/download/26-extraurbanofirenze.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-extraurbanogrosseto",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/5ccd0ec0-5748-4c2b-ac8d-56e4eb31b135/download/30-extraurbanogrosseto.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-extraurbanosiena",
+      "supersedes_ids": [
+        "f-sr8-sienamobilità"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e7d8c9ae-95ea-473f-8750-d3a40a0c2b43/download/29-extraurbanosiena.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-gest",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/1f62d551-65f4-49f8-9a99-e19b02077be3/download/gest.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-lineeregionali",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/ae4594d4-d395-4651-a097-446e878e9005/download/90-lineeregionali.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-servizisostitutiviferro",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/3e42cdea-55cb-4843-91ff-d3eaa738cafb/download/98-servizisostitutiviferro.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-s-urbanoareametropolitanafiorentina",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/20813d08-a8dd-48ad-9fd5-38ca16a2fd79/download/48-urbanoareametropolitanafiorentina.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-deboleextraurbanocev",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/59335ed1-60e2-4258-b067-3426abf904a2/download/127-deboleextraurbanocev.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-deboleextraurbanolivorno",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/798b904c-9472-4d51-add7-ebea2de723c7/download/123-deboleextraurbanolivorno.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-emgextraurbanomassacarrara",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/715f793c-d8a7-4e42-919d-b4cab8c2cabb/download/220-emgextraurbanomassacarrara.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-emgextraurbanopisa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/56e3ad2e-f759-47f0-b136-621495b55429/download/222-emgextraurbanopisa.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-extraurbanoempolesevaldelsa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/09f50a10-47cd-4916-b403-cae27a403ced/download/27-extraurbanoempolesevaldelsa.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-extraurbanolivorno",
+      "supersedes_ids": [
+        "f-spz-cttnord"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/9356bb47-d079-4c0a-bd70-9bc160259206/download/23-extraurbanolivorno.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-extraurbanomassacarrara",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/07b84943-e6b7-4bf2-aedf-af9a06db5a7a/download/20-extraurbanomassacarrara.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-extraurbanopisa",
+      "supersedes_ids": [
+        "f-spz-consorziopisanotrasporti"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e2166dd2-5424-4dfe-82f8-486becd15bf2/download/22-extraurbanopisa.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-toremar",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/56539a5a-e0be-49eb-b3ac-052a42ad0de0/download/toremar.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
     {
       "id": "f-sp-trenitaliaspa",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/4f85393b-357d-443d-8378-65de4198505f/download/trenitalia.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/4f85393b-357d-443d-8378-65de4198505f/download/trenitalia.gtfs",
+        "static_historic": [
+          "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/4f85393b-357d-443d-8378-65de4198505f/download/trenitalia.gtfs"
+        ]
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "http://www.opendefinition.org/licenses/cc-by",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "trenitalia"
+        "gtfs_data_exchange": "trenitalia",
+        "unstable_url": "true"
       }
     },
     {
-      "id": "f-spx-tiemmespa",
+      "id": "f-sp-urbanolivorno",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e13f1e53-2394-45d0-a98c-70c24af9378b/download/tiemme.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/c56873f2-3a52-4087-afd8-29e896352a58/download/45-urbanolivorno.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sp-urbanopisa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e12be15e-5cd2-48d7-84c7-dcfa2976103c/download/44-urbanopisa.gtfs"
       },
-      "operators": [
-        {
-          "onestop_id": "o-spx-tiemmespa",
-          "name": "ATM Piombino",
-          "short_name": "Tiemme",
-          "website": "http://www.atm.li.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "400"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spx-amitour",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/69ef7d90-161a-42c5-b3fd-5c7537e0e8fc/download/amitour.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spx-serviziareapoggibonsi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/a119ef7e-b4bb-4b2c-ba12-bd59721f9596/download/31-serviziareapoggibonsi.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
     },
     {
       "id": "f-spx-toremartoscanaregionalemarittimaspa",
@@ -56,7 +410,10 @@
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -72,168 +429,433 @@
       ]
     },
     {
-      "id": "f-spz-blubus",
+      "id": "f-spx-urbanocecina",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/730689ec-f59f-4b21-95fa-91ba7d4408f7/download/blubus.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/8d5d8fb7-2fe1-474f-a3bf-65803a9ccb74/download/63-urbanocecina.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spz-blubus",
-          "name": "BluBus",
-          "website": "http://www.blubus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "175"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
-      "id": "f-spz-capconsorzioautolineepratesi",
+      "id": "f-spx-urbanocollevaldelsa",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e66d10a0-fc28-4a48-871d-8664bf92b591/download/cap.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/89cf11ce-9d33-4b06-9ca3-c7bac69f361d/download/73-urbanocollevaldelsa.gtfs"
       },
       "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "Regione Toscana - Orari trasporto pubblico"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spz-capconsorzioautolineepratesi",
-          "name": "C.A.P. Consorzio Autolinee Pratesi",
-          "short_name": "CAP",
-          "website": "http://www.capautolinee.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "169"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
-      "id": "f-spz-consorziopisanotrasporti",
+      "id": "f-spx-urbanopiombino",
+      "supersedes_ids": [
+        "f-spx-tiemmespa"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/f6964f1b-e37e-449d-b70c-649f39bd210d/download/cpt.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/38190106-dedd-4b44-ae3a-d59e40fe9f81/download/78-urbanopiombino.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spz-consorziopisanotrasporti",
-          "name": "Consorzio Pisano Trasporti",
-          "short_name": "CPT",
-          "website": "http://www.cpt.pisa.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "176"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-spz-cttnord",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/10958bf5-dfeb-4340-9b79-2efe6adb7bd5/download/ctt.gtfs"
-      },
-      "license": {
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spz-cttnord",
-          "name": "Compagnia Toscana Trasporti - Nord",
-          "short_name": "CTT",
-          "website": "http://www.atl.livorno.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "500"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
-      "id": "f-spz-vaibus",
+      "id": "f-spx-urbanorosignanomarittimo",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/b34d94ab-4b55-4be8-aad4-b06f7ebb4ea9/download/vaibus.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/71aa554d-4229-4fee-8d9d-533a15d5beae/download/65-urbanorosignanomarittimo.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-spz-vaibus",
-          "name": "Compagnia Toscana Trasporti Nord - Vaibus LUCCA",
-          "short_name": "Vaibus",
-          "website": "http://www.vaibus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "174"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
-      "id": "f-spzb-piùbus",
+      "id": "f-spx-urbanosangimignano",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/9e2b13ce-faa1-45be-9a3b-4f31fe0d3cf8/download/piubus.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/eeeaddfe-abe1-4d7f-b2fb-ac6d36b380be/download/76-urbanosangimignano.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spx7-urbanoportoferraio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e71c206c-7763-4c4e-944b-4f65584d59a5/download/64-urbanoportoferraio.gtfs"
       },
-      "operators": [
-        {
-          "onestop_id": "o-spzb-piùbus",
-          "name": "Piùbus",
-          "website": "http://www.piubus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "170"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spxg-urbanogrosseto",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/47d0795b-4172-401d-af43-b4dff4004db4/download/51-urbanogrosseto.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spxs-urbanofollonica",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/f3f33691-87ba-4db2-8c97-ae9b724a6c21/download/77-urbanofollonica.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spxw-emgurbanovolterra",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/38ba32a8-01b9-4ffd-baed-2551ad765180/download/262-emgurbanovolterra.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spxz-urbanocertaldo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/b18822d5-dc9d-4dce-8f04-8f09395eb62c/download/68-urbanocertaldo.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-deboleextraurbanopistoia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/d59bd5d4-865f-4d11-89ee-bdc908effab3/download/124-deboleextraurbanopistoia.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-deboleextraurbanoprato",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e5290acb-dd9f-4c49-99b2-cbe991e5df45/download/125-deboleextraurbanoprato.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-deboleurbanopisa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/860fadbd-9d01-49ec-aaef-51f4f62b77fc/download/144-deboleurbanopisa.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-emgextraurbanolucca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/06a988de-61a7-4720-abdd-990e130a4cb7/download/221-emgextraurbanolucca.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-extraurbanolucca",
+      "supersedes_ids": [
+        "f-spz-vaibus"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/83944446-5fc9-4ff7-8917-e195b4f3285c/download/21-extraurbanolucca.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-extraurbanopistoia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/06ba1481-7337-4a69-beac-94506668d7be/download/24-extraurbanopistoia.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-extraurbanoprato",
+      "supersedes_ids": [
+        "f-spz-capconsorzioautolineepratesi"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/19fba624-b87c-477b-b79d-5ad94af05875/download/25-extraurbanoprato.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-urbanoempoli",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/9bf0a1cf-2a24-4716-9de2-0a6272fd997e/download/69-urbanoempoli.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-urbanolucca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/bdf9de12-5c7d-4285-a690-6dd1497fc9d8/download/43-urbanolucca.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-urbanomassa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/5c6cf393-ee62-4fc0-b8b3-cc92ce4ea315/download/40-urbanomassa.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz-urbanopistoia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/f7268328-64bc-41d9-a776-48164c2902ca/download/46-urbanopistoia.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz3-urbanoviareggio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/7224a91d-e9f5-4525-8395-857ee06e2245/download/60-urbanoviareggio.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz4-urbanocarrara",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/16dd589b-b341-4d86-9c02-bc9f20772a23/download/42-urbanocarrara.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz4-urbanomassaecarrara",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/d386d347-93f6-4d0d-8c74-a15d7fc794b3/download/41-urbanomassaecarrara.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz8-emgurbanopontedera",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/ac839131-ff20-4605-a94e-abb1fdbefecb/download/261-emgurbanopontedera.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz8-emgurbanosanminiato",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/ab562132-ff67-4ffb-9f72-827d05c1a43a/download/287-emgurbanosanminiato.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz9-urbanomontecatiniterme",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/e0cd5e19-5022-4160-9e40-dad8e1e89c2d/download/66-urbanomontecatiniterme.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-spz9-urbanopescia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/51756e91-d2c4-4f7d-b26e-95210850d256/download/67-urbanopescia.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
     },
     {
       "id": "f-spzbz-gestspa",
@@ -244,7 +866,7 @@
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
@@ -272,7 +894,7 @@
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
@@ -292,58 +914,139 @@
       ]
     },
     {
-      "id": "f-sr8-etruriamobilità",
+      "id": "f-spzc-urbanoprato",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/0c90ed7a-55f2-4bbb-be9c-3c99b9951883/download/etruriamobilita.gtfs"
-      },
-      "license": {
-        "url": "http://www.opendefinition.org/licenses/cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-sr8-etruriamobilità",
-          "name": "Etruria Mobilità Scarl",
-          "website": "http://www.etruriamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "168"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-sr8-sienamobilità",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/89c02b92-2a96-4be5-9189-26a2dea460a8/download/sienamobilita.gtfs"
-        ]
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/41f06b24-f72a-41ec-9c8f-18e720dbc271/download/47-urbanoprato.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
-        "status": "archived",
         "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr-emgextraurbanosansepolcro",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/b44ec565-b300-43fc-8691-efb112869c79/download/283-emgextraurbanosansepolcro.gtfs"
       },
-      "operators": [
-        {
-          "onestop_id": "o-sr8-sienamobilità",
-          "name": "Siena Mobilità",
-          "website": "http://www.sienamobilita.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "167"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr-emgextraurbanosubbiano",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/f33d4989-0165-4651-9489-32d961c84759/download/280-emgextraurbanosubbiano.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr-emgextraurbanounionecomunidelcasentino",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/57c926f3-fce0-4e30-bc2d-27a69c399cfc/download/282-emgextraurbanounionecomunidelcasentino.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr-tft",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/59aeacbc-99ee-410b-ac1e-622b5574a666/download/tft.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr-urbanointercomunalevaldarnoaretino",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/c6eb2ee7-5dc3-4d72-b7a6-9541547841f5/download/70-urbanointercomunalevaldarnoaretino.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8-emgextraurbanocivitellainvaldichiana",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/1785fd96-1562-4e65-bcb1-404f9e589c55/download/286-emgextraurbanocivitellainvaldichiana.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8-emgextraurbanocortona",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/88e2c37a-6246-4fc4-b096-6c968f868e1c/download/284-emgextraurbanocortona.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8-emgextraurbanosiena",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/5c7ddba7-341a-4624-b023-08bda8ccfed0/download/229-emgextraurbanosiena.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
     },
     {
       "id": "f-sr8-tftspa",
@@ -354,7 +1057,10 @@
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -371,82 +1077,148 @@
       ]
     },
     {
-      "id": "f-srb-autolineemugellovaldisieve",
+      "id": "f-sr8-urbanoarezzo",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/954f2767-b803-4a41-baaa-37ccc8beb163/download/amvbus.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/dc221e7d-755b-420a-b6f6-8cd5fdf5001b/download/49-urbanoarezzo.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
       "tags": {
         "unstable_url": "true"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-srb-autolineemugellovaldisieve",
-          "name": "Autolinee Mugello Valdisieve",
-          "short_name": "AMV",
-          "website": "http://www.amvbus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "171"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
-      "id": "f-srb0-autolineechiantivaldarno",
+      "id": "f-sr8-urbanochiusi",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/ed37ddd4-a6c5-4fb9-8032-a56ce60842d3/download/acvbus.gtfs"
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/779caad8-eef8-4bba-b04d-7e9c78e28010/download/71-urbanochiusi.gtfs"
       },
       "license": {
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "http://dati.toscana.it/"
+        "attribution_text": "https://dati.toscana.it/"
       },
-      "operators": [
-        {
-          "onestop_id": "o-srb0-autolineechiantivaldarno",
-          "name": "Autolinee Chianti Valdarno",
-          "short_name": "ACV",
-          "website": "http://www.acvbus.it",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "173"
-            }
-          ]
-        }
-      ]
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8k-urbanochiancianoterme",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/f5833664-34a7-4bd6-93a8-95a4dfa96791/download/72-urbanochiancianoterme.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8m-urbanomontepulciano",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/8240437c-a34f-4df1-a0d7-1d402e34bbdc/download/74-urbanomontepulciano.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8n-urbanosiena",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/6f2e9070-7de2-439a-b5a0-88085b38de41/download/50-urbanosiena.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8q-emgextraurbanomontesansavino",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/50765ae2-e7ea-4ed1-b5ed-b94c764eecad/download/285-emgextraurbanomontesansavino.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-sr8r-emgextraurbanocapolona",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/d0d0624f-cf74-492c-9634-dfa5add42bfc/download/281-emgextraurbanocapolona.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-srb-atnonscolastico",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dati.toscana.it/dataset/8bb8f8fe-fe7d-41d0-90dc-49f2456180d1/resource/6969571a-96d7-490d-a944-17af386717b6/download/04-atnonscolastico.gtfs"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
     }
   ],
   "operators": [
     {
       "onestop_id": "o-s-trenitalia",
+      "supersedes_ids": [
+        "o-u0j-trenitalia"
+      ],
       "name": "Trenitalia",
       "website": "http://www.trenitalia.it",
       "associated_feeds": [
         {
-          "gtfs_agency_id": "163",
           "feed_onestop_id": "f-sp-trenitaliaspa"
         },
         {
-          "gtfs_agency_id": "TRENITALIA",
           "feed_onestop_id": "f-spn-trenitalia"
         },
         {
-          "gtfs_agency_id": "trenitalia",
-          "feed_onestop_id": "f-sr-atac~romatpl~trenitalia"
-        },
-        {
-          "gtfs_agency_id": "ITRP-AG000174",
           "feed_onestop_id": "f-u0j-trenitalia"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q286650"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
