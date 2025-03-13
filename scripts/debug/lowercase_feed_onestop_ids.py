@@ -10,6 +10,12 @@ This script will:
    - Add the old ID to supersedes_ids
 3. Save the updated files with consistent formatting
 
+WARNINGS:
+
+- It's up to you to update any references to the old ID in associated_feeds arrays
+- This script doesn't look at operator Onestop IDs
+
+
 Usage:
     python3 scripts/debug/lowercase_feed_onestop_ids.py
 """
