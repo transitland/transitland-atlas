@@ -27,6 +27,7 @@ from typing import Dict, List, Optional
 from urllib.parse import urlparse
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+import re
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -161,6 +162,9 @@ def create_onestop_id(name: str, prefix: str = "o") -> str:
     """Create a Onestop ID from a name."""
     # Remove special characters and spaces, convert to lowercase
     clean_name = "".join(c.lower() if c.isalnum() else "~" for c in name)
+    # Remove multiple consecutive tildes and leading/trailing tildes
+    clean_name = re.sub(r'~+', '~', clean_name)  # Replace multiple tildes with single tilde
+    clean_name = re.sub(r'^~+|~+$', '', clean_name)  # Remove leading/trailing tildes
     return f"{prefix}-{clean_name}"
 
 def create_dmfr_feed(feed_data: Dict) -> Dict:
@@ -198,8 +202,7 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     }
 
     dmfr_feed["tags"] = {
-        "es_nap_fichero_id": str(fichero_id),
-        "es_nap_conjunto_dato_id": str(feed_data.get("conjuntoDatoId"))
+        "es_nap_fichero_id": str(fichero_id)
     }
     operators = feed_data.get("operadores", [])
     # if there is a single operator, we're readying an actual operator record
@@ -252,12 +255,54 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     return dmfr_feed
 
 def save_dmfr_file(feeds: List[Dict]):
-    """Save all feeds to a single DMFR file."""
-    filename = "feeds/nap.transportes.gob.es.dmfr.json"
-
+    """Save all feeds to a single DMFR file, preserving existing records."""
+    filename = "../feeds/nap.transportes.gob.es.dmfr.json"
+    
+    # Try to read existing file
+    existing_dmfr = {
+        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+        "feeds": [],
+        "license_spdx_identifier": "CDLA-Permissive-1.0"
+    }
+    try:
+        if os.path.exists(filename):
+            with open(filename, 'r', encoding='utf-8') as f:
+                existing_dmfr = json.load(f)
+                logger.info(f"Found existing DMFR file with {len(existing_dmfr.get('feeds', []))} feeds")
+    except Exception as e:
+        logger.warning(f"Error reading existing DMFR file: {e}")
+    
+    # Create lookup of existing feeds by fichero_id
+    existing_feeds_by_id = {}
+    for feed in existing_dmfr.get('feeds', []):
+        fichero_id = feed.get('tags', {}).get('es_nap_fichero_id')
+        if fichero_id:
+            existing_feeds_by_id[fichero_id] = feed
+    
+    # Process new feeds
+    updated_feeds = []
+    new_feeds_by_id = {}
+    
+    for feed in feeds:
+        fichero_id = feed.get('tags', {}).get('es_nap_fichero_id')
+        if not fichero_id:
+            logger.warning(f"Feed missing fichero_id, skipping: {feed.get('id')}")
+            continue
+        new_feeds_by_id[fichero_id] = feed
+    
+    # First add all existing feeds that are still present in new data
+    for fichero_id, feed in existing_feeds_by_id.items():
+        if fichero_id in new_feeds_by_id:
+            updated_feeds.append(feed)  # Keep the existing record
+            del new_feeds_by_id[fichero_id]  # Remove from new feeds since we're keeping existing
+    
+    # Then add all new feeds
+    updated_feeds.extend(new_feeds_by_id.values())
+    
+    # Create final DMFR data
     dmfr_data = {
         "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
-        "feeds": feeds,
+        "feeds": updated_feeds,
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
 
@@ -269,7 +314,7 @@ def save_dmfr_file(feeds: List[Dict]):
         json.dump(dmfr_data, f, indent=2, ensure_ascii=False)
         f.write('\n')
     
-    logger.info(f"Created DMFR file: {filename}")
+    logger.info(f"Created DMFR file with {len(updated_feeds)} feeds ({len(new_feeds_by_id)} new, {len(existing_feeds_by_id)} existing)")
 
 def main():
     # Parse command line arguments
