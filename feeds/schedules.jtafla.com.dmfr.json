@@ -22,6 +22,11 @@
           "name": "Jacksonville Transportation Authority",
           "short_name": "JTA",
           "website": "http://www.jtafla.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-djmu-jacksonvilletransportationauthority~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "JTAFLA",
             "us_ntd_id": "40040",
@@ -29,6 +34,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-djmu-jacksonvilletransportationauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bustime.jtafla.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://bustime.jtafla.com/gtfsrt/trips",
+        "realtime_alerts": "https://bustime.jtafla.com/gtfsrt/alerts"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
