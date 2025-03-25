@@ -23,6 +23,9 @@ for row in list(cr):
         "id": onestop_id,
         "urls": {"gbfs_auto_discovery": url}
     }
+    if "ridedott.com" in url:
+        # NOTE: these feeds have a problem. The auto-discovery JSON for each region includes links to endpoints for *every* region.
+        continue
     feeds.append(feed)
 dmfr = {
     "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
