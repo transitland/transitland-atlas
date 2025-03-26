@@ -111,6 +111,37 @@
       ]
     },
     {
+      "id": "f-9xj5s-viamobilityservices~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/viaboulder/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/viamobilityservices-co-us/viamobilityservices-co-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9xj5s-viamobilityservices",
+          "name": "Via Mobility Services",
+          "website": "https://viacolorado.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9xj5s-viamobilityservices~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9xj5s-viamobilityservices~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/viaboulder/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/viaboulder/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/viaboulder/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-arcadia~ca~us",
       "spec": "gtfs",
       "urls": {
