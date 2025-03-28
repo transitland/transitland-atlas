@@ -5,7 +5,10 @@
       "id": "f-dqchv-alexandriatransitcompanydash",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://dashbus.com/google_transit.zip"
+        "static_current": "https://www.dashbus.com/google_transit.zip",
+        "static_historic": [
+          "https://dashbus.com/google_transit.zip"
+        ]
       },
       "operators": [
         {
@@ -30,9 +33,17 @@
       "id": "f-dqchv-alexandriatransitcompanydash~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://realtime.prod.dash.obaweb.org/agency/71/tripUpdates",
-        "realtime_trip_updates": "https://realtime.prod.dash.obaweb.org/agency/71/tripUpdates",
-        "realtime_alerts": "https://realtime.prod.dash.obaweb.org/agency/71/tripUpdates"
+        "realtime_vehicle_positions": "https://api.goswift.ly/real-time/alexandria-dash/gtfs-rt-vehicle-positions",
+        "realtime_trip_updates": "https://api.goswift.ly/real-time/alexandria-dash/gtfs-rt-trip-updates",
+        "realtime_alerts": "https://api.goswift.ly/real-time/alexandria-dash/gtfs-rt-alerts"
+      },
+      "license": {
+        "url": "https://www.goswift.ly/api-license"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://goswift.ly/realtime-api-key"
       }
     }
   ],
