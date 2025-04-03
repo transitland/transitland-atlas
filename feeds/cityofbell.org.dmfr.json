@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-lacampana~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.cityofbell.org/home/showpublisheddocument/19057/638737574606200000",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/lacampana-ca-us/lacampana-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/lacampana-ca-us/lacampana-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5cq-lacampana",
+          "name": "City of Bell",
+          "short_name": "La Campana",
+          "website": "https://www.cityofbell.org/?NavID=72",
+          "tags": {
+            "us_ntd_id": "90252"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}

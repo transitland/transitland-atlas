@@ -2,16 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
-      "id": "f-artesia~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://github.com/LACMTA/los-angeles-regional-gtfs/raw/main/artesia-ca-us/artesia-ca-us.zip",
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/artesia-ca-us/artesia-ca-us.zip"
-        ]
-      }
-    },
-    {
       "id": "f-baldwinpark~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -129,7 +119,7 @@
       "id": "f-elsegundo~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/LACMTA/los-angeles-regional-gtfs/raw/main/artesia-ca-us/elsegundo-ca-us.zip",
+        "static_current": "https://github.com/LACMTA/los-angeles-regional-gtfs/raw/main/elsegundo-ca-us/elsegundo-ca-us.zip",
         "static_historic": [
           "https://data.trilliumtransit.com/gtfs/elsegundo-ca-us/elsegundo-ca-us.zip"
         ]
@@ -139,46 +129,6 @@
           "onestop_id": "o-elsegundo~ca~us",
           "name": "El Segundo Transportation",
           "website": "https://www.elsegundo.org/our-city/transportation"
-        }
-      ]
-    },
-    {
-      "id": "f-huntingtonpark~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/huntingtonpark-ca-us/huntingtonpark-ca-us.zip",
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/huntingtonpark-ca-us/huntingtonpark-ca-us.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q5cm-huntingtonparkexpress",
-          "name": "Huntington Park Express",
-          "tags": {
-            "us_ntd_id": "90267"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-lacampana~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/lacampana-ca-us/lacampana-ca-us.zip",
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/lacampana-ca-us/lacampana-ca-us.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q5cq-lacampana",
-          "name": "City of Bell",
-          "short_name": "La Campana",
-          "website": "https://www.cityofbell.org/?NavID=72",
-          "tags": {
-            "us_ntd_id": "90252"
-          }
         }
       ]
     },

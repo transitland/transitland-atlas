@@ -1,0 +1,26 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-huntingtonpark~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.hpca.gov/DocumentCenter/View/11702",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/huntingtonpark-ca-us/huntingtonpark-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/huntingtonpark-ca-us/huntingtonpark-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5cm-huntingtonparkexpress",
+          "name": "Huntington Park Express",
+          "tags": {
+            "us_ntd_id": "90267"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
