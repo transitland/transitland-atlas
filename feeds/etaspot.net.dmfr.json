@@ -2,6 +2,38 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-9rv2-valleyride",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/valleyregionaltransit.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://www.valleyregionaltransit.org/GTFS/vrt_transit1.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://www.valleyregionaltransit.org/about-us/resources/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rv2-valleyride",
+          "name": "Valley Regional Transit",
+          "short_name": "VRT",
+          "website": "http://www.valleyregionaltransit.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-valleyride~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ValleyRide",
+            "us_ntd_id": "11",
+            "wikidata_id": "Q7912187"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnfq-bloomingtontransit",
       "spec": "gtfs",
       "urls": {
@@ -129,6 +161,19 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-valleyride~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/valleyregionaltransit.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/valleyregionaltransit.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/valleyregionaltransit.etaspot.net/alerts.pb"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-3.0",
+        "url": "https://www.valleyregionaltransit.org/about-us/resources/"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
