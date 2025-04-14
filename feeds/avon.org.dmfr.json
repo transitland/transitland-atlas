@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-avon~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.avon.org/DocumentCenter/View/25051/TownOfAvon_gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/avon-co-us/avon-co-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-avon~co~us",
+          "name": "Avon Transit",
+          "website": "https://www.avon.org/2038/Mobility",
+          "tags": {
+            "us_ntd_id": "88228"
+          }
+        }
+      ]
+    }
+  ]
+}
