@@ -1,0 +1,32 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-u3k-koleje~wielkopolskie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://ws.kolejewlkp.pl:83/gtfs_kw.zip"
+      },
+      "license": {
+        "url": "https://bip.koleje-wielkopolskie.com.pl/informacje-publiczne/zasady-udostepniania-informacji-publicznych/"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u3k-koleje~wielkopolskie",
+      "name": "Koleje Wielkopolskie Sp. z o.o.",
+      "short_name": "KW",
+      "website": "https://kolejewlkp.pl/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u3k-koleje~wielkopolskie"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q11741120"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
