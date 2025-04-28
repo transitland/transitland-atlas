@@ -3,6 +3,9 @@
   "feeds": [
     {
       "id": "f-airpullman~spa",
+      "supersedes_ids": [
+        "f-airpullmanspa"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://usbshare.agenziatpl.it/index.php/s/NCX252ombsxjzzz/download/2025-01-03_Airpullman.zip",
@@ -14,8 +17,27 @@
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "http://www.agenziatpl.it/open-data/gtfs"
-      }
+        "url": "http://www.agenziatpl.it/open-data/gtfs",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-airpullmanspa",
+          "name": "AirPullman",
+          "short_name": "AP",
+          "website": "https://www.airpullmanspa.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AirPullman_feed",
+              "feed_onestop_id": "f-airpullmanspa"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-movibus~srl",
