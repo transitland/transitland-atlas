@@ -2054,13 +2054,6 @@
       }
     },
     {
-      "id": "f-advancetransit~vt~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/advancetransit-vt-us/advancetransit-vt-us.zip"
-      }
-    },
-    {
       "id": "f-allpointstransit~co~us",
       "spec": "gtfs",
       "urls": {
@@ -5175,6 +5168,39 @@
           ],
           "tags": {
             "twitter_general": "vttranslines"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dru8-advancetransit",
+      "supersedes_ids": [
+        "f-advancetransit~vt~us"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/advancetransit-vt-us/advancetransit-vt-us.zip",
+        "static_historic": [
+          "http://whereismybus.advancetransit.com/GTFS/feed.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "advance-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dru8-advancetransit",
+          "name": "Advance Transit",
+          "short_name": "AT",
+          "website": "http://www.advancetransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-advancetransit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "10137",
+            "wikidata_id": "Q17084449"
           }
         }
       ]
