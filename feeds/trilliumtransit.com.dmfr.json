@@ -5180,6 +5180,36 @@
       ]
     },
     {
+      "id": "f-dru8-advancetransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/advancetransit-vt-us/advancetransit-vt-us.zip",
+        "static_historic": [
+          "http://whereismybus.advancetransit.com/GTFS/feed.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "advance-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dru8-advancetransit",
+          "name": "Advance Transit",
+          "short_name": "AT",
+          "website": "http://www.advancetransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-advancetransit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "10137",
+            "wikidata_id": "Q17084449"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-drvc-rtp~me~us",
       "spec": "gtfs",
       "urls": {
