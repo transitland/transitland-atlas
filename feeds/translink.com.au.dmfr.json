@@ -69,14 +69,18 @@
       }
     },
     {
-      "id": "f-qconnect~rockhampton",
+      "id": "f-qconnect~rockhampton~yeppoon",
+      "supersedes_ids": [
+        "f-qconnect~rockhampton",
+        "f-qconnect~yeppoon"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfsrt.api.translink.com.au/GTFS/ROK_GTFS.zip"
+        "static_current": "https://gtfsrt.api.translink.com.au/GTFS/RKY_GTFS.zip"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/ac8aa7e0-0153-43b8-bb3d-5848eefb5ac0"
+        "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-translink/resource/535a9518-0fb0-41a5-a7b9-4aa67120d173"
       }
     },
     {
@@ -99,17 +103,6 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/4b6cc276-0d70-4c9c-adac-0b8cb384268a"
-      }
-    },
-    {
-      "id": "f-qconnect~yeppoon",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://gtfsrt.api.translink.com.au/GTFS/YEP_GTFS.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/63dec6b1-bb77-470f-bb34-54fa0db3d6a7"
       }
     },
     {
@@ -396,16 +389,13 @@
           "feed_onestop_id": "f-qconnect~north~stradbroke~island~rt"
         },
         {
-          "feed_onestop_id": "f-qconnect~rockhampton"
+          "feed_onestop_id": "f-qconnect~rockhampton~yeppoon"
         },
         {
           "feed_onestop_id": "f-qconnect~toowoomba"
         },
         {
           "feed_onestop_id": "f-qconnect~warwick"
-        },
-        {
-          "feed_onestop_id": "f-qconnect~yeppoon"
         },
         {
           "feed_onestop_id": "f-r7g8-qconnect~buslink"
