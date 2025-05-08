@@ -3,6 +3,9 @@
   "feeds": [
     {
       "id": "f-dr9-centro",
+      "supersedes_ids": [
+        "f-cortland~transit"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.centro.org/CentroGTFS/CentroGTFS.zip"
@@ -10,7 +13,11 @@
       "operators": [
         {
           "onestop_id": "o-dr9-centro",
-          "name": "Centro",
+          "supersedes_ids": [
+            "o-dr9f-cortlandcountypublictransportation"
+          ],
+          "name": "Central New York Regional Transportation Authority",
+          "short_name": "Centro",
           "tags": {
             "twitter_general": "GoCentroBus",
             "us_ntd_id": "20018",
