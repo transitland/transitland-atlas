@@ -5,7 +5,10 @@
       "id": "f-c28-nstranslinkca",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://gtfs.translink.ca/static/latest"
+        "static_current": "https://gtfs-static.translink.ca/gtfs/google_transit.zip",
+        "static_historic": [
+          "http://gtfs.translink.ca/static/latest"
+        ]
       },
       "license": {
         "url": "https://developer.translink.ca/ServicesGtfs/GtfsData",
@@ -14,40 +17,18 @@
         "commercial_use_allowed": "yes",
         "attribution_text": "Route and arrival data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service.",
         "attribution_instructions": "You must, unless otherwise agreed to by TransLink in writing, at all times present and identify the Data with the following legend, prominently displayed"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c2b-westcoastexpress",
-          "name": "West Coast Express",
-          "website": "http://www.translink.ca/en/Schedules-and-Maps/West-Coast-Express.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "WCEX"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-c2b8-britishcolumbiarapidtransitcompany",
-          "name": "British Columbia Rapid Transit Company",
-          "website": "http://www.translink.ca/en/About-Us/Corporate-Overview/Operating-Companies/BCRTC.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SKYT"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "f-translink~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://gtfs.translink.ca/v3/gtfsposition",
-        "realtime_trip_updates": "https://gtfs.translink.ca/v3/gtfsrealtime",
-        "realtime_alerts": "https://gtfs.translink.ca/v3/gtfsalerts"
+        "realtime_vehicle_positions": "https://gtfsapi.translink.ca/v3/gtfsposition",
+        "realtime_trip_updates": "https://gtfsapi.translink.ca/v3/gtfsrealtime",
+        "realtime_alerts": "https://gtfsapi.translink.ca/v3/gtfsalerts"
       },
       "license": {
-        "url": "https://developer.translink.ca/Home/TermsOfUse",
+        "url": "https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/terms-of-use",
         "redistribution_allowed": "yes",
         "attribution_text": "Some of the data used in this product or service is provided by permission of TransLink. TransLink assumes no responsibility for the accuracy or currency of the Data used in this product or service."
       },
@@ -60,17 +41,20 @@
   "operators": [
     {
       "onestop_id": "o-c28-translink",
-      "name": "TransLink",
+      "name": "South Coast British Columbia Transportation Authority",
+      "short_name": "TransLink",
       "website": "http://www.translink.ca",
       "associated_feeds": [
         {
-          "gtfs_agency_id": "CMBC",
           "feed_onestop_id": "f-c28-nstranslinkca"
         },
         {
           "feed_onestop_id": "f-translink~rt"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q1142140"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
