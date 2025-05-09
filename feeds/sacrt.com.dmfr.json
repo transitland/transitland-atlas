@@ -5,7 +5,13 @@
       "id": "f-9qcd-etranelkgrove",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://elkgrovetransit.com/gtfs"
+        "static_current": "https://iportal.sacrt.com/gtfs/eg/google_transit.zip",
+        "static_historic": [
+          "https://elkgrovetransit.com/gtfs"
+        ]
+      },
+      "license": {
+        "url": "https://www.sacrt.com/gtfs/"
       }
     },
     {
@@ -89,8 +95,9 @@
       "id": "f-southcountytransitlink~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://iportal.sacrt.com/gtfs/SCTLink/southcountytransitlink-ca-us.zip",
+        "static_current": "https://iportal.sacrt.com/gtfs/SCTLink/google_transit.zip",
         "static_historic": [
+          "http://iportal.sacrt.com/gtfs/SCTLink/southcountytransitlink-ca-us.zip",
           "https://data.trilliumtransit.com/gtfs/southcountytransitlink-ca-us/southcountytransitlink-ca-us.zip"
         ]
       },
@@ -101,10 +108,10 @@
         {
           "onestop_id": "o-9qc-southcountytransitlink",
           "name": "South County Transit Link",
-          "short_name": "SCT/Link",
+          "short_name": "SCT Link",
           "website": "http://www.sctlink.com/",
           "tags": {
-            "us_ntd_id": "9R02-90216",
+            "us_ntd_id": "90216",
             "wikidata_id": "Q96406074"
           }
         }
