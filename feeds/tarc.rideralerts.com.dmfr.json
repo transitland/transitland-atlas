@@ -5,7 +5,10 @@
       "id": "f-dng1-transitauthorityofrivercity",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://googletransit.ridetarc.org/feed/google_transit.zip"
+        "static_current": "https://tarc.rideralerts.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "http://googletransit.ridetarc.org/feed/google_transit.zip"
+        ]
       },
       "license": {
         "url": "http://googletransit.ridetarc.org/feed/Developer%20License%20Agreeement.pdf",
@@ -37,9 +40,9 @@
       "id": "f-tarc~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://gtfsrealtime.ridetarc.org/realtime/Vehicle/VehiclePositions.pb",
-        "realtime_trip_updates": "http://gtfsrealtime.ridetarc.org/realtime/TripUpdate/TripUpdates.pb",
-        "realtime_alerts": "http://gtfsrealtime.ridetarc.org/realtime/Alert/Alerts.pb"
+        "realtime_vehicle_positions": "https://tarc.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=vehicleposition",
+        "realtime_trip_updates": "https://tarc.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=tripupdate",
+        "realtime_alerts": "https://tarc.rideralerts.com/InfoPoint/gtfs-realtime.ashx?type=alert"
       }
     }
   ],
