@@ -1,34 +1,24 @@
 {
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
-      "onestop_id": "f-blueskylimovail",
-      "url": "https://blueskylimovail.com/blueskylimo_gtfs.zip",
+      "id": "f-blueskylimovail",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://blueskylimovail.com/blueskylimo_gtfs.zip"
+      },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://creativecommons.org/licenses/by/4.0/"
       },
-      "tags": {
-        "schedule": "yes",
-        "realtime": "no"
-      }
+      "operators": [
+        {
+          "onestop_id": "o-blueskylimovail",
+          "name": "Blue Sky Limo LLC",
+          "website": "https://blueskylimovail.com"
+        }
+      ]
     }
   ],
-  "operators": [
-    {
-      "onestop_id": "o-blueskylimovail",
-      "name": "Blue Sky Limo LLC",
-      "website": "https://blueskylimovail.com",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-blueskylimovail"
-        }
-      ],
-      "tags": {
-        "region": "Colorado",
-        "mode": "shuttle",
-        "private": "true",
-        "airport_service": "yes"
-      }
-    }
-  ]
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
 }
