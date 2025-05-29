@@ -1,24 +1,24 @@
 {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
-    "feeds": [
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-u3jy-lodz",
+      "name": "Łódź GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cdn.zbiorkom.live/gtfs/lodz.zip"
+      },
+      "license": {
+        "spdx_identifier": "MIT"
+      },
+      "operators": [
         {
-            "id": "f-u3jy-lodz",
-            "name": "Łódź GTFS",
-            "spec": "gtfs",
-            "urls": {
-                "static_current": "https://cdn.zbiorkom.live/gtfs/lodz.zip"
-            },
-            "license": {
-                "spdx_identifier": "MIT"
-            },
-            "operators": [
-                {
-                    "onestop_id": "o-u3jy-mpk~lodz",
-                    "name": "MPK-Łódź Sp. z o.o.",
-                    "short_name": "MPK-Łódź",
-                    "website": "http://www.mpk.lodz.pl/"
-                }
-            ]
+          "onestop_id": "o-u3jy-mpk~lodz",
+          "name": "MPK-Łódź Sp. z o.o.",
+          "short_name": "MPK-Łódź",
+          "website": "http://www.mpk.lodz.pl/"
         }
-    ]
+      ]
+    }
+  ]
 }

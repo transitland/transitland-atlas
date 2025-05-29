@@ -1,24 +1,24 @@
 {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
-    "feeds": [
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-u36g-gorzow~wielkopolski",
+      "name": "Gorzów Wielkopolski GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bip.mzk-gorzow.com.pl/files/file_add/download/44_gtfs_gw.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0"
+      },
+      "operators": [
         {
-            "id": "f-u36g-gorzow~wielkopolski",
-            "name": "Gorzów Wielkopolski GTFS",
-            "spec": "gtfs",
-            "urls": {
-                "static_current": "https://bip.mzk-gorzow.com.pl/files/file_add/download/44_gtfs_gw.zip"
-            },
-            "license": {
-                "spdx_identifier": "CC0-1.0"
-            },
-            "operators": [
-                {
-                    "onestop_id": "o-u36g-mzk~gorzow",
-                    "name": "Miejski Zakład Komunikacji w Gorzowie Wielkopolskim sp. z o.o.",
-                    "short_name": "MZK Gorzów Wielkopolski",
-                    "website": "https://mzk-gorzow.com.pl/"
-                }
-            ]
+          "onestop_id": "o-u36g-mzk~gorzow",
+          "name": "Miejski Zakład Komunikacji w Gorzowie Wielkopolskim sp. z o.o.",
+          "short_name": "MZK Gorzów Wielkopolski",
+          "website": "https://mzk-gorzow.com.pl/"
         }
-    ]
+      ]
+    }
+  ]
 }
