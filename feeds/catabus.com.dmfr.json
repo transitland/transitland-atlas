@@ -3,9 +3,12 @@
   "feeds": [
     {
       "id": "f-dr28-wwwcatabuscom",
+      "supersedes_ids": [
+        "f-cata~pa~us"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://catabus.com/wp-content/uploads/google_transit.zip"
+        "static_current": "https://catabus.com/wp-content/uploads/google_transit.zip"
       },
       "operators": [
         {
@@ -14,9 +17,6 @@
           "short_name": "CATA",
           "website": "http://www.catabus.com",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "0"
-            },
             {
               "feed_onestop_id": "f-dr28-wwwcatabuscom~rt"
             }
