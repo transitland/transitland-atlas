@@ -37,6 +37,8 @@ for row in onestop_ids:
     valid = False
   if osid != osid.lower():
     valid = False
+  if osid.endswith("~"):
+    valid = False
   if not valid:
     print(f"ERROR: improperly formatted Feed Onestop ID: {osid}")
     fail_the_build = True
@@ -69,6 +71,8 @@ for row in onestop_ids:
     valid = False
   if '' in osid.split('-'):
     valid = False
+  if osid.endswith("~"):
+    valid = False
   if not valid:
     print(f"ERROR: improperly formatted Operator Onestop ID: {osid}")
     fail_the_build = True
@@ -96,6 +100,8 @@ for o in operators:
     if dashcount == 0 or dashcount > 2:
       valid = False
     if len(associated_feed_onestop_id) > 0 and associated_feed_onestop_id[0] != "f":
+      valid = False
+    if associated_feed_onestop_id.endswith("~"):
       valid = False
     if not valid:
       print(f"ERROR: improperly formatted feed Onestop ID: {associated_feed_onestop_id} in the associated_feeds block for operator {operator_onestop_id}")
