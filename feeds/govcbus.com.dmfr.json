@@ -3,15 +3,19 @@
   "feeds": [
     {
       "id": "f-9q5-govcbus",
+      "supersedes_ids": [
+        "f-camarillo~ca~us",
+        "f-9q56-thousandoaks~ca~us",
+        "f-kananshuttle~ca~us",
+        "f-moorpark~city~transit",
+        "f-9q5d-simivalleytransit"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://govcbus.com/gtfs"
       },
       "license": {
         "url": "https://gtfs-directory.syncromatics.com/"
-      },
-      "tags": {
-        "exclude_from_global_query": "true"
       }
     },
     {
@@ -31,31 +35,131 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/vctc-ca-us/vctc-ca-us.zip"
+      }
+    },
+    {
+      "id": "f-9q54-goldcoasttransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://www.goldcoasttransit.org/images/GTFS/GTFS.zip"
       },
-      "operators": [
+      "license": {
+        "url": "https://www.gctd.org/about/developer-resources/"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-9q5-venturacountytransportationcommission",
+      "name": "Ventura County Transportation Commission",
+      "short_name": "VCTC",
+      "website": "http://www.goventura.org/",
+      "associated_feeds": [
         {
-          "onestop_id": "o-9q5-venturacountytransportationcommission",
-          "name": "Ventura County Transportation Commission",
-          "short_name": "VCTC",
-          "website": "http://www.goventura.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "607"
-            },
-            {
-              "feed_onestop_id": "f-9q5-govcbus"
-            },
-            {
-              "feed_onestop_id": "f-9q5-govcbus~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "govctc",
-            "us_ntd_id": "90164",
-            "wikidata_id": "Q7920384"
-          }
+          "gtfs_agency_id": "143",
+          "feed_onestop_id": "f-9q5-govcbus"
+        },
+        {
+          "feed_onestop_id": "f-9q5-govcbus~rt"
+        },
+        {
+          "feed_onestop_id": "f-9q5-vctc~ca~us"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "govctc",
+        "us_ntd_id": "90164",
+        "wikidata_id": "Q7920384"
+      }
+    },
+    {
+      "onestop_id": "o-9q54-goldcoasttransit",
+      "name": "Gold Coast Transit",
+      "short_name": "GCT",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "139",
+          "feed_onestop_id": "f-9q5-govcbus"
+        }
+      ],
+      "tags": {
+        "twitter_general": "goldcoastbus",
+        "us_ntd_id": "90035",
+        "wikidata_id": "Q5578666"
+      }
+    },
+    {
+      "onestop_id": "o-9q56-thousandoakstransit",
+      "name": "Thousand Oaks Transit",
+      "website": "https://www.toaks.org/departments/public-works/transit",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "142",
+          "feed_onestop_id": "f-9q5-govcbus"
+        }
+      ],
+      "tags": {
+        "twitter_general": "TOTransit",
+        "us_ntd_id": "90165",
+        "wikidata_id": "Q7797062"
+      }
+    },
+    {
+      "onestop_id": "o-9q56e-camarilloareatransit",
+      "name": "Camarillo Area Transit",
+      "website": "http://www.camarillotransit.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "153",
+          "feed_onestop_id": "f-9q5-govcbus"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "90163"
+      }
+    },
+    {
+      "onestop_id": "o-9q57p-moorparkcitytransit",
+      "name": "Moorpark City Transit",
+      "website": "https://www.moorparkca.gov/227/Bus-Ride-Guide",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "147",
+          "feed_onestop_id": "f-9q5-govcbus"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "90227"
+      }
+    },
+    {
+      "onestop_id": "o-9q5d-simivalleytransit",
+      "name": "Simi Valley Transit",
+      "website": "https://www.simivalley.org/departments/public-works/simi-valley-transit",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "152",
+          "feed_onestop_id": "f-9q5-govcbus"
+        }
+      ],
+      "tags": {
+        "twitter_general": "svtransit",
+        "us_ntd_id": "90050"
+      }
+    },
+    {
+      "onestop_id": "o-ojai~ca~us",
+      "name": "Ojai Trolley",
+      "website": "https://www.ojaitrolley.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "148",
+          "feed_onestop_id": "f-9q5-govcbus"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "91058"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
