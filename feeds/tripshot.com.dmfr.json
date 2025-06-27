@@ -130,6 +130,41 @@
       }
     },
     {
+      "id": "f-calabasas~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://calabasas.tripshot.com/v1/gtfs.zip",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/calabasas-ca-us/calabasas-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/calabasas-ca-us/calabasas-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5d5-calabasastransitsystem",
+          "name": "Calabasas Transit System",
+          "website": "https://www.cityofcalabasas.com/government/public-works/transportation-transit/public-transit-services",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-calabasas~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "90257"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-calabasas~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://calabasas.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+        "realtime_trip_updates": "https://calabasas.tripshot.com/v1/gtfs/realtime/tripUpdate",
+        "realtime_alerts": "https://calabasas.tripshot.com/v1/gtfs/realtime/serviceAlert"
+      }
+    },
+    {
       "id": "f-mckinney~avenue~transit~authority",
       "spec": "gtfs",
       "urls": {
