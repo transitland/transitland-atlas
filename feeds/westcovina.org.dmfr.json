@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-westcovina~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.westcovina.org/home/showpublisheddocument/24184/638693455920870000",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/westcovina-ca-us/westcovina-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/westcovina-ca-us/westcovina-ca-us.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh1s-gowestshuttle",
+          "name": "City of West Covina",
+          "short_name": "Go West Shuttle",
+          "website": "https://www.westcovina.org/residents/transit-services",
+          "tags": {
+            "us_ntd_id": "90293"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
