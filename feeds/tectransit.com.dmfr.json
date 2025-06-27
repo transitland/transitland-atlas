@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-baldwinpark~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://baldwinpark.tectransit.com/api/public/fixedRoute/gtfs",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/baldwinpark-ca-us/baldwinpark-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/baldwinpark-ca-us/baldwinpark-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh1g-baldwinparktransit",
+          "name": "Baldwin Park Transit",
+          "tags": {
+            "twitter_general": "BaldwinParkCA",
+            "us_ntd_id": "90251"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
