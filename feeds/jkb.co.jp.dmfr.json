@@ -1,0 +1,68 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-xn6y-上信観光バス",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.jkb.co.jp/wp/wp-content/uploads/2024/06/GTFS-JP_2024.04.01.zip",
+        "static_historic": [
+          "https://www.jkb.co.jp/wp/wp-content/uploads/2024/06/GTFS-JP_2023.10.01.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "use_without_attribution": "no"
+      }
+    },
+    {
+      "id": "f-xn6y-上信観光バス~1",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-public.odpt.org/api/v4/files/odpt/JoshinKankoBus/AllLines.zip?date=current",
+        "static_historic": [
+          "https://api-public.odpt.org/api/v4/files/odpt/JoshinKankoBus/AllLines.zip?date=20240401"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "use_without_attribution": "no"
+      }
+    },
+    {
+      "id": "f-xn6y-上信観光バス~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_trip_update",
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_vehicle"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "use_without_attribution": "no"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-xn6y-上信観光バス株式会社",
+      "name": "上信観光バス株式会社",
+      "website": "https://www.jkb.co.jp/",
+      "tags": {
+        "wikidata_id": "Q17215572"
+      },
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-xn6y-上信観光バス~rt"
+        },
+        {
+          "feed_onestop_id": "f-xn6y-上信観光バス",
+          "gtfs_agency_id": "8070001007096"
+        },
+        {
+          "feed_onestop_id": "f-xn6y-上信観光バス~1",
+          "gtfs_agency_id": "8070001007096"
+        }
+      ]
+    }
+  ]
+}
