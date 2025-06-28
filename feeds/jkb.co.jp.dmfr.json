@@ -33,8 +33,8 @@
       "id": "f-xn6y-上信観光バス~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_trip_update",
-        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_vehicle"
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_trip_update"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
@@ -47,22 +47,22 @@
       "onestop_id": "o-xn6y-上信観光バス株式会社",
       "name": "上信観光バス株式会社",
       "website": "https://www.jkb.co.jp/",
-      "tags": {
-        "wikidata_id": "Q17215572"
-      },
       "associated_feeds": [
         {
+          "gtfs_agency_id": "8070001007096",
+          "feed_onestop_id": "f-xn6y-上信観光バス"
+        },
+        {
+          "gtfs_agency_id": "8070001007096",
+          "feed_onestop_id": "f-xn6y-上信観光バス~1"
+        },
+        {
           "feed_onestop_id": "f-xn6y-上信観光バス~rt"
-        },
-        {
-          "feed_onestop_id": "f-xn6y-上信観光バス",
-          "gtfs_agency_id": "8070001007096"
-        },
-        {
-          "feed_onestop_id": "f-xn6y-上信観光バス~1",
-          "gtfs_agency_id": "8070001007096"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q17215572"
+      }
     }
   ]
 }
