@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-djj2-pascocountypublictransit~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gopasco.rideralerts.com/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/pascocountypublictransit-fl-us/pascocountypublictransit-fl-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-djj2-pascocountypublictransportation",
+          "name": "Pasco County Public Transportation",
+          "short_name": "PCPT",
+          "website": "https://www.gopasco.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-djj2-pascocountypublictransit~fl~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RidePCPT",
+            "us_ntd_id": "40074",
+            "wikidata_id": "Q7141817"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-djj2-pascocountypublictransit~fl~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gopasco.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://gopasco.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?&Type=TripUpdate",
+        "realtime_alerts": "https://gopasco.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?&Type=Alert"
+      }
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
