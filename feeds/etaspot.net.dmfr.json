@@ -2,6 +2,27 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-citibus~ia~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/citibuspublic.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/citibus-ia-us/citibus-ia-us--imap.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-citibus~ia~us",
+          "name": "Davenport Citibus",
+          "website": "https://www.davenportiowa.com/services/citibus_transit",
+          "tags": {
+            "us_ntd_id": "70009",
+            "wikidata_id": "Q5230228"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9rv2-valleyride",
       "spec": "gtfs",
       "urls": {
