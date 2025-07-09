@@ -2,24 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
-      "id": "f-rapid~city~sd~us",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13102/rts_corc_gtfs.zip"
-      },
-      "spec": "gtfs",
-      "operators": [
-        {
-          "onestop_id": "o-rapid~city~sd~us",
-          "name": "Rapid Transit System",
-          "short_name": "RTS",
-          "website": "https://www.rapidtransitsystem.org/",
-          "tags": {
-            "us_ntd_id": "80014"
-          }
-        }
-      ]
-    }
-    {
       "id": "f-9qd-fresnocounty~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -969,6 +951,24 @@
           "website": "https://www.potomacvalleytransit.org/",
           "tags": {
             "us_ntd_id": "30135"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rapid~city~sd~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13102/rts_corc_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rapid~city~sd~us",
+          "name": "Rapid Transit System",
+          "short_name": "RTS",
+          "website": "https://www.rapidtransitsystem.org/",
+          "tags": {
+            "us_ntd_id": "80014"
           }
         }
       ]
