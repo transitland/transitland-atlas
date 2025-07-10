@@ -8,7 +8,7 @@
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.cdta.org/schedules/google_transit.zip"
+        "static_current": "https://www.cdta.org/schedules/google_transit.zip"
       },
       "license": {
         "url": "https://www.cdta.org/developer-license-agreement/169",
@@ -23,6 +23,11 @@
           "onestop_id": "o-dre-cdta",
           "name": "Capital District Transportation Authority",
           "short_name": "CDTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dre-cdta~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "cdta",
             "us_ntd_id": "20002",
@@ -30,6 +35,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dre-cdta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://gtfs.cdta.org:8080/gtfsrealtime/VehiclePositions",
+        "realtime_trip_updates": "http://gtfs.cdta.org:8080/gtfsrealtime/TripUpdates"
+      }
     }
   ],
   "license_spdx_identifier": "CDLA-Permissive-1.0"
