@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-lacrosse~wi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://static.cityoflacrosse.org/mtu/GTFS_Feed_CityofLaCrosse.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lacrosse-wi-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lacrosse~wi~us",
+          "name": "La Crosse Municipal Transit",
+          "short_name": "MTU",
+          "website": "https://www.cityoflacrosse.org/your-government/departments/municipal-transit-mtu",
+          "tags": {
+            "us_ntd_id": "50004"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
