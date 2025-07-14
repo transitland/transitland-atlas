@@ -2,6 +2,32 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-corpus~christi~regional~transportation~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.ccrta.cadavl.com/CCRTA/GTFS/GTFS_CCRTA.zip",
+        "static_historic": [
+          "https://www.ccrta.org/gtfs/ccrta-gtfs.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.ccrta.org/knowledge/gtfs-feed",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9uft-corpuschristiregionaltransportationauthority",
+          "name": "Corpus Christi Regional Transportation Authority",
+          "tags": {
+            "twitter_general": "CCRTA",
+            "us_ntd_id": "60051",
+            "wikidata_id": "Q5172658"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dht-collierareatransit~cat",
       "spec": "gtfs",
       "urls": {
