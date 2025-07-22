@@ -147,6 +147,44 @@
       }
     },
     {
+      "id": "f-c26-yakimatransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://yakima.connexionz.net/rtt/public/utility/gtfs.aspx",
+        "static_historic": [
+          "https://yakimatransit.org/media/gtfs.zip",
+          "https://yakimatransit.org/gtfs/yakima_gtfs.zip",
+          "http://mjcaction.com/MJC_GTFS_Public/yakima_google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c26-yakimatransit",
+          "name": "Yakima Transit",
+          "website": "http://www.yakimatransit.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c26-yakimatransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "YakimaTransit",
+            "us_ntd_id": "00006",
+            "wikidata_id": "Q8047098"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c26-yakimatransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://yakima.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "http://yakima.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "http://yakima.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
       "id": "f-dp9e-belleurbansystem",
       "spec": "gtfs",
       "urls": {
