@@ -104,6 +104,43 @@
       }
     },
     {
+      "id": "f-dnmy-appalcart",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/appalcart.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://gtfs.transitportal.org/CurrentGTFS/AppalCART_189/AppalCART.zip",
+          "https://gtfs.transitportal.org/CurrentGTFS/AppalCART_189/AppalCART_20220324.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnmy-appalcart",
+          "name": "Appalachian Campus Area Rapid Transit",
+          "short_name": "AppalCART",
+          "website": "https://www.appalcart.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnmy-appalcart~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "41127",
+            "wikidata_id": "Q16160659"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnmy-appalcart~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/appalcart.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/appalcart.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/appalcart.etaspot.net/alerts.pb"
+      }
+    },
+    {
       "id": "f-dq2-great",
       "spec": "gtfs",
       "urls": {
