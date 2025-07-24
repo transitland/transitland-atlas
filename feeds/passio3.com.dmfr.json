@@ -337,6 +337,41 @@
       }
     },
     {
+      "id": "f-clackamascounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/clackamas/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-clackamascounty~or~us",
+          "name": "Clackamas County Connects Shuttle",
+          "short_name": "ClackCo",
+          "website": "https://www.clackamas.us/h3s/connects-shuttle",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-clackamascounty~or~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00363"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-clackamascounty~or~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/clackamas/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/clackamas/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/clackamas/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-columbia~university",
       "spec": "gtfs",
       "urls": {
