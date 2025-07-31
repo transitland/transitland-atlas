@@ -285,6 +285,46 @@
       }
     },
     {
+      "id": "f-c214-sandy~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/sandyor/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/sandy-or-us/sandy-or-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c214-sandyareametro",
+          "supersedes_ids": [
+            "o-c213-mthoodexpress"
+          ],
+          "name": "Sandy Area Metro",
+          "short_name": "SAM",
+          "website": "https://www.ci.sandy.or.us/transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c214-sandy~or~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CityofSandyOR",
+            "us_ntd_id": "00389",
+            "wikidata_id": "Q7417136"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c214-sandy~or~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/sandyor/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/sandyor/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/sandyor/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-c2qft-udash~mt~us",
       "spec": "gtfs",
       "urls": {
@@ -334,6 +374,41 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://passio3.com/chapman/passioTransit/gtfs/google_transit.zip"
+      }
+    },
+    {
+      "id": "f-clackamascounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/clackamas/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/clackamascounty-or-us/clackamascounty-or-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-clackamascounty~or~us",
+          "name": "Clackamas County Connects Shuttle",
+          "short_name": "ClackCo",
+          "website": "https://www.clackamas.us/h3s/connects-shuttle",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-clackamascounty~or~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00363"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-clackamascounty~or~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/clackamas/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/clackamas/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/clackamas/passioTransit/gtfs/realtime/serviceAlerts"
       }
     },
     {
