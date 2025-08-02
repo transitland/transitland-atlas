@@ -5,8 +5,9 @@
       "id": "f-9r0-redding~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://hosted-gtfs-feeds.s3.amazonaws.com/RABA/gtfs.zip",
+        "static_current": "https://rabagtfs.z5.web.core.windows.net/rabagtfs.zip",
         "static_historic": [
+          "https://hosted-gtfs-feeds.s3.amazonaws.com/RABA/gtfs.zip",
           "https://data.trilliumtransit.com/gtfs/redding-ca-us/redding-ca-us.zip"
         ]
       },
@@ -18,11 +19,8 @@
           "onestop_id": "o-9r0-reddingareabusauthority",
           "name": "Redding Area Bus Authority",
           "short_name": "RABA",
-          "website": "https://www.cityofredding.org/departments/redding-area-bus-authority",
+          "website": "https://www.rabaride.com/",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "25"
-            },
             {
               "feed_onestop_id": "f-9r0-redding~ca~us~rt"
             },
