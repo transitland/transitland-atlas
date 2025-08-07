@@ -2,93 +2,32 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
-      "id": "f-u0-sncf~intercites",
+      "id": "f-sncf~fr",
+      "supersedes_ids": [
+        "f-u0-sncf~intercites",
+        "f-u0-sncf~ter",
+        "f-u0-sncf~tgv"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/export-intercites-gtfs-last.zip"
+        "static_current": "https://eu.ftp.opendatasoft.com/sncf/plandata/export-opendata-sncf-gtfs.zip"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.sncf.com/pages/cgu/A1#A1",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no"
+        "url": "https://transport.data.gouv.fr/datasets/horaires-sncf"
       }
     },
     {
-      "id": "f-u0-sncf~intercites~rt",
+      "id": "f-sncf~fr~rt",
+      "supersedes_ids": [
+        "f-u0-sncf~intercites~rt",
+        "f-u0-sncf~ter~rt",
+        "f-u0-sncf~tgv~rt"
+      ],
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/sncf-ic-gtfs-rt-trip-updates"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.sncf.com/pages/cgu/A1#A1",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no"
-      }
-    },
-    {
-      "id": "f-u0-sncf~ter",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/export-ter-gtfs-last.zip"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.sncf.com/pages/cgu/A1#A1",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no"
-      }
-    },
-    {
-      "id": "f-u0-sncf~ter~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/sncf-ter-gtfs-rt-trip-updates"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.sncf.com/pages/cgu/A1#A1",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no"
-      }
-    },
-    {
-      "id": "f-u0-sncf~tgv",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://eu.ftp.opendatasoft.com/sncf/gtfs/export_gtfs_voyages.zip"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.sncf.com/pages/cgu/A1#A1",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no"
-      }
-    },
-    {
-      "id": "f-u0-sncf~tgv~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/sncf-tgv-gtfs-rt-trip-updates"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://data.sncf.com/pages/cgu/A1#A1",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "no"
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/sncf-all-gtfs-rt-trip-updates",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/sncf-gtfs-rt-service-alerts"
       }
     },
     {
@@ -142,29 +81,31 @@
       "website": "http://www.sncf.com",
       "associated_feeds": [
         {
+          "gtfs_agency_id": "1187",
+          "feed_onestop_id": "f-sncf~fr"
+        },
+        {
+          "gtfs_agency_id": "5111",
+          "feed_onestop_id": "f-sncf~fr"
+        },
+        {
+          "gtfs_agency_id": "5235",
+          "feed_onestop_id": "f-sncf~fr"
+        },
+        {
+          "gtfs_agency_id": "5270",
+          "feed_onestop_id": "f-sncf~fr"
+        },
+        {
+          "gtfs_agency_id": "OCEdefault",
+          "feed_onestop_id": "f-sncf~fr"
+        },
+        {
+          "feed_onestop_id": "f-sncf~fr~rt"
+        },
+        {
           "gtfs_agency_id": "TER",
           "feed_onestop_id": "f-spez-paysdaixmobilite"
-        },
-        {
-          "gtfs_agency_id": "1187",
-          "feed_onestop_id": "f-u0-sncf~intercites"
-        },
-        {
-          "feed_onestop_id": "f-u0-sncf~intercites~rt"
-        },
-        {
-          "gtfs_agency_id": "1187",
-          "feed_onestop_id": "f-u0-sncf~ter"
-        },
-        {
-          "feed_onestop_id": "f-u0-sncf~ter~rt"
-        },
-        {
-          "gtfs_agency_id": "1187",
-          "feed_onestop_id": "f-u0-sncf~tgv"
-        },
-        {
-          "feed_onestop_id": "f-u0-sncf~tgv~rt"
         }
       ],
       "tags": {
