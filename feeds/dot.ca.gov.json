@@ -1,0 +1,303 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-artesia~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/ArtesiaGTFS.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/ArtesiaGTFS.zip",
+          "https://github.com/LACMTA/los-angeles-regional-gtfs/raw/main/artesia-ca-us/artesia-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/artesia-ca-us/artesia-ca-us.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-arvin~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/ArvinGTFS.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/ArvinGTFS.zip",
+          "https://data.trilliumtransit.com/gtfs/arvin-ca-us/arvin-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q7-arvintransit",
+          "name": "Arvin Transit",
+          "tags": {
+            "us_ntd_id": "91027",
+            "wikidata_id": "Q4802468"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-bellflower~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/BellflowerGTFS.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/BellflowerGTFS.zip",
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/bellflower-ca-us/bellflower-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/bellflower-ca-us/bellflower-ca-us.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://gtfs.calitp.org/",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5bz-bellflowerbus",
+          "name": "Bellflower Bus",
+          "tags": {
+            "us_ntd_id": "90254"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-eastern~sierra~bishop~lone~pine~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/EasternSierraBishopLonePineFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/EasternSierraBishopLonePineFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-guadalupe~flyer~paratransit~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/GuadalupeFlyerParatransitFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/GuadalupeFlyerParatransitFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-havasu~landing~ferry",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/HavasuLandingFerryGTFS.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/HavasuLandingFerryGTFS.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://gtfs.calitp.org/",
+        "use_without_attribution": "no"
+      }
+    },
+    {
+      "id": "f-humboldt~transit~authority~dial~a~ride~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/HumboldtTransitAuthorityDialARideFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/HumboldtTransitAuthorityDialARideFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-laguna~beach~transit~local~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/LagunaBeachTransitLocalFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/LagunaBeachTransitLocalFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-lassen~rural~busand~dial~a~ride~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/LassenRuralBusandDialARideFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/LassenRuralBusandDialARideFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-manteca~transit~paratransit~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/MantecaTransitParatransitFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/MantecaTransitParatransitFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-maywood~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/MaywoodGTFS.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/MaywoodGTFS.zip",
+          "https://github.com/LACMTA/los-angeles-regional-gtfs/raw/main/maywood-ca-us/maywood-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "maywood~ca~us",
+          "name": "City of Maywood Express",
+          "website": "https://cityofmaywood.com/200/Transportation",
+          "tags": {
+            "us_ntd_id": "90284"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-placer~county~dial~a~ride~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/PlacerCountyDialARideFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/PlacerCountyDialARideFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-redwood~coast~del~norte~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/RedwoodCoastDelNorteFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/RedwoodCoastDelNorteFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-san~benito~county~express~dial~a~ride~paratransit~on~demand~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/SanBenitoCountyExpressDialARideParatransitOnDemandFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/SanBenitoCountyExpressDialARideParatransitOnDemandFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-tahoe~truckee~regional~transportation~tart~connect~dial~a~ride~placer~tart~paratransit~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/TahoeTruckeeRegionalTransportationTARTConnectDialARidePlacerTARTParatransitFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/TahoeTruckeeRegionalTransportationTARTConnectDialARidePlacerTARTParatransitFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-thousand~oaks~dial~a~ride~paratransitand~connect~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/ThousandOaksDialARideParatransitandConnectFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/ThousandOaksDialARideParatransitandConnectFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-tulare~county~area~transitand~dial~a~ride~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/TulareCountyAreaTransitandDialARideFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/TulareCountyAreaTransitandDialARideFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-turlock~transit~dial~a~ride~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/TurlockTransitDialARideFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/TurlockTransitDialARideFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-union~city~paratransit~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/UnionCityParatransitFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/UnionCityParatransitFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-valley~express~dial~a~ride~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/ValleyExpressDialARideFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/ValleyExpressDialARideFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-wasco~dial~a~ride~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/WascoDialaRideFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/WascoDialaRideFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-westberkeleyshuttle~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/WestBerkeleyShuttleGTFS.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/WestBerkeleyShuttleGTFS.zip",
+          "https://data.trilliumtransit.com/gtfs/westberkeleyshuttle-ca-us/westberkeleyshuttle-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-westberkeleyshuttle~ca~us",
+          "name": "West Berkeley Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-west~cat~senior~dial~a~rideand~paratransit~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/WestCATSeniorDialARideandParatransitFlex.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/WestCATSeniorDialARideandParatransitFlex.zip"
+        ]
+      }
+    },
+    {
+      "id": "f-yurok~tribe~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/YurokGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-yurok~tribe~ca~us",
+          "name": "Yurok Tribe",
+          "tags": {
+            "us_ntd_id": "99262"
+          }
+        }
+      ]
+    }
+  ]
+}
