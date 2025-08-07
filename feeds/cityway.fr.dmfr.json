@@ -2,6 +2,17 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
   "feeds": [
     {
+      "id": "f-auvergne~rhône~alpes~oùra",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=OURA&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/agregat-oura"
+      }
+    },
+    {
       "id": "f-orizo~grand~avignon",
       "spec": "gtfs",
       "urls": {
