@@ -536,7 +536,7 @@ def main():
     # Generate DMFR file for new feeds (static + real-time + operators)
     if new_feeds or all_realtime_feeds or all_operators:
         dmfr_output = {
-            "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+            "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
             "feeds": [feed['dmfr_record'] for feed in new_feeds] + all_realtime_feeds,
             "operators": all_operators,
             "license_spdx_identifier": "CDLA-Permissive-1.0"
