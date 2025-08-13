@@ -5,14 +5,19 @@ An open catalog of transit/mobility data feeds and operators.
 
 This catalog is used to power the canonical [Transitland](https://transit.land) platform, is available for distributed used of the [transitland-lib](https://github.com/interline-io/transitland-lib) tooling, and is open to use as a "crosswalk" within other transportation data systems.
 
+> [!NOTE]
+> Transitland Atlas is now released under the CC-BY license. When using Transitland Atlas in your own projects, please include a link to this repo or to www.transit.land
+
 **Table of contents**:
 
 <!-- TOC created and updated by VSCode Markdown All in One extension -->
 - [Feeds](#feeds)
 - [How to Add a New Feed](#how-to-add-a-new-feed)
+- [Opinionated DMFR file format](#opinionated-dmfr-file-format)
 - [How to Update an Existing Feed](#how-to-update-an-existing-feed)
 - [Operators](#operators)
 - [Onestop IDs](#onestop-ids)
+- [Enriching Transitland Atlas with external reference data](#enriching-transitland-atlas-with-external-reference-data)
 - [License](#license)
 
 ## Feeds
@@ -107,7 +112,7 @@ We welcome help from the community to expand Transitland Atlas by reviewing exte
 
 ## License
 
-All data files in this repository are made available under the [Community Data License Agreement – Permissive, Version 1.0](LICENSE.txt). This license allows you to:
+Unless otherwise indicated, data files and scripts in this repository are made available under the [Creative Commons Attribution 4.0 International Public License](LICENSE.txt). This license allows you to:
 
 1. use this data for commercial, educational, or research purposes and be able to trust that it's cleanly licensed
 2. duplicate data, as long as you mention (attribute) this source
