@@ -260,7 +260,7 @@ def save_dmfr_file(feeds: List[Dict]):
     
     # Try to read existing file
     existing_dmfr = {
-        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
         "feeds": [],
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
@@ -301,7 +301,7 @@ def save_dmfr_file(feeds: List[Dict]):
     
     # Create final DMFR data
     dmfr_data = {
-        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
         "feeds": updated_feeds,
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
