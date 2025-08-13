@@ -133,7 +133,7 @@ if __name__ == "__main__":
     existing_dmfr = load_existing_dmfr(dmfr_url)
 
     new_dmfr = {
-        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
         "feeds": [],
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
