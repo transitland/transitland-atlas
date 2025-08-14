@@ -278,7 +278,7 @@ class DMFRGenerator:
         
         # Add static_current URL if available
         if file_data and file_data.get('file_url'):
-            dmfr_record["urls"]["static_current"] = file_data['file_url']
+            dmfr_record["urls"]["static_current"] = file_data['file_url'].strip()
         
         # Add license information
         if spdx_identifier:
@@ -322,11 +322,11 @@ class DMFRGenerator:
             # Create a single consolidated GTFS-RT feed record
             urls = {}
             if has_trip_updates:
-                urls["realtime_trip_updates"] = real_time['trip_update_url']
+                urls["realtime_trip_updates"] = real_time['trip_update_url'].strip()
             if has_vehicle_positions:
-                urls["realtime_vehicle_positions"] = real_time['vehicle_position_url']
+                urls["realtime_vehicle_positions"] = real_time['vehicle_position_url'].strip()
             if has_alerts:
-                urls["realtime_alerts"] = real_time['alert_url']
+                urls["realtime_alerts"] = real_time['alert_url'].strip()
             
             # Generate a single ID for the real-time feed
             rt_feed_id = DMFRGenerator.generate_feed_id(org_id, feed_id, "rt")
@@ -446,6 +446,11 @@ def main():
             # Sort by last_updated_at and get the most recent
             feed_files.sort(key=lambda x: x.get('file_last_updated_at', ''), reverse=True)
             current_file = feed_files[0]
+        
+        # Skip feeds that have no files available
+        if not current_file:
+            logger.warning(f"Skipping feed with no files available: {feed.get('feed_name')} ({org_id}/{feed_id})")
+            continue
         
         # Check if feed is discontinued
         if feed.get('feed_is_discontinued'):
