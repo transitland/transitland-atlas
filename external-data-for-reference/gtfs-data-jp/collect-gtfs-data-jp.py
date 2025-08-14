@@ -8,8 +8,7 @@ This script:
 3. Generates DMFR records for new feeds with stable identifiers encoded in Onestop IDs
 4. Creates GTFS-RT feed records when real-time URLs are available
 5. Creates operator records to associate static and real-time feeds
-6. Implements checkpoint system for incremental updates
-7. Outputs a summary of what should be added
+6. Outputs a summary of what should be added
 
 Usage:
     python collect-gtfs-data-jp.py
@@ -29,15 +28,16 @@ from datetime import datetime, timezone
 logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# GTFS Data JP API endpoints
+# Configuration
 GTFS_DATA_JP_BASE_URL = "https://api.gtfs-data.jp/v2"
 FEEDS_ENDPOINT = f"{GTFS_DATA_JP_BASE_URL}/feeds"
 FILES_ENDPOINT = f"{GTFS_DATA_JP_BASE_URL}/files"
+REQUEST_TIMEOUT = 30  # seconds
+MAX_FEEDS_TO_LOG = 10  # Number of feeds to show in summary
 
 # Transitland Atlas repo paths
 REPO_ROOT = Path(__file__).parent.parent.parent
 FEEDS_DIR = REPO_ROOT / "feeds"
-CHECKPOINT_FILE = Path(__file__).parent / "gtfs-data-jp-checkpoint.json"
 
 class GTFSDataJPCollector:
     """Collector for GTFS Data JP API"""
@@ -52,12 +52,15 @@ class GTFSDataJPCollector:
         """Fetch all available feeds from the GTFS Data JP API"""
         try:
             logger.info("Fetching feeds from GTFS Data JP API...")
-            response = self.session.get(FEEDS_ENDPOINT)
+            response = self.session.get(FEEDS_ENDPOINT, timeout=REQUEST_TIMEOUT)
             response.raise_for_status()
             
             data = response.json()
             if data.get('code') == 200:
                 feeds = data.get('body', [])
+                if not isinstance(feeds, list):
+                    logger.error("API returned invalid feeds format")
+                    return []
                 logger.info(f"Found {len(feeds)} feeds")
                 return feeds
             else:
@@ -67,17 +70,23 @@ class GTFSDataJPCollector:
         except requests.RequestException as e:
             logger.error(f"Failed to fetch feeds: {e}")
             return []
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse API response: {e}")
+            return []
     
     def fetch_files(self) -> List[Dict]:
         """Fetch all available files from the GTFS Data JP API"""
         try:
             logger.info("Fetching files from GTFS Data JP API...")
-            response = self.session.get(FILES_ENDPOINT)
+            response = self.session.get(FILES_ENDPOINT, timeout=REQUEST_TIMEOUT)
             response.raise_for_status()
             
             data = response.json()
             if data.get('code') == 200:
                 files = data.get('body', [])
+                if not isinstance(files, list):
+                    logger.error("API returned invalid files format")
+                    return []
                 logger.info(f"Found {len(files)} files")
                 return files
             else:
@@ -87,93 +96,9 @@ class GTFSDataJPCollector:
         except requests.RequestException as e:
             logger.error(f"Failed to fetch files: {e}")
             return []
-
-class CheckpointManager:
-    """Manages checkpoint data for incremental updates"""
-    
-    def __init__(self, checkpoint_file: Path):
-        self.checkpoint_file = checkpoint_file
-        self.checkpoint_data = self.load_checkpoint()
-    
-    def load_checkpoint(self) -> Dict:
-        """Load existing checkpoint data"""
-        if self.checkpoint_file.exists():
-            try:
-                with open(self.checkpoint_file, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    logger.info(f"Loaded checkpoint from {self.checkpoint_file}")
-                    return data
-            except (json.JSONDecodeError, IOError) as e:
-                logger.warning(f"Failed to load checkpoint: {e}")
-        
-        # Return default checkpoint structure
-        return {
-            "last_run": None,
-            "known_feeds": {},
-            "last_api_response_hash": None
-        }
-    
-    def save_checkpoint(self, feeds: List[Dict], files: List[Dict]):
-        """Save current state as checkpoint"""
-        current_time = datetime.now(timezone.utc).isoformat()
-        
-        # Create feed lookup for quick access
-        feeds_by_key = {}
-        for feed in feeds:
-            org_id = feed.get('organization_id', '')
-            feed_id = feed.get('feed_id', '')
-            key = f"{org_id}_{feed_id}"
-            
-            feeds_by_key[key] = {
-                "organization_id": org_id,
-                "feed_id": feed_id,
-                "feed_name": feed.get('feed_name', ''),
-                "last_updated": feed.get('last_updated_at', ''),
-                "prefecture_id": feed.get('feed_pref_id'),
-                "license": feed.get('feed_license', ''),
-                "is_discontinued": feed.get('feed_is_discontinued', False)
-            }
-        
-        # Update checkpoint data
-        self.checkpoint_data.update({
-            "last_run": current_time,
-            "known_feeds": feeds_by_key,
-            "total_feeds_count": len(feeds),
-            "total_files_count": len(files)
-        })
-        
-        # Save checkpoint
-        try:
-            with open(self.checkpoint_file, 'w', encoding='utf-8') as f:
-                json.dump(self.checkpoint_data, f, indent=2, ensure_ascii=False)
-            logger.info(f"Saved checkpoint to {self.checkpoint_file}")
-        except IOError as e:
-            logger.error(f"Failed to save checkpoint: {e}")
-    
-    def get_new_feeds(self, current_feeds: List[Dict]) -> List[Dict]:
-        """Identify feeds that are new since last checkpoint"""
-        if not self.checkpoint_data.get('known_feeds'):
-            return current_feeds  # First run, all feeds are new
-        
-        new_feeds = []
-        known_feeds = self.checkpoint_data['known_feeds']
-        
-        for feed in current_feeds:
-            org_id = feed.get('organization_id', '')
-            feed_id = feed.get('feed_id', '')
-            key = f"{org_id}_{feed_id}"
-            
-            if key not in known_feeds:
-                new_feeds.append(feed)
-                logger.info(f"New feed found: {feed.get('feed_name')} ({org_id}/{feed_id})")
-            else:
-                # Check if feed has been updated
-                known_feed = known_feeds[key]
-                if feed.get('last_updated_at') != known_feed.get('last_updated'):
-                    logger.info(f"Feed updated: {feed.get('feed_name')} ({org_id}/{feed_id})")
-                    new_feeds.append(feed)  # Treat updates as new for now
-        
-        return new_feeds
+        except json.JSONDecodeError as e:
+            logger.error(f"Failed to parse API response: {e}")
+            return []
 
 class TransitlandAtlasAnalyzer:
     """Analyzer for Transitland Atlas repository"""
@@ -187,14 +112,22 @@ class TransitlandAtlasAnalyzer:
     def load_existing_feeds(self):
         """Load all existing feeds from the repository"""
         logger.info("Loading existing feeds from Transitland Atlas repo...")
+        logger.info(f"Scanning directory: {self.feeds_dir}")
         
-        for dmfr_file in self.feeds_dir.glob("*.dmfr.json"):
+        dmfr_files_found = list(self.feeds_dir.glob("*.dmfr.json"))
+        logger.info(f"Found {len(dmfr_files_found)} DMFR files: {[f.name for f in dmfr_files_found]}")
+        
+        for dmfr_file in dmfr_files_found:
             try:
+                logger.debug(f"Processing DMFR file: {dmfr_file}")
                 with open(dmfr_file, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                 
                 # Extract feed IDs and URLs
-                for feed in data.get('feeds', []):
+                feeds_in_file = data.get('feeds', [])
+                logger.debug(f"Found {len(feeds_in_file)} feeds in {dmfr_file.name}")
+                
+                for feed in feeds_in_file:
                     feed_id = feed.get('id')
                     if feed_id:
                         self.existing_feeds.add(feed_id)
@@ -203,27 +136,44 @@ class TransitlandAtlasAnalyzer:
                     static_current = feed.get('urls', {}).get('static_current')
                     if static_current:
                         self.existing_urls.add(static_current)
+                        logger.debug(f"Added URL: {static_current}")
                         
             except (json.JSONDecodeError, IOError) as e:
                 logger.warning(f"Failed to parse {dmfr_file}: {e}")
         
         logger.info(f"Loaded {len(self.existing_feeds)} existing feed IDs")
         logger.info(f"Loaded {len(self.existing_urls)} existing URLs")
+        
+        # Log some examples of what was found
+        if self.existing_urls:
+            sample_urls = list(self.existing_urls)[:3]
+            logger.info(f"Sample URLs found: {sample_urls}")
+        if self.existing_feeds:
+            sample_feeds = list(self.existing_feeds)[:3]
+            logger.info(f"Sample feed IDs found: {sample_feeds}")
     
     def is_feed_new(self, feed_data: Dict) -> bool:
         """Check if a feed is new (not already in the repo)"""
-        # Check by organization_id + feed_id combination
         org_id = feed_data.get('organization_id', '')
         feed_id = feed_data.get('feed_id', '')
-        combined_id = f"{org_id}_{feed_id}"
-        
-        # Check by feed name
-        feed_name = feed_data.get('feed_name', '')
-        
-        # Check if any existing feed IDs contain this combination
-        for existing_id in self.existing_feeds:
-            if combined_id.lower() in existing_id.lower() or feed_name.lower() in existing_id.lower():
-                return False
+        if org_id and feed_id:
+            # Construct the expected URL pattern for this feed
+            expected_url_pattern = f"api.gtfs-data.jp/v2/organizations/{org_id}/feeds/{feed_id}".lower()
+            logger.debug(f"Checking if feed {org_id}/{feed_id} exists. Looking for pattern: {expected_url_pattern}")
+            
+            for existing_url in self.existing_urls:
+                # Strip protocol and make case-insensitive for comparison
+                url_lower = existing_url.lower()
+                if url_lower.startswith('http://'):
+                    url_lower = url_lower[7:]  # Remove 'http://'
+                elif url_lower.startswith('https://'):
+                    url_lower = url_lower[8:]  # Remove 'https://'
+                
+                if expected_url_pattern in url_lower:
+                    logger.info(f"Feed {org_id}/{feed_id} already exists via URL: {existing_url}")
+                    return False
+            
+            logger.debug(f"Feed {org_id}/{feed_id} is new - no matching URLs found")
         
         return True
     
@@ -278,9 +228,15 @@ class DMFRGenerator:
     @staticmethod
     def create_static_gtfs_record(feed_data: Dict, file_data: Optional[Dict] = None) -> Dict:
         """Create a DMFR record for a static GTFS feed"""
+        # Validate required fields
         org_id = feed_data.get('organization_id', '')
         feed_id = feed_data.get('feed_id', '')
         feed_name = feed_data.get('feed_name', '')
+        
+        if not org_id or not feed_id or not feed_name:
+            logger.warning(f"Missing required fields for feed: org_id={org_id}, feed_id={feed_id}, name={feed_name}")
+            return None
+        
         org_name = feed_data.get('organization_name', '')
         pref_id = feed_data.get('feed_pref_id')
         
@@ -425,7 +381,6 @@ def main():
     # Initialize components
     collector = GTFSDataJPCollector()
     analyzer = TransitlandAtlasAnalyzer()
-    checkpoint_manager = CheckpointManager(CHECKPOINT_FILE)
     
     # Fetch data from API
     feeds = collector.fetch_feeds()
@@ -434,10 +389,6 @@ def main():
     if not feeds:
         logger.error("No feeds found. Exiting.")
         return
-    
-    # Check for new feeds since last checkpoint
-    new_feeds_since_checkpoint = checkpoint_manager.get_new_feeds(feeds)
-    logger.info(f"Found {len(new_feeds_since_checkpoint)} feeds new/updated since last checkpoint")
     
     # Create a mapping of files by organization and feed
     files_by_feed = {}
@@ -476,9 +427,14 @@ def main():
             logger.info(f"Discontinued feed (skipping): {feed.get('feed_name')} ({org_id}/{feed_id})")
             continue
         
+        # Always check actual repository state to determine if feed exists
         if analyzer.is_feed_new(feed):
             # Generate static GTFS record
             static_dmfr_record = DMFRGenerator.create_static_gtfs_record(feed, current_file)
+            if static_dmfr_record is None:
+                logger.warning(f"Skipping feed due to missing required fields: {feed.get('feed_name')}")
+                continue
+                
             new_feeds.append({
                 'feed_data': feed,
                 'file_data': current_file,
@@ -504,10 +460,7 @@ def main():
             logger.info(f"New feed found: {feed.get('feed_name')} ({org_id}/{feed_id})")
         else:
             existing_feeds.append(feed)
-            logger.info(f"Existing feed: {feed.get('feed_name')} ({org_id}/{feed_id})")
-    
-    # Save checkpoint for next run
-    checkpoint_manager.save_checkpoint(feeds, files)
+            logger.debug(f"Existing feed: {feed.get('feed_name')} ({org_id}/{feed_id})")
     
     # Generate output
     output = {
@@ -516,7 +469,6 @@ def main():
             'new_feeds': len(new_feeds),
             'existing_feeds': len(existing_feeds),
             'discontinued_feeds': len(discontinued_feeds),
-            'new_since_checkpoint': len(new_feeds_since_checkpoint),
             'realtime_feeds_created': len(all_realtime_feeds),
             'operators_created': len(all_operators),
             'scraped_at': datetime.now(timezone.utc).isoformat()
@@ -538,11 +490,10 @@ def main():
         dmfr_output = {
             "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
             "feeds": [feed['dmfr_record'] for feed in new_feeds] + all_realtime_feeds,
-            "operators": all_operators,
-            "license_spdx_identifier": "CDLA-Permissive-1.0"
+            "operators": all_operators
         }
         
-        dmfr_file = REPO_ROOT / "feeds" / "gtfs-data-jp.dmfr.json"
+        dmfr_file = FEEDS_DIR / 'gtfs-data-jp.dmfr.json'
         with open(dmfr_file, 'w', encoding='utf-8') as f:
             json.dump(dmfr_output, f, indent=2, ensure_ascii=False)
         
@@ -569,20 +520,18 @@ def main():
     logger.info(f"New static feeds to add: {len(new_feeds)}")
     logger.info(f"Real-time feeds created: {len(all_realtime_feeds)}")
     logger.info(f"Operators created: {len(all_operators)}")
-    logger.info(f"Existing feeds: {len(existing_feeds)}")
+    logger.info(f"Existing feeds (already in repo): {len(existing_feeds)}")
     logger.info(f"Discontinued feeds (skipped): {len(discontinued_feeds)}")
-    logger.info(f"New/updated since checkpoint: {len(new_feeds_since_checkpoint)}")
-    logger.info(f"Checkpoint saved to: {CHECKPOINT_FILE}")
     logger.info(f"Detailed analysis saved to: {output_file}")
     
     if new_feeds or all_realtime_feeds:
         logger.info(f"DMFR file for new feeds: {dmfr_file}")
         logger.info("\nNew feeds to consider adding:")
-        for feed in new_feeds[:10]:  # Show first 10
+        for feed in new_feeds[:MAX_FEEDS_TO_LOG]:  # Show first N
             feed_data = feed['feed_data']
             logger.info(f"  - {feed_data.get('feed_name')} ({feed_data.get('organization_name')})")
-        if len(new_feeds) > 10:
-            logger.info(f"  ... and {len(new_feeds) - 10} more")
+        if len(new_feeds) > MAX_FEEDS_TO_LOG:
+            logger.info(f"  ... and {len(new_feeds) - MAX_FEEDS_TO_LOG} more")
         
         if all_realtime_feeds:
             logger.info(f"\nReal-time feeds created:")
