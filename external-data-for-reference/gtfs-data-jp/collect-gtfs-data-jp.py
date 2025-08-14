@@ -11,7 +11,10 @@ This script:
 6. Outputs a summary of what should be added
 
 Usage:
-    python collect-gtfs-data-jp.py
+    python collect-gtfs-data-jp.py [--analysis]
+    
+Options:
+    --analysis    Generate detailed analysis file for debugging (default: False)
 """
 
 import requests
@@ -19,6 +22,7 @@ import json
 import logging
 import os
 import sys
+import argparse
 from pathlib import Path
 from typing import Dict, List, Set, Optional, Tuple
 from urllib.parse import urlparse
@@ -181,6 +185,23 @@ class TransitlandAtlasAnalyzer:
         """Check if a URL is new (not already in the repo)"""
         return url not in self.existing_urls
 
+    def is_feed_in_dmfr_file(self, feed_data: Dict) -> bool:
+        """Check if a feed is already present in the current DMFR file"""
+        org_id = feed_data.get('organization_id', '')
+        feed_id = feed_data.get('feed_id', '')
+        if org_id and feed_id:
+            expected_onestop_id = DMFRGenerator.generate_feed_id(org_id, feed_id)
+            for feed in self.feeds_dir.glob("*.dmfr.json"):
+                try:
+                    with open(feed, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        for existing_feed in data.get('feeds', []):
+                            if existing_feed.get('id') == expected_onestop_id:
+                                return True
+                except (json.JSONDecodeError, IOError) as e:
+                    logger.warning(f"Failed to check DMFR file {feed.name}: {e}")
+        return False
+
 class DMFRGenerator:
     """Generator for DMFR records with stable identifiers encoded"""
     
@@ -264,19 +285,17 @@ class DMFRGenerator:
             dmfr_record["license"] = {
                 "spdx_identifier": spdx_identifier,
                 "use_without_attribution": "no" if "CC-BY" in spdx_identifier else None,
-                "create_derived_product": "yes"
+                "create_derived_product": "yes" if "CC" in spdx_identifier else None,
+                "commercial_use_allowed": "yes" if "CC" in spdx_identifier else None,
+                "redistribution_allowed": "yes" if "CC" in spdx_identifier else None
             }
         
         # Add comprehensive tags following repository patterns
         tags = {
-            "gtfs_data_jp_organization_id": org_id,
-            "gtfs_data_jp_feed_id": feed_id,
             "gtfs_data_jp_prefecture_id": str(pref_id),
         }
         
         # Note: Discontinued feeds are not added to Transitland Atlas
-        
-      
         
         dmfr_record["tags"] = tags
         
@@ -327,14 +346,7 @@ class DMFRGenerator:
                 "id": rt_feed_id,
                 "spec": "gtfs-rt",
                 "name": f"{feed_name} - {name_suffix}",
-                "urls": urls,
-                "tags": {
-                    "source": "gtfs-data.jp",
-                    "gtfs_data_jp_organization_id": org_id,
-                    "gtfs_data_jp_feed_id": feed_id,
-                    "notes": f"GTFS-RT feed for {feed_name} with {name_suffix.lower()}. Organization: {org_name}",
-                    "update_interval": str(real_time.get('update_interval', 0))
-                }
+                "urls": urls
             }
             
             realtime_records.append(realtime_record)
@@ -375,7 +387,20 @@ class DMFRGenerator:
         return operator_record
 
 def main():
-    """Main function"""
+    """Main function to collect and analyze GTFS Data JP feeds"""
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Collect GTFS Data JP feeds for Transitland Atlas')
+    parser.add_argument('--analysis', action='store_true', 
+                       help='Generate detailed analysis file for debugging')
+    args = parser.parse_args()
+    
+    # Set up logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(levelname)s - %(message)s'
+    )
+    logger = logging.getLogger(__name__)
+    
     logger.info("Starting GTFS Data JP data collection process...")
     
     # Initialize components
@@ -405,6 +430,7 @@ def main():
     new_feeds = []
     existing_feeds = []
     discontinued_feeds = []
+    feeds_to_remove = []  # Track feeds that should be removed from the DMFR file
     all_realtime_feeds = []
     all_operators = []
     
@@ -425,6 +451,12 @@ def main():
         if feed.get('feed_is_discontinued'):
             discontinued_feeds.append(feed)
             logger.info(f"Discontinued feed (skipping): {feed.get('feed_name')} ({org_id}/{feed_id})")
+            
+            # Check if this discontinued feed exists in the current DMFR file
+            if analyzer.is_feed_in_dmfr_file(feed):
+                feeds_to_remove.append(feed)
+                logger.info(f"Feed marked for removal from DMFR file: {feed.get('feed_name')} ({org_id}/{feed_id})")
+            
             continue
         
         # Always check actual repository state to determine if feed exists
@@ -469,6 +501,7 @@ def main():
             'new_feeds': len(new_feeds),
             'existing_feeds': len(existing_feeds),
             'discontinued_feeds': len(discontinued_feeds),
+            'feeds_to_remove': len(feeds_to_remove),
             'realtime_feeds_created': len(all_realtime_feeds),
             'operators_created': len(all_operators),
             'scraped_at': datetime.now(timezone.utc).isoformat()
@@ -476,28 +509,62 @@ def main():
         'new_feeds': new_feeds,
         'existing_feeds': existing_feeds,
         'discontinued_feeds': discontinued_feeds,
+        'feeds_to_remove': feeds_to_remove,
         'realtime_feeds': all_realtime_feeds,
         'operators': all_operators
     }
     
     # Save detailed output
     output_file = Path(__file__).parent / "gtfs-data-jp-analysis.json"
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(output, f, indent=2, ensure_ascii=False, default=str)
+    if args.analysis:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(output, f, indent=2, ensure_ascii=False, default=str)
+        logger.info(f"Detailed analysis saved to: {output_file}")
+    else:
+        logger.info("Skipping detailed analysis file generation.")
     
     # Generate DMFR file for new feeds (static + real-time + operators)
-    if new_feeds or all_realtime_feeds or all_operators:
+    if new_feeds or all_realtime_feeds or all_operators or feeds_to_remove:
+        # First, read existing DMFR file to remove discontinued feeds
+        existing_dmfr_file = FEEDS_DIR / 'gtfs-data-jp.dmfr.json'
+        existing_feeds = []
+        existing_operators = []
+        
+        if existing_dmfr_file.exists():
+            try:
+                with open(existing_dmfr_file, 'r', encoding='utf-8') as f:
+                    existing_data = json.load(f)
+                    existing_feeds = existing_data.get('feeds', [])
+                    existing_operators = existing_data.get('operators', [])
+                    logger.info(f"Loaded {len(existing_feeds)} existing feeds and {len(existing_operators)} existing operators from current DMFR file")
+            except (json.JSONDecodeError, IOError) as e:
+                logger.warning(f"Failed to read existing DMFR file: {e}")
+        
+        # Remove discontinued feeds from existing feeds
+        feeds_to_remove_ids = set()
+        for feed in feeds_to_remove:
+            onestop_id = DMFRGenerator.generate_feed_id(feed.get('organization_id', ''), feed.get('feed_id', ''))
+            feeds_to_remove_ids.add(onestop_id)
+            logger.info(f"Marking feed for removal: {onestop_id} ({feed.get('feed_name')})")
+        
+        # Filter out discontinued feeds
+        filtered_existing_feeds = [feed for feed in existing_feeds if feed.get('id') not in feeds_to_remove_ids]
+        removed_count = len(existing_feeds) - len(filtered_existing_feeds)
+        if removed_count > 0:
+            logger.info(f"Removed {removed_count} discontinued feeds from existing DMFR file")
+        
+        # Create new DMFR file with new feeds + existing feeds (minus discontinued ones)
         dmfr_output = {
             "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
-            "feeds": [feed['dmfr_record'] for feed in new_feeds] + all_realtime_feeds,
-            "operators": all_operators
+            "feeds": filtered_existing_feeds + [feed['dmfr_record'] for feed in new_feeds] + all_realtime_feeds,
+            "operators": existing_operators + all_operators
         }
         
         dmfr_file = FEEDS_DIR / 'gtfs-data-jp.dmfr.json'
         with open(dmfr_file, 'w', encoding='utf-8') as f:
             json.dump(dmfr_output, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"Generated DMFR file with {len(new_feeds)} static feeds, {len(all_realtime_feeds)} real-time feeds, and {len(all_operators)} operators: {dmfr_file}")
+        logger.info(f"Generated DMFR file with {len(filtered_existing_feeds)} existing feeds, {len(new_feeds)} new static feeds, {len(all_realtime_feeds)} real-time feeds, and {len(existing_operators + all_operators)} operators: {dmfr_file}")
         
         # Format the DMFR file using transitland dmfr format for consistent sorting
         try:
@@ -511,6 +578,8 @@ def main():
         except FileNotFoundError:
             logger.warning("transitland command not found - DMFR file generated but not formatted")
             logger.warning("Install transitland CLI and run 'transitland dmfr format --save' manually for consistent sorting")
+    else:
+        logger.info("No changes to make to DMFR file")
     
     # Print summary
     logger.info("=" * 50)
@@ -522,30 +591,37 @@ def main():
     logger.info(f"Operators created: {len(all_operators)}")
     logger.info(f"Existing feeds (already in repo): {len(existing_feeds)}")
     logger.info(f"Discontinued feeds (skipped): {len(discontinued_feeds)}")
-    logger.info(f"Detailed analysis saved to: {output_file}")
+    logger.info(f"Feeds to remove from DMFR file: {len(feeds_to_remove)}")
+    if args.analysis:
+        logger.info(f"Detailed analysis saved to: {output_file}")
+    logger.info(f"DMFR file for new feeds: {dmfr_file}")
+    logger.info("\nNew feeds to consider adding:")
+    for feed in new_feeds[:MAX_FEEDS_TO_LOG]:  # Show first N
+        feed_data = feed['feed_data']
+        logger.info(f"  - {feed_data.get('feed_name')} ({feed_data.get('organization_name')})")
+    if len(new_feeds) > MAX_FEEDS_TO_LOG:
+        logger.info(f"  ... and {len(new_feeds) - MAX_FEEDS_TO_LOG} more")
     
-    if new_feeds or all_realtime_feeds:
-        logger.info(f"DMFR file for new feeds: {dmfr_file}")
-        logger.info("\nNew feeds to consider adding:")
-        for feed in new_feeds[:MAX_FEEDS_TO_LOG]:  # Show first N
-            feed_data = feed['feed_data']
-            logger.info(f"  - {feed_data.get('feed_name')} ({feed_data.get('organization_name')})")
-        if len(new_feeds) > MAX_FEEDS_TO_LOG:
-            logger.info(f"  ... and {len(new_feeds) - MAX_FEEDS_TO_LOG} more")
-        
-        if all_realtime_feeds:
-            logger.info(f"\nReal-time feeds created:")
-            for rt_feed in all_realtime_feeds[:5]:  # Show first 5
-                logger.info(f"  - {rt_feed['name']}")
-            if len(all_realtime_feeds) > 5:
-                logger.info(f"  ... and {len(all_realtime_feeds) - 5} more")
-        
-        if discontinued_feeds:
-            logger.info(f"\nDiscontinued feeds (not added to Transitland Atlas):")
-            for disc_feed in discontinued_feeds[:5]:  # Show first 5
-                logger.info(f"  - {disc_feed.get('feed_name')} ({disc_feed.get('organization_name')})")
-            if len(discontinued_feeds) > 5:
-                logger.info(f"  ... and {len(discontinued_feeds) - 5} more")
+    if all_realtime_feeds:
+        logger.info(f"\nReal-time feeds created:")
+        for rt_feed in all_realtime_feeds[:5]:  # Show first 5
+            logger.info(f"  - {rt_feed['name']}")
+        if len(all_realtime_feeds) > 5:
+            logger.info(f"  ... and {len(all_realtime_feeds) - 5} more")
+    
+    if feeds_to_remove:
+        logger.info(f"\nFeeds to remove from DMFR file:")
+        for remove_feed in feeds_to_remove[:5]:  # Show first 5
+            logger.info(f"  - {remove_feed.get('feed_name')} ({remove_feed.get('organization_name')})")
+        if len(feeds_to_remove) > 5:
+            logger.info(f"  ... and {len(feeds_to_remove) - 5} more")
+    
+    if discontinued_feeds:
+        logger.info(f"\nDiscontinued feeds (not added to Transitland Atlas):")
+        for disc_feed in discontinued_feeds[:5]:  # Show first 5
+            logger.info(f"  - {disc_feed.get('feed_name')} ({disc_feed.get('organization_name')})")
+        if len(discontinued_feeds) > 5:
+            logger.info(f"  ... and {len(discontinued_feeds) - 5} more")
     
     logger.info("=" * 50)
 
