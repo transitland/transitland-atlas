@@ -1,4 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+
+# /// script
+# dependencies = [
+#   "requests>=2.31.0",
+# ]
+# ///
+
 """
 Script to collect data from the GTFS Data JP API and identify feeds to add to Transitland Atlas repo.
 

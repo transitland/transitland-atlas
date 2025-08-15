@@ -13,20 +13,21 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-    - name: Install dependencies
-      run: |
-        pip install pipenv
-        cd external-data-for-reference/gtfs-data-jp && pipenv install
-        cd ../../scripts && pipenv install
+    - name: Install uv
+      uses: astral-sh/setup-uv@v6
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Fetch latest GTFS Data JP data (official source)
       run: |
-        cd external-data-for-reference/gtfs-data-jp
-        pipenv run python collect-gtfs-data-jp.py
+        cd external-data-for-reference/japan
+        uv run collect-gtfs-data-jp.py
+    - name: Fetch latest ODPT GTFS data
+      run: |
+        cd external-data-for-reference/japan
+        uv run collect-odpt-gtfs.py
     - name: Fetch latest data from tshimada291/gtfs-jp-list-datecheck
       run: |-
-        cd scripts && pipenv run python convert-jp-list-csv-to-dmfr.py
+        cd external-data-for-reference/japan && uv run convert-tshimada291-list-csv-to-dmfr.py
     - name: Format in the opinionated DMFR format
       run: |
         find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
@@ -47,7 +48,7 @@ jobs:
             BRANCH_NAME=japanese-feeds-$(date +%F)
             git checkout -b ${BRANCH_NAME}
             git add -A
-            git commit -m "Updated Japanese GTFS feeds from gtfs-data.jp and github.com/tshimada291/gtfs-jp-list-datecheck at $(date -u)"
+            git commit -m "Updated Japanese GTFS feeds from gtfs-data.jp, ODPT, and github.com/tshimada291/gtfs-jp-list-datecheck at $(date -u)"
             git push --set-upstream origin ${BRANCH_NAME}
             gh pr create --title "Automatic update of Japanese GTFS feeds" --fill-verbose
             gh workflow run validate.yml --ref ${BRANCH_NAME}
