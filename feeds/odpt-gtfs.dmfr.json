@@ -1,0 +1,1846 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-akihabusservice~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/AkihaBusService/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-akihabusservice~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_AkihaBusService_AllLines_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_AkihaBusService_AllLines_trip_update?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "AkihaBusService"
+      }
+    },
+    {
+      "id": "f-akitacity~akitacitybus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/AkitaCity/AkitaCityBus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-daishinto~radiantcity~yokohama~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/Daishinto/Radiantcity_Yokohama.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-gunmabus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/GunmaBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-gunmabus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_GunmaBus_AllLines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_GunmaBus_AllLines_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_GunmaBus_AllLines_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "GunmaBus"
+      }
+    },
+    {
+      "id": "f-hakodatecity~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HakodateCity/Alllines.zip?date=current"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-hakodatecity~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "Alllines",
+        "odpt_organization_id": "HakodateCity"
+      }
+    },
+    {
+      "id": "f-hankyuferry~schedul~hankyu~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HankyuFerry/schedul_hankyu.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-higashimurayamacity~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HigashiMurayamaCity/Alllines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-higashiyamatocity~alllines~cc0~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HigashiyamatoCity/AllLines_CC0.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-higashiyamatocity~alllines~ccby4~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HigashiyamatoCity/AllLines_CCBY4.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-higashiyamatocity~alllines~odpt~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HigashiyamatoCity/AllLines_ODPT.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-hitachiautomobiletransportation~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HitachiAutomobileTransportation/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-hitachiautomobiletransportation~chiyoda~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HitachiAutomobileTransportation/Chiyoda_ALLLINES.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-hitachiautomobiletransportation~kitaalllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HitachiAutomobileTransportation/KitaAllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-hokkaidotakushokubus~takusyoku~highway~line~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HokkaidoTakushokuBus/Takusyoku_highway_line.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-hokkaidotakushokubus~takusyoku~regular~line~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HokkaidoTakushokuBus/Takusyoku_regular_line.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-hokkaidotakushokubus~takusyoku~regular~line~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_HokkaidoTakushokuBus_Takusyoku_regular_line_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_HokkaidoTakushokuBus_Takusyoku_regular_line_trip_update?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "Takusyoku_regular_line",
+        "odpt_organization_id": "HokkaidoTakushokuBus"
+      }
+    },
+    {
+      "id": "f-inagicity~ibas~a~course~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/InagiCity/ibas_A_course.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-iyotetsubus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/IyotetsuBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-iyotetsubus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_IyotetsuBus_AllLines_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_IyotetsuBus_AllLines_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_IyotetsuBus_AllLines_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "IyotetsuBus"
+      }
+    },
+    {
+      "id": "f-izuhakonebus~izhb~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/IzuhakoneBus/IZHB.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-izuhakonebus~izhb~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_IzuhakoneBus_IZHB_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_IzuhakoneBus_IZHB_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_IzuhakoneBus_IZHB_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "IZHB",
+        "odpt_organization_id": "IzuhakoneBus"
+      }
+    },
+    {
+      "id": "f-joshinkankobus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/JoshinKankoBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-joshinkankobus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_JoshinKankoBus_AllLines_trip_update"
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "JoshinKankoBus"
+      }
+    },
+    {
+      "id": "f-juobus~isesaki~honjo~line~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/JuoBus/Isesaki_Honjo_Line.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kagoshimacitymaritimebureau~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KagoshimaCityMaritimeBureau/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kantobus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KantoBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kantobus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KantoBus_AllLines_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KantoBus_AllLines_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KantoBus_AllLines_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "KantoBus"
+      }
+    },
+    {
+      "id": "f-kan~etsutransportation~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/Kan_etsuTransportation/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kan~etsutransportation~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_Kan_etsuTransportation_AllLines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_Kan_etsuTransportation_AllLines_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_Kan_etsuTransportation_AllLines_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "Kan_etsuTransportation"
+      }
+    },
+    {
+      "id": "f-kawasakitsurumirinkobus~allrinko~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KawasakiTsurumiRinkoBus/allrinko.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kawasakitsurumirinkobus~allrinko~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KawasakiTsurumiRinkoBus_allrinko_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KawasakiTsurumiRinkoBus_allrinko_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KawasakiTsurumiRinkoBus_allrinko_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "allrinko",
+        "odpt_organization_id": "KawasakiTsurumiRinkoBus"
+      }
+    },
+    {
+      "id": "f-keifukubus~keifuku~rosen~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KeifukuBus/keifuku_rosen.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-keifukubus~keifuku~rosen~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KeifukuBus_keifuku_rosen_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KeifukuBus_keifuku_rosen_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KeifukuBus_keifuku_rosen_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "keifuku_rosen",
+        "odpt_organization_id": "KeifukuBus"
+      }
+    },
+    {
+      "id": "f-keiobus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KeioBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-keiobus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KeioBus_AllLines_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KeioBus_AllLines_trip_update?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "KeioBus"
+      }
+    },
+    {
+      "id": "f-keiseitransitbus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KeiseiTransitBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-keiseitransitbus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KeiseiTransitBus_AllLines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KeiseiTransitBus_AllLines_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KeiseiTransitBus_AllLines_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "KeiseiTransitBus"
+      }
+    },
+    {
+      "id": "f-kiyosecity~kiyobus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KiyoseCity/KiyoBus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kiyosecity~kiyobus~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KiyoseCity_KiyoBus_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KiyoseCity_KiyoBus_trip_update"
+      },
+      "tags": {
+        "odpt_dataset_id": "KiyoBus",
+        "odpt_organization_id": "KiyoseCity"
+      }
+    },
+    {
+      "id": "f-kokubunjicity~kokubunji~city~bunbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KokubunjiCity/kokubunji_city_bunbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kunitachicity~kunitachi~city~kunikko~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KunitachiCity/kunitachi_city_kunikko.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kyotobus~alllinesanotherversion~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KyotoBus/AllLinesAnotherversion.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kyotobus~alllinesanotherversion~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KyotoBus_AllLinesAnotherversion_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KyotoBus_AllLinesAnotherversion_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KyotoBus_AllLinesAnotherversion_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLinesAnotherversion",
+        "odpt_organization_id": "KyotoBus"
+      }
+    },
+    {
+      "id": "f-kyotobus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KyotoBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kyotobus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KyotoBus_AllLines_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KyotoBus_AllLines_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_KyotoBus_AllLines_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "KyotoBus"
+      }
+    },
+    {
+      "id": "f-kyotomunicipaltransportation~kyoto~city~bus~gtfs~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KyotoMunicipalTransportation/Kyoto_City_Bus_GTFS.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kyotomunicipaltransportation~kyoto~city~subway~gtfs~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KyotoMunicipalTransportation/Kyoto_City_Subway_GTFS.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-matsuecitytrafficoffice~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/MatsueCityTrafficOffice/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-meimontaiyoferry~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/MeimonTaiyoFerry/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-miyakevill~allline~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/MiyakeVill/AllLine.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-nishitokyobus~ntbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/NishiTokyoBus/NTBus.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-nishitokyobus~ntbus~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_NishiTokyoBus_NTBus_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_NishiTokyoBus_NTBus_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_NishiTokyoBus_NTBus_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "NTBus",
+        "odpt_organization_id": "NishiTokyoBus"
+      }
+    },
+    {
+      "id": "f-nishitokyocity~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/NishitokyoCity/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-odakyubus~aiilines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/OdakyuBus/AIILines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-orangeferry~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/OrangeFerry/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-oshimabus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/OshimaBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-otonekotsu~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/OtoneKotsu/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-sanwamerchantvessel~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/SanwaMerchantVessel/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-sentetsubus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/SentetsuBus/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-sentetsubus~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SentetsuBus_AllLines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SentetsuBus_AllLines_trip_update"
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "SentetsuBus"
+      }
+    },
+    {
+      "id": "f-shichigahamatown~all~gururinko~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/ShichigahamaTown/All_Gururinko.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-shimoden~shimoden~bus~gtfs~realtime~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/Shimoden/Shimoden_BUS_GTFS_Realtime.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-shimoden~shimoden~bus~gtfs~realtime~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_Shimoden_Shimoden_BUS_GTFS_Realtime_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_Shimoden_Shimoden_BUS_GTFS_Realtime_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_Shimoden_Shimoden_BUS_GTFS_Realtime_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "Shimoden_BUS_GTFS_Realtime",
+        "odpt_organization_id": "Shimoden"
+      }
+    },
+    {
+      "id": "f-shimoden~shimoden~gtfs~static~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/Shimoden/Shimoden_GTFS_Static.zip?date=current"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tachikawacity~kururin~bus~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TachikawaCity/kururin_bus_alllines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tokaikisen~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokaiKisen/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tokaikisen~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_TokaiKisen_AllLines_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "TokaiKisen"
+      }
+    },
+    {
+      "id": "f-tokyochuocity~alldata~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyoChuoCity/Alldata.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tokyocruiseship~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyoCruiseShip/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tokyosuginamicity~greenslowmobility~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyoSuginamiCity/GreenSlowMobility.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tokyosuginamicity~greenslowmobility~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TokyoSuginamiCity_GreenSlowMobility_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TokyoSuginamiCity_GreenSlowMobility_trip_update"
+      },
+      "tags": {
+        "odpt_dataset_id": "GreenSlowMobility",
+        "odpt_organization_id": "TokyoSuginamiCity"
+      }
+    },
+    {
+      "id": "f-tokyotaitocity~megurinccby40~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyoTaitoCity/megurinCCBY40.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tokyotaitocity~megurin~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyoTaitoCity/megurin.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tokyubus~tokyubus~community~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyuBus/tokyubus_community.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-transportationbureau~cityofkawasaki~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TransportationBureau_CityOfKawasaki/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-transportationbureau~cityofkawasaki~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_TransportationBureau_CityOfKawasaki_AllLines_vehicle?acl:consumerKey=",
+        "realtime_trip_updates": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_TransportationBureau_CityOfKawasaki_AllLines_trip_update?acl:consumerKey=",
+        "realtime_alerts": "https://api.odpt.org/api/v4/gtfs/realtime/odpt_TransportationBureau_CityOfKawasaki_AllLines_alert?acl:consumerKey="
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "TransportationBureau_CityOfKawasaki"
+      }
+    },
+    {
+      "id": "f-tsukubakankoukotsu~cocobusnogawa~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TsukubaKankouKotsu/CoCoBusNogawa.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-uwajimaunyu~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/UwajimaUnyu/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-yokohamamunicipal~bus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/YokohamaMunicipal/Bus.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-yokohamamunicipal~train~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/YokohamaMunicipal/Train.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-akihabusservice",
+      "name": "秋葉バスサービス株式会社",
+      "short_name": "Akiha Bus Service Co.,Ltd",
+      "website": "www.akihabus.co.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-akihabusservice~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-akihabusservice~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-akitacity",
+      "name": "秋田市",
+      "short_name": "Akita City",
+      "website": "https://www.city.akita.lg.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-akitacity~akitacitybus~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-daishinto",
+      "name": "大新東株式会社",
+      "short_name": "DAISHINTO Inc.",
+      "website": "https://daishinto.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-daishinto~radiantcity~yokohama~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-gunmabus",
+      "name": "株式会社群馬バス",
+      "short_name": "Gunma-Bus Corporation",
+      "website": "https://www.gunbus.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-gunmabus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-gunmabus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-hakodatecity",
+      "name": "函館市企業局",
+      "short_name": "Hakodate City Tram",
+      "website": "https://www.city.hakodate.hokkaido.jp/bunya/hakodateshiden/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-hakodatecity~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-hakodatecity~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-hankyuferry",
+      "name": "阪九フェリー株式会社",
+      "short_name": "Hankyu Ferry Corporation",
+      "website": "https://www.han9f.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-hankyuferry~schedul~hankyu~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-higashimurayamacity",
+      "name": "東村山市",
+      "short_name": "Higashimurayama City",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-higashimurayamacity~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-higashiyamatocity",
+      "name": "東大和市",
+      "short_name": "Higashiyamato City Hall",
+      "website": "https://www.city.higashiyamato.lg.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-higashiyamatocity~alllines~cc0~jp"
+        },
+        {
+          "feed_onestop_id": "f-higashiyamatocity~alllines~ccby4~jp"
+        },
+        {
+          "feed_onestop_id": "f-higashiyamatocity~alllines~odpt~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-hitachiautomobiletransportation",
+      "name": "日立自動車交通株式会社",
+      "short_name": "Hitachi Motor Transportation Co. Ltd.",
+      "website": "https://www.hitachi-gr.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-hitachiautomobiletransportation~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-hitachiautomobiletransportation~chiyoda~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-hitachiautomobiletransportation~kitaalllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-hokkaidotakushokubus",
+      "name": "北海道拓殖バス株式会社",
+      "short_name": "Hokkaido Takusyoku Bus Co., Ltd",
+      "website": "https://www.takubus.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-hokkaidotakushokubus~takusyoku~highway~line~jp"
+        },
+        {
+          "feed_onestop_id": "f-hokkaidotakushokubus~takusyoku~regular~line~jp"
+        },
+        {
+          "feed_onestop_id": "f-hokkaidotakushokubus~takusyoku~regular~line~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-inagicity",
+      "name": "稲城市",
+      "short_name": "inagi city",
+      "website": "https://www.city.inagi.tokyo.jp/index.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-inagicity~ibas~a~course~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-iyotetsubus",
+      "name": "伊予鉄バス株式会社",
+      "short_name": "Iyotetsu Bus Co.,Ltd.",
+      "website": "https://www.iyotetsu.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-iyotetsubus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-iyotetsubus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-izuhakonebus",
+      "name": "伊豆箱根バス株式会社",
+      "short_name": "IZUHAKONE BUS CO.,LTD",
+      "website": "http://www.izuhakone.co.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-izuhakonebus~izhb~jp"
+        },
+        {
+          "feed_onestop_id": "f-izuhakonebus~izhb~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-joshinkankobus",
+      "name": "株式会社上信観光バス",
+      "short_name": "Joshin-bus",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-joshinkankobus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-joshinkankobus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-juobus",
+      "name": "十王自動車株式会社",
+      "short_name": "Juo Jidousha Corporation",
+      "website": "https://www.juo.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-juobus~isesaki~honjo~line~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kagoshimacitymaritimebureau",
+      "name": "鹿児島市船舶局",
+      "short_name": "Kagoshima City Maritime Bureau",
+      "website": "https://www.city.kagoshima.lg.jp/sakurajima-ferry/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kagoshimacitymaritimebureau~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kantobus",
+      "name": "関東バス株式会社",
+      "short_name": "Kanto-bus Corporation",
+      "website": "www.kanto-bus.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kantobus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-kantobus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kan~etsutransportation",
+      "name": "関越交通株式会社",
+      "short_name": "Kan-etsu Transportation Co.,Ltd.",
+      "website": "https://kan-etsu.net/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kan~etsutransportation~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-kan~etsutransportation~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kawasakitsurumirinkobus",
+      "name": "川崎鶴見臨港バス株式会社",
+      "short_name": "KAWASAKI TSURUMI RINKO BUS CO．，LTD",
+      "website": "https://www.rinkobus.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kawasakitsurumirinkobus~allrinko~jp"
+        },
+        {
+          "feed_onestop_id": "f-kawasakitsurumirinkobus~allrinko~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-keifukubus",
+      "name": "京福バス株式会社",
+      "short_name": "Keifuku Bus Co., Ltd.",
+      "website": "https://bus.keifuku.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-keifukubus~keifuku~rosen~jp"
+        },
+        {
+          "feed_onestop_id": "f-keifukubus~keifuku~rosen~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-keiobus",
+      "name": "京王電鉄バス株式会社",
+      "short_name": "Keio Dentetsu Bus Co.,Ltd",
+      "website": "https://www.keio-bus.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-keiobus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-keiobus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-keiseitransitbus",
+      "name": "京成トランジットバス株式会社",
+      "short_name": "Keisei Transit Bus Co.,Ltd.",
+      "website": "https://transitbus.co.jp/web/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-keiseitransitbus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-keiseitransitbus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kiyosecity",
+      "name": "清瀬市",
+      "short_name": "Kiyose City",
+      "website": "https://www.city.kiyose.lg.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kiyosecity~kiyobus~jp"
+        },
+        {
+          "feed_onestop_id": "f-kiyosecity~kiyobus~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kokubunjicity",
+      "name": "国分寺市",
+      "short_name": "Kokubunji-city",
+      "website": "www.city.kokubunji.tokyo.jp/index.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kokubunjicity~kokubunji~city~bunbus~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kunitachicity",
+      "name": "国立市道路交通課",
+      "short_name": "Kunitachi-city Road Traffic Division",
+      "website": "https://www.city.kunitachi.tokyo.jp/soshiki/Dept06/Div02/index.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kunitachicity~kunitachi~city~kunikko~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kyotobus",
+      "name": "京都バス株式会社",
+      "short_name": "KyotoBus Co., Ltd",
+      "website": "https://www.kyotobus.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kyotobus~alllinesanotherversion~jp"
+        },
+        {
+          "feed_onestop_id": "f-kyotobus~alllinesanotherversion~jp~rt"
+        },
+        {
+          "feed_onestop_id": "f-kyotobus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-kyotobus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kyotomunicipaltransportation",
+      "name": "京都市交通局",
+      "short_name": "Kyoto Municipal Transportation Bureau",
+      "website": "www.city.kyoto.lg.jp/kotsu/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kyotomunicipaltransportation~kyoto~city~bus~gtfs~jp"
+        },
+        {
+          "feed_onestop_id": "f-kyotomunicipaltransportation~kyoto~city~subway~gtfs~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-matsuecitytrafficoffice",
+      "name": "松江市交通局",
+      "short_name": "Matsue City Traffic Office",
+      "website": "https://matsue-bus.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-matsuecitytrafficoffice~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-meimontaiyoferry",
+      "name": "株式会社名門大洋フェリー",
+      "short_name": "Meimon Taiyo Ferry Co., Ltd.",
+      "website": "https://www.cityline.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-meimontaiyoferry~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-miyakevill",
+      "name": "三宅村",
+      "short_name": "Miyake village",
+      "website": "www.vill.miyake.tokyo.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-miyakevill~allline~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-nishitokyobus",
+      "name": "西東京バス株式会社",
+      "short_name": "Nisitokyobus Corporation",
+      "website": "https://www.nisitokyobus.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-nishitokyobus~ntbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-nishitokyobus~ntbus~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-nishitokyocity",
+      "name": "西東京市",
+      "short_name": "Nishitokyo City",
+      "website": "https://www.city.nishitokyo.lg.jp/index.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-nishitokyocity~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-odakyubus",
+      "name": "小田急バス株式会社",
+      "short_name": "Odakyu Bus Co., Ltd.",
+      "website": "https://www.odakyubus.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-odakyubus~aiilines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-orangeferry",
+      "name": "四国開発フェリー株式会社",
+      "short_name": "Shikoku Kaihatsu Ferry Corporation",
+      "website": "https://www.orange-ferry.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-orangeferry~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-oshimabus",
+      "name": "大島旅客自動車株式会社",
+      "short_name": "oshima-bus Corporation",
+      "website": "http://www.oshima-bus.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-oshimabus~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-otonekotsu",
+      "name": "大利根交通自動車株式会社",
+      "short_name": "Otone Kotsu Jidousha Co.,Ltd.",
+      "website": "https://otonekotu.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-otonekotsu~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-sanwamerchantvessel",
+      "name": "三和商船株式会社",
+      "short_name": "Sanwa Merchant Vessel Co., Ltd.",
+      "website": "ezax.co.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-sanwamerchantvessel~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-sentetsubus",
+      "name": "船木鉄道株式会社",
+      "short_name": "Funaki Tetsudou Corporation",
+      "website": "https://www.sentetsu.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-sentetsubus~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-sentetsubus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-shichigahamatown",
+      "name": "七ヶ浜町",
+      "short_name": "Shichigahama",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-shichigahamatown~all~gururinko~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-shimoden",
+      "name": "下津井電鉄株式会社",
+      "short_name": "Shimotsuidentetsu Corporation",
+      "website": "https://www.shimoden.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-shimoden~shimoden~bus~gtfs~realtime~jp"
+        },
+        {
+          "feed_onestop_id": "f-shimoden~shimoden~bus~gtfs~realtime~jp~rt"
+        },
+        {
+          "feed_onestop_id": "f-shimoden~shimoden~gtfs~static~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tachikawacity",
+      "name": "立川市",
+      "short_name": "Tachikawa City",
+      "website": "https://www.city.tachikawa.lg.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tachikawacity~kururin~bus~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tokaikisen",
+      "name": "東海汽船株式会社",
+      "short_name": "Tokai Kisen Co.,Ltd.",
+      "website": "https://www.tokaikisen.co.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tokaikisen~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-tokaikisen~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tokyochuocity",
+      "name": "中央区役所",
+      "short_name": "Chuo City Office",
+      "website": "https://www.city.chuo.lg.jp/kurashi/koutsuu/koukyoukoutsuu/edobasu/index.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tokyochuocity~alldata~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tokyocruiseship",
+      "name": "東京都観光汽船株式会社",
+      "short_name": "TOKYO CRUISE SHIP CO LTD",
+      "website": "www.suijobus.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tokyocruiseship~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tokyosuginamicity",
+      "name": "杉並区",
+      "short_name": "Suginami City",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tokyosuginamicity~greenslowmobility~jp"
+        },
+        {
+          "feed_onestop_id": "f-tokyosuginamicity~greenslowmobility~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tokyotaitocity",
+      "name": "台東区",
+      "short_name": "Taito City Office",
+      "website": "https://www.city.taito.lg.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tokyotaitocity~megurinccby40~jp"
+        },
+        {
+          "feed_onestop_id": "f-tokyotaitocity~megurin~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tokyubus",
+      "name": "東急バス株式会社",
+      "short_name": "Tokyu Bus Corporation",
+      "website": "https://www.tokyubus.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tokyubus~tokyubus~community~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-transportationbureau~cityofkawasaki",
+      "name": "川崎市交通局",
+      "short_name": "Transportation Bureau, City of Kawasaki",
+      "website": "https://www.city.kawasaki.jp/820/index.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-transportationbureau~cityofkawasaki~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-transportationbureau~cityofkawasaki~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tsukubakankoukotsu",
+      "name": "つくば観光交通株式会社",
+      "short_name": "Tsukubakankoukotsu Co.,Ltd",
+      "website": "https://www.tukuba-taxi.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tsukubakankoukotsu~cocobusnogawa~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-uwajimaunyu",
+      "name": "宇和島運輸株式会社",
+      "short_name": "Uwajima Unyu Ferries",
+      "website": "https://www.uwajimaunyu.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-uwajimaunyu~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-yokohamamunicipal",
+      "name": "横浜市交通局",
+      "short_name": "City of Yokohama, Transportation Bureau",
+      "website": "https://www.city.yokohama.lg.jp/kotsu/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-yokohamamunicipal~bus~jp"
+        },
+        {
+          "feed_onestop_id": "f-yokohamamunicipal~train~jp"
+        }
+      ]
+    }
+  ]
+}

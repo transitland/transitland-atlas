@@ -1,3 +1,11 @@
+#!/usr/bin/env -S uv run --script
+
+# /// script
+# dependencies = [
+#   "requests>=2.31.0",
+# ]
+# ///
+
 import csv
 import json
 import re
