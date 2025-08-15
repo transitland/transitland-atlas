@@ -510,6 +510,8 @@ def main():
                     # Only add website if it exists
                     website = feed_info.get('url_ja') or feed_info.get('url_en')
                     if website:
+                        if (not website.startswith('http://')) and (not website.startswith('https://')):
+                            website = 'https://' + website
                         operator_record['website'] = website
                     
                     operators.append(operator_record)
