@@ -91,6 +91,42 @@
       }
     },
     {
+      "id": "f-dry0-maine~greaterportlandmetrobus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.gptd.cadavl.com/GPTD/GTFS/GTFS_GPTD.zip",
+        "static_historic": [
+          "http://smttracker.com/downloads/gtfs/greater-portland-me.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dry0-maine~greaterportlandmetrobus",
+          "name": "Greater Portland Metro Bus",
+          "website": "https://www.gpmetro.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dry0-maine~greaterportlandmetrobus~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "METROgpt",
+            "us_ntd_id": "10016",
+            "wikidata_id": "Q5600725"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dry0-maine~greaterportlandmetrobus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.gptd.cadavl.com/ProfilGtfsRt2_0RSProducer-GPTD/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.gptd.cadavl.com/ProfilGtfsRt2_0RSProducer-GPTD/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.gptd.cadavl.com/ProfilGtfsRt2_0RSProducer-GPTD/Alert.pb"
+      }
+    },
+    {
       "id": "f-green~bay~wi~us",
       "spec": "gtfs",
       "urls": {
