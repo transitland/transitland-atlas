@@ -27,6 +27,24 @@
       ]
     },
     {
+      "id": "f-bfzc-cityofwhitehorse~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://whitehorse.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://data.whitehorse.ca/Google_transit_Feed_Docs.zip",
+          "http://ww3.whitehorse.ca/Features/GIS/GoogleTransit/Google_transit_feed_docs.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bfzc-cityofwhitehorse~transit",
+          "name": "Whitehorse Transit",
+          "website": "http://www.whitehorse.ca/transit"
+        }
+      ]
+    },
+    {
       "id": "f-brownsville~tx~us",
       "spec": "gtfs",
       "urls": {
@@ -59,6 +77,24 @@
           "website": "https://www.letsgobg.com/",
           "tags": {
             "us_ntd_id": "40184"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-coast~rta~sc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://coastrtaridetracker.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-coast~rta~sc~us",
+          "name": "Waccamaw Regional Transportation Authority",
+          "short_name": "Coast RTA",
+          "tags": {
+            "us_ntd_id": "40102",
+            "wikidata_id": "Q5138200"
           }
         }
       ]
@@ -130,6 +166,27 @@
       ]
     },
     {
+      "id": "f-indian~river~county",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://indianrivertransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://golineirt.com/GTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-indian~river~county",
+          "name": "Indian River County",
+          "short_name": "GoLine",
+          "website": "https://golineirt.com",
+          "tags": {
+            "us_ntd_id": "40104"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-jackson~mi~us",
       "spec": "gtfs",
       "urls": {
@@ -145,6 +202,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-kaiser~permanente~east~bay~shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://kp-eastbay-shuttle.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      }
     },
     {
       "id": "f-mcallen~tx~us",
@@ -218,6 +282,23 @@
         {
           "onestop_id": "o-sanjuancapistrano~ca~us",
           "name": "San Juan Capistrano"
+        }
+      ]
+    },
+    {
+      "id": "f-south~padre~island",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://southpadreisland.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-south~padre~island",
+          "name": "South Padre Island Metro",
+          "website": "https://www.myspi.org/department/index.php?structureid=34",
+          "tags": {
+            "us_ntd_id": "60173"
+          }
         }
       ]
     },
