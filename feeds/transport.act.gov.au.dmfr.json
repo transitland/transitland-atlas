@@ -3,28 +3,26 @@
   "feeds": [
     {
       "id": "f-r3dp-wwwactionactgovau",
+      "supersedes_ids": [
+        "f-wwwactionactgovau~lightrail"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.transport.act.gov.au/googletransit/google_transit.zip"
+        "static_current": "https://transport.api.act.gov.au/gtfs/data/gtfs/v2/google_transit.zip",
+        "static_historic": [
+          "http://www.transport.act.gov.au/googletransit/google_transit.zip"
+        ]
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "ACT Government "
-      }
-    },
-    {
-      "id": "f-wwwactionactgovau~lightrail",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transport.act.gov.au/googletransit/google_transit_lr.zip"
+        "attribution_text": "ACT Government"
       },
-      "license": {
-        "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "ACT Government "
+      "authorization": {
+        "type": "basic_auth",
+        "info_url": "https://anypoint.mulesoft.com/exchange/portals/act-government-9/e48d1999-b5c6-4944-b5cf-23de022d1287/gtfs-prx-api/"
       },
       "operators": [
         {
@@ -34,11 +32,24 @@
           "website": "https://www.transport.act.gov.au",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "TC"
+              "feed_onestop_id": "f-r3dp-wwwactionactgovau~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-r3dp-wwwactionactgovau~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://transport.api.act.gov.au/gtfs/data/gtfs/v2/vehicle-positions-mywayplus.pb",
+        "realtime_trip_updates": "https://transport.api.act.gov.au/gtfs/data/gtfs/v2/trip-updates.pb",
+        "realtime_alerts": "https://transport.api.act.gov.au/gtfs/data/gtfs/v2/service-alerts.pb"
+      },
+      "authorization": {
+        "type": "basic_auth",
+        "info_url": "https://anypoint.mulesoft.com/exchange/portals/act-government-9/e48d1999-b5c6-4944-b5cf-23de022d1287/gtfs-prx-api/"
+      }
     }
   ]
 }
