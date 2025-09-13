@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-cudahy~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.cityofcudahyca.gov/DocumentCenter/View/2459",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/cudahy-ca-us/cudahy-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/cudahy-ca-us/cudahy-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5cnw-cudahyarearapidtransit",
+          "name": "Cudahy Area Rapid Transit",
+          "short_name": "CART",
+          "website": "https://www.cityofcudahyca.gov/494/Cudahy-Area-Rapid-Transit-CART",
+          "tags": {
+            "twitter_general": "CityOfCudahyCA",
+            "us_ntd_id": "90262"
+          }
+        }
+      ]
+    }
+  ]
+}
