@@ -18,7 +18,8 @@ cr = csv.DictReader(decoded_content.splitlines(), delimiter=",")
 feeds = []
 for row in list(cr):
     name = (row["Name"] + ' ' + row["Location"]).lower()
-    names = re.split('[;,.\-\%\s]+', name)
+    name = re.sub(r'\W+', ' ', name) # Replace all non-alphanumeric characters with spaces
+    names = re.split(r'\s+', name) # Split on whitespace
     id = '~'.join(OrderedDict.fromkeys(names))
     onestop_id = f"f-{id}~gbfs"
     if onestop_id in [f["id"] for f in feeds]:
