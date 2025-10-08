@@ -452,8 +452,25 @@ def main():
     
     # Generate DMFR file for new feeds
     if new_static_feeds or new_rt_feeds:
-        # Create top-level operators to associate feeds
-        operators = []
+        # Load existing DMFR file if it exists
+        dmfr_file = FEEDS_DIR / 'odpt-gtfs.dmfr.json'
+        existing_feeds = []
+        existing_operators = []
+        
+        if dmfr_file.exists():
+            try:
+                with open(dmfr_file, 'r', encoding='utf-8') as f:
+                    existing_dmfr = json.load(f)
+                existing_feeds = existing_dmfr.get('feeds', [])
+                existing_operators = existing_dmfr.get('operators', [])
+                logger.info(f"Loaded {len(existing_feeds)} existing feeds and {len(existing_operators)} existing operators")
+            except (json.JSONDecodeError, IOError) as e:
+                logger.warning(f"Failed to load existing DMFR file: {e}")
+                existing_feeds = []
+                existing_operators = []
+        
+        # Create new operators for new feeds
+        new_operators = []
         
         # First, collect all feed IDs that were actually created
         created_feed_ids = set()
@@ -469,8 +486,8 @@ def main():
             if organization_id:
                 operator_id = DMFRGenerator.generate_operator_id(organization_id)
                 
-                # Check if operator already exists
-                existing_operator = next((op for op in operators if op['onestop_id'] == operator_id), None)
+                # Check if operator already exists in existing operators
+                existing_operator = next((op for op in existing_operators if op['onestop_id'] == operator_id), None)
                 
                 if existing_operator:
                     # Add this feed to existing operator
@@ -487,46 +504,69 @@ def main():
                             'feed_onestop_id': rt_feed['dmfr_record']['id']
                         })
                 else:
-                    # Create new operator
-                    associated_feeds = [{'feed_onestop_id': feed['dmfr_record']['id']}]
+                    # Check if we already created this operator in this run
+                    new_operator = next((op for op in new_operators if op['onestop_id'] == operator_id), None)
                     
-                    # Add RT feed if it exists and was actually created
-                    rt_feed = next((rt for rt in new_rt_feeds 
-                                  if rt['feed_info']['organization_id'] == organization_id 
-                                  and rt['feed_info']['dataset_id'] == feed_info['dataset_id']), None)
-                    if rt_feed and rt_feed['dmfr_record']['id'] in created_feed_ids:
-                        associated_feeds.append({'feed_onestop_id': rt_feed['dmfr_record']['id']})
-                    
-                    operator_record = {
-                        'onestop_id': operator_id,
-                        'name': feed_info.get('name_ja', '') or organization_id,
-                        'associated_feeds': associated_feeds
-                    }
-                    
-                    # Only add short_name if it exists
-                    if feed_info.get('name_en'):
-                        operator_record['short_name'] = feed_info.get('name_en')
-                    
-                    # Only add website if it exists
-                    website = feed_info.get('url_ja') or feed_info.get('url_en')
-                    if website:
-                        if (not website.startswith('http://')) and (not website.startswith('https://')):
-                            website = 'https://' + website
-                        operator_record['website'] = website
-                    
-                    operators.append(operator_record)
+                    if new_operator:
+                        # Add this feed to the new operator we're creating
+                        new_operator['associated_feeds'].append({
+                            'feed_onestop_id': feed['dmfr_record']['id']
+                        })
+                        
+                        # Add RT feed if it exists and was actually created
+                        rt_feed = next((rt for rt in new_rt_feeds 
+                                      if rt['feed_info']['organization_id'] == organization_id 
+                                      and rt['feed_info']['dataset_id'] == feed_info['dataset_id']), None)
+                        if rt_feed and rt_feed['dmfr_record']['id'] in created_feed_ids:
+                            new_operator['associated_feeds'].append({
+                                'feed_onestop_id': rt_feed['dmfr_record']['id']
+                            })
+                    else:
+                        # Create new operator
+                        associated_feeds = [{'feed_onestop_id': feed['dmfr_record']['id']}]
+                        
+                        # Add RT feed if it exists and was actually created
+                        rt_feed = next((rt for rt in new_rt_feeds 
+                                      if rt['feed_info']['organization_id'] == organization_id 
+                                      and rt['feed_info']['dataset_id'] == feed_info['dataset_id']), None)
+                        if rt_feed and rt_feed['dmfr_record']['id'] in created_feed_ids:
+                            associated_feeds.append({'feed_onestop_id': rt_feed['dmfr_record']['id']})
+                        
+                        operator_record = {
+                            'onestop_id': operator_id,
+                            'name': feed_info.get('name_ja', '') or organization_id,
+                            'associated_feeds': associated_feeds
+                        }
+                        
+                        # Only add short_name if it exists
+                        if feed_info.get('name_en'):
+                            operator_record['short_name'] = feed_info.get('name_en')
+                        
+                        # Only add website if it exists
+                        website = feed_info.get('url_ja') or feed_info.get('url_en')
+                        if website:
+                            if (not website.startswith('http://')) and (not website.startswith('https://')):
+                                website = 'https://' + website
+                            operator_record['website'] = website
+                        
+                        new_operators.append(operator_record)
+        
+        # Merge existing and new data
+        all_feeds = existing_feeds + [feed['dmfr_record'] for feed in new_static_feeds + new_rt_feeds]
+        all_operators = existing_operators + new_operators
         
         dmfr_output = {
             "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
-            "feeds": [feed['dmfr_record'] for feed in new_static_feeds + new_rt_feeds],
-            "operators": operators
+            "feeds": all_feeds,
+            "operators": all_operators
         }
         
-        dmfr_file = FEEDS_DIR / 'odpt-gtfs.dmfr.json'
         with open(dmfr_file, 'w', encoding='utf-8') as f:
             json.dump(dmfr_output, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"Generated DMFR file with {len(new_static_feeds)} GTFS feeds, {len(new_rt_feeds)} GTFS-RT feeds, and {len(operators)} operators: {dmfr_file}")
+        logger.info(f"Updated DMFR file with {len(new_static_feeds)} new GTFS feeds, {len(new_rt_feeds)} new GTFS-RT feeds, and {len(new_operators)} new operators")
+        logger.info(f"Total feeds: {len(all_feeds)} (was {len(existing_feeds)}, added {len(new_static_feeds + new_rt_feeds)})")
+        logger.info(f"Total operators: {len(all_operators)} (was {len(existing_operators)}, added {len(new_operators)})")
         
         # Format the DMFR file using transitland CLI
         try:
