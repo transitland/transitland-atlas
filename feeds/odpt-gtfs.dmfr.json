@@ -44,6 +44,21 @@
       }
     },
     {
+      "id": "f-alineferry~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/ALineFerry/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-daishinto~radiantcity~yokohama~jp",
       "spec": "gtfs",
       "urls": {
@@ -757,6 +772,21 @@
       }
     },
     {
+      "id": "f-nagoyahousingcityplanningbureau~nagoyasrt~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/NagoyaHousingCityPlanningBureau/NagoyaSRT_AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-nishitokyobus~ntbus~jp",
       "spec": "gtfs",
       "urls": {
@@ -804,6 +834,21 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://api.odpt.org/api/v4/files/odpt/OdakyuBus/AIILines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-okushiriislandferry~okushiri~esashi~ferry~route~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/OkushiriIslandFerry/Okushiri_Esashi_Ferry_Route.zip?date=current"
       },
       "license": {
         "url": "https://developer.odpt.org/terms/data_basic_license.html"
@@ -1143,6 +1188,21 @@
       }
     },
     {
+      "id": "f-urbandevelopment~aomoricity~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/UrbanDevelopment_AomoriCity/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-uwajimaunyu~alllines~jp",
       "spec": "gtfs",
       "urls": {
@@ -1211,6 +1271,17 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-akitacity~akitacitybus~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-alineferry",
+      "name": "マルエーフェリー",
+      "short_name": "A-Line Ferry",
+      "website": "https://www.aline-ferry.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-alineferry~alllines~jp"
         }
       ]
     },
@@ -1587,6 +1658,17 @@
       ]
     },
     {
+      "onestop_id": "o-nagoyahousingcityplanningbureau",
+      "name": "名古屋市住宅都市局",
+      "short_name": "City of Nagoya Housing & City Planning Bureau",
+      "website": "https://www.city.nagoya.jp/jutakutoshi/page/0000089453.html",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-nagoyahousingcityplanningbureau~nagoyasrt~alllines~jp"
+        }
+      ]
+    },
+    {
       "onestop_id": "o-nishitokyobus",
       "name": "西東京バス株式会社",
       "short_name": "Nisitokyobus Corporation",
@@ -1619,6 +1701,17 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-odakyubus~aiilines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-okushiriislandferry",
+      "name": "オクシリアイランドフェリー株式会社",
+      "short_name": "Okushiri Island Ferry Co., Ltd.",
+      "website": "https://heartlandferry.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-okushiriislandferry~okushiri~esashi~ferry~route~jp"
         }
       ]
     },
@@ -1814,6 +1907,17 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-tsukubakankoukotsu~cocobusnogawa~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-urbandevelopment~aomoricity",
+      "name": "青森市",
+      "short_name": "Aomori City",
+      "website": "https://www.city.aomori.aomori.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-urbandevelopment~aomoricity~alllines~jp"
         }
       ]
     },
