@@ -83,6 +83,42 @@
       }
     },
     {
+      "id": "f-9qcs-rosevilletransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cityofroseville.tripshot.com/v1/gtfs.zip?regionId=CA558DDC-D7F2-4B48-9CAC-DEEA1134F820"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qcs-rosevilletransit",
+          "name": "Roseville Transit",
+          "website": "https://www.roseville.ca.us/residents/roseville_transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9qcs-rosevilletransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RSVL_Transit",
+            "us_ntd_id": "90168",
+            "wikidata_id": "Q7368740"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qcs-rosevilletransit~rt",
+      "supersedes_ids": [
+        "f-rosevilletransit~rt"
+      ],
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cityofroseville.tripshot.com/v1/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+        "realtime_trip_updates": "https://cityofroseville.tripshot.com/v1/gtfs/realtime/tripUpdate/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+        "realtime_alerts": "https://cityofroseville.tripshot.com/v1/gtfs/realtime/serviceAlert/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820"
+      }
+    },
+    {
       "id": "f-9qh0-anaheim~ca~us",
       "spec": "gtfs",
       "urls": {
