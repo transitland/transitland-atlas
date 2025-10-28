@@ -5,10 +5,13 @@
       "id": "f-dr5-mtanyclirr",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/lirr/google_transit.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfslirr.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/lirr/google_transit.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -19,10 +22,13 @@
       "id": "f-dr5r-mtabc",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/busco/google_transit.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_busco.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/busco/google_transit.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -36,25 +42,35 @@
       "id": "f-dr5r-mtanewyorkcitytransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/files/google_transit_supplemented.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_supplemented.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/files/google_transit_supplemented.zip"
+        ]
       },
       "license": {
+        "url": "https://www.mta.info/developers/terms-and-conditions",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
       "tags": {
         "exclude_from_global_query": "true",
-        "manual_import": "true"
+        "manual_import": "true",
+        "notes": "This 'supplemented' feed is updated hourly. Transitland fetches but does not import it. Transitland instead imports the 'regular' MTA subway feed at f-dr5r-nyctsubway"
       }
     },
     {
       "id": "f-dr5r-mtanyctbusbrooklyn",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_brooklyn.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_b.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/nyct/bus/google_transit_brooklyn.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -68,10 +84,13 @@
       "id": "f-dr5r-mtanyctbusmanhattan",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_manhattan.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_m.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/nyct/bus/google_transit_manhattan.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -85,10 +104,13 @@
       "id": "f-dr5r-mtanyctbusstatenisland",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_staten_island.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_si.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/nyct/bus/google_transit_staten_island.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -102,10 +124,13 @@
       "id": "f-dr5r-nyctsubway",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/subway/google_transit.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_subway.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/nyct/subway/google_transit.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -119,10 +144,13 @@
       "id": "f-dr5x-mtanyctbusqueens",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_queens.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_q.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/nyct/bus/google_transit_queens.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -136,10 +164,13 @@
       "id": "f-dr7-mtanyc~metro~north",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/mnr/google_transit.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfsmnr.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/mnr/google_transit.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
@@ -150,10 +181,13 @@
       "id": "f-dr72-mtanyctbusbronx",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://web.mta.info/developers/data/nyct/bus/google_transit_bronx.zip"
+        "static_current": "https://rrgtfsfeeds.s3.amazonaws.com/gtfs_bx.zip",
+        "static_historic": [
+          "http://web.mta.info/developers/data/nyct/bus/google_transit_bronx.zip"
+        ]
       },
       "license": {
-        "url": "http://web.mta.info/developers/developer-data-terms.html",
+        "url": "https://www.mta.info/developers/terms-and-conditions",
         "use_without_attribution": "yes",
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",

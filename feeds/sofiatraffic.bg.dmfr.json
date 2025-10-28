@@ -1,0 +1,57 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-sofiatraffic~bg",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.sofiatraffic.bg/api/v1/static"
+      },
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.sofia.bg/web/guest/transport-data",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sofiatraffic~bg",
+          "name": "Център за градска мобилност",
+          "short_name": "Sofia Traffic",
+          "website": "https://www.sofiatraffic.bg",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sofiatraffic~bg~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sofiatraffic~bg~rt",
+      "name": "Sofia Traffic GTFS-RT",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs.sofiatraffic.bg/api/v1/vehicle-positions",
+        "realtime_trip_updates": "https://gtfs.sofiatraffic.bg/api/v1/trip-updates",
+        "realtime_alerts": "https://gtfs.sofiatraffic.bg/api/v1/alerts"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.sofia.bg/web/guest/transport-data",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      }
+    }
+  ]
+}

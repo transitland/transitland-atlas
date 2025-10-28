@@ -1,0 +1,19 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "id": "f-eurostar",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.eurostar.com/assets/gtfs.zip",
+        "static_historic": [
+          "https://www.data.gouv.fr/fr/datasets/r/9089b550-696e-4ae0-87b5-40ea55a14292",
+          "https://s3.eu-west-2.amazonaws.com/feeds.planar.network/eurostar.zip"
+        ]
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/eurostar-gtfs"
+      }
+    }
+  ]
+}

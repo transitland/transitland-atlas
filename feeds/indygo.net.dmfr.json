@@ -5,7 +5,10 @@
       "id": "f-dp4d-indygo",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.indygo.net/wp-content/plugins/wp-gtfs/feed/gtfs.zip"
+        "static_current": "https://realtime.indygo.net/InfoPoint/gtfs-zip.ashx",
+        "static_historic": [
+          "http://www.indygo.net/wp-content/plugins/wp-gtfs/feed/gtfs.zip"
+        ]
       },
       "license": {
         "url": "http://www.indygo.net/about-indygo/indygo-developer-content-area/indygo-gtfs-terms-of-use/",
@@ -18,13 +21,11 @@
       "operators": [
         {
           "onestop_id": "o-dp4d-indygo",
-          "name": "IndyGo",
+          "name": "Indianapolis Public Transportation Corporation",
+          "short_name": "IndyGo",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-indygo~rt"
-            },
-            {
-              "feed_onestop_id": "f-indygo~rt~alerts"
             }
           ],
           "tags": {
@@ -34,6 +35,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-indygo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://realtime.indygo.net/infopoint/GTFS-Realtime.ashx?&Type=VehiclePosition&serverid=0",
+        "realtime_trip_updates": "https://realtime.indygo.net/infopoint/GTFS-Realtime.ashx?&Type=TripUpdate",
+        "realtime_alerts": "https://realtime.indygo.net/infopoint/GTFS-Realtime.ashx?&Type=Alert"
+      }
     }
   ]
 }

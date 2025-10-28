@@ -5,8 +5,9 @@
       "id": "f-9rb-cherriots",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.cherriots.org/media/doc/gtfs.zip",
+        "static_current": "https://cherriots.rideralerts.com/InfoPoint/gtfs-zip.ashx",
         "static_historic": [
+          "https://www.cherriots.org/media/doc/gtfs.zip",
           "http://www.cherriots.org/developer/gtfs.zip"
         ]
       },
@@ -23,7 +24,7 @@
           "website": "http://www.cherriots.org",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "cherriots-salem-or-us"
+              "feed_onestop_id": "f-9rb-cherriots~rt"
             }
           ],
           "tags": {
@@ -33,6 +34,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9rb-cherriots~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cherriots.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://cherriots.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://cherriots.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ]
 }

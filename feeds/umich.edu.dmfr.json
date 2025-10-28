@@ -17,7 +17,7 @@
           "website": "http://pts.umich.edu",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "UM_Transit"
+              "feed_onestop_id": "f-dps2w-universityofmichigantransitservices~rt"
             }
           ],
           "tags": {
@@ -26,6 +26,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dps2w-universityofmichigantransitservices~rt",
+      "spec": "gtfs",
+      "urls": {
+        "realtime_vehicle_positions": "https://mbus.ltp.umich.edu/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://mbus.ltp.umich.edu/gtfsrt/trips",
+        "realtime_alerts": "https://mbus.ltp.umich.edu/gtfsrt/alerts"
+      }
     }
   ]
 }

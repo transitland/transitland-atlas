@@ -276,6 +276,9 @@
     },
     {
       "id": "f-9q5-dpwlacounty~ca~us",
+      "supersedes_ids": [
+        "f-la~county"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/dpwlacounty-ca-us/dpwlacounty-ca-us.zip"
@@ -802,33 +805,6 @@
           "tags": {
             "twitter_general": "areatahoe",
             "us_ntd_id": "9R02-91101"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9qh1f-elmontetransit",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/elmonte-ca-us/elmonte-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qh1f-elmontetransit",
-          "name": "El Monte Transit",
-          "short_name": "http://www.ci.el-monte.ca.us/398/Transportation",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "703"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "90265",
-            "wikidata_id": "Q5351636"
           }
         }
       ]
@@ -1584,41 +1560,6 @@
             "twitter_general": "locatesiouxcity",
             "us_ntd_id": "70012",
             "wikidata_id": "Q7525465"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9zep-siouxareametro~sd~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/siouxareametro-sd-us/siouxareametro-sd-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "sioux-area-metro",
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9zep-siouxareametro",
-          "name": "Sioux Area Metro",
-          "short_name": "SAM",
-          "website": "https://www.siouxfalls.org/sam/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "217"
-            }
-          ],
-          "tags": {
-            "twitter_general": "citysiouxfalls",
-            "us_ntd_id": "80002",
-            "wikidata_id": "Q7525432"
           }
         }
       ]
@@ -2755,33 +2696,6 @@
           "tags": {
             "us_ntd_id": "0R03-00298",
             "wikidata_id": "Q16980701"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-c2pvx-butte~mt~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/butte-mt-us/butte-mt-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "butte-silver-bow",
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c2pvx-butte~silverbow",
-          "name": "Butte-Silver Bow",
-          "website": "https://buttebus.org/",
-          "tags": {
-            "us_ntd_id": "8R02-88296"
           }
         }
       ]
@@ -3946,38 +3860,6 @@
             "twitter_service_alerts": "peterpanalerts",
             "us_ntd_id": "1R02-10157",
             "wikidata_id": "Q204807"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dr5r-path~nj~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/path-nj-us/path-nj-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "path"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dr5r-path",
-          "name": "Port Authority Trans-Hudson",
-          "short_name": "PATH",
-          "website": "https://www.panynj.gov/path/en/index.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "151"
-            }
-          ],
-          "tags": {
-            "twitter_general": "PATHTrain",
-            "us_ntd_id": "20098",
-            "wikidata_id": "Q1055811"
           }
         }
       ]
@@ -5229,6 +5111,24 @@
       ]
     },
     {
+      "id": "f-garfieldcounty~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://data.trilliumtransit.com/gtfs/garfieldcounty-wa-us/garfieldcounty-wa-us--flex-v2.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-garfieldcounty~wa~us",
+          "name": "Garfield County Transportation Authority",
+          "short_name": "GCTA",
+          "website": "https://garfieldcta.com/",
+          "tags": {
+            "us_ntd_id": "00282"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-get~va~us",
       "spec": "gtfs",
       "urls": {
@@ -5452,6 +5352,23 @@
       ]
     },
     {
+      "id": "f-hopesource~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/hopesource-wa-us/hopesource-wa-us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hopesource~wa~us",
+          "name": "HopeSource",
+          "website": "https://www.hopesource.us/transportation",
+          "tags": {
+            "us_ntd_id": "312"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-iowa~city~transit",
       "spec": "gtfs",
       "urls": {
@@ -5559,28 +5476,6 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/lakewoodrides-co-us/lakewoodrides-co-us--flex-v2.zip"
       }
-    },
-    {
-      "id": "f-lapuente~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/lapuente-ca-us/lapuente-ca-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-lapuente~ca~us",
-          "name": "La Puente LINK"
-        }
-      ]
     },
     {
       "id": "f-lasvegasloop~nv~us",
@@ -6373,6 +6268,13 @@
         "static_historic": [
           "https://gtfs.calitp.org/production/SanJoaquinRTDDialARideandVanGoFlex.zip"
         ]
+      }
+    },
+    {
+      "id": "f-sauksuiattle~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/sauksuiattle-wa-us/sauksuiattle-wa-us.zip"
       }
     },
     {

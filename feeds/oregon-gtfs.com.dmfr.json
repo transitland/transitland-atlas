@@ -33,9 +33,7 @@
       "id": "f-9px-currypublictransit",
       "spec": "gtfs",
       "urls": {
-        "static_historic": [
-          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
-        ]
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/currypublictransit-or-us/currypublictransit-brookings-or-us.zip"
       },
       "license": {
         "url": "https://oregon-gtfs.trilliumtransit.com",
@@ -43,19 +41,13 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "gtfs_data_exchange": "curry-public-transit",
-        "status": "outdated"
+        "gtfs_data_exchange": "curry-public-transit"
       },
       "operators": [
         {
           "onestop_id": "o-9px-currypublictransit",
           "name": "Curry Public Transit",
           "website": "https://currypublictransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "827"
-            }
-          ],
           "tags": {
             "us_ntd_id": "0R02-00308"
           }
@@ -335,26 +327,6 @@
       ]
     },
     {
-      "id": "f-9rb-citytocityshuttle~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/citytocityshuttle-or-us/citytocityshuttle-or-us.zip"
-        ]
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9rb-city2cityshuttle",
-          "name": "City2City Shuttle"
-        }
-      ]
-    },
-    {
       "id": "f-9rb-diamondexpress~or~us",
       "spec": "gtfs",
       "urls": {
@@ -550,24 +522,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "f-9rc-eugenetobend~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/eugenetobend-or-us/eugenetobend-or-us.zip"
-        ]
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "gtfs_data_exchange": "eugene-to-bend",
-        "status": "archived"
-      }
     },
     {
       "id": "f-9ruf-mcacs~or~us",
@@ -917,33 +871,6 @@
       ]
     },
     {
-      "id": "f-c20f-cccxpress~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/cccxpress-or-us/cccxpress-or-us.zip"
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c20f-cccxpress",
-          "name": "CCC Xpress",
-          "website": "https://www.clackamas.edu/campus-life/transportation",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "256"
-            }
-          ],
-          "tags": {
-            "twitter_general": "ClackCollege"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-c21-hoodriver~or~us",
       "spec": "gtfs",
       "urls": {
@@ -1089,35 +1016,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1748"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-klamath~shuttle~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/klamathshuttle-or-us/klamathshuttle-or-us.zip"
-        ]
-      },
-      "license": {
-        "url": "https://oregon-gtfs.trilliumtransit.com",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r9-klamathshuttle",
-          "name": "Klamath Shuttle",
-          "website": "http://klamathshuttle.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "224"
             }
           ]
         }

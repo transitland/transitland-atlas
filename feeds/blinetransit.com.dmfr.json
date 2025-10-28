@@ -5,8 +5,9 @@
       "id": "f-butte~regional~transit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.blinetransit.com/documents/Google%20Transit/google_transit.zip",
+        "static_current": "https://d16k74nzx9emoe.cloudfront.net/c4326823-2c12-4f59-82f1-3fc4d987e12b/google_transit.zip",
         "static_historic": [
+          "http://www.blinetransit.com/documents/Google%20Transit/google_transit.zip",
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/butte-regional-transit.zip"
         ]
       },
@@ -18,7 +19,7 @@
           "website": "http://www.blinetransit.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "97aff62a-ed6d-4bd2-a9c8-d63f8e98a358"
+              "feed_onestop_id": "f-butte~regional~transit~rt"
             }
           ],
           "tags": {
@@ -27,6 +28,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-butte~regional~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://planmyride.blinetransit.com/gtfsrealtime/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://planmyride.blinetransit.com/gtfsrealtime/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://planmyride.blinetransit.com/gtfsrealtime/GTFS_ServiceAlerts.pb"
+      }
     }
   ]
 }
