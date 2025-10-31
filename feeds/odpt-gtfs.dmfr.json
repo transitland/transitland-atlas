@@ -1002,6 +1002,21 @@
       }
     },
     {
+      "id": "f-suonadaferry~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/SuonadaFerry/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-tachikawacity~kururin~bus~alllines~jp",
       "spec": "gtfs",
       "urls": {
@@ -1797,6 +1812,17 @@
         },
         {
           "feed_onestop_id": "f-shimoden~shimoden~gtfs~static~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-suonadaferry",
+      "name": "周防灘フェリー",
+      "short_name": "Suonada Ferry",
+      "website": "http://www.suonada.co.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-suonadaferry~alllines~jp"
         }
       ]
     },
