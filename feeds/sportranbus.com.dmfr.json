@@ -5,7 +5,10 @@
       "id": "f-sportran",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://sportranbus.com/gtfs"
+        "static_current": "https://sportran.rideralerts.com/infopoint/gtfs-zip.ashx",
+        "static_historic": [
+          "http://sportranbus.com/gtfs"
+        ]
       },
       "operators": [
         {
@@ -14,9 +17,6 @@
           "short_name": "SporTran",
           "website": "http://sportran.org/",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "58"
-            },
             {
               "feed_onestop_id": "f-sportran~rt"
             }
@@ -28,6 +28,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-sportran~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://sportran.rideralerts.com/infopoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://sportran.rideralerts.com/infopoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://sportran.rideralerts.com/infopoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ]
 }
