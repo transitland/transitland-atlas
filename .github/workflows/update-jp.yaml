@@ -5,11 +5,6 @@ on:
   schedule:
     - cron: '0 * * * *'
 
-permissions:
-  contents: write
-  workflows: write
-  pull-requests: write
-
 jobs:
   scheduled:
     runs-on: ubuntu-latest
