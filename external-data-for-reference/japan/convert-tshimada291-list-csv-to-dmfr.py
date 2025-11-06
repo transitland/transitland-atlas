@@ -162,7 +162,7 @@ if __name__ == "__main__":
                 else:
                     create_dmfr_record(feed_url, label, license_name, new_dmfr)
 
-    output_path = '../../feeds/tshimada291.github.com.dmfr.json'
+    output_path = './feeds/tshimada291.github.com.dmfr.json'
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(new_dmfr, f, indent=2)
     logging.info(f"All Created DMFR Records have been written to {output_path}")
