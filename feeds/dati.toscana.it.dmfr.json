@@ -412,9 +412,6 @@
         "create_derived_product": "yes",
         "attribution_text": "https://dati.toscana.it/"
       },
-      "tags": {
-        "unstable_url": "true"
-      },
       "operators": [
         {
           "onestop_id": "o-spx-toremartoscanaregionalemarittimaspa",
@@ -426,7 +423,10 @@
             }
           ]
         }
-      ]
+      ],
+      "tags": {
+        "unstable_url": "true"
+      }
     },
     {
       "id": "f-spx-urbanocecina",
@@ -868,9 +868,6 @@
         "create_derived_product": "yes",
         "attribution_text": "https://dati.toscana.it/"
       },
-      "tags": {
-        "unstable_url": "true"
-      },
       "operators": [
         {
           "onestop_id": "o-spzbz-gestspa",
@@ -883,7 +880,10 @@
             }
           ]
         }
-      ]
+      ],
+      "tags": {
+        "unstable_url": "true"
+      }
     },
     {
       "id": "f-spzc-ataf~linea",
@@ -895,9 +895,6 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "https://dati.toscana.it/"
-      },
-      "tags": {
-        "unstable_url": "true"
       },
       "operators": [
         {
@@ -911,7 +908,10 @@
             }
           ]
         }
-      ]
+      ],
+      "tags": {
+        "unstable_url": "true"
+      }
     },
     {
       "id": "f-spzc-urbanoprato",
@@ -1059,9 +1059,6 @@
         "create_derived_product": "yes",
         "attribution_text": "https://dati.toscana.it/"
       },
-      "tags": {
-        "unstable_url": "true"
-      },
       "operators": [
         {
           "onestop_id": "o-sr8-tftspa",
@@ -1074,7 +1071,10 @@
             }
           ]
         }
-      ]
+      ],
+      "tags": {
+        "unstable_url": "true"
+      }
     },
     {
       "id": "f-sr8-urbanoarezzo",
@@ -1195,6 +1195,25 @@
       "tags": {
         "unstable_url": "true"
       }
+    },
+    {
+      "id": "f-6615-trenitalialazio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dmfr.6615.io/trenitalialazio.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-SA-4.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no",
+        "attribution_text": "Federico Franco"
+      },
+      "tags": {
+        "documentation_url": "https://dmfr.6615.io/gtfs-docs"
+      }
     }
   ],
   "operators": [
@@ -1214,6 +1233,10 @@
         },
         {
           "feed_onestop_id": "f-u0j-trenitalia"
+        },
+        {
+          "gtfs_agency_id": "IT_IT14_Operator_05403151003_0083_0",
+          "feed_onestop_id": "f-6615-trenitalialazio"
         }
       ],
       "tags": {
