@@ -102,12 +102,10 @@
       "id": "f-c290-everetttransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfs.sound.obaweb.org/prod/97_gtfs.zip"
-      },
-      "license": {
-        "url": "http://www.soundtransit.org/sites/default/files/documents/developer/pdf/electronicdatatermsofuse.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "static_current": "https://everett.mapstrat.com/current/google_transit.zip",
+        "static_historic": [
+          "https://gtfs.sound.obaweb.org/prod/97_gtfs.zip"
+        ]
       },
       "tags": {
         "gtfs_data_exchange": "everett-transit"
@@ -118,10 +116,6 @@
           "name": "Everett Transit",
           "website": "http://www.everetttransit.org/",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "97",
-              "feed_onestop_id": "f-c290-everetttransit"
-            },
             {
               "feed_onestop_id": "f-everetttransit~rt"
             }
