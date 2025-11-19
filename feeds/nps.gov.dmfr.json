@@ -96,6 +96,13 @@
       }
     },
     {
+      "id": "f-cape~lookout~national~seashore",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.nps.gov/external-resources/gtfs/calo/calo-ferry-service.zip"
+      }
+    },
+    {
       "id": "f-denali~national~park",
       "spec": "gtfs",
       "urls": {
@@ -130,23 +137,19 @@
       "id": "f-drt8-nps~boha~ferries",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://nationalparkservice.github.io/nps-gtfs/boha/ferries/gtfs.zip"
+        "static_current": "https://www.nps.gov/external-resources/gtfs/boha/boston-harbor-islands-ferry.zip",
+        "static_historic": [
+          "http://nationalparkservice.github.io/nps-gtfs/boha/ferries/gtfs.zip"
+        ]
       },
       "license": {
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "url": "https://www.nps.gov/subjects/developer/gtfs.htm"
       },
       "operators": [
         {
           "onestop_id": "o-drt8-bostonharborislandsnationalandstatepark",
           "name": "Boston Harbor Islands National and State Park",
           "website": "http://www.bostonharborislands.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "NPS_BOHA__BHIP"
-            }
-          ],
           "tags": {
             "twitter_general": "34islandsboston"
           }
