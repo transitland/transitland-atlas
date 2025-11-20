@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+        {
+      "id": "f-dj6m-okaloosacountytransit~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.ecrider.org/wp-content/uploads/2025/09/Okaloosa-GTFS.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/refs/heads/master/okaloosa-county-fl.zip",
+          "https://goecrider.com/gtfs",
+          "https://data.trilliumtransit.com/gtfs/okaloosacountytransit-fl-us/okaloosacountytransit-fl-us.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "emerald-coast-rider"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dj6m-emeraldcoastrider",
+          "name": "Okaloosa County Transit",
+          "short_name": "Emerald Coast Rider (ECR)",
+          "website": "http://ecrider.org/",
+          "tags": {
+            "us_ntd_id": "40128",
+            "wikidata_id": "Q7081750"
+          }
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
