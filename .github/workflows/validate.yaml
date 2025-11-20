@@ -3,6 +3,8 @@ on: [push, pull_request_target, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DMFR_SCHEMA_VERSION: v0.6.0
     steps:
     - uses: actions/checkout@v4
       with:
@@ -32,10 +34,12 @@ jobs:
       run: scripts/install-transitland-lib.sh
     - name: Validate against DMFR schema
       run: |
-        wget https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json -O dmfr.schema.json
+        wget https://dmfr.transit.land/json-schema/dmfr.schema-${{ env.DMFR_SCHEMA_VERSION }}.json -O dmfr.schema.json
         npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
     - name: Lint against the opinionated DMFR format
       run: |
         transitland dmfr lint feeds/*.dmfr.json
     - name: Validate against transitland-lib
+      env:
+        DMFR_SCHEMA_VERSION: ${{ env.DMFR_SCHEMA_VERSION }}
       run: cd scripts && python validate-feeds.py
