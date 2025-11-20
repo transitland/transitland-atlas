@@ -5,16 +5,15 @@
       "id": "f-dp3-metra",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfsapi.metrarail.com/gtfs/raw/schedule.zip"
+        "static_current": "https://schedules.metrarail.com/gtfs/schedule.zip",
+        "static_historic": [
+          "https://gtfsapi.metrarail.com/gtfs/raw/schedule.zip"
+        ]
       },
       "license": {
-        "url": "https://metrarail.com/developers",
+        "url": "https://metra.com/gtfs-realtime-api-key-request-license-agreement",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
-      },
-      "authorization": {
-        "type": "basic_auth",
-        "info_url": "https://metrarail.com/developers"
       },
       "tags": {
         "gtfs_data_exchange": "metra"
@@ -24,16 +23,19 @@
       "id": "f-metra~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://gtfsapi.metrarail.com/gtfs/raw/positionUpdates.dat",
-        "realtime_trip_updates": "https://gtfsapi.metrarail.com/gtfs/raw/tripUpdates.dat",
-        "realtime_alerts": "https://gtfsapi.metrarail.com/gtfs/raw/alerts.dat"
+        "realtime_vehicle_positions": "https://gtfspublic.metrarr.com/gtfs/public/positions",
+        "realtime_trip_updates": "https://gtfspublic.metrarr.com/gtfs/public/tripupdates",
+        "realtime_alerts": "https://gtfspublic.metrarr.com/gtfs/public/alerts"
+      },
+      "license": {
+        "url": "https://metra.com/gtfs-realtime-api-key-request-license-agreement",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
       },
       "authorization": {
-        "type": "basic_auth",
-        "info_url": "https://metrarail.com/developers"
-      },
-      "tags": {
-        "notes": "Needs HTTP Basic Auth."
+        "type": "query_param",
+        "param_name": "api_token",
+        "info_url": "https://metra.com/metra-gtfs-api"
       }
     }
   ],
