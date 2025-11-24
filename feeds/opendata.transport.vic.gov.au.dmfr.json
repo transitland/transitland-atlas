@@ -3,6 +3,7 @@
   "feeds": [
     {
       "id": "f-r1-ptv",
+      "name": "Public Transport Victoria operational branch 1 - Regional Train",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#1/google_transit.zip",
@@ -10,19 +11,19 @@
           "http://data.ptv.vic.gov.au/downloads/gtfs.zip#1/google_transit.zip"
         ]
       },
-      "name": "Public Transport Victoria operational branch 1 - Regional Train",
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
     },
     {
       "id": "f-r1-ptv~10",
+      "name": "Public Transport Victoria operational branch 10 - Interstate",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#10/google_transit.zip",
@@ -30,37 +31,34 @@
           "http://data.ptv.vic.gov.au/downloads/gtfs.zip#10/google_transit.zip"
         ]
       },
-      "name": "Public Transport Victoria operational branch 10 - Interstate",
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
     },
     {
-      "id": "f-r1-ptv~rt",
-      "spec": "gtfs-rt",
+      "id": "f-r1-ptv~3",
+      "name": "Public Transport Victoria operational branch 6 - Regional Bus",
+      "spec": "gtfs",
       "urls": {
-        "realtime_vehicle_positions": "https://api.opendata.transport.vic.gov.au/opendata/public-transport/gtfs/realtime/v1/vline/vehicle-positions",
-        "realtime_trip_updates": "https://api.opendata.transport.vic.gov.au/opendata/public-transport/gtfs/realtime/v1/vline/trip-updates"
+        "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#6/google_transit.zip",
+        "static_historic": [
+          "http://data.ptv.vic.gov.au/downloads/gtfs.zip#6/google_transit.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-realtime",
+        "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      },
-      "authorization": {
-        "type": "header",
-        "param_name": "KeyId",
-        "info_url": "https://opendata-signup.transport.vic.gov.au/"
       }
     },
     {
@@ -76,8 +74,8 @@
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-realtime",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
       "authorization": {
@@ -88,6 +86,7 @@
     },
     {
       "id": "f-r1-ptv~5",
+      "name": "Public Transport Victoria operational branch 5 - Regional Coach",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#5/google_transit.zip",
@@ -95,34 +94,13 @@
           "http://data.ptv.vic.gov.au/downloads/gtfs.zip#5/google_transit.zip"
         ]
       },
-      "name": "Public Transport Victoria operational branch 5 - Regional Coach",
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
-        "share_alike_optional": "yes"
-      }
-    },
-    {
-      "id": "f-r1-ptv~3",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#6/google_transit.zip",
-        "static_historic": [
-          "http://data.ptv.vic.gov.au/downloads/gtfs.zip#6/google_transit.zip"
-        ]
-      },
-      "name": "Public Transport Victoria operational branch 6 - Regional Bus",
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
-        "redistribution_allowed": "yes",
         "share_alike_optional": "yes"
       }
     },
@@ -138,8 +116,30 @@
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-realtime",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "KeyId",
+        "info_url": "https://opendata-signup.transport.vic.gov.au/"
+      }
+    },
+    {
+      "id": "f-r1-ptv~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.opendata.transport.vic.gov.au/opendata/public-transport/gtfs/realtime/v1/vline/vehicle-positions",
+        "realtime_trip_updates": "https://api.opendata.transport.vic.gov.au/opendata/public-transport/gtfs/realtime/v1/vline/trip-updates"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-realtime",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
       "authorization": {
@@ -161,8 +161,8 @@
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-realtime",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       },
       "authorization": {
@@ -173,6 +173,7 @@
     },
     {
       "id": "f-r1r-ptv",
+      "name": "Public Transport Victoria operational branch 2 - Metropolitan Train",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#2/google_transit.zip",
@@ -180,14 +181,13 @@
           "http://data.ptv.vic.gov.au/downloads/gtfs.zip#2/google_transit.zip"
         ]
       },
-      "name": "Public Transport Victoria operational branch 2 - Metropolitan Train",
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
     },
@@ -196,6 +196,7 @@
       "supersedes_ids": [
         "f-r1r-ptv~2"
       ],
+      "name": "Public Transport Victoria operational branch 4 - Metropolitan Bus",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#4/google_transit.zip",
@@ -203,19 +204,19 @@
           "http://data.ptv.vic.gov.au/downloads/gtfs.zip#4/google_transit.zip"
         ]
       },
-      "name": "Public Transport Victoria operational branch 4 - Metropolitan Bus",
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
     },
     {
       "id": "f-r1r0-ptv",
+      "name": "Public Transport Victoria operational branch 3 - Metropolitan Tram",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#3/google_transit.zip",
@@ -223,19 +224,19 @@
           "http://data.ptv.vic.gov.au/downloads/gtfs.zip#3/google_transit.zip"
         ]
       },
-      "name": "Public Transport Victoria operational branch 3 - Metropolitan Tram",
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
     },
     {
       "id": "f-r1r1-ptv~11",
+      "name": "Public Transport Victoria operational branch 11 - SkyBus",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#11/google_transit.zip",
@@ -243,14 +244,13 @@
           "http://data.ptv.vic.gov.au/downloads/gtfs.zip#11/google_transit.zip"
         ]
       },
-      "name": "Public Transport Victoria operational branch 11 - SkyBus",
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.transport.vic.gov.au/dataset/gtfs-schedule",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
         "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
     }
@@ -272,9 +272,6 @@
           "feed_onestop_id": "f-r1-ptv~3"
         },
         {
-          "feed_onestop_id": "f-r1-ptv~rt"
-        },
-        {
           "feed_onestop_id": "f-r1-ptv~3~rt"
         },
         {
@@ -282,6 +279,9 @@
         },
         {
           "feed_onestop_id": "f-r1-ptv~buses~rt"
+        },
+        {
+          "feed_onestop_id": "f-r1-ptv~rt"
         },
         {
           "feed_onestop_id": "f-r1-ptv~trains~rt"
