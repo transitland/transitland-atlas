@@ -2,10 +2,7 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-r1-ptv~1",
-      "supersedes_ids": [
-        "f-r1r-ptv"
-      ],
+      "id": "f-r1-ptv",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#1/google_transit.zip",
@@ -43,7 +40,7 @@
       }
     },
     {
-      "id": "f-r1-ptv~1~rt",
+      "id": "f-r1-ptv~rt",
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://api.opendata.transport.vic.gov.au/opendata/public-transport/gtfs/realtime/v1/vline/vehicle-positions",
@@ -101,7 +98,7 @@
       }
     },
     {
-      "id": "f-r1-ptv~6",
+      "id": "f-r1-ptv~3",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opendata.transport.vic.gov.au/dataset/3f4e292e-7f8a-4ffe-831f-1953be0fe448/resource/fb152201-859f-4882-9206-b768060b50ad/download/gtfs.zip#6/google_transit.zip",
@@ -252,7 +249,10 @@
           "feed_onestop_id": "f-r1-ptv~10"
         },
         {
-          "feed_onestop_id": "f-r1-ptv~1~rt"
+          "feed_onestop_id": "f-r1-ptv~3"
+        },
+        {
+          "feed_onestop_id": "f-r1-ptv~rt"
         },
         {
           "feed_onestop_id": "f-r1-ptv~3~rt"
