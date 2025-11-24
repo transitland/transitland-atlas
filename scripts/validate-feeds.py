@@ -3,8 +3,41 @@ import sys
 import os
 import sqlite3
 import json
+import glob
 
 fail_the_build = False
+
+# validate DMFR schema version consistency
+# Get schema version from environment variable, default to v0.6.0
+dmfr_schema_version = os.environ.get('DMFR_SCHEMA_VERSION', 'v0.6.0')
+EXPECTED_SCHEMA = f"https://dmfr.transit.land/json-schema/dmfr.schema-{dmfr_schema_version}.json"
+dmfr_files = glob.glob("../feeds/*.dmfr.json")
+
+for file_path in dmfr_files:
+    try:
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+        
+        if '$schema' not in data:
+            print(f"ERROR: {file_path} is missing $schema field")
+            fail_the_build = True
+            continue
+        
+        schema = data['$schema']
+        if schema != EXPECTED_SCHEMA:
+            print(f"ERROR: {file_path} has incorrect schema version")
+            print(f"  Expected: {EXPECTED_SCHEMA}")
+            print(f"  Found:    {schema}")
+            fail_the_build = True
+    except json.JSONDecodeError as e:
+        print(f"ERROR: {file_path} is not valid JSON: {e}")
+        fail_the_build = True
+    except Exception as e:
+        print(f"ERROR: Failed to read {file_path}: {e}")
+        fail_the_build = True
+
+if not fail_the_build and len(dmfr_files) > 0:
+    print(f"All {len(dmfr_files)} DMFR files use the correct schema version ({dmfr_schema_version})")
 
 # load dmfr to database
 db_filename = 'feed-validation.db'
