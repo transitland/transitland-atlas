@@ -5039,6 +5039,9 @@
     },
     {
       "id": "f-estestransit~co~us",
+      "supersedes_ids": [
+        "f-9xhvw-townofestespark"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/estestransit-co-us/estestransit-co-us.zip"
@@ -5050,13 +5053,14 @@
       "operators": [
         {
           "onestop_id": "o-estestransit~co~us",
+          "supersedes_ids": [
+            "o-9xhvw-townofestespark"
+          ],
           "name": "Estes Transit",
-          "website": "https://estespark.colorado.gov/shuttles",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1604"
-            }
-          ]
+          "website": "https://estespark.colorado.gov/transit",
+          "tags": {
+            "us_ntd_id": "88281"
+          }
         }
       ]
     },
