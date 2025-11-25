@@ -2,27 +2,64 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-u0fn-smtd",
+      "id": "f-03herve~seau~vitobus~fr",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/99cf5e2f-87c2-4ff1-bc0d-32f04cc213ab",
-        "static_historic": [
-          "http://www.excellance.fr/gtfs.zip"
-        ]
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/282974b2-bf13-41f2-a0bf-feb0682e594e"
       },
-      "operators": [
-        {
-          "onestop_id": "o-u0fn-smtd",
-          "name": "Syndicat Mixte des Transports du Douaisis",
-          "short_name": "SMTD",
-          "website": "http://www.smtd.fr/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "smtd"
-            }
-          ]
-        }
-      ]
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-ville-de-vitre",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-abalanina~seau~balanina~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/f88c086a-4fe1-4af1-a027-f809d4422b65"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-transport-horaires-des-lignes-de-la-communaute-dile-rousse-balagne-a-balanina",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-agglopaysdissoire~seau~cherpa~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/7d54a219-8fe7-4635-a9fc-cefe5e57462e"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/cherpa-horaires-lignes-regulieres",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-allianceatlantique~seau~gratibus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/ce6d5603-41cf-4fed-b93f-ed95859003b5"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/noirmoutier-gratibus-gtfs-gtfs-rt",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-allianceatlantique~seau~pybus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/95654461-59d1-4a33-8830-f90d55e8a217"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-pybus-le-reseau-urbain-de-parthenay",
+        "share_alike_optional": "no"
+      }
     },
     {
       "id": "f-alternéo~reunion",
@@ -38,6 +75,40 @@
       }
     },
     {
+      "id": "f-altigo~seau~interurbain~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/3ee23301-f454-4175-ba53-4734c30d5245"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-de-transport-en-commun-reseau-altigo-communaute-de-communes-du-brianconnais-format-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-amelysmontargis~seau~amelys~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/39240e80-d3f4-4702-ba93-520fae414649"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transports-urbain-du-reseau-amelys-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-autocarsoisehautsdefrancemobilitslot1~seau~interur",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/c50a9ec8-98dc-40ee-a842-555738197957"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-du-reseau-routier-regional-de-transport-scolaire-et-interurbain-60-oise-1"
+      }
+    },
+    {
       "id": "f-autun~fr",
       "spec": "gtfs",
       "urls": {
@@ -46,6 +117,138 @@
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/arrets-lignes-regulieres-reseau-de-transport-urbain-a-autun",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-axoagglocreilsudoise~seau~axo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0676f78f-66f9-4d37-a67e-0944ac5164e3"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-axo-communaute-dagglomeration-creil-sud-oise",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-baagcca~seau~baag~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0a10e218-937c-4795-b9e7-c81533a38446"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/regie-des-transports-baag-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-baia~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/9564e981-7d13-481d-a29f-452025af7432"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-cobas",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-brvibus~seau~vibus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b8d1007f-567e-48c4-9c40-bee205f1e688"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-brevibus",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-cac~seau~tuc~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/d00d1684-6980-4f84-ac38-363b6f058a68"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-gtfs-reseau-tuc-communaute-dagglomeration-de-cambrai",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-carsdelbos~seau~figeac~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/ab2d1451-dddd-4814-bc5c-8e219834a3e3"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-figeac-le-bus-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-carsrgionaux19correze~seau~interurbain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/2b76718b-2ab0-4f95-8528-cce4bb6af4fe"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-cor-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-carsrgionaux23creuse~seau~interurbain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b3f2f823-fe55-4265-9efe-605d8156dea2"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-cre-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-carsrgionaux86vienne~seau~interurbain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/a70fab11-9ac9-481e-91c8-925e805741ba"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-vie-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-cassb~seau~bandol~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/358ab51c-78e8-45a4-ae5a-a05722af6c09"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/transports-urbains-bandol-sanary-s-mer",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-ccgst~seau~navette~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/147fd87d-9898-42a9-af88-748c0ac9bb52"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/golfe-de-saint-tropez-donnees-mobilite-tc-navette-reguliere-saint-tropez",
         "share_alike_optional": "no"
       }
     },
@@ -64,6 +267,78 @@
       }
     },
     {
+      "id": "f-choletbus~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/71e8ee8e-0b55-40a1-a297-21ef89aba4dc"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-reseau-choletbus",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-compagniedesautobusdemonaco~seau~compagnie",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/30421536-6405-4437-a7b3-498f24c05ab5"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-au-11-aout-2025",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-cucm~seau~monr~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/128b06bc-f263-4530-8e03-395402f87256"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-du-reseau-monrezo-cucm-gtfs-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-cvlmobilit~seau~cvl~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/6348dadb-600c-42c8-bbea-f6ac09505ed3"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-cvlmobilite-plan-de-transport-theorique-ligne-a-format-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-dinamo~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/7ec415c9-a963-40fc-8350-7ca77cb824c8"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-dinamo",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-dubassin~seau~tub~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0163a7b9-f4b1-4d9b-9af1-dcc0e583c3b4"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/transport-urbain-du-bassin",
+        "share_alike_optional": "no"
+      }
+    },
+    {
       "id": "f-dunkerque~fr",
       "spec": "gtfs",
       "urls": {
@@ -79,6 +354,102 @@
       }
     },
     {
+      "id": "f-espacecoteetbus~seau~bus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/c00d487c-4766-4ca1-b736-e7de110331d9"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-de-la-c-a-beaune-cote-sud-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-estival~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/919b4ca6-11e3-4156-bf59-5c0e7f25d929"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/jeu-de-donnee-spl-estival-2025",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-evalysvaldegaronne~seau~evalys",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/4ea5fb1f-3b42-4bc4-a255-303250fca10d"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-vdg-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-evolity~seau~volity~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b45aa8d8-4bd4-4528-99c7-acfc980fdb09"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/evolity-horaires-theoriques-de-transport-public",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-filbleutours~agr~gat~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/a193c142-366b-4a7b-8afb-c0bdf23ca7ea"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-itineraires-et-horaires-theoriques-des-reseaux-de-transport-des-membres-de-jvmalin",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-foix~seau~agglobus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/8c9dd4f7-f6a2-4760-915e-89e8f9666c5b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-lagglo-bus-de-lagglo-foix-varilhes",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-glazgo~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/4dc52cb9-909e-40dd-80e5-a90073bc80fc"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-glazgo",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-gpso~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/bb187aa1-d027-4a9e-bfa8-67fec4be3c71"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-gpso-gtfs-gtfs-rt",
+        "share_alike_optional": "no"
+      }
+    },
+    {
       "id": "f-grand~dole",
       "spec": "gtfs",
       "urls": {
@@ -86,6 +457,54 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-du-grand-dole"
+      }
+    },
+    {
+      "id": "f-grassesillagesrseauscolaire~seau~scolaire",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/851decd7-714f-45ad-9579-d60c06fad9dd"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/lignes-regulieres-de-transports-sillages-en-pays-de-grasse-urbain-et-scolaire",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-hoplccdelaplainedestres~seau~hopl",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b892a9c7-eda3-4d95-a70b-89b2391e81b0"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-du-reseau-hopla-communaute-de-communes-de-la-plaine-destrees",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-illygo~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/024123a0-8665-4983-90bd-134ef7d70383"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-illygo",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-inglard~seau~hop~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/d10fb9b2-1a5a-498c-ba55-e89cf0136ef1"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/hop-bus-le-reseau-100-gratuit-du-coeur-de-flandre",
+        "share_alike_optional": "no"
       }
     },
     {
@@ -99,6 +518,18 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/reseau-karouest"
+      }
+    },
+    {
+      "id": "f-keolischateauthierry~seau~fablio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/f56b6c9c-0a25-4d87-a1b1-4b108e3d0a22"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-reseau-fablio-lignes-regulieres",
+        "share_alike_optional": "no"
       }
     },
     {
@@ -143,6 +574,102 @@
       }
     },
     {
+      "id": "f-keolis~seau~tan~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0b65dda9-51d3-4d84-811b-8a11629a5e55"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/versions-des-horaires-theoriques-des-lignes-du-reseau-de-bus-au-format-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-kico~seau~kic~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/565533c0-64ae-44d6-9dfa-169be5b805c6"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-kiceo",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-levibvierzon~seau~vib~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/87091347-c7fa-4e63-8fb5-005891ece43b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-le-vib",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-libeobrive~seau~lib~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/87a0b98b-8a5a-4ba7-ad93-5a1fb9924844"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-bri-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-lio~seau~lislenbus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/75f3dd86-0840-445a-92a6-b329bdc61e0c"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-lislenbus-commune-de-lisle-sur-tarn",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-lio~seau~navette~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/257e5818-a7cc-49a4-8ad1-3e84827e6458"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-la-navette-commune-de-graulhet",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-luneo~seau~lun~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/94b9beba-c897-46ca-98a4-a78bf320047a"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-luneo-gtfs-gtfs-rt",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-lyneo2024~seau~lyneo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/6b80d2f2-ecd4-4b52-b481-c8b715ae8948"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-du-reseau-lyneo",
+        "share_alike_optional": "no"
+      }
+    },
+    {
       "id": "f-léo~fr",
       "spec": "gtfs",
       "urls": {
@@ -150,6 +677,114 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/reseau-de-transports-en-commun-de-la-communaute-dagglomeration-de-lauxerrois"
+      }
+    },
+    {
+      "id": "f-mat~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/3bd31fbe-93f4-432d-ade7-ee8d69897880"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-mat",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-moova~seau~devesoul~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0d6e6c56-8926-49b3-87e2-13c6f57c136b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-moova-communaute-dagglomeration-de-vesoul-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-moveterritoiresvendmois~seau~move",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/c85977b8-7d18-439c-935c-935286503003"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-move-vendome",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-mrsogrsivaudan~seau~tougo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/c1067233-c35e-4c53-93b3-050f707bf6a2"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-tougo",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-mrsomtropolegrenobloise~seau~tag",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b6ec7ba4-09bc-46df-b9a1-79a2c2668cf2"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-tag",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-muvitarra~seau~duajaccien~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/3f08460c-8ec7-4b9e-a244-8855292b9e24"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/information-sur-les-transports-en-commun",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-navetteestivaleramatuelle~navette~estivale",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/629ffcc9-152e-4526-9720-3ccf944c97e2"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/golfe-de-saint-tropez-donnees-mobilite-tc-navette-estivale-ramatuelle",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-nemus~seau~flersagglo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/d8b9a49f-db3b-4b53-b0a0-345072ce1249"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-du-reseau-urbain-de-flers-agglo-au-format-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-neobus~seau~delouestvosgien~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/e25586ac-9c14-4872-b00e-e66cd23d4413"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-neobus-communaute-de-communes-de-louest-vosgien-gtfs",
+        "share_alike_optional": "no"
       }
     },
     {
@@ -166,6 +801,18 @@
       }
     },
     {
+      "id": "f-nosbusnogentlerotrou~seau~nosbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/5f1dfae0-7972-4caa-8a5d-e2d90a285585"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-nosbus",
+        "share_alike_optional": "no"
+      }
+    },
+    {
       "id": "f-nouvelle-calédonie~tanéo",
       "spec": "gtfs",
       "urls": {
@@ -179,6 +826,102 @@
       },
       "tags": {
         "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-palmlademande~seau~palmbus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/47bc8088-6c72-43ad-a959-a5bbdd1aa14f"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-gtfs-gtfs-rt-du-reseau-palmbus-cannes-pays-de-lerins",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-phoenix~navette~estivale~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/7213015d-a5b6-429d-84e8-c8c01e4cb84e"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/andemu-gtfs-2025",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-pondibus~seau~pontivy~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/57c8ace6-014d-40cd-b2b5-a9c630f87123"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-pondibus",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-portovecchiaiseuropeparishttpacitadinaportovecchio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/74f0577f-f709-49db-9750-53c9341f6e50"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-a-citadina-porto-vecchio-horaires-theoriques-et-temps-reel",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-primouvgrandperigueux~seau~ribus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/907e15b8-9a0c-4b00-b1b3-325ab1ac7d4c"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-per-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-qub~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/95530333-7002-401d-9d64-2829496d1c36"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-bientot-temps-reel-du-reseau-de-transports-qub-transports-urbains-de-quimper-bretagne-occidentale",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-rbusrochefortocan~seau~bus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0346e2ae-a004-40be-8ded-ffff9046d29d"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-roc-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-rdbm~seau~beemob~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/c1581a3a-0b78-4944-905c-a8530206648a"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-de-transports-beemob-beziers-mediterranee",
+        "share_alike_optional": "no"
       }
     },
     {
@@ -205,6 +948,116 @@
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/donnees-de-mobilite",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-rhdf02com~seau~interurbain~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/4258bcab-8da4-42fe-a811-0135d7476e85"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-gtfs-du-reseau-routier-regional-de-transport-interurbain-02-aisne"
+      }
+    },
+    {
+      "id": "f-rhdf02sco~seau~scolaire~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/46fa1d25-72a8-40e2-849d-c08c096a44c7"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-gtfs-du-reseau-routier-regional-de-transport-scolaire-02-aisne"
+      }
+    },
+    {
+      "id": "f-rhdf62com~seau~interurbain~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/3e744287-1221-47fd-96e0-fa154e79c4f8"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-gtfs-du-reseau-routier-regional-de-transport-interurbain-62-pas-de-calais-1"
+      }
+    },
+    {
+      "id": "f-rhdf80com~seau~interurbain~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/429d30fb-ba6e-4e90-ad82-6d589a98cbfd"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-gtfs-du-reseau-routier-regional-de-transport-interurbain-80-somme"
+      }
+    },
+    {
+      "id": "f-rhdf80sco~seau~scolaire~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/34cc46fd-56f8-450c-802c-f5ad3a4914af"
+      },
+      "license": {
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-gtfs-du-reseau-routier-regional-de-transport-scolaire-80-somme"
+      }
+    },
+    {
+      "id": "f-rseaumistral~seau~mistral~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b0789d9e-5077-4124-b6b2-773353ada8cf"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-de-la-metropole-toulon-provence-mediterranee",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-rso~seau~dusabolien~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/2fc8108a-5b91-455a-8d10-1c938d360a9f"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-reso",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-semop~seau~rezo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/777bdff5-01ee-4f45-aaed-177cbca9a087"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-caux-seine-mobilite-rezobus",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-setram~seau~culemans~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/5339d96c-6d20-4a01-939a-40f7b56d6cc1"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-du-reseau-des-transports-bus-et-tramway-setram-circulant-sur-le-territoire-le-mans-metropole",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-sntsuma~navette~estivale~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/7a182d63-ebe2-4490-8bc8-188ae7312c23"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/golfe-de-saint-tropez-donnees-mobilite-tc-navette-estivale-grimaud",
         "share_alike_optional": "no"
       }
     },
@@ -617,6 +1470,66 @@
       ]
     },
     {
+      "id": "f-sumanavettelacroixvalmer~seau~croix",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/bf169a63-e51b-44b3-bca0-e7aaa3335109"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/golfe-de-saint-tropez-donnees-mobilite-tc-ligne-de-la-croix-valmer",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-suma~seau~estival~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/7b2f319f-a028-4db7-826f-1bd71d636a01"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/golfe-de-saint-tropez-donnees-mobilite-tc-cavalaire-ete",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-suma~seau~hivernal~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/7c5842e2-0420-4e60-a2ad-90c077c03505"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/golfe-de-saint-tropez-donnees-mobilite-tc-cavalaire-sur-mer-hiver",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-surf~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/665d6c43-598d-4d9d-aa98-206072f4dfa0"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-urbain-surf",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-tadao~seau~delenslivin~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/47a5e290-7883-4a40-bdcf-b693f64087b0"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-tadao",
+        "share_alike_optional": "no"
+      }
+    },
+    {
       "id": "f-tanéo~fr",
       "spec": "gtfs",
       "urls": {
@@ -624,6 +1537,114 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/versions-des-horaires-theoriques-des-lignes-du-reseau-de-bus-au-format-gtfs"
+      }
+    },
+    {
+      "id": "f-taoorlans~seau~tao~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/824c3fc5-7631-4147-990a-3621e2786093"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-et-gtfs-rt-reseau-tao-orleans-metropole-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-tgl~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/8a839ea6-21f5-4503-a8e1-05fe0fd2aa8e"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-tgl",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-ticardecompigne~seau~tic~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/3a98dcdb-ca6e-40fc-8da9-09ab7f5661c9"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-tic-urbain-communaute-dagglomeration-de-la-region-de-compiegne-et-de-la-basse-automne",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-ticinterurbainardecompigne~seau~interurbain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/d9ea4b4a-0717-4a7d-bd14-054afa192457"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-tic-interurbain-communaute-dagglomeration-de-la-region-de-compiegne-et-de-la-basse-automne",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-tlphriquedufaron~rique~mont~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/65bb47dd-28de-43c0-92b9-f3208b5f8295"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/telepherique-du-mont-faron",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-tlpmobilits20202028~seau~tlp~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/84f7501c-de7b-46d9-8e0c-14c30d9fa58b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-3",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-tmamontdemarsan~seau~tma~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/03ebd538-f9be-4eb5-ab22-2b72a0ea338c"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-des-reseaux-naq-mdm-nva-m-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-tohmccdespaysdoiseetdhalatte~seau~tohm",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/6fdd303a-7b76-4742-b877-d0923c59505b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-tohm-communaute-de-communes-des-pays-doise-et-dhalatte",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-transdevmontblancbus~seau~arvi",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0602751c-36aa-445d-88e2-aa4c51c13205"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-periodes-scolaires",
+        "share_alike_optional": "no"
       }
     },
     {
@@ -659,6 +1680,30 @@
       }
     },
     {
+      "id": "f-tul~seau~dudelaon~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/ab24abac-0a10-4695-9d4d-c0df885b1970"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-du-reseau-urbain-de-laon-tul-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-tul~seau~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/bd780aef-b3c5-405a-8450-8365a7a0c315"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-du-reseau-de-laval-agglomeration-gtfs",
+        "share_alike_optional": "no"
+      }
+    },
+    {
       "id": "f-u0f7d-pastelmavilleestbelle",
       "spec": "gtfs",
       "urls": {
@@ -672,6 +1717,29 @@
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/bus-pastel-saint-quentin-horaires-2024"
       }
+    },
+    {
+      "id": "f-u0fn-smtd",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/99cf5e2f-87c2-4ff1-bc0d-32f04cc213ab",
+        "static_historic": [
+          "http://www.excellance.fr/gtfs.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0fn-smtd",
+          "name": "Syndicat Mixte des Transports du Douaisis",
+          "short_name": "SMTD",
+          "website": "http://www.smtd.fr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "smtd"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-u0kz-optymo~belfort",
@@ -699,6 +1767,126 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-uggomobilite~seau~uggo~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/3ba2db00-235a-4958-980e-5cdd20ce204e"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-transport-2024",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-valmorel~navettes~saisonni~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/300108a3-f8c1-4bc8-873e-f1243d49716b"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-de-la-station-de-ski-valmorel-gtfs-gtfs-rt",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-va~navettes~hivernales~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/4d976a6e-2dcf-40e5-9bdb-5bc3c52325aa"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/navettes-stations-hiver-2024-2025-reseau-vai",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-va~navette~estivale~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/619cfea8-a866-40bc-b431-b7f85af6066f"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/navette-chorges-chanteloube-ete-2025-reseau-vai",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-va~seau~embrun~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/bb9234b1-3837-4765-b630-276dc8bdabea"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-vai-embrun",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-viabastia~seau~via~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/f88dae7d-cf93-4a4b-aa82-9256d5f3cefc"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/via-bastia-1",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-viastrada~seau~interurbain~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/fe20cb23-34b8-4965-acf7-1b28bf966891"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-transport-via-strada-les-cars-corse-du-sud",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-videncegrandcahors~seau~evidence",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/1f768fa6-ee56-44d8-b322-75b946128fd8"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-gtfs-du-reseau-de-transports-public-du-grand-cahors",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-villebagneredebigorre~navettes~bagn",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/2a189c2d-7ccd-4b2e-bca0-40df0734fe0a"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-des-navettes-de-la-ligne-bagneres-la-mongie-gtfs-gtfs-rt",
+        "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-villeneuvesurlot~seau~elios~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/9248b0d3-3675-491b-8990-8058f0fdbcb5"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/elios-transports-urbains-du-grand-villeneuvois",
+        "share_alike_optional": "no"
+      }
     },
     {
       "id": "f-vrm~fr",
