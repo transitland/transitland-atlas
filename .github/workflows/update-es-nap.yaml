@@ -1,0 +1,60 @@
+name: Update Spanish NAP feeds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install uv
+      uses: astral-sh/setup-uv@v6
+      with:
+        cache-dependency-glob: |
+          external-data-for-reference/spain/*.py
+          scripts/*.py
+    - name: Install transitland-lib
+      run: scripts/install-transitland-lib.sh
+    - name: Fetch latest Spanish NAP data
+      working-directory: external-data-for-reference/spain
+      run: uv run collect-nap-gtfs.py
+      env:
+        SPANISH_NAP_API_KEY: ${{ secrets.SPANISH_NAP_API_KEY }}
+    - name: Format in the opinionated DMFR format
+      run: find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
+    - name: Validate feeds
+      working-directory: scripts
+      run: uv run validate-feeds.py
+      env:
+        DMFR_SCHEMA_VERSION: v0.6.0
+    - name: Create branch, commit, and PR if changes exist
+      run: |
+        set -eu
+        git config user.name "Automated Bot"
+        git config user.email "info@interline.io"
+        
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "Working directory is clean."
+          exit 0
+        fi
+        
+        echo "Working directory has uncommitted changes."
+        BRANCH_NAME="spanish-nap-$(date +%F)-run-${{ github.run_number }}"
+        git checkout -b "${BRANCH_NAME}"
+        git add -A
+        git commit -m "Updated Spanish NAP feeds from nap.transportes.gob.es at $(date -u)"
+        git push --set-upstream origin "${BRANCH_NAME}"
+        gh pr create \
+          --title "Automatic update of Spanish NAP feeds" \
+          --body "Automatically updated Spanish NAP feeds from nap.transportes.gob.es" \
+          --base main
+        gh workflow run validate.yaml --ref "${BRANCH_NAME}"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

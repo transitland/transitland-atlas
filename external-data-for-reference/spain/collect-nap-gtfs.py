@@ -1,4 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+
+# /// script
+# dependencies = [
+#   "requests==2.32.5",
+# ]
+# ///
 
 """
 Query the Spanish National Access Point (NAP) API and generate DMFR file.
@@ -6,13 +12,13 @@ Query the Spanish National Access Point (NAP) API and generate DMFR file.
 This script will:
 1. Query the NAP API to get all GTFS feeds
 2. Transform the data into DMFR format
-3. Save a single DMFR file to ./feeds/nap.transportes.gob.es.dmfr.json
+3. Save a single DMFR file to feeds/nap.transportes.gob.es.dmfr.json
 
 See https://nap.transportes.gob.es/Account/InstruccionesAPI
 
 Usage:
     export SPANISH_NAP_API_KEY=your-api-key
-    python3 scripts/debug/scrape-spanish-nap.py [--save-api-response]
+    uv run collect-nap-gtfs.py [--save-api-response]
 """
 
 import os
@@ -32,6 +38,10 @@ import re
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+# Transitland Atlas repo paths
+REPO_ROOT = Path(__file__).parent.parent.parent
+FEEDS_DIR = REPO_ROOT / "feeds"
 
 # API configuration
 API_BASE_URL = "https://nap.transportes.gob.es/api"
@@ -256,7 +266,7 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
 
 def save_dmfr_file(feeds: List[Dict]):
     """Save all feeds to a single DMFR file, preserving existing records."""
-    filename = "../feeds/nap.transportes.gob.es.dmfr.json"
+    dmfr_file = FEEDS_DIR / "nap.transportes.gob.es.dmfr.json"
     
     # Try to read existing file
     existing_dmfr = {
@@ -265,8 +275,8 @@ def save_dmfr_file(feeds: List[Dict]):
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
     try:
-        if os.path.exists(filename):
-            with open(filename, 'r', encoding='utf-8') as f:
+        if dmfr_file.exists():
+            with open(dmfr_file, 'r', encoding='utf-8') as f:
                 existing_dmfr = json.load(f)
                 logger.info(f"Found existing DMFR file with {len(existing_dmfr.get('feeds', []))} feeds")
     except Exception as e:
@@ -274,12 +284,18 @@ def save_dmfr_file(feeds: List[Dict]):
     
     # Create lookup of existing feeds by fichero_id
     existing_feeds_by_id = {}
+    feeds_to_preserve = []  # Feeds that should be preserved (no fichero_id = manually added or from other sources)
+    
     for feed in existing_dmfr.get('feeds', []):
         fichero_id = feed.get('tags', {}).get('es_nap_fichero_id')
-        if fichero_id:
+        
+        # Preserve feeds that don't have es_nap_fichero_id tag (manually added or from other sources)
+        if not fichero_id:
+            feeds_to_preserve.append(feed)
+        else:
             existing_feeds_by_id[fichero_id] = feed
     
-    # Process new feeds
+    # Process new feeds - first add fichero_id to each feed's tags
     updated_feeds = []
     new_feeds_by_id = {}
     
@@ -290,14 +306,23 @@ def save_dmfr_file(feeds: List[Dict]):
             continue
         new_feeds_by_id[fichero_id] = feed
     
+    # Track counts for logging
+    existing_matched_count = 0
+    
     # First add all existing feeds that are still present in new data
     for fichero_id, feed in existing_feeds_by_id.items():
         if fichero_id in new_feeds_by_id:
             updated_feeds.append(feed)  # Keep the existing record
+            existing_matched_count += 1
             del new_feeds_by_id[fichero_id]  # Remove from new feeds since we're keeping existing
     
     # Then add all new feeds
+    new_count = len(new_feeds_by_id)
     updated_feeds.extend(new_feeds_by_id.values())
+    
+    # Finally, add feeds that should be preserved (GTFS-RT, manually added, etc.)
+    preserved_count = len(feeds_to_preserve)
+    updated_feeds.extend(feeds_to_preserve)
     
     # Create final DMFR data
     dmfr_data = {
@@ -307,18 +332,18 @@ def save_dmfr_file(feeds: List[Dict]):
     }
 
     # Ensure feeds directory exists
-    Path("feeds").mkdir(exist_ok=True)
+    FEEDS_DIR.mkdir(parents=True, exist_ok=True)
 
     # Save file with consistent formatting
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(dmfr_file, 'w', encoding='utf-8') as f:
         json.dump(dmfr_data, f, indent=2, ensure_ascii=False)
         f.write('\n')
     
-    logger.info(f"Created DMFR file with {len(updated_feeds)} feeds ({len(new_feeds_by_id)} new, {len(existing_feeds_by_id)} existing)")
+    logger.info(f"Created DMFR file with {len(updated_feeds)} feeds ({new_count} new, {existing_matched_count} existing from API, {preserved_count} preserved)")
 
 def main():
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description="Scrape Spanish NAP API for GTFS feeds")
+    parser = argparse.ArgumentParser(description="Collect Spanish NAP API GTFS feeds")
     parser.add_argument("--save-api-response", action="store_true", help="Save API responses to debug directory")
     global args
     args = parser.parse_args()
@@ -345,3 +370,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
