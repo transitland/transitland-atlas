@@ -59,6 +59,21 @@
       }
     },
     {
+      "id": "f-bingoshosen~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/BingoShosen/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-daishinto~radiantcity~yokohama~jp",
       "spec": "gtfs",
       "urls": {
@@ -191,6 +206,21 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://api.odpt.org/api/v4/files/odpt/HigashiyamatoCity/AllLines_ODPT.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-himeshimavill~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/HimeshimaVill/AllLines.zip?date=current"
       },
       "license": {
         "url": "https://developer.odpt.org/terms/data_basic_license.html"
@@ -727,6 +757,36 @@
       }
     },
     {
+      "id": "f-kyushoferry~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KyushoFerry/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-marubunkisen~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/MarubunKisen/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-matsuecitytrafficoffice~alllines~jp",
       "spec": "gtfs",
       "urls": {
@@ -764,6 +824,21 @@
       },
       "license": {
         "url": "https://developer.odpt.org/terms/data_basic_license.html"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-mizuhotown~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/MizuhoTown/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
       },
       "authorization": {
         "type": "query_param",
@@ -1024,6 +1099,21 @@
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-taneyakukousokusen~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TaneyakuKousokusen/AllLines.zip?date=current"
+      },
+      "license": {
+        "url": "https://developer.odpt.org/terms/data_basic_license.html"
       },
       "authorization": {
         "type": "query_param",
@@ -1301,6 +1391,16 @@
       ]
     },
     {
+      "onestop_id": "o-bingoshosen",
+      "name": "備後商船",
+      "short_name": "Bingo Shosen",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-bingoshosen~alllines~jp"
+        }
+      ]
+    },
+    {
       "onestop_id": "o-daishinto",
       "name": "大新東株式会社",
       "short_name": "DAISHINTO Inc.",
@@ -1374,6 +1474,17 @@
         },
         {
           "feed_onestop_id": "f-higashiyamatocity~alllines~odpt~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-himeshimavill",
+      "name": "姫島村（大分県）",
+      "short_name": "Himeshima Village (Oita Pref.)",
+      "website": "https://www.himeshima.jp/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-himeshimavill~alllines~jp"
         }
       ]
     },
@@ -1640,6 +1751,26 @@
       ]
     },
     {
+      "onestop_id": "o-kyushoferry",
+      "name": "九商フェリー",
+      "short_name": "Kyusho Ferry",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kyushoferry~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-marubunkisen",
+      "name": "丸文松島汽船",
+      "short_name": "Marubun Matsushima Kisen",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-marubunkisen~alllines~jp"
+        }
+      ]
+    },
+    {
       "onestop_id": "o-matsuecitytrafficoffice",
       "name": "松江市交通局",
       "short_name": "Matsue City Traffic Office",
@@ -1669,6 +1800,17 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-miyakevill~allline~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-mizuhotown",
+      "name": "瑞穂町",
+      "short_name": "Mizuho Town",
+      "website": "https://www.town.mizuho.tokyo.jp",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-mizuhotown~alllines~jp"
         }
       ]
     },
@@ -1834,6 +1976,16 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-tachikawacity~kururin~bus~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-taneyakukousokusen",
+      "name": "種子屋久高速船",
+      "short_name": "Taneyaku Kousokusen",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-taneyakukousokusen~alllines~jp"
         }
       ]
     },
