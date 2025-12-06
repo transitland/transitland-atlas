@@ -32,7 +32,7 @@ jobs:
       run: |
         find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
     - name: Validate feeds
-      run: cd scripts && python validate-feeds.py
+      run: cd scripts && uv run validate-feeds.py
     - name: "If any changes: Create a branch, commit, and PR"
       run: |-
         git config user.name "Automated Bot"
