@@ -52,7 +52,13 @@ jobs:
         git add -A
         git commit -m "Updated Japanese GTFS feeds from gtfs-data.jp, ODPT, and github.com/tshimada291/gtfs-jp-list-datecheck at $(date -u)"
         git push --set-upstream origin "${BRANCH_NAME}"
-        gh pr create --title "Automatic update of Japanese GTFS feeds" --fill-verbose
+        gh pr create \
+          --title "Automatic update of Japanese GTFS feeds" \
+          --body "Automatically updated Japanese GTFS feeds from:
+            - gtfs-data.jp
+            - ODPT (Public Transportation Open Data Center)
+            - github.com/tshimada291/gtfs-jp-list-datecheck" \
+          --base main
         gh workflow run validate.yml --ref "${BRANCH_NAME}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
