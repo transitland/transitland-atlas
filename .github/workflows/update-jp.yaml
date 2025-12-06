@@ -41,11 +41,12 @@ jobs:
       run: |-
         git config user.name "Automated Bot"
         git config user.email "info@interline.io"
-        if ! git_status_output="$(git status --porcelain)"; then
+        git_status_output="$(git status --porcelain)" || {
             error_code="$?"
             echo "'git status' had an error: $error_code" 
             exit 1
-        elif [ -z "$git_status_output" ]; then
+        }
+        if [ -z "$git_status_output" ]; then
             echo "Working directory is clean."
         else
             echo "Working directory has UNCOMMITTED CHANGES."
