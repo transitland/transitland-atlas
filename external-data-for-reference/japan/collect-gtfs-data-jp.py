@@ -2,7 +2,7 @@
 
 # /// script
 # dependencies = [
-#   "requests>=2.31.0",
+#   "requests==2.32.5",
 # ]
 # ///
 
@@ -536,6 +536,7 @@ def main():
         logger.info("Skipping detailed analysis file generation.")
     
     # Generate DMFR file for new feeds (static + real-time + operators)
+    dmfr_file = None
     if new_feeds or all_realtime_feeds or all_operators or feeds_to_remove:
         # First, read existing DMFR file to remove discontinued feeds
         existing_dmfr_file = FEEDS_DIR / 'gtfs-data-jp.dmfr.json'

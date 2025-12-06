@@ -15,43 +15,50 @@ jobs:
         python-version: '3.10'
     - name: Install uv
       uses: astral-sh/setup-uv@v6
+      with:
+        cache-dependency-glob: |
+          external-data-for-reference/japan/*.py
+          scripts/*.py
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Fetch latest GTFS Data JP data (official source)
-      run: |
-        cd external-data-for-reference/japan
-        uv run collect-gtfs-data-jp.py
+      working-directory: external-data-for-reference/japan
+      run: uv run collect-gtfs-data-jp.py
     - name: Fetch latest ODPT GTFS data
-      run: |
-        cd external-data-for-reference/japan
-        uv run collect-odpt-gtfs.py
+      working-directory: external-data-for-reference/japan
+      run: uv run collect-odpt-gtfs.py
     - name: Fetch latest data from tshimada291/gtfs-jp-list-datecheck
-      run: |-
-        cd external-data-for-reference/japan && uv run convert-tshimada291-list-csv-to-dmfr.py
+      working-directory: external-data-for-reference/japan
+      run: uv run convert-tshimada291-list-csv-to-dmfr.py
     - name: Format in the opinionated DMFR format
-      run: |
-        find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
+      run: find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
     - name: Validate feeds
-      run: cd scripts && python validate-feeds.py
-    - name: "If any changes: Create a branch, commit, and PR"
-      run: |-
+      working-directory: scripts
+      run: uv run validate-feeds.py
+    - name: Create branch, commit, and PR if changes exist
+      run: |
+        set -eu
         git config user.name "Automated Bot"
         git config user.email "info@interline.io"
-        if ! git_status_output="$(git status --porcelain)"; then
-            error_code="$?"
-            echo "'git status' had an error: $error_code" 
-            exit 1
-        elif [ -z "$git_status_output" ]; then
-            echo "Working directory is clean."
-        else
-            echo "Working directory has UNCOMMITTED CHANGES."
-            BRANCH_NAME=japanese-feeds-$(date +%F)
-            git checkout -b ${BRANCH_NAME}
-            git add -A
-            git commit -m "Updated Japanese GTFS feeds from gtfs-data.jp, ODPT, and github.com/tshimada291/gtfs-jp-list-datecheck at $(date -u)"
-            git push --set-upstream origin ${BRANCH_NAME}
-            gh pr create --title "Automatic update of Japanese GTFS feeds" --fill-verbose
-            gh workflow run validate.yml --ref ${BRANCH_NAME}
+        
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "Working directory is clean."
+          exit 0
         fi
+        
+        echo "Working directory has uncommitted changes."
+        BRANCH_NAME="japanese-feeds-$(date +%F)-run-${{ github.run_number }}"
+        git checkout -b "${BRANCH_NAME}"
+        git add -A
+        git commit -m "Updated Japanese GTFS feeds from gtfs-data.jp, ODPT, and github.com/tshimada291/gtfs-jp-list-datecheck at $(date -u)"
+        git push --set-upstream origin "${BRANCH_NAME}"
+        gh pr create \
+          --title "Automatic update of Japanese GTFS feeds" \
+          --body "Automatically updated Japanese GTFS feeds from:
+            - gtfs-data.jp
+            - ODPT (Public Transportation Open Data Center)
+            - github.com/tshimada291/gtfs-jp-list-datecheck" \
+          --base main
+        gh workflow run validate.yaml --ref "${BRANCH_NAME}"
       env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
