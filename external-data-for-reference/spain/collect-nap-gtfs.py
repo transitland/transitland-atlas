@@ -12,7 +12,7 @@ Query the Spanish National Access Point (NAP) API and generate DMFR file.
 This script will:
 1. Query the NAP API to get all GTFS feeds
 2. Transform the data into DMFR format
-3. Save a single DMFR file to ../../feeds/nap.transportes.gob.es.dmfr.json
+3. Save a single DMFR file to feeds/nap.transportes.gob.es.dmfr.json
 
 See https://nap.transportes.gob.es/Account/InstruccionesAPI
 
@@ -38,6 +38,10 @@ import re
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+# Transitland Atlas repo paths
+REPO_ROOT = Path(__file__).parent.parent.parent
+FEEDS_DIR = REPO_ROOT / "feeds"
 
 # API configuration
 API_BASE_URL = "https://nap.transportes.gob.es/api"
@@ -262,7 +266,7 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
 
 def save_dmfr_file(feeds: List[Dict]):
     """Save all feeds to a single DMFR file, preserving existing records."""
-    filename = "../../feeds/nap.transportes.gob.es.dmfr.json"
+    dmfr_file = FEEDS_DIR / "nap.transportes.gob.es.dmfr.json"
     
     # Try to read existing file
     existing_dmfr = {
@@ -271,8 +275,8 @@ def save_dmfr_file(feeds: List[Dict]):
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
     try:
-        if os.path.exists(filename):
-            with open(filename, 'r', encoding='utf-8') as f:
+        if dmfr_file.exists():
+            with open(dmfr_file, 'r', encoding='utf-8') as f:
                 existing_dmfr = json.load(f)
                 logger.info(f"Found existing DMFR file with {len(existing_dmfr.get('feeds', []))} feeds")
     except Exception as e:
@@ -285,7 +289,7 @@ def save_dmfr_file(feeds: List[Dict]):
         if fichero_id:
             existing_feeds_by_id[fichero_id] = feed
     
-    # Process new feeds
+    # Process new feeds - first add fichero_id to each feed's tags
     updated_feeds = []
     new_feeds_by_id = {}
     
@@ -313,11 +317,10 @@ def save_dmfr_file(feeds: List[Dict]):
     }
 
     # Ensure feeds directory exists
-    feeds_dir = Path(filename).parent
-    feeds_dir.mkdir(parents=True, exist_ok=True)
+    FEEDS_DIR.mkdir(parents=True, exist_ok=True)
 
     # Save file with consistent formatting
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(dmfr_file, 'w', encoding='utf-8') as f:
         json.dump(dmfr_data, f, indent=2, ensure_ascii=False)
         f.write('\n')
     
