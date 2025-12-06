@@ -14,6 +14,12 @@ import subprocess
 import logging
 
 dmfr_url = 'https://github.com/transitland/transitland-atlas/raw/refs/heads/main/feeds/tshimada291.github.com.dmfr.json'
+# URLs for other Japanese DMFR files to check for duplicate URLs
+other_jp_dmfr_urls = [
+    'https://github.com/transitland/transitland-atlas/raw/refs/heads/main/feeds/gtfs-data-jp.dmfr.json',
+    'https://github.com/transitland/transitland-atlas/raw/refs/heads/main/feeds/odpt-gtfs.dmfr.json',
+    'https://github.com/transitland/transitland-atlas/raw/refs/heads/main/feeds/odpt-gtfs-manual-additions.dmfr.json',
+]
 csv_url = 'https://github.com/tshimada291/gtfs-jp-list-datecheck/raw/refs/heads/main/GTFS_fixedURL_LastModified.csv'
 
 existing_feed_urls_to_skip = [
@@ -127,6 +133,16 @@ def check_for_feed_in_existing_dmfr(feed_url, existing_dmfr):
     return False, None
 
 
+# Check if a feed URL exists in any DMFR file (returns True if found, False otherwise)
+def check_for_feed_url_in_any_dmfr(feed_url, *dmfr_files):
+    """Check if a feed URL exists in any of the provided DMFR files.
+    Returns True if the URL is found in any DMFR file, False otherwise."""
+    for dmfr in dmfr_files:
+        if dmfr and check_for_feed_in_existing_dmfr(feed_url, dmfr)[0]:
+            return True
+    return False
+
+
 if __name__ == "__main__":
     # Set up logging
     logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
@@ -137,8 +153,18 @@ if __name__ == "__main__":
     # Remove duplicate URLs
     data = remove_duplicate_urls(data)
 
-    # Load existing DMFR
+    # Load existing DMFR files
     existing_dmfr = load_existing_dmfr(dmfr_url)
+    
+    # Load all other Japanese DMFR files to check for duplicate URLs
+    other_jp_dmfrs = []
+    for url in other_jp_dmfr_urls:
+        try:
+            dmfr = load_existing_dmfr(url)
+            other_jp_dmfrs.append(dmfr)
+            logging.info(f"Loaded DMFR file for duplicate checking: {url}")
+        except Exception as e:
+            logging.warning(f"Failed to load DMFR file {url}: {e}")
 
     new_dmfr = {
         "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
@@ -156,6 +182,11 @@ if __name__ == "__main__":
                 logging.info("Skipping a feed URL that is managed in a different DMFR file")
                 continue
             if feed_url:
+                # Check if URL exists in any other Japanese DMFR file - if so, skip it
+                if check_for_feed_url_in_any_dmfr(feed_url, *other_jp_dmfrs):
+                    logging.info(f"Skipping feed URL that exists in another Japanese DMFR file: {feed_url}")
+                    continue
+                # Check if URL exists in existing tshimada291 DMFR - if so, include it
                 result, feed = check_for_feed_in_existing_dmfr(feed_url, existing_dmfr)
                 if result and feed:
                     new_dmfr.setdefault("feeds", []).append(feed)
