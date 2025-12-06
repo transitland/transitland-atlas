@@ -59,6 +59,6 @@ jobs:
             - ODPT (Public Transportation Open Data Center)
             - github.com/tshimada291/gtfs-jp-list-datecheck" \
           --base main
-        gh workflow run validate.yml --ref "${BRANCH_NAME}"
+        gh workflow run validate.yaml --ref "${BRANCH_NAME}"
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
