@@ -284,9 +284,15 @@ def save_dmfr_file(feeds: List[Dict]):
     
     # Create lookup of existing feeds by fichero_id
     existing_feeds_by_id = {}
+    feeds_to_preserve = []  # Feeds that should be preserved (no fichero_id = manually added or from other sources)
+    
     for feed in existing_dmfr.get('feeds', []):
         fichero_id = feed.get('tags', {}).get('es_nap_fichero_id')
-        if fichero_id:
+        
+        # Preserve feeds that don't have es_nap_fichero_id tag (manually added or from other sources)
+        if not fichero_id:
+            feeds_to_preserve.append(feed)
+        else:
             existing_feeds_by_id[fichero_id] = feed
     
     # Process new feeds - first add fichero_id to each feed's tags
@@ -300,14 +306,23 @@ def save_dmfr_file(feeds: List[Dict]):
             continue
         new_feeds_by_id[fichero_id] = feed
     
+    # Track counts for logging
+    existing_matched_count = 0
+    
     # First add all existing feeds that are still present in new data
     for fichero_id, feed in existing_feeds_by_id.items():
         if fichero_id in new_feeds_by_id:
             updated_feeds.append(feed)  # Keep the existing record
+            existing_matched_count += 1
             del new_feeds_by_id[fichero_id]  # Remove from new feeds since we're keeping existing
     
     # Then add all new feeds
+    new_count = len(new_feeds_by_id)
     updated_feeds.extend(new_feeds_by_id.values())
+    
+    # Finally, add feeds that should be preserved (GTFS-RT, manually added, etc.)
+    preserved_count = len(feeds_to_preserve)
+    updated_feeds.extend(feeds_to_preserve)
     
     # Create final DMFR data
     dmfr_data = {
@@ -324,7 +339,7 @@ def save_dmfr_file(feeds: List[Dict]):
         json.dump(dmfr_data, f, indent=2, ensure_ascii=False)
         f.write('\n')
     
-    logger.info(f"Created DMFR file with {len(updated_feeds)} feeds ({len(new_feeds_by_id)} new, {len(existing_feeds_by_id)} existing)")
+    logger.info(f"Created DMFR file with {len(updated_feeds)} feeds ({new_count} new, {existing_matched_count} existing from API, {preserved_count} preserved)")
 
 def main():
     # Parse command line arguments
