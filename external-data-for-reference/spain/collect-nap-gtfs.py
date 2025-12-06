@@ -1,4 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+
+# /// script
+# dependencies = [
+#   "requests==2.32.5",
+# ]
+# ///
 
 """
 Query the Spanish National Access Point (NAP) API and generate DMFR file.
@@ -6,13 +12,13 @@ Query the Spanish National Access Point (NAP) API and generate DMFR file.
 This script will:
 1. Query the NAP API to get all GTFS feeds
 2. Transform the data into DMFR format
-3. Save a single DMFR file to ./feeds/nap.transportes.gob.es.dmfr.json
+3. Save a single DMFR file to ../../feeds/nap.transportes.gob.es.dmfr.json
 
 See https://nap.transportes.gob.es/Account/InstruccionesAPI
 
 Usage:
     export SPANISH_NAP_API_KEY=your-api-key
-    python3 scripts/debug/scrape-spanish-nap.py [--save-api-response]
+    uv run collect-nap-gtfs.py [--save-api-response]
 """
 
 import os
@@ -256,7 +262,7 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
 
 def save_dmfr_file(feeds: List[Dict]):
     """Save all feeds to a single DMFR file, preserving existing records."""
-    filename = "../feeds/nap.transportes.gob.es.dmfr.json"
+    filename = "../../feeds/nap.transportes.gob.es.dmfr.json"
     
     # Try to read existing file
     existing_dmfr = {
@@ -307,7 +313,8 @@ def save_dmfr_file(feeds: List[Dict]):
     }
 
     # Ensure feeds directory exists
-    Path("feeds").mkdir(exist_ok=True)
+    feeds_dir = Path(filename).parent
+    feeds_dir.mkdir(parents=True, exist_ok=True)
 
     # Save file with consistent formatting
     with open(filename, 'w', encoding='utf-8') as f:
@@ -318,7 +325,7 @@ def save_dmfr_file(feeds: List[Dict]):
 
 def main():
     # Parse command line arguments
-    parser = argparse.ArgumentParser(description="Scrape Spanish NAP API for GTFS feeds")
+    parser = argparse.ArgumentParser(description="Collect Spanish NAP API GTFS feeds")
     parser.add_argument("--save-api-response", action="store_true", help="Save API responses to debug directory")
     global args
     args = parser.parse_args()
@@ -345,3 +352,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
