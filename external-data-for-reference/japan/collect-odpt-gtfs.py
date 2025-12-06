@@ -2,7 +2,7 @@
 
 # /// script
 # dependencies = [
-#   "requests>=2.31.0",
+#   "requests==2.32.5",
 # ]
 # ///
 
