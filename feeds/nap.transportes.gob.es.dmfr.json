@@ -58,6 +58,37 @@
       ]
     },
     {
+      "id": "f-ancebus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2071"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2071"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ancebus~sl",
+          "name": "ANCEBUS, SL",
+          "website": "http://www.ancebus.com/"
+        }
+      ]
+    },
+    {
       "id": "f-autobuses~del~área~del~campo~de~belchite~con~zaragoza~c12",
       "spec": "gtfs",
       "urls": {
@@ -147,6 +178,37 @@
           "onestop_id": "o-casas",
           "name": "CASAS",
           "website": "http://WWW.MOVENTIS.ES/MARCAS/EMPRESA-CASAS"
+        }
+      ]
+    },
+    {
+      "id": "f-autobuses~interurbanos~de~la~comunidad~de~madrid",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/1361"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "1361"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-consorcio~regional~de~transportes~de~madrid",
+          "name": "Consorcio Regional de Transportes de Madrid",
+          "website": "https://www.crtm.es"
         }
       ]
     },
@@ -441,6 +503,56 @@
           "website": "https://www.bus.gal"
         }
       ]
+    },
+    {
+      "id": "f-autobuses~y~trenes~en~cataluña~versión~completa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2060"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2060",
+        "notes": "Operators: Hispano Igualadina, ALSINA GRAELLS, Soler i Sauret, DIREXIS TGO, DIREXIS TUSGSAL, Avanza, Monbus i Julià, Moventis, Monbus (Papiol), Monbus (Aerobús), Monbus (Horta), Moventis (Port), HIFE, Autocorb, RENFE OPERADORA, Sagalés (Bages), Autocares Izaro, ALSA - Nex Continental, HIFE - Hispano de Fuente en Segures, SA, CASAS, Sagalés (Mataró - St. Celoni), Sagalés (Costa), Empresa Plana, ESTARRIOL, FGC, Figueres de Serveis, SA, Autocars Barrera, SL, Sagalés (Vallès Oriental), Autocars Gamón, Transports Municipals del Girones, Transgran, liO Occitanie 31, liO Occitanie 66, AUTOBUSOS DE LLEIDA, Balliu SL, BusManresa, Masats Transports General, Mataro, urbà Mont-roig, TPP Domènech Autocars, TPO, Sagalés (Osona), E. MONTFERRI HNOS., S.L., TPVP Transport públic de viatgers Puigcerdà, MOVENTIS COSTA, REUS TRANSPORT, Rodalies de Catalunya - Renfe Cercanías, Estarriol, Rubi, SARFA, SARBUS, Martorell, Busgarvi, SL, Santvibus, EMT, TRAMBESÒS, TRAMBAIX, TCC, Transports Elèctrics Interurbans S.A., AMB, Transports Generals d'Olesa, TMB, Autocares Barrera, SL, Transports Urbans de Sabadell, VallsBus - Forbus SL, Autocars del Penedès, Bus Municipal Vandellós i l'Hosp. de l'Infant, Urbà de Vic"
+      }
+    },
+    {
+      "id": "f-autobuses~y~trenes~en~cataluña~versión~simplificada",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2059"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2059",
+        "notes": "Operators: Busgarvi, SL, Santvibus, EMT, TRAMBESÒS, TRAMBAIX, TCC, Transports Elèctrics Interurbans S.A., Transports Generals d'Olesa, TMB, Autocares Barrera, SL, HIFE, Transports Urbans de Sabadell, VallsBus - Forbus SL, Autocars del Penedès, Bus Municipal Vandellós i l'Hosp. de l'Infant, Urbà de Vic, Hispano Igualadina, ALSINA GRAELLS, Soler i Sauret, DIREXIS TGO, DIREXIS TUSGSAL, Avanza, Monbus i Julià, Moventis, Monbus (Papiol), Monbus (Aerobús), Monbus (Horta), Moventis (Port), Autocorb, RENFE OPERADORA, Sagalés (Bages), Autocares Izaro, ALSA - Nex Continental, HIFE - Hispano de Fuente en Segures, SA, CASAS, Sagalés (Mataró - St. Celoni), Sagalés (Costa), Empresa Plana, ESTARRIOL, FGC, Figueres de Serveis, SA, Autocars Barrera, SL, Sagalés (Vallès Oriental), Autocars Gamón, Transports Municipals del Girones, Transgran, liO Occitanie 31, liO Occitanie 66, AUTOBUSOS DE LLEIDA, Balliu SL, BusManresa, Masats Transports General, Mataro, urbà Mont-roig, TPP Domènech Autocars, TPO, Sagalés (Osona), E. MONTFERRI HNOS., S.L., TPVP Transport públic de viatgers Puigcerdà, MOVENTIS COSTA, REUS TRANSPORT, Rodalies de Catalunya - Renfe Cercanías, Estarriol, Rubi, SARFA, SARBUS, Martorell"
+      }
     },
     {
       "id": "f-autobusos~de~lleida",
@@ -1406,6 +1518,192 @@
       ]
     },
     {
+      "id": "f-autocares~costa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2069"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2069"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autocares~costa~s~l",
+          "name": "Autocares Costa S. L.",
+          "website": "http://www.autocarescosta.es/"
+        }
+      ]
+    },
+    {
+      "id": "f-autocares~galán~gómez",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2081"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2081"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autocares~galán~gómez~s~l",
+          "name": "Autocares Galán Gómez S.L.",
+          "website": "https://www.autocaresgalan.com/"
+        }
+      ]
+    },
+    {
+      "id": "f-autocares~j~cristeto",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2082"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2082"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autocares~j~cristeto~s~l",
+          "name": "Autocares J. Cristeto S.L.",
+          "website": "https://autocaresjcristeto.com/"
+        }
+      ]
+    },
+    {
+      "id": "f-autocares~lázara",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2072"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2072"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ute~xg~863~lázara~rías~baixas",
+          "name": "UTE XG-863 LÁZARA-RÍAS BAIXAS",
+          "website": "https://autocareslazara.eu/"
+        }
+      ]
+    },
+    {
+      "id": "f-autocares~medina",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2076"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2076"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autocares~medina~sl",
+          "name": "Autocares Medina SL",
+          "website": "http://www.autocaresmedina.com"
+        }
+      ]
+    },
+    {
+      "id": "f-autocares~rafael~nadal",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2050"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2050"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autocares~rafael~nadal",
+          "name": "Autocares Rafael Nadal",
+          "website": "https://www.rafanadalautocares.com"
+        }
+      ]
+    },
+    {
       "id": "f-autocares~rías~baixas",
       "spec": "gtfs",
       "urls": {
@@ -1437,6 +1735,37 @@
       ]
     },
     {
+      "id": "f-autocares~álvarez~de~viajeros",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2070"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2070"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autos~alvarez~de~viajeros~sl",
+          "name": "AUTOS ALVAREZ DE VIAJEROS SL",
+          "website": "http://vulpeti.com/moderniza/B49122856.zip"
+        }
+      ]
+    },
+    {
       "id": "f-a~coruna~es",
       "spec": "gtfs",
       "urls": {
@@ -1464,6 +1793,37 @@
           "onestop_id": "o-ezdn8-tranvíasdelacoruñasa",
           "name": "Tranvías de La Coruña, S.A.",
           "website": "http://www.tranviascoruna.com"
+        }
+      ]
+    },
+    {
+      "id": "f-bermibusa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2063"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2063"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bermibusa",
+          "name": "Bermibusa",
+          "website": "https://www.bermibusa.eus"
         }
       ]
     },
@@ -1763,6 +2123,68 @@
           "onestop_id": "o-emt",
           "name": "EMT",
           "website": "http://www.tib.org"
+        }
+      ]
+    },
+    {
+      "id": "f-erandio~busa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2066"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2066"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-erandiobusa",
+          "name": "Erandiobusa",
+          "website": "http://www.erandiobusa.com/"
+        }
+      ]
+    },
+    {
+      "id": "f-etxebarribus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2065"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2065"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-etxebarri~bus",
+          "name": "Etxebarri Bus",
+          "website": "https://www.etxebarri.eus/es-ES/"
         }
       ]
     },
@@ -2299,6 +2721,68 @@
       ]
     },
     {
+      "id": "f-kbus~urbano~de~barakaldo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2068"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2068"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-kbus",
+          "name": "Kbus",
+          "website": "https://www.kbus.eus/"
+        }
+      ]
+    },
+    {
+      "id": "f-lejoan~busa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2061"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2061"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lejoan~busa",
+          "name": "Lejoan Busa",
+          "website": "http://lejoanbusa.eus/es/"
+        }
+      ]
+    },
+    {
       "id": "f-lurraldebus~arrasate",
       "spec": "gtfs",
       "urls": {
@@ -2542,37 +3026,6 @@
         {
           "onestop_id": "o-lurraldebus~urbano~de~oiartzun",
           "name": "Lurraldebus Urbano De Oiartzun",
-          "website": "https://www.lurraldebus.eus/"
-        }
-      ]
-    },
-    {
-      "id": "f-lurraldebus~pesa",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/1233"
-      },
-      "license": {
-        "url": "https://nap.transportes.gob.es/licencia-datos",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "Powered by MITRAMS",
-        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
-      },
-      "authorization": {
-        "type": "header",
-        "param_name": "ApiKey",
-        "info_url": "https://nap.transportes.gob.es/"
-      },
-      "tags": {
-        "es_nap_fichero_id": "1233"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-lurraldebus~transportes~pesa~s~a",
-          "name": "Lurraldebus Transportes Pesa S.a.",
           "website": "https://www.lurraldebus.eus/"
         }
       ]
@@ -2895,6 +3348,37 @@
       ]
     },
     {
+      "id": "f-pérez~cubero",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2079"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2079"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autocares~perez~cubero",
+          "name": "AUTOCARES PEREZ CUBERO",
+          "website": "https://autocaresperezcubero.com"
+        }
+      ]
+    },
+    {
       "id": "f-renfe~media~larga~distancia~y~ave",
       "spec": "gtfs",
       "urls": {
@@ -2957,6 +3441,36 @@
       ]
     },
     {
+      "id": "f-rodil",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2074"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2074"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ute~rodil",
+          "name": "UTE Rodil"
+        }
+      ]
+    },
+    {
       "id": "f-salamanca~de~transportes~s~a",
       "spec": "gtfs",
       "urls": {
@@ -3015,6 +3529,68 @@
           "onestop_id": "o-sarfa",
           "name": "SARFA",
           "website": "http://WWW.MOVENTIS.ES/MARCAS/SARFA"
+        }
+      ]
+    },
+    {
+      "id": "f-sopelbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2064"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2064"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sopelbus",
+          "name": "Sopelbus",
+          "website": "https://sopela.eus/"
+        }
+      ]
+    },
+    {
+      "id": "f-taxitur",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2075"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2075"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-taxitur~covadonga",
+          "name": "Taxitur Covadonga",
+          "website": "https://www.taxitur.es"
         }
       ]
     },
@@ -3112,6 +3688,31 @@
       ]
     },
     {
+      "id": "f-transporte~interurbano~del~gobierno~de~la~rioja",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2077"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2077",
+        "notes": "Operators: Arribas, Logroza, Jimenez, Rio Alhama, Riojacar"
+      }
+    },
+    {
       "id": "f-transporte~metropolitano~andalucía",
       "spec": "gtfs",
       "urls": {
@@ -3135,6 +3736,37 @@
         "es_nap_fichero_id": "1562",
         "notes": "Operators: Red de Consorcios de Transporte de Andalucía - Área de Sevilla, Red de Consorcios de Transporte de Andalucía - Bahía de Cádiz, Red de Consorcios de Transporte de Andalucía - Área de Granada, Red de Consorcios de Transporte de Andalucía - Área de Málaga, Red de Consorcios de Transporte de Andalucía - Campo de Gibraltar, Red de Consorcios de Transporte de Andalucía - Área de Almería, Red de Consorcios de Transporte de Andalucía - Área de Jaén, Red de Consorcios de Transporte de Andalucía - Área de Córdoba, Red de Consorcios de Transporte de Andalucía - Costa de Huelva"
       }
+    },
+    {
+      "id": "f-transporte~metropolitano~del~gobierno~de~la~rioja",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2078"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2078"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-jimenez",
+          "name": "Jimenez",
+          "website": "https://jimenezmovilidad.es/"
+        }
+      ]
     },
     {
       "id": "f-transporte~metropolitano~de~barcelona~bus~y~metro",
@@ -3191,6 +3823,37 @@
         "es_nap_fichero_id": "1272",
         "notes": "Operators: CONSORCI DE TRANSPORTS DE MALLORCA, Sagalés-Caldentey, Grupo Ruiz, Moventis, CTM R4, SFM R4, AJUNTAMENT DE CALVIA R4, EMT, AJUNTAMENT DE BUNYOLA R4"
       }
+    },
+    {
+      "id": "f-transporte~rural~del~gobierno~de~la~rioja",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2080"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2080"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-jimenez",
+          "name": "Jimenez",
+          "website": "https://jimenezmovilidad.es/"
+        }
+      ]
     },
     {
       "id": "f-transporte~urbano~de~zaragoza",
@@ -3404,6 +4067,68 @@
       ]
     },
     {
+      "id": "f-urbano~de~oñati~oñatiko~herribusa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2062"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2062"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-oñatiko~herribusa",
+          "name": "Oñatiko Herribusa",
+          "website": "https://www.xn--oati-gqa.eus/es/servicios/herribusa"
+        }
+      ]
+    },
+    {
+      "id": "f-urbano~de~tolosa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2067"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2067"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tolosa~hiribusa",
+          "name": "Tolosa Hiribusa",
+          "website": "https://udala.tolosa.eus/es/node/3627"
+        }
+      ]
+    },
+    {
       "id": "f-vac~124~huesca~lleida~con~hijuelas",
       "spec": "gtfs",
       "urls": {
@@ -3526,24 +4251,35 @@
           "website": "https://avanzagrupo.com"
         }
       ]
-    }
-  ],
-  "operators": [
+    },
     {
-      "onestop_id": "o-consorcio~regional~de~transportes~de~madrid",
-      "supersedes_ids": [
-        "o-ezjm-consorcioregionaldetransportesdemadrid",
-        "o-ezj-informaciónoficial~consorcioregionaldetransportesdemadrid"
-      ],
-      "name": "Consorcio Regional de Transportes de Madrid",
-      "short_name": "CRTM",
-      "website": "https://www.crtm.es",
-      "associated_feeds": [
+      "id": "f-viagón~autocares",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2073"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2073"
+      },
+      "operators": [
         {
-          "feed_onestop_id": "f-ezj-informaciónoficial~consorcioregionaldetransportesdemadrid"
-        },
-        {
-          "feed_onestop_id": "f-metro~ligero~y~tranvía~comunidad~de~madrid"
+          "onestop_id": "o-viagon~autocares~sl",
+          "name": "VIAGON AUTOCARES SL",
+          "website": "http://www.autocaresviagon.com/"
         }
       ]
     }
