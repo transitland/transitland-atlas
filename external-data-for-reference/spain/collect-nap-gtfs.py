@@ -310,11 +310,44 @@ def save_dmfr_file(feeds: List[Dict]):
     existing_matched_count = 0
     
     # First add all existing feeds that are still present in new data
-    for fichero_id, feed in existing_feeds_by_id.items():
+    # Merge API updates (URLs, etc.) while preserving operators and other manually-curated fields
+    for fichero_id, existing_feed in existing_feeds_by_id.items():
         if fichero_id in new_feeds_by_id:
-            updated_feeds.append(feed)  # Keep the existing record
+            new_feed = new_feeds_by_id[fichero_id]
+            
+            # Preserve the existing feed's Onestop ID for stability (same fichero_id = same feed)
+            # Also preserve operators from existing feed (they may be manually curated or from previous runs)
+            existing_feed_id = existing_feed.get('id')
+            
+            if 'operators' in existing_feed and existing_feed['operators']:
+                # Keep existing operators, but update other fields from API
+                # The Onestop ID is already preserved in the copy
+                merged_feed = existing_feed.copy()
+                # Update URLs from API (they may have changed)
+                if 'urls' in new_feed:
+                    merged_feed['urls'] = new_feed['urls']
+                # Update other API-provided fields while preserving manually-curated ones
+                if 'license' in new_feed:
+                    merged_feed['license'] = new_feed['license']
+                if 'authorization' in new_feed:
+                    merged_feed['authorization'] = new_feed['authorization']
+                # Merge tags (preserve existing tags, update with new ones from API)
+                # This ensures manually-added tags are preserved while API tags are updated
+                if 'tags' not in merged_feed:
+                    merged_feed['tags'] = {}
+                if 'tags' in new_feed:
+                    # Update with new tags (this will overwrite matching keys like es_nap_fichero_id,
+                    # but preserve any manually-added tags that aren't in the new feed)
+                    merged_feed['tags'].update(new_feed['tags'])
+                updated_feeds.append(merged_feed)
+            else:
+                # No existing operators, use new feed but preserve the existing Onestop ID
+                merged_feed = new_feed.copy()
+                merged_feed['id'] = existing_feed_id
+                updated_feeds.append(merged_feed)
+            
             existing_matched_count += 1
-            del new_feeds_by_id[fichero_id]  # Remove from new feeds since we're keeping existing
+            del new_feeds_by_id[fichero_id]  # Remove from new feeds since we've processed it
     
     # Then add all new feeds
     new_count = len(new_feeds_by_id)
