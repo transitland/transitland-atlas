@@ -220,6 +220,10 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     if len(operators) > 1:
         operator_names = [op.get("nombre", "Unknown Operator") for op in operators]
         operator_summary = "Operators: " + ", ".join(operator_names)
+        # Truncate notes if they're too long (max 250 characters to avoid cutoff)
+        max_note_length = 250
+        if len(operator_summary) > max_note_length:
+            operator_summary = operator_summary[:max_note_length - 3] + "..."
         dmfr_feed["tags"]["notes"] = operator_summary
 
     # Add license
@@ -344,6 +348,9 @@ def save_dmfr_file(feeds: List[Dict]):
                 # No existing operators, use new feed but preserve the existing Onestop ID
                 merged_feed = new_feed.copy()
                 merged_feed['id'] = existing_feed_id
+                # Preserve supersedes_ids if it exists in the existing feed
+                if 'supersedes_ids' in existing_feed:
+                    merged_feed['supersedes_ids'] = existing_feed['supersedes_ids']
                 updated_feeds.append(merged_feed)
             
             existing_matched_count += 1
