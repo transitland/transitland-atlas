@@ -27,7 +27,7 @@ jobs:
       env:
         SPANISH_NAP_API_KEY: ${{ secrets.SPANISH_NAP_API_KEY }}
     - name: Format in the opinionated DMFR format
-      run: find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
+      run: transitland dmfr format --save feeds/nap.transportes.gob.es.dmfr.json
     - name: Validate feeds
       working-directory: scripts
       run: uv run validate-feeds.py

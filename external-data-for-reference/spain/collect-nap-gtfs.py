@@ -327,9 +327,18 @@ def save_dmfr_file(feeds: List[Dict]):
                 # Keep existing operators, but update other fields from API
                 # The Onestop ID is already preserved in the copy
                 merged_feed = existing_feed.copy()
-                # Update URLs from API (they may have changed)
+                # Update URLs from API
+                # Note: Since fichero_id is in the URL, if fichero_id stays the same, URL won't change
+                # So we just preserve any existing static_historic arrays
                 if 'urls' in new_feed:
-                    merged_feed['urls'] = new_feed['urls']
+                    if 'urls' not in merged_feed:
+                        merged_feed['urls'] = {}
+                    # Update static_current from API
+                    if 'static_current' in new_feed['urls']:
+                        merged_feed['urls']['static_current'] = new_feed['urls']['static_current']
+                    # Preserve existing static_historic if it exists
+                    if 'static_historic' in existing_feed.get('urls', {}):
+                        merged_feed['urls']['static_historic'] = existing_feed['urls']['static_historic']
                 # Update other API-provided fields while preserving manually-curated ones
                 if 'license' in new_feed:
                     merged_feed['license'] = new_feed['license']
@@ -351,6 +360,11 @@ def save_dmfr_file(feeds: List[Dict]):
                 # Preserve supersedes_ids if it exists in the existing feed
                 if 'supersedes_ids' in existing_feed:
                     merged_feed['supersedes_ids'] = existing_feed['supersedes_ids']
+                # Preserve existing static_historic if it exists
+                if 'urls' in existing_feed and 'static_historic' in existing_feed['urls']:
+                    if 'urls' not in merged_feed:
+                        merged_feed['urls'] = {}
+                    merged_feed['urls']['static_historic'] = existing_feed['urls']['static_historic']
                 updated_feeds.append(merged_feed)
             
             existing_matched_count += 1
@@ -370,6 +384,11 @@ def save_dmfr_file(feeds: List[Dict]):
         "feeds": updated_feeds,
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
+    
+    # Preserve top-level operators if they exist in the existing file
+    if 'operators' in existing_dmfr:
+        dmfr_data['operators'] = existing_dmfr['operators']
+        logger.info(f"Preserved {len(existing_dmfr['operators'])} top-level operators")
 
     # Ensure feeds directory exists
     FEEDS_DIR.mkdir(parents=True, exist_ok=True)
