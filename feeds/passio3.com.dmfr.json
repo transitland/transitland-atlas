@@ -45,6 +45,42 @@
       ]
     },
     {
+      "id": "f-9qdc-clovistransit~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/clovis/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/clovistransit-ca-us/clovistransit-ca-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qdc-clovistransit",
+          "name": "Clovis Transit",
+          "website": "https://clovistransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9qdc-clovistransit~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "clovistransit",
+            "us_ntd_id": "90313",
+            "wikidata_id": "Q113396103"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qdc-clovistransit~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/clovis/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/clovis/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/clovis/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-9rc-cascadeseast~or~us",
       "spec": "gtfs",
       "urls": {
@@ -1143,7 +1179,7 @@
           "website": "https://cityofolean.org/olean-area-transit-system/",
           "tags": {
             "twitter_general": "oatsolean",
-            "us_ntd_id": "2R02-20975"
+            "us_ntd_id": "20975"
           }
         }
       ]
