@@ -5,8 +5,9 @@
       "id": "f-dr41-ceciltransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.ccgov.org/home/showpublisheddocument/51736/638418521708670000",
+        "static_current": "https://passio3.com/cecil/passioTransit/gtfs/google_transit.zip",
         "static_historic": [
+          "https://www.ccgov.org/home/showpublisheddocument/51736/638418521708670000",
           "https://www.ccgov.org/home/showpublisheddocument/50900/638330494895530000",
           "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Cecil_GTFS.zip"
         ]
@@ -31,6 +32,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dr41-ceciltransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/cecil/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/cecil/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/cecil/passioTransit/gtfs/realtime/serviceAlerts"
+      }
     }
   ]
 }
