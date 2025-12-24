@@ -214,17 +214,6 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     dmfr_feed["tags"] = {
         "es_nap_fichero_id": str(fichero_id)
     }
-    operators = feed_data.get("operadores", [])
-    # if there is a single operator, we're readying an actual operator record
-    # otherwise we'll just put in a note for reference while editing DMFR
-    if len(operators) > 1:
-        operator_names = [op.get("nombre", "Unknown Operator") for op in operators]
-        operator_summary = "Operators: " + ", ".join(operator_names)
-        # Truncate notes if they're too long (max 250 characters to avoid cutoff)
-        max_note_length = 250
-        if len(operator_summary) > max_note_length:
-            operator_summary = operator_summary[:max_note_length - 3] + "..."
-        dmfr_feed["tags"]["notes"] = operator_summary
 
     # Add license
     dmfr_feed["license"] = {
