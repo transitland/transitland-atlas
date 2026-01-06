@@ -5,16 +5,11 @@
       "id": "f-9t9-suntran",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.suntran.com/wp-content/uploads/2021/08/SunTranGTFS.zip",
+        "static_current": "https://GTFS-RT.suntran.com/TMGTFSRealTimeWebService/Static/SunTranGTFS.zip",
         "static_historic": [
+          "https://www.suntran.com/wp-content/uploads/2021/08/SunTranGTFS.zip",
           "https://www.suntran.com/GTFS/SunTranGTFS.zip"
         ]
-      },
-      "license": {
-        "url": "https://www.suntran.com/developers_terms.php"
-      },
-      "tags": {
-        "unstable_url": "true"
       },
       "operators": [
         {
@@ -32,6 +27,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9t9-suntran~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://GTFS-RT.suntran.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://GTFS-RT.suntran.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://GTFS-RT.suntran.com/TMGTFSRealTimeWebService/Alert/Alerts.pb"
+      }
     }
   ]
 }
