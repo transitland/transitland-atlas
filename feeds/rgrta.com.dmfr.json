@@ -5,10 +5,17 @@
       "id": "f-dr8-rochester~geneseeregionaltransportationauthority",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://scheduledata.rgrta.com/google_transit.zip"
+        "static_current": "https://scheduledata.rgrta.com/google_transit.zip"
       },
       "tags": {
         "gtfs_data_exchange": "rochester-genesee-regional-transportation-authority"
+      }
+    },
+    {
+      "id": "f-rts~livingston",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Livingston.zip"
       }
     },
     {
@@ -50,13 +57,6 @@
       }
     },
     {
-      "id": "f-rts~livingston",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://scheduledata.rgrta.com/Regionals/Livingston.zip"
-      }
-    },
-    {
       "id": "f-rts~wayne",
       "spec": "gtfs",
       "urls": {
@@ -79,6 +79,9 @@
           "feed_onestop_id": "f-dr8-rochester~geneseeregionaltransportationauthority"
         },
         {
+          "feed_onestop_id": "f-rts~livingston"
+        },
+        {
           "feed_onestop_id": "f-rts~genesee"
         },
         {
@@ -92,9 +95,6 @@
         },
         {
           "feed_onestop_id": "f-rts~wyoming"
-        },
-        {
-          "feed_onestop_id": "f-rts~livingston"
         },
         {
           "feed_onestop_id": "f-rts~wayne"
