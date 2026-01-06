@@ -5,10 +5,13 @@
       "id": "f-dpwz-guelphtransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://guelph.ca/uploads/google/google_transit.zip"
+        "static_current": "https://gismaps.guelph.ca/Pages/GTFS/google_transit.zip",
+        "static_historic": [
+          "http://guelph.ca/uploads/google/google_transit.zip"
+        ]
       },
       "license": {
-        "url": "http://openguelph.wpengine.com/open-data-guelph/"
+        "url": "https://explore.guelph.ca/pages/terms-of-use"
       },
       "tags": {
         "gtfs_data_exchange": "guelph-transit"
@@ -34,9 +37,9 @@
       "id": "f-guelph~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
-        "realtime_trip_updates": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
-        "realtime_alerts": "http://transitgtfs.guelph.ca:9780/TMGTFSRealTimeWebService/Alert/Alerts.pb"
+        "realtime_vehicle_positions": "https://glphprdtmgtfs.glphtrpcloud.com/tmgtfsrealtimewebservice/vehicle/vehiclepositions.pb",
+        "realtime_trip_updates": "https://glphprdtmgtfs.glphtrpcloud.com/tmgtfsrealtimewebservice/tripupdate/tripupdates.pb",
+        "realtime_alerts": "https://glphprdtmgtfs.glphtrpcloud.com/tmgtfsrealtimewebservice/alert/alerts.pb"
       }
     }
   ]
