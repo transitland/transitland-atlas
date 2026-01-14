@@ -1,0 +1,32 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-societe~des~traversiers~du~quebec",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.traversiers.com/api/gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.donneesquebec.ca/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-societe~des~traversiers~du~quebec",
+      "name": "Société des Traversiers du Québec",
+      "short_name": "STQ",
+      "website": "https://www.traversiers.com/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-societe~des~traversiers~du~quebec"
+        }
+      ]
+    }
+  ]
+}
