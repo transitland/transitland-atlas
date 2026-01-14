@@ -1,49 +1,49 @@
 {
-    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
-    "feeds": [
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-reseau~express~metropolitain",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.gpmmom.ca/gtfs/gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.donneesquebec.ca/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes"
+      }
+    },
+    {
+      "id": "f-reseau~express~metropolitain~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://storage.googleapis.com/transit-terminal-alerts-bucket-production/rem_montreal.pb"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.donneesquebec.ca/licence/#cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-reseau~express~metropolitain",
+      "name": "Réseau express métropolitain",
+      "short_name": "REM",
+      "website": "https://rem.info/",
+      "associated_feeds": [
         {
-            "id": "f-reseau~express~metropolitain",
-            "spec": "gtfs",
-            "urls": {
-                "static_current": "https://gtfs.gpmmom.ca/gtfs/gtfs.zip"
-            },
-            "license": {
-                "spdx_identifier": "CC-BY-4.0",
-                "url": "https://www.donneesquebec.ca/licence/#cc-by",
-                "use_without_attribution": "no",
-                "create_derived_product": "yes",
-                "redistribution_allowed": "yes"
-            }
+          "feed_onestop_id": "f-reseau~express~metropolitain"
         },
         {
-            "id": "f-reseau~express~metropolitain~rt",
-            "spec": "gtfs-rt",
-            "urls": {
-                "realtime_alerts": "https://storage.googleapis.com/transit-terminal-alerts-bucket-production/rem_montreal.pb"
-            },
-            "license": {
-                "spdx_identifier": "CC-BY-4.0",
-                "url": "https://www.donneesquebec.ca/licence/#cc-by",
-                "use_without_attribution": "no",
-                "create_derived_product": "yes",
-                "redistribution_allowed": "yes"
-            }
+          "feed_onestop_id": "f-reseau~express~metropolitain~rt"
         }
-    ],
-    "operators": [
-        {
-            "onestop_id": "o-reseau~express~metropolitain",
-            "name": "Réseau express métropolitain",
-            "short_name": "REM",
-            "website": "https://rem.info/",
-            "associated_feeds": [
-                {
-                    "feed_onestop_id": "f-reseau~express~metropolitain"
-                },
-                {
-                    "feed_onestop_id": "f-reseau~express~metropolitain~rt"
-                }
-            ]
-        }
-    ]
+      ]
+    }
+  ]
 }
