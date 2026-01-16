@@ -1,8 +1,8 @@
 {
-  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "ungheni-md-gtfs",
+      "id": "f-md-ungheni~public~transport",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://github.com/UngheniTransport/gtfs/raw/main/ungheni_gtfs.zip"
@@ -10,12 +10,17 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "operators": [
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-md-ungheni~public~transport",
+      "name": "Ungheni Public Transport",
+      "website": "https://unghenitransport.md",
+      "associated_feeds": [
         {
-          "onestop_id": "o-md-ungheni-public-transport",
-          "name": "Ungheni Public Transport",
-          "website": "https://unghenitransport.md"
+          "feed_onestop_id": "f-md-ungheni~public~transport"
         }
       ]
     }
