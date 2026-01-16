@@ -1,0 +1,32 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "ungheni-md-gtfs",
+      "urls": {
+        "static_current": "https://github.com/UngheniTransport/gtfs/raw/main/ungheni_gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u-ungheni~transport~md",
+          "name": "Transport Public Ungheni",
+          "website": "https://unghenitransport.md"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "name": "Ungheni Public Transport GTFS",
+    "description": "Official GTFS Static feed for public transport in Ungheni, Moldova.",
+    "country": "MD",
+    "subdivision_name": "Ungheni",
+    "city": "Ungheni",
+    "provider": "Transport Public Ungheni",
+    "contact_email": "gtfs@unghenitransport.md"
+  }
+}
