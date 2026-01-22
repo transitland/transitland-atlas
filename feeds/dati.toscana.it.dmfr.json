@@ -2,6 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-6615-trenitalialazio",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dmfr.6615.io/trenitalialazio.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-SA-4.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no",
+        "attribution_text": "Federico Franco"
+      },
+      "tags": {
+        "documentation_url": "https://dmfr.6615.io/gtfs-docs"
+      }
+    },
+    {
       "id": "f-s-atscolastico",
       "spec": "gtfs",
       "urls": {
@@ -1206,6 +1225,10 @@
       "name": "Trenitalia",
       "website": "http://www.trenitalia.it",
       "associated_feeds": [
+        {
+          "gtfs_agency_id": "IT_IT14_Operator_05403151003_0083_0",
+          "feed_onestop_id": "f-6615-trenitalialazio"
+        },
         {
           "feed_onestop_id": "f-sp-trenitaliaspa"
         },
