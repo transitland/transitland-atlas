@@ -1,0 +1,52 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-kyivpastrans~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://193.23.225.214:732/api/realtime"
+      },
+      "license": {
+        "url": "http://www.opendefinition.org/licenses/cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://data.gov.ua/dataset/e98022a1-f51a-42e6-8e6e-52fe3150b81f/resource/c4385a4a-5184-4727-ac7a-a26897203e61"
+      }
+    },
+    {
+      "id": "f-u8v-kyivpastrans",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://193.23.225.211:8002/export-gtfs-static"
+      },
+      "license": {
+        "url": "http://www.opendefinition.org/licenses/cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://data.gov.ua/dataset/96128887-4f36-4c19-a96e-5d4765fade16/resource/3beb3268-07c9-4cfd-baf3-77d405922d03"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u8v-kyivpastrans",
+      "name": "Kyivpastrans",
+      "short_name": "KPT",
+      "website": "https://kpt.kyiv.ua",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kyivpastrans~rt"
+        },
+        {
+          "feed_onestop_id": "f-u8v-kyivpastrans"
+        }
+      ],
+      "tags": {
+        "facebook": "https://www.facebook.com/Kyivpastrans",
+        "telegram": "https://t.me/kyivpasstrans",
+        "wikidata_id": "Q12110155"
+      }
+    }
+  ]
+}
