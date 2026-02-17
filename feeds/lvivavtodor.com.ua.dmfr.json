@@ -1,0 +1,56 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u8c5-lvivavtodor",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://track.ua-gis.com/gtfs/lviv/static.zip"
+      },
+      "license": {
+        "url": "http://www.opendefinition.org/licenses/cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://opendata.city-adm.lviv.ua/en/dataset/lviv-public-transport-gtfs-real-time"
+      }
+    },
+    {
+      "id": "f-u8c5-lvivavtodor~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://track.ua-gis.com/gtfs/lviv/vehicle_position",
+        "realtime_trip_updates": "http://track.ua-gis.com/gtfs/lviv/trip_updates",
+        "realtime_alerts": "http://track.ua-gis.com/gtfs/lviv/alerts"
+      },
+      "license": {
+        "url": "http://www.opendefinition.org/licenses/cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://opendata.city-adm.lviv.ua/en/dataset/lviv-public-transport-gtfs-real-time"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u8c5-lvivelectrotrans",
+      "name": "Lvivelectrotrans",
+      "short_name": "LET",
+      "website": "https://www.let.org.ua",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "89"
+        },
+        {
+          "feed_onestop_id": "f-u8c5-lvivavtodor"
+        },
+        {
+          "feed_onestop_id": "f-u8c5-lvivavtodor~rt"
+        }
+      ],
+      "tags": {
+        "facebook": "https://www.facebook.com/Lvivelectrotrans",
+        "wikidata_id": "Q12119087"
+      }
+    }
+  ]
+}
