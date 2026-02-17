@@ -2,19 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-u8v-kyivpastrans~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "http://193.23.225.214:732/api/realtime"
-      },
-      "license": {
-        "url": "http://www.opendefinition.org/licenses/cc-by",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "https://data.gov.ua/dataset/e98022a1-f51a-42e6-8e6e-52fe3150b81f"
-      }
-    },
-    {
       "id": "f-u8v-kyivpastrans",
       "spec": "gtfs",
       "urls": {
@@ -25,6 +12,19 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "https://data.gov.ua/dataset/96128887-4f36-4c19-a96e-5d4765fade16"
+      }
+    },
+    {
+      "id": "f-u8v-kyivpastrans~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://193.23.225.214:732/api/realtime"
+      },
+      "license": {
+        "url": "http://www.opendefinition.org/licenses/cc-by",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://data.gov.ua/dataset/e98022a1-f51a-42e6-8e6e-52fe3150b81f"
       }
     }
   ],
