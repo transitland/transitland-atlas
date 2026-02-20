@@ -210,6 +210,38 @@
       ]
     },
     {
+      "id": "f-dqb0q-charlottesvilleareatransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/catpublic.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/charlottesville.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "charlottesville-transit-service"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqb0q-charlottesvilleareatransit",
+          "name": "Charlottesville Area Transit",
+          "short_name": "CAT",
+          "website": "http://www.charlottesville.org/transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "omd_provider_id": "charlottesville-area-transit",
+            "twitter_general": "RideWithCAT",
+            "us_ntd_id": "30036",
+            "wikidata_id": "Q5086235"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dutchess~county~ny",
       "spec": "gtfs",
       "urls": {
