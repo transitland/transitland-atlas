@@ -2,6 +2,21 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-9q5c8-bellflower~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/CalITP.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5c8-bellflower",
+          "name": "City of Bellflower",
+          "short_name": "Bellflower Bus",
+          "website": "https://www.bellflower.org/"
+        }
+      ]
+    },
+    {
       "id": "f-atomic~city~transit",
       "spec": "gtfs",
       "urls": {
@@ -17,6 +32,34 @@
           "tags": {
             "twitter_general": "losalamos",
             "us_ntd_id": "60215"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-bellflower~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/CalITP.zip",
+        "static_historic": [
+          "https://gtfs.dds.dot.ca.gov/gtfs_files/BellflowerGTFS.zip",
+          "https://gtfs.dds.dot.ca.gov/gtfs_files/production/BellflowerGTFS.zip",
+          "https://gtfs.calitp.org/production/BellflowerGTFS.zip",
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/bellflower-ca-us/bellflower-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/bellflower-ca-us/bellflower-ca-us.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://gtfs.calitp.org/",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5bz-bellflowerbus",
+          "name": "Bellflower Bus",
+          "tags": {
+            "us_ntd_id": "90254"
           }
         }
       ]

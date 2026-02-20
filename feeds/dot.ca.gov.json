@@ -35,32 +35,6 @@
       ]
     },
     {
-      "id": "f-bellflower~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/production/BellflowerGTFS.zip",
-        "static_historic": [
-          "https://gtfs.calitp.org/production/BellflowerGTFS.zip",
-          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/bellflower-ca-us/bellflower-ca-us.zip",
-          "https://data.trilliumtransit.com/gtfs/bellflower-ca-us/bellflower-ca-us.zip"
-        ]
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://gtfs.calitp.org/",
-        "use_without_attribution": "no"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q5bz-bellflowerbus",
-          "name": "Bellflower Bus",
-          "tags": {
-            "us_ntd_id": "90254"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-eastern~sierra~bishop~lone~pine~flex",
       "spec": "gtfs",
       "urls": {
@@ -282,6 +256,24 @@
           "https://gtfs.calitp.org/production/WestCATSeniorDialARideandParatransitFlex.zip"
         ]
       }
+    },
+    {
+      "id": "f-yurok~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/YurokGTFS.zip"
+      },
+      "license": {
+        "url": "https://dot.ca.gov/cal-itp/california-minimum-general-transit-feed-specification-gtfs-guidelines"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-yurok~ca~us",
+          "name": "Yurok Tribe",
+          "short_name": "Yurok Transit",
+          "website": "https://www.yuroktribe.org/"
+        }
+      ]
     },
     {
       "id": "f-yurok~tribe~ca~us",
