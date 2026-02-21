@@ -2,14 +2,14 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-hhmelnytskyi~city~council",
+      "id": "f-u8g1-hhmelnytskyi~city~council",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://city.dozor.tech/khmelnyckyi/gtfs/static.zip"
       }
     },
     {
-      "id": "f-hhmelnytskyi~city~council~rt",
+      "id": "f-u8g1-hhmelnytskyi~city~council~rt",
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://city.dozor.tech/khmelnyckyi/gtfs/vehicle_position",
@@ -19,16 +19,16 @@
   ],
   "operators": [
     {
-      "onestop_id": "o-hkpeltrans",
+      "onestop_id": "o-u8g1-hkpeltrans",
       "name": "Khmelnytskyi Municipal Enterprise Electrotrans",
       "short_name": "HKP Electrotrans",
       "website": "https://hkpeltrans.com.ua",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-hhmelnytskyi~city~council"
+          "feed_onestop_id": "f-u8g1-hhmelnytskyi~city~council"
         },
         {
-          "feed_onestop_id": "f-hhmelnytskyi~city~council~rt"
+          "feed_onestop_id": "f-u8g1-hhmelnytskyi~city~council~rt"
         }
       ],
       "tags": {
