@@ -1,0 +1,110 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u243-autotrolej",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://b2b.promet-info.hr/dc/b2b.gtfs.at"
+      },
+      "license": {
+        "url": "https://www.promet-info.hr/en/datasets_details?id=5af36530-8477-4984-b392-de90873cdd6c"
+      },
+      "authorization": {
+        "type": "header",
+        "info_url": "https://www.promet-info.hr/_resources/doc/hc_B2B_en.pdf"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u243-autotrolej",
+          "name": "Autotrolej",
+          "website": "https://www.autotrolej.hr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HR:AT:Operator:AT:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u2j7-gpp~osijek",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://b2b.promet-info.hr/dc/b2b.gtfs.osijekgpp"
+      },
+      "license": {
+        "url": "https://www.promet-info.hr/en/datasets_details?id=ac34cf45-79e6-711f-532f-8ffe70e2f93d"
+      },
+      "authorization": {
+        "type": "header",
+        "info_url": "https://www.promet-info.hr/_resources/doc/hc_B2B_en.pdf"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2j7-gpp~osijek",
+          "name": "Gradski prijevoz putnika d.o.o. Osijek",
+          "short_name": "GPP Osijek",
+          "website": "https://web.gpp-osijek.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HR:GPP:Operator:GPP:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-srcz-pulapromet",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://b2b.promet-info.hr/dc/b2b.gtfs.pulapromet"
+      },
+      "license": {
+        "url": "https://www.promet-info.hr/en/datasets_details?id=fe5b8298-cdb7-bdde-9ee9-970c7770b791"
+      },
+      "authorization": {
+        "type": "header",
+        "info_url": "https://www.promet-info.hr/_resources/doc/hc_B2B_en.pdf"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-srcz-pulapromet",
+          "name": "Pulapromet",
+          "website": "https://pulapromet.hr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HR:PP:Operator:PP:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sr-jadrolinija",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://b2b.promet-info.hr/dc/b2b.gtfs.jl"
+      },
+      "license": {
+        "url": "https://www.promet-info.hr/en/datasets_details?id=80c8e812-c10a-d24b-17ef-ac9640f43e0e"
+      },
+      "authorization": {
+        "type": "header",
+        "info_url": "https://www.promet-info.hr/_resources/doc/hc_B2B_en.pdf"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sr-jadrolinija",
+          "name": "Jadrolinija",
+          "website": "https://www.jadrolinija.hr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HR:JL:Operator:JL:"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
