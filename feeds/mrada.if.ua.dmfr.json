@@ -1,0 +1,48 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u89w-ivano~frankivsk~city~council",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://city.dozor.tech/iv-frankivsk/gtfs/static.zip"
+      },
+      "license": {
+        "url": "https://smartcity.mvk.if.ua/project/297"
+      }
+    },
+    {
+      "id": "f-u89w-ivano~frankivsk~city~council~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://city.dozor.tech/iv-frankivsk/gtfs/vehicle_position",
+        "realtime_trip_updates": "https://city.dozor.tech/iv-frankivsk/gtfs/trip_updates"
+      },
+      "license": {
+        "url": "https://smartcity.mvk.if.ua/project/297"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u89w",
+      "name": "Electroautotrans",
+      "short_name": "EAT",
+      "website": "http://eat.if.ua",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "117",
+          "feed_onestop_id": "f-u89w"
+        },
+        {
+          "feed_onestop_id": "f-u89w~rt"
+        }
+      ],
+      "tags": {
+        "facebook": "https://www.facebook.com/EATifua",
+        "telegram": "https://t.me/eatif",
+        "wikidata_id": "Q12099262"
+      }
+    }
+  ]
+}
