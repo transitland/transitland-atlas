@@ -13,23 +13,37 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://data.brno.cz/datasets/379d2e9a7907460c8ca7fda1f3e84328/about"
+      }
+    },
+    {
+      "id": "f-u2e-idsjmk~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://kordis-jmk.cz/gtfs/gtfsReal.dat",
+        "realtime_trip_updates": "https://kordis-jmk.cz/gtfs/gtfsReal.dat",
+        "realtime_alerts": "https://kordis-jmk.cz/gtfs/gtfsReal.dat"
       },
-      "operators": [
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.brno.cz/datasets/379d2e9a7907460c8ca7fda1f3e84328/about"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u2e-kordis",
+      "name": "Integrovaného Dopravního Systému Jihomoravského Kraje",
+      "short_name": "IDS JMK",
+      "website": "http://www.idsjmk.cz",
+      "associated_feeds": [
         {
-          "onestop_id": "o-u2e-kordis",
-          "name": "Integrovaného Dopravního Systému Jihomoravského Kraje",
-          "short_name": "IDS JMK",
-          "website": "http://www.idsjmk.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "99"
-            }
-          ],
-          "tags": {
-            "wikidata_id": "Q12020731"
-          }
+          "gtfs_agency_id": "99",
+          "feed_onestop_id": "f-u2e-idsjmk"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q12020731"
+      }
     }
   ]
 }
