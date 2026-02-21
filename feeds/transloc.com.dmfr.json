@@ -2,6 +2,32 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-2121~avenue~of~the~stars~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://2121aos.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-2121~avenue~of~the~stars~ca~us",
+          "name": "2121 Avenue of the Stars"
+        }
+      ]
+    },
+    {
+      "id": "f-2300~n~st~dc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://2300NSt.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-2300~n~st~dc~us",
+          "name": "2300 N St"
+        }
+      ]
+    },
+    {
       "id": "f-9qh-victorville~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -37,8 +63,9 @@
       "id": "f-9t9p7-universityofaz~cattran~freeshuttleservice",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/arizona.zip",
+        "static_current": "https://arizona.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx",
         "static_historic": [
+          "https://api.transloc.com/gtfs/arizona.zip",
           "https://data.trilliumtransit.com/gtfs/cattran-az-us/cattran-az-us.zip"
         ]
       },
@@ -55,16 +82,177 @@
       "id": "f-abilene~tx~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/citylink.zip"
+        "static_current": "https://citylinkabi.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/citylink.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-abilene~tx~us",
-          "name": "CityLink",
+          "name": "Abilene CityLink",
           "tags": {
             "us_ntd_id": "60040",
             "wikidata_id": "Q4667763"
           }
+        }
+      ]
+    },
+    {
+      "id": "f-abm~dal~swa",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://abm-dal-swa.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-abm~dal~swa",
+          "name": "Love Field Airport"
+        }
+      ]
+    },
+    {
+      "id": "f-access~annapolis~md~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://accessannapolis.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-access~annapolis~md~us",
+          "name": "Access Annapolis"
+        }
+      ]
+    },
+    {
+      "id": "f-ace~shuttles~san",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://aceshuttles.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ace~shuttles~san",
+          "name": "ACE Parking"
+        }
+      ]
+    },
+    {
+      "id": "f-alco~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://alco.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-alco~ca~us",
+          "name": "Alameda County Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-americanuniversity",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://AmericanUniversity.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-americanuniversity",
+          "name": "American University",
+          "short_name": "AU Shuttle",
+          "website": "https://www.american.edu/finance/transportation/shuttle.cfm"
+        }
+      ]
+    },
+    {
+      "id": "f-are~lic~shuttle~ny~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://arelic.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-are~lic~shuttle~ny~us",
+          "name": "ARE - LIC Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-are~manhattan~shuttle~ny~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://aclsnyc.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-are~manhattan~shuttle~ny~us",
+          "name": "ARE - Manhattan Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-aries300erandolph",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://Aries300ERandolph.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-aries300erandolph",
+          "name": "300 E Randolph"
+        }
+      ]
+    },
+    {
+      "id": "f-asml~ct~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://asml.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-asml~ct~us",
+          "name": "ASML Shuttle Service"
+        }
+      ]
+    },
+    {
+      "id": "f-avalonshuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://avalonshuttle.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-avalonshuttle",
+          "name": "Avalon Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-baltimorecollegetownshuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://baltimorecollegetownshuttle.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-baltimorecollegetownshuttle",
+          "name": "Baltimore Collegetown Network"
+        }
+      ]
+    },
+    {
+      "id": "f-bc~ma~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://bc.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bc~ma~us",
+          "name": "Boston College"
         }
       ]
     },
@@ -82,7 +270,10 @@
       "id": "f-coldlake~ab~ca",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/clts.zip"
+        "static_current": "https://clt.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/clts.zip"
+        ]
       },
       "operators": [
         {
@@ -93,11 +284,37 @@
       ]
     },
     {
+      "id": "f-csus~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://csus.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-csus~ca~us",
+          "name": "California State University - Sacramento"
+        }
+      ]
+    },
+    {
       "id": "f-csu~northridge",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://csun.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
       }
+    },
+    {
+      "id": "f-cwru~oh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cwruuh.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cwru~oh~us",
+          "name": "Case Western Reserve University"
+        }
+      ]
     },
     {
       "id": "f-davenport~citi~bus",
@@ -195,31 +412,21 @@
       ]
     },
     {
-      "id": "f-dqb0q-charlottesvilleareatransit",
+      "id": "f-dnrug-duke~nc~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/charlottesville.zip"
-      },
-      "tags": {
-        "gtfs_data_exchange": "charlottesville-transit-service"
+        "static_current": "https://duke.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "http://gtfs-source-feeds.transit.land/duketransit-durham-nc-us.zip",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/refs/heads/master/duketransit-durham-nc-us.zip",
+          "https://data.trilliumtransit.com/gtfs/duke-nc-us/duke-nc-us.zip"
+        ]
       },
       "operators": [
         {
-          "onestop_id": "o-dqb0q-charlottesvilleareatransit",
-          "name": "Charlottesville Area Transit",
-          "short_name": "CAT",
-          "website": "http://www.charlottesville.org/transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ],
-          "tags": {
-            "omd_provider_id": "charlottesville-area-transit",
-            "twitter_general": "RideWithCAT",
-            "us_ntd_id": "30036",
-            "wikidata_id": "Q5086235"
-          }
+          "onestop_id": "o-dnrug-duketransit",
+          "name": "Duke Transit",
+          "website": "https://parking.duke.edu/"
         }
       ]
     },
@@ -250,6 +457,63 @@
       ]
     },
     {
+      "id": "f-eastern~ct",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://easternct.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-eastern~ct",
+          "name": "Eastern Connecticut State University"
+        }
+      ]
+    },
+    {
+      "id": "f-fordham~shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://fordhamshuttle.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-fordham~shuttle",
+          "name": "Fordham University"
+        }
+      ]
+    },
+    {
+      "id": "f-georgetownt~lfr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://georgetowntlfr.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-georgetownt~lfr",
+          "name": "Georgetown University Transportation Shuttle",
+          "short_name": "GUTS",
+          "website": "https://transportation.georgetown.edu/guts/"
+        }
+      ]
+    },
+    {
+      "id": "f-glacier~valley",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://glaciervalley.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-glacier~valley",
+          "name": "Glacier Valley Transit",
+          "tags": {
+            "us_ntd_id": "345"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-hattiesburg~mi~us",
       "spec": "gtfs",
       "urls": {
@@ -268,6 +532,33 @@
       ]
     },
     {
+      "id": "f-jhm~md~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jhm.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-jhm~md~us",
+          "name": "Johns Hopkins University Campus Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-jumparoundcarson~nv~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://JumpAroundCarson.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-jumparoundcarson~nv~us",
+          "name": "Jump Around Carson",
+          "short_name": "JAC Transit"
+        }
+      ]
+    },
+    {
       "id": "f-kats~tn",
       "spec": "gtfs",
       "urls": {
@@ -281,6 +572,84 @@
           "tags": {
             "us_ntd_id": "40080"
           }
+        }
+      ]
+    },
+    {
+      "id": "f-kbus~ns~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://kbus.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-kbus~ns~ca",
+          "name": "Kings Transit Authority"
+        }
+      ]
+    },
+    {
+      "id": "f-lagunabeachtransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://lagunabeachtransit.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lagunabeachtransit",
+          "name": "City of Laguna Beach"
+        }
+      ]
+    },
+    {
+      "id": "f-lasc~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://LASC.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lasc~ca~us",
+          "name": "LASC Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-laxflyaway",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://laxflyaway.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-laxflyaway",
+          "name": "LAX Flyaway"
+        }
+      ]
+    },
+    {
+      "id": "f-life~ga~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://life.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-life~ga~us",
+          "name": "Life University"
+        }
+      ]
+    },
+    {
+      "id": "f-lsu~la~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://lsu.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lsu~la~us",
+          "name": "Louisiana State University"
         }
       ]
     },
@@ -303,10 +672,262 @@
       ]
     },
     {
+      "id": "f-mayo~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mayo.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mayo~mn~us",
+          "name": "Mayo Clinic - Rochester"
+        }
+      ]
+    },
+    {
+      "id": "f-mitrolley",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mitrolley.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mitrolley",
+          "name": "Monmouth-Independence Trolley"
+        }
+      ]
+    },
+    {
+      "id": "f-nrtawave",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nrtawave.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-nrtawave",
+          "name": "Nantucket Regional Transit Authority"
+        }
+      ]
+    },
+    {
+      "id": "f-odu~va~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://odu.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-odu~va~us",
+          "name": "Old Dominion University"
+        }
+      ]
+    },
+    {
+      "id": "f-ord~aa~bus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ORDAABUS.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ord~aa~bus",
+          "name": "ABM American Airlines - O'Hare"
+        }
+      ]
+    },
+    {
+      "id": "f-ou~health~ok~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ouhealth.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ou~health~ok~us",
+          "name": "University of Oaklahoma Health Sciences Shuttle",
+          "short_name": "OUHSC"
+        }
+      ]
+    },
+    {
+      "id": "f-oxford~university~transit~mi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://outransit.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-oxford~university~transit~mi~us",
+          "name": "Oxford-University Transit",
+          "website": "https://www.outransit.com/routes"
+        }
+      ]
+    },
+    {
+      "id": "f-penn~state~hershey~med",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://pennstatehersheymed.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-penn~state~hershey~med",
+          "name": "Penn State Hershey Medical Center"
+        }
+      ]
+    },
+    {
+      "id": "f-penn~state~pa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://pennstate.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-penn~state~pa~us",
+          "name": "Penn State Campus Shuttles"
+        }
+      ]
+    },
+    {
+      "id": "f-phoenix~mesagatewayairport",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://phoenix-mesagatewayairport.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-phoenix~mesagatewayairport",
+          "name": "Phoenix Mesa Airport"
+        }
+      ]
+    },
+    {
+      "id": "f-riolimo~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://riolimo.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-riolimo~co~us",
+          "name": "RIO Limo"
+        }
+      ]
+    },
+    {
+      "id": "f-seatac~ep",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://seatac-ep.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-seatac~ep",
+          "name": "Port of Seattle SeaTac - Employee Parking"
+        }
+      ]
+    },
+    {
+      "id": "f-sedonashuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://sedonashuttle.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sedonashuttle",
+          "name": "Sedona Shuttle Trailhead Shuttles"
+        }
+      ]
+    },
+    {
+      "id": "f-sjsu~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://sjsu.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sjsu~ca~us",
+          "name": "San Jose State University South Campus Shuttle Service",
+          "short_name": "SJSU",
+          "website": "https://www.sjsu.edu/parking/help/shuttle.php"
+        }
+      ]
+    },
+    {
+      "id": "f-smart~ms~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://smart.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-smart~ms~us",
+          "name": "Starkville-MSU Area Rapid Transit",
+          "website": "https://www.smart.msstate.edu/"
+        }
+      ]
+    },
+    {
+      "id": "f-ssabus~ma~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ssabus.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ssabus~ma~us",
+          "name": "Woods Hole, Martha's Vineyard and Nantucket Steamship Authority",
+          "website": "https://www.steamshipauthority.com/",
+          "tags": {
+            "us_ntd_id": "10183"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-the~gas~company~tower",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://thegascompanytower.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-the~gas~company~tower",
+          "name": "The Gas Company Tower 555 W. 5th Street Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-the~hop~mke",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://thehopmke.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-the~hop~mke",
+          "name": "City of Milwaukee",
+          "short_name": "The Hop MKE",
+          "website": "https://thehopmke.com/",
+          "tags": {
+            "us_ntd_id": "55312",
+            "wikidata_id": "Q19877002"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-uc~irvine~anteater~express",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/uci.zip"
+        "static_current": "https://ucirvine.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/uci.zip"
+        ]
       },
       "operators": [
         {
@@ -317,11 +938,130 @@
       ]
     },
     {
-      "id": "f-university~of~virginia",
+      "id": "f-umkc~mo~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/uva.zip"
+        "static_current": "https://umkc.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-umkc~mo~us",
+          "name": "University of Missouri - Kansas City"
+        }
+      ]
+    },
+    {
+      "id": "f-university~of~virginia",
+      "supersedes_ids": [
+        "f-uva~va~us"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://uva.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://api.transloc.com/gtfs/uva.zip"
+        ]
       }
+    },
+    {
+      "id": "f-unmc~shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://unmcshuttle.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-unmc~shuttle",
+          "name": "UNMC Shuttle"
+        }
+      ]
+    },
+    {
+      "id": "f-uri~ri~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://uri.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-uri~ri~us",
+          "name": "University of Rhode Island Fixed Route"
+        }
+      ]
+    },
+    {
+      "id": "f-utk~tn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://utk.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-utk~tn~us",
+          "name": "University of Tennessee - Fixed Route"
+        }
+      ]
+    },
+    {
+      "id": "f-utoledo~oh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://utoledo.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-utoledo~oh~us",
+          "name": "University of Toledo"
+        }
+      ]
+    },
+    {
+      "id": "f-uva~hsts",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://uva-hsts.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-uva~hsts",
+          "name": "University of Virginia Health"
+        }
+      ]
+    },
+    {
+      "id": "f-whitecourt~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://whitecourttransit.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-whitecourt~transit",
+          "name": "Whitecourt Transit",
+          "website": "https://www.whitecourt.ca/live/town-services/whitecourt-transit"
+        }
+      ]
+    },
+    {
+      "id": "f-wichita~falls~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://fallsride.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11741/google_fallsridetransit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-wichita~falls~tx~us",
+          "name": "Wichita Falls Transit System",
+          "short_name": "Falls Ride",
+          "website": "https://www.wichitafallstx.gov/339/Falls-Ride---Public-Transportation",
+          "tags": {
+            "us_ntd_id": "60035"
+          }
+        }
+      ]
     }
   ]
 }

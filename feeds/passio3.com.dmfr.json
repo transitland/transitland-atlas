@@ -22,6 +22,35 @@
       ]
     },
     {
+      "id": "f-9q5cs-newportbeach~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/newportbeach/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q5cs-newportbeach",
+          "name": "City of Newport Beach",
+          "short_name": "Balboa Peninsula Trolley",
+          "website": "https://www.newportbeachca.gov/government/departments/public-works/municipal-operations/trolley",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q5cs-newportbeach~ca~us~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-9q5cs-newportbeach~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/newportbeach/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/newportbeach/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/newportbeach/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-9q5cx-montereypark~ca~us",
       "spec": "gtfs",
       "urls": {

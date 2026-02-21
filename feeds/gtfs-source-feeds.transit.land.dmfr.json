@@ -5,10 +5,15 @@
       "id": "f-amarillo~city~transit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/amarillo-tx-us.zip",
+        "static_current": "http://gtfs-source-feeds.transit.land/amarillo-tx-us.zip",
         "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/amarillo-tx-us.zip",
           "https://code.amarillo.gov/gtfs/gtfs.zip"
         ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -27,7 +32,14 @@
       "id": "f-augusta~ga~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/augusta-ga-us.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/augusta-ga-us.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/augusta-ga-us.zip"
+        ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -44,17 +56,31 @@
       "id": "f-bethesdacirculator~md~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/bethesdacirculator-md-us.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/bethesdacirculator-md-us.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/bethesdacirculator-md-us.zip"
+        ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       }
     },
     {
       "id": "f-chillicothe~oh~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/refs/heads/master/chillocothe-oh-us.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/chillocothe-oh-us.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/refs/heads/master/chillocothe-oh-us.zip"
+        ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -72,11 +98,16 @@
       "id": "f-compton~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/refs/heads/master/compton-ca-us.zip",
+        "static_current": "http://gtfs-source-feeds.transit.land/compton-ca-us.zip",
         "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/refs/heads/master/compton-ca-us.zip",
           "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main//compton-ca-us/compton-ca-us.zip",
           "https://data.trilliumtransit.com/gtfs/compton-ca-us/compton-ca-us.zip"
         ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -92,8 +123,9 @@
       "id": "f-dn5bpr-atlanticstationshuttle",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/atlantic-station-ga-us.zip",
+        "static_current": "http://gtfs-source-feeds.transit.land/atlantic-station-ga-us.zip",
         "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/atlantic-station-ga-us.zip",
           "https://www.arcgis.com/sharing/rest/content/items/61dca73994b746ac97eae8c0f83fdedc/data#Atlantic_Station_new-20200526T125751Z-4803f8a3-5b12-42f5-8f07-d7917af156d5-3ae3ebe9-4a54-46b9-9ff7-f93285129896",
           "http://documents.atlantaregional.com/transitdata/gtfs_Atlantic.zip"
         ]
@@ -102,6 +134,10 @@
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://opendata.atlantaregional.com/datasets/61dca73994b746ac97eae8c0f83fdedc/about",
         "use_without_attribution": "no"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "tags": {
         "gtfs_data_exchange": "atlantic-station-shuttle"
@@ -118,10 +154,15 @@
       "id": "f-dr5r-path~nj~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/path-nj-us.zip",
+        "static_current": "http://gtfs-source-feeds.transit.land/path-nj-us.zip",
         "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/path-nj-us.zip",
           "https://data.trilliumtransit.com/gtfs/path-nj-us/path-nj-us.zip"
         ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "tags": {
         "gtfs_data_exchange": "path"
@@ -144,17 +185,31 @@
       "id": "f-dubai~rta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/dubai-rta.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/dubai-rta.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/dubai-rta.zip"
+        ]
       },
       "license": {
         "url": "https://www.dubaipulse.gov.ae/data/rta_gtfs-open/datafiles/605e9d34-cfea-4bed-9b31-3b2ce86c7a25/rta-public-transports#preview"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       }
     },
     {
       "id": "f-gaston~access~nc~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/gaston-access-nc-us.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/gaston-access-nc-us.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/gaston-access-nc-us.zip"
+        ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -172,12 +227,17 @@
       "id": "f-lasvegasmonorail~nv~us",
       "spec": "gtfs",
       "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/lasvegasmonorail-nv-us.zip",
         "static_historic": [
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/lasvegasmonorail-nv-us.zip"
         ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -194,33 +254,54 @@
       "id": "f-newark~airtrain~nj",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/newark-airtrain-nj.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/newark-airtrain-nj.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/newark-airtrain-nj.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "use_without_attribution": "no",
         "share_alike_optional": "no",
         "attribution_text": "Transitland feed © Interline Technologies LLC includes OpenStreetMap data © OpenStreetMap contributors and is available under the Open Database License (ODbL)"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       }
     },
     {
       "id": "f-orlando~airport~people~mover",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/orlando-airport-people-mover.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/orlando-airport-people-mover.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/orlando-airport-people-mover.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "use_without_attribution": "no",
         "share_alike_optional": "no",
         "attribution_text": "Transitland feed © Interline Technologies LLC includes OpenStreetMap data © OpenStreetMap contributors and is available under the Open Database License (ODbL)"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       }
     },
     {
       "id": "f-saginaw~stars",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/saginaw-stars.zip"
+        "static_current": "http://gtfs-source-feeds.transit.land/saginaw-stars.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/saginaw-stars.zip"
+        ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "tags": {
         "notes": "We manually downloaded files from their OneDrive share and them published to the transitland/gtfs-archives-not-hosted-elsewhere repo"
@@ -241,12 +322,17 @@
       "id": "f-shuttleum~md~us",
       "spec": "gtfs",
       "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/shuttleum-md-us.zip",
         "static_historic": [
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/shuttleum-md-us.zip"
         ]
       },
       "license": {
         "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -268,11 +354,16 @@
       "id": "f-taft~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/taft-ca-us.zip",
+        "static_current": "http://gtfs-source-feeds.transit.land/taft-ca-us.zip",
         "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/taft-ca-us.zip",
           "https://gtfs.calitp.org/production/TaftGTFS.zip",
           "https://data.trilliumtransit.com/gtfs/taft-ca-us/taft-ca-us.zip"
         ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
@@ -289,11 +380,17 @@
       "id": "f-tf34-metropolitantransportcorporation",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/mtc_chennai.zip?raw=true#mtc_chennai"
+        "static_current": "http://gtfs-source-feeds.transit.land/mtc_chennai.zip",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/mtc_chennai.zip?raw=true#mtc_chennai"
+        ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "tags": {
-        "gtfs_data_exchange": "metropolitan-transport-corporation",
-        "unstable_url": "true"
+        "gtfs_data_exchange": "metropolitan-transport-corporation"
       },
       "operators": [
         {
@@ -310,10 +407,60 @@
       ]
     },
     {
+      "id": "f-transport~for~london",
+      "name": "Transport for London feed converted into GTFS by Interline",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/uk-tfl.zip"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by TfL Open Data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      }
+    },
+    {
+      "id": "f-uk~rail",
+      "supersedes_ids": [
+        "f-gc-rail~delivery~group~planar~gtfs"
+      ],
+      "name": "United Kingdom rail feed converted into GTFS by Interline",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/uk-rail.zip"
+      },
+      "license": {
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by National Rail Enquiries"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      }
+    },
+    {
       "id": "f-wcb4-cebu~dotc",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/phl-cebu.zip#GTFS_feed"
+        "static_current": "http://gtfs-source-feeds.transit.land/phl-cebu.zip#GTFS_feed",
+        "static_historic": [
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/phl-cebu.zip#GTFS_feed"
+        ]
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       },
       "operators": [
         {
