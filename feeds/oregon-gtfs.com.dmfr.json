@@ -25,7 +25,10 @@
             {
               "gtfs_agency_id": "84"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00307"
+          }
         }
       ]
     },
@@ -194,6 +197,26 @@
       ]
     },
     {
+      "id": "f-9r88-rogue~valley~transportation~district",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/rvtd-or-us/rvtd-or-us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r88-rogue~valley~transportation~district",
+          "name": "Rogue Valley Transportation District",
+          "short_name": "RVTD",
+          "website": "https://rvtd.org/",
+          "tags": {
+            "twitter_general": "ridervtd",
+            "us_ntd_id": "00034",
+            "wikidata_id": "Q7359553"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9r8m-umpquatransit~or~us",
       "spec": "gtfs",
       "urls": {
@@ -248,7 +271,10 @@
             {
               "gtfs_agency_id": "215"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00010"
+          }
         },
         {
           "onestop_id": "o-9r92-basintransitservice",
@@ -738,7 +764,10 @@
             {
               "gtfs_agency_id": "129"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00360"
+          }
         }
       ]
     },
@@ -762,7 +791,10 @@
             {
               "gtfs_agency_id": "227"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00330"
+          }
         }
       ]
     },
@@ -797,6 +829,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-c20d-multnomahcounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/multnomahcounty-or-us/multnomahcounty-or-us.zip"
+      },
+      "license": {
+        "url": "https://oregon-gtfs.trilliumtransit.com",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      }
     },
     {
       "id": "f-c20d-rideconnection~or~us",
@@ -929,16 +973,6 @@
             "us_ntd_id": "00319",
             "wikidata_id": "Q96375303"
           }
-        },
-        {
-          "onestop_id": "o-c21-thelink",
-          "name": "The Link",
-          "website": "https://www.mcedd.org/transportation/the-link-public-transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1491"
-            }
-          ]
         }
       ]
     },
@@ -970,7 +1004,8 @@
             }
           ],
           "tags": {
-            "twitter_general": "kayaktransit"
+            "twitter_general": "kayaktransit",
+            "us_ntd_id": "00119"
           }
         }
       ]
@@ -997,7 +1032,8 @@
             }
           ],
           "tags": {
-            "twitter_general": "neotransit"
+            "twitter_general": "neotransit",
+            "us_ntd_id": "00343"
           }
         }
       ]
@@ -1098,7 +1134,10 @@
             {
               "gtfs_agency_id": "907"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00464"
+          }
         }
       ]
     },
@@ -1114,14 +1153,48 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://oregon-gtfs.com/gtfs_data/mcedd-or-us/mcedd-or-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c21-mcedd",
+          "name": "Mid-Columbia Economic Development District",
+          "website": "https://www.mcedd.org/transportation/",
+          "tags": {
+            "us_ntd_id": "00396"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-morrowcounty~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/morrowcounty-or-us/morrowcounty-or-us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-morrowcounty",
+          "name": "Morrow County Public Transit",
+          "website": "https://www.co.morrow.or.us/theloop",
+          "tags": {
+            "us_ntd_id": "00409"
+          }
+        }
+      ]
     },
     {
       "id": "f-mtbachelor~or~us",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/mtbachelor-or-us/mtbachelor-or-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9rc-mtbachelor",
+          "name": "Mt. Bachelor",
+          "website": "https://www.mtbachelor.com/info/mtbachelor-shuttle/"
+        }
+      ]
     },
     {
       "id": "f-multnomahcounty~or~us~flex",
@@ -1183,7 +1256,23 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/quailtrail-or-us/quailtrail-or-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r9-quailtrail",
+          "name": "Quail Trail Public Transit",
+          "website": "https://klamathtribes.org/quail-trail-bus-schedule/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "215",
+              "feed_onestop_id": "f-9r92-basin~or~us"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00010"
+          }
+        }
+      ]
     },
     {
       "id": "f-rideconnection~or~us~flex",
@@ -1251,6 +1340,61 @@
               "gtfs_agency_id": "1733"
             }
           ]
+        }
+      ]
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-c20-clackamascounty",
+      "name": "Clackamas County",
+      "website": "https://rideclackamas.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-clackamascounty~or~us~flex"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "00363"
+      }
+    },
+    {
+      "onestop_id": "o-c20c-mthoodexpress",
+      "name": "Mt. Hood Express",
+      "website": "http://www.mthoodexpress.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "188",
+          "feed_onestop_id": "f-sandy~or~us~flex"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-c20c-sandyareametro",
+      "name": "Sandy Area Metro",
+      "website": "https://rideclackamas.org/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "86",
+          "feed_onestop_id": "f-sandy~or~us~flex"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "00363"
+      }
+    },
+    {
+      "onestop_id": "o-c20d-multnomahcountytransit",
+      "name": "Multnomah County Transit",
+      "website": "https://www.multco.us/transit",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "162",
+          "feed_onestop_id": "f-c20d-multnomahcounty~or~us"
+        },
+        {
+          "gtfs_agency_id": "162",
+          "feed_onestop_id": "f-multnomahcounty~or~us~flex"
         }
       ]
     }
