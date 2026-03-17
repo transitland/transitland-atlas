@@ -16,12 +16,12 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
@@ -58,7 +58,7 @@ jobs:
 
       - name: Comment on PR
         if: steps.validation.outputs.has_errors == 'true'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             await github.rest.issues.createComment({
