@@ -1,3 +1,5 @@
+#!/usr/bin/env -S uv run --script
+
 # Script to merge changes from a csv file
 import codecs
 import os

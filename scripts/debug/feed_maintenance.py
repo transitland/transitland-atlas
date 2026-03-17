@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
 """
 Feed maintenance script to identify feeds that may be out of date and require
 manual research to find new URLs. Fetches feed data and analyzes update cadence.
 """
 # /// script
-# requires-python = ">=3.8"
+# requires-python = ">=3.11"
 # dependencies = [
 #     "requests",
 #     "pandas",
