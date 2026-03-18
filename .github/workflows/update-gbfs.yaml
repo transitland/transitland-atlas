@@ -8,23 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
-    - uses: actions/setup-python@v6
-      with:
-        python-version: '3.10'
-    - name: Install dependencies
-      run: |
-        pip install pipenv
-        cd scripts && pipenv install
+    - uses: astral-sh/setup-uv@v7
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Fetch latest data
-      run: |-
-        cd scripts && pipenv run python convert-gbfs-csv-to-dmfr.py > ../feeds/nabsa.github.com.dmfr.json
+      run: uv run scripts/convert-gbfs-csv-to-dmfr.py > feeds/nabsa.github.com.dmfr.json
     - name: Format in the opinionated DMFR format
       run: |
         find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
     - name: Validate feeds
-      run: cd scripts && python validate-feeds.py
+      working-directory: scripts
+      run: uv run validate-feeds.py
     - name: "If any changes: Create a branch, commit, and PR"
       run: |-
         git config user.name "Automated Bot"
