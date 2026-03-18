@@ -19,6 +19,13 @@
       }
     },
     {
+      "id": "f-rts~livingston",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Livingston.zip"
+      }
+    },
+    {
       "id": "f-rts~ontario",
       "spec": "gtfs",
       "urls": {
@@ -43,17 +50,20 @@
       }
     },
     {
+      "id": "f-rts~wayne~ny",
+      "supersedes_ids": [
+        "f-rts~wyoming~ny"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://scheduledata.rgrta.com/Regionals/Wayne.zip"
+      }
+    },
+    {
       "id": "f-rts~wyoming",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://scheduledata.rgrta.com/Regionals/Wyoming.zip"
-      }
-    },
-    {
-      "id": "f-rts~wyoming~ny",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://scheduledata.rgrta.com/Regionals/Wayne.zip"
       }
     }
   ],
@@ -73,6 +83,9 @@
         },
         {
           "feed_onestop_id": "f-rts~genesee"
+        },
+        {
+          "feed_onestop_id": "f-rts~livingston"
         },
         {
           "feed_onestop_id": "f-rts~ontario"
