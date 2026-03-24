@@ -13,7 +13,20 @@
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-academy~bus",
+          "name": "Academy Bus",
+          "website": "http://www.academybus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10",
+              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-adirondack~trailways~fab",
@@ -554,8 +567,9 @@
       "id": "f-kiryas~joel~ny",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/kiryasjoel-ny-us/kiryasjoel-ny-us.zip",
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/TransitOrange_-_Kiryas_Joel_Area_Transit.zip",
         "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/kiryasjoel-ny-us/kiryasjoel-ny-us.zip",
           "https://s3.amazonaws.com/datatools-511ny/public/Kiryas_Joel.zip"
         ]
       },
@@ -565,7 +579,14 @@
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-kiryas~joel~area~transit",
+          "name": "Kiryas Joel Area Transit",
+          "website": "https://www.ridetransitorange.com/kiryasjoel"
+        }
+      ]
     },
     {
       "id": "f-leprechaun~connection",
@@ -718,14 +739,27 @@
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-monroe~bus~lines",
+          "name": "Monroe Bus Lines"
+        }
+      ]
     },
     {
       "id": "f-monsey~trails~ny",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Monsey_Trails.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-monsey~trails",
+          "name": "Monsey Trails",
+          "website": "https://www.monseytrails.com/"
+        }
+      ]
     },
     {
       "id": "f-newburgh~beacon~shuttle~ny",
@@ -872,6 +906,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "RCYT-Rensselaer-ny-us"
+            },
+            {
+              "gtfs_agency_id": "9",
+              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -1094,7 +1132,10 @@
       "id": "f-transit~orange~ny~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oc-otp-gtfs.s3.amazonaws.com/GTFSPublic.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/TransitOrange_-_Newburgh_Area_Transit.zip",
+        "static_historic": [
+          "https://oc-otp-gtfs.s3.amazonaws.com/GTFSPublic.zip"
+        ]
       },
       "operators": [
         {
@@ -1149,6 +1190,53 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
       }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-adirondack~trailways",
+      "name": "Adirondack Trailways",
+      "website": "https://trailways.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-adirondack~trailways~adt"
+        },
+        {
+          "feed_onestop_id": "f-trailways~adp~ny"
+        },
+        {
+          "feed_onestop_id": "f-trailways~nyp~ny"
+        },
+        {
+          "gtfs_agency_id": "48",
+          "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+        },
+        {
+          "gtfs_agency_id": "55",
+          "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+        },
+        {
+          "gtfs_agency_id": "64",
+          "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-fullington~trailways",
+      "name": "Fullington Trailways",
+      "website": "http://fullington.trailways.com",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-adirondack~trailways~fab"
+        },
+        {
+          "feed_onestop_id": "f-fullington~trailways~ny"
+        },
+        {
+          "gtfs_agency_id": "61",
+          "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+        }
+      ]
     }
   ]
 }

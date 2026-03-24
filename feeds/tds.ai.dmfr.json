@@ -5,9 +5,9 @@
       "id": "f-adirondack~trailways~adt",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://maps.tds.ai/storage/gtfs-feeds/ADT/fb551f94ffd56bb15e28e862f/gtfs.zip",
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Adirondack_Trailways-ADT.zip",
         "static_historic": [
-          "https://s3.amazonaws.com/datatools-511ny/public/Adirondack_Trailways-ADT.zip"
+          "https://maps.tds.ai/storage/gtfs-feeds/ADT/fb551f94ffd56bb15e28e862f/gtfs.zip"
         ]
       },
       "license": {
@@ -25,8 +25,8 @@
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://maps.tds.ai/storage/gtfs-feeds/NYT/7e1471b726c71d51c6b0e7a91/gtfs.zip",
         "static_historic": [
+          "https://maps.tds.ai/storage/gtfs-feeds/NYT/7e1471b726c71d51c6b0e7a91/gtfs.zip",
           "https://s3.amazonaws.com/datatools-511ny/public/Trailways-NYT.zip",
           "https://s3.amazonaws.com/datatools-511ny/public/Adirondack_Trailways-NYT.zip"
         ]
@@ -46,8 +46,8 @@
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://maps.tds.ai/storage/gtfs-feeds/PHK/eba281e4f43646a5b3b711ede/gtfs.zip",
         "static_historic": [
+          "https://maps.tds.ai/storage/gtfs-feeds/PHK/eba281e4f43646a5b3b711ede/gtfs.zip",
           "https://s3.amazonaws.com/datatools-511ny/public/Adirondack_Trailways-PHK.zip"
         ]
       },
@@ -69,7 +69,13 @@
         {
           "onestop_id": "o-northwestern~stagelines~or",
           "name": "Northwestern Stage Lines",
-          "website": "https://ride.northwesternstagelines.com"
+          "website": "https://ride.northwesternstagelines.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "69",
+              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+            }
+          ]
         }
       ]
     }
