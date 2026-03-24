@@ -1,0 +1,63 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-9r0-redding~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/redding_area_bus_authority.zip",
+        "static_historic": [
+          "https://rabagtfs.z5.web.core.windows.net/rabagtfs.zip",
+          "https://hosted-gtfs-feeds.s3.amazonaws.com/RABA/gtfs.zip",
+          "https://data.trilliumtransit.com/gtfs/redding-ca-us/redding-ca-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://rabaride.com/resources/about_raba/index.php#collapselinks-18-50b1",
+        "redistribution_allowed": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "redding-area-bus-authority"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r0-reddingareabusauthority",
+          "name": "Redding Area Bus Authority",
+          "short_name": "RABA",
+          "website": "https://www.rabaride.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9r0-redding~ca~us~flex"
+            },
+            {
+              "feed_onestop_id": "f-9r0-redding~ca~us~rt"
+            },
+            {
+              "feed_onestop_id": "f-9r0-redding~ca~us~rt~alerts"
+            },
+            {
+              "gtfs_agency_id": "26",
+              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+            }
+          ],
+          "tags": {
+            "twitter_general": "cityofredding",
+            "us_ntd_id": "90093",
+            "wikidata_id": "Q7305617"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9r0-redding~ca~us~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rabagtfs.z5.web.core.windows.net/rabagtfs_flex.zip"
+      },
+      "license": {
+        "url": "https://rabaride.com/resources/about_raba/index.php#collapselinks-18-50b1",
+        "redistribution_allowed": "yes"
+      }
+    }
+  ]
+}
