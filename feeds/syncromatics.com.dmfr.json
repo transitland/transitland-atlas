@@ -579,6 +579,34 @@
       }
     },
     {
+      "id": "f-uiowa~niteride",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://uiowaniteride.com/gtfs"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-uiowa~niteride",
+          "name": "University of Iowa Nite Ride",
+          "website": "https://safety.uiowa.edu/nite-ride-shuttle",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-uiowa~niteride~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-uiowa~niteride~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://uiowaniteride.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://uiowaniteride.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://uiowaniteride.com/gtfs-rt/alerts"
+      }
+    },
+    {
       "id": "f-vailtransit~rt",
       "spec": "gtfs-rt",
       "urls": {
