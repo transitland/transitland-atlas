@@ -64,6 +64,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "CC"
+            },
+            {
+              "gtfs_agency_id": "30",
+              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ]
         }
@@ -244,6 +248,30 @@
       "urls": {
         "static_current": "https://github.com/vasile/data.gov.ro-gtfs-exporter/archive/feature/dataset-2025.zip"
       }
+    },
+    {
+      "id": "f-utel~uiuc~intercity~bus",
+      "name": "US Intercity Bus GTFS by UIUC Urban Traffic & Economics Lab",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/UTEL-UIUC/intercity-bus-gtfs/raw/refs/heads/main/Merged_GTFS_Feed.zip"
+      },
+      "license": {
+        "url": "https://github.com/UTEL-UIUC/intercity-bus-gtfs/blob/main/README.md",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drm-dattco",
+          "name": "DATTCO",
+          "website": "https://www.dattco.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "21"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-wdw-manila",
