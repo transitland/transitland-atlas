@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u8xs-oleksandriia~city~council",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://city.dozor.tech/oleksandriya/gtfs/static.zip"
+      }
+    },
+    {
+      "id": "f-u8xs-oleksandriia~city~council~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://city.dozor.tech/oleksandriya/gtfs/vehicle_position",
+        "realtime_trip_updates": "https://city.dozor.tech/oleksandriya/gtfs/trip_updates"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u8xs-oleksandriia~transport",
+      "name": "Oleksandriia Transport",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-u8xs-oleksandriia~city~council"
+        },
+        {
+          "feed_onestop_id": "f-u8xs-oleksandriia~city~council~rt"
+        }
+      ]
+    }
+  ]
+}
