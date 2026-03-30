@@ -5,19 +5,34 @@
       "id": "f-ud1h-rīgassatiksme",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://saraksti.rigassatiksme.lv/riga/gtfs.zip"
+        "static_current": "http://saraksti.rigassatiksme.lv/gtfs.zip"
+      }
+    },
+    {
+      "id": "f-ud1h-rīgassatiksme~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://saraksti.rigassatiksme.lv/vehicle_positions.pb",
+        "realtime_trip_updates": "https://saraksti.rigassatiksme.lv/trip_updates.pb"
       },
-      "operators": [
+      "tags": {
+        "combined": "https://saraksti.rigassatiksme.lv/gtfs_realtime.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-ud1h-rīgassatiksme",
+      "name": "Rīgas satiksme",
+      "short_name": "RS",
+      "website": "https://www.rigassatiksme.lv",
+      "associated_feeds": [
         {
-          "onestop_id": "o-ud1h-rīgassatiksme",
-          "name": "Rīgas satiksme",
-          "short_name": "RS",
-          "website": "https://www.rigassatiksme.lv",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "rigassatiksme"
-            }
-          ]
+          "gtfs_agency_id": "rigassatiksme",
+          "feed_onestop_id": "f-ud1h-rīgassatiksme"
+        },
+        {
+          "feed_onestop_id": "f-ud1h-rīgassatiksme~rt"
         }
       ]
     }
