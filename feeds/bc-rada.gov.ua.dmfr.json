@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u8v7-bila~tserkva~city~council",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://city.dozor.tech/bila-cerkva/gtfs/static.zip"
+      }
+    },
+    {
+      "id": "f-u8v7-bila~tserkva~city~council~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://city.dozor.tech/bila-cerkva/gtfs/vehicle_position",
+        "realtime_trip_updates": "https://city.dozor.tech/bila-cerkva/gtfs/trip_updates"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u8v7-bila~tserkva~trolleybus~department",
+      "name": "Bila Tserkva Trolleybus Department",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "63",
+          "feed_onestop_id": "f-u8v7-bila~tserkva~city~council"
+        },
+        {
+          "feed_onestop_id": "f-u8v7-bila~tserkva~city~council~rt"
+        }
+      ],
+      "tags": {
+        "facebook": "https://www.facebook.com/p/КП-БЦМР-Тролейбусне-управління-100063549892222/"
+      }
+    }
+  ]
+}
