@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-dqfd7-oceancitytransporation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oceancitymd.gov/oc/wp-content/uploads/gtfs.zip",
+        "static_historic": [
+          "https://api.tost.app/v1/gtfs/download?agencyId=83f7d05c-6ba1-495a-9add-194833634688",
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/OC_GTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqfd7-oceancitytransporation",
+          "name": "Ocean City Transportation",
+          "website": "http://oceancitymd.gov/oc/departments/public-works/transportation/",
+          "tags": {
+            "us_ntd_id": "30155",
+            "wikidata_id": "Q54933081"
+          }
+        }
+      ]
+    }
+  ]
+}
