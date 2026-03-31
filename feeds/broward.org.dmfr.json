@@ -20,6 +20,9 @@
           "associated_feeds": [
             {
               "feed_onestop_id": "f-dhw-browardcountytransit~rt"
+            },
+            {
+              "feed_onestop_id": "f-dhw-browardcountytransit~tracktrolley~rt"
             }
           ],
           "tags": {
@@ -36,6 +39,14 @@
       "urls": {
         "realtime_vehicle_positions": "https://bctmyride-buspas.com:8080/GTFS/VehiclePositions",
         "realtime_trip_updates": "https://bctmyride-buspas.com:8080/GTFS/TripUpdates"
+      }
+    },
+    {
+      "id": "f-dhw-browardcountytransit~tracktrolley~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tcbct.tracktrolley.com/api/v1/key/3e1f2497/agency/BCT/command/gtfs-rt/vehiclePositions",
+        "realtime_trip_updates": "https://tcbct.tracktrolley.com/api/v1/key/3e1f2497/agency/BCT/command/gtfs-rt/tripUpdates"
       }
     }
   ]
