@@ -2,6 +2,34 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-9my-ycat",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11462/ycatfeed1.zip",
+        "static_historic": [
+          "http://www.ycipta.org/gtfs/google_transit.zip"
+        ]
+      },
+      "license": {
+        "url": "http://www.ycipta.org/gtfs.html",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9my-ycat",
+          "name": "Yuma County Area Transit",
+          "short_name": "YCAT",
+          "website": "http://www.ycipta.org",
+          "tags": {
+            "twitter_general": "YCAT_Yuma",
+            "us_ntd_id": "90233",
+            "wikidata_id": "Q8061031"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9qd-fresnocounty~ca~us",
       "spec": "gtfs",
       "urls": {
