@@ -135,7 +135,7 @@ def get_gtfs_feeds() -> List[Dict]:
 
         # Look for GTFS files in ficherosDto
         for fichero in conjunto.get("ficherosDto", []):
-            if fichero.get("tipoFicheroNombre", "").upper().startswith("GTFS"):
+            if fichero.get("tipoFicheroNombre") in ("GTFS", "GTFS-ZIP"):
                 # Combine conjunto and fichero data - no need for extra API call
                 # since conjunto already has all the data we need
                 feed_data = {
