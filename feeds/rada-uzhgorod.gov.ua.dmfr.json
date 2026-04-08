@@ -1,0 +1,37 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u2xu-uzhhorod~city~council",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://track.ua-gis.com/gtfs/uzhhorod/static.zip"
+      }
+    },
+    {
+      "id": "f-u2xu-uzhhorod~city~council~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://track.ua-gis.com/gtfs/uzhhorod/vehicle_position"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u2xu-uzhhorod~municipal~transport",
+      "name": "Uzhhorod Municipal Transport",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "172",
+          "feed_onestop_id": "f-u2xu-uzhhorod~city~council"
+        },
+        {
+          "feed_onestop_id": "f-u2xu-uzhhorod~city~council~rt"
+        }
+      ],
+      "tags": {
+        "facebook": "https://www.facebook.com/p/Комунальне-Підприємство-Ужгородський-муніципальний-транспорт-100057613030945/"
+      }
+    }
+  ]
+}
