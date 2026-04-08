@@ -135,7 +135,7 @@ def get_gtfs_feeds() -> List[Dict]:
 
         # Look for GTFS files in ficherosDto
         for fichero in conjunto.get("ficherosDto", []):
-            if fichero.get("tipoFicheroNombre") == "GTFS":
+            if fichero.get("tipoFicheroNombre") in ("GTFS", "GTFS-ZIP"):
                 # Combine conjunto and fichero data - no need for extra API call
                 # since conjunto already has all the data we need
                 feed_data = {
@@ -399,7 +399,14 @@ def main():
     # Get all GTFS feeds
     feeds_data = get_gtfs_feeds()
     logger.info(f"Found {len(feeds_data)} feeds")
-    
+
+    # Safety check: abort if the API returned no feeds, to avoid
+    # zeroing out the existing DMFR file due to an API change or outage
+    if len(feeds_data) == 0:
+        logger.error("API returned 0 GTFS feeds — aborting to avoid overwriting the existing DMFR file. "
+                      "The upstream API response format may have changed.")
+        raise SystemExit(1)
+
     # Transform all feeds to DMFR format
     dmfr_feeds = []
     for feed in feeds_data:
@@ -410,9 +417,9 @@ def main():
             logger.error(f"Error processing feed: {e}")
             logger.debug(f"Problematic feed data: {json.dumps(feed, indent=2)}")
             continue
-    
+
     logger.info(f"Successfully processed {len(dmfr_feeds)} feeds")
-    
+
     # Save all feeds to a single file
     save_dmfr_file(dmfr_feeds)
 
