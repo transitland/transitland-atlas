@@ -1,0 +1,38 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-c815-streamlinetransit~mt~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridestreamline.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/streamlinetransit-mt-us/streamlinetransit-mt-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c815-streamline",
+          "name": "Streamline Transit",
+          "website": "https://streamlinebus.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c815-streamlinetransit~mt~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ridestreamline",
+            "us_ntd_id": "80235"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c815-streamlinetransit~mt~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridestreamline.com/gtfs-rt/vehiclepositions"
+      }
+    }
+  ]
+}
