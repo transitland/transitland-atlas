@@ -39,6 +39,7 @@ jobs:
 
         if [ -n "${EXISTING_PR}" ]; then
           echo "Found existing open PR #${EXISTING_PR} — updating branch."
+          git fetch origin "${BRANCH_NAME}"
           git checkout -b "${BRANCH_NAME}" "origin/${BRANCH_NAME}" 2>/dev/null || git checkout -b "${BRANCH_NAME}"
           git add -A
           git commit -m "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"
