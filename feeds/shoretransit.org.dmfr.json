@@ -10,7 +10,25 @@
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/shore-transit-md-us.zip",
           "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Shore_GTFS.zip"
         ]
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqf3-shoretransit",
+          "name": "Tri-County Council for the Lower Eastern Shore of Maryland",
+          "short_name": "Shore Transit",
+          "website": "http://www.shoretransit.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dqf3-shoretransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "ShoreTransit",
+            "us_ntd_id": "30096",
+            "wikidata_id": "Q16984591"
+          }
+        }
+      ]
     },
     {
       "id": "f-dqf3-shoretransit~rt",
@@ -19,20 +37,7 @@
         "realtime_vehicle_positions": "https://myride.shoretransit.org/gtfs/GTFS_VehiclePositions.pb",
         "realtime_trip_updates": "https://myride.shoretransit.org/gtfs/GTFS_TripUpdates.pb",
         "realtime_alerts": "https://myride.shoretransit.org/gtfs/GTFS_ServiceAlerts.pb"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqf3-shoretransit",
-          "name": "Tri-County Council for the Lower Eastern Shore of Maryland",
-          "short_name": "Shore Transit",
-          "website": "http://www.shoretransit.org/",
-          "tags": {
-            "twitter_general": "ShoreTransit",
-            "us_ntd_id": "30096",
-            "wikidata_id": "Q16984591"
-          }
-        }
-      ]
+      }
     }
   ]
 }
