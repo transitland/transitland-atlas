@@ -23,12 +23,25 @@
           ],
           "name": "Tulare County Regional Transit Agency",
           "short_name": "TCRTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tulare~county~regional~transit~agency~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "90310",
             "wikidata_id": "Q110722692"
           }
         }
       ]
+    },
+    {
+      "id": "f-tulare~county~regional~transit~agency~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://data.peaktransit.com/gtfsrt/120/VehiclePosition.pb",
+        "realtime_trip_updates": "http://data.peaktransit.com/gtfsrt/120/TripUpdate.pb"
+      }
     }
   ]
 }
