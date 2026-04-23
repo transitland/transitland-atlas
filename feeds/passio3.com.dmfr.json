@@ -2071,6 +2071,28 @@
         "realtime_trip_updates": "https://passio3.com/uconn/passioTransit/gtfs/realtime/tripUpdates",
         "realtime_alerts": "https://passio3.com/uconn/passioTransit/gtfs/realtime/serviceAlerts"
       }
+    },
+    {
+      "id": "f-yellowknife~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/yellowknife/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://cityexplorer.yellowknife.ca/gtfs/google_transit.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.yellowknife.ca/en/doing-business/doing-business-open-data.aspx",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-yellowknife~transit",
+          "name": "Yellowknife Transit",
+          "website": "https://www.yellowknife.ca/en/living-here/transit.aspx"
+        }
+      ]
     }
   ]
 }
