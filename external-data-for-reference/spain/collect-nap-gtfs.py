@@ -212,7 +212,8 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     }
 
     dmfr_feed["tags"] = {
-        "es_nap_fichero_id": str(fichero_id)
+        "es_nap_fichero_id": str(fichero_id),
+        "notes": "Fetched by transitland-gtfs-scraper (NAP requires two-stage /api/Fichero/downloadLink flow)"
     }
 
     # Add license
