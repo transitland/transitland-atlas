@@ -5,8 +5,9 @@
       "id": "f-dhv-sarasotacountyareatransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://breezerider.tripsparkhost.com/gtfs/Realtime/google_transit.zip",
+        "static_current": "https://breezerider.tripsparkhost.com/static/google_transit.zip",
         "static_historic": [
+          "https://breezerider.tripsparkhost.com/gtfs/Realtime/google_transit.zip",
           "https://breezerider.tripsparkhost.com/GTFS/Route%2077%20-%20R08/google_transit.zip",
           "https://breezerider.tripsparkhost.com/GTFS/2024WinterR01-Route77-R06/google_transit.zip",
           "https://breezerider.tripsparkhost.com/gtfs/2024Spring%20V1%20-%2077%20R3%20Merge/google_transit.zip",
@@ -18,8 +19,7 @@
         ]
       },
       "tags": {
-        "gtfs_data_exchange": "sarasota-county-area-transit",
-        "unstable_url": "true"
+        "gtfs_data_exchange": "sarasota-county-area-transit"
       },
       "operators": [
         {
@@ -28,9 +28,6 @@
           "short_name": "Breeze Transit",
           "website": "https://www.scgov.net/government/breeze-transit",
           "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dhv-sarasotacountyareatransit"
-            },
             {
               "feed_onestop_id": "f-dhv-sarasotacountyareatransit~rt"
             }
