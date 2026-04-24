@@ -5,9 +5,10 @@
       "id": "f-dpwz-grandrivertransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/0",
+        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/1",
         "static_historic": [
-          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip"
+          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip",
+          "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/0"
         ]
       },
       "license": {
@@ -29,12 +30,25 @@
               "feed_onestop_id": "f-dpwz-grandrivertransit"
             },
             {
+              "feed_onestop_id": "f-dpwz-grandrivertransit-ion"
+            },
+            {
               "feed_onestop_id": "f-grt~rt"
             }
           ]
         }
       ]
     },
+    {
+      "id": "f-dpwz-grandrivertransit-ion",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/2",
+        "static_historic": [
+          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip",
+          "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/0"
+        ]
+      },
     {
       "id": "f-grt~rt",
       "spec": "gtfs-rt",
