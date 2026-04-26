@@ -1659,6 +1659,38 @@
       ]
     },
     {
+      "id": "f-autocares~autocorb",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2160"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2160",
+        "notes": "Fetched by transitland-gtfs-scraper (NAP requires two-stage /api/Fichero/downloadLink flow)"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autocorb",
+          "name": "Autocorb",
+          "website": "http://www.autocorb.com"
+        }
+      ]
+    },
+    {
       "id": "f-autocares~baraza",
       "spec": "gtfs",
       "urls": {
