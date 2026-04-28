@@ -5,7 +5,10 @@
       "id": "f-9rb-lanetransitdistrict",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.ltd.org/files/library/ltdgtfs.zip"
+        "static_current": "https://feed.ltd.org/TMGTFSRealTimeWebService/GTFS/google_transit.zip",
+        "static_historic": [
+          "https://www.ltd.org/files/library/ltdgtfs.zip"
+        ]
       },
       "tags": {
         "gtfs_data_exchange": "lane-transit-district"
@@ -15,8 +18,9 @@
       "id": "f-ltd~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "http://feed.ltd.org/gtfs-realtime/vehicle/",
-        "realtime_trip_updates": "http://feed.ltd.org/gtfs-realtime/tripupdate/"
+        "realtime_vehicle_positions": "https://feed.ltd.org/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://feed.ltd.org/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://feed.ltd.org/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       }
     }
   ],
@@ -35,7 +39,7 @@
       ],
       "tags": {
         "twitter_general": "lanetransit",
-        "us_ntd_id": "7",
+        "us_ntd_id": "00007",
         "wikidata_id": "Q6485453"
       }
     }
