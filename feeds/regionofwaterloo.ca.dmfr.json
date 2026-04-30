@@ -2,13 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-dpwz-grandrivertransit",
+      "id": "f-dpwz-grandrivertransit~lrt",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/1",
+        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/2",
         "static_historic": [
-          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip",
-          "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/0"
+          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip"
         ]
       },
       "license": {
@@ -18,45 +17,73 @@
       },
       "tags": {
         "gtfs_data_exchange": "grand-river-transit"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dpwz-grandrivertransit",
-          "name": "Grand River Transit",
-          "short_name": "GRT",
-          "website": "http://www.grt.ca",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dpwz-grandrivertransit"
-            },
-            {
-              "feed_onestop_id": "f-dpwz-grandrivertransit-ion"
-            },
-            {
-              "feed_onestop_id": "f-grt~rt"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
-      "id": "f-dpwz-grandrivertransit-ion",
+      "id": "f-dpwz-grandrivertransit~bus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/2",
+        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/1",
         "static_historic": [
-          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip",
-          "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/0"
+          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip"
         ]
       },
+      "license": {
+        "url": "http://www.regionofwaterloo.ca/en/regionalGovernment/OpenDataLicence.asp",
+        "use_without_attribution": "yes",
+        "create_derived_product": "unknown"
+      },
+      "tags": {
+        "gtfs_data_exchange": "grand-river-transit"
+      }
+    },
     {
-      "id": "f-grt~rt",
+      "id": "f-grt~bus~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions",
-        "realtime_trip_updates": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates",
+        "realtime_vehicle_positions": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions/1",
+        "realtime_trip_updates": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates/1"
+      }
+    },
+    {
+      "id": "f-grt~lrt~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions/2",
+        "realtime_trip_updates": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates/2"
+      }
+    },
+    {
+      "id": "f-grt~alerts~rt",
+      "spec": "gtfs-rt",
+      "urls": {
         "realtime_alerts": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/alerts"
       }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dpwz-grandrivertransit",
+      "name": "Grand River Transit",
+      "short_name": "GRT",
+      "website": "http://www.grt.ca",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-dpwz-grandrivertransit~bus"
+        },
+        {
+          "feed_onestop_id": "f-dpwz-grandrivertransit~lrt"
+        },
+        {
+          "feed_onestop_id": "f-grt~alerts~rt"
+        },
+        {
+          "feed_onestop_id": "f-grt~lrt~rt"
+        },
+        {
+          "feed_onestop_id": "f-grt~bus~rt"
+        }
+      ]
     }
   ]
 }
