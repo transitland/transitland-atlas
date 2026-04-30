@@ -2,24 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-dpwz-grandrivertransit~lrt",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/2",
-        "static_historic": [
-          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip"
-        ]
-      },
-      "license": {
-        "url": "http://www.regionofwaterloo.ca/en/regionalGovernment/OpenDataLicence.asp",
-        "use_without_attribution": "yes",
-        "create_derived_product": "unknown"
-      },
-      "tags": {
-        "gtfs_data_exchange": "grand-river-transit"
-      }
-    },
-    {
       "id": "f-dpwz-grandrivertransit~bus",
       "spec": "gtfs",
       "urls": {
@@ -38,6 +20,31 @@
       }
     },
     {
+      "id": "f-dpwz-grandrivertransit~lrt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/staticfeeds/2",
+        "static_historic": [
+          "https://www.regionofwaterloo.ca/opendatadownloads/GRT_GTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "http://www.regionofwaterloo.ca/en/regionalGovernment/OpenDataLicence.asp",
+        "use_without_attribution": "yes",
+        "create_derived_product": "unknown"
+      },
+      "tags": {
+        "gtfs_data_exchange": "grand-river-transit"
+      }
+    },
+    {
+      "id": "f-grt~alerts~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/alerts"
+      }
+    },
+    {
       "id": "f-grt~bus~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -51,13 +58,6 @@
       "urls": {
         "realtime_vehicle_positions": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/vehiclepositions/2",
         "realtime_trip_updates": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/tripupdates/2"
-      }
-    },
-    {
-      "id": "f-grt~alerts~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_alerts": "https://webapps.regionofwaterloo.ca/api/grt-routes/api/alerts"
       }
     }
   ],
@@ -78,10 +78,10 @@
           "feed_onestop_id": "f-grt~alerts~rt"
         },
         {
-          "feed_onestop_id": "f-grt~lrt~rt"
+          "feed_onestop_id": "f-grt~bus~rt"
         },
         {
-          "feed_onestop_id": "f-grt~bus~rt"
+          "feed_onestop_id": "f-grt~lrt~rt"
         }
       ]
     }
