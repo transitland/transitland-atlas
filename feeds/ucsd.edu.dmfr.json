@@ -1,0 +1,23 @@
+{
+    "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+    "feeds": [
+        {
+            "id": "f-9muy-tritontransit",
+            "spec": "gtfs",
+            "urls": {
+                "static_current": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/tritontransit-ca-us.zip",
+                "realtime_vehicle_positions": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/VehiclePositions.pb",
+                "realtime_trip_updates": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/TripUpdates.pb",
+                "realtime_alerts": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/Alerts.pb"
+            },
+            "operators": [
+                {
+                    "onestop_id": "o-9muy-tritontransit",
+                    "name": "UC San Diego Transportation Services",
+                    "short_name": "Triton Transit",
+                    "website": "https://shuttles.ucsd.edu/"
+                }
+            ]
+        }
+    ]
+}
