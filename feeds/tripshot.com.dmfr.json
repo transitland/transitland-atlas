@@ -192,6 +192,38 @@
       }
     },
     {
+      "id": "f-cgcta~mo~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cgcta.tripshot.com/v1/gtfs/feed/cgcta"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cgcta~mo~us",
+          "name": "Cape Girardeau County Transit Authority",
+          "short_name": "CGCTA",
+          "website": "https://www.cgcta.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cgcta~mo~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "70051"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-cgcta~mo~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=VehiclePosition",
+        "realtime_trip_updates": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=TripUpdate",
+        "realtime_alerts": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=Alert"
+      }
+    },
+    {
       "id": "f-lawrence~berkeley~national~lab",
       "spec": "gtfs",
       "urls": {
