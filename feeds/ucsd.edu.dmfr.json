@@ -5,19 +5,30 @@
       "id": "f-9muy-tritontransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/tritontransit-ca-us.zip",
-        "realtime_vehicle_positions": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/VehiclePositions.pb",
-        "realtime_trip_updates": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/TripUpdates.pb",
-        "realtime_alerts": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/Alerts.pb"
+        "static_current": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/tritontransit-ca-us.zip"
       },
       "operators": [
         {
           "onestop_id": "o-9muy-tritontransit",
           "name": "UC San Diego Transportation Services",
           "short_name": "Triton Transit",
-          "website": "https://shuttles.ucsd.edu/"
+          "website": "https://shuttles.ucsd.edu/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9muy-tritontransit~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-9muy-tritontransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/VehiclePositions.pb",
+        "realtime_trip_updates": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/TripUpdates.pb",
+        "realtime_alerts": "https://rmp-wapps.ucsd.edu/Shuttles-GTFS/GTFS-rt/Alerts.pb"
+      }
     }
   ]
 }
