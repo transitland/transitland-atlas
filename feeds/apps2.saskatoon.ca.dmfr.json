@@ -5,16 +5,19 @@
       "id": "f-c9k0-saskatoontransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://apps2.saskatoon.ca/app/data/google_transit.zip"
+        "static_current": "https://apps5.saskatoon.ca/data/gtfs/google_transit.zip",
+        "static_historic": [
+          "http://apps2.saskatoon.ca/app/data/google_transit.zip"
+        ]
       }
     },
     {
       "id": "f-saskatoon~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://apps2.saskatoon.ca/app/data/Vehicle/VehiclePositions.pb",
-        "realtime_trip_updates": "https://apps2.saskatoon.ca/app/data/TripUpdate/TripUpdates.pb",
-        "realtime_alerts": "https://apps2.saskatoon.ca/app/data/Alert/Alerts.pb"
+        "realtime_vehicle_positions": "https://saskprdtmgtfs.sasktrpcloud.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://saskprdtmgtfs.sasktrpcloud.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
+        "realtime_alerts": "https://saskprdtmgtfs.sasktrpcloud.com/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       }
     }
   ],
