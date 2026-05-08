@@ -1,4 +1,4 @@
-name: Check feed URLs in changed DMFR files
+name: Validate static and RT URLs in changed DMFR files
 
 on:
   pull_request_target:
@@ -7,63 +7,281 @@ on:
     types: [opened, synchronize]
 
 permissions:
-  pull-requests: write  # Needed for commenting on PRs
-  contents: read       # Needed for checking out code
+  pull-requests: write
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
+      - name: Security check for fork PRs
+        if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        run: |
+          if git diff --name-only ${{ github.event.pull_request.head.sha }} ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+            echo "Error: PR contains changes to .github or scripts directories"
+            exit 1
+          fi
 
+      - uses: astral-sh/setup-uv@v7
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
 
-      - name: Get changed files and validate
-        id: validation
+      - name: Determine changed feed files
+        id: changed
         run: |
-          # Get list of changed dmfr files using GitHub's base and head refs
-          changed_files=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'feeds/*.dmfr.json')
-          
-          # Exit if no dmfr files changed
-          if [ -z "$changed_files" ]; then
-            echo "No DMFR files changed"
-            exit 0
-          fi
-          
-          validation_output=""
-          
-          # Loop through changed files
-          for file in $changed_files; do
-            echo "Validating $file"
-            if ! output=$(uv run scripts/check-feed-urls.py "$file" 2>&1); then
-              validation_output+="### Validation issues in $file \n\n $output"
-              echo "has_errors=true" >> $GITHUB_OUTPUT
+          git fetch origin ${{ github.base_ref }} --depth=1
+          changed=$(git diff --name-only origin/${{ github.base_ref }} ${{ github.event.pull_request.head.sha }} -- 'feeds/*.dmfr.json' || true)
+          {
+            echo "files<<EOF"
+            echo "$changed"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Validate URLs proposed in this PR
+        id: validate
+        if: steps.changed.outputs.files != ''
+        run: |
+          set -u
+          mkdir -p reports
+          summary=reports/summary.md
+          : > "$summary"
+
+          slug() { echo "$1" | tr '/:' '__' | tr -dc '[:alnum:]_.-' ; }
+
+          # Extract (file, feed_id, url_type, url) tuples from a DMFR JSON on stdin.
+          extract_urls_from_json() {
+            jq -r --arg f "$1" '
+              .feeds[]?
+              | .id as $id
+              | (.urls // {})
+              | to_entries[]
+              | select(.value | type == "string")
+              | [$f, $id, .key, .value] | @tsv
+            '
+          }
+
+          # Build the set of URLs that are NEW or CHANGED in this PR
+          # (i.e. tuples present in head but not in base).
+          : > reports/changed_urls.tsv
+          while IFS= read -r dmfr_file; do
+            [ -z "$dmfr_file" ] && continue
+            [ -f "$dmfr_file" ] || continue
+
+            head_urls=$(extract_urls_from_json "$dmfr_file" < "$dmfr_file" 2>/dev/null || true)
+            base_urls=""
+            if git cat-file -e "origin/${{ github.base_ref }}:$dmfr_file" 2>/dev/null; then
+              base_urls=$(git show "origin/${{ github.base_ref }}:$dmfr_file" 2>/dev/null \
+                | extract_urls_from_json "$dmfr_file" 2>/dev/null || true)
             fi
-          done
-          
-          # Set the validation output as a step output
-          echo "message<<EOF" >> $GITHUB_OUTPUT
-          echo "$validation_output" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+
+            comm -23 \
+              <(printf '%s\n' "$head_urls" | grep -v '^$' | sort -u) \
+              <(printf '%s\n' "$base_urls" | grep -v '^$' | sort -u) >> reports/changed_urls.tsv
+          done <<< "${{ steps.changed.outputs.files }}"
+
+          url_changed() {
+            grep -qFx -- "$(printf '%s\t%s\t%s\t%s' "$1" "$2" "$3" "$4")" reports/changed_urls.tsv
+          }
+
+          while IFS= read -r dmfr_file; do
+            [ -z "$dmfr_file" ] && continue
+            [ -f "$dmfr_file" ] || continue
+
+            jq -c '.feeds[]? | {
+              id: .id,
+              auth: (.authorization.type // null),
+              static_current: .urls.static_current,
+              realtime_vehicle_positions: .urls.realtime_vehicle_positions,
+              realtime_trip_updates: .urls.realtime_trip_updates,
+              realtime_alerts: .urls.realtime_alerts
+            }' "$dmfr_file" | while IFS= read -r feed; do
+              fid=$(echo "$feed"  | jq -r '.id')
+              auth=$(echo "$feed" | jq -r '.auth')
+              fbase=$(slug "$fid")
+
+              body_file=$(mktemp)
+              pass_count=0
+              fail_count=0
+              skip_count=0
+              url_count=0
+
+              # ---- static feed ----
+              static_url=$(echo "$feed" | jq -r '.static_current // empty')
+              if [ -n "$static_url" ] && url_changed "$dmfr_file" "$fid" "static_current" "$static_url"; then
+                url_count=$((url_count + 1))
+                if [ "$auth" != "null" ]; then
+                  printf -- '- ⚪ static — skipped (auth: `%s`); validated by tlv2 — `%s`\n' "$auth" "$static_url" >> "$body_file"
+                  skip_count=$((skip_count + 1))
+                else
+                  report="reports/${fbase}.static.json"
+                  err="reports/${fbase}.static.err"
+                  if timeout 300 transitland validate \
+                       --include-service-levels \
+                       -o "$report" "$static_url" 2> "$err"; then
+                    read -r ok agencies routes stops files earliest latest ec wc < <(jq -r '[
+                      .success,
+                      ([.details.files[]? | select(.name=="agency.txt") | .rows][0] // 0),
+                      ([.details.files[]? | select(.name=="routes.txt") | .rows][0] // 0),
+                      ([.details.files[]? | select(.name=="stops.txt") | .rows][0] // 0),
+                      (.details.files|length),
+                      (.details.earliest_calendar_date // "?"),
+                      (.details.latest_calendar_date // "?"),
+                      (.errors|length),
+                      (.warnings|length)
+                    ] | @tsv' "$report")
+
+                    if [ "$ok" = "true" ] && [ "$agencies" -ge 1 ]; then
+                      printf -- '- ✅ static — `%s` — %s agencies, %s routes, %s stops, %s files, service %s → %s\n' \
+                        "$static_url" "$agencies" "$routes" "$stops" "$files" "$earliest" "$latest" >> "$body_file"
+                      if [ "$ec" -gt 0 ] || [ "$wc" -gt 0 ]; then
+                        printf -- '  - %s error groups, %s warning groups (informational; tlv2 tracks full validation history):\n' "$ec" "$wc" >> "$body_file"
+                        jq -r '(.errors // {}) | to_entries | sort_by(-(.value.count)) | .[0:5] | .[] | "    - error · " + .value.filename + " · " + .value.error_type + " × " + (.value.count|tostring)' "$report" >> "$body_file" 2>/dev/null || true
+                        jq -r '(.warnings // {}) | to_entries | sort_by(-(.value.count)) | .[0:5] | .[] | "    - warning · " + .value.filename + " · " + .value.error_type + " × " + (.value.count|tostring)' "$report" >> "$body_file" 2>/dev/null || true
+                      fi
+                      pass_count=$((pass_count + 1))
+                    else
+                      reason=$(jq -r '.failure_reason // "no agency records"' "$report")
+                      printf -- '- ❌ static — `%s` — %s\n' "$static_url" "$reason" >> "$body_file"
+                      touch reports/${fbase}.static.blocker
+                      fail_count=$((fail_count + 1))
+                    fi
+                  else
+                    msg=$(tr -d '\n' < "$err" | tail -c 300)
+                    printf -- '- ❌ static — could not fetch or parse `%s` — %s\n' "$static_url" "$msg" >> "$body_file"
+                    touch reports/${fbase}.static.blocker
+                    fail_count=$((fail_count + 1))
+                  fi
+                fi
+              fi
+
+              # ---- realtime feeds ----
+              for rt_kind in "vp:realtime_vehicle_positions" "tu:realtime_trip_updates" "alerts:realtime_alerts"; do
+                short="${rt_kind%%:*}"
+                dmfr_key="${rt_kind##*:}"
+                rt_url=$(echo "$feed" | jq -r --arg k "$dmfr_key" '.[$k] // empty')
+                [ -n "$rt_url" ] || continue
+                url_changed "$dmfr_file" "$fid" "$dmfr_key" "$rt_url" || continue
+
+                url_count=$((url_count + 1))
+                if [ "$auth" != "null" ]; then
+                  printf -- '- ⚪ rt:%s — skipped (auth: `%s`); validated by tlv2 — `%s`\n' "$short" "$auth" "$rt_url" >> "$body_file"
+                  skip_count=$((skip_count + 1))
+                  continue
+                fi
+
+                rt_report="reports/${fbase}.rt-${short}.json"
+                rt_err="reports/${fbase}.rt-${short}.err"
+                if timeout 120 transitland rt-convert -f json -o "$rt_report" "$rt_url" 2> "$rt_err"; then
+                  read -r has_header rt_ver entity_count ts < <(jq -r '[
+                    (.header != null),
+                    (.header.gtfs_realtime_version // "?"),
+                    (.entity | length),
+                    (.header.timestamp // "?")
+                  ] | @tsv' "$rt_report")
+                  if [ "$has_header" = "true" ]; then
+                    printf -- '- ✅ rt:%s — `%s` — RT v%s, %s entities, header timestamp %s\n' \
+                      "$short" "$rt_url" "$rt_ver" "$entity_count" "$ts" >> "$body_file"
+                    pass_count=$((pass_count + 1))
+                  else
+                    printf -- '- ❌ rt:%s — `%s` — parsed but missing header\n' "$short" "$rt_url" >> "$body_file"
+                    touch reports/${fbase}.rt-${short}.blocker
+                    fail_count=$((fail_count + 1))
+                  fi
+                else
+                  msg=$(tr -d '\n' < "$rt_err" | tail -c 300)
+                  printf -- '- ❌ rt:%s — could not fetch or parse `%s` — %s\n' "$short" "$rt_url" "$msg" >> "$body_file"
+                  touch reports/${fbase}.rt-${short}.blocker
+                  fail_count=$((fail_count + 1))
+                fi
+              done
+
+              if [ "$url_count" -eq 0 ]; then
+                rm -f "$body_file"
+                continue
+              fi
+
+              if [ "$fail_count" -gt 0 ]; then
+                icon="❌"
+                open_attr=" open"
+              elif [ "$pass_count" -eq 0 ]; then
+                icon="⚪"
+                open_attr=""
+              else
+                icon="✅"
+                open_attr=""
+              fi
+
+              {
+                printf '\n<details%s>\n' "$open_attr"
+                printf '<summary>%s <code>%s</code></summary>\n\n' "$icon" "$fid"
+                cat "$body_file"
+                printf '\n</details>\n'
+              } >> "$summary"
+              rm -f "$body_file"
+            done
+          done <<< "${{ steps.changed.outputs.files }}"
+
+          any_blocker=0
+          ls reports/*.blocker >/dev/null 2>&1 && any_blocker=1 || true
+
+          {
+            echo "summary<<EOF"
+            cat "$summary"
+            echo "EOF"
+            echo "any_blocker=$any_blocker"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Upload validation reports
+        if: steps.changed.outputs.files != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: feed-url-validation-reports
+          path: reports/
 
       - name: Comment on PR
-        if: steps.validation.outputs.has_errors == 'true'
+        if: steps.changed.outputs.files != '' && steps.validate.outputs.summary != ''
         uses: actions/github-script@v8
+        env:
+          SUMMARY: ${{ steps.validate.outputs.summary }}
         with:
           script: |
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+            const body =
+              `## Feed URL validation\n\n` +
+              `${process.env.SUMMARY}\n\n` +
+              `<sub>Pass criteria: static feed fetches, parses, and has ≥1 agency record; ` +
+              `RT feed returns a valid GTFS-RT message. Other counts shown for context only — ` +
+              `feed contributors often don't control source quality. ` +
+              `Auth-protected URLs are validated by tlv2 with private keys, not here. ` +
+              `Full reports attached as workflow artifacts.</sub>`;
+
+            const existing = await github.paginate(github.rest.issues.listComments, {
               issue_number: context.issue.number,
-              body: `${{ steps.validation.outputs.message }}`
+              owner: context.repo.owner, repo: context.repo.repo,
             });
-            
-            core.setFailed('Validation failed - see PR comments for details');
+            const prior = existing.find(c =>
+              c.user.type === 'Bot' && c.body.includes('Feed URL validation')
+            );
+            if (prior) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: prior.id, body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body
+              });
+            }
+
+      - name: Fail if any feed URL could not be validated
+        if: steps.validate.outputs.any_blocker == '1'
+        run: |
+          echo "One or more URLs failed the minimum bar."
+          echo "Static: must fetch + parse + have ≥1 agency."
+          echo "RT: must return a valid GTFS-RT message."
+          exit 1
