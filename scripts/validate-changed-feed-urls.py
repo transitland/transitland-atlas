@@ -30,7 +30,7 @@ import json
 import re
 import subprocess
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
@@ -96,10 +96,16 @@ class Outcome:
 
 def run_validate_static(url: str, report_path: Path) -> Outcome:
     err_path = report_path.with_suffix(".err")
-    res = subprocess.run(
-        ["transitland", "validate", "--include-service-levels", "-o", str(report_path), url],
-        capture_output=True, text=True, timeout=300,
-    )
+    try:
+        res = subprocess.run(
+            ["transitland", "validate", "--include-service-levels", "-o", str(report_path), url],
+            capture_output=True, text=True, timeout=300,
+        )
+    except subprocess.TimeoutExpired:
+        return Outcome(
+            bullet=f"- ❌ static — `{url}` — timed out after 300s",
+            blocker=True,
+        )
     if res.returncode != 0:
         err_path.write_text(res.stderr)
         return Outcome(
@@ -152,10 +158,16 @@ def run_validate_static(url: str, report_path: Path) -> Outcome:
 
 def run_rt_convert(short: str, url: str, report_path: Path) -> Outcome:
     err_path = report_path.with_suffix(".err")
-    res = subprocess.run(
-        ["transitland", "rt-convert", "-f", "json", "-o", str(report_path), url],
-        capture_output=True, text=True, timeout=120,
-    )
+    try:
+        res = subprocess.run(
+            ["transitland", "rt-convert", "-f", "json", "-o", str(report_path), url],
+            capture_output=True, text=True, timeout=120,
+        )
+    except subprocess.TimeoutExpired:
+        return Outcome(
+            bullet=f"- ❌ rt:{short} — `{url}` — timed out after 120s",
+            blocker=True,
+        )
     if res.returncode != 0:
         err_path.write_text(res.stderr)
         return Outcome(

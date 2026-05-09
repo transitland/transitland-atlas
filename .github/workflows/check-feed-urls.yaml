@@ -21,8 +21,11 @@ jobs:
 
       - name: Security check for fork PRs
         if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
-          if git diff --name-only ${{ github.event.pull_request.head.sha }} ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+          if git diff --name-only "$HEAD_SHA" "$BASE_SHA" | grep -q -E "^\.github/|^scripts/"; then
             echo "Error: PR contains changes to .github or scripts directories"
             exit 1
           fi
@@ -33,9 +36,12 @@ jobs:
 
       - name: Determine changed feed files
         id: changed
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          git fetch origin ${{ github.base_ref }} --depth=1
-          changed=$(git diff --name-only origin/${{ github.base_ref }} ${{ github.event.pull_request.head.sha }} -- 'feeds/*.dmfr.json' || true)
+          git fetch origin "$BASE_REF" --depth=1
+          changed=$(git diff --name-only "origin/$BASE_REF" "$HEAD_SHA" -- 'feeds/*.dmfr.json' || true)
           {
             echo "files<<EOF"
             echo "$changed"
@@ -45,17 +51,18 @@ jobs:
       - name: Validate URLs proposed in this PR
         id: validate
         if: steps.changed.outputs.files != ''
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
           mkdir -p reports
-          mapfile -t files < <(printf '%s\n' "${{ steps.changed.outputs.files }}" | sed '/^$/d')
-          set +e
+          mapfile -t files < <(printf '%s\n' "$CHANGED_FILES" | sed '/^$/d')
+          rc=0
           uv run scripts/validate-changed-feed-urls.py \
-            --base-ref "${{ github.base_ref }}" \
+            --base-ref "$BASE_REF" \
             --reports-dir reports \
             --summary-out reports/summary.md \
-            "${files[@]}"
-          rc=$?
-          set -e
+            "${files[@]}" || rc=$?
           {
             echo "summary<<EOF"
             cat reports/summary.md 2>/dev/null || true
