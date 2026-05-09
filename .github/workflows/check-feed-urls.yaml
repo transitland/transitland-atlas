@@ -1,4 +1,4 @@
-name: Check feed URLs in changed DMFR files
+name: Validate static and RT URLs in changed DMFR files
 
 on:
   pull_request_target:
@@ -7,63 +7,115 @@ on:
     types: [opened, synchronize]
 
 permissions:
-  pull-requests: write  # Needed for commenting on PRs
-  contents: read       # Needed for checking out code
+  pull-requests: write
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
+      - name: Security check for fork PRs
+        if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if git diff --name-only "$HEAD_SHA" "$BASE_SHA" | grep -q -E "^\.github/|^scripts/"; then
+            echo "Error: PR contains changes to .github or scripts directories"
+            exit 1
+          fi
 
+      - uses: astral-sh/setup-uv@v7
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
 
-      - name: Get changed files and validate
-        id: validation
+      - name: Determine changed feed files
+        id: changed
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          # Get list of changed dmfr files using GitHub's base and head refs
-          changed_files=$(git diff --name-only origin/${{ github.base_ref }} HEAD -- 'feeds/*.dmfr.json')
-          
-          # Exit if no dmfr files changed
-          if [ -z "$changed_files" ]; then
-            echo "No DMFR files changed"
-            exit 0
-          fi
-          
-          validation_output=""
-          
-          # Loop through changed files
-          for file in $changed_files; do
-            echo "Validating $file"
-            if ! output=$(uv run scripts/check-feed-urls.py "$file" 2>&1); then
-              validation_output+="### Validation issues in $file \n\n $output"
-              echo "has_errors=true" >> $GITHUB_OUTPUT
-            fi
-          done
-          
-          # Set the validation output as a step output
-          echo "message<<EOF" >> $GITHUB_OUTPUT
-          echo "$validation_output" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          git fetch origin "$BASE_REF" --depth=1
+          changed=$(git diff --name-only "origin/$BASE_REF" "$HEAD_SHA" -- 'feeds/*.dmfr.json' || true)
+          {
+            echo "files<<EOF"
+            echo "$changed"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Validate URLs proposed in this PR
+        id: validate
+        if: steps.changed.outputs.files != ''
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          mkdir -p reports
+          mapfile -t files < <(printf '%s\n' "$CHANGED_FILES" | sed '/^$/d')
+          rc=0
+          uv run scripts/validate-changed-feed-urls.py \
+            --base-ref "$BASE_REF" \
+            --reports-dir reports \
+            --summary-out reports/summary.md \
+            "${files[@]}" || rc=$?
+          {
+            echo "summary<<EOF"
+            cat reports/summary.md 2>/dev/null || true
+            echo "EOF"
+            echo "any_blocker=$([ $rc -eq 0 ] && echo 0 || echo 1)"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Upload validation reports
+        if: steps.changed.outputs.files != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: feed-url-validation-reports
+          path: reports/
 
       - name: Comment on PR
-        if: steps.validation.outputs.has_errors == 'true'
+        if: steps.changed.outputs.files != '' && steps.validate.outputs.summary != ''
         uses: actions/github-script@v8
+        env:
+          SUMMARY: ${{ steps.validate.outputs.summary }}
         with:
           script: |
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+            const body =
+              `## Feed URL validation\n\n` +
+              `${process.env.SUMMARY}\n\n` +
+              `<sub>Pass criteria: static feed fetches, parses, and has ≥1 agency record; ` +
+              `RT feed returns a valid GTFS-RT message. Other counts shown for context only — ` +
+              `feed contributors often don't control source quality. ` +
+              `Auth-protected URLs are validated by tlv2 with private keys, not here. ` +
+              `Full reports attached as workflow artifacts.</sub>`;
+
+            const existing = await github.paginate(github.rest.issues.listComments, {
               issue_number: context.issue.number,
-              body: `${{ steps.validation.outputs.message }}`
+              owner: context.repo.owner, repo: context.repo.repo,
             });
-            
-            core.setFailed('Validation failed - see PR comments for details');
+            const prior = existing.find(c =>
+              c.user.type === 'Bot' && c.body.includes('Feed URL validation')
+            );
+            if (prior) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: prior.id, body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body
+              });
+            }
+
+      - name: Fail if any feed URL could not be validated
+        if: steps.validate.outputs.any_blocker == '1'
+        run: |
+          echo "One or more URLs failed the minimum bar."
+          echo "Static: must fetch + parse + have ≥1 agency."
+          echo "RT: must return a valid GTFS-RT message."
+          exit 1
