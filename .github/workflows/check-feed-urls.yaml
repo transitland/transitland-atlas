@@ -78,20 +78,12 @@ jobs:
           path: reports/
 
       - name: Comment on PR
-        if: steps.changed.outputs.files != '' && steps.validate.outputs.summary != ''
         uses: actions/github-script@v8
         env:
           SUMMARY: ${{ steps.validate.outputs.summary }}
         with:
           script: |
-            const body =
-              `## Feed URL validation\n\n` +
-              `${process.env.SUMMARY}\n\n` +
-              `<sub>Pass criteria: static feed fetches, parses, and has ≥1 agency record; ` +
-              `RT feed returns a valid GTFS-RT message. Other counts shown for context only — ` +
-              `feed contributors often don't control source quality. ` +
-              `Auth-protected URLs are validated by tlv2 with private keys, not here. ` +
-              `Full reports attached as workflow artifacts.</sub>`;
+            const summary = (process.env.SUMMARY || '').trim();
 
             const existing = await github.paginate(github.rest.issues.listComments, {
               issue_number: context.issue.number,
@@ -100,6 +92,25 @@ jobs:
             const prior = existing.find(c =>
               c.user.type === 'Bot' && c.body.includes('Feed URL validation')
             );
+
+            let body;
+            if (summary) {
+              body =
+                `## Feed URL validation\n\n${summary}\n\n` +
+                `<sub>Pass criteria: static feed fetches, parses, and has ≥1 agency record; ` +
+                `RT feed returns a valid GTFS-RT message. Other counts shown for context only — ` +
+                `feed contributors often don't control source quality. ` +
+                `Auth-protected URLs are validated by tlv2 with private keys, not here. ` +
+                `Full reports attached as workflow artifacts.</sub>`;
+            } else if (prior) {
+              // No URL changes need validation in the latest push, but a prior
+              // bot comment exists — replace it with a resolved message.
+              body = `## Feed URL validation\n\n✅ No URL changes need validation in the latest push.`;
+            } else {
+              // Nothing to post and no prior comment to update.
+              return;
+            }
+
             if (prior) {
               await github.rest.issues.updateComment({
                 owner: context.repo.owner, repo: context.repo.repo,
