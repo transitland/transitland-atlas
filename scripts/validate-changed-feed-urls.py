@@ -86,6 +86,40 @@ def url_tuples(dmfr: dict, file_path: str) -> set[UrlTuple]:
     return out
 
 
+def feed_by_id(dmfr: Optional[dict], feed_id: str) -> Optional[dict]:
+    if not dmfr:
+        return None
+    for feed in dmfr.get("feeds") or []:
+        if feed.get("id") == feed_id:
+            return feed
+    return None
+
+
+def load_operator_associated_feed_ids(feeds_dir: Path) -> set[str]:
+    """Return the set of feed_onestop_ids referenced by any operator's
+    associated_feeds[] across every *.dmfr.json file under feeds_dir.
+
+    Reads from the working tree, so it captures both pre-existing
+    associations and ones added in the same PR (regardless of which dmfr
+    file they live in).
+    """
+    associated: set[str] = set()
+    if not feeds_dir.is_dir():
+        return associated
+    for p in feeds_dir.glob("*.dmfr.json"):
+        try:
+            with p.open() as f:
+                data = json.load(f)
+        except (OSError, json.JSONDecodeError):
+            continue
+        for op in data.get("operators") or []:
+            for af in op.get("associated_feeds") or []:
+                fid = af.get("feed_onestop_id")
+                if fid:
+                    associated.add(fid)
+    return associated
+
+
 @dataclass
 class Outcome:
     bullet: str
@@ -201,6 +235,54 @@ def run_rt_convert(short: str, url: str, report_path: Path) -> Outcome:
     )
 
 
+def advisory_static_history(head_feed: dict, base_feed: Optional[dict]) -> Optional[Outcome]:
+    """If static_current changed and the previous URL isn't in static_historic,
+    advise the contributor to preserve URL history per Atlas convention."""
+    if not base_feed:
+        return None
+    head_url = (head_feed.get("urls") or {}).get("static_current")
+    base_url = (base_feed.get("urls") or {}).get("static_current")
+    if not head_url or not base_url or head_url == base_url:
+        return None
+    historic = (head_feed.get("urls") or {}).get("static_historic") or []
+    if base_url in historic:
+        return None
+    return Outcome(
+        bullet=(
+            f"- 💡 The previous `static_current` value `{base_url}` is not in "
+            f"`urls.static_historic[]`. Atlas convention is to move the prior "
+            f"URL into the historic list when updating `static_current`, so "
+            f"editors can see how the feed has evolved over time. Informational "
+            f"only — Transitland records each fetch URL regardless."
+        ),
+    )
+
+
+def advisory_rt_operator_association(
+    head_feed: dict,
+    base_feed: Optional[dict],
+    operator_feed_ids: set[str],
+) -> Optional[Outcome]:
+    """If a new gtfs-rt feed isn't referenced by any operator's
+    associated_feeds, advise — Transitland fetches RT feeds via operator
+    associations, so an unassociated RT feed will not be fetched."""
+    if base_feed is not None:
+        return None  # not a new feed
+    if (head_feed.get("spec") or "").lower() != "gtfs-rt":
+        return None
+    fid = head_feed.get("id")
+    if not fid or fid in operator_feed_ids:
+        return None
+    return Outcome(
+        bullet=(
+            f"- 💡 New RT feed `{fid}` is not referenced by any operator's "
+            f"`associated_feeds[].feed_onestop_id`. Transitland fetches RT "
+            f"feeds via operator associations; without this link the feed "
+            f"will not be fetched."
+        ),
+    )
+
+
 def render_feed_block(fid: str, outcomes: list[Outcome]) -> str:
     blocker = any(o.blocker for o in outcomes)
     passed = any(o.passed for o in outcomes)
@@ -224,31 +306,45 @@ def main() -> int:
     parser.add_argument("--base-ref", required=True, help="Base ref to diff against (e.g. main).")
     parser.add_argument("--reports-dir", type=Path, required=True, help="Directory for per-URL JSON reports.")
     parser.add_argument("--summary-out", type=Path, default=None, help="Write Markdown summary here; defaults to stdout.")
+    parser.add_argument("--feeds-dir", type=Path, default=Path("feeds"),
+                        help="Directory holding all *.dmfr.json files (used for operator-association advisory).")
     parser.add_argument("files", nargs="*", help="Changed DMFR file paths.")
     args = parser.parse_args()
 
     args.reports_dir.mkdir(parents=True, exist_ok=True)
 
+    # Pre-load each file's head and base versions once so passes share them.
+    head_dmfrs: dict[str, Optional[dict]] = {}
+    base_dmfrs: dict[str, Optional[dict]] = {}
+    for fp in args.files:
+        head_dmfrs[fp] = parse_dmfr_file(Path(fp))
+        base_dmfrs[fp] = base_dmfr(fp, args.base_ref) if head_dmfrs[fp] is not None else None
+
+    # Operator->feed associations across the whole working tree (head state).
+    operator_feed_ids = load_operator_associated_feed_ids(args.feeds_dir)
+
     # 1. Compute URL tuples that are new or changed (in head, not in base).
     changed: set[UrlTuple] = set()
     for fp in args.files:
-        head = parse_dmfr_file(Path(fp))
+        head = head_dmfrs.get(fp)
         if head is None:
             continue
         head_set = url_tuples(head, fp)
-        base = base_dmfr(fp, args.base_ref)
+        base = base_dmfrs.get(fp)
         base_set = url_tuples(base, fp) if base else set()
         changed |= (head_set - base_set)
 
     # 2. Per file, per feed: validate URL types whose tuple is in `changed`,
-    #    accumulate per-feed outcomes, render a <details> block.
+    #    accumulate per-feed outcomes, append style advisories, render a
+    #    <details> block.
     summary_parts: list[str] = []
     any_blocker = False
 
     for fp in args.files:
-        head = parse_dmfr_file(Path(fp))
+        head = head_dmfrs.get(fp)
         if head is None:
             continue
+        base = base_dmfrs.get(fp)
         for feed in head.get("feeds") or []:
             fid = feed.get("id")
             if not fid:
@@ -285,6 +381,16 @@ def main() -> int:
 
             if not outcomes:
                 continue
+
+            # Style advisories — appended after URL outcomes, scoped to feeds
+            # that already have some change in this PR.
+            base_feed = feed_by_id(base, fid)
+            for advisory in (
+                advisory_static_history(feed, base_feed),
+                advisory_rt_operator_association(feed, base_feed, operator_feed_ids),
+            ):
+                if advisory:
+                    outcomes.append(advisory)
 
             any_blocker = any_blocker or any(o.blocker for o in outcomes)
             summary_parts.append(render_feed_block(fid, outcomes))

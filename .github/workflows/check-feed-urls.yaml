@@ -98,7 +98,8 @@ jobs:
               body =
                 `## Feed URL validation\n\n${summary}\n\n` +
                 `<sub>Pass criteria: static feed fetches, parses, and has ≥1 agency record; ` +
-                `RT feed returns a valid GTFS-RT message. Other counts shown for context only — ` +
+                `RT feed returns a valid GTFS-RT message. 💡 bullets are style ` +
+                `advisories (don't gate the check). Other counts shown for context only — ` +
                 `feed contributors often don't control source quality. ` +
                 `Auth-protected URLs are validated by tlv2 with private keys, not here. ` +
                 `Full reports attached as workflow artifacts.</sub>`;
