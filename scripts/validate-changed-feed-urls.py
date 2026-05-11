@@ -27,12 +27,21 @@ Usage:
 
 import argparse
 import json
+import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
+import urllib.request
+import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+
+# Cap on suggested fragments per advisory (Victoria AU's outer zip has 8+
+# nested feeds; pathological zips could have many more).
+PREFIX_SUGGESTION_LIMIT = 8
 
 # short-name -> DMFR url key
 RT_KINDS: dict[str, str] = {
@@ -53,6 +62,63 @@ def trim(s: str, n: int = 300) -> str:
         if line.startswith("Error:"):
             return " ".join(line.split())[:n]
     return " ".join(s.split())[:n]
+
+
+def discover_zip_prefixes(url: str, timeout: int = 120) -> tuple[list[str], list[str]]:
+    """Download the zip at url and enumerate candidate URL-fragment prefixes.
+
+    Mirrors transitland-lib's prefix rule (tlcsv/adapter.go:findInternalPrefix):
+    any directory containing stops.txt is a folder prefix. Additionally returns
+    nested .zip entries, which transitland-lib resolves when a fragment ends in
+    .zip (tlcsv/adapter.go Open():193) but does not auto-discover.
+
+    Returns (folder_prefixes, nested_zip_paths). Either may be empty. On any
+    download/parse failure, returns ([], []) so callers can fall back to the
+    validator's own error message.
+    """
+    folders: set[str] = set()
+    nested: list[str] = []
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "transitland-atlas-ci"})
+        with tempfile.NamedTemporaryFile(suffix=".zip", delete=False) as tmp:
+            tmp_name = tmp.name
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp, open(tmp_name, "wb") as out:
+                shutil.copyfileobj(resp, out)
+            with zipfile.ZipFile(tmp_name) as zf:
+                for info in zf.infolist():
+                    name = info.filename
+                    if info.is_dir() or name.startswith("."):
+                        continue
+                    base = os.path.basename(name)
+                    if base == "stops.txt":
+                        d = os.path.dirname(name)
+                        # Path-style suggestions: "." → "./", "GTFS" → "GTFS/".
+                        # transitland-lib accepts both, but the slash makes
+                        # folder prefixes visually distinct from nested-zip
+                        # fragments (e.g. "#google_bus.zip").
+                        folders.add(f"{d}/" if d else "./")
+                    if name.lower().endswith(".zip"):
+                        nested.append(name)
+        finally:
+            try:
+                os.remove(tmp_name)
+            except OSError:
+                pass
+    except (OSError, zipfile.BadZipFile, ValueError):
+        return [], []
+    return sorted(folders), sorted(nested)
+
+
+def render_prefix_suggestions(url: str, prefixes: list[str]) -> str:
+    """Render up to PREFIX_SUGGESTION_LIMIT URL#fragment suggestions for a
+    multi-prefix zip. Caller is responsible for setting the lead-in bullet."""
+    shown = prefixes[:PREFIX_SUGGESTION_LIMIT]
+    extra = len(prefixes) - len(shown)
+    lines = [f"    - `{url}#{p}`" for p in shown]
+    if extra > 0:
+        lines.append(f"    - …and {extra} more")
+    return "\n".join(lines)
 
 
 def parse_dmfr_file(path: Path) -> Optional[dict]:
@@ -145,6 +211,21 @@ def run_validate_static(url: str, report_path: Path) -> Outcome:
         )
     if res.returncode != 0:
         err_path.write_text(res.stderr)
+        # transitland-lib refuses to pick a prefix when a zip contains >1 GTFS
+        # feed (tlcsv/adapter.go:findInternalPrefix). Probe the zip and suggest
+        # URL fragments so the contributor can disambiguate.
+        if "more than one valid prefix found" in res.stderr:
+            folders, nested = discover_zip_prefixes(url)
+            options = folders + nested
+            if options:
+                head = (
+                    f"- ❌ static — `{url}` — multiple GTFS feeds detected "
+                    f"inside this zip; pick one by appending a URL fragment:"
+                )
+                return Outcome(
+                    bullet=head + "\n" + render_prefix_suggestions(url, options),
+                    blocker=True,
+                )
         return Outcome(
             bullet=f"- ❌ static — could not fetch or parse `{url}` — {trim(res.stderr)}",
             blocker=True,
@@ -171,6 +252,23 @@ def run_validate_static(url: str, report_path: Path) -> Outcome:
     warnings = data.get("warnings") or {}
 
     if not success or agencies < 1:
+        # An outer zip that contains only nested .zip files (SEPTA, Victoria AU
+        # patterns) makes the validator return success with zero files —
+        # transitland-lib only resolves nested zips when a fragment ending in
+        # .zip is supplied. Probe and suggest fragments instead of the
+        # misleading "no agency records" message.
+        if file_count == 0:
+            _, nested = discover_zip_prefixes(url)
+            if nested:
+                head = (
+                    f"- ❌ static — `{url}` — this zip contains nested `.zip` "
+                    f"files rather than a GTFS feed at the top level; pick one "
+                    f"by appending a URL fragment:"
+                )
+                return Outcome(
+                    bullet=head + "\n" + render_prefix_suggestions(url, nested),
+                    blocker=True,
+                )
         reason = data.get("failure_reason") or "no agency records"
         return Outcome(
             bullet=f"- ❌ static — `{url}` — {reason}",
