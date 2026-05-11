@@ -172,26 +172,50 @@ if __name__ == "__main__":
         "license_spdx_identifier": "CDLA-Permissive-1.0"
     }
 
-    # Iterate through all rows to check for existing TLv2 feed and create DMFR record if needed
+    # Two-pass processing to avoid id collisions between existing feeds (which
+    # keep their committed onestop_ids) and newly-created feeds (which derive
+    # their onestop_ids from labels and may collide with an existing one).
+    #
+    # Pass 1: import any existing feed whose URL is still present in the CSV
+    # (and not skipped by the other filters). This reserves the existing
+    # onestop_ids in new_dmfr.feeds.
+    #
+    # Pass 2: iterate the CSV and create new records for URLs that weren't
+    # imported in pass 1. create_dmfr_record disambiguates against the now-
+    # populated new_dmfr.feeds, so any label-derived collision becomes ~N.
     if data:
+        csv_urls = {row.get('url') for row in data if row.get('url')}
+
+        for feed in existing_dmfr.get("feeds", []):
+            feed_url = feed.get("urls", {}).get("static_current")
+            if not feed_url or feed_url not in csv_urls:
+                continue
+            if feed_url in existing_feed_urls_to_skip:
+                continue
+            if check_for_feed_url_in_any_dmfr(feed_url, *other_jp_dmfrs):
+                continue
+            new_dmfr.setdefault("feeds", []).append(feed)
+
+        imported_urls = {
+            f.get("urls", {}).get("static_current")
+            for f in new_dmfr.get("feeds", [])
+        }
+
         for row in data:
             feed_url = row.get('url')
             label = row.get('label', '')
             license_name = row.get('license_name', '')
+            if not feed_url:
+                continue
             if feed_url in existing_feed_urls_to_skip:
                 logging.info("Skipping a feed URL that is managed in a different DMFR file")
                 continue
-            if feed_url:
-                # Check if URL exists in any other Japanese DMFR file - if so, skip it
-                if check_for_feed_url_in_any_dmfr(feed_url, *other_jp_dmfrs):
-                    logging.info(f"Skipping feed URL that exists in another Japanese DMFR file: {feed_url}")
-                    continue
-                # Check if URL exists in existing tshimada291 DMFR - if so, include it
-                result, feed = check_for_feed_in_existing_dmfr(feed_url, existing_dmfr)
-                if result and feed:
-                    new_dmfr.setdefault("feeds", []).append(feed)
-                else:
-                    create_dmfr_record(feed_url, label, license_name, new_dmfr)
+            if check_for_feed_url_in_any_dmfr(feed_url, *other_jp_dmfrs):
+                logging.info(f"Skipping feed URL that exists in another Japanese DMFR file: {feed_url}")
+                continue
+            if feed_url in imported_urls:
+                continue  # already imported from existing DMFR in pass 1
+            create_dmfr_record(feed_url, label, license_name, new_dmfr)
 
     output_path = '../../feeds/tshimada291.github.com.dmfr.json'
     with open(output_path, 'w', encoding='utf-8') as f:

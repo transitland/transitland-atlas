@@ -19,44 +19,12 @@ jobs:
     - name: Validate feeds
       working-directory: scripts
       run: uv run validate-feeds.py
-    - name: "If any changes: Create or update branch, commit, and PR"
-      run: |
-        set -eu
-        git config user.name "Automated Bot"
-        git config user.email "info@interline.io"
-
-        if [ -z "$(git status --porcelain)" ]; then
-          echo "Working directory is clean."
-          exit 0
-        fi
-
-        echo "Working directory has uncommitted changes."
-        BRANCH_NAME="auto/gbfs"
-        PR_TITLE="Automatic update of GBFS feeds"
-
-        # Check if a PR from this branch already exists
-        EXISTING_PR=$(gh pr list --head "${BRANCH_NAME}" --state open --json number --jq '.[0].number // empty')
-
-        if [ -n "${EXISTING_PR}" ]; then
-          echo "Found existing open PR #${EXISTING_PR} — updating branch."
-          git fetch origin "${BRANCH_NAME}"
-          git checkout -b "${BRANCH_NAME}" "origin/${BRANCH_NAME}" 2>/dev/null || git checkout -b "${BRANCH_NAME}"
-          git add -A
-          git commit -m "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"
-          git push --force-with-lease origin "${BRANCH_NAME}"
-          gh workflow run validate.yaml --ref "${BRANCH_NAME}"
-        else
-          echo "No existing PR — creating new branch and PR."
-          git push origin --delete "${BRANCH_NAME}" 2>/dev/null || true
-          git checkout -b "${BRANCH_NAME}"
-          git add -A
-          git commit -m "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"
-          git push --set-upstream origin "${BRANCH_NAME}"
-          gh pr create \
-            --title "${PR_TITLE}" \
-            --body "Automatically updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv" \
-            --base main
-          gh workflow run validate.yaml --ref "${BRANCH_NAME}"
-        fi
+    - name: Open or update auto-PR if anything changed
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        scripts/auto-pr.sh \
+          --branch-name "auto/gbfs" \
+          --pr-title "Automatic update of GBFS feeds" \
+          --pr-body "Automatically updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv" \
+          --commit-message "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"

@@ -192,6 +192,66 @@
       }
     },
     {
+      "id": "f-cgcta~mo~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cgcta.tripshot.com/v1/gtfs/feed/cgcta"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cgcta~mo~us",
+          "name": "Cape Girardeau County Transit Authority",
+          "short_name": "CGCTA",
+          "website": "https://www.cgcta.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cgcta~mo~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "70051"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-cgcta~mo~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=VehiclePosition",
+        "realtime_trip_updates": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=TripUpdate",
+        "realtime_alerts": "https://cgcta.tripshot.com/v1/gtfs/realtime/feed/cgcta?types=Alert"
+      }
+    },
+    {
+      "id": "f-dj6m-okaloosacountytransit~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://okaloosa.tripshot.com/v1/gtfs.zip",
+        "static_historic": [
+          "https://www.ecrider.org/wp-content/uploads/2025/09/Okaloosa-GTFS.zip",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/refs/heads/master/okaloosa-county-fl.zip",
+          "https://goecrider.com/gtfs",
+          "https://data.trilliumtransit.com/gtfs/okaloosacountytransit-fl-us/okaloosacountytransit-fl-us.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "emerald-coast-rider"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dj6m-emeraldcoastrider",
+          "name": "Okaloosa County Transit",
+          "short_name": "Emerald Coast Rider (ECR)",
+          "website": "http://ecrider.org/",
+          "tags": {
+            "us_ntd_id": "40128",
+            "wikidata_id": "Q7081750"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-lawrence~berkeley~national~lab",
       "spec": "gtfs",
       "urls": {
