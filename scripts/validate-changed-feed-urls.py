@@ -49,7 +49,10 @@ def slugify(s: str) -> str:
 
 
 def trim(s: str, n: int = 300) -> str:
-    return " ".join(s.split())[-n:]
+    for line in s.splitlines():
+        if line.startswith("Error:"):
+            return " ".join(line.split())[:n]
+    return " ".join(s.split())[:n]
 
 
 def parse_dmfr_file(path: Path) -> Optional[dict]:
