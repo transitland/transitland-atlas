@@ -16,7 +16,12 @@
           "onestop_id": "o-spz3-tep",
           "name": "TEP Parma",
           "short_name": "TEP",
-          "website": "https://www.tep.pr.it/"
+          "website": "https://www.tep.pr.it/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-spz3-tep-parma~rt"
+            }
+          ]
         }
       ]
     },
@@ -25,8 +30,7 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://temporeale.cl.tep.pr.it/temporeale/vehicle_positions.pb",
-        "realtime_trip_updates": "https://temporeale.cl.tep.pr.it/temporeale/trip_updates.pb",
-        "realtime_alerts": "https://temporeale.cl.tep.pr.it/temporeale/service_alerts.pb"
+        "realtime_trip_updates": "https://temporeale.cl.tep.pr.it/temporeale/trip_updates.pb"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
