@@ -1,15 +1,8 @@
-#!/usr/bin/env -S uv run --script
+#!/usr/bin/env -S uv run
 """
 Feed maintenance script to identify feeds that may be out of date and require
 manual research to find new URLs. Fetches feed data and analyzes update cadence.
 """
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#     "requests",
-#     "pandas",
-# ]
-# ///
 
 import os
 import csv

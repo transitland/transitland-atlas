@@ -1,0 +1,17 @@
+[project]
+name = "transitland-atlas"
+version = "0"
+requires-python = ">=3.11"
+dependencies = [
+    "check-jsonschema==0.37.2",
+    "pandas",
+    "requests>=2.32.5",
+    "rich",
+    "thefuzz",
+]
+
+[tool.uv]
+# Ignore package versions published within this window when resolving.
+# Mitigates same-day supply-chain compromises (e.g. Shai-Hulud-style worms)
+# that publish malicious versions and rely on immediate adoption.
+exclude-newer = "7 days"

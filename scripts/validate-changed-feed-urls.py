@@ -1,8 +1,4 @@
-#!/usr/bin/env -S uv run --script
-# /// script
-# requires-python = ">=3.11"
-# dependencies = []
-# ///
+#!/usr/bin/env -S uv run
 """
 Validate static and RT URLs that are new or changed in a PR's DMFR files.
 

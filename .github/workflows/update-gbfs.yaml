@@ -19,13 +19,13 @@ jobs:
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Fetch latest data
-      run: uv run scripts/convert-gbfs-csv-to-dmfr.py > feeds/nabsa.github.com.dmfr.json
+      run: uv run --locked scripts/convert-gbfs-csv-to-dmfr.py > feeds/nabsa.github.com.dmfr.json
     - name: Format in the opinionated DMFR format
       run: |
         find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
     - name: Validate feeds
       working-directory: scripts
-      run: uv run validate-feeds.py
+      run: uv run --locked validate-feeds.py
     - name: Open or update auto-PR if anything changed
       env:
         GH_TOKEN: ${{ steps.app-token.outputs.token }}

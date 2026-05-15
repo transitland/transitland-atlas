@@ -1,10 +1,5 @@
-#!/usr/bin/env -S uv run --script
+#!/usr/bin/env -S uv run
 
-# /// script
-# dependencies = [
-#   "requests==2.32.5",
-# ]
-# ///
 
 """
 Script to collect GTFS and GTFS-RT feeds from ODPT (Public Transportation Open Data Center)

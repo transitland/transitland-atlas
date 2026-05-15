@@ -58,7 +58,7 @@ jobs:
           mkdir -p reports
           mapfile -t files < <(printf '%s\n' "$CHANGED_FILES" | sed '/^$/d')
           rc=0
-          uv run scripts/validate-changed-feed-urls.py \
+          uv run --locked scripts/validate-changed-feed-urls.py \
             --base-ref "$BASE_REF" \
             --reports-dir reports \
             --summary-out reports/summary.md \

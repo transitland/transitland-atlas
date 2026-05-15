@@ -1,15 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run
 """
 Review French operators and feeds from Transitland.
 Searches for French operators via REST API, checks feed age, and matches with transport.data.gouv.fr datasets.
 """
-# /// script
-# requires-python = ">=3.8"
-# dependencies = [
-#     "requests",
-#     "thefuzz",
-# ]
-# ///
 
 import os
 import sys

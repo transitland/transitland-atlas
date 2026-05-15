@@ -1,8 +1,4 @@
-#!/usr/bin/env -S uv run --script
-# /// script
-# requires-python = ">=3.11"
-# dependencies = ["rich"]
-# ///
+#!/usr/bin/env -S uv run
 """
 Compare two or more GTFS feed URLs to assess which is more recent/active,
 or whether they represent meaningfully different feeds.
