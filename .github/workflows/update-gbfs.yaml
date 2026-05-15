@@ -7,7 +7,14 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+      id: app-token
+      with:
+        app-id: ${{ secrets.GH_BOT_APP_ID }}
+        private-key: ${{ secrets.GH_BOT_APP_PRIVATE_KEY }}
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      with:
+        token: ${{ steps.app-token.outputs.token }}
     - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
@@ -21,10 +28,11 @@ jobs:
       run: uv run validate-feeds.py
     - name: Open or update auto-PR if anything changed
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: |
         scripts/auto-pr.sh \
           --branch-name "auto/gbfs" \
           --pr-title "Automatic update of GBFS feeds" \
           --pr-body "Automatically updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv" \
-          --commit-message "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)"
+          --commit-message "Updated GBFS feeds from https://github.com/NABSA/gbfs/blob/master/systems.csv at $(date -u)" \
+          --trigger-workflow ""

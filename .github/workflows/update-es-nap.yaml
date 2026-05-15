@@ -9,7 +9,14 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+      id: app-token
+      with:
+        app-id: ${{ secrets.GH_BOT_APP_ID }}
+        private-key: ${{ secrets.GH_BOT_APP_PRIVATE_KEY }}
     - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      with:
+        token: ${{ steps.app-token.outputs.token }}
     - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
       with:
         python-version: '3.10'
@@ -35,11 +42,12 @@ jobs:
         DMFR_SCHEMA_VERSION: v0.6.0
     - name: Open or update auto-PR if anything changed
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: |
         scripts/auto-pr.sh \
           --branch-name "auto/spanish-nap" \
           --pr-title "Automatic update of Spanish NAP feeds" \
           --pr-body "Automatically updated Spanish NAP feeds from nap.transportes.gob.es" \
-          --commit-message "Updated Spanish NAP feeds from nap.transportes.gob.es at $(date -u)"
+          --commit-message "Updated Spanish NAP feeds from nap.transportes.gob.es at $(date -u)" \
+          --trigger-workflow ""
 
