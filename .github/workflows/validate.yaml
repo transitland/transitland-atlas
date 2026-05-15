@@ -21,15 +21,12 @@ jobs:
           exit 1
         fi
     - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
-    - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
-      with:
-        node-version: '20.x'
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Validate against DMFR schema
       run: |
         wget https://dmfr.transit.land/json-schema/dmfr.schema-${{ env.DMFR_SCHEMA_VERSION }}.json -O dmfr.schema.json
-        npx ajv-cli validate -s dmfr.schema.json -d "feeds/*.json"
+        uv run --locked check-jsonschema --schemafile dmfr.schema.json feeds/*.json
     - name: Lint against the opinionated DMFR format
       run: |
         transitland dmfr lint feeds/*.dmfr.json
@@ -37,4 +34,4 @@ jobs:
       env:
         DMFR_SCHEMA_VERSION: ${{ env.DMFR_SCHEMA_VERSION }}
       working-directory: scripts
-      run: uv run validate-feeds.py
+      run: uv run --locked validate-feeds.py

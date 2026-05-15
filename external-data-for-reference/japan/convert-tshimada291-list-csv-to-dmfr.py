@@ -1,10 +1,5 @@
-#!/usr/bin/env -S uv run --script
+#!/usr/bin/env -S uv run
 
-# /// script
-# dependencies = [
-#   "requests==2.32.5",
-# ]
-# ///
 
 import csv
 import requests

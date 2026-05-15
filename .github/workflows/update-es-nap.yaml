@@ -23,21 +23,19 @@ jobs:
     - name: Install uv
       uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
       with:
-        cache-dependency-glob: |
-          external-data-for-reference/spain/*.py
-          scripts/*.py
+        cache-dependency-glob: uv.lock
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Fetch latest Spanish NAP data
       working-directory: external-data-for-reference/spain
-      run: uv run collect-nap-gtfs.py
+      run: uv run --locked collect-nap-gtfs.py
       env:
         SPANISH_NAP_API_KEY: ${{ secrets.SPANISH_NAP_API_KEY }}
     - name: Format in the opinionated DMFR format
       run: transitland dmfr format --save feeds/nap.transportes.gob.es.dmfr.json
     - name: Validate feeds
       working-directory: scripts
-      run: uv run validate-feeds.py
+      run: uv run --locked validate-feeds.py
       env:
         DMFR_SCHEMA_VERSION: v0.6.0
     - name: Open or update auto-PR if anything changed

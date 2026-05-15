@@ -1,4 +1,4 @@
-#!/usr/bin/env -S uv run --script
+#!/usr/bin/env -S uv run
 
 """
 Convert feed Onestop IDs to lowercase in DMFR files.

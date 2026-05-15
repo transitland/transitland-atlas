@@ -1,11 +1,5 @@
-#!/usr/bin/env -S uv run --script
+#!/usr/bin/env -S uv run
 
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#   "requests>=2.31.0",
-# ]
-# ///
 
 import csv
 import json
