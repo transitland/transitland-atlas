@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-spz3-tepparma",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://temporeale.cl.tep.pr.it/temporeale/gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://temporeale.cl.tep.pr.it/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spz3-tep",
+          "name": "TEP Parma",
+          "short_name": "TEP",
+          "website": "https://www.tep.pr.it/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-spz3-tepparma~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-spz3-tepparma~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://temporeale.cl.tep.pr.it/temporeale/vehicle_positions.pb",
+        "realtime_trip_updates": "https://temporeale.cl.tep.pr.it/temporeale/trip_updates.pb"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://temporeale.cl.tep.pr.it/"
+      }
+    }
+  ]
+}
