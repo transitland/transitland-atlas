@@ -1592,6 +1592,38 @@
       ]
     },
     {
+      "id": "f-autobús~urbano~de~vic",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nap.transportes.gob.es/api/Fichero/download/2162"
+      },
+      "license": {
+        "url": "https://nap.transportes.gob.es/licencia-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Powered by MITRAMS",
+        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "ApiKey",
+        "info_url": "https://nap.transportes.gob.es/"
+      },
+      "tags": {
+        "es_nap_fichero_id": "2162",
+        "notes": "Fetched by transitland-gtfs-scraper (NAP requires two-stage /api/Fichero/downloadLink flow)"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-urbà~de~vic",
+          "name": "Urbà de Vic",
+          "website": "https://www.sagales.com/es"
+        }
+      ]
+    },
+    {
       "id": "f-autobús~urbano~de~ávila",
       "spec": "gtfs",
       "urls": {
