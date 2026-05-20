@@ -8,6 +8,7 @@
         "static_current": "http://www.stm.info/sites/default/files/gtfs/gtfs_stm.zip"
       },
       "license": {
+        "spdx_identifier": "CC-BY-4.0",
         "url": "http://www.stm.info/en/about/developers/terms-use",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
@@ -33,8 +34,19 @@
       "id": "f-f25d-socitdetransportdemontral~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://api.stm.info:8443/pub/od/gtfs-rt/ic/v2/vehiclePositions",
-        "realtime_trip_updates": "https://api.stm.info:8443/pub/od/gtfs-rt/ic/v2/tripUpdates"
+        "realtime_vehicle_positions": "https://api.stm.info/pub/od/gtfs-rt/ic/v2/vehiclePositions",
+        "realtime_trip_updates": "https://api.stm.info/pub/od/gtfs-rt/ic/v2/tripUpdates"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.stm.info/en/about/developers/terms-use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "apiKey",
+        "info_url": "https://www.stm.info/en/about/developers"
       }
     }
   ]
