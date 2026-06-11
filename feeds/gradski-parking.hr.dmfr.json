@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-srg2-gradski~parking",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.gradski-parking.hr/upload/stranice/2022/08/2022-08-30/89/gtfs.zip"
+      },
+      "license": {
+        "url": "https://data.gov.hr/otvorena-dozvola",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://www.gradski-parking.hr/stranice/datoteke-u-gtfs-formatu/105.html"
+      }
+    },
+    {
+      "id": "f-srg2-gradski~parking~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.gradski-parking.hr/upload/stranice/2022/08/2022-08-30/89/gtfs-rt.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-srg2-gradski~parking",
+      "name": "Gradski parking",
+      "website": "https://www.gradski-parking.hr",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-srg2-gradski~parking"
+        },
+        {
+          "feed_onestop_id": "f-srg2-gradski~parking~rt"
+        }
+      ],
+      "tags": {
+        "facebook": "https://www.facebook.com/gradskiparking.sibenik"
+      }
+    }
+  ]
+}
