@@ -2,32 +2,11 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-pkp~intercity~pl",
-      "name": "PKP Intercity GTFS",
+      "id": "f-Polish~Trains",
+      "name": "Polish Trains GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/pkpic.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC0-1.0",
-        "url": "https://mkuran.pl/gtfs/",
-        "attribution_text": "Stop positions (stop_lat and stop_lon) are based on data by © OpenStreetMap contributors"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3-pkp~intercity~pl",
-          "name": "PKP Intercity",
-          "short_name": "PKP IC",
-          "website": "https://www.intercity.pl/"
-        }
-      ]
-    },
-    {
-      "id": "f-pol~regio~pl",
-      "name": "PolRegio GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/polregio.zip"
+        "static_current": "https://mkuran.pl/gtfs/polish_trains.zip"
       },
       "license": {
         "spdx_identifier": "CC0-1.0",
@@ -35,9 +14,21 @@
       },
       "operators": [
         {
+          "onestop_id": "o-u3-pkp~intercity~pl",
+          "name": "PKP Intercity",
+          "short_name": "PKP IC",
+          "website": "https://www.intercity.pl/"
+        },
+        {
           "onestop_id": "o-pol~regio",
           "name": "PolRegio",
           "website": "https://polregio.pl/"
+        },
+        {
+          "onestop_id": "o-u3q-kolejemazowieckie",
+          "name": "Koleje Mazowieckie",
+          "short_name": "KM",
+          "website": "http://www.mazowieckie.com.pl/"
         }
       ]
     },
@@ -83,28 +74,6 @@
           "name": "Zarząd Transportu Miejskiego w Rzeszowie",
           "short_name": "ZTM Rzeszów",
           "website": "https://ztm.rzeszow.pl/"
-        }
-      ]
-    },
-    {
-      "id": "f-u3-kolejemazowieckie",
-      "supersedes_ids": [
-        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
-      ],
-      "name": "Koleje Mazowieckie GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/kolejemazowieckie.zip"
-      },
-      "license": {
-        "url": "https://bip.mazowieckie.com.pl/pl/ponowne-wykorzystywanie-informacji-sektora-publicznego"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3q-kolejemazowieckie",
-          "name": "Koleje Mazowieckie",
-          "short_name": "KM",
-          "website": "http://www.mazowieckie.com.pl/"
         }
       ]
     },
