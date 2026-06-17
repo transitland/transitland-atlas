@@ -1,0 +1,232 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u-nmbs~sncb",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/nmbssncb/static",
+        "static_historic": [
+          "https://gtfs.irail.be/nmbs/gtfs/latest.zip",
+          "http://gtfs.irail.be/nmbs/nmbs-latest.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u-nmbs~sncb",
+          "name": "Nationale Maatschappij der Belgische Spoorwegen/Société nationale des chemins de fer belges",
+          "short_name": "NMBS/SNCB",
+          "website": "http://www.belgianrail.be/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u-nmbs~sncb~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u-nmbs~sncb~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/nmbssncb/rt/trip-update",
+        "realtime_alerts": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/nmbssncb/rt/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      }
+    },
+    {
+      "id": "f-u0g-tec",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/tec/static",
+        "static_historic": [
+          "https://opendata.tec-wl.be/Current%20GTFS/TEC-GTFS.zip",
+          "http://gtfs.irail.be/tec/tec-gtfs.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0g-tec",
+          "name": "Transport en Commun",
+          "short_name": "TEC",
+          "website": "http://www.letec.be",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "B"
+            },
+            {
+              "gtfs_agency_id": "C"
+            },
+            {
+              "gtfs_agency_id": "H"
+            },
+            {
+              "gtfs_agency_id": "L"
+            },
+            {
+              "gtfs_agency_id": "N"
+            },
+            {
+              "feed_onestop_id": "f-u0g-tec~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u0g-tec~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/tec/rt/trip-update",
+        "realtime_alerts": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/tec/rt/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      }
+    },
+    {
+      "id": "f-u1-delijn",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/delijn/static",
+        "static_historic": [
+          "https://api.delijn.be/gtfs/static/v3/gtfs_transit.zip",
+          "http://gtfs.irail.be/de-lijn/de_lijn-gtfs.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      },
+      "tags": {
+        "gtfs_data_exchange": "de-lijn"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u1-delijn",
+          "name": "De Lijn",
+          "website": "http://www.delijn.be",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "DELIJN",
+              "feed_onestop_id": "f-u-nl"
+            },
+            {
+              "feed_onestop_id": "f-u1-delijn~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u1-delijn~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/delijn/rt/trip-update",
+        "realtime_alerts": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/delijn/rt/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      }
+    },
+    {
+      "id": "f-u151-stib",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/stibmivb/static",
+        "static_historic": [
+          "http://gtfs.irail.be/mivb/mivb-gtfs.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u151-stib",
+          "name": "Société des Transports Intercommunaux de Bruxelles/Maatschappij voor het Intercommunaal Vervoer te Brussel",
+          "short_name": "STIB/MIVB",
+          "website": "http://www.stib.be/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u151-stib~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u151-stib~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-management-opendata-production.azure-api.net/api/datasets/stibmivb/rt/VehiclePositions"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.belgianmobility.io/en/terms.html",
+        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Ocp-Apim-Subscription-Key",
+        "info_url": "https://data.belgianmobility.io"
+      }
+    }
+  ]
+}
