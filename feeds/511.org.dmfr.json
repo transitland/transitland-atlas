@@ -234,6 +234,19 @@
       }
     },
     {
+      "id": "f-9q9j-commute~ca~us-rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://peninsulashuttles.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://peninsulashuttles.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://peninsulashuttles.com/gtfs-rt/alerts"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+    },
+    {
       "id": "f-9q9j-dumbartonexpress",
       "spec": "gtfs",
       "urls": {
@@ -973,6 +986,9 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-9q9j-commute~ca~us"
+        },
+        {
+          "feed_onestop_id": "f-9q9j-commute~ca~us-rt" 
         },
         {
           "gtfs_agency_id": "CM",
