@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-shuttleum~md~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://feed.actionfigure.ai/university-of-maryland-shuttle-um.zip",
+        "static_historic": [
+          "http://gtfs-source-feeds.transit.land/shuttleum-md-us.zip",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/shuttleum-md-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/interline-gtfs-license.md"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqcm-shuttle~um",
+          "name": "Shuttle-UM",
+          "website": "https://transportation.umd.edu/shuttle-um",
+          "tags": {
+            "twitter_general": "dots_umd",
+            "wikidata_id": "Q7505684"
+          }
+        }
+      ]
+    }
+  ]
+}
