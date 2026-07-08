@@ -875,6 +875,21 @@
       }
     },
     {
+      "id": "f-midoricity~alllines~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/MidoriCity/AllLines.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-miyakevill~allline~jp",
       "spec": "gtfs",
       "urls": {
@@ -2017,6 +2032,16 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-meimontaiyoferry~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-midoricity",
+      "name": "みどり市",
+      "short_name": "Midori City",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-midoricity~alllines~jp"
         }
       ]
     },
