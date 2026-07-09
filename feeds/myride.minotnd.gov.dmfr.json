@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-minot~city~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://myride.minotnd.gov/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-minot~city~transit",
+          "name": "Minot City Transit",
+          "tags": {
+            "us_ntd_id": "80303",
+            "twitter_general": "CityofMinot",
+            "facebook": "https://www.facebook.com/cityofminot/"
+          },
+          "website": "https://www.minotnd.gov/294/City-Transit"
+        }
+      ]
+    }
+  ]
+}

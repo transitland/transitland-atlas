@@ -5,8 +5,9 @@
       "id": "f-9q8-samtrans",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SM",
+        "static_current": "https://www.samtrans.com/media/36874/download?inline",
         "static_historic": [
+          "http://api.511.org/transit/datafeeds?operator_id=SM",
           "http://www.samtrans.com/Assets/GTFS/samtrans/ST-GTFS.zip"
         ]
       },
@@ -351,7 +352,10 @@
       "id": "f-9q9q-wheelsbus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://webwatch.lavta.org/TMGTFSRealTimeWebService/GTFS-Static/google_transit.zip"
+        "static_current": "http://webwatch.lavta.org:81/GTFS-Static/lavta_gtfs.zip",
+        "static_historic": [
+          "http://webwatch.lavta.org/TMGTFSRealTimeWebService/GTFS-Static/google_transit.zip"
+        ]
       },
       "license": {
         "url": "http://www.wheelsbus.com/lavta-developer-license-agreement/",
@@ -742,8 +746,10 @@
         "omd_provider_id": "samtrans",
         "twitter_general": "SamTrans",
         "us_ntd_id": "90009",
-        "wikidata_id": "Q7407040"
-      }
+        "wikidata_id": "Q7407040",
+        "facebook": "https://www.facebook.com/samtrans"
+      },
+      "website": "http://www.samtrans.com"
     },
     {
       "onestop_id": "o-9q8y-sfmta",
@@ -784,7 +790,9 @@
       ],
       "tags": {
         "twitter_general": "flySFO",
-        "wikidata_id": "Q8688"
+        "wikidata_id": "Q8688",
+        "operated_by": "City and County of San Francisco",
+        "facebook": "https://www.facebook.com/flySFO"
       }
     },
     {
@@ -824,7 +832,8 @@
       "tags": {
         "twitter_general": "GGBridge",
         "twitter_service_alerts": "GGBridgeAlerts",
-        "wikidata_id": "Q5579447"
+        "wikidata_id": "Q5579447",
+        "operated_by": "Golden Gate Bridge, Highway and Transportation District"
       }
     },
     {
@@ -868,7 +877,9 @@
       "tags": {
         "twitter_general": "ACE_train",
         "us_ntd_id": "90182",
-        "wikidata_id": "Q434302"
+        "wikidata_id": "Q434302",
+        "operated_by": "San Joaquin Regional Rail Commission",
+        "facebook": "https://www.facebook.com/AltamontCorridorExpress"
       }
     },
     {
@@ -891,8 +902,10 @@
       "tags": {
         "twitter_general": "rideact",
         "us_ntd_id": "90014",
-        "wikidata_id": "Q4353850"
-      }
+        "wikidata_id": "Q4353850",
+        "facebook": "https://www.facebook.com/rideact"
+      },
+      "website": "http://www.actransit.org"
     },
     {
       "onestop_id": "o-9q9-bart",
@@ -916,7 +929,8 @@
         "twitter_general": "sfbart",
         "twitter_service_alerts": "SFBARTalert",
         "us_ntd_id": "90003",
-        "wikidata_id": "Q610120"
+        "wikidata_id": "Q610120",
+        "facebook": "https://www.facebook.com/bartsf"
       }
     },
     {
@@ -941,7 +955,8 @@
         "twitter_general": "VTA",
         "twitter_service_alerts": "VTAservice",
         "us_ntd_id": "90013",
-        "wikidata_id": "Q1456861"
+        "wikidata_id": "Q1456861",
+        "facebook": "https://www.facebook.com/scvta"
       }
     },
     {
@@ -963,7 +978,9 @@
         }
       ],
       "tags": {
-        "twitter_general": "MvgoShuttle"
+        "twitter_general": "MvgoShuttle",
+        "wikidata_id": "Q110544414",
+        "managed_by": "Mountain View Transportation Management Association"
       }
     },
     {
@@ -981,7 +998,8 @@
       ],
       "tags": {
         "twitter_general": "SMCountyCommute",
-        "wikidata_id": "Q7162971"
+        "wikidata_id": "Q7162971",
+        "facebook": "https://www.facebook.com/pages/Commuteorg/285359709935"
       }
     },
     {
@@ -1046,7 +1064,8 @@
       "tags": {
         "twitter_general": "cccta",
         "us_ntd_id": "90078",
-        "wikidata_id": "Q5177640"
+        "wikidata_id": "Q5177640",
+        "facebook": "https://www.facebook.com/countyconnectionCA"
       }
     },
     {
@@ -1069,7 +1088,9 @@
         "twitter_general": "SFBayFerry",
         "twitter_service_alerts": "SFBFBayAlerts",
         "us_ntd_id": "90225",
-        "wikidata_id": "Q7413935"
+        "wikidata_id": "Q7413935",
+        "operated_by": "Blue & Gold Fleet",
+        "facebook": "https://www.facebook.com/sanfranciscobayferry"
       }
     },
     {
@@ -1114,8 +1135,10 @@
       "tags": {
         "twitter_general": "wheelsbus",
         "us_ntd_id": "90144",
-        "wikidata_id": "Q7950139"
-      }
+        "wikidata_id": "Q7950139",
+        "facebook": "https://www.facebook.com/wheelsbus"
+      },
+      "website": "https://www.wheelsbus.com/"
     },
     {
       "onestop_id": "o-9qb-goldengatetransit",
@@ -1140,14 +1163,15 @@
         "twitter_general": "GGBridge",
         "twitter_service_alerts": "GGBridgeAlerts",
         "us_ntd_id": "90016",
-        "wikidata_id": "Q525895"
+        "wikidata_id": "Q525895",
+        "facebook": "https://www.facebook.com/goldengatebridge/"
       }
     },
     {
       "onestop_id": "o-9qb-sonomacountytransit",
       "name": "Sonoma County Transit",
       "short_name": "SCT",
-      "website": "https://sctransit.com/",
+      "website": "https://www.sctransit.com/",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-9qb-sonomacounty~ca~us"
@@ -1187,7 +1211,8 @@
       "tags": {
         "twitter_general": "smarttrain",
         "us_ntd_id": "90299",
-        "wikidata_id": "Q7562166"
+        "wikidata_id": "Q7562166",
+        "facebook": "https://www.facebook.com/sonomamarintrain/"
       }
     },
     {
@@ -1211,7 +1236,8 @@
       "tags": {
         "twitter_general": "marintransit",
         "us_ntd_id": "90234",
-        "wikidata_id": "Q6763758"
+        "wikidata_id": "Q6763758",
+        "facebook": "https://www.facebook.com/marintransit"
       }
     },
     {
@@ -1240,7 +1266,7 @@
     {
       "onestop_id": "o-9qbdx-santarosacitybus",
       "name": "Santa Rosa CityBus",
-      "website": "http://ci.santa-rosa.ca.us/departments/transit/CityBus/Pages/default.aspx",
+      "website": "https://srcitybus.org/",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-9qbdx-santarosacitybus"
@@ -1279,14 +1305,17 @@
       ],
       "tags": {
         "twitter_general": "CapitolCorridor",
-        "wikidata_id": "Q510836"
+        "wikidata_id": "Q510836",
+        "operated_by": "Amtrak",
+        "facebook": "https://www.facebook.com/CapitolCorridor",
+        "managed_by": "Amtrak"
       }
     },
     {
       "onestop_id": "o-9qc-fairfieldandsuisuntransit",
       "name": "Fairfield and Suisun Transit",
       "short_name": "FAST",
-      "website": "https://fasttransit.org/",
+      "website": "https://www.fasttransit.org/",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-9qc-fairfield~ca~us"
@@ -1303,7 +1332,8 @@
       "tags": {
         "twitter_general": "fast_transit",
         "us_ntd_id": "90092",
-        "wikidata_id": "Q5430409"
+        "wikidata_id": "Q5430409",
+        "facebook": "https://www.facebook.com/FAST.transit/"
       }
     },
     {
@@ -1327,7 +1357,8 @@
       "tags": {
         "twitter_general": "vinetransit",
         "us_ntd_id": "90088",
-        "wikidata_id": "Q7907027"
+        "wikidata_id": "Q7907027",
+        "operated_by": "Transdev S.A."
       }
     },
     {
@@ -1350,7 +1381,8 @@
       "tags": {
         "twitter_general": "wccta",
         "us_ntd_id": "90159",
-        "wikidata_id": "Q7984179"
+        "wikidata_id": "Q7984179",
+        "facebook": "https://www.facebook.com/wccta"
       }
     },
     {
@@ -1373,8 +1405,10 @@
       "tags": {
         "twitter_general": "SolTransRide",
         "us_ntd_id": "90232",
-        "wikidata_id": "Q16984743"
-      }
+        "wikidata_id": "Q16984743",
+        "facebook": "https://www.facebook.com/SolTrans/"
+      },
+      "website": "https://soltrans.org/"
     },
     {
       "onestop_id": "o-9qc2-trideltatransit",
@@ -1401,7 +1435,7 @@
     {
       "onestop_id": "o-9qc3-riovistadeltabreeze",
       "name": "Rio Vista Delta Breeze",
-      "website": "https://www.riovistacity.com/delta-breeze-transit-system/",
+      "website": "https://www.riovistacity.com/deltabreeze/page/delta-breeze-transit-schedule",
       "associated_feeds": [
         {
           "feed_onestop_id": "f-9qc3-riovistadeltabreeze"
@@ -1433,7 +1467,8 @@
       "tags": {
         "twitter_general": "coach_city",
         "us_ntd_id": "90155",
-        "wikidata_id": "Q7907915"
+        "wikidata_id": "Q7907915",
+        "facebook": "https://www.facebook.com/VacavilleCityCoach"
       }
     }
   ]

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-rabbit~transit~york~adams",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://realtime.rabbittransit.org/infopoint/gtfs-zip.ashx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rabbittransit",
+          "name": "rabbittransit",
+          "tags": {
+            "us_ntd_id": "30206",
+            "facebook": "https://www.facebook.com/rabbittransit"
+          },
+          "website": "http://www.rabbittransit.org"
+        }
+      ]
+    }
+  ]
+}

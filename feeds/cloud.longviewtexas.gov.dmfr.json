@@ -1,0 +1,24 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-longview~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cloud.longviewtexas.gov/maps/LongviewTransitGTFS/LongviewTransitGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-longview~transit",
+          "name": "Longview Transit",
+          "tags": {
+            "us_ntd_id": "60081",
+            "twitter_general": "longviewtransit",
+            "facebook": "https://www.facebook.com/LongviewTransit"
+          },
+          "website": "http://www.longviewtransit.com/"
+        }
+      ]
+    }
+  ]
+}

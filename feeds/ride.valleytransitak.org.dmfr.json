@@ -1,0 +1,22 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-valley~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ride.valleytransitak.org/GTFS/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-valley~transit",
+          "name": "Valley Transit",
+          "tags": {
+            "us_ntd_id": "00327"
+          },
+          "website": "http://www.valleytransitak.org/"
+        }
+      ]
+    }
+  ]
+}

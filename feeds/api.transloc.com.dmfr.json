@@ -1,0 +1,22 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-liberty~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transloc.com/gtfs/liberty.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-liberty~transit",
+          "name": "Liberty Transit",
+          "tags": {
+            "us_ntd_id": "40193"
+          },
+          "website": "http://www.libertytransit.org/"
+        }
+      ]
+    }
+  ]
+}
