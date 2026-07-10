@@ -7,6 +7,10 @@
       "urls": {
         "static_current": "https://mna.mecatran.com/utw/ws/gtfsfeed/static/okc"
       },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "apiKey"
+      },
       "operators": [
         {
           "onestop_id": "o-city~of~norman",
@@ -15,11 +19,7 @@
             "us_ntd_id": "66341"
           }
         }
-      ],
-      "authorization": {
-        "type": "query_param",
-        "param_name": "apiKey"
-      }
+      ]
     }
   ]
 }
