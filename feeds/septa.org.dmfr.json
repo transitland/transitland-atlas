@@ -18,7 +18,11 @@
       "id": "f-dr4-septa~rail",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/septadev/GTFS/releases/latest/download/gtfs_public.zip#google_rail.zip"
+        "static_current": "https://www3.septa.org/developer/google_bus.zip",
+        "static_historic": [
+          "https://www3.septa.org/developer/google_rail.zip",
+          "https://github.com/septadev/GTFS/releases/latest/download/gtfs_public.zip#google_rail.zip"
+        ]
       },
       "license": {
         "url": "http://www3.septa.org/developer/",
@@ -49,7 +53,9 @@
             }
           ],
           "tags": {
+            "facebook": "https://www.facebook.com/ISEPTAPHILLY",
             "omd_provider_id": "septa",
+            "twitter_general": "septa",
             "us_ntd_id": "30019",
             "wikidata_id": "Q2037863"
           }

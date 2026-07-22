@@ -5,7 +5,10 @@
       "id": "f-c20-trimet",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://developer.trimet.org/schedule/gtfs.zip"
+        "static_current": "https://developer.trimet.org/schedule/gtfs.zip",
+        "static_historic": [
+          "http://developer.trimet.org/schedule/gtfs.zip"
+        ]
       },
       "license": {
         "url": "http://developer.trimet.org/terms_of_use.shtml"
@@ -18,13 +21,14 @@
         {
           "onestop_id": "o-c20fb-portlandstreetcar",
           "name": "Portland Streetcar",
-          "website": "http://portlandstreetcar.org/",
+          "website": "https://portlandstreetcar.org/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "PSC"
             }
           ],
           "tags": {
+            "managed_by": "TriMet",
             "twitter_general": "PDXStreetcar",
             "us_ntd_id": "00008",
             "wikidata_id": "Q1753708"
@@ -65,7 +69,7 @@
       "onestop_id": "o-c20-trimet",
       "name": "Tri-County Metropolitan Transportation District of Oregon",
       "short_name": "TriMet",
-      "website": "http://trimet.org/",
+      "website": "https://trimet.org/",
       "associated_feeds": [
         {
           "gtfs_agency_id": "TRIMET",
@@ -76,6 +80,7 @@
         }
       ],
       "tags": {
+        "facebook": "https://www.facebook.com/TriMet",
         "twitter_general": "trimet",
         "twitter_service_alerts": "trimetalerts",
         "us_ntd_id": "8",
