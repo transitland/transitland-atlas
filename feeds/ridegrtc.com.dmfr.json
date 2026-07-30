@@ -20,12 +20,26 @@
           "name": "Greater Richmond Transit Company",
           "short_name": "GRTC",
           "website": "https://ridegrtc.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-grtc~va~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "30006",
             "wikidata_id": "Q5600732"
           }
         }
       ]
+    },
+    {
+      "id": "f-grtc~va~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://grtcbustracker.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "http://grtcbustracker.com/gtfsrt/trips",
+        "realtime_alerts": "http://grtcbustracker.com/gtfsrt/alerts"
+      }
     }
   ]
 }
