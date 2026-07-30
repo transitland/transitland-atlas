@@ -22,6 +22,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-memphis~area~transit~authority~rt"
             }
           ],
           "tags": {
@@ -31,6 +34,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-memphis~area~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.mata.cadavl.com/ProfilGtfsRt2_0RSProducer-MATA/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.mata.cadavl.com/ProfilGtfsRt2_0RSProducer-MATA/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.mata.cadavl.com/ProfilGtfsRt2_0RSProducer-MATA/Alert.pb"
+      }
     }
   ]
 }

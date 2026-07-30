@@ -17,6 +17,9 @@
           "short_name": "WATA",
           "associated_feeds": [
             {
+              "feed_onestop_id": "f-dq9k-wata~rt"
+            },
+            {
               "feed_onestop_id": "f-wata~rt"
             },
             {
@@ -30,6 +33,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dq9k-wata~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/Alert.pb"
+      }
     }
   ]
 }
