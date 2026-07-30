@@ -61,12 +61,26 @@
           "name": "Collier Area Transit",
           "short_name": "CAT",
           "website": "http://www.gocatbus.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dht-collierareatransit~cat~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "40140",
             "wikidata_id": "Q5147158"
           }
         }
       ]
+    },
+    {
+      "id": "f-dht-collierareatransit~cat~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cat.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-CAT/VehiclePosition.pb",
+        "realtime_trip_updates": "https://cat.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-CAT/TripUpdate.pb",
+        "realtime_alerts": "https://cat.cadavl.com:4435/ProfilGtfsRt2_0RSProducer-CAT/Alert.pb"
+      }
     },
     {
       "id": "f-dnjq-greenlink",
@@ -475,6 +489,48 @@
       }
     },
     {
+      "id": "f-park~city~ut",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.parkcity.cadavl.com/PARKCITY/GTFS/GTFS_PARKCITY.zip",
+        "static_historic": [
+          "https://www.parkcity.org/home/showpublisheddocument/72907/638053296355370000",
+          "https://www.parkcity.org/home/showpublisheddocument/72604/637994463911870000",
+          "https://www.parkcity.org/home/showpublisheddocument/72091/637859770571330000",
+          "https://go.parkcity.org/infopoint/google_transit.zip",
+          "https://go.parkcity.org/InfoPoint/gtfs-zip.ashx"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9x0x-parkcitytransit",
+          "name": "Park City Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "0"
+            },
+            {
+              "feed_onestop_id": "f-park~city~ut~rt"
+            }
+          ],
+          "tags": {
+            "developer_site": "https://www.parkcity.gov/services/transit/index.php",
+            "twitter_general": "ParkCityTransit",
+            "us_ntd_id": "80284"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-park~city~ut~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.parkcity.cadavl.com/ProfilGtfsRt2_0RSProducer-PARKCITY/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.parkcity.cadavl.com/ProfilGtfsRt2_0RSProducer-PARKCITY/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.parkcity.cadavl.com/ProfilGtfsRt2_0RSProducer-PARKCITY/Alert.pb"
+      }
+    },
+    {
       "id": "f-rochester~mn~us",
       "spec": "gtfs",
       "urls": {
@@ -502,7 +558,7 @@
     },
     {
       "id": "f-rochester~mn~us~rt",
-      "spec": "gtfs",
+      "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/VehiclePosition.pb",
         "realtime_trip_updates": "https://gtfsrt.rpt.cadavl.com/ProfilGtfsRt2_0RSProducer-RPT/TripUpdate.pb",
