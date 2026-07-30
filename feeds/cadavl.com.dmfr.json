@@ -19,6 +19,11 @@
         {
           "onestop_id": "o-9uft-corpuschristiregionaltransportationauthority",
           "name": "Corpus Christi Regional Transportation Authority",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-corpus~christi~regional~transportation~authority~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "CCRTA",
             "us_ntd_id": "60051",
@@ -26,6 +31,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-corpus~christi~regional~transportation~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.ccrta.cadavl.com/ProfilGtfsRt2_0RSProducer-CCRTA/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.ccrta.cadavl.com/ProfilGtfsRt2_0RSProducer-CCRTA/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.ccrta.cadavl.com/ProfilGtfsRt2_0RSProducer-CCRTA/Alert.pb"
+      }
     },
     {
       "id": "f-dht-collierareatransit~cat",
@@ -91,6 +105,84 @@
       }
     },
     {
+      "id": "f-dq9k-wata",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.wata.cadavl.com/WATA/GTFS/GTFS_WATA.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/williamsburg-va-us/williamsburg-va-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq9k-wata",
+          "name": "Williamsburg Area Transit Authority",
+          "short_name": "WATA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dq9k-wata~rt"
+            },
+            {
+              "feed_onestop_id": "f-wata~rt"
+            },
+            {
+              "feed_onestop_id": "f-williamsburg~va~us~flex"
+            }
+          ],
+          "tags": {
+            "twitter_general": "goWATA_VA",
+            "us_ntd_id": "30076",
+            "wikidata_id": "Q8021156"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dq9k-wata~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.wata.cadavl.com/ProfilGtfsRt2_0RSProducer-WATA/Alert.pb"
+      }
+    },
+    {
+      "id": "f-drm-thegreaterattleborotauntonregionaltransitauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.gatra.cadavl.com/GATRA/GTFS/GTFS_GATRA.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/gatra-ma-us/gatra-ma-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.massdot.state.ma.us/Portals/0/docs/developers/develop_license_agree.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drm-thegreaterattleborotauntonregionaltransitauthority",
+          "name": "Greater Attleboro Taunton Regional Transit Authority",
+          "short_name": "GATRA",
+          "website": "https://www.gatra.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "504"
+            },
+            {
+              "feed_onestop_id": "f-drm-thegreaterattleborotauntonregionaltransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "10064",
+            "wikidata_id": "Q5600434"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-drm-thegreaterattleborotauntonregionaltransitauthority~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -100,6 +192,40 @@
       }
     },
     {
+      "id": "f-drsb-wrta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.wrta.cadavl.com/WRTA/GTFS/GTFS_WRTA.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/wrta-ma-us/wrta-ma-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.massdot.state.ma.us/Portals/0/docs/developers/develop_license_agree.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drsb-wrta",
+          "name": "Worcester Regional Transit Authority",
+          "short_name": "WRTA",
+          "website": "https://www.therta.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-drsb-wrta~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "therta",
+            "us_ntd_id": "10014",
+            "wikidata_id": "Q8034217"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-drsb-wrta~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -107,6 +233,43 @@
         "realtime_trip_updates": "https://gtfsrt.wrta.cadavl.com/ProfilGtfsRt2_0RSProducer-WRTA/TripUpdate.pb",
         "realtime_alerts": "https://gtfsrt.wrta.cadavl.com/ProfilGtfsRt2_0RSProducer-WRTA/Alert.pb"
       }
+    },
+    {
+      "id": "f-drt6-lowellregionaltransitauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.lrta.cadavl.com/LRTA/GTFS/GTFS_LRTA.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/lowell-ma-us/lowell-ma-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.massdot.state.ma.us/Portals/0/docs/developers/develop_license_agree.pdf",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "attribution_text": "Clearly acknowledge MassDOT as the provider of the Data."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-drt6-lowellregionaltransitauthority",
+          "name": "Lowell Regional Transit Authority",
+          "short_name": "LRTA",
+          "website": "https://lrta.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "447"
+            },
+            {
+              "feed_onestop_id": "f-drt6-lowellregionaltransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "mylrta",
+            "us_ntd_id": "10005",
+            "wikidata_id": "Q2078562"
+          }
+        }
+      ]
     },
     {
       "id": "f-drt6-lowellregionaltransitauthority~rt",
@@ -212,12 +375,26 @@
           "name": "Southern Teton Area Rapid Transit",
           "short_name": "START",
           "website": "https://www.jacksonwy.gov/587/START-Bus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-jackson~wy~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "80188",
             "wikidata_id": "Q7761946"
           }
         }
       ]
+    },
+    {
+      "id": "f-jackson~wy~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.start.cadavl.com/ProfilGtfsRt2_0RSProducer-START/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.start.cadavl.com/ProfilGtfsRt2_0RSProducer-START/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.start.cadavl.com/ProfilGtfsRt2_0RSProducer-START/Alert.pb"
+      }
     },
     {
       "id": "f-kanawha~valley~regional~transportation~authority",
@@ -234,11 +411,68 @@
           "name": "Kanawha Valley Regional Transportation Authority",
           "short_name": "KRT",
           "website": "https://rideonkrt.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-kanawha~valley~regional~transportation~authority~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "30001"
           }
         }
       ]
+    },
+    {
+      "id": "f-kanawha~valley~regional~transportation~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.krt.cadavl.com/ProfilGtfsRt2_0RSProducer-KRT/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.krt.cadavl.com/ProfilGtfsRt2_0RSProducer-KRT/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.krt.cadavl.com/ProfilGtfsRt2_0RSProducer-KRT/Alert.pb"
+      }
+    },
+    {
+      "id": "f-memphis~area~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.mata.cadavl.com/MATA/GTFS/GTFS_MATA.zip",
+        "static_historic": [
+          "http://mata.cadavl.com:5053/MATA/GTFS/GTFS_MATA.zip",
+          "https://www.matatransit.com/assets/2/6/MATA_GTFS_11_2021.zip",
+          "https://www.matatransit.com/assets/2/6/Memphis_TN_transitfeed2.zip",
+          "https://cdn.muckrock.com/foia_files/2017/10/24/Memphis_TN_Transitfeed_GTFS_8_17.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-memphis~area~transit~authority",
+          "name": "Memphis Area Transit Authority",
+          "short_name": "MATA",
+          "website": "https://www.matatransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-memphis~area~transit~authority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "RideMATA",
+            "us_ntd_id": "40003",
+            "wikidata_id": "Q12061679"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-memphis~area~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.mata.cadavl.com/ProfilGtfsRt2_0RSProducer-MATA/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.mata.cadavl.com/ProfilGtfsRt2_0RSProducer-MATA/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.mata.cadavl.com/ProfilGtfsRt2_0RSProducer-MATA/Alert.pb"
+      }
     },
     {
       "id": "f-rochester~mn~us",
