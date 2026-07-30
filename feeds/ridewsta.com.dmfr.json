@@ -9,6 +9,31 @@
         "static_historic": [
           "https://wstransit.com/wp-content/uploads/2024/01/GTFS-TRIPS_5fa76ace_2024-01-02-18-53-02.zip"
         ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq-wsta",
+          "name": "Winston Salem Transit",
+          "short_name": "WSTA",
+          "website": "https://wstransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dnq-wsta~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40012"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq-wsta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridewsta.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ridewsta.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ridewsta.com/gtfs-rt/alerts"
       }
     }
   ],
