@@ -15,6 +15,11 @@
           "onestop_id": "o-dpnz-bcta",
           "name": "Beaver County Transit Authority",
           "short_name": "BCTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpnz-bcta~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "BeaverCoTransit",
             "us_ntd_id": "30023",
@@ -22,6 +27,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dpnz-bcta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bcta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://bcta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://bcta.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ]
 }

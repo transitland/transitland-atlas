@@ -15,9 +15,23 @@
           "website": "https://www.co.warren.oh.us/transit/",
           "tags": {
             "us_ntd_id": "30124"
-          }
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-warren~county~transit~authority~oh~us~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-warren~county~transit~authority~oh~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tawc.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://tawc.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://tawc.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ]
 }
