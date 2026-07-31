@@ -12,12 +12,26 @@
           "onestop_id": "o-mid~county~transit~authority",
           "name": "Mid-County Transit Authority",
           "short_name": "Town & Country Transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-mid~county~transit~authority~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "30194",
             "wikidata_id": "Q7829885"
           }
         }
       ]
+    },
+    {
+      "id": "f-mid~county~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://tact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://tact.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
     }
   ]
 }

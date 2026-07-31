@@ -5,9 +5,10 @@
       "id": "f-9qj-sunlinetransitagency",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://infopoint.sunline.org/InfoPoint/gtfs-zip.ashx",
+        "static_current": "https://sunlinebus.com/gtfs",
         "static_historic": [
-          "http://www.sunline.org/transit/google_transit.zip"
+          "http://www.sunline.org/transit/google_transit.zip",
+          "http://infopoint.sunline.org/InfoPoint/gtfs-zip.ashx"
         ]
       },
       "tags": {
@@ -35,9 +36,9 @@
       "id": "f-9qj-sunlinetransitagency~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://infopoint.sunline.org/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
-        "realtime_trip_updates": "https://infopoint.sunline.org/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
-        "realtime_alerts": "https://infopoint.sunline.org/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+        "realtime_vehicle_positions": "https://sunlinebus.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://sunlinebus.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://sunlinebus.com/gtfs-rt/alerts"
       }
     }
   ]
