@@ -4,28 +4,36 @@
 # dependencies = ["requests"]
 # ///
 
-"""Check on feeds whose URLs are known to move.
+"""Scan feed sources and report findings worth acting on.
 
-Two passes, both read-only:
+Intended to grow a source per goal, of two kinds. **State monitors** describe
+the current condition of feeds already registered — a finding stays valid
+until someone fixes it, so it should not be suppressed. **Discovery sources**
+propose candidates from outside the registry, such as NTD weblinks, and repeat
+on every run until a decision is recorded in evaluations/, so suppression is
+what makes them converge. See evaluations/README.md.
+
+Two sources so far, both read-only and both monitors:
 
 1. Asks the Transitland API how each `unstable_url`-tagged feed is doing —
    when it last produced a new feed version, whether its calendar has run out,
    and whether the most recent fetch succeeded. The API syncs from Atlas, so
    its feed list matches this repository.
 
-2. Downloads each `watch` page recorded in evaluations/, saves a snapshot, and
-   extracts the feed-shaped links on it, so a changed URL can be spotted
-   against the recorded `last_seen_url`.
+2. Reads each `watch` page recorded in evaluations/ — the public page on which
+   an agency publishes its own feed URL — and notes which feed links appear on
+   it, so a changed URL can be spotted against the recorded `last_seen_url`.
+   One request per page, no following of links.
 
-Output is a human-readable summary, plus an optional JSON report and page
-snapshots for an agentic pass to work from.
+Output is a human-readable summary, plus an optional JSON report and a copy of
+each page consulted, for reference or for a later pass to read.
 
 Needs TRANSITLAND_API_KEY. Unlike validate-evaluations.py this talks to the
 network, so it is a reporting tool and not something to gate CI on.
 
 Usage:
-  cd scripts && uv run watch-runner.py
-  cd scripts && uv run watch-runner.py --out ../watch-output --stale-days 365
+  cd scripts && uv run scan-feed-sources.py
+  cd scripts && uv run scan-feed-sources.py --out ../scan-output --stale-days 365
 """
 
 import argparse
@@ -199,7 +207,7 @@ def absolutize(href: str, page: str) -> str:
 def check_watch_pages(entries: list[dict], out_dir: str | None) -> list[dict]:
     results = []
     session = requests.Session()
-    session.headers["User-Agent"] = "transitland-atlas-watch-runner/1.0"
+    session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
 
     for entry in entries:
         page = entry["page"]
@@ -247,7 +255,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--stale-days", type=int, default=180,
                     help="flag feeds with no new feed version in this many days (default 180)")
-    ap.add_argument("--out", help="directory for page snapshots and report.json")
+    ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
     ap.add_argument("--skip-api", action="store_true", help="only check watch pages")
     ap.add_argument("--skip-pages", action="store_true", help="only query the API")
     args = ap.parse_args()

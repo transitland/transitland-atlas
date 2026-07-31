@@ -66,7 +66,7 @@ The script is deliberately offline. It never contacts the Transitland API or fet
 
 ## Two kinds of source, and what suppression means for each
 
-`scripts/watch-runner.py` reports findings from several sources, and they do not behave the same way.
+`scripts/scan-feed-sources.py` reports findings from several sources, and they do not behave the same way.
 
 **State monitors** — `unstable_url` feeds, stale feeds, failing fetches. These describe the current condition of feeds already registered. A flagged feed stays flagged until someone fixes it, and the count goes down by fixing things, not by recording them. Recording a decision here should *not* silence the finding: use `deferred` with a `recheck_after` when something is known-bad and not being fixed today, and accept that it comes back afterwards. The Transitland API reports current state on every run, so there is little to persist beyond `watch` entries saying where a moving URL gets republished.
 
