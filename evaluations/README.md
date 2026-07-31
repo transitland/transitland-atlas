@@ -64,6 +64,16 @@ Two advisory outputs are the point of running it regularly:
 
 The script is deliberately offline. It never contacts the Transitland API or fetches a candidate URL, so it stays deterministic and a feed that happens to be erroring cannot fail it. Re-checking whether a recorded finding still holds is a different job, and one that would want `$TRANSITLAND_API_KEY`.
 
+## Two kinds of source, and what suppression means for each
+
+`scripts/watch-runner.py` reports findings from several sources, and they do not behave the same way.
+
+**State monitors** — `unstable_url` feeds, stale feeds, failing fetches. These describe the current condition of feeds already registered. A flagged feed stays flagged until someone fixes it, and the count goes down by fixing things, not by recording them. Recording a decision here should *not* silence the finding: use `deferred` with a `recheck_after` when something is known-bad and not being fixed today, and accept that it comes back afterwards. The Transitland API reports current state on every run, so there is little to persist beyond `watch` entries saying where a moving URL gets republished.
+
+**Discovery sources** — NTD weblinks, vendor directories, other registries. These propose candidates we may or may not want. The same candidate reappears on every run indefinitely unless a decision is recorded against it, so suppression is the point: the report converges toward zero as evaluations accumulate, even if no feed ever changes. This is where these files pay for themselves.
+
+So suppression is the default for discovery and the exception for monitoring. The runner should always print how many findings were suppressed and why, rather than dropping them silently — a tool that quietly stops reporting real problems is worse than a noisy one.
+
 ## Public repository
 
 Rationale text is public. Phrase it as measurement rather than judgment — "trip IDs resolved 0 of 48 against the registered realtime", not an opinion about a vendor or an agency's data quality.
