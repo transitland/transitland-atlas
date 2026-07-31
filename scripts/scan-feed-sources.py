@@ -6,43 +6,55 @@
 
 """Scan feed sources and report findings worth acting on.
 
-Intended to grow a source per goal, of two kinds. **State monitors** describe
-the current condition of feeds already registered — a finding stays valid
-until someone fixes it, so it should not be suppressed. **Discovery sources**
-propose candidates from outside the registry, such as NTD weblinks, and repeat
-on every run until a decision is recorded in evaluations/, so suppression is
-what makes them converge. See evaluations/README.md.
+Sources are of two kinds. **State monitors** describe the current condition of
+feeds already registered: a finding stays valid until someone fixes it, so it
+should not be suppressed. **Discovery sources** propose candidates from outside
+the registry and repeat on every run until a decision is recorded in
+evaluations/, so suppression is what makes them converge. See
+evaluations/README.md.
 
-Two sources so far, both read-only and both monitors:
+Sources available, all monitors so far and all read-only:
 
-1. Asks the Transitland API how each `unstable_url`-tagged feed is doing —
-   when it last produced a new feed version, whether its calendar has run out,
-   and whether the most recent fetch succeeded. The API syncs from Atlas, so
-   its feed list matches this repository.
+  fetch-errors    every feed the API reports as failing to fetch, grouped by
+                  host. Not limited to tagged feeds.
+  unstable-urls   feeds tagged unstable_url: staleness, calendar expiry and
+                  fetch state.
+  watch-pages     the public page on which an agency publishes its own feed
+                  URL, as recorded in evaluations/. One request per page, no
+                  following of links.
 
-2. Reads each `watch` page recorded in evaluations/ — the public page on which
-   an agency publishes its own feed URL — and notes which feed links appear on
-   it, so a changed URL can be spotted against the recorded `last_seen_url`.
-   One request per page, no following of links.
+Two ideas keep the output usable.
 
-Output is a human-readable summary, plus an optional JSON report and a copy of
-each page consulted, for reference or for a later pass to read.
+**Cluster before reporting.** Many feeds failing on one host is usually one
+event, not many problems.
 
-Needs TRANSITLAND_API_KEY. Unlike validate-evaluations.py this talks to the
-network, so it is a reporting tool and not something to gate CI on.
+**Judge transience from fetch history, not from feed version age.** Transitland
+retains recent fetch attempts, so a failure streak is directly observable. Age
+of the last feed version is a poor proxy: a feed can have produced one three
+weeks ago and have failed every attempt since. A short streak following a
+success is a network blip or a producer error the next version fixes, and is
+held back. Cluster size and failure pattern together say which case you are in:
+a cluster that all broke at once is a vendor outage, a cluster failing
+throughout the retained history is a restructure or consolidation.
+
+Needs TRANSITLAND_API_KEY except for watch-pages. This talks to the network, so
+it is a reporting tool rather than something to gate CI on.
 
 Usage:
   cd scripts && uv run scan-feed-sources.py
-  cd scripts && uv run scan-feed-sources.py --out ../scan-output --stale-days 365
+  cd scripts && uv run scan-feed-sources.py --source fetch-errors --min-cluster 5
+  cd scripts && uv run scan-feed-sources.py --source all --out ../scan-output
 """
 
 import argparse
+import collections
 import glob
 import json
 import os
 import re
 import sys
 from datetime import datetime, timezone
+from urllib.parse import urljoin, urlparse
 
 import requests
 
@@ -50,41 +62,23 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EVAL_DIR = os.path.join(ROOT, "evaluations")
 API = "https://transit.land/api/v2/query"
 
-FEEDS_QUERY = """
-query($after: Int) {
-  feeds(limit: 1000, after: $after, where: {tags: {unstable_url: "true"}}) {
+FETCH_WINDOW = 20
+
+FEED_FIELDS = f"""
     id
     onestop_id
-    urls { static_current }
-    feed_state {
-      feed_version { fetched_at sha1 earliest_calendar_date latest_calendar_date }
-    }
-    feed_fetches(limit: 1) { fetched_at success response_code fetch_error }
-  }
-}
+    urls {{ static_current realtime_vehicle_positions }}
+    feed_state {{ feed_version {{ fetched_at latest_calendar_date }} }}
+    feed_fetches(limit: {FETCH_WINDOW}) {{ fetched_at success response_code fetch_error }}
 """
 
-# Links that look like a feed, or a page that would lead to one.
 LINK_RE = re.compile(r"""href\s*=\s*["']([^"']+)["']""", re.I)
 ARCHIVE = re.compile(r"\.zip(\?|$)", re.I)
 FEEDISH = re.compile(r"(gtfs|google_transit)", re.I)
-# Site plumbing that matches "gtfs" only because the page path does.
 NOISE = re.compile(r"(/wp-json/|/oembed|/feed/?$|\?replytocom=)", re.I)
 
 
-def feed_links(html: str, page: str) -> list[str]:
-    """Links on `page` that plausibly point at a feed, minus site plumbing."""
-    found = set()
-    for href in LINK_RE.findall(html):
-        url = absolutize(href.split("#")[0], page)
-        if not url or url.rstrip("/") == page.rstrip("/"):
-            continue  # self-link
-        if NOISE.search(url):
-            continue
-        if ARCHIVE.search(url) or FEEDISH.search(url):
-            found.add(url)
-    return sorted(found)
-
+# --------------------------------------------------------------------- shared
 
 def now() -> datetime:
     return datetime.now(timezone.utc)
@@ -99,222 +93,262 @@ def parse_ts(value):
         return None
 
 
-def days_since(value) -> int | None:
+def days_since(value):
     ts = parse_ts(value)
     return None if ts is None else (now() - ts).days
 
 
-def gql(key: str, variables=None):
-    r = requests.post(
-        API,
-        headers={"apikey": key},
-        json={"query": FEEDS_QUERY, "variables": variables or {}},
-        timeout=90,
-    )
-    r.raise_for_status()
-    body = r.json()
-    if body.get("errors"):
-        raise SystemExit(f"API error: {body['errors'][0]['message']}")
-    return body["data"]
-
-
-# ------------------------------------------------------------------ pass one
-
-def check_unstable_feeds(key: str, stale_days: int) -> list[dict]:
+def fetch_all(key: str, where: str) -> list[dict]:
+    """Page through every feed matching a GraphQL `where` clause."""
+    query = f"query($after: Int) {{ feeds(limit: 1000, after: $after, {where}) {{{FEED_FIELDS}}} }}"
     rows, after = [], 0
     while True:
-        feeds = gql(key, {"after": after}).get("feeds") or []
+        r = requests.post(API, headers={"apikey": key},
+                          json={"query": query, "variables": {"after": after}}, timeout=120)
+        r.raise_for_status()
+        body = r.json()
+        if body.get("errors"):
+            raise SystemExit(f"API error: {body['errors'][0]['message']}")
+        feeds = body["data"]["feeds"]
         if not feeds:
-            break
+            return rows
         rows.extend(feeds)
         after = feeds[-1]["id"]
 
-    today = now().date()
-    out = []
-    for f in rows:
-        fv = ((f.get("feed_state") or {}).get("feed_version")) or {}
-        fetches = f.get("feed_fetches") or []
-        last_fetch = fetches[0] if fetches else {}
-        age = days_since(fv.get("fetched_at"))
 
-        latest_cal = fv.get("latest_calendar_date")
-        expired = None
-        if latest_cal:
-            try:
-                expired = datetime.fromisoformat(latest_cal).date() < today
-            except ValueError:
-                expired = None
+def summarise(f: dict) -> dict:
+    """Flatten one API feed record into the fields every source reports on."""
+    fv = ((f.get("feed_state") or {}).get("feed_version")) or {}
+    fetches = f.get("feed_fetches") or []
+    last = fetches[0] if fetches else {}
+    urls = f.get("urls") or {}
+    url = urls.get("static_current") or urls.get("realtime_vehicle_positions") or ""
 
+    latest_cal = fv.get("latest_calendar_date")
+    expired = None
+    if latest_cal:
+        try:
+            expired = datetime.fromisoformat(latest_cal).date() < now().date()
+        except ValueError:
+            pass
+
+    reason = None
+    if last and last.get("success") is False:
+        code = last.get("response_code")
+        if code is None:
+            reason = "unreachable"
+        elif code == 200:
+            # 200 with an unusable body: a parked domain, an SPA catch-all,
+            # or an error page served with the wrong status.
+            reason = "200-not-a-feed"
+        else:
+            reason = f"http-{code}"
+
+    # Fetch history is the honest transience signal. Age of the last feed
+    # version is not: a feed can have produced one three weeks ago and have
+    # failed every attempt since.
+    streak = 0
+    for attempt in fetches:
+        if attempt.get("success"):
+            break
+        streak += 1
+    successes = sum(1 for a in fetches if a.get("success"))
+    if not fetches:
+        pattern = "unknown"
+    elif streak >= len(fetches):
+        pattern = "always-failing"
+    elif successes and streak <= 2:
+        pattern = "just-broke" if streak else "recovered"
+    elif successes:
+        pattern = "intermittent"
+    else:
+        pattern = "always-failing"
+
+    return {
+        "onestop_id": f["onestop_id"],
+        "url": url,
+        "host": (urlparse(url).netloc or "(no url)").lower(),
+        "days_since_new_version": days_since(fv.get("fetched_at")),
+        "latest_calendar_date": latest_cal,
+        "calendar_expired": expired,
+        "fetch_failure": reason,
+        "fail_streak": streak,
+        "window": len(fetches),
+        "window_successes": successes,
+        "pattern": pattern,
+    }
+
+
+def cluster(rows: list[dict], min_cluster: int):
+    """Split rows into host clusters and singletons, biggest cluster first."""
+    by_host = collections.defaultdict(list)
+    for r in rows:
+        by_host[r["host"]].append(r)
+    clusters = sorted((v for v in by_host.values() if len(v) >= min_cluster),
+                      key=len, reverse=True)
+    loose = [r for v in by_host.values() if len(v) < min_cluster for r in v]
+    return clusters, sorted(loose, key=lambda r: -(r["days_since_new_version"] or 0))
+
+
+def describe_cluster(rows: list[dict]) -> str:
+    """Read a cluster's failure pattern to guess which kind of event it is."""
+    streaks = [r["fail_streak"] for r in rows]
+    kinds = collections.Counter(r["pattern"] for r in rows)
+    if kinds.get("just-broke", 0) == len(rows):
+        return f"every feed broke within the last {max(streaks)} fetch(es): likely a transient vendor outage"
+    if kinds.get("always-failing", 0) == len(rows):
+        return "failing throughout the retained history: a restructure, consolidation or dead host"
+    if kinds.get("intermittent", 0) > len(rows) / 2:
+        return "mostly intermittent: an unreliable host rather than a moved feed"
+    return "mixed: " + ", ".join(f"{k}={v}" for k, v in kinds.most_common())
+
+
+# -------------------------------------------------------------------- sources
+
+def source_fetch_errors(key: str, args) -> dict:
+    rows = [summarise(f) for f in fetch_all(key, "where: {fetch_error: true}")]
+    total = len(rows)
+    transient = [r for r in rows
+                 if r["pattern"] in ("just-broke", "recovered")
+                 and r["fail_streak"] <= args.transient_streak]
+    rows = [r for r in rows if r not in transient]
+    clusters, loose = cluster(rows, args.min_cluster)
+
+    print(f"fetch-errors: {total} feeds failing to fetch")
+    print(f"  {len(transient)} broke within the last {args.transient_streak} fetch(es) after succeeding, "
+          f"held back as transient")
+    print(f"  {len(clusters)} host cluster(s) of {args.min_cluster}+, covering "
+          f"{sum(len(c) for c in clusters)} feeds; {len(loose)} elsewhere\n")
+    for c in clusters:
+        codes = collections.Counter(r["fetch_failure"] for r in c)
+        print(f"  {len(c):>4}  {c[0]['host']}")
+        print(f"        {describe_cluster(c)}; {dict(codes)}")
+    if loose:
+        print(f"\n  individual failures, longest streak first:")
+        for r in sorted(loose, key=lambda r: (-r["fail_streak"], r["onestop_id"]))[:12]:
+            print(f"        {r['fail_streak']:>2}/{r['window']:<2} {r['pattern']:<15} "
+                  f"{r['onestop_id'][:42]:44s} {r['fetch_failure']}")
+    return {"total": total, "held_back_transient": transient,
+            "clusters": [{"host": c[0]["host"], "count": len(c),
+                          "reading": describe_cluster(c), "feeds": c} for c in clusters],
+            "singletons": loose}
+
+
+def source_unstable_urls(key: str, args) -> dict:
+    rows = [summarise(f) for f in fetch_all(key, 'where: {tags: {unstable_url: "true"}}')]
+    flagged = []
+    for r in rows:
         flags = []
-        if last_fetch and last_fetch.get("success") is False:
-            code = last_fetch.get("response_code")
-            error = (last_fetch.get("fetch_error") or "").lower()
-            if code is None:
-                flags.append("fetch-unreachable")
-            elif code == 200:
-                # 200 with an unusable body: a parked domain, an SPA catch-all,
-                # or an error page served with the wrong status.
-                flags.append("fetch-200-not-a-feed")
-            else:
-                flags.append(f"fetch-http-{code}")
-        if age is not None and age >= stale_days:
+        if r["fetch_failure"]:
+            flags.append(f"fetch-{r['fetch_failure']}")
+        age = r["days_since_new_version"]
+        if age is not None and age >= args.stale_days:
             flags.append(f"no-new-version-{age}d")
-        if expired:
-            flags.append(f"calendar-expired({latest_cal})")
-        if not fv:
+        elif age is None:
             flags.append("never-imported")
-
-        out.append({
-            "onestop_id": f["onestop_id"],
-            "static_current": (f.get("urls") or {}).get("static_current"),
-            "last_feed_version_at": fv.get("fetched_at"),
-            "days_since_new_version": age,
-            "latest_calendar_date": latest_cal,
-            "calendar_expired": expired,
-            "last_fetch": {
-                "fetched_at": last_fetch.get("fetched_at"),
-                "success": last_fetch.get("success"),
-                "response_code": last_fetch.get("response_code"),
-                "fetch_error": last_fetch.get("fetch_error"),
-            } if last_fetch else None,
-            "flags": flags,
-        })
-    return out
+        if r["calendar_expired"]:
+            flags.append(f"calendar-expired({r['latest_calendar_date']})")
+        if flags:
+            flagged.append({**r, "flags": flags})
+    flagged.sort(key=lambda r: -(r["days_since_new_version"] or 10**6))
+    print(f"unstable-urls: {len(rows)} tagged feeds, {len(flagged)} flagged\n")
+    for r in flagged[:25]:
+        age = r["days_since_new_version"]
+        print(f"  {'never' if age is None else str(age)+'d':>6}  {r['onestop_id'][:46]:48s} {', '.join(r['flags'])}")
+    if len(flagged) > 25:
+        print(f"  ... and {len(flagged)-25} more")
+    return {"total": len(rows), "flagged": flagged}
 
 
-# ------------------------------------------------------------------ pass two
-
-def load_watch_entries() -> list[dict]:
+def source_watch_pages(key, args) -> dict:
     entries = []
     for path in sorted(glob.glob(os.path.join(EVAL_DIR, "o-*.json"))):
         doc = json.load(open(path))
         for w in doc.get("watch") or []:
-            entries.append({
-                "operator_onestop_id": doc.get("operator_onestop_id"),
-                "source_file": os.path.relpath(path, ROOT),
-                **w,
-            })
-    return entries
+            entries.append({"operator_onestop_id": doc.get("operator_onestop_id"), **w})
 
-
-def absolutize(href: str, page: str) -> str:
-    if href.startswith(("http://", "https://")):
-        return href
-    from urllib.parse import urljoin
-    return urljoin(page, href)
-
-
-def check_watch_pages(entries: list[dict], out_dir: str | None) -> list[dict]:
-    results = []
     session = requests.Session()
     session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
-
+    results = []
+    print(f"watch-pages: {len(entries)} page(s)\n")
     for entry in entries:
         page = entry["page"]
-        row = {
-            "page": page,
-            "operator_onestop_id": entry.get("operator_onestop_id"),
-            "publishes": entry.get("publishes"),
-            "last_seen_url": entry.get("last_seen_url"),
-            "last_checked": entry.get("last_checked"),
-            "note": entry.get("note"),
-        }
+        row = {k: entry.get(k) for k in ("page", "operator_onestop_id", "publishes",
+                                         "last_seen_url", "last_checked", "note")}
         try:
             r = session.get(page, timeout=60)
             row["status"] = r.status_code
         except Exception as e:
-            row["status"] = None
-            row["error"] = f"{type(e).__name__}"
+            row["status"], row["error"] = None, type(e).__name__
+            print(f"  {page}  UNREACHABLE ({row['error']})")
             results.append(row)
             continue
-
         if r.status_code != 200:
+            print(f"  {page}  HTTP {r.status_code}")
             results.append(row)
             continue
 
-        all_links = {absolutize(h.split("#")[0], page) for h in LINK_RE.findall(r.text)}
-        row["feed_links_found"] = feed_links(r.text, page)
-
-        seen = entry.get("last_seen_url")
-        if seen:
-            row["last_seen_url_still_present"] = seen in all_links
-        if out_dir:
-            os.makedirs(out_dir, exist_ok=True)
+        all_links = {urljoin(page, h.split("#")[0]) for h in LINK_RE.findall(r.text)}
+        found = sorted(u for u in all_links
+                       if u.rstrip("/") != page.rstrip("/") and not NOISE.search(u)
+                       and (ARCHIVE.search(u) or FEEDISH.search(u)))
+        row["feed_links_found"] = found
+        bits = [f"{len(found)} feed-shaped link(s)"]
+        if entry.get("last_seen_url"):
+            present = entry["last_seen_url"] in all_links
+            row["last_seen_url_still_present"] = present
+            bits.append("last_seen_url present" if present else "LAST SEEN URL GONE")
+        if args.out:
+            os.makedirs(args.out, exist_ok=True)
             slug = re.sub(r"[^A-Za-z0-9]+", "-", page).strip("-")[:120]
-            snap = os.path.join(out_dir, f"{slug}.html")
-            with open(snap, "w", encoding="utf-8") as fh:
+            with open(os.path.join(args.out, f"{slug}.html"), "w", encoding="utf-8") as fh:
                 fh.write(r.text)
-            row["snapshot"] = os.path.relpath(snap, ROOT)
+        print(f"  {page}  200  {'; '.join(bits)}")
+        for link in found[:5]:
+            print(f"      {link}")
         results.append(row)
-    return results
+    return {"pages": results}
 
 
-# ------------------------------------------------------------------- reports
+SOURCES = {
+    "fetch-errors": (source_fetch_errors, True),
+    "unstable-urls": (source_unstable_urls, True),
+    "watch-pages": (source_watch_pages, False),
+}
+
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--source", action="append", choices=list(SOURCES) + ["all"],
+                    help="repeatable; defaults to all")
+    ap.add_argument("--min-cluster", type=int, default=5,
+                    help="host cluster size to report as one finding (default 5)")
+    ap.add_argument("--transient-streak", type=int, default=2,
+                    help="hold back failures with a streak this short that follow a success (default 2)")
     ap.add_argument("--stale-days", type=int, default=180,
-                    help="flag feeds with no new feed version in this many days (default 180)")
+                    help="unstable-urls: flag feeds with no new version in this many days (default 180)")
     ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
-    ap.add_argument("--skip-api", action="store_true", help="only check watch pages")
-    ap.add_argument("--skip-pages", action="store_true", help="only query the API")
     args = ap.parse_args()
 
+    wanted = list(SOURCES) if (not args.source or "all" in args.source) else args.source
     key = os.environ.get("TRANSITLAND_API_KEY", "")
-    if not args.skip_api and not key:
-        print("ERROR: TRANSITLAND_API_KEY is not set (use --skip-api to check pages only)")
+    if any(SOURCES[s][1] for s in wanted) and not key:
+        print("ERROR: TRANSITLAND_API_KEY is not set")
         return 2
 
-    report = {"generated_at": now().isoformat(), "stale_days": args.stale_days}
-
-    if not args.skip_api:
-        feeds = check_unstable_feeds(key, args.stale_days)
-        report["unstable_feeds"] = feeds
-        flagged = [f for f in feeds if f["flags"]]
-        flagged.sort(key=lambda f: (f["days_since_new_version"] is None, -(f["days_since_new_version"] or 0)))
-        print(f"unstable_url feeds: {len(feeds)} total, {len(flagged)} flagged")
-
-        def category(flag: str) -> str:
-            for prefix in ("no-new-version", "calendar-expired"):
-                if flag.startswith(prefix):
-                    return prefix
-            return flag
-
-        import collections
-        tally = collections.Counter(category(flag) for f in feeds for flag in f["flags"])
-        print("  by category: " + ", ".join(f"{k}={v}" for k, v in sorted(tally.items())) + "\n")
-
-        for f in flagged:
-            age = f["days_since_new_version"]
-            age_s = "never" if age is None else f"{age}d"
-            print(f"  {f['onestop_id']:<52} last new version {age_s:>6}  {', '.join(f['flags'])}")
-        if not flagged:
-            print("  nothing flagged")
-
-    if not args.skip_pages:
-        entries = load_watch_entries()
-        pages = check_watch_pages(entries, args.out)
-        report["watch_pages"] = pages
-        print(f"\nwatch pages: {len(pages)}\n")
-        for p in pages:
-            status = p.get("status")
-            if status != 200:
-                print(f"  {p['page']}  UNREACHABLE ({p.get('error') or status})")
-                continue
-            bits = [f"{len(p.get('feed_links_found') or [])} feed-shaped link(s)"]
-            if p.get("last_seen_url") is not None:
-                bits.append("last_seen_url present" if p.get("last_seen_url_still_present") else "LAST SEEN URL GONE")
-            print(f"  {p['page']}  {status}  {'; '.join(bits)}")
-            for link in (p.get("feed_links_found") or [])[:5]:
-                print(f"      {link}")
+    report = {"generated_at": now().isoformat()}
+    for name in wanted:
+        fn, _ = SOURCES[name]
+        report[name] = fn(key, args)
+        print()
 
     if args.out:
         os.makedirs(args.out, exist_ok=True)
         path = os.path.join(args.out, "report.json")
         with open(path, "w") as fh:
             json.dump(report, fh, indent=1)
-        print(f"\nwrote {os.path.relpath(path, ROOT)}")
-
+        print(f"wrote {os.path.relpath(path, ROOT)}")
     return 0
 
 
