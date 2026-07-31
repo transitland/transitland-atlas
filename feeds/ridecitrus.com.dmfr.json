@@ -11,6 +11,13 @@
       }
     },
     {
+      "id": "f-lakeland~availtec",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.ccbusinfo.com/InfoPoint/gtfs-zip.ashx"
+      }
+    },
+    {
       "id": "f-lakeland~passio",
       "supersedes_ids": [
         "f-dh-lakeland"
@@ -23,24 +30,30 @@
           "https://ftis.org/PostFileDownload.aspx?id=313A0",
           "http://www.ftis.org/PostFileDownload.aspx?id=185A0"
         ]
-      },
-      "operators": [
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dh-lakeland",
+      "name": "Lakeland Area Mass Transit District",
+      "short_name": "Citrus Connection",
+      "website": "http://www.ridecitrus.com/",
+      "associated_feeds": [
         {
-          "onestop_id": "o-dh-lakeland",
-          "name": "Lakeland Area Mass Transit District",
-          "short_name": "Citrus Connection",
-          "website": "http://www.ridecitrus.com/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dh-lakeland~rt"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "40031",
-            "wikidata_id": "Q5122884"
-          }
+          "feed_onestop_id": "f-dh-lakeland~rt"
+        },
+        {
+          "feed_onestop_id": "f-lakeland~availtec"
+        },
+        {
+          "feed_onestop_id": "f-lakeland~passio"
         }
-      ]
+      ],
+      "tags": {
+        "us_ntd_id": "40031",
+        "wikidata_id": "Q5122884"
+      }
     }
   ]
 }
