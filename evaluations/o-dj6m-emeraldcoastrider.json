@@ -1,0 +1,35 @@
+{
+  "$schema": "./schema.json",
+  "operator_onestop_id": "o-dj6m-emeraldcoastrider",
+  "candidates": [
+    {
+      "url": "https://www.ecrider.org/wp-content/uploads/Okaloosa-GTFS.zip",
+      "decision": "not_used",
+      "relationship": "overlapping",
+      "relates_to": ["f-dj6m-okaloosacountytransit~fl~us"],
+      "found_via": "us_ntd_weblinks",
+      "decided_on": "2026-07-31",
+      "recheck_after": "2026-10-13",
+      "rationale": "Carries 16 routes against 8 in the registered TripShot endpoint, which reads as better coverage, but half of those routes have expired calendars. Checked across several dates, the registered feed served 66 trips a day on routes 4, 5, 14, 30 and 32 and remained valid past 2026-10-20, while this file served 22 trips a day on routes 20 and 33 only and emptied out around 2026-10-13. Its calendars sit exactly one year behind the vendor endpoint's on every shared service, so it is a stale export of the same TripShot tenant. Registering both would import duplicate expired routes. Worth rechecking if the agency refreshes the upload, since it is the only published source for routes 20 and 33.",
+      "references": [
+        "https://www.ecrider.org/routes/"
+      ]
+    },
+    {
+      "url": "https://www.ecrider.org/wp-content/uploads/2025/09/Okaloosa-GTFS.zip",
+      "decision": "unavailable",
+      "relates_to": ["f-dj6m-okaloosacountytransit~fl~us"],
+      "found_via": "atlas_static_historic",
+      "decided_on": "2026-07-31",
+      "rationale": "Returns 404. The dated form of this WordPress upload path no longer resolves, while the undated sibling does, so the agency moves the file rather than versioning it."
+    }
+  ],
+  "watch": [
+    {
+      "page": "https://www.ecrider.org/routes/",
+      "publishes": ["f-dj6m-okaloosacountytransit~fl~us"],
+      "last_checked": "2026-07-31",
+      "note": "Authoritative route list: 1, 2, 3, 4, 5, 14, 20, 30, 32 and 33. Establishes that routes 1, 2 and 3 have no live service in any published feed, and that the registered TripShot endpoint carries only five of the ten. Re-read before concluding anything about this agency's coverage, and to confirm whether the gap has been closed."
+    }
+  ]
+}

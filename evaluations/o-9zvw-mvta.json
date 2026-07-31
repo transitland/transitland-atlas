@@ -1,0 +1,33 @@
+{
+  "$schema": "./schema.json",
+  "operator_onestop_id": "o-9zvw-mvta",
+  "candidates": [
+    {
+      "url": "https://srv.mvta.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+      "decision": "unavailable",
+      "relates_to": ["f-9zvw-mvta~metro~rt"],
+      "found_via": "vendor_url_pattern",
+      "decided_on": "2026-07-31",
+      "rationale": "Every case variant of the GTFS-Realtime handler returns 404 on this Availtec InfoPoint deployment, while the rest of it is healthy: NTD still declares the static on this host, that static serves a 2.9 MB zip, and the deployment's own myStop REST API reports 20 routes and 41 moving vehicles. So the realtime handler is not enabled rather than the deployment being down or migrated, and there is no alternative URL to find. The registered realtime feed stays dead until the agency or the vendor turns it on. The REST API is not a substitute: its TripId is a small integer unrelated to the GTFS trip_id, so vehicles cannot be tied back to the schedule."
+    },
+    {
+      "url": "https://svc.metrotransit.org/mtgtfs/gtfs.zip",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "relates_to": ["f-9zvw-mvta~metro"],
+      "found_via": "web_search",
+      "decided_on": "2026-07-31",
+      "rationale": "Metro Transit's regional feed is sometimes suggested as covering MVTA. It does not. It carries eight agencies, none of them MVTA, and shares 0 of 2749 trip IDs with the registered MVTA static. Its realtime resolves against its own static, not MVTA's."
+    },
+    {
+      "url": "https://ssge-ticketing.us.unwire.com/api-gateway/v3/api/ttools/vehicles/snapshot",
+      "decision": "unavailable",
+      "found_via": "agency_website",
+      "decided_on": "2026-07-31",
+      "rationale": "MVTA's trip planner is a white-label product from Kuba, formerly Unwire, embedded from an unwire.com host. Kuba is a ticketing and journey-planning platform that consumes agency data and publishes none; this gateway requires the web app's token and exposes no GTFS or GTFS Realtime. Recorded so it is not mistaken for a feed source again. It does confirm the agency's realtime exists and is licensed to a third party, which supports asking them to publish it openly.",
+      "references": [
+        "https://www.icmmobility.com/post/unwire-transforms-into-kuba-pioneering-the-future-of-mobility-solutions"
+      ]
+    }
+  ]
+}
