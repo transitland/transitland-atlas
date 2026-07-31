@@ -47,6 +47,23 @@ Operator rather than feed or DMFR filename, because:
 
 `decided_on` is required. Every finding here rests on something that can change — a calendar that expires, a vendor contract, a URL that moves. `recheck_after` marks the date beyond which a decision's basis may no longer hold, which is what makes `deferred` useful: a rejection with an expiry is far more actionable than a permanent no.
 
+## Validation
+
+```sh
+cd scripts && uv run validate-evaluations.py
+```
+
+Errors exit non-zero; warnings and notes are advisory. It checks schema conformance, that the filename matches `operator_onestop_id`, that the operator and every `relates_to` / `publishes` feed exists in `feeds/`, that dates are sane and `recheck_after` follows `decided_on`, and that no URL is duplicated within a file. It also flags contradictions in both directions: a candidate marked `not_used` that this operator actually uses, or one marked `used` that no feed of this operator uses.
+
+That contradiction check is scoped **per operator**, because a decision here is about one agency and the same URL may legitimately be another agency's registered feed. When that happens it is reported as a note, not an error.
+
+Two advisory outputs are the point of running it regularly:
+
+- **candidates due for recheck** — anything whose `recheck_after` has passed
+- **operators with `unstable_url` feeds but no `watch` entry** — a work list for recording where a moving URL gets republished
+
+The script is deliberately offline. It never contacts the Transitland API or fetches a candidate URL, so it stays deterministic and a feed that happens to be erroring cannot fail it. Re-checking whether a recorded finding still holds is a different job, and one that would want `$TRANSITLAND_API_KEY`.
+
 ## Public repository
 
 Rationale text is public. Phrase it as measurement rather than judgment — "trip IDs resolved 0 of 48 against the registered realtime", not an opinion about a vendor or an agency's data quality.
