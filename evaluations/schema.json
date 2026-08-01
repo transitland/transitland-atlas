@@ -2,34 +2,48 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/transitland/transitland-atlas/blob/main/evaluations/schema.json",
   "title": "Transitland Atlas feed source evaluation",
-  "description": "EXPERIMENTAL. Records why a feed URL was or was not registered in Atlas, and which publisher pages are worth re-checking. One file per operator, named for its Onestop ID. Holds current state, not an append-only log: git history is the log.",
+  "description": "EXPERIMENTAL. Records why a feed URL was or was not registered in Atlas, and which publisher pages are worth re-checking. One file per subject, named for its Onestop ID: an operator where one exists, otherwise a feed, since most feeds rely on generated operators. Holds current state, not an append-only log: git history is the log.",
   "type": "object",
-  "required": ["operator_onestop_id"],
+  "required": [],
   "additionalProperties": false,
   "properties": {
     "$schema": {
       "type": "string"
     },
     "operator_onestop_id": {
-      "description": "Operator this file is about. Must exist in feeds/.",
+      "description": "Operator this file is about. Must exist in feeds/. Use feed_onestop_id instead when the feed relies on a generated operator.",
       "type": "string",
       "pattern": "^o-"
     },
     "candidates": {
       "description": "Feed URLs that have been evaluated, including ones deliberately not registered.",
       "type": "array",
-      "items": { "$ref": "#/$defs/candidate" }
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
     },
     "watch": {
       "description": "Pages worth re-checking, typically because they publish a URL that moves.",
       "type": "array",
-      "items": { "$ref": "#/$defs/watch" }
+      "items": {
+        "$ref": "#/$defs/watch"
+      }
+    },
+    "feed_onestop_id": {
+      "description": "Feed this file is about, when the feed has no operator record. Must exist in feeds/.",
+      "type": "string",
+      "pattern": "^f-"
     }
   },
   "$defs": {
     "candidate": {
       "type": "object",
-      "required": ["url", "decision", "decided_on", "rationale"],
+      "required": [
+        "url",
+        "decision",
+        "decided_on",
+        "rationale"
+      ],
       "additionalProperties": false,
       "properties": {
         "url": {
@@ -39,16 +53,31 @@
         },
         "decision": {
           "description": "used = registered. not_used = works, but we chose something else. deferred = not now, recheck later. unavailable = cannot be used for reasons outside our control.",
-          "enum": ["used", "not_used", "deferred", "unavailable"]
+          "enum": [
+            "used",
+            "not_used",
+            "deferred",
+            "unavailable"
+          ]
         },
         "relationship": {
           "description": "How this URL's contents relate to what is registered for this operator. Same vocabulary as feed-probe (interline-io/tlv2#439), so an automated probe can re-verify the assertion later.",
-          "enum": ["same", "subset", "superset", "overlapping", "disjoint", "unknown"]
+          "enum": [
+            "same",
+            "subset",
+            "superset",
+            "overlapping",
+            "disjoint",
+            "unknown"
+          ]
         },
         "relates_to": {
           "description": "Registered feeds this comparison was made against. More than one when a candidate spans several feeds.",
           "type": "array",
-          "items": { "type": "string", "pattern": "^f-" }
+          "items": {
+            "type": "string",
+            "pattern": "^f-"
+          }
         },
         "found_via": {
           "description": "Where the candidate came from.",
@@ -72,13 +101,19 @@
         "references": {
           "description": "Supporting links: agency pages, vendor directories, issues. Do not record PR numbers, which git history already resolves.",
           "type": "array",
-          "items": { "type": "string", "format": "uri" }
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
         }
       }
     },
     "watch": {
       "type": "object",
-      "required": ["page", "note"],
+      "required": [
+        "page",
+        "note"
+      ],
       "additionalProperties": false,
       "properties": {
         "page": {
@@ -89,7 +124,10 @@
         "publishes": {
           "description": "Feeds whose URL this page publishes.",
           "type": "array",
-          "items": { "type": "string", "pattern": "^f-" }
+          "items": {
+            "type": "string",
+            "pattern": "^f-"
+          }
         },
         "last_seen_url": {
           "description": "URL last observed on the page, to diff against on the next check.",
@@ -107,5 +145,17 @@
         }
       }
     }
-  }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "operator_onestop_id"
+      ]
+    },
+    {
+      "required": [
+        "feed_onestop_id"
+      ]
+    }
+  ]
 }

@@ -120,7 +120,8 @@ validator = jsonschema.Draft202012Validator(schema)
 
 # ------------------------------------------------------------ check each file
 
-eval_files = sorted(glob.glob(os.path.join(EVAL_DIR, "o-*.json")))
+eval_files = sorted(glob.glob(os.path.join(EVAL_DIR, "o-*.json"))
+                    + glob.glob(os.path.join(EVAL_DIR, "f-*.json")))
 seen_urls: dict[str, str] = {}
 today = date.today()
 overdue: list[str] = []
@@ -136,15 +137,25 @@ for path in eval_files:
         loc = "/".join(str(p) for p in e.path) or "(root)"
         err(path, f"schema: {loc}: {e.message}")
 
+    # A file is keyed by an operator where one exists, otherwise by a feed,
+    # because most feeds rely on generated operators.
     oid = doc.get("operator_onestop_id")
-    if not oid:
+    subject_feed = doc.get("feed_onestop_id")
+    subject = oid or subject_feed
+    if not subject:
         continue
 
     stem = os.path.basename(path).removesuffix(".json")
-    if stem != oid:
-        err(path, f"filename does not match operator_onestop_id {oid!r}")
-    if oid not in operators:
+    if stem != subject:
+        err(path, f"filename does not match {'operator' if oid else 'feed'}_onestop_id {subject!r}")
+    if oid and oid not in operators:
         err(path, f"operator {oid!r} does not exist in feeds/")
+    if subject_feed:
+        if subject_feed not in feed_ids:
+            err(path, f"feed {subject_feed!r} does not exist in feeds/")
+        elif feed_operators.get(subject_feed):
+            err(path, f"feed {subject_feed!r} has operator record(s) "
+                      f"{sorted(set(feed_operators[subject_feed]))}; key this file on the operator instead")
 
     urls_here: set[str] = set()
     for i, cand in enumerate(doc.get("candidates") or []):
@@ -183,13 +194,14 @@ for path in eval_files:
         # may legitimately be another agency's registered feed.
         decision = cand.get("decision")
         using_feeds = registered_urls.get(url, set())
-        ours = using_feeds & operator_feeds.get(oid, set())
+        scope = operator_feeds.get(oid, set()) if oid else {subject_feed}
+        ours = using_feeds & scope
         theirs = using_feeds - ours
 
         if decision in ("not_used", "deferred", "unavailable") and ours:
             err(path, f"{where}: recorded as {decision!r} but in use by this operator's {', '.join(sorted(ours))}")
         if decision == "used" and not ours:
-            err(path, f"{where}: recorded as 'used' but no feed of this operator uses this url")
+            err(path, f"{where}: recorded as 'used' but no feed in scope uses this url")
         if theirs and decision != "used":
             note(path, f"{where}: registered for another operator as {', '.join(sorted(theirs))}")
 
@@ -202,7 +214,7 @@ for path in eval_files:
             err(path, f"{where}: last_checked is not a valid date")
 
     # advisory: unstable_url feeds with nowhere recorded to look for a replacement
-    if oid in unstable_operators and not (doc.get("watch") or []):
+    if oid and oid in unstable_operators and not (doc.get("watch") or []):
         feeds = ", ".join(sorted(set(unstable_operators[oid])))
         warn(path, f"operator has unstable_url feeds ({feeds}) but no watch entry")
 

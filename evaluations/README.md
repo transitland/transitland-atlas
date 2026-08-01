@@ -22,7 +22,9 @@ Figures do appear in `rationale` text, as frozen evidence for a decision. They a
 
 ## Shape
 
-One file per operator, named for its Onestop ID: `evaluations/o-dh-lakeland.json`. Validated by [`schema.json`](schema.json).
+One file per subject, named for its Onestop ID: `evaluations/o-dh-lakeland.json`. Validated by [`schema.json`](schema.json).
+
+Key on the **operator** where one exists. Where the feed has no operator record, key on the **feed** instead: `evaluations/f-move~stanislaus~vetsvan~flex.json`. That is not an edge case, because operator records are only created when there is something to put on them, so most feeds rely on generated operators and a finding about one would otherwise have nowhere to live. The validator rejects a feed-keyed file whose feed does have operator records, and names them.
 
 Two kinds of record:
 
@@ -35,9 +37,9 @@ Each file holds what we currently believe. Re-checking a candidate overwrites it
 
 Git is the log. `git log --follow evaluations/o-dh-lakeland.json` recovers every revision with author and date, and GitHub resolves each commit to its pull request, so PR numbers are not recorded here — that would duplicate a derivable link and require editing a file after opening the PR that contains it. Use `references` for links known in advance: agency pages, vendor directories, issues.
 
-## Keyed by operator
+## Keyed by operator where possible
 
-Operator rather than feed or DMFR filename, because:
+Operator rather than DMFR filename, because:
 
 - A candidate URL frequently spans several feeds but rarely several operators. A whole-system feed may correspond to two registered feeds for one agency.
 - Operator Onestop IDs are more stable than feed IDs, which get superseded.

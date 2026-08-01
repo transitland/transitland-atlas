@@ -1,0 +1,18 @@
+{
+  "$schema": "./schema.json",
+  "operator_onestop_id": "o-9qc-sanjoaquinregionaltransitdistrictrtd",
+  "candidates": [
+    {
+      "url": "https://gtfs.dds.dot.ca.gov/gtfs_files/SanJoaquinRTDDialARideandVanGoFlex.zip",
+      "decision": "deferred",
+      "relationship": "superset",
+      "relates_to": [
+        "f-san~joaquin~rtd~dial~a~rideand~van~go~flex"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-07-31",
+      "recheck_after": "2026-10-31",
+      "rationale": "The Caltrans copy of this flex feed carries 2 routes and 3 trips against 1 route and 2 trips in the registered Trillium copy, and the registered trips are a subset of it. So the registered feed may be under-covering this service. Not switched without checking which the agency treats as authoritative; the Caltrans URL is already recorded in this feed's static_historic."
+    }
+  ]
+}
