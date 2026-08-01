@@ -58,6 +58,8 @@ from urllib.parse import urljoin, urlparse
 
 import requests
 
+import atlas_registry
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EVAL_DIR = os.path.join(ROOT, "evaluations")
 API = "https://transit.land/api/v2/query"
@@ -69,6 +71,7 @@ FEED_FIELDS = f"""
     onestop_id
     urls {{ static_current realtime_vehicle_positions }}
     feed_state {{ feed_version {{ fetched_at latest_calendar_date }} }}
+    authorization {{ type param_name info_url }}
     feed_fetches(limit: {FETCH_WINDOW}) {{ fetched_at success response_code fetch_error }}
 """
 
@@ -164,9 +167,13 @@ def summarise(f: dict) -> dict:
     else:
         pattern = "always-failing"
 
+    auth = f.get("authorization") or {}
     return {
         "onestop_id": f["onestop_id"],
         "url": url,
+        "auth_type": auth.get("type"),
+        "auth_param_name": auth.get("param_name"),
+        "auth_info_url": auth.get("info_url"),
         "host": (urlparse(url).netloc or "(no url)").lower(),
         "days_since_new_version": days_since(fv.get("fetched_at")),
         "latest_calendar_date": latest_cal,
@@ -203,11 +210,84 @@ def describe_cluster(rows: list[dict]) -> str:
     return "mixed: " + ", ".join(f"{k}={v}" for k, v in kinds.most_common())
 
 
+
+def check_credentials(rows: list[dict], secrets_path: str) -> list[dict]:
+    """Try each credentialed feed with a supplied secret, to tell an expired or
+    missing credential apart from a feed that has genuinely moved.
+
+    Reads a transitland-lib secrets file (a list of {feed_id, key, username,
+    password, url_type, replace_url}). Secret values are never printed and
+    never written to the report; only the outcome is.
+    """
+    try:
+        raw = json.load(open(os.path.expanduser(secrets_path)))
+    except Exception as e:
+        print(f"  could not read secrets file: {type(e).__name__}")
+        return rows
+    secrets = raw.get("secrets", raw) if isinstance(raw, dict) else raw
+
+    # transitland-lib matches a secret by feed_id or by DMFR filename, and most
+    # entries use the filename, so map feeds to their file.
+    file_of = atlas_registry.file_of_feed(atlas_registry.load(os.path.join(ROOT, "feeds")))
+
+    by_feed, by_file = {}, {}
+    for sec in secrets or []:
+        if not isinstance(sec, dict):
+            continue
+        if sec.get("feed_id"):
+            by_feed.setdefault(sec["feed_id"], sec)
+        if sec.get("filename"):
+            by_file.setdefault(os.path.basename(sec["filename"]), sec)
+
+    def secret_for(onestop_id):
+        sec = by_feed.get(onestop_id)
+        if sec:
+            return sec
+        return by_file.get(file_of.get(onestop_id, ""))
+
+    session = requests.Session()
+    session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
+    out = []
+    for r in rows:
+        sec = secret_for(r["onestop_id"])
+        # A secret can be scoped to one URL type; skip it if it does not apply.
+        if sec and sec.get("url_type") and sec["url_type"] not in ("static_current",
+                                                                  "realtime_vehicle_positions"):
+            sec = None
+        if not sec:
+            out.append({**r, "credential": "none-supplied"})
+            continue
+        url, params, headers, auth = r["url"], {}, {}, None
+        kind = r["auth_type"]
+        name = r.get("auth_param_name") or "api_key"
+        if sec.get("replace_url"):
+            url = sec["replace_url"]
+        elif kind == "query_param":
+            params[name] = sec.get("key", "")
+        elif kind == "header":
+            headers[name] = sec.get("key", "")
+        elif kind == "basic_auth":
+            auth = (sec.get("username", ""), sec.get("password", ""))
+        try:
+            resp = session.get(url, params=params, headers=headers, auth=auth, timeout=45)
+            ok = resp.status_code == 200 and len(resp.content) > 100
+            out.append({**r, "credential": "works" if ok else f"rejected-{resp.status_code}"})
+        except Exception as e:
+            out.append({**r, "credential": f"unreachable-{type(e).__name__}"})
+    return out
+
+
 # -------------------------------------------------------------------- sources
 
 def source_fetch_errors(key: str, args) -> dict:
     rows = [summarise(f) for f in fetch_all(key, "where: {fetch_error: true}")]
     total = len(rows)
+    # Feeds that declare credentials fail for a different reason and need a
+    # different response: obtain or renew a token, not find a new URL. These
+    # are prod's own fetch attempts, so a failure here means the credential is
+    # missing or expired rather than merely absent from this script.
+    needs_auth = [r for r in rows if r["auth_type"]]
+    rows = [r for r in rows if not r["auth_type"]]
     transient = [r for r in rows
                  if r["pattern"] in ("just-broke", "recovered")
                  and r["fail_streak"] <= args.transient_streak]
@@ -215,6 +295,7 @@ def source_fetch_errors(key: str, args) -> dict:
     clusters, loose = cluster(rows, args.min_cluster)
 
     print(f"fetch-errors: {total} feeds failing to fetch")
+    print(f"  {len(needs_auth)} declare credentials, reported separately below")
     print(f"  {len(transient)} broke within the last {args.transient_streak} fetch(es) after succeeding, "
           f"held back as transient")
     print(f"  {len(clusters)} host cluster(s) of {args.min_cluster}+, covering "
@@ -228,7 +309,21 @@ def source_fetch_errors(key: str, args) -> dict:
         for r in sorted(loose, key=lambda r: (-r["fail_streak"], r["onestop_id"]))[:12]:
             print(f"        {r['fail_streak']:>2}/{r['window']:<2} {r['pattern']:<15} "
                   f"{r['onestop_id'][:42]:44s} {r['fetch_failure']}")
-    return {"total": total, "held_back_transient": transient,
+    if needs_auth and args.secrets:
+        needs_auth = check_credentials(needs_auth, args.secrets)
+        tally = collections.Counter(r["credential"] for r in needs_auth)
+        print(f"\n  credential check against the supplied secrets file: {dict(tally)}")
+        broken = [r for r in needs_auth if r["credential"].startswith("rejected")
+                  or r["credential"].startswith("unreachable")]
+        for r in broken[:12]:
+            print(f"      {r['credential']:<24} {r['onestop_id'][:44]}")
+    if needs_auth:
+        by_info = collections.Counter(r["auth_info_url"] or "(no info_url)" for r in needs_auth)
+        print(f"\n  credentialed feeds failing, grouped by where to request access:")
+        for info, n in by_info.most_common():
+            print(f"      {n:>3}  {info[:76]}")
+
+    return {"total": total, "needs_auth": needs_auth, "held_back_transient": transient,
             "clusters": [{"host": c[0]["host"], "count": len(c),
                           "reading": describe_cluster(c), "feeds": c} for c in clusters],
             "singletons": loose}
@@ -332,6 +427,8 @@ def main() -> int:
                     help="host cluster size to report as one finding (default 5)")
     ap.add_argument("--transient-streak", type=int, default=2,
                     help="hold back failures with a streak this short that follow a success (default 2)")
+    ap.add_argument("--secrets", help="optional transitland-lib secrets file, used only to test whether "
+                    "a credentialed feed's token still works; values are never printed or written")
     ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
     args = ap.parse_args()
 
