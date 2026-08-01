@@ -66,6 +66,18 @@ Two advisory outputs are the point of running it regularly:
 
 The script is deliberately offline. It never contacts the Transitland API or fetches a candidate URL, so it stays deterministic and a feed that happens to be erroring cannot fail it. Re-checking whether a recorded finding still holds is a different job, and one that would want `$TRANSITLAND_API_KEY`.
 
+## Does an entry earn its place?
+
+These files are only worth keeping if they stay dense. Three questions, and an entry failing all three should be deleted:
+
+1. **Would a contributor plausibly propose this URL again?**
+2. **Did it take real work to establish**, such that re-deriving it would cost?
+3. **Does it suppress a finding a discovery source will keep re-reporting?**
+
+Judge the third by checking, not by intuition. Reviewing the Caltrans entries, two looked like obvious deletions: obscure dial-a-ride files, cheap to re-check, nobody would propose them. But Atlas records those feeds against their **old** `gtfs.calitp.org` URLs, while Cal-ITP now publishes them on `gtfs.dds.dot.ca.gov`. A cross-reference against Cal-ITP compares URLs, so it would flag all four as unknown candidates on every single run. They earn their place on question 3 alone.
+
+The reverse case is worth watching for too: an entry can be interesting and still not worth keeping, if nothing will ever surface the URL again.
+
 ## Two kinds of source, and what suppression means for each
 
 `scripts/scan-feed-sources.py` reports findings from several sources, and they do not behave the same way.
