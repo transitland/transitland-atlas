@@ -235,29 +235,35 @@ def source_fetch_errors(key: str, args) -> dict:
 
 
 def source_unstable_urls(key: str, args) -> dict:
+    """Feeds whose URL is known to move: is it still fetching, and still current?
+
+    Deliberately does not flag "no new version in N days". A feed can go a year
+    without being republished simply because the operator did not change the
+    schedule, which is indistinguishable from a dead feed by that measure and
+    was about 70% of what it reported. What matters is whether the feed still
+    fetches, and whether the data it serves has run out.
+    """
     rows = [summarise(f) for f in fetch_all(key, 'where: {tags: {unstable_url: "true"}}')]
-    flagged = []
-    for r in rows:
-        flags = []
-        if r["fetch_failure"]:
-            flags.append(f"fetch-{r['fetch_failure']}")
-        age = r["days_since_new_version"]
-        if age is not None and age >= args.stale_days:
-            flags.append(f"no-new-version-{age}d")
-        elif age is None:
-            flags.append("never-imported")
-        if r["calendar_expired"]:
-            flags.append(f"calendar-expired({r['latest_calendar_date']})")
-        if flags:
-            flagged.append({**r, "flags": flags})
-    flagged.sort(key=lambda r: -(r["days_since_new_version"] or 10**6))
-    print(f"unstable-urls: {len(rows)} tagged feeds, {len(flagged)} flagged\n")
-    for r in flagged[:25]:
-        age = r["days_since_new_version"]
-        print(f"  {'never' if age is None else str(age)+'d':>6}  {r['onestop_id'][:46]:48s} {', '.join(r['flags'])}")
-    if len(flagged) > 25:
-        print(f"  ... and {len(flagged)-25} more")
-    return {"total": len(rows), "flagged": flagged}
+    failing = [r for r in rows if r["fetch_failure"]]
+    expired = [r for r in rows if not r["fetch_failure"] and r["calendar_expired"]]
+    healthy = [r for r in rows if not r["fetch_failure"] and not r["calendar_expired"]]
+
+    print(f"unstable-urls: {len(rows)} tagged feeds")
+    print(f"  {len(healthy)} fetching with a current calendar, not reported")
+    print(f"  {len(expired)} fetching but serving an expired calendar")
+    print(f"  {len(failing)} failing to fetch\n")
+
+    if expired:
+        print("  serving an expired calendar, oldest first:")
+        for r in sorted(expired, key=lambda r: r["latest_calendar_date"] or "")[:15]:
+            print(f"      cal_end {r['latest_calendar_date']}  {r['onestop_id'][:48]}")
+    if failing:
+        print("\n  failing to fetch, longest streak first:")
+        for r in sorted(failing, key=lambda r: -r["fail_streak"])[:15]:
+            print(f"      {r['fail_streak']:>2}/{r['window']:<2} {r['pattern']:<15} "
+                  f"{r['onestop_id'][:42]:44s} {r['fetch_failure']}")
+    return {"total": len(rows), "expired": expired, "failing": failing,
+            "healthy_count": len(healthy)}
 
 
 def source_watch_pages(key, args) -> dict:
@@ -326,8 +332,6 @@ def main() -> int:
                     help="host cluster size to report as one finding (default 5)")
     ap.add_argument("--transient-streak", type=int, default=2,
                     help="hold back failures with a streak this short that follow a success (default 2)")
-    ap.add_argument("--stale-days", type=int, default=180,
-                    help="unstable-urls: flag feeds with no new version in this many days (default 180)")
     ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
     args = ap.parse_args()
 
