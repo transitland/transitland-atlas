@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-fayette~madison~transit~oh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.cacfayettecounty.org/wp-content/uploads/2026/04/m-w-f-10-4.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13277/FMT_GTFS.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-fayette~madison~transit~oh~us",
+          "name": "Fayette Madison Transit",
+          "short_name": "FMT",
+          "website": "https://www.cacfayettecounty.org/transportation/",
+          "tags": {
+            "us_ntd_id": "50410"
+          }
+        }
+      ]
+    }
+  ]
+}

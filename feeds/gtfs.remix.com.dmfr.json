@@ -2,6 +2,27 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-albany~ga~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/ats_albany_ga_us.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11834/ats_albany_ga_us(2).zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-albany~ga~us",
+          "name": "Albany Transit System",
+          "short_name": "ATS",
+          "website": "https://www.albanyga.gov/about-us/city-departments/albany-transit-system",
+          "tags": {
+            "us_ntd_id": "40021"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-atomic~city~transit",
       "spec": "gtfs",
       "urls": {
