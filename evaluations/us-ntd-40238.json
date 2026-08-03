@@ -1,0 +1,18 @@
+{
+  "$schema": "schema.json",
+  "us_ntd_id": "40238",
+  "name": "City of Coconut Creek",
+  "candidates": [
+    {
+      "url": "https://www.coconutcreek.net/docs/default-source/pwdocs/gtfs/coconutcreekgtfs.zip",
+      "decision": "deferred",
+      "found_via": "US NTD GTFS weblinks release",
+      "decided_on": "2026-08-02",
+      "recheck_after": "2026-11-01",
+      "rationale": "Built and published by the county transit agency on behalf of the municipality, and all seven of its municipal community-shuttle feeds end on exactly 2025-09-30, the close of fiscal 2025. That makes it one publisher-side lapse rather than seven independent ones. Searched for a fiscal 2026 replacement on 2026-08-02 and found none. The publishing city's document centre holds only fiscal 2025 files, uploaded April 2026. It also holds a bundle filed for NTD reporting which is a zip of four inner feeds, readable directly through the archive-fragment syntax, and those turn out to be seasonal splits of the same fiscal 2025 service: a combined file and peak, off-peak and October variants ending 2025-09-30, 2025-04-30 and 2024-10-31. So the newest data the publisher holds in any form is still fiscal 2025. One of the seven is served under a filename saying FY26 while its contents also end 2025-09-30. The county's own fixed-route feed is registered and current on a rolling quarterly window, but carries 44 routes and does not include these shuttles, so nothing already in the registry covers them. Register once a fiscal 2026 file appears; the URLs are fiscal-year dated and will move when it does.",
+      "references": [
+        "https://www.broward.org/BCT/Pages/CommunityShuttles.aspx"
+      ]
+    }
+  ]
+}

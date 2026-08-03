@@ -90,7 +90,11 @@ def status_cell(data: dict) -> Text:
     return Text(label, style="green" if ok else "red")
 
 
-def sha1_cell(sha1: str, all_same: bool) -> Text:
+def sha1_cell(sha1: str | None, all_same: bool) -> Text:
+    # A URL that did not validate has no SHA1, and comparing a good feed against
+    # a broken one is a normal thing to want to do, so this must not be fatal.
+    if not sha1:
+        return Text("N/A", style="dim")
     short = sha1[:16] + "..." if len(sha1) > 16 else sha1
     if all_same:
         return Text(short + "  [IDENTICAL]", style="green")
