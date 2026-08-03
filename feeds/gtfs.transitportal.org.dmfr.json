@@ -2,6 +2,22 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-cherokeecountytransit~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Cherokee%20County_39/Cherokee.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cherokeecountytransit~nc~us",
+          "name": "Cherokee County Transit",
+          "tags": {
+            "us_ntd_id": "41069"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnk-haywoodtransit",
       "spec": "gtfs",
       "urls": {
@@ -391,6 +407,22 @@
           "website": "https://www.buncombecounty.org/governing/depts/transportation/default.aspx",
           "tags": {
             "us_ntd_id": "40224"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-ocracoketram~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Ocracoke%20Tram_%208/OcracokeTram.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ocracoketram~nc~us",
+          "name": "Ocracoke Tram",
+          "tags": {
+            "us_ntd_id": "44947"
           }
         }
       ]
