@@ -93,6 +93,13 @@ def summarise(data: dict, today: date | None = None) -> dict:
     sha1 = d.get("sha1") or data.get("sha1") or ""
     agencies = [a.get("agency_name", "") for a in (d.get("agencies") or [])]
     routes = d.get("routes") or []
+
+    # `details.files` carries a row count per file and is populated even when the
+    # entity arrays are not. They do disagree: a feed with seven rows in
+    # routes.txt and no errors can still come back with an empty details.routes,
+    # which reads as "not a feed" and is how a real feed gets written off.
+    rows = {f.get("name"): f.get("rows") for f in (d.get("files") or []) if f.get("name")}
+    route_rows = rows.get("routes.txt")
     earliest, latest = d.get("earliest_calendar_date"), d.get("latest_calendar_date")
     status, expired_days = calendar_status(earliest, latest, today)
 
@@ -105,9 +112,11 @@ def summarise(data: dict, today: date | None = None) -> dict:
         "sha1": sha1,
         "agencies": agencies,
         "agency": agencies[0] if agencies else "",
-        "routes": len(routes),
-        "stops": (d.get("counts") or {}).get("stops"),
-        "trips": (d.get("counts") or {}).get("trips"),
+        "routes": len(routes) if routes else (route_rows or 0),
+        "routes_from_file_rows": bool(not routes and route_rows),
+        "file_rows": rows,
+        "stops": rows.get("stops.txt"),
+        "trips": rows.get("trips.txt"),
         "earliest_calendar_date": earliest,
         "latest_calendar_date": latest,
         "calendar_status": status,
