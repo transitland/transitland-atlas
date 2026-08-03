@@ -31,6 +31,16 @@ Two kinds of record:
 - **`candidates`** — URLs that have been evaluated, and what was decided. `decision` is one of `used`, `not_used`, `deferred` or `unavailable`.
 - **`watch`** — pages worth re-checking, usually because they publish a URL that moves. This is the counterpart to `tags.unstable_url` in a DMFR file: the tag marks a URL as volatile, and a `watch` entry records where its replacement will appear.
 
+## Record the decision, not the investigation
+
+The temptation is to write down everything that was measured on the way to a decision: file dates, byte counts, route and stop totals, every URL probed. Resist it.
+
+Most of those figures are cheaper to re-measure than to trust, and they decay silently. Worse, the next person to look at the same question will usually look **wider** than we did, because they will have a reason to, and their fuller picture may support a different answer. A rationale packed with our partial evidence invites them to argue with our working rather than form their own view.
+
+So: a few sentences on why the decision holds, and stop. Quote a figure only where it *is* the reason, such as a calendar that had already run out. `relationship` and `relates_to` are worth filling in only when a comparison was actually made, not as a guess to complete the record. The schema caps rationale length to keep this honest.
+
+What genuinely belongs here is the part that is expensive to rediscover: that a URL was looked at and rejected, and roughly why. Not the audit trail.
+
 ## Current state, not a log
 
 Each file holds what we currently believe. Re-checking a candidate overwrites its entry rather than appending.

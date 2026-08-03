@@ -12,7 +12,7 @@
       "found_via": "US NTD GTFS weblinks release",
       "decided_on": "2026-08-03",
       "recheck_after": "2027-03-01",
-      "rationale": "The carrier's own build of a service already registered from the state clearinghouse. Measured 2026-08-03: identical calendar coverage of 2026-06-07 to 2027-01-04 and the same single agency, but 83 routes and 122 stops against the registered copy's 86 and 123, so it is the smaller of the two. The carrier build is stamped more precisely and looks more frequently rebuilt, which is worth revisiting if the clearinghouse copy ever falls behind, but there is no reason to move to a strict subset today.",
+      "rationale": "The carrier's own build of a service already registered from the state clearinghouse, and the smaller of the two by route and stop count. Worth revisiting if the clearinghouse copy falls behind.",
       "references": [
         "https://trailways.com/"
       ]
@@ -25,7 +25,7 @@
       ],
       "found_via": "static_historic on the feed it would revive",
       "decided_on": "2026-08-03",
-      "rationale": "Checked as a possible source for a registered feed that currently has no static_current. It fetches and the validator reports success, but the file contains no agencies and no routes, and its calendar ran 2020-12-31 to 2021-12-31. The vendor copy recorded for the same feed is worse still: it returns 200 for a 417-byte archive holding only feed_info.txt and agency.txt. Both would pass a reachability check while carrying no service, so the feed stays without a current URL rather than being pointed at an empty file.",
+      "rationale": "Considered as a source for a registered feed that has no current URL. It fetches and the validator reports success, but carries no agencies or routes and its calendar ended years ago. The vendor copy is a stub holding only feed_info.txt and agency.txt. Both would pass a reachability check while carrying no service.",
       "references": [
         "https://trailways.com/"
       ]

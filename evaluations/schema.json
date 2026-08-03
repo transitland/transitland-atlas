@@ -104,9 +104,10 @@
           "format": "date"
         },
         "rationale": {
-          "description": "Why, in plain terms. State measurements, not judgments about a vendor or agency: this repository is public. Any figures quoted are frozen evidence for the decision and are not maintained.",
+          "description": "Why, in plain terms, and briefly. Record the reason the decision holds, not the evidence trail that produced it: a few sentences, not a report. Most figures are cheaper to re-measure than to trust, and anyone revisiting this will look wider than we did and may reach a different answer, so a long rationale mostly ages badly. Quote a figure only where it is the whole reason, such as a calendar that had already expired. State measurements rather than judgments about a vendor or agency: this repository is public.",
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 600
         },
         "references": {
           "description": "Supporting links: agency pages, vendor directories, issues. Do not record PR numbers, which git history already resolves.",

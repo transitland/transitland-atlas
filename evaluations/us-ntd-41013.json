@@ -8,7 +8,7 @@
       "decision": "unavailable",
       "found_via": "US NTD GTFS weblinks release",
       "decided_on": "2026-08-03",
-      "rationale": "The feed itself is fine: fetched with certificate verification disabled it returns a valid 69 KB archive. What blocks it is TLS. The host presents a certificate issued to its vendor, naming that vendor's own domains and wildcards, and not the agency's hostname, so any client that verifies certificates fails to connect. The agency appears to have pointed its own hostname at the vendor's platform without a certificate being issued for it. Vendor-owned hostnames that would match were tried and none resolve, so there is no alternative address to register. This is a server-side misconfiguration the agency or its vendor can fix, and worth reporting to them rather than working around.",
+      "rationale": "Serves a valid archive, but over a certificate issued to its vendor rather than to this hostname, so anything that verifies certificates fails to connect. No vendor-owned hostname that would match resolves. A server-side fix for the agency or its vendor.",
       "recheck_after": "2027-01-01"
     }
   ]
