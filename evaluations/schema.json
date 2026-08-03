@@ -33,6 +33,16 @@
       "description": "Feed this file is about, when the feed has no operator record. Must exist in feeds/.",
       "type": "string",
       "pattern": "^f-"
+    },
+    "us_ntd_id": {
+      "description": "US National Transit Database id, for an agency Atlas does not hold at all. Only valid when no operator carries this id: once one does, the file is renamed to that operator. Five characters, zero-padded, as NTD publishes them.",
+      "type": "string",
+      "pattern": "^[0-9A-Za-z-]+$"
+    },
+    "name": {
+      "description": "Human-readable name of the subject. Only useful on an externally-keyed file, where no Atlas record supplies one.",
+      "type": "string",
+      "minLength": 1
     }
   },
   "$defs": {
@@ -155,6 +165,12 @@
     {
       "required": [
         "feed_onestop_id"
+      ]
+    },
+    {
+      "required": [
+        "us_ntd_id",
+        "name"
       ]
     }
   ]

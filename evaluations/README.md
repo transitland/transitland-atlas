@@ -78,6 +78,24 @@ Judge the third by checking, not by intuition. Reviewing the Caltrans entries, t
 
 The reverse case is worth watching for too: an entry can be interesting and still not worth keeping, if nothing will ever surface the URL again.
 
+## First: can the URL go in the feed record instead?
+
+**If a candidate URL is a genuine alternate for a feed we already hold, it belongs in `feeds/`, not here.** Put it in that feed's `static_historic` and the job is done: the registry then answers the question directly, no sidecar entry is needed, and any discovery source comparing URLs stops reporting it. Atlas already uses `static_historic` this way for URLs that are still live but are not the one we fetch.
+
+That is the cheaper half of the problem, and it covers more cases than it first appears. When the NTD weblinks source was first run, 12 Minnesota agencies were reported because NTD declares the state DOT's mirror while Atlas points at the producer. Recording those 12 URLs as `static_historic` removed all 12 findings, with no evaluation files at all.
+
+**These files are for the other half: alternates we considered and rejected.** A URL that is not a valid alternate for any feed has nowhere to live in `feeds/` — a landing page, a feed for a different agency, an empty vendor tenant, an agency that turned out to have no GTFS at all. That reasoning is what a contributor or an automated research pass would otherwise re-derive from scratch when the same URL is proposed again.
+
+So the test is:
+
+> Does this URL serve a feed we hold? Then `static_historic`. Did we look at it and decide against it? Then an evaluation.
+
+## Subjects with no Atlas record
+
+A discovery source proposes candidates for agencies we do not hold, and a rejection then has no operator or feed to key on. For those, key on an external identifier instead — currently `us_ntd_id`, in a file named `us-ntd-<id>.json`, with a `name` so the file is readable without a lookup.
+
+The validator rejects an externally-keyed file once an Atlas operator carries that id, because the finding then belongs on the operator and the file should be renamed. That makes the external key a staging area rather than a parallel namespace.
+
 ## Two kinds of source, and what suppression means for each
 
 `scripts/scan-feed-sources.py` reports findings from several sources, and they do not behave the same way.
@@ -87,6 +105,19 @@ The reverse case is worth watching for too: an entry can be interesting and stil
 **Discovery sources** — NTD weblinks, vendor directories, other registries. These propose candidates we may or may not want. The same candidate reappears on every run indefinitely unless a decision is recorded against it, so suppression is the point: the report converges toward zero as evaluations accumulate, even if no feed ever changes. This is where these files pay for themselves.
 
 So suppression is the default for discovery and the exception for monitoring. The runner should always print how many findings were suppressed and why, rather than dropping them silently — a tool that quietly stops reporting real problems is worse than a noisy one.
+
+### What the NTD pass measured about suppression
+
+Suppression is worth less than it first looks, and worth it for a different reason than expected.
+
+Comparing the 2023 reference release against the live one: **98% of NTD ids persist (226 of 230) but only 43% of URLs do (99 of 230)**. An agency stays an agency; its declared URL changes constantly. So a decision recorded against a URL alone expires more often than it holds, and the finding returns anyway. Suppression therefore keys on the **subject**, and treats the URL as the thing whose change re-opens the question — the same idea as `watch.last_seen_url`.
+
+The corollary is that the value here is not really deduplication. It is that when a URL *does* come back, the recorded reason is still there.
+
+Two things reduce noise more cheaply than any evaluation file, and should be tried first:
+
+- **Normalising URLs before comparing.** Scheme, host case, trailing slash and path case are all inconsistent between what agencies declare and what Atlas records. Folding them moved 77 agencies out of the unmatched bucket in one step.
+- **Following redirects.** Agencies sometimes declare a click-tracking link from a vendor's notification email rather than the feed URL. Two such links resolved to perfectly good feeds, and 4 more resolved onto URLs Atlas already had.
 
 ## Public repository
 

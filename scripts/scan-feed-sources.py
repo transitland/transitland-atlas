@@ -13,15 +13,18 @@ the registry and repeat on every run until a decision is recorded in
 evaluations/, so suppression is what makes them converge. See
 evaluations/README.md.
 
-Sources available, all monitors so far and all read-only:
+Sources available, all read-only:
 
-  fetch-errors    every feed the API reports as failing to fetch, grouped by
-                  host. Not limited to tagged feeds.
-  unstable-urls   feeds tagged unstable_url: staleness, calendar expiry and
-                  fetch state.
-  watch-pages     the public page on which an agency publishes its own feed
-                  URL, as recorded in evaluations/. One request per page, no
-                  following of links.
+  fetch-errors    MONITOR. Every feed the API reports as failing to fetch,
+                  grouped by host. Not limited to tagged feeds.
+  unstable-urls   MONITOR. Feeds tagged unstable_url: staleness, calendar
+                  expiry and fetch state.
+  watch-pages     MONITOR. The public page on which an agency publishes its own
+                  feed URL, as recorded in evaluations/. One request per page,
+                  no following of links.
+  ntd-weblinks    DISCOVERY. Each US NTD reporter's own declared GTFS URL,
+                  checked against the registry by URL and by us_ntd_id.
+                  Suppressed by decisions in evaluations/.
 
 Two ideas keep the output usable.
 
@@ -63,6 +66,10 @@ import atlas_registry
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EVAL_DIR = os.path.join(ROOT, "evaluations")
 API = "https://transit.land/api/v2/query"
+
+# The NTD GTFS weblinks release, refreshed monthly. The copy under
+# external-data-for-reference/ is the 2023 annual release and does not move.
+NTD_WEBLINKS = "https://data.transportation.gov/resource/2u7n-ub22.csv"
 
 FETCH_WINDOW = 20
 
@@ -411,10 +418,168 @@ def source_watch_pages(key, args) -> dict:
     return {"pages": results}
 
 
+def load_decisions() -> dict[str, dict[str, dict]]:
+    """Index every recorded candidate by subject, then by normalised URL.
+
+    Subject keys are whichever of operator / feed / us_ntd_id the file carries,
+    so a discovery source can look up a decision by whatever identifier it has.
+    """
+    out: dict[str, dict[str, dict]] = {}
+    for path in sorted(glob.glob(os.path.join(EVAL_DIR, "*.json"))):
+        if os.path.basename(path) == "schema.json":
+            continue
+        try:
+            doc = json.load(open(path))
+        except ValueError:
+            continue
+        subjects = [doc[k] for k in ("operator_onestop_id", "feed_onestop_id", "us_ntd_id")
+                    if doc.get(k)]
+        for cand in doc.get("candidates") or []:
+            if not cand.get("url"):
+                continue
+            for subject in subjects:
+                out.setdefault(subject, {})[atlas_registry.normalise_url(cand["url"])] = cand
+    return out
+
+
+def source_ntd_weblinks(key, args) -> dict:
+    """Each NTD reporter's own declared GTFS URL, checked against the registry.
+
+    A discovery source, so recorded decisions suppress findings. Suppression is
+    keyed on the agency and only holds while the declared URL is the one that
+    was decided on: across releases 98% of NTD ids persist but only 43% of URLs
+    do, so a decision tied to a URL alone would expire more often than not.
+    """
+    import csv
+    import io
+
+    db = atlas_registry.load(os.path.join(ROOT, "feeds"))
+    active = atlas_registry.active_urls(db)
+    historic = atlas_registry.historic_urls(db)
+    by_ntd = atlas_registry.operators_by_ntd_id(db)
+    decisions = load_decisions()
+
+    session = requests.Session()
+    session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
+    r = session.get(NTD_WEBLINKS, params={"$limit": 50000}, timeout=180)
+    r.raise_for_status()
+    rows = list(csv.DictReader(io.StringIO(r.text)))
+
+    # One row per agency and mode; the weblink is an agency-level attribute.
+    agencies: dict[str, dict] = {}
+    for row in rows:
+        nid = atlas_registry.normalise_ntd_id(row.get("ntd_id", ""))
+        if not nid:
+            continue
+        a = agencies.setdefault(nid, {
+            "ntd_id": nid, "name": (row.get("agency_name") or "").strip(),
+            "state": row.get("state", ""), "weblink": (row.get("weblink") or "").strip(),
+            "modified": row.get("new_modified_date", ""), "modes": set(),
+        })
+        a["modes"].add(row.get("mode", ""))
+
+    findings, suppressed, counts = [], [], collections.Counter()
+    for nid, a in sorted(agencies.items()):
+        url = a["weblink"]
+        if not url:
+            counts["no-weblink-declared"] += 1
+            continue
+        norm = atlas_registry.normalise_url(url)
+        operators = sorted(by_ntd.get(nid, ()))
+
+        if norm in active:
+            counts["url-registered"] += 1
+            continue
+        if norm in historic:
+            # We superseded this URL deliberately; NTD is behind us.
+            kind = "declares-a-url-we-superseded"
+        elif operators:
+            kind = "agency-held-from-a-different-url"
+        else:
+            kind = "agency-not-in-atlas"
+        counts[kind] += 1
+
+        row = {"ntd_id": nid, "name": a["name"], "state": a["state"], "weblink": url,
+               "kind": kind, "operators": operators, "modes": sorted(m for m in a["modes"] if m),
+               "ntd_modified": (a["modified"] or "")[:10],
+               "atlas_feeds": sorted(active.get(norm, set()) | historic.get(norm, set()))}
+
+        prior = None
+        for subject in operators + [nid]:
+            prior = (decisions.get(subject) or {}).get(norm)
+            if prior:
+                break
+        if prior:
+            row["decision"] = prior.get("decision")
+            row["decided_on"] = prior.get("decided_on")
+            suppressed.append(row)
+        else:
+            findings.append(row)
+
+    print(f"ntd-weblinks: {len(agencies)} agencies in the release\n")
+    for k, n in counts.most_common():
+        print(f"  {k:34s} {n:5d}")
+    print(f"\n  suppressed by evaluations/         {len(suppressed):5d}")
+    print(f"  reported                          {len(findings):5d}")
+
+    for kind in ("declares-a-url-we-superseded", "agency-held-from-a-different-url",
+                 "agency-not-in-atlas"):
+        group = [f for f in findings if f["kind"] == kind]
+        if not group:
+            continue
+        print(f"\n  {kind} ({len(group)}):")
+        by_host = collections.Counter(urlparse(f["weblink"]).netloc.lower() for f in group)
+        for host, n in by_host.most_common(8):
+            print(f"      {n:4d}  {host}")
+        for f in group[:5]:
+            print(f"      {f['ntd_id']} {f['name'][:34]:36s} {f['state']:3s} {f['weblink'][:64]}")
+
+    if args.resolve and findings:
+        # A declared URL is sometimes a wrapper rather than the feed: agencies
+        # paste the click-tracking link out of a vendor's notification email.
+        # Following it can reveal a URL already registered, or a usable one that
+        # no amount of string matching would have found.
+        print(f"\n  resolving {len(findings)} declared URL(s)...")
+        resolved = 0
+        for f in findings:
+            try:
+                r = session.get(f["weblink"], timeout=60, allow_redirects=True,
+                                stream=True)
+                final = r.url
+                head = r.raw.read(2, decode_content=True)
+                r.close()
+            except Exception as e:
+                f["resolve_error"] = type(e).__name__
+                continue
+            f["http_status"] = r.status_code
+            f["looks_like_zip"] = head == b"PK"
+            if atlas_registry.normalise_url(final) != atlas_registry.normalise_url(f["weblink"]):
+                f["resolved_url"] = final
+                f["resolved_feeds"] = sorted(active.get(atlas_registry.normalise_url(final), set()))
+                resolved += 1
+        wrapped = [f for f in findings if f.get("resolved_url")]
+        already = [f for f in wrapped if f.get("resolved_feeds")]
+        print(f"      {resolved} redirected elsewhere; {len(already)} of those land on a URL already registered")
+        for f in wrapped[:10]:
+            tag = f"-> {', '.join(f['resolved_feeds'])}" if f.get("resolved_feeds") else \
+                  ("zip" if f.get("looks_like_zip") else "not a zip")
+            print(f"      {f['ntd_id']} {f['name'][:28]:30s} {f['resolved_url'][:58]}  {tag}")
+
+    bad = atlas_registry.malformed_ntd_ids(db)
+    if bad:
+        print(f"\n  operators whose us_ntd_id will not join a raw NTD extract ({len(bad)}):")
+        for oid, raw in bad[:10]:
+            print(f"      {oid:52s} {raw}")
+
+    return {"counts": dict(counts), "findings": findings, "suppressed": suppressed,
+            "malformed_ntd_ids": [{"operator": o, "us_ntd_id": v} for o, v in bad]}
+
+
 SOURCES = {
     "fetch-errors": (source_fetch_errors, True),
     "unstable-urls": (source_unstable_urls, True),
     "watch-pages": (source_watch_pages, False),
+    "ntd-weblinks": (source_ntd_weblinks, False),
 }
 
 
@@ -429,6 +594,9 @@ def main() -> int:
                     help="hold back failures with a streak this short that follow a success (default 2)")
     ap.add_argument("--secrets", help="optional transitland-lib secrets file, used only to test whether "
                     "a credentialed feed's token still works; values are never printed or written")
+    ap.add_argument("--resolve", action="store_true",
+                    help="for discovery sources, follow each unmatched URL to see whether it is a "
+                    "wrapper around one already registered. One request per finding, so off by default")
     ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
     args = ap.parse_args()
 

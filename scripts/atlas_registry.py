@@ -18,14 +18,20 @@ import it without declaring a dependency.
 """
 
 import glob
+import json
 import os
 import sqlite3
 import subprocess
 import tempfile
+from urllib.parse import urlsplit, urlunsplit
 
 # Feed URL fields holding a superseded URL, which is retained deliberately and
 # is not in use. Everything else in `urls` counts as active.
 HISTORIC_SUFFIX = "_historic"
+
+# NTD publishes ids zero-padded to five characters. Atlas has historically been
+# inconsistent, so both sides are normalised before joining.
+NTD_WIDTH = 5
 
 
 def load(feeds_dir: str, db_path: str | None = None) -> sqlite3.Connection:
@@ -88,6 +94,118 @@ def unstable_feeds_of(db, onestop_id: str) -> set[str]:
         "WHERE o.onestop_id = ? AND json_extract(f.feed_tags, '$.unstable_url') = 'true'",
         (onestop_id,))
     return {r["id"] for r in rows}
+
+
+def normalise_url(url: str) -> str:
+    """Collapse the differences that do not change which file is served.
+
+    Scheme, host case, a trailing slash and path case are all routinely
+    inconsistent between what an agency declares to NTD and what Atlas records.
+    Matching on the raw string reports those as unregistered URLs: over the NTD
+    release, normalising this way moved 70 agencies out of the unmatched bucket.
+
+    Path case is folded too, which is not strictly safe -- some servers are
+    case-sensitive -- but this is only ever used to decide whether two URLs are
+    worth a human comparison, never to build a URL to fetch.
+    """
+    if not url:
+        return ""
+    url = url.strip()
+    if "://" not in url:
+        url = "https://" + url
+    parts = urlsplit(url)
+    return urlunsplit(("", parts.hostname or "", parts.path.rstrip("/"),
+                       parts.query, "")).lower()
+
+
+def normalise_ntd_id(value: str) -> str:
+    """NTD publishes five-character zero-padded ids; Atlas has not been consistent."""
+    value = (value or "").strip()
+    return value.zfill(NTD_WIDTH) if value.isdigit() else value
+
+
+def _url_index(db, historic: bool) -> dict[str, set[str]]:
+    """Normalised URL -> feeds, over either the active or the superseded fields.
+
+    `static_historic` holds an *array*, so iterating `urls` alone yields the
+    whole JSON array as a single value. Each element has to be unnested or the
+    superseded URLs never match anything.
+    """
+    op = "LIKE" if historic else "NOT LIKE"
+    out: dict[str, set[str]] = {}
+    for row in db.execute(
+            "SELECT f.onestop_id AS id, j.value AS value, j.type AS kind "
+            f"FROM current_feeds f, json_each(f.urls) j WHERE j.key {op} '%{HISTORIC_SUFFIX}'"):
+        values = []
+        if row["kind"] == "array":
+            try:
+                values = [v for v in json.loads(row["value"]) if isinstance(v, str)]
+            except (TypeError, ValueError):
+                values = []
+        elif row["value"]:
+            values = [row["value"]]
+        for url in values:
+            out.setdefault(normalise_url(url), set()).add(row["id"])
+    return out
+
+
+def active_urls(db) -> dict[str, set[str]]:
+    """Normalised active URL -> feeds using it. Superseded URLs are excluded."""
+    return _url_index(db, historic=False)
+
+
+def historic_urls(db) -> dict[str, set[str]]:
+    """Normalised superseded URL -> feeds that record it. A source still
+    declaring one of these is behind us, not ahead."""
+    return _url_index(db, historic=True)
+
+
+def operators_by_ntd_id(db) -> dict[str, set[str]]:
+    """Normalised `us_ntd_id` -> operators carrying it.
+
+    The tag holds a comma-separated list on operators that absorbed several
+    reporters, so each id is indexed separately.
+    """
+    out: dict[str, set[str]] = {}
+    for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
+                          "WHERE operator_tags IS NOT NULL"):
+        try:
+            tags = json.loads(row["operator_tags"])
+        except (TypeError, ValueError):
+            continue
+        raw = tags.get("us_ntd_id") if isinstance(tags, dict) else None
+        if not raw:
+            continue
+        for part in str(raw).split(","):
+            key = normalise_ntd_id(part)
+            if key:
+                out.setdefault(key, set()).add(row["onestop_id"])
+    return out
+
+
+def malformed_ntd_ids(db) -> list[tuple[str, str]]:
+    """Operators whose `us_ntd_id` will not join a live NTD extract as written.
+
+    Returns (operator, raw tag value). Unpadded numerics are the common case and
+    are silently corrected by `normalise_ntd_id`; they are still worth fixing at
+    the source, since anything joining on the raw tag misses them.
+    """
+    bad = []
+    for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
+                          "WHERE operator_tags IS NOT NULL"):
+        try:
+            tags = json.loads(row["operator_tags"])
+        except (TypeError, ValueError):
+            continue
+        raw = tags.get("us_ntd_id") if isinstance(tags, dict) else None
+        if not raw:
+            continue
+        for part in str(raw).split(","):
+            part = part.strip()
+            if part.isdigit() and len(part) != NTD_WIDTH:
+                bad.append((row["onestop_id"], str(raw)))
+                break
+    return sorted(bad)
 
 
 def file_of_feed(db) -> dict[str, str]:

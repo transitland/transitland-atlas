@@ -56,6 +56,7 @@ def parse_date(value: str):
 # ---------------------------------------------------------------- load feeds
 
 db = atlas_registry.load(FEEDS_DIR)
+ntd_owners = atlas_registry.operators_by_ntd_id(db)
 
 # --------------------------------------------------------------- load schema
 
@@ -69,7 +70,8 @@ validator = jsonschema.Draft202012Validator(schema)
 # ------------------------------------------------------------ check each file
 
 eval_files = sorted(glob.glob(os.path.join(EVAL_DIR, "o-*.json"))
-                    + glob.glob(os.path.join(EVAL_DIR, "f-*.json")))
+                    + glob.glob(os.path.join(EVAL_DIR, "f-*.json"))
+                    + glob.glob(os.path.join(EVAL_DIR, "us-ntd-*.json")))
 seen_urls: dict[str, str] = {}
 today = date.today()
 overdue: list[str] = []
@@ -86,16 +88,19 @@ for path in eval_files:
         err(path, f"schema: {loc}: {e.message}")
 
     # A file is keyed by an operator where one exists, otherwise by a feed,
-    # because most feeds rely on generated operators.
+    # because most feeds rely on generated operators. Where Atlas holds the
+    # agency at all, an external id is the last resort.
     oid = doc.get("operator_onestop_id")
     subject_feed = doc.get("feed_onestop_id")
-    subject = oid or subject_feed
+    subject_ntd = doc.get("us_ntd_id")
+    subject = oid or subject_feed or (f"us-ntd-{subject_ntd}" if subject_ntd else None)
     if not subject:
         continue
 
     stem = os.path.basename(path).removesuffix(".json")
     if stem != subject:
-        err(path, f"filename does not match {'operator' if oid else 'feed'}_onestop_id {subject!r}")
+        kind = "operator_onestop_id" if oid else "feed_onestop_id" if subject_feed else "us_ntd_id"
+        err(path, f"filename does not match {kind} {subject!r}")
     if oid and not atlas_registry.operator_exists(db, oid):
         err(path, f"operator {oid!r} does not exist in feeds/")
     if subject_feed:
@@ -105,6 +110,16 @@ for path in eval_files:
             err(path, f"feed {subject_feed!r} has operator record(s) "
                       f"{sorted(atlas_registry.operators_of(db, subject_feed))}; "
                       f"key this file on the operator instead")
+    if subject_ntd:
+        # An externally-keyed file is only correct while Atlas has nothing for
+        # this agency. Once an operator carries the id, the finding belongs
+        # there, so the file should be renamed rather than left to drift.
+        owners = ntd_owners.get(atlas_registry.normalise_ntd_id(subject_ntd), set())
+        if owners:
+            err(path, f"us_ntd_id {subject_ntd!r} is carried by operator(s) {sorted(owners)}; "
+                      f"key this file on the operator instead")
+        elif atlas_registry.normalise_ntd_id(subject_ntd) != subject_ntd:
+            warn(path, f"us_ntd_id {subject_ntd!r} is not zero-padded as NTD publishes it")
 
     urls_here: set[str] = set()
     for i, cand in enumerate(doc.get("candidates") or []):
@@ -136,14 +151,17 @@ for path in eval_files:
                 if decided and recheck < decided:
                     err(path, f"{where}: recheck_after {recheck} precedes decided_on {decided}")
                 if recheck <= today:
-                    overdue.append(f"{oid}  {url}  (due {recheck}, {cand.get('decision')})")
+                    overdue.append(f"{subject}  {url}  (due {recheck}, {cand.get('decision')})")
 
         # Contradictions between the sidecar and the registry, judged per
         # operator: a decision here is about this agency only, and the same URL
         # may legitimately be another agency's registered feed.
         decision = cand.get("decision")
         using_feeds = atlas_registry.feeds_using(db, url)
-        scope = atlas_registry.operator_feeds(db, oid) if oid else {subject_feed}
+        # An externally-keyed subject has no Atlas feeds by definition, so any
+        # feed using this URL belongs to someone else.
+        scope = (atlas_registry.operator_feeds(db, oid) if oid
+                 else {subject_feed} if subject_feed else set())
         ours = using_feeds & scope
         theirs = using_feeds - ours
 
