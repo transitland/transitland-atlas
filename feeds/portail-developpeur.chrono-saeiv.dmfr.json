@@ -1,0 +1,237 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-exo~reseaudetransportmetropolitain~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/TRAINS/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/TRAINS/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/TRAINS/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25-exo~citsorel~varennes~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/CITSV/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/CITSV/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/CITSV/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f253-exo~citsud~ouest~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/CITSO/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/CITSO/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/CITSO/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f256-exo~citlapresquîle~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/CITPI/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/CITPI/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/CITPI/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f257-exo~citlaurentides~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/CITLA/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/CITLA/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/CITLA/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25d-exo~richelain~roussillon~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/LRRS/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/LRRS/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/LRRS/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25f-exo~citchambly~richelieu~carignan~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/CITCRC/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/CITCRC/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/CITCRC/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25f-rseaudetransportdelongueuil~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/RTL/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/RTL/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/RTL/alert"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25g-exo~citvallée~du~richelieu~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/CITVR/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/CITVR/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/CITVR/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25g-exo~omitsainte~julie~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/OMITSJU/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/OMITSJU/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/OMITSJU/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25s-exo~mrclesmoulinsurbis~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/MRCLM/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/MRCLM/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/MRCLM/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f25u-exo~mrcdelassomption~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/MRCLASSO/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/MRCLASSO/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/MRCLASSO/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://exo.quebec/en/about/open-data"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    },
+    {
+      "id": "f-f2hf-sociétédetransportdesherbrooke~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://exo.chrono-saeiv.com/api/opendata/v1/STS/vehicleposition",
+        "realtime_trip_updates": "https://exo.chrono-saeiv.com/api/opendata/v1/STS/tripupdate",
+        "realtime_alerts": "https://exo.chrono-saeiv.com/api/opendata/v1/STS/alert"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.donneesquebec.ca/recherche/dataset/transport-sts/resource/bd79b5a8-b93a-4322-8f3e-dde2a738e83a",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token",
+        "info_url": "https://portail-developpeur.chrono-saeiv.com/"
+      }
+    }
+  ]
+}
