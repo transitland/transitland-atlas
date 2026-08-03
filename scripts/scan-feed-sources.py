@@ -22,6 +22,9 @@ Sources available, all read-only:
   watch-pages     MONITOR. The public page on which an agency publishes its own
                   feed URL, as recorded in evaluations/. One request per page,
                   no following of links.
+  expired-calendars MONITOR. Every static feed serving a calendar that has run
+                  out, tagged or not. Catches registrations that fetch fine
+                  forever while the publisher has moved on.
   ntd-weblinks    DISCOVERY. Each US NTD reporter's own declared GTFS URL,
                   checked against the registry by URL and by us_ntd_id.
                   Suppressed by decisions in evaluations/.
@@ -418,6 +421,79 @@ def source_watch_pages(key, args) -> dict:
     return {"pages": results}
 
 
+LIGHT_FIELDS = """
+    id
+    onestop_id
+    urls { static_current }
+    feed_state { feed_version { fetched_at latest_calendar_date } }
+"""
+
+
+def source_expired_calendars(key: str, args) -> dict:
+    """Every feed serving a calendar that has run out, whether tagged or not.
+
+    The unstable-urls source asks this of feeds tagged unstable_url, which is a
+    small and self-selected set. A feed does not need that tag to quietly stop
+    being current: a registration can keep fetching a file the publisher
+    replaced elsewhere, returning 200 forever while its calendar runs out. That
+    is invisible to a fetch-error check by construction, and it is how the
+    largest shared host in the NTD release accumulated dozens of stale
+    registrations.
+
+    Reports calendar expiry only, never "no new version in N days". Those are
+    not the same thing: an operator who has not changed the schedule in a year
+    is indistinguishable from a dead feed by republication age, and that
+    conflation was about 70% of what an earlier version of this reported.
+    """
+    query = f"query($after: Int) {{ feeds(limit: 1000, after: $after, where: {{spec: GTFS}}) {{{LIGHT_FIELDS}}} }}"
+    rows, after = [], 0
+    while True:
+        r = requests.post(API, headers={"apikey": key},
+                          json={"query": query, "variables": {"after": after}}, timeout=180)
+        r.raise_for_status()
+        body = r.json()
+        if body.get("errors"):
+            raise SystemExit(f"API error: {body['errors'][0]['message']}")
+        page = body["data"]["feeds"]
+        if not page:
+            break
+        rows.extend(page)
+        after = page[-1]["id"]
+
+    today = now().date()
+    expired = []
+    for f in rows:
+        fv = ((f.get("feed_state") or {}).get("feed_version")) or {}
+        latest = fv.get("latest_calendar_date")
+        if not latest:
+            continue
+        try:
+            end = datetime.fromisoformat(latest).date()
+        except ValueError:
+            continue
+        if end >= today:
+            continue
+        url = (f.get("urls") or {}).get("static_current") or ""
+        expired.append({
+            "onestop_id": f["onestop_id"], "url": url,
+            "host": (urlparse(url).netloc or "(no url)").lower(),
+            "latest_calendar_date": latest, "expired_days": (today - end).days,
+            "last_version_fetched_at": fv.get("fetched_at"),
+        })
+
+    print(f"expired-calendars: {len(rows)} static feeds with a known calendar; "
+          f"{len(expired)} serving an expired one\n")
+    by_host = collections.Counter(e["host"] for e in expired)
+    print("  by host, worst clusters first:")
+    for host, n in by_host.most_common(12):
+        print(f"      {n:4d}  {host}")
+    print("\n  longest expired:")
+    for e in sorted(expired, key=lambda r: -r["expired_days"])[:15]:
+        print(f"      {e['expired_days']:5d}d  cal_end {e['latest_calendar_date']}  {e['onestop_id'][:46]}")
+    return {"checked": len(rows), "expired": expired,
+            "by_host": dict(by_host.most_common())}
+
+
 def load_decisions() -> dict[str, dict[str, dict]]:
     """Index every recorded candidate by subject, then by normalised URL.
 
@@ -580,6 +656,7 @@ SOURCES = {
     "unstable-urls": (source_unstable_urls, True),
     "watch-pages": (source_watch_pages, False),
     "ntd-weblinks": (source_ntd_weblinks, False),
+    "expired-calendars": (source_expired_calendars, True),
 }
 
 
