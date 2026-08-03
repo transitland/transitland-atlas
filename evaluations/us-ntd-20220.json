@@ -1,0 +1,19 @@
+{
+  "$schema": "schema.json",
+  "us_ntd_id": "20220",
+  "name": "Broadway Bus Corporation",
+  "candidates": [
+    {
+      "url": "https://www.njtransit.com/broadway_bus_data.zip",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "found_via": "US NTD GTFS weblinks release",
+      "decided_on": "2026-08-02",
+      "recheck_after": "2027-03-01",
+      "rationale": "Fetches successfully, 2 routes and 281 trips, but describes no service after 2022-12-31. Checked on 2026-08-02 whether the file was merely stale or actually abandoned: it was last modified 2023-09-26, its members are dated 2023-09-11, and its feed_version is 20230830, so the calendar was already a year expired when the file was last built. Twelve sibling feeds on the same host and path pattern are current, one of them modified 2025-10-24, so the publisher is refreshing the others and not this one. The agency still reports to NTD, so the URL is worth re-checking after the next annual release rather than treated as permanently dead.",
+      "references": [
+        "https://www.njtransit.com/developer-tools"
+      ]
+    }
+  ]
+}
