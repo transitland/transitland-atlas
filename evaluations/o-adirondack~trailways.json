@@ -1,0 +1,34 @@
+{
+  "$schema": "schema.json",
+  "operator_onestop_id": "o-adirondack~trailways",
+  "candidates": [
+    {
+      "url": "https://cmscdn.trailways.com/gtfs/trailways_gtfs.zip",
+      "decision": "not_used",
+      "relationship": "subset",
+      "relates_to": [
+        "f-adirondack~trailways~adt"
+      ],
+      "found_via": "US NTD GTFS weblinks release",
+      "decided_on": "2026-08-03",
+      "recheck_after": "2027-03-01",
+      "rationale": "The carrier's own build of a service already registered from the state clearinghouse. Measured 2026-08-03: identical calendar coverage of 2026-06-07 to 2027-01-04 and the same single agency, but 83 routes and 122 stops against the registered copy's 86 and 123, so it is the smaller of the two. The carrier build is stamped more precisely and looks more frequently rebuilt, which is worth revisiting if the clearinghouse copy ever falls behind, but there is no reason to move to a strict subset today.",
+      "references": [
+        "https://trailways.com/"
+      ]
+    },
+    {
+      "url": "https://s3.amazonaws.com/datatools-511ny/public/Trailways-NYT.zip",
+      "decision": "unavailable",
+      "relates_to": [
+        "f-adirondack~trailways~nyt"
+      ],
+      "found_via": "static_historic on the feed it would revive",
+      "decided_on": "2026-08-03",
+      "rationale": "Checked as a possible source for a registered feed that currently has no static_current. It fetches and the validator reports success, but the file contains no agencies and no routes, and its calendar ran 2020-12-31 to 2021-12-31. The vendor copy recorded for the same feed is worse still: it returns 200 for a 417-byte archive holding only feed_info.txt and agency.txt. Both would pass a reachability check while carrying no service, so the feed stays without a current URL rather than being pointed at an empty file.",
+      "references": [
+        "https://trailways.com/"
+      ]
+    }
+  ]
+}

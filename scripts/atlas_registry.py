@@ -114,8 +114,8 @@ def normalise_url(url: str) -> str:
     if "://" not in url:
         url = "https://" + url
     parts = urlsplit(url)
-    return urlunsplit(("", parts.hostname or "", parts.path.rstrip("/"),
-                       parts.query, "")).lower()
+    host = (parts.hostname or "").removeprefix("www.")
+    return urlunsplit(("", host, parts.path.rstrip("/"), parts.query, "")).lower()
 
 
 def normalise_ntd_id(value: str) -> str:
