@@ -1,0 +1,52 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-morongo~basin",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ridebasintransit.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/morongobasin-ca-us/morongobasin-ca-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "calitp_dataset_id": "recahnjohIcKwflLh"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qj-morongobasintransitauthority",
+          "name": "Morongo Basin Transit Authority",
+          "short_name": "Basin Transit",
+          "website": "https://basin-transit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-morongo~basin~rt"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "recniaSbsXcRSLsWe",
+            "us_ntd_id": "91090",
+            "wikidata_id": "Q6913253"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-morongo~basin~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridebasintransit.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ridebasintransit.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ridebasintransit.com/gtfs-rt/alerts"
+      },
+      "tags": {
+        "calitp_dataset_id": "recspVPAEPZITy5pm,recA1r48yGZ6Ad63C,recHnfxQJpLZbMLp6"
+      }
+    }
+  ]
+}

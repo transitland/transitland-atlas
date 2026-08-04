@@ -3,15 +3,26 @@
   "operator_onestop_id": "o-9qhf-mountaintransit",
   "candidates": [
     {
+      "url": "https://mountaintransit.syncromatics.com/gtfs",
+      "decision": "not_used",
+      "relationship": "subset",
+      "relates_to": [
+        "f-9qhf-bigbear~ca~us"
+      ],
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "The vendor build its realtime is keyed to carries the same eight routes but only seven service patterns and no calendar exceptions, against 24 patterns and 303 exception dates in the registered Remix build, and 189 trips against 2,656. Taking it would trade most of the seasonal timetable for realtime that resolves, which is the wrong way round here."
+    },
+    {
       "url": "https://mountaintransit.syncromatics.com/gtfs-rt/vehiclepositions",
       "decision": "not_used",
       "relationship": "disjoint",
       "relates_to": [
         "f-9qhf-bigbear~ca~us"
       ],
-      "found_via": "calitp_gtfs_datasets",
-      "decided_on": "2026-08-03",
-      "rationale": "Realtime is keyed to the vendor static at mountaintransit.syncromatics.com/gtfs rather than the registered Remix build. Trip IDs share no structure with the registered feed, so no trip resolves."
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "Keyed to the vendor static above, which is not the registered Remix build, so no trip resolves. Registering it would mean taking that static too."
     },
     {
       "url": "https://mountaintransit.syncromatics.com/gtfs-rt/tripupdates",
@@ -20,9 +31,9 @@
       "relates_to": [
         "f-9qhf-bigbear~ca~us"
       ],
-      "found_via": "calitp_gtfs_datasets",
-      "decided_on": "2026-08-03",
-      "rationale": "Realtime is keyed to the vendor static at mountaintransit.syncromatics.com/gtfs rather than the registered Remix build. Trip IDs share no structure with the registered feed, so no trip resolves."
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "Keyed to the vendor static above, which is not the registered Remix build, so no trip resolves. Registering it would mean taking that static too."
     },
     {
       "url": "https://mountaintransit.syncromatics.com/gtfs-rt/alerts",
@@ -31,9 +42,9 @@
       "relates_to": [
         "f-9qhf-bigbear~ca~us"
       ],
-      "found_via": "calitp_gtfs_datasets",
-      "decided_on": "2026-08-03",
-      "rationale": "Realtime is keyed to the vendor static at mountaintransit.syncromatics.com/gtfs rather than the registered Remix build. Trip IDs share no structure with the registered feed, so no trip resolves."
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "Keyed to the vendor static above, which is not the registered Remix build, so no trip resolves. Registering it would mean taking that static too."
     }
   ]
 }

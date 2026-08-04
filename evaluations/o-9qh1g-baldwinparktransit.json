@@ -4,33 +4,36 @@
   "candidates": [
     {
       "url": "https://passio3.com/baldwinpark/passioTransit/gtfs/realtime/vehiclePositions",
-      "decision": "not_used",
+      "decision": "deferred",
       "relates_to": [
         "f-baldwinpark~ca~us"
       ],
-      "found_via": "calitp_gtfs_datasets",
-      "decided_on": "2026-08-03",
-      "rationale": "Realtime is keyed to the Passio static rather than the registered TecTransit export. The endpoints were empty at each probe, so the ID spaces were not compared."
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "recheck_after": "2026-09-15",
+      "rationale": "Endpoints return valid protocol buffers carrying no entities at every probe so far, all of them in the evening. The static they are keyed to is now the registered feed, so this is worth a daytime recheck rather than a decision now."
     },
     {
       "url": "https://passio3.com/baldwinpark/passioTransit/gtfs/realtime/tripUpdates",
-      "decision": "not_used",
+      "decision": "deferred",
       "relates_to": [
         "f-baldwinpark~ca~us"
       ],
-      "found_via": "calitp_gtfs_datasets",
-      "decided_on": "2026-08-03",
-      "rationale": "Realtime is keyed to the Passio static rather than the registered TecTransit export. The endpoints were empty at each probe, so the ID spaces were not compared."
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "recheck_after": "2026-09-15",
+      "rationale": "Endpoints return valid protocol buffers carrying no entities at every probe so far, all of them in the evening. The static they are keyed to is now the registered feed, so this is worth a daytime recheck rather than a decision now."
     },
     {
       "url": "https://passio3.com/baldwinpark/passioTransit/gtfs/realtime/serviceAlerts",
-      "decision": "not_used",
+      "decision": "deferred",
       "relates_to": [
         "f-baldwinpark~ca~us"
       ],
-      "found_via": "calitp_gtfs_datasets",
-      "decided_on": "2026-08-03",
-      "rationale": "Realtime is keyed to the Passio static rather than the registered TecTransit export. The endpoints were empty at each probe, so the ID spaces were not compared."
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "recheck_after": "2026-09-15",
+      "rationale": "Endpoints return valid protocol buffers carrying no entities at every probe so far, all of them in the evening. The static they are keyed to is now the registered feed, so this is worth a daytime recheck rather than a decision now."
     }
   ]
 }

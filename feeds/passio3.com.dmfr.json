@@ -110,6 +110,56 @@
       }
     },
     {
+      "id": "f-9qc-yubasutter~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/yubasutter/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/yubasutter-ca-us/yubasutter-ca-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "calitp_dataset_id": "rec2psueiMQBfcyhS"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc-yuba~suttertransit",
+          "name": "Yuba-Sutter Transit",
+          "website": "https://www.yubasuttertransit.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "77"
+            },
+            {
+              "feed_onestop_id": "f-9qc-yubasutter~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "rech0BusKA17h0vuL",
+            "twitter_general": "yubacounty",
+            "us_ntd_id": "90061",
+            "wikidata_id": "Q8060099"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9qc-yubasutter~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/yubasutter/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/yubasutter/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/yubasutter/passioTransit/gtfs/realtime/serviceAlerts"
+      },
+      "tags": {
+        "calitp_dataset_id": "receyg50PkhMStDaI,recqcwM98sEoKatI8,rec7y3xDGsUaKyXXV"
+      }
+    },
+    {
       "id": "f-9qdc-clovistransit~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -316,6 +366,32 @@
       "tags": {
         "calitp_dataset_id": "recchEd4c0FkDeFsJ,recrmivgmJrXixcVo,recvPLHAg10ZwsNeM"
       }
+    },
+    {
+      "id": "f-baldwinpark~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/baldwinpark/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://raw.githubusercontent.com/LACMTA/los-angeles-regional-gtfs/main/baldwinpark-ca-us/baldwinpark-ca-us.zip",
+          "https://data.trilliumtransit.com/gtfs/baldwinpark-ca-us/baldwinpark-ca-us.zip",
+          "https://baldwinpark.tectransit.com/api/public/fixedRoute/gtfs"
+        ]
+      },
+      "tags": {
+        "calitp_dataset_id": "recnKkYbXz2ct55bd"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qh1g-baldwinparktransit",
+          "name": "Baldwin Park Transit",
+          "tags": {
+            "calitp_organization_id": "rec2mqmTSs2fd2Ogc",
+            "twitter_general": "BaldwinParkCA",
+            "us_ntd_id": "90251"
+          }
+        }
+      ]
     },
     {
       "id": "f-bangor~me~us",
@@ -1924,6 +2000,30 @@
       "tags": {
         "calitp_dataset_id": "recse7hhrByIeRDsf,recbultmLj3mWX2gE,recZfAwb1gHrnCkDG"
       }
+    },
+    {
+      "id": "f-sanjuancapistrano~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/scjtrolley/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://gtfs.calitp.org/production/SanJuanCapistranoGTFS.zip",
+          "https://data.trilliumtransit.com/gtfs/sanjuancapistrano-ca-us/sanjuancapistrano-ca-us.zip",
+          "http://www.sanjuancapistrano.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+        ]
+      },
+      "tags": {
+        "calitp_dataset_id": "recaJzpRj5YzgowSc"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sanjuancapistrano~ca~us",
+          "name": "San Juan Capistrano",
+          "tags": {
+            "calitp_organization_id": "recEHMkhVmzSWO9nZ"
+          }
+        }
+      ]
     },
     {
       "id": "f-sb~transpo~in~us",
