@@ -825,6 +825,17 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
     Everything else is either already covered, blocked on a credential we do not
     have, or an agency this source cannot connect to anything in the registry.
     """
+    # The organization crosswalk is hand-maintained and incomplete, but the
+    # static an endpoint is keyed to is published by the source. Where that
+    # static is one we register, it identifies the agency without any tag: the
+    # operators of that feed are the operators of this realtime. That resolved
+    # eight organizations here that the org id alone could not reach.
+    def by_paired_static(pair: str) -> list[str]:
+        out: set[str] = set()
+        for fid in active.get(atlas_registry.normalise_url(pair), ()):
+            out |= atlas_registry.operators_of(db, fid)
+        return sorted(out)
+
     groups: dict[str, dict] = {}
     for row in all_rows:
         if row.get("type") not in CALITP_RT_TYPES:
@@ -869,6 +880,9 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
         if not live:
             counts["no-url-published"] += 1
             continue
+        if not g["operators"]:
+            g["operators"] = sorted({o for e in live for o in by_paired_static(e["pairs_with"])})
+            g["operators_via"] = "paired static" if g["operators"] else ""
         have = [e for e in live if e["registered"]]
         # Whether the agency has realtime at all, from any source. Distinguishes
         # "we are missing this vendor's endpoints" from "we have no realtime".
@@ -877,10 +891,14 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
         if len(have) == len(live):
             counts["all-endpoints-registered"] += 1
             continue
-        if have:
-            kind = "some-endpoints-registered"
-        elif any(e["has_authentication"] for e in live):
+        gap = [e for e in live if not e["registered"]]
+        # Test the gap, not the group. Most agencies here have vehicle positions
+        # and trip updates registered and are missing only a credentialed alerts
+        # endpoint, which is not a gap anyone can close by editing a feed file.
+        if all(e["has_authentication"] for e in gap):
             kind = "credential-required"
+        elif have:
+            kind = "some-endpoints-registered"
         elif any(e["superseded"] for e in live):
             kind = "declares-a-url-we-superseded"
         elif g["operators"]:
@@ -891,7 +909,8 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
         missing = [e for e in live if not e["registered"]]
         pairs = sorted({e["pairs_with"] for e in missing if e["pairs_with"]})
         item = {"kind": kind, "name": g["name"], "organizations": g["organizations"],
-                "operators": g["operators"], "realtime_feeds": rt_feeds,
+                "operators": g["operators"], "operators_via": g.get("operators_via", "org id"),
+                "realtime_feeds": rt_feeds,
                 "missing": missing,
                 "registered": [e["calitp_dataset_id"] for e in have],
                 "pairs_with": pairs,
