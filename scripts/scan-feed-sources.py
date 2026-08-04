@@ -706,6 +706,7 @@ def source_calitp(key, args) -> dict:
     active = atlas_registry.active_urls(db)
     historic = atlas_registry.historic_urls(db)
     decisions = load_decisions()
+    by_dataset = atlas_registry.feeds_by_calitp_dataset(db)
 
     session = requests.Session()
     session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
@@ -731,9 +732,21 @@ def source_calitp(key, args) -> dict:
                 "has_authentication": (row.get("has_authentication") or "") == "true",
                 "regional_feed_type": (row.get("regional_feed_type") or "").strip(),
                 "host": (urlparse(url).netloc or "").lower()}
-        bysubj = decisions.get(rid) or {}
-        prior = (bysubj.get(norm) or bysubj.get("*")
-                 or (decisions.get("__by_url__") or {}).get(norm))
+        # With the crosswalk tag in place this source can now reach the registry
+        # subject, so a decision recorded against the operator suppresses even
+        # when the declared URL has changed. That is the durable match; the
+        # URL-only fallback stays for datasets we do not hold.
+        subjects = [rid]
+        for f in by_dataset.get(rid, ()):
+            subjects.append(f)
+            subjects.extend(atlas_registry.operators_of(db, f))
+        prior = None
+        for s_ in subjects:
+            bysubj = decisions.get(s_) or {}
+            prior = bysubj.get(norm) or bysubj.get("*")
+            if prior:
+                break
+        prior = prior or (decisions.get("__by_url__") or {}).get(norm)
         if prior:
             item["decision"] = prior.get("decision")
             suppressed.append(item)

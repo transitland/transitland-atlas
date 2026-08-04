@@ -183,6 +183,28 @@ def operators_by_ntd_id(db) -> dict[str, set[str]]:
     return out
 
 
+def feeds_by_calitp_dataset(db) -> dict[str, set[str]]:
+    """Cal-ITP dataset record id -> feeds carrying it.
+
+    The tag holds a comma-separated list on realtime feeds, because that source
+    treats each endpoint as its own dataset while a feed here holds all three.
+    """
+    out: dict[str, set[str]] = {}
+    for row in db.execute("SELECT onestop_id, feed_tags FROM current_feeds WHERE feed_tags IS NOT NULL"):
+        try:
+            tags = json.loads(row["feed_tags"])
+        except (TypeError, ValueError):
+            continue
+        raw = tags.get("calitp_dataset_id") if isinstance(tags, dict) else None
+        if not raw:
+            continue
+        for part in str(raw).split(","):
+            part = part.strip()
+            if part:
+                out.setdefault(part, set()).add(row["onestop_id"])
+    return out
+
+
 def malformed_ntd_ids(db) -> list[tuple[str, str]]:
     """Operators whose `us_ntd_id` will not join a live NTD extract as written.
 
