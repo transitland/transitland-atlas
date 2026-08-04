@@ -26,8 +26,11 @@ Sources available, all read-only:
                   out, tagged or not. Catches registrations that fetch fine
                   forever while the publisher has moved on.
   calitp          DISCOVERY. California datasets registered with the state
-                  ingest pipeline. Shares no id with the registry, so URL is the
-                  only join and unmatched means "check by name", not "missing".
+                  ingest pipeline, schedule and realtime. Shares no id with the
+                  registry, so URL is the only join and unmatched means "check
+                  by name", not "missing". Realtime endpoints are grouped back
+                  to their organization before counting, since that source keeps
+                  one record per endpoint where Atlas keeps one feed per agency.
   ntd-weblinks    DISCOVERY. Each US NTD reporter's own declared GTFS URL,
                   checked against the registry by URL and by us_ntd_id.
                   Suppressed by decisions in evaluations/.
@@ -520,8 +523,8 @@ def load_decisions() -> dict[str, dict[str, dict]]:
             doc = json.load(open(path))
         except ValueError:
             continue
-        subjects = [doc[k] for k in ("operator_onestop_id", "feed_onestop_id", "us_ntd_id")
-                    if doc.get(k)]
+        subjects = [doc[k] for k in ("operator_onestop_id", "feed_onestop_id",
+                                     "us_ntd_id", "calitp_dataset_id") if doc.get(k)]
         for cand in doc.get("candidates") or []:
             if not cand.get("url"):
                 continue
@@ -702,6 +705,12 @@ def source_calitp(key, args) -> dict:
 
     That makes the unmatched bucket weaker evidence than NTD's, and it is worth
     saying so in the output rather than presenting the two alike.
+
+    Realtime is reported separately, because the two registries disagree about
+    what a dataset is. This source treats each endpoint as its own record, so an
+    agency with the usual three appears three times; Atlas holds all three URLs
+    on one gtfs-rt feed. Counting endpoints would make one missing agency look
+    like three findings, so they are grouped back to the organization first.
     """
     import csv
     import io
@@ -717,16 +726,19 @@ def source_calitp(key, args) -> dict:
     session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
     r = session.get(CALITP_DATASETS, timeout=180)
     r.raise_for_status()
-    rows = [x for x in csv.DictReader(io.StringIO(r.text)) if x.get("type") == "schedule"]
+    all_rows = list(csv.DictReader(io.StringIO(r.text)))
+    rows = [x for x in all_rows if x.get("type") == "schedule"]
 
     # dataset -> organizations, so an unmatched URL can still be attributed
     pr = session.get(CALITP_PROVIDERS, timeout=180)
     pr.raise_for_status()
     dataset_orgs: dict[str, set[str]] = {}
+    org_names: dict[str, str] = {}
     for row in csv.DictReader(io.StringIO(pr.text)):
         org = (row.get("organization_source_record_id") or "").strip()
         if not org:
             continue
+        org_names.setdefault(org, (row.get("organization_name") or "").strip())
         for col in ("schedule_source_record_id", "service_alerts_source_record_id",
                     "vehicle_positions_source_record_id", "trip_updates_source_record_id"):
             for rid_ in (row.get(col) or "").split(","):
@@ -795,6 +807,137 @@ def source_calitp(key, args) -> dict:
         auth = [f for f in unmatched if f["has_authentication"]]
         if auth:
             print(f"      {len(auth)} of them need a credential, so cannot be registered without one")
+
+    rt = _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, historic, decisions)
+    return {"counts": dict(counts), "findings": findings, "suppressed": suppressed,
+            "realtime": rt}
+
+
+CALITP_RT_TYPES = ("service_alerts", "vehicle_positions", "trip_updates")
+
+
+def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, historic,
+                     decisions) -> dict:
+    """Realtime half of the California crosswalk, grouped by organization.
+
+    The finding that matters is an organization whose endpoints are all open,
+    which we already hold as an operator, and for which no gtfs-rt feed exists.
+    Everything else is either already covered, blocked on a credential we do not
+    have, or an agency this source cannot connect to anything in the registry.
+    """
+    groups: dict[str, dict] = {}
+    for row in all_rows:
+        if row.get("type") not in CALITP_RT_TYPES:
+            continue
+        rid = (row.get("source_record_id") or "").strip()
+        url = (row.get("url") or "").strip()
+        orgs = sorted(dataset_orgs.get(rid, ()))
+        # An endpoint with no organization has nothing to group on, so it stands
+        # alone rather than being merged with every other orphan.
+        gkey = ",".join(orgs) if orgs else f"dataset:{rid}"
+        g = groups.setdefault(gkey, {
+            "organizations": orgs,
+            "name": "; ".join(filter(None, (org_names.get(o) for o in orgs))) or (row.get("name") or "").strip(),
+            "operators": sorted({o for org in orgs for o in by_org.get(org, ())}),
+            "endpoints": [],
+        })
+        norm = atlas_registry.normalise_url(url)
+        # The publisher names the static its realtime is keyed to. That is the
+        # one fact this source has that we cannot cheaply measure, and it decides
+        # whether an endpoint is usable: realtime referencing a vendor export we
+        # do not register has trip ids that will not resolve against ours.
+        pair = (row.get("schedule_to_use_for_rt_validation_url") or "").strip()
+        g["endpoints"].append({
+            "calitp_dataset_id": rid, "type": row.get("type"), "url": url,
+            "name": (row.get("name") or "").strip(),
+            "has_authentication": (row.get("has_authentication") or "") == "true",
+            "registered": bool(url) and norm in active,
+            "superseded": bool(url) and norm in historic,
+            "pairs_with": pair,
+            "pairs_with_registered": bool(pair) and atlas_registry.normalise_url(pair) in active,
+            # Keyed to a static we held and deliberately replaced is a different
+            # finding from keyed to one we never had: the choice has been made
+            # once already, and the reason it was made is what decides this.
+            "pairs_with_superseded": bool(pair) and atlas_registry.normalise_url(pair) in historic,
+            "host": (urlparse(url).netloc or "").lower(),
+        })
+
+    findings, suppressed, counts = [], [], collections.Counter()
+    for gkey, g in sorted(groups.items()):
+        eps = g["endpoints"]
+        live = [e for e in eps if e["url"]]
+        if not live:
+            counts["no-url-published"] += 1
+            continue
+        have = [e for e in live if e["registered"]]
+        # Whether the agency has realtime at all, from any source. Distinguishes
+        # "we are missing this vendor's endpoints" from "we have no realtime".
+        rt_feeds = sorted({f for op in g["operators"]
+                           for f in atlas_registry.operator_feeds(db, op, spec="gtfs-rt")})
+        if len(have) == len(live):
+            counts["all-endpoints-registered"] += 1
+            continue
+        if have:
+            kind = "some-endpoints-registered"
+        elif any(e["has_authentication"] for e in live):
+            kind = "credential-required"
+        elif any(e["superseded"] for e in live):
+            kind = "declares-a-url-we-superseded"
+        elif g["operators"]:
+            kind = "agency-held-no-realtime-feed" if not rt_feeds else "agency-held-realtime-from-elsewhere"
+        else:
+            kind = "not-matched-by-url"
+        counts[kind] += 1
+        missing = [e for e in live if not e["registered"]]
+        pairs = sorted({e["pairs_with"] for e in missing if e["pairs_with"]})
+        item = {"kind": kind, "name": g["name"], "organizations": g["organizations"],
+                "operators": g["operators"], "realtime_feeds": rt_feeds,
+                "missing": missing,
+                "registered": [e["calitp_dataset_id"] for e in have],
+                "pairs_with": pairs,
+                "pairs_with_registered": all(e["pairs_with_registered"] for e in missing) if pairs else False,
+                "pairs_with_superseded": any(e["pairs_with_superseded"] for e in missing),
+                "host": next((e["host"] for e in missing), "")}
+        # Suppressed the same way as schedule: by whichever subject the recorded
+        # decision is keyed on, falling back to the URL for datasets we do not
+        # hold. A group is only silenced when every missing endpoint is decided.
+        prior = []
+        for e in item["missing"]:
+            norm = atlas_registry.normalise_url(e["url"])
+            subjects = [e["calitp_dataset_id"], *g["operators"]]
+            found = None
+            for s_ in subjects:
+                bysubj = decisions.get(s_) or {}
+                found = bysubj.get(norm) or bysubj.get("*")
+                if found:
+                    break
+            prior.append(found or (decisions.get("__by_url__") or {}).get(norm))
+        if prior and all(prior):
+            item["decision"] = prior[0].get("decision")
+            suppressed.append(item)
+        else:
+            findings.append(item)
+
+    total = sum(len(g["endpoints"]) for g in groups.values())
+    print(f"\ncalitp realtime: {total} endpoints across {len(groups)} organizations\n")
+    for k, n in counts.most_common():
+        print(f"  {k:34s} {n:5d}")
+    print(f"\n  suppressed by evaluations/         {len(suppressed):5d}")
+    print(f"  reported                          {len(findings):5d}")
+    actionable = [f for f in findings if f["kind"] == "agency-held-no-realtime-feed"]
+    if actionable:
+        print(f"\n  {len(actionable)} organization(s) we hold as an operator, with open endpoints and")
+        print("  no realtime feed of any kind. `pairs` is whether the static the publisher")
+        print("  says its realtime is keyed to is the static we register:")
+        for f in sorted(actionable, key=lambda x: (not x["pairs_with_registered"], x["name"])):
+            flag = ("yes" if f["pairs_with_registered"]
+                    else "was" if f["pairs_with_superseded"] else "NO ")
+            print(f"      pairs={flag}  {', '.join(f['operators']):44s} {f['host']}")
+            if not f["pairs_with_registered"]:
+                for p in f["pairs_with"]:
+                    print(f"                  keyed to {p}")
+        print("      pairs=was means keyed to a static we held and replaced, so the")
+        print("      reason for that replacement decides whether the realtime is usable")
     return {"counts": dict(counts), "findings": findings, "suppressed": suppressed}
 
 

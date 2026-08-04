@@ -624,11 +624,26 @@
         {
           "onestop_id": "o-laxflyaway",
           "name": "LAX Flyaway",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-laxflyaway~rt"
+            }
+          ],
           "tags": {
             "calitp_organization_id": "recdLxGPqFmJLG21a"
           }
         }
       ]
+    },
+    {
+      "id": "f-laxflyaway~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://laxflyaway.transloc.com/subscriptions/gtfsrt/vehicles.ashx"
+      },
+      "tags": {
+        "calitp_dataset_id": "reciF2EDo8HWQNDXx"
+      }
     },
     {
       "id": "f-life~ga~us",

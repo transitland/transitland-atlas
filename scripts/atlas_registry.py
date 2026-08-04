@@ -70,12 +70,21 @@ def feeds_using(db, url: str) -> set[str]:
     return {r["id"] for r in rows}
 
 
-def operator_feeds(db, onestop_id: str) -> set[str]:
-    rows = db.execute(
-        "SELECT f.onestop_id AS id FROM current_operators_in_feed oif "
-        "JOIN current_operators o ON o.id = oif.operator_id "
-        "JOIN current_feeds f ON f.id = oif.feed_id WHERE o.onestop_id = ?", (onestop_id,))
-    return {r["id"] for r in rows}
+def operator_feeds(db, onestop_id: str, spec: str | None = None) -> set[str]:
+    """Feeds this operator is associated with, optionally of one spec only.
+
+    Filtering by spec answers "does this agency have realtime at all", which is
+    not the same question as "is this realtime URL registered": an agency can
+    have a gtfs-rt feed built from a different vendor endpoint entirely.
+    """
+    sql = ("SELECT f.onestop_id AS id FROM current_operators_in_feed oif "
+           "JOIN current_operators o ON o.id = oif.operator_id "
+           "JOIN current_feeds f ON f.id = oif.feed_id WHERE o.onestop_id = ?")
+    params: tuple = (onestop_id,)
+    if spec:
+        sql += " AND f.spec = ?"
+        params += (spec,)
+    return {r["id"] for r in db.execute(sql, params)}
 
 
 def operators_of(db, feed_id: str) -> set[str]:

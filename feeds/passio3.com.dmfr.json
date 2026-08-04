@@ -1902,11 +1902,28 @@
           "onestop_id": "o-sanclementetrolley~ca~us",
           "name": "San Clemente Trolley",
           "website": "https://www.san-clemente.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sanclementetrolley~ca~us~rt"
+            }
+          ],
           "tags": {
             "calitp_organization_id": "recwtQ7m3C59jbnrc"
           }
         }
       ]
+    },
+    {
+      "id": "f-sanclementetrolley~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/sctrolley/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/sctrolley/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/sctrolley/passioTransit/gtfs/realtime/serviceAlerts"
+      },
+      "tags": {
+        "calitp_dataset_id": "recse7hhrByIeRDsf,recbultmLj3mWX2gE,recZfAwb1gHrnCkDG"
+      }
     },
     {
       "id": "f-sb~transpo~in~us",
