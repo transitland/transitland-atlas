@@ -830,11 +830,21 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
     # static is one we register, it identifies the agency without any tag: the
     # operators of that feed are the operators of this realtime. That resolved
     # eight organizations here that the org id alone could not reach.
-    def by_paired_static(pair: str) -> list[str]:
-        out: set[str] = set()
-        for fid in active.get(atlas_registry.normalise_url(pair), ()):
-            out |= atlas_registry.operators_of(db, fid)
-        return sorted(out)
+    def by_paired_static(pair: str) -> tuple[list[str], list[str]]:
+        """(operators, feeds) reached through a paired static we register.
+
+        Returns the feeds too, because most feeds rely on a generated operator
+        and would otherwise look unheld: the feed is then the subject a finding
+        about that agency belongs to, the same rule evaluations/ follows.
+
+        Superseded statics count for identification. A source still naming the
+        host an agency has left identifies that agency just as well, and reading
+        it says the source is behind the registry rather than ahead of it.
+        """
+        norm = atlas_registry.normalise_url(pair)
+        feeds = set(active.get(norm, ())) | set(historic.get(norm, ()))
+        ops = {o for fid in feeds for o in atlas_registry.operators_of(db, fid)}
+        return sorted(ops), sorted(feeds)
 
     groups: dict[str, dict] = {}
     for row in all_rows:
@@ -881,8 +891,10 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
             counts["no-url-published"] += 1
             continue
         if not g["operators"]:
-            g["operators"] = sorted({o for e in live for o in by_paired_static(e["pairs_with"])})
-            g["operators_via"] = "paired static" if g["operators"] else ""
+            reached = [by_paired_static(e["pairs_with"]) for e in live]
+            g["operators"] = sorted({o for ops, _ in reached for o in ops})
+            g["feeds"] = sorted({f for _, fs in reached for f in fs})
+            g["operators_via"] = "paired static" if (g["operators"] or g["feeds"]) else ""
         have = [e for e in live if e["registered"]]
         # Whether the agency has realtime at all, from any source. Distinguishes
         # "we are missing this vendor's endpoints" from "we have no realtime".
@@ -901,7 +913,7 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
             kind = "some-endpoints-registered"
         elif any(e["superseded"] for e in live):
             kind = "declares-a-url-we-superseded"
-        elif g["operators"]:
+        elif g["operators"] or g.get("feeds"):
             kind = "agency-held-no-realtime-feed" if not rt_feeds else "agency-held-realtime-from-elsewhere"
         else:
             kind = "not-matched-by-url"
@@ -910,7 +922,7 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
         pairs = sorted({e["pairs_with"] for e in missing if e["pairs_with"]})
         item = {"kind": kind, "name": g["name"], "organizations": g["organizations"],
                 "operators": g["operators"], "operators_via": g.get("operators_via", "org id"),
-                "realtime_feeds": rt_feeds,
+                "feeds": g.get("feeds", []), "realtime_feeds": rt_feeds,
                 "missing": missing,
                 "registered": [e["calitp_dataset_id"] for e in have],
                 "pairs_with": pairs,
@@ -923,7 +935,7 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
         prior = []
         for e in item["missing"]:
             norm = atlas_registry.normalise_url(e["url"])
-            subjects = [e["calitp_dataset_id"], *g["operators"]]
+            subjects = [e["calitp_dataset_id"], *g["operators"], *g.get("feeds", [])]
             found = None
             for s_ in subjects:
                 bysubj = decisions.get(s_) or {}
@@ -951,7 +963,8 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
         for f in sorted(actionable, key=lambda x: (not x["pairs_with_registered"], x["name"])):
             flag = ("yes" if f["pairs_with_registered"]
                     else "was" if f["pairs_with_superseded"] else "NO ")
-            print(f"      pairs={flag}  {', '.join(f['operators']):44s} {f['host']}")
+            subject = ', '.join(f['operators'] or f.get('feeds', [])) or '(unattributed)'
+            print(f"      pairs={flag}  {subject:44s} {f['host']}")
             if not f["pairs_with_registered"]:
                 for p in f["pairs_with"]:
                     print(f"                  keyed to {p}")

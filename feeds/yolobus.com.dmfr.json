@@ -5,11 +5,15 @@
       "id": "f-9qc7-yolobusyolocounty",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13239/google_transit(Yolo).zip",
+        "static_current": "https://avl.yctd.org/realtime/google_transit.zip",
         "static_historic": [
           "http://iportal.sacrt.com/GTFS/Yolobus/google_transit.zip",
-          "http://www.yolobus.com/GTFS/google_transit.zip"
+          "http://www.yolobus.com/GTFS/google_transit.zip",
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13239/google_transit(Yolo).zip"
         ]
+      },
+      "tags": {
+        "calitp_dataset_id": "recEsm4bknyyk4UAS"
       },
       "operators": [
         {
@@ -19,15 +23,31 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "d139e461-175c-4156-beb0-e6a23b64d978"
+            },
+            {
+              "feed_onestop_id": "f-9qc7-yolobusyolocounty~rt"
             }
           ],
           "tags": {
+            "calitp_organization_id": "recH2FdHvrL7nIpHA",
             "twitter_general": "yolobusYCTD",
             "us_ntd_id": "90090",
             "wikidata_id": "Q7779123"
           }
         }
       ]
+    },
+    {
+      "id": "f-9qc7-yolobusyolocounty~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://avl.yctd.org/RealTime/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "https://avl.yctd.org/RealTime/GTFS_TripUpdates.pb",
+        "realtime_alerts": "https://avl.yctd.org/RealTime/GTFS_ServiceAlerts.pb"
+      },
+      "tags": {
+        "calitp_dataset_id": "recUuyVAlVJFKukig,recKvkDknT3gAdzT0,recKEhmmlaCOtz7Rt"
+      }
     }
   ]
 }
