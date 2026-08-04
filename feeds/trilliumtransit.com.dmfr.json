@@ -4291,12 +4291,19 @@
       "operators": [
         {
           "onestop_id": "o-drq-capecodregionaltransitauthorityccrta",
+          "supersedes_ids": [
+            "o-drm-capecodregionaltransitauthority"
+          ],
           "name": "Cape Cod Regional Transit Authority",
           "short_name": "CCRTA",
           "website": "https://www.capecodrta.org/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "446"
+            },
+            {
+              "gtfs_agency_id": "3",
+              "feed_onestop_id": "f-drt-mbta"
             }
           ],
           "tags": {
@@ -4593,11 +4600,18 @@
         },
         {
           "onestop_id": "o-drt3pb-massport",
+          "supersedes_ids": [
+            "o-drt3p-massport"
+          ],
           "name": "Massport",
           "website": "http://www.massport.com/logan-airport/to-from-logan/transportation-options/on-airport-shuttle/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "2272"
+            },
+            {
+              "gtfs_agency_id": "2",
+              "feed_onestop_id": "f-drt-mbta"
             }
           ],
           "tags": {
