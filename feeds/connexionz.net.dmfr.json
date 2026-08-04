@@ -314,11 +314,25 @@
           "onestop_id": "o-gatlinburg~tn~us",
           "name": "City of Gatlinburg Trolley",
           "website": "http://www.gatlinburgtrolley.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-gatlinburg~tn~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "41102"
           }
         }
       ]
+    },
+    {
+      "id": "f-gatlinburg~tn~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
     },
     {
       "id": "f-kingsarearuraltransit~rt",
@@ -388,11 +402,25 @@
           "onestop_id": "o-pigeon~forge~tn~us",
           "name": "Pigeon Forge Mass Transit",
           "website": "https://www.cityofpigeonforge.com/trolley.aspx",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-pigeon~forge~tn~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "41136"
           }
         }
       ]
+    },
+    {
+      "id": "f-pigeon~forge~tn~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
     }
   ]
 }
