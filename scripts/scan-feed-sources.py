@@ -513,8 +513,13 @@ def load_decisions() -> dict[str, dict[str, dict]]:
         for cand in doc.get("candidates") or []:
             if not cand.get("url"):
                 continue
+            # A subject-scoped decision does not depend on which URL is offered,
+            # so it is filed under a wildcard and matches whatever the source
+            # declares next time. Everything else is filed under its own URL and
+            # correctly re-opens when that changes.
+            key = "*" if cand.get("scope") == "subject" else atlas_registry.normalise_url(cand["url"])
             for subject in subjects:
-                out.setdefault(subject, {})[atlas_registry.normalise_url(cand["url"])] = cand
+                out.setdefault(subject, {})[key] = cand
     return out
 
 
@@ -582,7 +587,8 @@ def source_ntd_weblinks(key, args) -> dict:
 
         prior = None
         for subject in operators + [nid]:
-            prior = (decisions.get(subject) or {}).get(norm)
+            bysubj = decisions.get(subject) or {}
+            prior = bysubj.get(norm) or bysubj.get("*")
             if prior:
                 break
         if prior:
@@ -640,6 +646,22 @@ def source_ntd_weblinks(key, args) -> dict:
             tag = f"-> {', '.join(f['resolved_feeds'])}" if f.get("resolved_feeds") else \
                   ("zip" if f.get("looks_like_zip") else "not a zip")
             print(f"      {f['ntd_id']} {f['name'][:28]:30s} {f['resolved_url'][:58]}  {tag}")
+
+    # An evaluation only earns its keep by suppressing something. One whose URL
+    # matches nothing the source declares is inert, and silently so: it may have
+    # been mistyped, or the agency may have moved on. Both are worth surfacing,
+    # because neither is visible from the file itself.
+    declared = {atlas_registry.normalise_url(a["weblink"]) for a in agencies.values() if a["weblink"]}
+    inert = []
+    for subject, cands in decisions.items():
+        for norm, cand in cands.items():
+            if cand.get("found_via", "").startswith("US NTD") and norm not in declared:
+                inert.append((subject, cand.get("url", "")))
+    if inert:
+        print(f"\n  recorded against this source but matching nothing it declares ({len(inert)}):")
+        for subject, url in inert[:10]:
+            print(f"      {subject[:40]:42s} {url[:60]}")
+        print("      either the URL was recorded wrong, or the agency has moved on")
 
     bad = atlas_registry.malformed_ntd_ids(db)
     if bad:

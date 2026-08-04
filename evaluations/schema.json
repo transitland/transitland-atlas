@@ -93,6 +93,14 @@
           "description": "Where the candidate came from.",
           "type": "string"
         },
+        "scope": {
+          "description": "What the decision is really about. `url` (the default) means it concerns this file, so a source declaring a different URL for the same subject should raise it again: a stale export, a wrapper, a malformed archive. `subject` means the conclusion does not depend on which URL is offered, so it keeps holding: the agency publishes a website rather than a feed, or its service is covered by another operator's feed. Measured across one source, roughly four in five decisions are url-scoped, so that is the right default and `subject` should be used sparingly.",
+          "enum": [
+            "url",
+            "subject"
+          ],
+          "default": "url"
+        },
         "decided_on": {
           "description": "Date of the decision. Required, because every finding here decays.",
           "type": "string",
