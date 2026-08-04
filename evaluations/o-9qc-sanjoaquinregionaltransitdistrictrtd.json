@@ -3,16 +3,24 @@
   "operator_onestop_id": "o-9qc-sanjoaquinregionaltransitdistrictrtd",
   "candidates": [
     {
-      "url": "https://gtfs.dds.dot.ca.gov/gtfs_files/SanJoaquinRTDDialARideandVanGoFlex.zip",
-      "decision": "deferred",
-      "relationship": "superset",
+      "url": "https://rtdgtfs.s3.us-west-1.amazonaws.com/TripUpdates.pb",
+      "decision": "not_used",
       "relates_to": [
-        "f-san~joaquin~rtd~dial~a~rideand~van~go~flex"
+        "f-sanjoaquinrtd~rt"
       ],
-      "found_via": "calitp_gtfs_datasets",
-      "decided_on": "2026-07-31",
-      "recheck_after": "2026-10-31",
-      "rationale": "The Caltrans copy of this flex feed carries 2 routes and 3 trips against 1 route and 2 trips in the registered Trillium copy, and the registered trips are a subset of it. So the registered feed may be under-covering this service. Not switched without checking which the agency treats as authoritative; the Caltrans URL is already recorded in this feed's static_historic."
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "A second producer for the same service alongside the Swiftly endpoints registered for this operator. Duplicate coverage rather than additional coverage."
+    },
+    {
+      "url": "https://rtdgtfs.s3.us-west-1.amazonaws.com/VehiclePositions.pb",
+      "decision": "not_used",
+      "relates_to": [
+        "f-sanjoaquinrtd~rt"
+      ],
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "A second producer for the same service alongside the Swiftly endpoints registered for this operator. Duplicate coverage rather than additional coverage."
     }
   ]
 }

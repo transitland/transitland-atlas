@@ -1,0 +1,36 @@
+{
+  "$schema": "./schema.json",
+  "operator_onestop_id": "o-9qh1-foothilltransit",
+  "candidates": [
+    {
+      "url": "https://gtfs-rt.myavail.cloud/GtfsProtoBuf?FeedLabel=Foothill&FeedType=VehiclePosition",
+      "decision": "not_used",
+      "relates_to": [
+        "f-foothilltransit~rt"
+      ],
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "The vendor's newer cloud host for the same realtime. It answered 400 to every request at the time of checking, while the rideralerts.com host registered for this operator served vehicle positions normally. Worth revisiting if the older host stops answering."
+    },
+    {
+      "url": "https://gtfs-rt.myavail.cloud/GtfsProtoBuf?FeedLabel=Foothill&FeedType=TripUpdate",
+      "decision": "not_used",
+      "relates_to": [
+        "f-foothilltransit~rt"
+      ],
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "The vendor's newer cloud host for the same realtime. It answered 400 to every request at the time of checking, while the rideralerts.com host registered for this operator served vehicle positions normally. Worth revisiting if the older host stops answering."
+    },
+    {
+      "url": "https://gtfs-rt.myavail.cloud/GtfsProtoBuf?FeedLabel=Foothill&FeedType=Alert",
+      "decision": "not_used",
+      "relates_to": [
+        "f-foothilltransit~rt"
+      ],
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-04",
+      "rationale": "The vendor's newer cloud host for the same realtime. It answered 400 to every request at the time of checking, while the rideralerts.com host registered for this operator served vehicle positions normally. Worth revisiting if the older host stops answering."
+    }
+  ]
+}
