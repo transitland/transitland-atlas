@@ -3,34 +3,37 @@
   "operator_onestop_id": "o-9qh1-foothilltransit",
   "candidates": [
     {
-      "url": "https://gtfs-rt.myavail.cloud/GtfsProtoBuf?FeedLabel=Foothill&FeedType=VehiclePosition",
+      "url": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=VehiclePosition",
       "decision": "not_used",
+      "relationship": "disjoint",
       "relates_to": [
         "f-foothilltransit~rt"
       ],
-      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "found_via": "registered until this pass",
       "decided_on": "2026-08-04",
-      "rationale": "The vendor's newer cloud host for the same realtime. It answered 400 to every request at the time of checking, while the rideralerts.com host registered for this operator served vehicle positions normally. Worth revisiting if the older host stops answering."
+      "rationale": "The producer's older host, replaced by the vendor cloud host now registered for this operator. It still answers, but truncates trip IDs by dropping the version suffix the static carries, so none of its trip updates resolve against the registered feed."
     },
     {
-      "url": "https://gtfs-rt.myavail.cloud/GtfsProtoBuf?FeedLabel=Foothill&FeedType=TripUpdate",
+      "url": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=TripUpdate",
       "decision": "not_used",
+      "relationship": "disjoint",
       "relates_to": [
         "f-foothilltransit~rt"
       ],
-      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "found_via": "registered until this pass",
       "decided_on": "2026-08-04",
-      "rationale": "The vendor's newer cloud host for the same realtime. It answered 400 to every request at the time of checking, while the rideralerts.com host registered for this operator served vehicle positions normally. Worth revisiting if the older host stops answering."
+      "rationale": "The producer's older host, replaced by the vendor cloud host now registered for this operator. It still answers, but truncates trip IDs by dropping the version suffix the static carries, so none of its trip updates resolve against the registered feed."
     },
     {
-      "url": "https://gtfs-rt.myavail.cloud/GtfsProtoBuf?FeedLabel=Foothill&FeedType=Alert",
+      "url": "https://foothilltransit.rideralerts.com/myStop/GTFS-Realtime.ashx?Type=Alert",
       "decision": "not_used",
+      "relationship": "disjoint",
       "relates_to": [
         "f-foothilltransit~rt"
       ],
-      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "found_via": "registered until this pass",
       "decided_on": "2026-08-04",
-      "rationale": "The vendor's newer cloud host for the same realtime. It answered 400 to every request at the time of checking, while the rideralerts.com host registered for this operator served vehicle positions normally. Worth revisiting if the older host stops answering."
+      "rationale": "The producer's older host, replaced by the vendor cloud host now registered for this operator. It still answers, but truncates trip IDs by dropping the version suffix the static carries, so none of its trip updates resolve against the registered feed."
     }
   ]
 }
