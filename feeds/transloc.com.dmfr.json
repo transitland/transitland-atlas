@@ -34,8 +34,7 @@
         "static_current": "https://api.transloc.com/gtfs/vvta.zip",
         "static_historic": [
           "https://ontime.vvta.org/gtfs",
-          "https://data.trilliumtransit.com/gtfs/victorville-ca-us/victorville-ca-us.zip",
-          "https://api.transloc.com/gtfs/vvta.zip"
+          "https://data.trilliumtransit.com/gtfs/victorville-ca-us/victorville-ca-us.zip"
         ]
       },
       "license": {
@@ -44,7 +43,7 @@
       },
       "tags": {
         "calitp_dataset_id": "recTxj46r25YgMi9V",
-        "notes": "VVTA says their official static feed is served by Transloc; Synchromatics also serves a Trillium-created static feed go with RT, but static feed contents are quite different"
+        "notes": "VVTA says their official static feed is served by TransLoc, which is why this is registered over the AVL vendor's own build at ontime.vvta.org/gtfs. The two builds are not in fact very different: 32 routes against 31, 1699 trips against 1719, and stop_times within a fifth of a percent. What differs is trip ID formatting, the vendor padding to five characters where TransLoc does not, which is why the vendor realtime resolves only partly against this feed"
       },
       "operators": [
         {
