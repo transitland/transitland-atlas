@@ -1,0 +1,39 @@
+{
+  "$schema": "./schema.json",
+  "operator_onestop_id": "o-9qhf-mountaintransit",
+  "candidates": [
+    {
+      "url": "https://mountaintransit.syncromatics.com/gtfs-rt/vehiclepositions",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "relates_to": [
+        "f-9qhf-bigbear~ca~us"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-08-03",
+      "rationale": "Realtime is keyed to the vendor static at mountaintransit.syncromatics.com/gtfs rather than the registered Remix build. Trip IDs share no structure with the registered feed, so no trip resolves."
+    },
+    {
+      "url": "https://mountaintransit.syncromatics.com/gtfs-rt/tripupdates",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "relates_to": [
+        "f-9qhf-bigbear~ca~us"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-08-03",
+      "rationale": "Realtime is keyed to the vendor static at mountaintransit.syncromatics.com/gtfs rather than the registered Remix build. Trip IDs share no structure with the registered feed, so no trip resolves."
+    },
+    {
+      "url": "https://mountaintransit.syncromatics.com/gtfs-rt/alerts",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "relates_to": [
+        "f-9qhf-bigbear~ca~us"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-08-03",
+      "rationale": "Realtime is keyed to the vendor static at mountaintransit.syncromatics.com/gtfs rather than the registered Remix build. Trip IDs share no structure with the registered feed, so no trip resolves."
+    }
+  ]
+}

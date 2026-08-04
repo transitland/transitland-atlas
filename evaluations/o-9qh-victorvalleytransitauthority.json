@@ -1,0 +1,39 @@
+{
+  "$schema": "./schema.json",
+  "operator_onestop_id": "o-9qh-victorvalleytransitauthority",
+  "candidates": [
+    {
+      "url": "https://ontime.vvta.org/gtfs-rt/vehiclepositions",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "relates_to": [
+        "f-9qh-victorville~ca~us"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-08-03",
+      "rationale": "Realtime is keyed to ontime.vvta.org/gtfs, which this feed superseded in favour of the TransLoc build at the agency's request. Both statics carry the same trips, but the vendor pads trip IDs to five characters where TransLoc does not, so only trips whose IDs are already five digits resolve. These endpoints were registered before that switch."
+    },
+    {
+      "url": "https://ontime.vvta.org/gtfs-rt/tripupdates",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "relates_to": [
+        "f-9qh-victorville~ca~us"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-08-03",
+      "rationale": "Realtime is keyed to ontime.vvta.org/gtfs, which this feed superseded in favour of the TransLoc build at the agency's request. Both statics carry the same trips, but the vendor pads trip IDs to five characters where TransLoc does not, so only trips whose IDs are already five digits resolve. These endpoints were registered before that switch."
+    },
+    {
+      "url": "https://ontime.vvta.org/gtfs-rt/alerts",
+      "decision": "not_used",
+      "relationship": "disjoint",
+      "relates_to": [
+        "f-9qh-victorville~ca~us"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-08-03",
+      "rationale": "Realtime is keyed to ontime.vvta.org/gtfs, which this feed superseded in favour of the TransLoc build at the agency's request. Both statics carry the same trips, but the vendor pads trip IDs to five characters where TransLoc does not, so only trips whose IDs are already five digits resolve. These endpoints were registered before that switch."
+    }
+  ]
+}

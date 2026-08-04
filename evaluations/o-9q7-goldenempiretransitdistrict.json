@@ -1,0 +1,16 @@
+{
+  "$schema": "./schema.json",
+  "operator_onestop_id": "o-9q7-goldenempiretransitdistrict",
+  "candidates": [
+    {
+      "url": "https://cdn.simplifytransit.com/goldenempiretransit/alerts/service-alerts.pb",
+      "decision": "not_used",
+      "relates_to": [
+        "f-9q7-getbus"
+      ],
+      "found_via": "calitp_gtfs_datasets",
+      "decided_on": "2026-08-03",
+      "rationale": "A second service-alerts endpoint alongside the Connexionz one. Both reference route IDs present in the registered static, and this one adds stop-level detail. A gtfs-rt feed holds one alerts URL, and the Connexionz endpoint was taken so that all three endpoints come from one producer."
+    }
+  ]
+}
