@@ -39,6 +39,11 @@
       "type": "string",
       "pattern": "^[0-9A-Za-z-]+$"
     },
+    "calitp_dataset_id": {
+      "description": "Cal-ITP dataset record id, for a California dataset Atlas does not hold. Their source of truth is an Airtable base surfaced through a warehouse, so these are `rec` plus fourteen characters and are stable for the life of the record. Used where NTD's id cannot be: that source publishes no identifier we can join on, so a decision about a dataset we do not hold has nothing else to key on.",
+      "type": "string",
+      "pattern": "^rec[A-Za-z0-9]+$"
+    },
     "name": {
       "description": "Human-readable name of the subject. Only useful on an externally-keyed file, where no Atlas record supplies one.",
       "type": "string",
@@ -179,6 +184,12 @@
     {
       "required": [
         "us_ntd_id",
+        "name"
+      ]
+    },
+    {
+      "required": [
+        "calitp_dataset_id",
         "name"
       ]
     }

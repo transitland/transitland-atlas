@@ -71,7 +71,8 @@ validator = jsonschema.Draft202012Validator(schema)
 
 eval_files = sorted(glob.glob(os.path.join(EVAL_DIR, "o-*.json"))
                     + glob.glob(os.path.join(EVAL_DIR, "f-*.json"))
-                    + glob.glob(os.path.join(EVAL_DIR, "us-ntd-*.json")))
+                    + glob.glob(os.path.join(EVAL_DIR, "us-ntd-*.json"))
+                    + glob.glob(os.path.join(EVAL_DIR, "calitp-*.json")))
 seen_urls: dict[str, str] = {}
 today = date.today()
 overdue: list[str] = []
@@ -93,13 +94,17 @@ for path in eval_files:
     oid = doc.get("operator_onestop_id")
     subject_feed = doc.get("feed_onestop_id")
     subject_ntd = doc.get("us_ntd_id")
-    subject = oid or subject_feed or (f"us-ntd-{subject_ntd}" if subject_ntd else None)
+    subject_calitp = doc.get("calitp_dataset_id")
+    subject = (oid or subject_feed
+               or (f"us-ntd-{subject_ntd}" if subject_ntd else None)
+               or (f"calitp-{subject_calitp}" if subject_calitp else None))
     if not subject:
         continue
 
     stem = os.path.basename(path).removesuffix(".json")
     if stem != subject:
-        kind = "operator_onestop_id" if oid else "feed_onestop_id" if subject_feed else "us_ntd_id"
+        kind = ("operator_onestop_id" if oid else "feed_onestop_id" if subject_feed
+                else "us_ntd_id" if subject_ntd else "calitp_dataset_id")
         err(path, f"filename does not match {kind} {subject!r}")
     if oid and not atlas_registry.operator_exists(db, oid):
         err(path, f"operator {oid!r} does not exist in feeds/")

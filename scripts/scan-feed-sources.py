@@ -25,6 +25,9 @@ Sources available, all read-only:
   expired-calendars MONITOR. Every static feed serving a calendar that has run
                   out, tagged or not. Catches registrations that fetch fine
                   forever while the publisher has moved on.
+  calitp          DISCOVERY. California datasets registered with the state
+                  ingest pipeline. Shares no id with the registry, so URL is the
+                  only join and unmatched means "check by name", not "missing".
   ntd-weblinks    DISCOVERY. Each US NTD reporter's own declared GTFS URL,
                   checked against the registry by URL and by us_ntd_id.
                   Suppressed by decisions in evaluations/.
@@ -73,6 +76,11 @@ API = "https://transit.land/api/v2/query"
 # The NTD GTFS weblinks release, refreshed monthly. The copy under
 # external-data-for-reference/ is the 2023 annual release and does not move.
 NTD_WEBLINKS = "https://data.transportation.gov/resource/2u7n-ub22.csv"
+
+# Cal-ITP's GTFS ingest pipeline dataset on the state open-data portal. The
+# filename segment is cosmetic; the resource UUID is what identifies it.
+CALITP_DATASETS = ("https://data.ca.gov/dataset/de6f1544-b162-4d16-997b-c183912c8e62"
+                   "/resource/e4ca5bd4-e9ce-40aa-a58a-3a6d78b042bd/download/gtfs_datasets.csv")
 
 FETCH_WINDOW = 20
 
@@ -520,6 +528,12 @@ def load_decisions() -> dict[str, dict[str, dict]]:
             key = "*" if cand.get("scope") == "subject" else atlas_registry.normalise_url(cand["url"])
             for subject in subjects:
                 out.setdefault(subject, {})[key] = cand
+            # Also index by URL alone. Subject-scoped lookup is the better match
+            # and is what a source sharing an identifier with the registry should
+            # use. A source that shares none has no way to reach the subject, so
+            # the URL is all it can offer, and a decision about exactly that URL
+            # is still the relevant one.
+            out.setdefault("__by_url__", {})[atlas_registry.normalise_url(cand["url"])] = cand
     return out
 
 
@@ -673,12 +687,83 @@ def source_ntd_weblinks(key, args) -> dict:
             "malformed_ntd_ids": [{"operator": o, "us_ntd_id": v} for o, v in bad]}
 
 
+def source_calitp(key, args) -> dict:
+    """California datasets registered with the state's ingest pipeline.
+
+    A useful contrast with ntd-weblinks. That source pairs each URL with an
+    agency id we also carry, so a URL that does not match can still be traced to
+    an agency we hold. This one publishes no identifier Atlas shares, so URL is
+    the only join: an unmatched dataset might be a missing agency or one we hold
+    from somewhere else, and the source cannot tell us which.
+
+    That makes the unmatched bucket weaker evidence than NTD's, and it is worth
+    saying so in the output rather than presenting the two alike.
+    """
+    import csv
+    import io
+
+    db = atlas_registry.load(os.path.join(ROOT, "feeds"))
+    active = atlas_registry.active_urls(db)
+    historic = atlas_registry.historic_urls(db)
+    decisions = load_decisions()
+
+    session = requests.Session()
+    session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
+    r = session.get(CALITP_DATASETS, timeout=180)
+    r.raise_for_status()
+    rows = [x for x in csv.DictReader(io.StringIO(r.text)) if x.get("type") == "schedule"]
+
+    findings, suppressed, counts = [], [], collections.Counter()
+    for row in rows:
+        url = (row.get("url") or "").strip()
+        rid = (row.get("source_record_id") or "").strip()
+        if not url:
+            counts["no-url-published"] += 1
+            continue
+        norm = atlas_registry.normalise_url(url)
+        if norm in active:
+            counts["url-registered"] += 1
+            continue
+        kind = "declares-a-url-we-superseded" if norm in historic else "not-matched-by-url"
+        counts[kind] += 1
+        item = {"calitp_dataset_id": rid, "name": (row.get("name") or "").strip(),
+                "url": url, "kind": kind,
+                "has_authentication": (row.get("has_authentication") or "") == "true",
+                "regional_feed_type": (row.get("regional_feed_type") or "").strip(),
+                "host": (urlparse(url).netloc or "").lower()}
+        bysubj = decisions.get(rid) or {}
+        prior = (bysubj.get(norm) or bysubj.get("*")
+                 or (decisions.get("__by_url__") or {}).get(norm))
+        if prior:
+            item["decision"] = prior.get("decision")
+            suppressed.append(item)
+        else:
+            findings.append(item)
+
+    print(f"calitp: {len(rows)} schedule datasets published\n")
+    for k, n in counts.most_common():
+        print(f"  {k:34s} {n:5d}")
+    print(f"\n  suppressed by evaluations/         {len(suppressed):5d}")
+    print(f"  reported                          {len(findings):5d}")
+    unmatched = [f for f in findings if f["kind"] == "not-matched-by-url"]
+    if unmatched:
+        print(f"\n  not matched by URL ({len(unmatched)}). This source shares no id with the")
+        print("  registry, so these are candidates to check by agency name, not gaps:")
+        for host, n in collections.Counter(f["host"] for f in unmatched).most_common(10):
+            print(f"      {n:4d}  {host}")
+        auth = [f for f in unmatched if f["has_authentication"]]
+        if auth:
+            print(f"      {len(auth)} of them need a credential, so cannot be registered without one")
+    return {"counts": dict(counts), "findings": findings, "suppressed": suppressed}
+
+
 SOURCES = {
     "fetch-errors": (source_fetch_errors, True),
     "unstable-urls": (source_unstable_urls, True),
     "watch-pages": (source_watch_pages, False),
     "ntd-weblinks": (source_ntd_weblinks, False),
     "expired-calendars": (source_expired_calendars, True),
+    "calitp": (source_calitp, False),
 }
 
 
