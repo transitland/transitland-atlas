@@ -111,10 +111,15 @@ for path in eval_files:
     if subject_feed:
         if not atlas_registry.feed_exists(db, subject_feed):
             err(path, f"feed {subject_feed!r} does not exist in feeds/")
-        elif atlas_registry.operators_of(db, subject_feed):
-            err(path, f"feed {subject_feed!r} has operator record(s) "
-                      f"{sorted(atlas_registry.operators_of(db, subject_feed))}; "
-                      f"key this file on the operator instead")
+        else:
+            # Keying on a feed is wrong when one operator represents it, because
+            # the operator is the more stable subject. It is right when many do:
+            # a regional feed carrying dozens of agencies has no single operator
+            # to attribute a finding about the feed itself to.
+            feed_ops = atlas_registry.operators_of(db, subject_feed)
+            if len(feed_ops) == 1:
+                err(path, f"feed {subject_feed!r} has a single operator record "
+                          f"{sorted(feed_ops)}; key this file on the operator instead")
     if subject_ntd:
         # An externally-keyed file is only correct while Atlas has nothing for
         # this agency. Once an operator carries the id, the finding belongs
