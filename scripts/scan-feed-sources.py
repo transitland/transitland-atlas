@@ -20,8 +20,8 @@ Sources available, all read-only:
   unstable-urls   MONITOR. Feeds tagged unstable_url: staleness, calendar
                   expiry and fetch state.
   watch-pages     MONITOR. The public page on which an agency publishes its own
-                  feed URL, as recorded in evaluations/. One request per page,
-                  no following of links.
+                  feed URL, configured in watch-pages.json. One request per
+                  page, no following of links.
   expired-calendars MONITOR. Every static feed serving a calendar that has run
                   out, tagged or not. Catches registrations that fetch fine
                   forever while the publisher has moved on.
@@ -39,6 +39,12 @@ Two ideas keep the output usable.
 
 **Cluster before reporting.** Many feeds failing on one host is usually one
 event, not many problems.
+
+**Standing positions live in POLICIES, not in evaluations/.** How Transitland
+covers a region is our opinion rather than a finding about one URL, there are
+few of them, and expressing one as recorded URLs meant copying a sentence per
+endpoint and re-opening it whenever one moved. A policy matches on the operators
+of a feed, or on a URL prefix where those operators cannot be reached.
 
 **Judge transience from fetch history, not from feed version age.** Transitland
 retains recent fetch attempts, so a failure streak is directly observable. Age
@@ -512,6 +518,60 @@ def source_expired_calendars(key: str, args) -> dict:
             "by_host": dict(by_host.most_common())}
 
 
+# Standing positions on how Transitland covers a region or a publisher. These
+# are ours rather than an agency's or a source's, and there are few of them, so
+# they live in code. Expressing one in evaluations/ meant 132 copies of a single
+# sentence -- 58% of that directory -- and keyed on URLs it re-opened every time
+# one moved. Membership is derived from the registry instead, so a policy tracks
+# the feed's operator list rather than a frozen list of endpoints.
+POLICIES = [
+    {
+        "name": "bay-area-regional",
+        "feeds": ("f-sf~bay~area~rg", "f-sf~bay~area~rg~rt"),
+        # The hub's own per-agency exports are identifiable by URL, which is
+        # needed because most of those operators do not carry the source's
+        # organization id and so cannot be reached through the registry.
+        "url_prefixes": ("https://api.511.org/transit/",),
+        "why": "Transitland covers this region from the regional hub's combined feed. "
+               "Individual agency feeds from the hub, and the agencies' own vendor "
+               "endpoints, are deliberately not registered. A few statics are registered "
+               "anyway at client request, tagged fetched-but-not-imported; realtime is "
+               "not, because there is no way to fetch a realtime feed without serving it.",
+    },
+]
+
+
+def load_policies(db) -> list[dict]:
+    """Resolve each policy's feeds to the operators currently associated with them."""
+    out = []
+    for p in POLICIES:
+        ops = set()
+        for fid in p["feeds"]:
+            ops |= atlas_registry.operators_of(db, fid)
+        out.append({**p, "operators": ops})
+    return out
+
+
+def policy_for(policies: list[dict], operators, urls=()) -> dict | None:
+    """The first policy covering these operators, or any of these URLs.
+
+    An agency publishing through the hub is covered by the hub's policy for all
+    its endpoints, including the ones on its own vendor's host, so matching any
+    URL is enough. `urls` accepts a single string for convenience.
+    """
+    ops = set(operators or ())
+    if isinstance(urls, str):
+        urls = (urls,)
+    norms = [atlas_registry.normalise_url(u) for u in urls if u]
+    for p in policies:
+        if ops & p["operators"]:
+            return p
+        for prefix in (atlas_registry.normalise_url(x) for x in p.get("url_prefixes", ())):
+            if any(n.startswith(prefix) for n in norms):
+                return p
+    return None
+
+
 def load_decisions() -> dict[str, dict[str, dict]]:
     """Index every recorded candidate by subject, then by normalised URL.
 
@@ -725,6 +785,7 @@ def source_calitp(key, args) -> dict:
     active = atlas_registry.active_urls(db)
     historic = atlas_registry.historic_urls(db)
     decisions = load_decisions()
+    policies = load_policies(db)
     by_dataset = atlas_registry.feeds_by_calitp_dataset(db)
     by_org = atlas_registry.operators_by_calitp_org(db)
 
@@ -752,7 +813,7 @@ def source_calitp(key, args) -> dict:
                 if rid_:
                     dataset_orgs.setdefault(rid_, set()).add(org)
 
-    findings, suppressed, counts = [], [], collections.Counter()
+    findings, suppressed, by_policy, counts = [], [], [], collections.Counter()
     for row in rows:
         url = (row.get("url") or "").strip()
         rid = (row.get("source_record_id") or "").strip()
@@ -763,13 +824,20 @@ def source_calitp(key, args) -> dict:
         if norm in active:
             counts["url-registered"] += 1
             continue
+        held = sorted({o for org in dataset_orgs.get(rid, ()) for o in by_org.get(org, ())})
+        # A standing position covers every URL for that agency, whatever it is,
+        # so it settles the finding before any per-URL lookup.
+        policy = policy_for(policies, held, url)
+        if policy:
+            counts[f"policy:{policy['name']}"] += 1
+            by_policy.append({"calitp_dataset_id": rid, "url": url, "policy": policy["name"]})
+            continue
         if norm in historic:
             kind = "declares-a-url-we-superseded"
         else:
             # The URL is unknown, but the organization behind it may not be. If an
             # operator carries that organization id we hold the agency already,
             # which is a different and much weaker finding than a missing agency.
-            held = sorted({o for org in dataset_orgs.get(rid, ()) for o in by_org.get(org, ())})
             kind = "agency-held-from-a-different-url" if held else "not-matched-by-url"
         counts[kind] += 1
         item = {"calitp_dataset_id": rid, "name": (row.get("name") or "").strip(),
@@ -802,7 +870,8 @@ def source_calitp(key, args) -> dict:
     print(f"calitp: {len(rows)} schedule datasets published\n")
     for k, n in counts.most_common():
         print(f"  {k:34s} {n:5d}")
-    print(f"\n  suppressed by evaluations/         {len(suppressed):5d}")
+    print(f"\n  settled by a standing policy      {len(by_policy):5d}")
+    print(f"  suppressed by evaluations/         {len(suppressed):5d}")
     print(f"  reported                          {len(findings):5d}")
     unmatched = [f for f in findings if f["kind"] == "not-matched-by-url"]
     if unmatched:
@@ -814,16 +883,17 @@ def source_calitp(key, args) -> dict:
         if auth:
             print(f"      {len(auth)} of them need a credential, so cannot be registered without one")
 
-    rt = _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, historic, decisions)
+    rt = _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, historic,
+                          decisions, policies)
     return {"counts": dict(counts), "findings": findings, "suppressed": suppressed,
-            "realtime": rt}
+            "by_policy": by_policy, "realtime": rt}
 
 
 CALITP_RT_TYPES = ("service_alerts", "vehicle_positions", "trip_updates")
 
 
 def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, historic,
-                     decisions) -> dict:
+                     decisions, policies) -> dict:
     """Realtime half of the California crosswalk, grouped by organization.
 
     The finding that matters is an organization whose endpoints are all open,
@@ -889,7 +959,7 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
             "host": (urlparse(url).netloc or "").lower(),
         })
 
-    findings, suppressed, counts = [], [], collections.Counter()
+    findings, suppressed, by_policy, counts = [], [], [], collections.Counter()
     for gkey, g in sorted(groups.items()):
         eps = g["endpoints"]
         live = [e for e in eps if e["url"]]
@@ -908,6 +978,15 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
                            for f in atlas_registry.operator_feeds(db, op, spec="gtfs-rt")})
         if len(have) == len(live):
             counts["all-endpoints-registered"] += 1
+            continue
+        # A standing position settles every endpoint for that agency at once.
+        policy = policy_for(policies, g["operators"],
+                            [e["url"] for e in live if not e["registered"]])
+        if policy:
+            counts[f"policy:{policy['name']}"] += 1
+            by_policy.append({"name": g["name"], "operators": g["operators"],
+                              "policy": policy["name"],
+                              "urls": [e["url"] for e in live if not e["registered"]]})
             continue
         gap = [e for e in live if not e["registered"]]
         # Test the gap, not the group. Most agencies here have vehicle positions
@@ -959,7 +1038,8 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
     print(f"\ncalitp realtime: {total} endpoints across {len(groups)} organizations\n")
     for k, n in counts.most_common():
         print(f"  {k:34s} {n:5d}")
-    print(f"\n  suppressed by evaluations/         {len(suppressed):5d}")
+    print(f"\n  settled by a standing policy      {len(by_policy):5d}")
+    print(f"  suppressed by evaluations/         {len(suppressed):5d}")
     print(f"  reported                          {len(findings):5d}")
     actionable = [f for f in findings if f["kind"] == "agency-held-no-realtime-feed"]
     if actionable:
@@ -976,7 +1056,8 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
                     print(f"                  keyed to {p}")
         print("      pairs=was means keyed to a static we held and replaced, so the")
         print("      reason for that replacement decides whether the realtime is usable")
-    return {"counts": dict(counts), "findings": findings, "suppressed": suppressed}
+    return {"counts": dict(counts), "findings": findings, "suppressed": suppressed,
+            "by_policy": by_policy}
 
 
 SOURCES = {

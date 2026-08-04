@@ -10,6 +10,14 @@ These files record the conclusion and the reason, so a URL that was evaluated on
 
 Both outcomes matter. A finding that a URL **should not** be used is often more valuable than one that should, because nothing else in the registry can express it.
 
+## Not for standing positions
+
+How Transitland covers a region or a publisher is **our** opinion, not a finding about one URL, and those belong in `POLICIES` in [`scripts/scan-feed-sources.py`](../scripts/scan-feed-sources.py).
+
+The Bay Area is the worked example. Recording "we take the regional feed, not the individual agency ones" as evaluations produced **132 candidates carrying two distinct sentences — 58% of this directory** — and because each was keyed to a URL, every endpoint that moved re-opened a question that was never really about that endpoint. As one policy matching on the operators of the regional feed it is a dozen lines, covers agencies nobody had got round to enumerating, and cannot go stale when a URL changes: moving it settled 40 realtime groups where the file had recorded 13.
+
+There are few such positions, which is why code is the right place. The test: if the answer would be the same for any URL that agency published, it is a policy, not an evaluation.
+
 ## What this is not for
 
 **Anything derived from feed contents or fetches belongs in the Transitland API, not here.** Route counts, trip counts, calendar spans, fetch history, validation reports and realtime status all change daily or hourly and are already served by the platform, far fresher than a file in git could be.
