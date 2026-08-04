@@ -81,6 +81,10 @@ NTD_WEBLINKS = "https://data.transportation.gov/resource/2u7n-ub22.csv"
 # filename segment is cosmetic; the resource UUID is what identifies it.
 CALITP_DATASETS = ("https://data.ca.gov/dataset/de6f1544-b162-4d16-997b-c183912c8e62"
                    "/resource/e4ca5bd4-e9ce-40aa-a58a-3a6d78b042bd/download/gtfs_datasets.csv")
+# Maps each dataset to the organization that runs the service, which is how an
+# unmatched URL can still be traced to an agency the registry already holds.
+CALITP_PROVIDERS = ("https://data.ca.gov/dataset/de6f1544-b162-4d16-997b-c183912c8e62"
+                    "/resource/ebe116fb-b9da-4fee-a0c5-497c9d6d61d7/download/provider_gtfs_data.csv")
 
 FETCH_WINDOW = 20
 
@@ -707,12 +711,28 @@ def source_calitp(key, args) -> dict:
     historic = atlas_registry.historic_urls(db)
     decisions = load_decisions()
     by_dataset = atlas_registry.feeds_by_calitp_dataset(db)
+    by_org = atlas_registry.operators_by_calitp_org(db)
 
     session = requests.Session()
     session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
     r = session.get(CALITP_DATASETS, timeout=180)
     r.raise_for_status()
     rows = [x for x in csv.DictReader(io.StringIO(r.text)) if x.get("type") == "schedule"]
+
+    # dataset -> organizations, so an unmatched URL can still be attributed
+    pr = session.get(CALITP_PROVIDERS, timeout=180)
+    pr.raise_for_status()
+    dataset_orgs: dict[str, set[str]] = {}
+    for row in csv.DictReader(io.StringIO(pr.text)):
+        org = (row.get("organization_source_record_id") or "").strip()
+        if not org:
+            continue
+        for col in ("schedule_source_record_id", "service_alerts_source_record_id",
+                    "vehicle_positions_source_record_id", "trip_updates_source_record_id"):
+            for rid_ in (row.get(col) or "").split(","):
+                rid_ = rid_.strip()
+                if rid_:
+                    dataset_orgs.setdefault(rid_, set()).add(org)
 
     findings, suppressed, counts = [], [], collections.Counter()
     for row in rows:
@@ -725,12 +745,20 @@ def source_calitp(key, args) -> dict:
         if norm in active:
             counts["url-registered"] += 1
             continue
-        kind = "declares-a-url-we-superseded" if norm in historic else "not-matched-by-url"
+        if norm in historic:
+            kind = "declares-a-url-we-superseded"
+        else:
+            # The URL is unknown, but the organization behind it may not be. If an
+            # operator carries that organization id we hold the agency already,
+            # which is a different and much weaker finding than a missing agency.
+            held = sorted({o for org in dataset_orgs.get(rid, ()) for o in by_org.get(org, ())})
+            kind = "agency-held-from-a-different-url" if held else "not-matched-by-url"
         counts[kind] += 1
         item = {"calitp_dataset_id": rid, "name": (row.get("name") or "").strip(),
                 "url": url, "kind": kind,
                 "has_authentication": (row.get("has_authentication") or "") == "true",
                 "regional_feed_type": (row.get("regional_feed_type") or "").strip(),
+                "operators": sorted({o for org in dataset_orgs.get(rid, ()) for o in by_org.get(org, ())}),
                 "host": (urlparse(url).netloc or "").lower()}
         # With the crosswalk tag in place this source can now reach the registry
         # subject, so a decision recorded against the operator suppresses even

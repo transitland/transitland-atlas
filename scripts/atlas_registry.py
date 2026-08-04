@@ -205,6 +205,25 @@ def feeds_by_calitp_dataset(db) -> dict[str, set[str]]:
     return out
 
 
+def operators_by_calitp_org(db) -> dict[str, set[str]]:
+    """Cal-ITP organization record id -> operators carrying it."""
+    out: dict[str, set[str]] = {}
+    for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
+                          "WHERE operator_tags IS NOT NULL"):
+        try:
+            tags = json.loads(row["operator_tags"])
+        except (TypeError, ValueError):
+            continue
+        raw = tags.get("calitp_organization_id") if isinstance(tags, dict) else None
+        if not raw:
+            continue
+        for part in str(raw).split(","):
+            part = part.strip()
+            if part:
+                out.setdefault(part, set()).add(row["onestop_id"])
+    return out
+
+
 def malformed_ntd_ids(db) -> list[tuple[str, str]]:
     """Operators whose `us_ntd_id` will not join a live NTD extract as written.
 

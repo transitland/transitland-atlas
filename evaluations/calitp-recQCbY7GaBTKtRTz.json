@@ -1,0 +1,15 @@
+{
+  "$schema": "schema.json",
+  "calitp_dataset_id": "recQCbY7GaBTKtRTz",
+  "name": "Sacramento Airport Park & Ride",
+  "candidates": [
+    {
+      "url": "https://passio3.com/sacair/passioTransit/gtfs/google_transit.zip",
+      "decision": "unavailable",
+      "found_via": "Cal-ITP GTFS ingest pipeline dataset",
+      "decided_on": "2026-08-03",
+      "recheck_after": "2027-02-01",
+      "rationale": "An empty vendor tenant: three routes and sixty-five stops are defined, but there are no trips, no stop times and no calendar entries at all, so it describes no service. The vendor's deployments do this when a tenant is provisioned before schedules are loaded. Worth re-checking rather than rejecting, since the routes suggest an intent to publish."
+    }
+  ]
+}
