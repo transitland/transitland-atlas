@@ -75,7 +75,6 @@ eval_files = sorted(glob.glob(os.path.join(EVAL_DIR, "o-*.json"))
                     + glob.glob(os.path.join(EVAL_DIR, "calitp-*.json")))
 seen_urls: dict[str, str] = {}
 today = date.today()
-overdue: list[str] = []
 
 for path in eval_files:
     try:
@@ -153,57 +152,27 @@ for path in eval_files:
         elif decided > today:
             err(path, f"{where}: decided_on {decided} is in the future")
 
-        if "recheck_after" in cand:
-            recheck = parse_date(cand["recheck_after"])
-            if recheck is None:
-                err(path, f"{where}: recheck_after is not a valid date")
-            else:
-                if decided and recheck < decided:
-                    err(path, f"{where}: recheck_after {recheck} precedes decided_on {decided}")
-                if recheck <= today:
-                    overdue.append(f"{subject}  {url}  (due {recheck}, {cand.get('decision')})")
-
-        # Contradictions between the sidecar and the registry, judged per
-        # operator: a decision here is about this agency only, and the same URL
-        # may legitimately be another agency's registered feed.
-        decision = cand.get("decision")
+        # The one contradiction worth catching: a file saying a URL was not taken
+        # while the registry has this very operator using it. Judged per operator,
+        # because the same URL may legitimately be someone else's registered feed.
         using_feeds = atlas_registry.feeds_using(db, url)
         # An externally-keyed subject has no Atlas feeds by definition, so any
         # feed using this URL belongs to someone else.
-        scope = (atlas_registry.operator_feeds(db, oid) if oid
-                 else {subject_feed} if subject_feed else set())
-        ours = using_feeds & scope
+        in_scope = (atlas_registry.operator_feeds(db, oid) if oid
+                    else {subject_feed} if subject_feed else set())
+        ours = using_feeds & in_scope
         theirs = using_feeds - ours
 
-        if decision in ("not_used", "deferred", "unavailable") and ours:
-            err(path, f"{where}: recorded as {decision!r} but in use by this operator's {', '.join(sorted(ours))}")
-        if decision == "used" and not ours:
-            err(path, f"{where}: recorded as 'used' but no feed in scope uses this url")
-        if theirs and decision != "used":
+        if ours:
+            err(path, f"{where}: recorded as {cand.get('decision')!r} but in use by "
+                      f"this operator's {', '.join(sorted(ours))}")
+        if theirs:
             note(path, f"{where}: registered for another operator as {', '.join(sorted(theirs))}")
-
-    for i, w in enumerate(doc.get("watch") or []):
-        where = f"watch[{i}] {w.get('page','')}"
-        for fid in w.get("publishes") or []:
-            if not atlas_registry.feed_exists(db, fid):
-                err(path, f"{where}: publishes feed {fid!r} does not exist in feeds/")
-        if "last_checked" in w and parse_date(w["last_checked"]) is None:
-            err(path, f"{where}: last_checked is not a valid date")
-
-    # advisory: unstable_url feeds with nowhere recorded to look for a replacement
-    unstable = atlas_registry.unstable_feeds_of(db, oid) if oid else set()
-    if unstable and not (doc.get("watch") or []):
-        warn(path, f"operator has unstable_url feeds ({', '.join(sorted(unstable))}) but no watch entry")
 
 # ----------------------------------------------------------------- reporting
 
 feed_count = atlas_registry.feed_count(db)
 print(f"checked {len(eval_files)} evaluation file(s) against {feed_count} feeds")
-
-if overdue:
-    print(f"\n{len(overdue)} candidate(s) due for recheck:")
-    for line in sorted(overdue):
-        print(f"  {line}")
 
 if notes:
     print(f"\n{len(notes)} note(s):")

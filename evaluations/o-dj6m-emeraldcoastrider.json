@@ -5,13 +5,10 @@
     {
       "url": "https://www.ecrider.org/wp-content/uploads/Okaloosa-GTFS.zip",
       "decision": "not_used",
-      "relationship": "overlapping",
       "relates_to": [
         "f-dj6m-okaloosacountytransit~fl~us"
       ],
-      "found_via": "us_ntd_weblinks",
       "decided_on": "2026-07-31",
-      "recheck_after": "2026-10-13",
       "rationale": "A stale export of the same vendor tenant the registered feed already comes from. It shows more routes, but its calendars sit a year behind on every shared service and half have expired, so registering both would duplicate expired routes. It is the only published source for two of those routes, so worth rechecking if the agency refreshes it.",
       "references": [
         "https://www.ecrider.org/routes/"
@@ -23,28 +20,8 @@
       "relates_to": [
         "f-dj6m-okaloosacountytransit~fl~us"
       ],
-      "found_via": "atlas_static_historic",
       "decided_on": "2026-07-31",
       "rationale": "Returns 404. The dated form of this WordPress upload path no longer resolves, while the undated sibling does, so the agency moves the file rather than versioning it."
-    }
-  ],
-  "watch": [
-    {
-      "page": "https://www.ecrider.org/gtfs-data-download/",
-      "publishes": [
-        "f-dj6m-okaloosacountytransit~fl~us"
-      ],
-      "last_seen_url": "https://www.ecrider.org/wp-content/uploads/Okaloosa-GTFS.zip",
-      "last_checked": "2026-07-31",
-      "note": "The agency's own GTFS page, and the canonical place its feed URL is published. It currently offers only the undated WordPress upload, which is the stale export recorded above rather than the TripShot endpoint we register. Watch for the linked filename changing, which is how a refreshed export would appear."
-    },
-    {
-      "page": "https://www.ecrider.org/routes/",
-      "publishes": [
-        "f-dj6m-okaloosacountytransit~fl~us"
-      ],
-      "last_checked": "2026-07-31",
-      "note": "Authoritative route list: 1, 2, 3, 4, 5, 14, 20, 30, 32 and 33. Establishes that routes 1, 2 and 3 have no live service in any published feed, and that the registered TripShot endpoint carries only five of the ten. Re-read before concluding anything about this agency's coverage, and to confirm whether the gap has been closed."
     }
   ]
 }

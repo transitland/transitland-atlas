@@ -387,11 +387,14 @@ def source_unstable_urls(key: str, args) -> dict:
 
 
 def source_watch_pages(key, args) -> dict:
-    entries = []
-    for path in sorted(glob.glob(os.path.join(EVAL_DIR, "o-*.json"))):
-        doc = json.load(open(path))
-        for w in doc.get("watch") or []:
-            entries.append({"operator_onestop_id": doc.get("operator_onestop_id"), **w})
+    """Pages that publish a feed URL which moves.
+
+    Configured here rather than in evaluations/, because `last_checked` and
+    `last_seen_url` have to be maintained on a cadence, which is what that
+    directory's own rule says disqualifies a field from living in it.
+    """
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "watch-pages.json")
+    entries = json.load(open(path)).get("pages") or []
 
     session = requests.Session()
     session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
@@ -528,11 +531,7 @@ def load_decisions() -> dict[str, dict[str, dict]]:
         for cand in doc.get("candidates") or []:
             if not cand.get("url"):
                 continue
-            # A subject-scoped decision does not depend on which URL is offered,
-            # so it is filed under a wildcard and matches whatever the source
-            # declares next time. Everything else is filed under its own URL and
-            # correctly re-opens when that changes.
-            key = "*" if cand.get("scope") == "subject" else atlas_registry.normalise_url(cand["url"])
+            key = atlas_registry.normalise_url(cand["url"])
             for subject in subjects:
                 out.setdefault(subject, {})[key] = cand
             # Also index by URL alone. Subject-scoped lookup is the better match
@@ -672,11 +671,18 @@ def source_ntd_weblinks(key, args) -> dict:
     # matches nothing the source declares is inert, and silently so: it may have
     # been mistyped, or the agency may have moved on. Both are worth surfacing,
     # because neither is visible from the file itself.
+    # Scoped by subject rather than by recorded provenance: an evaluation keyed
+    # on an NTD id this source publishes is one this source is responsible for,
+    # whatever route it arrived by. That also survived dropping the per-candidate
+    # provenance field, which had accumulated ten spellings of four sources.
     declared = {atlas_registry.normalise_url(a["weblink"]) for a in agencies.values() if a["weblink"]}
+    known = {atlas_registry.normalise_ntd_id(k) for k in agencies}
     inert = []
     for subject, cands in decisions.items():
+        if atlas_registry.normalise_ntd_id(subject) not in known:
+            continue
         for norm, cand in cands.items():
-            if cand.get("found_via", "").startswith("US NTD") and norm not in declared:
+            if norm not in declared:
                 inert.append((subject, cand.get("url", "")))
     if inert:
         print(f"\n  recorded against this source but matching nothing it declares ({len(inert)}):")

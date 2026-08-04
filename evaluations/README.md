@@ -26,10 +26,9 @@ One file per subject, named for its Onestop ID: `evaluations/o-dh-lakeland.json`
 
 Key on the **operator** where one exists. Where the feed has no operator record, key on the **feed** instead: `evaluations/f-move~stanislaus~vetsvan~flex.json`. That is not an edge case, because operator records are only created when there is something to put on them, so most feeds rely on generated operators and a finding about one would otherwise have nowhere to live. The validator rejects a feed-keyed file whose feed does have operator records, and names them.
 
-Two kinds of record:
+A file holds one kind of record: **`candidates`**, URLs that have been evaluated and not registered. Each carries `url`, `decision`, `decided_on` and `rationale`, optionally `relates_to` and `references`. That is the whole format.
 
-- **`candidates`** — URLs that have been evaluated, and what was decided. `decision` is one of `used`, `not_used`, `deferred` or `unavailable`.
-- **`watch`** — pages worth re-checking, usually because they publish a URL that moves. This is the counterpart to `tags.unstable_url` in a DMFR file: the tag marks a URL as volatile, and a `watch` entry records where its replacement will appear.
+`decision` is `not_used`, `deferred` or `unavailable`. All three suppress a discovery source identically — the distinction is for a human skimming the file. There is no `used`: the registry is what says a URL is in use, and a file claiming otherwise would just be a second source of truth to keep in sync.
 
 ## Record the decision, not the investigation
 
@@ -37,9 +36,11 @@ The temptation is to write down everything that was measured on the way to a dec
 
 Most of those figures are cheaper to re-measure than to trust, and they decay silently. Worse, the next person to look at the same question will usually look **wider** than we did, because they will have a reason to, and their fuller picture may support a different answer. A rationale packed with our partial evidence invites them to argue with our working rather than form their own view.
 
-So: a few sentences on why the decision holds, and stop. Quote a figure only where it *is* the reason, such as a calendar that had already run out. `relationship` and `relates_to` are worth filling in only when a comparison was actually made, not as a guess to complete the record. The schema caps rationale length to keep this honest.
+So: a few sentences on why the decision holds, and stop. Quote a figure only where it *is* the reason, such as a calendar that had already run out. `relates_to` is worth filling in only when a comparison was actually made, not as a guess to complete the record. The schema caps rationale length to keep this honest.
 
 What genuinely belongs here is the part that is expensive to rediscover: that a URL was looked at and rejected, and roughly why. Not the audit trail.
+
+**Record the constraint, not only the verdict.** This is the one place to err towards saying more. A rationale that gives the conclusion without the thing that forced it reads as settled, and invites someone to reverse it on evidence that was never in dispute. Victor Valley is the worked example: an entry said its realtime was keyed to a superseded static, all true, and omitted that the agency had asked for the feed we register. Read back a day later that looked like an open question, and nearly produced a switch against the agency's stated wish. Where a decision rests on something not examined, say that too.
 
 ## Current state, not a log
 
@@ -57,7 +58,9 @@ Operator rather than DMFR filename, because:
 
 ## Decisions decay
 
-`decided_on` is required. Every finding here rests on something that can change — a calendar that expires, a vendor contract, a URL that moves. `recheck_after` marks the date beyond which a decision's basis may no longer hold, which is what makes `deferred` useful: a rejection with an expiry is far more actionable than a permanent no.
+`decided_on` is required. Every finding here rests on something that can change — a calendar that expires, a vendor contract, a URL that moves.
+
+There is deliberately no scheduled recheck. An earlier version carried `recheck_after`, and in practice it was attached almost entirely to findings of the form "the endpoint was quiet when probed", which is cheaper to re-measure than to trust and produced a nag list nobody acted on. If a decision needs revisiting on a date, that belongs to whatever re-probes; a file in git is the wrong place to schedule work.
 
 ## Validation
 
@@ -65,14 +68,9 @@ Operator rather than DMFR filename, because:
 cd scripts && uv run validate-evaluations.py
 ```
 
-Errors exit non-zero; warnings and notes are advisory. It checks schema conformance, that the filename matches `operator_onestop_id`, that the operator and every `relates_to` / `publishes` feed exists in `feeds/`, that dates are sane and `recheck_after` follows `decided_on`, and that no URL is duplicated within a file. It also flags contradictions in both directions: a candidate marked `not_used` that this operator actually uses, or one marked `used` that no feed of this operator uses.
+Errors exit non-zero; warnings and notes are advisory. It checks schema conformance, that the filename matches its subject, that the operator and every `relates_to` feed exists in `feeds/`, that dates are sane, and that no URL is duplicated within a file. It also flags the one contradiction worth catching: a candidate recorded here that this operator is actually using.
 
-That contradiction check is scoped **per operator**, because a decision here is about one agency and the same URL may legitimately be another agency's registered feed. When that happens it is reported as a note, not an error.
-
-Two advisory outputs are the point of running it regularly:
-
-- **candidates due for recheck** — anything whose `recheck_after` has passed
-- **operators with `unstable_url` feeds but no `watch` entry** — a work list for recording where a moving URL gets republished
+That check is scoped **per operator**, because a decision here is about one agency and the same URL may legitimately be another agency's registered feed. When that happens it is reported as a note, not an error.
 
 The script is deliberately offline. It never contacts the Transitland API or fetches a candidate URL, so it stays deterministic and a feed that happens to be erroring cannot fail it. Re-checking whether a recorded finding still holds is a different job, and one that would want `$TRANSITLAND_API_KEY`.
 
@@ -110,7 +108,7 @@ The validator rejects an externally-keyed file once an Atlas operator carries th
 
 `scripts/scan-feed-sources.py` reports findings from several sources, and they do not behave the same way.
 
-**State monitors** — `unstable_url` feeds, stale feeds, failing fetches. These describe the current condition of feeds already registered. A flagged feed stays flagged until someone fixes it, and the count goes down by fixing things, not by recording them. Recording a decision here should *not* silence the finding: use `deferred` with a `recheck_after` when something is known-bad and not being fixed today, and accept that it comes back afterwards. The Transitland API reports current state on every run, so there is little to persist beyond `watch` entries saying where a moving URL gets republished.
+**State monitors** — `unstable_url` feeds, stale feeds, failing fetches. These describe the current condition of feeds already registered. A flagged feed stays flagged until someone fixes it, and the count goes down by fixing things, not by recording them. Nothing belongs here for those: the Transitland API reports current state on every run, fresher than a file in git could be. Pages worth re-checking because they republish a moving URL are configured in [`scripts/watch-pages.json`](../scripts/watch-pages.json) instead, since `last_checked` has to be maintained on a cadence and that is exactly what disqualifies a field from this directory.
 
 **Discovery sources** — NTD weblinks, vendor directories, other registries. These propose candidates we may or may not want. The same candidate reappears on every run indefinitely unless a decision is recorded against it, so suppression is the point: the report converges toward zero as evaluations accumulate, even if no feed ever changes. This is where these files pay for themselves.
 
@@ -120,7 +118,7 @@ So suppression is the default for discovery and the exception for monitoring. Th
 
 Suppression is worth less than it first looks, and worth it for a different reason than expected.
 
-Comparing the 2023 reference release against the live one: **98% of NTD ids persist (226 of 230) but only 43% of URLs do (99 of 230)**. An agency stays an agency; its declared URL changes constantly. So a decision recorded against a URL alone expires more often than it holds, and the finding returns anyway. Suppression therefore keys on the **subject**, and treats the URL as the thing whose change re-opens the question — the same idea as `watch.last_seen_url`.
+Comparing the 2023 reference release against the live one: **98% of NTD ids persist (226 of 230) but only 43% of URLs do (99 of 230)**. An agency stays an agency; its declared URL changes constantly. So a decision recorded against a URL alone expires more often than it holds, and the finding returns anyway. Suppression therefore keys on the **subject** where a source shares one with the registry, and treats the URL as the thing whose change re-opens the question.
 
 The corollary is that the value here is not really deduplication. It is that when a URL *does* come back, the recorded reason is still there.
 

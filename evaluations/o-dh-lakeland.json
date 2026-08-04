@@ -5,11 +5,11 @@
     {
       "url": "https://gtfs.remix.com/LAMTD_Lakeland_Florida_US.zip",
       "decision": "not_used",
-      "relationship": "overlapping",
-      "relates_to": ["f-lakeland~passio", "f-lakeland~availtec"],
-      "found_via": "us_ntd_weblinks",
+      "relates_to": [
+        "f-lakeland~passio",
+        "f-lakeland~availtec"
+      ],
       "decided_on": "2026-07-31",
-      "recheck_after": "2026-10-04",
       "rationale": "A whole-system feed, and on route count alone it looks like a clear upgrade on either registered feed. Its trip IDs resolved 0 of 48 against the registered realtime, while the Availtec static resolved 48 of 48. Its calendar also ended 2026-10-04 against 2027-12-31 for both registered feeds. Registering the Availtec and Passio feeds together covers the same system with working realtime and a longer horizon. Worth reconsidering if the calendar is renewed and the trip IDs come to match the realtime.",
       "references": [
         "https://ridecitrus.com/services/fixed-routes/east-county-routes/"
@@ -18,18 +18,11 @@
     {
       "url": "https://passio3.com/citrusconn/passioTransit/gtfs/realtime/vehiclePositions",
       "decision": "unavailable",
-      "relates_to": ["f-lakeland~passio"],
-      "found_via": "vendor_url_pattern",
+      "relates_to": [
+        "f-lakeland~passio"
+      ],
       "decided_on": "2026-07-31",
       "rationale": "Passio publishes no realtime for this tenant. All three realtime paths return 404 while the static on the same slug serves normally, so this is tenant configuration rather than a wrong slug. citrusconn is the only slug that resolves; citrusconnection, citrus, lamtd, polk, polktransit and ridecitrus all 404 on the static as well."
-    }
-  ],
-  "watch": [
-    {
-      "page": "https://ridecitrus.com/services/fixed-routes/east-county-routes/",
-      "publishes": ["f-lakeland~availtec", "f-lakeland~passio"],
-      "last_checked": "2026-07-31",
-      "note": "States which routes are tracked by which realtime system, and is the evidence that this agency runs two AVL vendors rather than one feed being a stale subset of the other. Re-read if either feed's route coverage appears to change, or if a whole-system feed is proposed again."
     }
   ]
 }
