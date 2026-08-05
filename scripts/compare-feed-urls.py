@@ -21,6 +21,16 @@ from rich.text import Text
 from rich.panel import Panel
 
 
+def dir_sha1_of(url: str) -> str | None:
+    """Content checksum, independent of how the archive was built."""
+    try:
+        proc = subprocess.run(["transitland", "checksum", "--raw-dir-sha1", url],
+                              capture_output=True, text=True, timeout=300)
+        return proc.stdout.strip() if proc.returncode == 0 else None
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        return None
+
+
 def validate_feed(url: str) -> dict:
     try:
         result = subprocess.run(
@@ -241,7 +251,12 @@ def main():
         results = [f.result() for f in val_futs]
         sha1s = [(r.get("details") or {}).get("sha1", "N/A") for r in results]
         arc_futs = [executor.submit(lookup_feed_version, sha1, api_key) for sha1 in sha1s]
+        # The zip SHA1 above is the archive's primary key, and fragile: a server
+        # that rebuilds the archive per request changes it while the data stays
+        # put. The directory SHA1 is what actually answers "same feed?".
+        dir_futs = [executor.submit(dir_sha1_of, url) for url in urls]
         arc_results = [f.result() for f in arc_futs]
+        dir_sha1s = [f.result() for f in dir_futs]
 
     table = Table(show_lines=True, expand=True, title="Feed Comparison")
     table.add_column("Metric", style="bold", min_width=16, no_wrap=True)
@@ -251,10 +266,15 @@ def main():
     # --- Status ---
     table.add_row("Status", *[status_cell(r) for r in results])
 
-    # --- SHA1 ---
+    # --- SHA1, both kinds ---
     valid_sha1s = [s for s in sha1s if s not in ("N/A", None)]
     all_same = len(valid_sha1s) == n and len(set(valid_sha1s)) == 1
-    table.add_row("SHA1", *[sha1_cell(s, all_same) for s in sha1s])
+    table.add_row("Zip SHA1", *[sha1_cell(s, all_same) for s in sha1s])
+    valid_dirs = [s for s in dir_sha1s if s]
+    dirs_same = len(valid_dirs) == n and len(set(valid_dirs)) == 1
+    table.add_row("Directory SHA1", *[sha1_cell(s, dirs_same) for s in dir_sha1s])
+    if dirs_same and not all_same:
+        table.add_row("", *([Text("same data, repackaged", style="green")] + [Text("")] * (n - 1)))
 
     # --- Transitland archive lookup ---
     table.add_row("In TL archive", *[archive_cell(a) for a in arc_results])

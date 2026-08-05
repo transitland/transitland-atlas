@@ -82,6 +82,7 @@ from urllib.parse import urljoin, urlparse
 import requests
 
 import atlas_registry
+import feed_probe
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EVAL_DIR = os.path.join(ROOT, "evaluations")
@@ -887,6 +888,19 @@ def source_mdb(key, args) -> dict:
     shared = [f for f in findings if f["host_known"]]
     print(f"  of those on a host we already use  {len(shared):5d}  <- look here first")
 
+    if getattr(args, "resolve", False):
+        limit = getattr(args, "resolve_limit", None) or 20
+        same = resolve_against_registry(findings, active, limit)
+        ids = {x["url"] for x in same}
+        findings = [f for f in findings if f["url"] not in ids]
+        per_commit = [{**c, "rows": [r for r in c["rows"] if r["url"] not in ids]} for c in per_commit]
+        per_commit = [c for c in per_commit if c["rows"]]
+        print(f"\n  checked {min(limit, len(same) + limit)} candidate(s) by content checksum; "
+              f"{len(same)} are the feed we already register, served from another path:")
+        for x in same:
+            print(f"      {(x['provider'] or x['name'])[:34]:36s} {', '.join(x['identical_to'])}")
+        print(f"  reported after resolving           {len(findings):5d}")
+
     for c in per_commit[:12]:
         print(f"\n  {c['date']}  {c['subject'][:66]}")
         for r in c["rows"][:8]:
@@ -899,6 +913,36 @@ def source_mdb(key, args) -> dict:
     if len(per_commit) > 12:
         print(f"\n  ... and {len(per_commit) - 12} older commit(s) with findings")
     return {"counts": dict(counts), "findings": findings, "commits": per_commit}
+
+
+def resolve_against_registry(findings, active, limit: int) -> list[dict]:
+    """Check whether an unmatched URL is byte-for-byte what we already register.
+
+    Only tried against URLs sharing a host, which keeps the number of downloads
+    proportionate: a feed served from two paths on one host is the common case
+    and the one worth catching, and a match there is proof rather than
+    inference. Each side is a full feed download, hence the cap.
+    """
+    by_host: dict[str, list[str]] = {}
+    for norm, feeds in active.items():
+        host = urlparse("https://" + norm.lstrip("/")).netloc.lower()
+        if host:
+            by_host.setdefault(host, []).append(norm)
+    cache: dict[str, str | None] = {}
+    same = []
+    for f in [x for x in findings if x.get("host_known")][:limit]:
+        ours = by_host.get(f["host"], [])
+        if not ours:
+            continue
+        theirs = feed_probe.dir_sha1(f["url"], cache)
+        if not theirs:
+            continue
+        for norm in ours:
+            mine = feed_probe.dir_sha1("https://" + norm.lstrip("/"), cache)
+            if mine and mine == theirs:
+                same.append({**f, "identical_to": sorted(active[norm]), "dir_sha1": theirs})
+                break
+    return same
 
 
 def known_hosts(active, historic) -> set:
@@ -1238,6 +1282,8 @@ def main() -> int:
     ap.add_argument("--since", help="how far back to walk that catalog's history (default 180 days ago)")
     ap.add_argument("--country", help="restrict mdb findings to one ISO country code. Their realtime "
                     "records often carry no location, so this filters those out too")
+    ap.add_argument("--resolve-limit", type=int, default=20,
+                    help="how many candidates --resolve may download and checksum (default 20)")
     ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
     args = ap.parse_args()
 

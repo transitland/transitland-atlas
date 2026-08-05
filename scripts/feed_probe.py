@@ -1,10 +1,20 @@
 """Validate GTFS URLs through transitland-lib and read the result.
 
-Shared by `compare-feed-urls.py`, which renders a few URLs side by side, and
-`probe-feed-urls.py`, which renders many one per row. Both need the same three
-things -- run the validator, ask the archive whether it has seen this SHA1, and
-pull the handful of fields a registration decision turns on -- so those live
-here rather than in either script.
+Shared by `compare-feed-urls.py`, which renders a few URLs side by side,
+`probe-feed-urls.py`, which renders many one per row, and the discovery sources
+in `scan-feed-sources.py`. They need the same things -- run the validator, ask
+the archive whether it has seen this SHA1, checksum a feed's contents, and pull
+the handful of fields a registration decision turns on -- so those live here
+rather than in any one script.
+
+**Two checksums, two jobs.** `transitland validate` reports the *zip* SHA1,
+which is the primary key for a feed version in the REST API and on the website,
+so it is what an archive lookup needs. It is also fragile: a server that
+regenerates the archive per request, or a change in compression or file
+ordering, changes it while the data is identical. The *directory* SHA1 hashes
+the CSV payload instead, so it is the one that answers "are these two URLs the
+same feed". Transitland's own fetcher checks both. See
+https://www.interline.io/blog/gtfs-checksum-versioning/
 
 Everything is read through `transitland validate` rather than by opening the
 zip directly. Hand-rolled zip reading gets the easy fields right and then
@@ -42,6 +52,26 @@ def validate_feed(url: str, timeout: int = VALIDATE_TIMEOUT) -> dict:
         return {"_error": f"Invalid JSON: {e}", "_url": url}
     except FileNotFoundError:
         return {"_error": "'transitland' command not found in PATH", "_url": url}
+
+
+def dir_sha1(url: str, cache: dict | None = None) -> str | None:
+    """Directory SHA1 of a feed: the hash of its contents, not its packaging.
+
+    Two URLs printing the same value are the same feed, whatever their host,
+    filename or byte size say. Costs a download, so callers comparing many URLs
+    should pass a shared `cache`.
+    """
+    if cache is not None and url in cache:
+        return cache[url]
+    try:
+        proc = subprocess.run(["transitland", "checksum", "--raw-dir-sha1", url],
+                              capture_output=True, text=True, timeout=300)
+        out = proc.stdout.strip() if proc.returncode == 0 else ""
+    except (subprocess.TimeoutExpired, FileNotFoundError):
+        out = ""
+    if cache is not None:
+        cache[url] = out or None
+    return out or None
 
 
 def lookup_feed_version(sha1: str, api_key: str) -> dict:
