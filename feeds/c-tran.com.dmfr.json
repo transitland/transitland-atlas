@@ -26,6 +26,9 @@
           "short_name": "C-TRAN",
           "associated_feeds": [
             {
+              "feed_onestop_id": "f-c20g-c~tran~flex"
+            },
+            {
               "feed_onestop_id": "f-c20g-c~tran~rt"
             }
           ],
@@ -36,6 +39,25 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-c20g-c~tran~flex",
+      "supersedes_ids": [
+        "f-c~tran~wsdot"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.c-tran.com/images/Google/TheCurrent_GTFSFlex.zip"
+      },
+      "license": {
+        "url": "https://www.c-tran.com/about-c-tran/business/c-tran-gtfs-data",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "All Data derivative versions prepared by the Licensee shall bear the following notice:\nReproduced with permission granted by C-TRAN. The information has been provided by means of a nonexclusive, limited, and revocable license granted by C-TRAN.\nC-TRAN does not guarantee the accuracy, adequacy, completeness or usefulness of any information.C-TRAN provides this information \"as is,\" without warranty of any kind, express or implied, including but not limited to warranties of merchantability, non-infringement or fitness for a particular purpose, and assumes no responsibility for anyone's use of the information."
+      },
+      "tags": {
+        "mdb_source_id": "3129"
+      }
     },
     {
       "id": "f-c20g-c~tran~rt",
