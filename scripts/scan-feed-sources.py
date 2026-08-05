@@ -34,6 +34,10 @@ Sources available, all read-only:
   ntd-weblinks    DISCOVERY. Each US NTD reporter's own declared GTFS URL,
                   checked against the registry by URL and by us_ntd_id.
                   Suppressed by decisions in evaluations/.
+  mdb             DISCOVERY. Recent additions to a local checkout of the
+                  Mobility Database catalogs, walked by commit so a pass covers
+                  what has changed rather than all 3,400 sources. Reads git and
+                  the working tree only, no network.
 
 Two ideas keep the output usable.
 
@@ -70,6 +74,7 @@ import glob
 import json
 import os
 import re
+import subprocess
 import sys
 from datetime import datetime, timezone
 from urllib.parse import urljoin, urlparse
@@ -760,6 +765,151 @@ def source_ntd_weblinks(key, args) -> dict:
             "malformed_ntd_ids": [{"operator": o, "us_ntd_id": v} for o, v in bad]}
 
 
+MDB_REPO = os.path.expanduser("~/code/MobilityData/mobility-database-catalogs")
+
+
+def source_mdb(key, args) -> dict:
+    """Recent Mobility Database catalog changes, checked against the registry.
+
+    Read by commit rather than in bulk. Their catalog is 3,400 sources and most
+    of it does not move; the changes arrive in batches of a couple of dozen with
+    a country or two in the subject line, so a pass over the last few months of
+    commits is a spot check rather than a re-derivation.
+
+    **Unmatched here is not a gap, and less so than for any other source.** That
+    catalog is feed-centric and takes what it is given: duplicates of one
+    service, community-contributed feeds alongside official ones, and feeds that
+    are supersets or subsets of each other. Atlas is curated the other way, one
+    best collection to serve APIs and maps from, so declining a feed that exists
+    is routine and often correct. Treat this output as candidates to look at,
+    weighted towards the ones sharing a host with something we already carry.
+
+    A source they have redirected is skipped: they have superseded it themselves.
+    """
+    repo = getattr(args, "mdb_repo", None) or MDB_REPO
+    sources = os.path.join(repo, "catalogs", "sources")
+    if not os.path.isdir(sources):
+        print(f"mdb: no catalog checkout at {repo}")
+        return {"findings": [], "counts": {}}
+
+    since = getattr(args, "since", None) or "180 days ago"
+    log = subprocess.run(["git", "-C", repo, "log", f"--since={since}",
+                          "--format=%h\x1f%ad\x1f%s", "--date=short",
+                          "--name-only", "--", "catalogs/sources"],
+                         capture_output=True, text=True)
+    if log.returncode != 0:
+        print(f"mdb: git log failed: {log.stderr.strip()[:200]}")
+        return {"findings": [], "counts": {}}
+
+    commits, current = [], None
+    for line in log.stdout.splitlines():
+        if "\x1f" in line:
+            sha, date, subject = line.split("\x1f", 2)
+            current = {"sha": sha, "date": date, "subject": subject, "files": []}
+            commits.append(current)
+        elif line.strip().endswith(".json") and current is not None:
+            current["files"].append(line.strip())
+
+    db = atlas_registry.load(os.path.join(ROOT, "feeds"))
+    active = atlas_registry.active_urls(db)
+    historic = atlas_registry.historic_urls(db)
+    decisions = load_decisions()
+    policies = load_policies(db)
+
+    hosts = known_hosts(active, historic)
+    seen, findings, counts = set(), [], collections.Counter()
+    per_commit = []
+    for c in commits:
+        rows = []
+        for rel in c["files"]:
+            path = os.path.join(repo, rel)
+            if rel in seen or not os.path.exists(path):
+                continue          # deleted, or already seen in a newer commit
+            seen.add(rel)
+            try:
+                doc = json.load(open(path))
+            except (OSError, ValueError):
+                continue
+            if doc.get("redirect"):
+                counts["redirected-by-them"] += 1
+                continue
+            urls = doc.get("urls") or {}
+            url = (urls.get("direct_download") or "").strip()
+            if not url:
+                continue
+            if urls.get("authentication_type"):
+                counts["credential-required"] += 1
+                continue
+            norm = atlas_registry.normalise_url(url)
+            if norm in active:
+                counts["url-registered"] += 1
+                continue
+            kind = "declares-a-url-we-superseded" if norm in historic else "not-matched-by-url"
+            counts[kind] += 1
+            loc = doc.get("location") or {}
+            host = (urlparse(url).netloc or "").lower()
+            item = {"mdb_source_id": doc.get("mdb_source_id"),
+                    "provider": (doc.get("provider") or "").strip(),
+                    "name": (doc.get("name") or "").strip(),
+                    "data_type": doc.get("data_type"), "url": url, "kind": kind,
+                    "country": loc.get("country_code", ""),
+                    "subdivision": loc.get("subdivision_name", ""),
+                    "host": host,
+                    # Sharing a host with something we already carry is the
+                    # strongest cheap signal that this is an agency we hold
+                    # under a different URL, rather than one we lack.
+                    "host_known": host in hosts,
+                    "commit": c["sha"], "subject": c["subject"], "date": c["date"]}
+            if policy_for(policies, (), url):
+                counts["settled-by-policy"] += 1
+                continue
+            prior = (decisions.get("__by_url__") or {}).get(norm)
+            if prior:
+                counts["suppressed"] += 1
+                continue
+            rows.append(item)
+            findings.append(item)
+        if rows:
+            per_commit.append({**{k: c[k] for k in ("sha", "date", "subject")}, "rows": rows})
+
+    wanted_country = (getattr(args, "country", None) or "").upper()
+    if wanted_country:
+        per_commit = [{**c, "rows": [r for r in c["rows"] if r["country"] == wanted_country]}
+                      for c in per_commit]
+        per_commit = [c for c in per_commit if c["rows"]]
+        findings = [f for f in findings if f["country"] == wanted_country]
+
+    print(f"mdb: {len(commits)} commit(s) touching sources since {since}\n")
+    for k, n in counts.most_common():
+        print(f"  {k:34s} {n:5d}")
+    print(f"\n  reported                          {len(findings):5d}"
+          + (f"  (country {wanted_country})" if wanted_country else ""))
+    shared = [f for f in findings if f["host_known"]]
+    print(f"  of those on a host we already use  {len(shared):5d}  <- look here first")
+
+    for c in per_commit[:12]:
+        print(f"\n  {c['date']}  {c['subject'][:66]}")
+        for r in c["rows"][:8]:
+            mark = "*" if r["host_known"] else " "
+            where = " / ".join(x for x in (r["country"], r["subdivision"]) if x)
+            print(f"    {mark} {r['data_type']:7s} {(r['provider'] or r['name'])[:34]:36s} "
+                  f"{where[:24]:26s} {r['host'][:34]}")
+        if len(c["rows"]) > 8:
+            print(f"      ... and {len(c['rows']) - 8} more in this commit")
+    if len(per_commit) > 12:
+        print(f"\n  ... and {len(per_commit) - 12} older commit(s) with findings")
+    return {"counts": dict(counts), "findings": findings, "commits": per_commit}
+
+
+def known_hosts(active, historic) -> set:
+    """Hosts Atlas already fetches from, in either an active or a superseded URL."""
+    out = set()
+    for norm in list(active) + list(historic):
+        out.add(urlparse("https://" + norm.lstrip("/")).netloc.lower())
+    out.discard("")
+    return out
+
+
 def source_calitp(key, args) -> dict:
     """California datasets registered with the state's ingest pipeline.
 
@@ -1065,6 +1215,7 @@ SOURCES = {
     "ntd-weblinks": (source_ntd_weblinks, False),
     "expired-calendars": (source_expired_calendars, True),
     "calitp": (source_calitp, False),
+    "mdb": (source_mdb, False),
 }
 
 
@@ -1082,6 +1233,11 @@ def main() -> int:
     ap.add_argument("--resolve", action="store_true",
                     help="for discovery sources, follow each unmatched URL to see whether it is a "
                     "wrapper around one already registered. One request per finding, so off by default")
+    ap.add_argument("--mdb-repo", help="local checkout of MobilityData/mobility-database-catalogs "
+                    f"(default {MDB_REPO})")
+    ap.add_argument("--since", help="how far back to walk that catalog's history (default 180 days ago)")
+    ap.add_argument("--country", help="restrict mdb findings to one ISO country code. Their realtime "
+                    "records often carry no location, so this filters those out too")
     ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
     args = ap.parse_args()
 
