@@ -15,9 +15,9 @@ Every crosswalk here is the same shape, because every one of them is a tag:
 some external id recorded on an operator or a feed. Adding a registry is one
 row in REGISTRIES, not new code.
 
-Multi-valued tags are split. An operator that absorbed several NTD reporters
-carries them comma-separated, and each becomes its own row -- a crosswalk whose
-key holds two ids joined by a comma cannot be joined against anything.
+Multi-valued tags are split on either a comma or a semicolon, and each id
+becomes its own row -- a crosswalk whose key holds two ids joined by a separator
+cannot be joined against anything.
 
 Two kinds of collision are reported rather than hidden, because both are real
 and neither is visible from a single file:
@@ -102,10 +102,7 @@ def rows_for(db, registry: dict) -> list[dict]:
         raw = tags.get(registry["tag"])
         if not raw:
             continue
-        for part in str(raw).split(","):
-            ext = part.strip()
-            if not ext:
-                continue
+        for ext in atlas_registry.split_ids(raw):
             if registry["tag"] == "us_ntd_id":
                 ext = atlas_registry.normalise_ntd_id(ext)
             if registry["entity"] == "operator":

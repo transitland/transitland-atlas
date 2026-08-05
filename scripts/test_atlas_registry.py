@@ -85,3 +85,21 @@ def test_file_of_feed_maps_to_its_dmfr(feeds_dir):
     """Secrets match on DMFR filename as well as feed_id."""
     db = atlas_registry.load(feeds_dir)
     assert atlas_registry.file_of_feed(db)["f-two"] == "other.com.dmfr.json"
+
+
+def test_split_ids_accepts_either_separator():
+    """A tag holding several external ids may use commas or semicolons.
+
+    No external id we carry contains either character, so accepting both means a
+    tag written with the wrong one still joins instead of silently matching
+    nothing.
+    """
+    assert atlas_registry.split_ids("90270,90271") == ["90270", "90271"]
+    assert atlas_registry.split_ids("90270;90271") == ["90270", "90271"]
+    assert atlas_registry.split_ids("90270; 90271 , 90272") == ["90270", "90271", "90272"]
+    assert atlas_registry.split_ids("90270") == ["90270"]
+    # trailing separators and empty segments are dropped, not returned blank
+    assert atlas_registry.split_ids("90270,,;90271;") == ["90270", "90271"]
+    assert atlas_registry.split_ids("") == []
+    assert atlas_registry.split_ids(None) == []
+    assert atlas_registry.split_ids("   ") == []

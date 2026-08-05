@@ -808,10 +808,8 @@ def source_calitp(key, args) -> dict:
         org_names.setdefault(org, (row.get("organization_name") or "").strip())
         for col in ("schedule_source_record_id", "service_alerts_source_record_id",
                     "vehicle_positions_source_record_id", "trip_updates_source_record_id"):
-            for rid_ in (row.get(col) or "").split(","):
-                rid_ = rid_.strip()
-                if rid_:
-                    dataset_orgs.setdefault(rid_, set()).add(org)
+            for rid_ in atlas_registry.split_ids(row.get(col)):
+                dataset_orgs.setdefault(rid_, set()).add(org)
 
     findings, suppressed, by_policy, counts = [], [], [], collections.Counter()
     for row in rows:

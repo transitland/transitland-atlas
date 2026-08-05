@@ -133,6 +133,28 @@ def normalise_ntd_id(value: str) -> str:
     return value.zfill(NTD_WIDTH) if value.isdigit() else value
 
 
+def split_ids(value) -> list[str]:
+    """Split a tag holding several external ids into one id each.
+
+    An operator that absorbed several NTD reporters, or a realtime feed standing
+    for three of another registry's per-endpoint records, carries them in one
+    string. Both a comma and a semicolon separate them: no external id we carry
+    contains either character, so accepting both costs nothing and means a tag
+    written with the wrong one still joins instead of silently matching nothing.
+
+    Empty segments are dropped, so trailing separators and stray whitespace are
+    harmless.
+    """
+    if not value:
+        return []
+    out = []
+    for part in str(value).replace(";", ",").split(","):
+        part = part.strip()
+        if part:
+            out.append(part)
+    return out
+
+
 def _url_index(db, historic: bool) -> dict[str, set[str]]:
     """Normalised URL -> feeds, over either the active or the superseded fields.
 
@@ -172,8 +194,8 @@ def historic_urls(db) -> dict[str, set[str]]:
 def operators_by_ntd_id(db) -> dict[str, set[str]]:
     """Normalised `us_ntd_id` -> operators carrying it.
 
-    The tag holds a comma-separated list on operators that absorbed several
-    reporters, so each id is indexed separately.
+    The tag holds a separated list on operators that absorbed several
+    reporters, so each id is indexed separately. See `split_ids`.
     """
     out: dict[str, set[str]] = {}
     for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
@@ -185,7 +207,7 @@ def operators_by_ntd_id(db) -> dict[str, set[str]]:
         raw = tags.get("us_ntd_id") if isinstance(tags, dict) else None
         if not raw:
             continue
-        for part in str(raw).split(","):
+        for part in split_ids(raw):
             key = normalise_ntd_id(part)
             if key:
                 out.setdefault(key, set()).add(row["onestop_id"])
@@ -195,8 +217,8 @@ def operators_by_ntd_id(db) -> dict[str, set[str]]:
 def feeds_by_calitp_dataset(db) -> dict[str, set[str]]:
     """Cal-ITP dataset record id -> feeds carrying it.
 
-    The tag holds a comma-separated list on realtime feeds, because that source
-    treats each endpoint as its own dataset while a feed here holds all three.
+    The tag holds a separated list on realtime feeds, because that source treats
+    each endpoint as its own dataset while a feed here holds all three.
     """
     out: dict[str, set[str]] = {}
     for row in db.execute("SELECT onestop_id, feed_tags FROM current_feeds WHERE feed_tags IS NOT NULL"):
@@ -205,12 +227,8 @@ def feeds_by_calitp_dataset(db) -> dict[str, set[str]]:
         except (TypeError, ValueError):
             continue
         raw = tags.get("calitp_dataset_id") if isinstance(tags, dict) else None
-        if not raw:
-            continue
-        for part in str(raw).split(","):
-            part = part.strip()
-            if part:
-                out.setdefault(part, set()).add(row["onestop_id"])
+        for part in split_ids(raw):
+            out.setdefault(part, set()).add(row["onestop_id"])
     return out
 
 
@@ -224,12 +242,8 @@ def operators_by_calitp_org(db) -> dict[str, set[str]]:
         except (TypeError, ValueError):
             continue
         raw = tags.get("calitp_organization_id") if isinstance(tags, dict) else None
-        if not raw:
-            continue
-        for part in str(raw).split(","):
-            part = part.strip()
-            if part:
-                out.setdefault(part, set()).add(row["onestop_id"])
+        for part in split_ids(raw):
+            out.setdefault(part, set()).add(row["onestop_id"])
     return out
 
 
@@ -248,10 +262,7 @@ def malformed_ntd_ids(db) -> list[tuple[str, str]]:
         except (TypeError, ValueError):
             continue
         raw = tags.get("us_ntd_id") if isinstance(tags, dict) else None
-        if not raw:
-            continue
-        for part in str(raw).split(","):
-            part = part.strip()
+        for part in split_ids(raw):
             if part.isdigit() and len(part) != NTD_WIDTH:
                 bad.append((row["onestop_id"], str(raw)))
                 break
