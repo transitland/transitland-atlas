@@ -794,10 +794,14 @@ def source_mdb(key, args) -> dict:
         return {"findings": [], "counts": {}}
 
     since = getattr(args, "since", None) or "180 days ago"
-    log = subprocess.run(["git", "-C", repo, "log", f"--since={since}",
-                          "--format=%h\x1f%ad\x1f%s", "--date=short",
-                          "--name-only", "--", "catalogs/sources"],
-                         capture_output=True, text=True)
+    until = getattr(args, "until", None)
+    # A window rather than a tail, so a long backlog can be worked in slices
+    # without re-reading what an earlier slice already covered.
+    cmd = ["git", "-C", repo, "log", f"--since={since}"]
+    if until:
+        cmd.append(f"--until={until}")
+    cmd += ["--format=%h\x1f%ad\x1f%s", "--date=short", "--name-only", "--", "catalogs/sources"]
+    log = subprocess.run(cmd, capture_output=True, text=True)
     if log.returncode != 0:
         print(f"mdb: git log failed: {log.stderr.strip()[:200]}")
         return {"findings": [], "counts": {}}
@@ -880,7 +884,8 @@ def source_mdb(key, args) -> dict:
         per_commit = [c for c in per_commit if c["rows"]]
         findings = [f for f in findings if f["country"] == wanted_country]
 
-    print(f"mdb: {len(commits)} commit(s) touching sources since {since}\n")
+    window = f"since {since}" + (f" until {until}" if until else "")
+    print(f"mdb: {len(commits)} commit(s) touching sources {window}\n")
     for k, n in counts.most_common():
         print(f"  {k:34s} {n:5d}")
     print(f"\n  reported                          {len(findings):5d}"
@@ -1280,6 +1285,8 @@ def main() -> int:
     ap.add_argument("--mdb-repo", help="local checkout of MobilityData/mobility-database-catalogs "
                     f"(default {MDB_REPO})")
     ap.add_argument("--since", help="how far back to walk that catalog's history (default 180 days ago)")
+    ap.add_argument("--until", help="with --since, walk a window rather than a tail, so a long "
+                    "backlog can be worked in slices")
     ap.add_argument("--country", help="restrict mdb findings to one ISO country code. Their realtime "
                     "records often carry no location, so this filters those out too")
     ap.add_argument("--resolve-limit", type=int, default=20,
