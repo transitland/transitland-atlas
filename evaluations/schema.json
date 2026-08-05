@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/transitland/transitland-atlas/blob/main/evaluations/schema.json",
   "title": "Transitland Atlas feed source evaluation",
-  "description": "EXPERIMENTAL. Records why a feed URL was not registered in Atlas. One file per subject, named for its Onestop ID: an operator where one exists, otherwise a feed, since most feeds rely on generated operators. Holds current state, not an append-only log: git history is the log. Deliberately small. An earlier version carried a relationship vocabulary, a scope mechanism, per-candidate provenance and recheck scheduling; measured against 226 recorded candidates none of them changed any outcome, and each had to be explained and maintained, so they were removed.",
+  "description": "EXPERIMENTAL. Records why a feed URL was not registered in Atlas, where the reason is expensive to rediscover. One file per subject, named for its Onestop ID: an operator where one exists, otherwise a feed, since most feeds rely on generated operators. Holds current state, not an append-only log: git history is the log. Deliberately small, and getting smaller. Earlier versions carried a relationship vocabulary, a scope mechanism, per-candidate provenance, recheck scheduling, watch pages and a `deferred` decision; measured against real use none of them changed an outcome, and each had to be explained and maintained, so they were removed. A standing position about how Transitland covers a region belongs in code, not here.",
   "type": "object",
   "required": [],
   "additionalProperties": false,
@@ -60,10 +60,9 @@
           "format": "uri"
         },
         "decision": {
-          "description": "not_used = works, but we chose something else. deferred = not now, expect to revisit. unavailable = cannot be used for reasons outside our control. All three suppress a discovery source identically; the distinction is for a human skimming the file. There is deliberately no `used` value, because the registry is what says a URL is in use.",
+          "description": "not_used = works, but we chose something else. unavailable = cannot be used for reasons outside our control. Both suppress a discovery source identically; the distinction is for a human skimming the file. There is deliberately no `used`, because the registry is what says a URL is in use, and no `deferred`: a finding that amounts to \"re-probe this later\" is cheaper to re-measure than to store, and 46 of them settled nothing a re-run would not have.",
           "enum": [
             "not_used",
-            "deferred",
             "unavailable"
           ]
         },

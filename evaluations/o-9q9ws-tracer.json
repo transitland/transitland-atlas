@@ -10,33 +10,6 @@
       ],
       "decided_on": "2026-07-31",
       "rationale": "Carries the same 2 routes and 7 trips as the registered Trillium copy but shares no trip IDs with it, so the two are the same service published through different ID spaces rather than different coverage. No reason to move off the registered copy."
-    },
-    {
-      "url": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/position_updates.pb",
-      "decision": "deferred",
-      "relates_to": [
-        "f-tracy~tracer"
-      ],
-      "decided_on": "2026-08-03",
-      "rationale": "Endpoints return valid protocol buffers carrying no entities at every probe so far, all of them in the evening. The static they are keyed to is the registered feed and its calendar is active, so this is worth a daytime recheck rather than a decision now."
-    },
-    {
-      "url": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/trip_updates.pb",
-      "decision": "deferred",
-      "relates_to": [
-        "f-tracy~tracer"
-      ],
-      "decided_on": "2026-08-03",
-      "rationale": "Endpoints return valid protocol buffers carrying no entities at every probe so far, all of them in the evening. The static they are keyed to is the registered feed and its calendar is active, so this is worth a daytime recheck rather than a decision now."
-    },
-    {
-      "url": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/alerts.pb",
-      "decision": "deferred",
-      "relates_to": [
-        "f-tracy~tracer"
-      ],
-      "decided_on": "2026-08-03",
-      "rationale": "Endpoints return valid protocol buffers carrying no entities at every probe so far, all of them in the evening. The static they are keyed to is the registered feed and its calendar is active, so this is worth a daytime recheck rather than a decision now."
     }
   ]
 }

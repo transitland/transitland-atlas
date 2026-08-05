@@ -36,7 +36,7 @@ Key on the **operator** where one exists. Where the feed has no operator record,
 
 A file holds one kind of record: **`candidates`**, URLs that have been evaluated and not registered. Each carries `url`, `decision`, `decided_on` and `rationale`, optionally `relates_to` and `references`. That is the whole format.
 
-`decision` is `not_used`, `deferred` or `unavailable`. All three suppress a discovery source identically — the distinction is for a human skimming the file. There is no `used`: the registry is what says a URL is in use, and a file claiming otherwise would just be a second source of truth to keep in sync.
+`decision` is `not_used` or `unavailable`. Both suppress a discovery source identically — the distinction is for a human skimming the file. There is no `used`: the registry is what says a URL is in use, and a file claiming otherwise would be a second source of truth to keep in sync. There is no `deferred` either: a finding that amounts to "re-probe this later" is cheaper to re-measure than to store. 46 such records were removed, all of them variations on "the endpoint was quiet when I looked", and none settled anything a re-run would not have.
 
 ## Record the decision, not the investigation
 
@@ -68,7 +68,9 @@ Operator rather than DMFR filename, because:
 
 `decided_on` is required. Every finding here rests on something that can change — a calendar that expires, a vendor contract, a URL that moves.
 
-There is deliberately no scheduled recheck. An earlier version carried `recheck_after`, and in practice it was attached almost entirely to findings of the form "the endpoint was quiet when probed", which is cheaper to re-measure than to trust and produced a nag list nobody acted on. If a decision needs revisiting on a date, that belongs to whatever re-probes; a file in git is the wrong place to schedule work.
+There is deliberately no scheduled recheck, and no way to record "not now". Both `recheck_after` and the `deferred` decision existed and were removed: between them they held one idea, that something should be looked at again, which a file in git is the wrong place to express. If a finding needs revisiting, let the source re-report it.
+
+**What that leaves is the test for whether an entry belongs here at all: would someone rediscovering this spend real effort?** A dead host, two builds that differ structurally, an agency that asked for one feed over another — yes. Anything a re-probe answers in seconds — no.
 
 ## Validation
 
