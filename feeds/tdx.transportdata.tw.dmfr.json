@@ -2,78 +2,22 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-bus~new~taipei~tdx~tw",
+      "id": "f-tdx~tw",
+      "supersedes_ids": [
+        "f-bus~new~taipei~tdx~tw",
+        "f-bus~taipei~tdx~tw",
+        "f-thsr~tdx~tw",
+        "f-tra~tdx~tw",
+        "f-trtc~tdx~tw"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/NewTaipei/gtfs"
-        ]
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "v3 API confirmed 2026-08-07 to still have no bus endpoint: this path returns HTTP 404. The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
-      }
-    },
-    {
-      "id": "f-bus~taipei~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/Taipei/gtfs"
-        ]
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "v3 API confirmed 2026-08-07 to still have no bus endpoint: this path returns HTTP 404. The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
-      }
-    },
-    {
-      "id": "f-thsr~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/THSR/gtfs"
-        ]
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "v3 API confirmed 2026-08-07 to still serve only TRTC: this endpoint returns HTTP 400 with the message 目前只提供北捷(TRTC)的GTFS資料, \"currently only TRTC GTFS data is provided\". The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
-      }
-    },
-    {
-      "id": "f-tra~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/TRA/gtfs"
-        ]
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "v3 API confirmed 2026-08-07 to still serve only TRTC: this endpoint returns HTTP 400 with the message 目前只提供北捷(TRTC)的GTFS資料, \"currently only TRTC GTFS data is provided\". The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
-      }
-    },
-    {
-      "id": "f-trtc~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
+          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/NewTaipei/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/Taipei/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/THSR/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/TRA/gtfs",
           "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC"
         ]
       },
@@ -83,7 +27,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "Taipei Metro (MRT). The v3 endpoint https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC works and is the live source, but authorization is a client_credentials token exchange rather than a fixed credential, so it cannot be registered as static_current: the platform fetcher has no token and returned 401 nightly. A custom script fetches it and uploads feed versions directly, skipping the upload when the zip sha1 already exists, so a run that produces no new version means TDX has not republished rather than that the fetch failed."
+        "notes": "Taiwan's national GTFS from the MOTC TDX platform: 403 agencies across every mode, including Taiwan Railways, High Speed Rail, all six metro systems, city and intercity buses, ferries and airlines. Supersedes the five per-system records, whose per-system endpoints TDX largely never built: as of 2026-08-07 Rail/TRA and Rail/THSR return HTTP 400 with 目前只提供北捷(TRTC)的GTFS資料 (\"currently only TRTC GTFS data is provided\") and the bus paths return 404. The nationwide bundle is the undocumented bare path with no system suffix. Authorization is a client_credentials token exchange rather than a fixed credential, so this is not registrable as a fetchable URL; a custom script fetches it, removes the two GTFS-Fares v2 tables (fare_products and fare_leg_rules, 28.5M rows each and 6.5 GB of the 7.67 GB archive, which cannot be validated or imported) and uploads feed versions directly. GTFS-Fares v1 is left intact."
       }
     }
   ]
