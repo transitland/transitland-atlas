@@ -15,7 +15,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "v2 API deprecated; v3 API endpoints for bus feeds not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
+        "notes": "v3 API confirmed 2026-08-07 to still have no bus endpoint: this path returns HTTP 404. The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
       }
     },
     {
@@ -32,7 +32,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "v2 API deprecated; v3 API endpoints for bus feeds not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
+        "notes": "v3 API confirmed 2026-08-07 to still have no bus endpoint: this path returns HTTP 404. The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
       }
     },
     {
@@ -49,7 +49,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "v2 API deprecated; v3 API endpoint not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
+        "notes": "v3 API confirmed 2026-08-07 to still serve only TRTC: this endpoint returns HTTP 400 with the message 目前只提供北捷(TRTC)的GTFS資料, \"currently only TRTC GTFS data is provided\". The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
       }
     },
     {
@@ -66,14 +66,16 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "v2 API deprecated; v3 API endpoint not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
+        "notes": "v3 API confirmed 2026-08-07 to still serve only TRTC: this endpoint returns HTTP 400 with the message 目前只提供北捷(TRTC)的GTFS資料, \"currently only TRTC GTFS data is provided\". The v2 endpoint above is retired. Authorization is a client_credentials token exchange rather than a fixed credential, so this cannot be registered as a fetchable URL; Transitland uses a custom script."
       }
     },
     {
       "id": "f-trtc~tdx~tw",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC"
+        "static_historic": [
+          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC"
+        ]
       },
       "license": {
         "url": "https://tdx.transportdata.tw/term",
@@ -81,7 +83,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "Taipei Metro (MRT). Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
+        "notes": "Taipei Metro (MRT). The v3 endpoint https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC works and is the live source, but authorization is a client_credentials token exchange rather than a fixed credential, so it cannot be registered as static_current: the platform fetcher has no token and returned 401 nightly. A custom script fetches it and uploads feed versions directly, skipping the upload when the zip sha1 already exists, so a run that produces no new version means TDX has not republished rather than that the fetch failed."
       }
     }
   ]
