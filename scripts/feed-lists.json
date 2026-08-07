@@ -1,0 +1,51 @@
+{
+  "$comment": "Published directories that list many GTFS feeds, read by scan-feed-sources.py --source feed-lists. Distinct from watch-pages.json, which watches one page per feed for a URL that moves; these are third-party catalogues where the finding is a feed appearing or disappearing. Carried over from transitland-gtfs-scraper/watch/watch_feed_lists.py, which held these URLs but was never implemented. The cal-itp agencies.yml entry from that list is dropped: airflow/data/ no longer exists in cal-itp/data-infra, and California is covered by --source calitp. Add a source by appending here; the first run records its feeds without reporting a change.",
+  "sources": [
+    {
+      "name": "MnDOT feed list",
+      "url": "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/list",
+      "note": "Cambridge Systematics hub for Minnesota DOT. Identifies feeds by id, not URL, so json-values rather than urls.",
+      "extract": "json-values"
+    },
+    {
+      "name": "GMV Syncromatics directory",
+      "url": "https://gtfs-directory.syncromatics.com/api",
+      "note": "Vendor-published list of every Syncromatics tenant, static and realtime. JSON."
+    },
+    {
+      "name": "Iowa DOT",
+      "url": "https://iowa-gtfs.com/",
+      "note": "Trillium-operated statewide site."
+    },
+    {
+      "name": "Colorado DOT",
+      "url": "https://colorado-gtfs.trilliumtransit.com/",
+      "note": "Trillium-operated statewide site."
+    },
+    {
+      "name": "Virginia DRPT",
+      "url": "https://virginia-gtfs.com/",
+      "note": "Treat with suspicion: the domain has shown signs of being re-registered and filled with generated content rather than serving DRPT data. Verify any feed found here against the agency before registering it."
+    },
+    {
+      "name": "511NY Data Tools",
+      "url": "https://s3.amazonaws.com/datatools-511ny/public/index.html",
+      "note": "Arcadis Data Tools deployment for New York State."
+    },
+    {
+      "name": "MassDOT / MBTA developer list",
+      "url": "https://www.mass.gov/lists/mbta-and-transit-data-for-developers",
+      "note": "State page listing Massachusetts feeds beyond the MBTA's own."
+    },
+    {
+      "name": "Florida FTIS",
+      "url": "https://ftis.org/Posts.aspx",
+      "note": "Florida Transit Information System postings."
+    },
+    {
+      "name": "National Park Service",
+      "url": "https://www.nps.gov/common/uploads/sortable_dataset/developer/7A3D14E9-D971-C526-7A2BDBD1DE0CE1A7/nri-NPSGTFSFeeds04.csv",
+      "note": "CSV backing https://www.nps.gov/subjects/developer/gtfs.htm. The page appends a cache-busting query string; it is dropped here so the URL stays stable."
+    }
+  ]
+}

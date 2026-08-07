@@ -22,6 +22,11 @@ Sources available, all read-only:
   watch-pages     MONITOR. The public page on which an agency publishes its own
                   feed URL, configured in watch-pages.json. One request per
                   page, no following of links.
+  feed-lists      DISCOVERY. Third-party catalogues that list many feeds at
+                  once, configured in feed-lists.json: state DOT directories,
+                  vendor tenant lists, the NPS dataset. Reports what each has
+                  gained or lost since the last run rather than its whole
+                  contents, which for one vendor directory alone is 244 URLs.
   expired-calendars MONITOR. Every static feed serving a calendar that has run
                   out, tagged or not. Catches registrations that fetch fine
                   forever while the publisher has moved on.
@@ -449,6 +454,132 @@ def source_watch_pages(key, args) -> dict:
             print(f"      {link}")
         results.append(row)
     return {"pages": results}
+
+
+# --- feed-lists ------------------------------------------------------------
+
+FEED_LIST_SNAPSHOT = "feed-list-urls.json"
+
+# Any absolute URL, then filtered to ones plausibly pointing at a feed. One pass
+# over the raw text, so HTML, CSV and YAML all work without a per-format parser;
+# these pages have nothing else in common.
+FEED_LIST_URL_RE = re.compile(r"""https?://[^\s"'<>)\\]+""")
+FEED_LIST_HINT = re.compile(r"\.zip|gtfs|/feed|download", re.I)
+FEED_LIST_NOT_A_FEED = re.compile(r"\.(png|jpg|jpeg|gif|svg|css|js|ico|pdf)(\?|$)", re.I)
+
+
+def _feed_list_urls(text: str) -> list:
+    found = set()
+    for raw in FEED_LIST_URL_RE.findall(text):
+        u = raw.rstrip(".,;:)]}\"'")
+        if FEED_LIST_HINT.search(u) and not FEED_LIST_NOT_A_FEED.search(u):
+            found.add(u)
+    return sorted(found)
+
+
+def _feed_list_json_values(text: str) -> list:
+    """Every leaf string in a JSON document.
+
+    For catalogues that identify feeds by id rather than by URL. MnDOT's hub
+    returns `{"feed_id": "browncounty-mn-us", ...}` and contains no absolute
+    URLs at all, so URL extraction sees an empty page and would report nothing
+    however much the list changed.
+    """
+    def walk(node):
+        if isinstance(node, str):
+            yield node
+        elif isinstance(node, dict):
+            for v in node.values():
+                yield from walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                yield from walk(v)
+
+    return sorted(set(walk(json.loads(text))))
+
+
+FEED_LIST_EXTRACTORS = {"urls": _feed_list_urls, "json-values": _feed_list_json_values}
+
+
+def source_feed_lists(key, args) -> dict:
+    """Third-party catalogues that list many feeds at once.
+
+    Reports the delta against a committed snapshot rather than the current
+    contents. These catalogues are large: one vendor directory alone carries 244
+    URLs, so a run that printed everything would bury the one line that matters.
+    Re-running after a change is what records it; the snapshot is committed so
+    the diff is reviewable in a PR.
+    """
+    here = os.path.dirname(os.path.abspath(__file__))
+    sources = json.load(open(os.path.join(here, "feed-lists.json"))).get("sources") or []
+    snap_path = os.path.join(here, FEED_LIST_SNAPSHOT)
+    previous = json.load(open(snap_path)) if os.path.exists(snap_path) else {}
+
+    session = requests.Session()
+    # Several of these sites refuse a default requests User-Agent outright.
+    session.headers["User-Agent"] = (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+    )
+
+    print(f"feed-lists: {len(sources)} catalogue(s)\n")
+    snapshot, results = {}, []
+    for source in sources:
+        name, url = source["name"], source["url"]
+        mode = source.get("extract", "urls")
+        was = previous.get(name, {})
+        row = {"name": name, "page": url, "note": source.get("note")}
+
+        try:
+            r = session.get(url, timeout=60)
+            if r.status_code != 200:
+                raise RuntimeError(f"HTTP {r.status_code}")
+            items = FEED_LIST_EXTRACTORS[mode](r.text)
+        except Exception as e:
+            detail = str(e) if isinstance(e, RuntimeError) else f"{type(e).__name__}: {e}"
+            failures = was.get("failures", 0) + 1
+            # Carry the last known set forward, so one bad day does not read as
+            # every feed being removed and then re-added on the next run.
+            snapshot[name] = {"items": was.get("items", []), "failures": failures}
+            row["error"], row["consecutive_failures"] = detail, failures
+            results.append(row)
+            print(f"  {name}  UNREADABLE  {detail} (run {failures})")
+            continue
+
+        snapshot[name] = {"items": items, "failures": 0}
+        first_run = name not in previous
+        before, after = set(was.get("items", [])), set(items)
+        # A first run has nothing to compare against, so report no delta rather
+        # than presenting an entire catalogue as newly added.
+        added = [] if first_run else sorted(after - before)
+        removed = [] if first_run else sorted(before - after)
+        row.update({"count": len(items), "added": added, "removed": removed,
+                    "first_run": first_run, "recovered": bool(was.get("failures"))})
+        results.append(row)
+
+        if first_run:
+            print(f"  {name}  {len(items)} recorded (first run, nothing to compare)")
+        elif added or removed:
+            print(f"  {name}  +{len(added)} -{len(removed)}")
+            for u in added[:10]:
+                print(f"      +  {u}")
+            for u in removed[:10]:
+                print(f"      -  {u}")
+            if len(added) + len(removed) > 20:
+                print(f"      ...and {len(added) + len(removed) - 20} more")
+        else:
+            print(f"  {name}  {len(items)}, unchanged")
+
+    if args.write_snapshot:
+        with open(snap_path, "w") as fh:
+            json.dump(snapshot, fh, indent=2, sort_keys=True)
+            fh.write("\n")
+        print(f"\nsnapshot written to scripts/{FEED_LIST_SNAPSHOT}")
+    else:
+        changed = sum(1 for r in results if r.get("added") or r.get("removed"))
+        print(f"\n{changed} catalogue(s) changed; re-run with --write-snapshot to record")
+
+    return {"catalogues": results}
 
 
 LIGHT_FIELDS = """
@@ -1261,6 +1392,7 @@ SOURCES = {
     "fetch-errors": (source_fetch_errors, True),
     "unstable-urls": (source_unstable_urls, True),
     "watch-pages": (source_watch_pages, False),
+    "feed-lists": (source_feed_lists, False),
     "ntd-weblinks": (source_ntd_weblinks, False),
     "expired-calendars": (source_expired_calendars, True),
     "calitp": (source_calitp, False),
@@ -1291,6 +1423,9 @@ def main() -> int:
                     "records often carry no location, so this filters those out too")
     ap.add_argument("--resolve-limit", type=int, default=20,
                     help="how many candidates --resolve may download and checksum (default 20)")
+    ap.add_argument("--write-snapshot", action="store_true",
+                    help="feed-lists only: record what was seen, so the next run reports the delta. "
+                         "Off by default, so a scan never silently marks a change as accounted for")
     ap.add_argument("--out", help="directory for the report and a copy of each page consulted")
     args = ap.parse_args()
 
