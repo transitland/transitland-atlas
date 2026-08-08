@@ -20,6 +20,11 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      # atlas_registry.load() builds its index by shelling out to `transitland
+      # sync`, so the registry tests need the binary even though everything
+      # else in the suite is pure.
+      - name: Install transitland-lib
+        run: scripts/install-transitland-lib.sh
       # Run from the repository root so uv resolves pyproject.toml: the tests
       # import scan-feed-sources, which imports requests, and that dependency is
       # declared there rather than in the test files.
