@@ -53,6 +53,7 @@
           "website": "https://www.vvta.org",
           "tags": {
             "calitp_organization_id": "recJcXMNC5MUm2uDe",
+            "notes": "The agency states TransLoc serves its official static, which is why that is registered rather than the AVL vendor's own build at ontime.vvta.org. The two are near-identical; what differs is trip ID formatting, the vendor padding to five characters, so the vendor realtime resolves 151 of 180 trips against the registered feed and 25 of the 29 misses recover if a leading zero is stripped. Switching the static would fix resolution but override a stated agency preference; the padding is the agency's to correct.",
             "twitter_general": "VVTransit",
             "us_ntd_id": "90148",
             "wikidata_id": "Q7926418"
@@ -438,6 +439,9 @@
           "https://www.fairfaxva.gov/home/showpublisheddocument/19191/638017594116830000"
         ]
       },
+      "tags": {
+        "notes": "The city publishes its own copy at fairfaxva.gov with the same four routes, 200 stops, 189 trips and calendar. Directory checksums differ only because the vendor rebuilds the archive per request. Earlier city paths are already in this feed's history, so the copy resurfaces whenever the site is reorganised."
+      },
       "operators": [
         {
           "onestop_id": "o-dqcj1-fairfaxcue",
@@ -620,7 +624,8 @@
         "static_current": "https://laxflyaway.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
       },
       "tags": {
-        "calitp_dataset_id": "recGnwEunRxjF50Fb"
+        "calitp_dataset_id": "recGnwEunRxjF50Fb",
+        "notes": "laxtransportation.ridesystems.net serves a separate vehicle-position endpoint for the wider LAX ground transportation system, carrying routes TL-3, TL-4 and TL-7, which are absent here. This feed covers TL-1, TL-2 and TL-6. Different routes rather than a duplicate producer."
       },
       "operators": [
         {
