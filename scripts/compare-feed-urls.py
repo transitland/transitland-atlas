@@ -10,52 +10,17 @@ Usage:
 import os
 import sys
 import json
-import subprocess
 import concurrent.futures
 import urllib.request
 import urllib.error
 from datetime import date
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import feed_probe
 from rich.console import Console
 from rich.table import Table
 from rich.text import Text
 from rich.panel import Panel
-
-
-def dir_sha1_of(url: str) -> str | None:
-    """Content checksum, independent of how the archive was built."""
-    try:
-        proc = subprocess.run(["transitland", "checksum", "--raw-dir-sha1", url],
-                              capture_output=True, text=True, timeout=300)
-        return proc.stdout.strip() if proc.returncode == 0 else None
-    except (subprocess.TimeoutExpired, FileNotFoundError):
-        return None
-
-
-def validate_feed(url: str) -> dict:
-    try:
-        result = subprocess.run(
-            [
-                "transitland", "validate",
-                "-o", "-",
-                "--include-entities",
-                "--include-service-levels",
-                url,
-            ],
-            capture_output=True,
-            text=True,
-            timeout=180,
-        )
-        if result.returncode != 0 and not result.stdout.strip():
-            return {"_error": result.stderr.strip() or "Command failed", "_url": url}
-        data = json.loads(result.stdout)
-        data["_url"] = url
-        return data
-    except subprocess.TimeoutExpired:
-        return {"_error": "Timeout after 180s", "_url": url}
-    except json.JSONDecodeError as e:
-        return {"_error": f"Invalid JSON: {e}", "_url": url}
-    except FileNotFoundError:
-        return {"_error": "'transitland' command not found in PATH", "_url": url}
 
 
 ROUTE_TYPE_NAMES = {
@@ -247,14 +212,14 @@ def main():
     console.print("[dim]Validating feeds in parallel (this may take a minute)...[/dim]\n")
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=n * 2) as executor:
-        val_futs = [executor.submit(validate_feed, url) for url in urls]
+        val_futs = [executor.submit(feed_probe.validate_feed, url) for url in urls]
         results = [f.result() for f in val_futs]
         sha1s = [(r.get("details") or {}).get("sha1", "N/A") for r in results]
         arc_futs = [executor.submit(lookup_feed_version, sha1, api_key) for sha1 in sha1s]
         # The zip SHA1 above is the archive's primary key, and fragile: a server
         # that rebuilds the archive per request changes it while the data stays
         # put. The directory SHA1 is what actually answers "same feed?".
-        dir_futs = [executor.submit(dir_sha1_of, url) for url in urls]
+        dir_futs = [executor.submit(feed_probe.dir_sha1, url) for url in urls]
         arc_results = [f.result() for f in arc_futs]
         dir_sha1s = [f.result() for f in dir_futs]
 

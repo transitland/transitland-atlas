@@ -103,3 +103,59 @@ def test_split_ids_accepts_either_separator():
     assert atlas_registry.split_ids("") == []
     assert atlas_registry.split_ids(None) == []
     assert atlas_registry.split_ids("   ") == []
+
+
+# --- normalise_url ---------------------------------------------------------
+# Every match decision in every discovery source runs through this, so the
+# collapses it makes and the ones it refuses are both worth pinning.
+
+@pytest.mark.parametrize("a,b", [
+    ("https://example.com/a.zip", "http://example.com/a.zip"),          # scheme
+    ("https://example.com/a.zip", "https://www.example.com/a.zip"),      # www.
+    ("https://example.com/a/", "https://example.com/a"),                 # trailing slash
+    ("https://EXAMPLE.com/A.zip", "https://example.com/a.zip"),          # host and path case
+    ("  https://example.com/a.zip  ", "https://example.com/a.zip"),      # surrounding space
+    ("example.com/a.zip", "https://example.com/a.zip"),                  # missing scheme
+])
+def test_normalise_url_collapses_differences_that_do_not_change_the_file(a, b):
+    assert atlas_registry.normalise_url(a) == atlas_registry.normalise_url(b)
+
+
+@pytest.mark.parametrize("a,b", [
+    # A trailing dot is a different path, and a real submission once differed from
+    # the registered URL by exactly this. Guessing here would merge two URLs that
+    # a human needs to see separately.
+    ("https://example.com/a.zip.", "https://example.com/a.zip"),
+    ("https://example.com/a.zip?v=1", "https://example.com/a.zip"),      # query is significant
+    ("https://example.com/a.zip", "https://example.com/b.zip"),
+    ("https://example.com/a.zip", "https://other.com/a.zip"),
+    # www. is stripped only as a prefix, never mid-host
+    ("https://www.example.com/a", "https://example.www.com/a"),
+])
+def test_normalise_url_keeps_differences_that_might_matter(a, b):
+    assert atlas_registry.normalise_url(a) != atlas_registry.normalise_url(b)
+
+
+def test_normalise_url_handles_empty_input():
+    assert atlas_registry.normalise_url("") == ""
+    assert atlas_registry.normalise_url(None) == ""
+
+
+# --- normalise_ntd_id ------------------------------------------------------
+
+@pytest.mark.parametrize("raw,expected", [
+    ("1", "00001"),
+    ("90252", "90252"),
+    (" 123 ", "00123"),
+    ("", ""),
+    ("R-12", "R-12"),      # not all digits, so left alone rather than padded
+])
+def test_normalise_ntd_id(raw, expected):
+    assert atlas_registry.normalise_ntd_id(raw) == expected
+
+
+def test_operator_feeds_can_filter_by_spec(feeds_dir):
+    db = atlas_registry.load(feeds_dir)
+    assert atlas_registry.operator_feeds(db, "o-one") == {"f-one", "f-one~rt"}
+    assert atlas_registry.operator_feeds(db, "o-one", spec="gtfs-rt") == {"f-one~rt"}
+    assert atlas_registry.operator_feeds(db, "o-one", spec="gtfs") == {"f-one"}
