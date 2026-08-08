@@ -10,8 +10,8 @@ Sources are of two kinds. **State monitors** describe the current condition of
 feeds already registered: a finding stays valid until someone fixes it, so it
 should not be suppressed. **Discovery sources** propose candidates from outside
 the registry and repeat on every run until a decision is recorded in
-evaluations/, so suppression is what makes them converge. See
-evaluations/README.md.
+the registry, so a finding recurs until the registry changes or a standing
+position in POLICIES settles it.
 
 Sources available, all read-only:
 
@@ -38,7 +38,6 @@ Sources available, all read-only:
                   one record per endpoint where Atlas keeps one feed per agency.
   ntd-weblinks    DISCOVERY. Each US NTD reporter's own declared GTFS URL,
                   checked against the registry by URL and by us_ntd_id.
-                  Suppressed by decisions in evaluations/.
   mdb             DISCOVERY. Recent additions to a local checkout of the
                   Mobility Database catalogs, walked by commit so a pass covers
                   what has changed rather than all 3,400 sources. Reads git and
@@ -49,7 +48,7 @@ Two ideas keep the output usable.
 **Cluster before reporting.** Many feeds failing on one host is usually one
 event, not many problems.
 
-**Standing positions live in POLICIES, not in evaluations/.** How Transitland
+**Standing positions live in POLICIES.** How Transitland
 covers a region is our opinion rather than a finding about one URL, there are
 few of them, and expressing one as recorded URLs meant copying a sentence per
 endpoint and re-opening it whenever one moved. A policy matches on the operators
@@ -90,7 +89,6 @@ import atlas_registry
 import feed_probe
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-EVAL_DIR = os.path.join(ROOT, "evaluations")
 API = "https://transit.land/api/v2/query"
 
 # The NTD GTFS weblinks release, refreshed monthly. The copy under
@@ -406,7 +404,7 @@ def source_unstable_urls(key: str, args) -> dict:
 def source_watch_pages(key, args) -> dict:
     """Pages that publish a feed URL which moves.
 
-    Configured here rather than in evaluations/, because `last_checked` and
+    Configured here in its own file, because `last_checked` and
     `last_seen_url` have to be maintained on a cadence, which is what that
     directory's own rule says disqualifies a field from living in it.
     """
@@ -657,7 +655,7 @@ def source_expired_calendars(key: str, args) -> dict:
 
 # Standing positions on how Transitland covers a region or a publisher. These
 # are ours rather than an agency's or a source's, and there are few of them, so
-# they live in code. Expressing one in evaluations/ meant 132 copies of a single
+# they live in code. Expressing one per-URL meant 132 copies of a single
 # sentence -- 58% of that directory -- and keyed on URLs it re-opened every time
 # one moved. Membership is derived from the registry instead, so a policy tracks
 # the feed's operator list rather than a frozen list of endpoints.
@@ -675,15 +673,37 @@ POLICIES = [
                "anyway at client request, tagged fetched-but-not-imported; realtime is "
                "not, because there is no way to fetch a realtime feed without serving it.",
     },
+    {
+        "name": "single-realtime-producer",
+        # No feeds or url_prefixes: this one is about a shape of finding rather
+        # than a place, so it is applied by the realtime sources when an operator
+        # already has a registered producer. Recorded here so the position is
+        # stated once instead of being rediscovered per endpoint.
+        "why": "Where an operator already has realtime registered from one producer, a "
+               "second producer's endpoints for the same service are duplicate coverage "
+               "rather than a gap. A gtfs-rt feed holds one URL per endpoint type, so "
+               "taking a second producer means replacing the first, which needs a reason "
+               "beyond it existing. Nine separate decisions said exactly this before it "
+               "was written down, across San Joaquin RTD, Tahoe, Metrolink, Big Blue Bus, "
+               "LA Metro and Triton Transit. Reasons that do justify replacing: the "
+               "registered producer's trip IDs stop resolving against the registered "
+               "static, it serves no entities, or the agency states a preference.",
+    },
 ]
 
 
 def load_policies(db) -> list[dict]:
-    """Resolve each policy's feeds to the operators currently associated with them."""
+    """Resolve each policy's feeds to the operators currently associated with them.
+
+    A policy need not name any feeds. Some state a position about a shape of
+    finding rather than about a place, and match nothing here; they are carried
+    so the reasoning is written down once and stays discoverable next to the
+    policies that do match.
+    """
     out = []
     for p in POLICIES:
         ops = set()
-        for fid in p["feeds"]:
+        for fid in p.get("feeds", ()):
             ops |= atlas_registry.operators_of(db, fid)
         out.append({**p, "operators": ops})
     return out
@@ -709,41 +729,10 @@ def policy_for(policies: list[dict], operators, urls=()) -> dict | None:
     return None
 
 
-def load_decisions() -> dict[str, dict[str, dict]]:
-    """Index every recorded candidate by subject, then by normalised URL.
-
-    Subject keys are whichever of operator / feed / us_ntd_id the file carries,
-    so a discovery source can look up a decision by whatever identifier it has.
-    """
-    out: dict[str, dict[str, dict]] = {}
-    for path in sorted(glob.glob(os.path.join(EVAL_DIR, "*.json"))):
-        if os.path.basename(path) == "schema.json":
-            continue
-        try:
-            doc = json.load(open(path))
-        except ValueError:
-            continue
-        subjects = [doc[k] for k in ("operator_onestop_id", "feed_onestop_id",
-                                     "us_ntd_id", "calitp_dataset_id") if doc.get(k)]
-        for cand in doc.get("candidates") or []:
-            if not cand.get("url"):
-                continue
-            key = atlas_registry.normalise_url(cand["url"])
-            for subject in subjects:
-                out.setdefault(subject, {})[key] = cand
-            # Also index by URL alone. Subject-scoped lookup is the better match
-            # and is what a source sharing an identifier with the registry should
-            # use. A source that shares none has no way to reach the subject, so
-            # the URL is all it can offer, and a decision about exactly that URL
-            # is still the relevant one.
-            out.setdefault("__by_url__", {})[atlas_registry.normalise_url(cand["url"])] = cand
-    return out
-
-
 def source_ntd_weblinks(key, args) -> dict:
     """Each NTD reporter's own declared GTFS URL, checked against the registry.
 
-    A discovery source, so recorded decisions suppress findings. Suppression is
+    A discovery source. Findings recur until the registry changes; suppression is
     keyed on the agency and only holds while the declared URL is the one that
     was decided on: across releases 98% of NTD ids persist but only 43% of URLs
     do, so a decision tied to a URL alone would expire more often than not.
@@ -755,7 +744,7 @@ def source_ntd_weblinks(key, args) -> dict:
     active = atlas_registry.active_urls(db)
     historic = atlas_registry.historic_urls(db)
     by_ntd = atlas_registry.operators_by_ntd_id(db)
-    decisions = load_decisions()
+    decisions = {}
 
     session = requests.Session()
     session.headers["User-Agent"] = "transitland-atlas-scan-feed-sources/1.0"
@@ -818,7 +807,6 @@ def source_ntd_weblinks(key, args) -> dict:
     print(f"ntd-weblinks: {len(agencies)} agencies in the release\n")
     for k, n in counts.most_common():
         print(f"  {k:34s} {n:5d}")
-    print(f"\n  suppressed by evaluations/         {len(suppressed):5d}")
     print(f"  reported                          {len(findings):5d}")
 
     for kind in ("declares-a-url-we-superseded", "agency-held-from-a-different-url",
@@ -864,28 +852,6 @@ def source_ntd_weblinks(key, args) -> dict:
                   ("zip" if f.get("looks_like_zip") else "not a zip")
             print(f"      {f['ntd_id']} {f['name'][:28]:30s} {f['resolved_url'][:58]}  {tag}")
 
-    # An evaluation only earns its keep by suppressing something. One whose URL
-    # matches nothing the source declares is inert, and silently so: it may have
-    # been mistyped, or the agency may have moved on. Both are worth surfacing,
-    # because neither is visible from the file itself.
-    # Scoped by subject rather than by recorded provenance: an evaluation keyed
-    # on an NTD id this source publishes is one this source is responsible for,
-    # whatever route it arrived by. That also survived dropping the per-candidate
-    # provenance field, which had accumulated ten spellings of four sources.
-    declared = {atlas_registry.normalise_url(a["weblink"]) for a in agencies.values() if a["weblink"]}
-    known = {atlas_registry.normalise_ntd_id(k) for k in agencies}
-    inert = []
-    for subject, cands in decisions.items():
-        if atlas_registry.normalise_ntd_id(subject) not in known:
-            continue
-        for norm, cand in cands.items():
-            if norm not in declared:
-                inert.append((subject, cand.get("url", "")))
-    if inert:
-        print(f"\n  recorded against this source but matching nothing it declares ({len(inert)}):")
-        for subject, url in inert[:10]:
-            print(f"      {subject[:40]:42s} {url[:60]}")
-        print("      either the URL was recorded wrong, or the agency has moved on")
 
     bad = atlas_registry.malformed_ntd_ids(db)
     if bad:
@@ -949,7 +915,7 @@ def source_mdb(key, args) -> dict:
     db = atlas_registry.load(os.path.join(ROOT, "feeds"))
     active = atlas_registry.active_urls(db)
     historic = atlas_registry.historic_urls(db)
-    decisions = load_decisions()
+    decisions = {}
     policies = load_policies(db)
 
     hosts = known_hosts(active, historic)
@@ -1114,7 +1080,7 @@ def source_calitp(key, args) -> dict:
     db = atlas_registry.load(os.path.join(ROOT, "feeds"))
     active = atlas_registry.active_urls(db)
     historic = atlas_registry.historic_urls(db)
-    decisions = load_decisions()
+    decisions = {}
     policies = load_policies(db)
     by_dataset = atlas_registry.feeds_by_calitp_dataset(db)
     by_org = atlas_registry.operators_by_calitp_org(db)
@@ -1199,7 +1165,6 @@ def source_calitp(key, args) -> dict:
     for k, n in counts.most_common():
         print(f"  {k:34s} {n:5d}")
     print(f"\n  settled by a standing policy      {len(by_policy):5d}")
-    print(f"  suppressed by evaluations/         {len(suppressed):5d}")
     print(f"  reported                          {len(findings):5d}")
     unmatched = [f for f in findings if f["kind"] == "not-matched-by-url"]
     if unmatched:
@@ -1239,7 +1204,7 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
 
         Returns the feeds too, because most feeds rely on a generated operator
         and would otherwise look unheld: the feed is then the subject a finding
-        about that agency belongs to, the same rule evaluations/ follows.
+        about that agency belongs to.
 
         Superseded statics count for identification. A source still naming the
         host an agency has left identifies that agency just as well, and reading
@@ -1367,7 +1332,6 @@ def _calitp_realtime(db, all_rows, dataset_orgs, org_names, by_org, active, hist
     for k, n in counts.most_common():
         print(f"  {k:34s} {n:5d}")
     print(f"\n  settled by a standing policy      {len(by_policy):5d}")
-    print(f"  suppressed by evaluations/         {len(suppressed):5d}")
     print(f"  reported                          {len(findings):5d}")
     actionable = [f for f in findings if f["kind"] == "agency-held-no-realtime-feed"]
     if actionable:
