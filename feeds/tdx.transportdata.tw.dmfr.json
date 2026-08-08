@@ -8,7 +8,12 @@
         "f-bus~taipei~tdx~tw",
         "f-thsr~tdx~tw",
         "f-tra~tdx~tw",
-        "f-trtc~tdx~tw"
+        "f-trtc~tdx~tw",
+        "f-wsj-yl員林客運公總~yl臺西客運公總",
+        "f-wsm-ch中鹿客運公總~ch彰化客運公總~ch員林客運公總",
+        "f-wsm-nt總達客運公總~nt全航客運公總~nt南投客運公總",
+        "f-wsm-tc豐原客運~tc台中客運~tc仁友客運~tc統聯客運~tc巨業交通~tc全航客運~tc和欣客運~tc東南客運~tc",
+        "f-wsq-ml新竹客運公總~ml苗栗客運公總"
       ],
       "spec": "gtfs",
       "urls": {
@@ -18,7 +23,12 @@
           "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/Taipei/gtfs",
           "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/THSR/gtfs",
           "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/TRA/gtfs",
-          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC"
+          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/yl/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/ch/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/nt/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/tc/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/ml/latest"
         ]
       },
       "license": {
@@ -27,7 +37,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed."
+        "notes": "Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed. Also supersedes five Taichung-hosted intercity bus feeds whose host gtfs.taichung.gov.tw no longer resolves: their last feed versions date from 2019 and 2021, one never produced one at all, and fetches have failed since 2023-04-14. Fifteen of their sixteen operators appear in this bundle; the sixteenth, 仁友客運, ceased operating on 2026-02-25 having already transferred its routes to 中鹿客運, which is present."
       }
     }
   ]
