@@ -2,11 +2,33 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-bus~new~taipei~tdx~tw",
+      "id": "f-tdx~tw",
+      "supersedes_ids": [
+        "f-bus~new~taipei~tdx~tw",
+        "f-bus~taipei~tdx~tw",
+        "f-thsr~tdx~tw",
+        "f-tra~tdx~tw",
+        "f-trtc~tdx~tw",
+        "f-wsj-yl員林客運公總~yl臺西客運公總",
+        "f-wsm-ch中鹿客運公總~ch彰化客運公總~ch員林客運公總",
+        "f-wsm-nt總達客運公總~nt全航客運公總~nt南投客運公總",
+        "f-wsm-tc豐原客運~tc台中客運~tc仁友客運~tc統聯客運~tc巨業交通~tc全航客運~tc和欣客運~tc東南客運~tc",
+        "f-wsq-ml新竹客運公總~ml苗栗客運公總"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/NewTaipei/gtfs"
+          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/NewTaipei/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/Taipei/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/THSR/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/TRA/gtfs",
+          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/yl/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/ch/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/nt/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/tc/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/ml/latest"
         ]
       },
       "license": {
@@ -15,73 +37,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "v2 API deprecated; v3 API endpoints for bus feeds not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
-      }
-    },
-    {
-      "id": "f-bus~taipei~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/Taipei/gtfs"
-        ]
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "v2 API deprecated; v3 API endpoints for bus feeds not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
-      }
-    },
-    {
-      "id": "f-thsr~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/THSR/gtfs"
-        ]
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "v2 API deprecated; v3 API endpoint not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
-      }
-    },
-    {
-      "id": "f-tra~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/TRA/gtfs"
-        ]
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "v2 API deprecated; v3 API endpoint not yet available as of Feb 2026. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
-      }
-    },
-    {
-      "id": "f-trtc~tdx~tw",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC"
-      },
-      "license": {
-        "url": "https://tdx.transportdata.tw/term",
-        "use_without_attribution": "no",
-        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
-      },
-      "tags": {
-        "notes": "Taipei Metro (MRT). Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed"
+        "notes": "Taiwan's national GTFS, covering every mode. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed, which also removes two oversized GTFS-Fares v2 tables."
       }
     }
   ]
