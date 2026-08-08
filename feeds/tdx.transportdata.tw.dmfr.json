@@ -27,7 +27,7 @@
         "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
       },
       "tags": {
-        "notes": "Taiwan's national GTFS from the MOTC TDX platform: 403 agencies across every mode, including Taiwan Railways, High Speed Rail, all six metro systems, city and intercity buses, ferries and airlines. Supersedes the five per-system records, whose per-system endpoints TDX largely never built: as of 2026-08-07 Rail/TRA and Rail/THSR return HTTP 400 with 目前只提供北捷(TRTC)的GTFS資料 (\"currently only TRTC GTFS data is provided\") and the bus paths return 404. The nationwide bundle is the undocumented bare path with no system suffix. Authorization is a client_credentials token exchange rather than a fixed credential, so this is not registrable as a fetchable URL; a custom script fetches it, removes the two GTFS-Fares v2 tables (fare_products and fare_leg_rules, 28.5M rows each and 6.5 GB of the 7.67 GB archive, which cannot be validated or imported) and uploads feed versions directly. GTFS-Fares v1 is left intact."
+        "notes": "Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed."
       }
     }
   ]
