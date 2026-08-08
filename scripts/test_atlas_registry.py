@@ -159,3 +159,51 @@ def test_operator_feeds_can_filter_by_spec(feeds_dir):
     assert atlas_registry.operator_feeds(db, "o-one") == {"f-one", "f-one~rt"}
     assert atlas_registry.operator_feeds(db, "o-one", spec="gtfs-rt") == {"f-one~rt"}
     assert atlas_registry.operator_feeds(db, "o-one", spec="gtfs") == {"f-one"}
+
+
+# --- onestop_id_problems ---------------------------------------------------
+# Three copies of these rules lived in validate-feeds.py and had drifted apart.
+# Each case below was enforced by at least one copy and missed by another.
+
+@pytest.mark.parametrize("osid,kind", [
+    ("f-9q5-metro", "feed"),
+    ("f-taft~ca~us", "feed"),
+    ("o-9q5-metro~losangeles", "operator"),
+    ("f-dqcn-montgomerycountymdrideon", "feed"),
+])
+def test_wellformed_onestop_ids_have_no_problems(osid, kind):
+    assert atlas_registry.onestop_id_problems(osid, kind) == []
+
+
+@pytest.mark.parametrize("osid,kind,expect", [
+    ("", "feed", "empty"),
+    ("f9q5metro", "feed", "dashes"),                  # no dash
+    ("f-9q5-metro-extra", "feed", "dashes"),          # three dashes
+    ("o-9q5-metro", "feed", "start"),                 # operator id checked as a feed
+    ("f-9q5-metro", "operator", "start"),
+    ("f-9q5-Metro", "feed", "lowercase"),             # only the feed copy caught this
+    ("f--metro", "feed", "empty dash"),               # only the operator copy caught this
+    ("f-9q5-metro~", "feed", "tilde"),
+])
+def test_malformed_onestop_ids_are_reported(osid, kind, expect):
+    problems = atlas_registry.onestop_id_problems(osid, kind)
+    assert problems, f"expected {osid!r} to be rejected"
+    assert any(expect in p for p in problems), f"{problems} does not mention {expect!r}"
+
+
+def test_operator_case_is_not_enforced():
+    # Twelve existing operator ids carry uppercase in non-Latin scripts, and
+    # renaming an Onestop ID to satisfy a linter is not something to do. Feed
+    # ids are all lowercase today and stay held to it.
+    greek = "o-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ"
+    assert atlas_registry.onestop_id_problems(greek, "operator", require_lowercase=False) == []
+    assert atlas_registry.onestop_id_problems(greek, "operator") != []
+
+
+def test_sync_log_is_returned_when_asked(feeds_dir):
+    # validate-feeds.py detects a duplicate feed id from a line in this log,
+    # because transitland sync reports it as "updated feed" rather than failing.
+    log = []
+    atlas_registry.load(feeds_dir, sync_log=log)
+    assert log, "expected sync output to be captured"
+    assert any("feed" in line for line in log)

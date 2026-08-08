@@ -34,8 +34,14 @@ HISTORIC_SUFFIX = "_historic"
 NTD_WIDTH = 5
 
 
-def load(feeds_dir: str, db_path: str | None = None) -> sqlite3.Connection:
-    """Sync every *.dmfr.json under `feeds_dir` into SQLite and return a connection."""
+def load(feeds_dir: str, db_path: str | None = None,
+         sync_log: list[str] | None = None) -> sqlite3.Connection:
+    """Sync every *.dmfr.json under `feeds_dir` into SQLite and return a connection.
+
+    Pass a list as `sync_log` to receive the sync output. `transitland sync`
+    reports a duplicate feed id as "updated feed" rather than as an error, so
+    that line is the only way to catch one, and validate-feeds.py needs it.
+    """
     if db_path is None:
         db_path = os.path.join(tempfile.mkdtemp(prefix="atlas-registry-"), "registry.db")
     files = sorted(glob.glob(os.path.join(feeds_dir, "*.dmfr.json")))
@@ -47,9 +53,46 @@ def load(feeds_dir: str, db_path: str | None = None) -> sqlite3.Connection:
         capture_output=True, text=True)
     if proc.returncode != 0:
         raise SystemExit(f"transitland sync failed: {proc.stderr.strip()[:400]}")
+    if sync_log is not None:
+        sync_log.extend((proc.stdout + proc.stderr).splitlines())
     db = sqlite3.connect(db_path)
     db.row_factory = sqlite3.Row
     return db
+
+
+ONESTOP_PREFIX = {"feed": "f", "operator": "o"}
+
+
+def onestop_id_problems(osid: str, kind: str, require_lowercase: bool = True) -> list[str]:
+    """Why this Onestop ID is malformed, or an empty list if it is fine.
+
+    The same rules were written out three times in validate-feeds.py, for feed
+    ids, operator ids and the feed ids inside associated_feeds, and had drifted:
+    only the feed copy checked case, only the operator copy checked for empty
+    segments, and the associated_feeds copy checked neither.
+
+    `require_lowercase` defaults on but is off for operators, because twelve
+    existing operator ids carry uppercase in non-Latin scripts (Greek, Cyrillic,
+    Polish, Hungarian, Lithuanian, Irish) where `.lower()` differs. Renaming an
+    Onestop ID is not something to do to satisfy a linter, so the check stays
+    off there rather than the ids being changed. Feed ids are all lowercase
+    today and are held to it.
+    """
+    prefix = ONESTOP_PREFIX[kind]
+    if not osid:
+        return ["empty"]
+    problems = []
+    if osid.count("-") not in (1, 2):
+        problems.append("needs one or two dashes")
+    if osid[0] != prefix:
+        problems.append(f"must start with {prefix!r}")
+    if require_lowercase and osid != osid.lower():
+        problems.append("must be lowercase")
+    if "" in osid.split("-"):
+        problems.append("has an empty dash-separated segment")
+    if osid.endswith("~"):
+        problems.append("ends with a tilde")
+    return problems
 
 
 def feed_exists(db, feed_id: str) -> bool:
