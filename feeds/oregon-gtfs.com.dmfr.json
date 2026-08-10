@@ -44,6 +44,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recu94uoC8aoelLFR",
         "gtfs_data_exchange": "curry-public-transit"
       },
       "operators": [
@@ -52,6 +53,7 @@
           "name": "Curry Public Transit",
           "website": "https://currypublictransit.org/",
           "tags": {
+            "calitp_organization_id": "recfehHpcFaXUXhkt",
             "us_ntd_id": "00308"
           }
         }
@@ -225,7 +227,7 @@
           ],
           "tags": {
             "twitter_general": "UmpquaTransit",
-            "us_ntd_id": "00296",
+            "us_ntd_id": "00459",
             "wikidata_id": "Q7802245"
           }
         }
@@ -1128,7 +1130,10 @@
       "id": "f-mcedd~or~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://oregon-gtfs.com/gtfs_data/mcedd-or-us/mcedd-or-us.zip"
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/mcedd-or-us/mcedd-or-us.zip",
+        "static_historic": [
+          "https://oregon-gtfs.com/gtfs_data/mcedd-or-us/mcedd-or-us.zip"
+        ]
       },
       "operators": [
         {
@@ -1217,6 +1222,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recWPANXTwn1u1i2l"
+      },
       "operators": [
         {
           "onestop_id": "o-point~or~us",
@@ -1230,7 +1238,10 @@
               "gtfs_agency_id": "19",
               "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
-          ]
+          ],
+          "tags": {
+            "calitp_organization_id": "recQRoE5mcCn6kdti"
+          }
         }
       ]
     },
@@ -1328,19 +1339,6 @@
   ],
   "operators": [
     {
-      "onestop_id": "o-c20-clackamascounty",
-      "name": "Clackamas County",
-      "website": "https://rideclackamas.org/",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-clackamascounty~or~us~flex"
-        }
-      ],
-      "tags": {
-        "us_ntd_id": "00363"
-      }
-    },
-    {
       "onestop_id": "o-c20c-mthoodexpress",
       "name": "Mt. Hood Express",
       "website": "http://www.mthoodexpress.com/",
@@ -1350,20 +1348,6 @@
           "feed_onestop_id": "f-sandy~or~us~flex"
         }
       ]
-    },
-    {
-      "onestop_id": "o-c20c-sandyareametro",
-      "name": "Sandy Area Metro",
-      "website": "https://rideclackamas.org/",
-      "associated_feeds": [
-        {
-          "gtfs_agency_id": "86",
-          "feed_onestop_id": "f-sandy~or~us~flex"
-        }
-      ],
-      "tags": {
-        "us_ntd_id": "00363"
-      }
     },
     {
       "onestop_id": "o-c20d-multnomahcountytransit",

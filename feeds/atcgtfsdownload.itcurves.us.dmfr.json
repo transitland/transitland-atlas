@@ -1,0 +1,37 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-dppc-alleganycountytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://atcgtfsdownload.itcurves.us/DownloadGtfs",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Allegany_GTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "tags": {
+        "gtfs_data_exchange": "allegany-county-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dppc-alleganycountytransit",
+          "name": "Allegany County Transit",
+          "website": "http://gov.allconet.org/act",
+          "tags": {
+            "us_ntd_id": "30041",
+            "wikidata_id": "Q4731234"
+          }
+        }
+      ]
+    }
+  ]
+}

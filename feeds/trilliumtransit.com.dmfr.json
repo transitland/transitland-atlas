@@ -35,6 +35,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "rec2qeElyKzGNShrd",
         "feed_id": "lagunabeach-ca-us",
         "gtfs_data_exchange": "laguna-beach-transit"
       },
@@ -46,9 +47,13 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "126"
+            },
+            {
+              "feed_onestop_id": "f-laguna~beach~transit~local~flex"
             }
           ],
           "tags": {
+            "calitp_organization_id": "rec6Z3DnERm3OwFzw",
             "twitter_general": "lagunabeachgov",
             "us_ntd_id": "90119"
           }
@@ -59,7 +64,10 @@
       "id": "f-9pp-humboldtcounty~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/humboldtcounty-ca-us/humboldtcounty-ca-us.zip"
+        "static_current": "https://hta.optibus.co/public_api/v1/feeds/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/humboldtcounty-ca-us/humboldtcounty-ca-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
@@ -167,6 +175,9 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/humboldtcounty-ca-us/service_alerts.proto"
+      },
+      "tags": {
+        "calitp_dataset_id": "recNsjPYUULsxzgxf"
       }
     },
     {
@@ -180,6 +191,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recWJJ4dRk4lHXaWX",
         "gtfs_data_exchange": "redwood-coast-transit"
       },
       "operators": [
@@ -193,6 +205,9 @@
               "gtfs_agency_id": "19"
             },
             {
+              "feed_onestop_id": "f-redwood~coast~del~norte~flex"
+            },
+            {
               "feed_onestop_id": "f-redwood~coast~transit~rt"
             },
             {
@@ -200,6 +215,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recOnKhqF25crJt4q",
             "us_ntd_id": "91097",
             "wikidata_id": "Q96401429"
           }
@@ -217,6 +233,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "rec2Irh2irjkQUoFt",
         "gtfs_data_exchange": "eastern-sierra-transit-authority"
       },
       "operators": [
@@ -236,11 +253,16 @@
               "feed_onestop_id": "f-9q-easternsierra~ca~us~rt~alerts"
             },
             {
+              "feed_onestop_id": "f-eastern~sierra~bishop~lone~pine~flex"
+            },
+            {
               "gtfs_agency_id": "51",
               "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
+            "calitp_organization_id": "recRajLNJI206nnAr",
+            "notes": "The National Park Service lists a Devils Postpile shuttle feed for this agency, but that file is the whole system: same 18 routes and 156 stops as the registered feed. That page is a directory of feeds, not of agencies.",
             "twitter_general": "estabus",
             "us_ntd_id": "91062",
             "wikidata_id": "Q5330465"
@@ -261,6 +283,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recUjYd23khxh0r9v"
+      },
       "operators": [
         {
           "onestop_id": "o-9q5-lagobus",
@@ -268,6 +293,7 @@
           "short_name": "LA Go Bus",
           "website": "http://www.lagobus.com",
           "tags": {
+            "calitp_organization_id": "rec860cgWfE3MaiHw",
             "twitter_general": "LACoPublicWorks",
             "us_ntd_id": "90270,90271,90272,90273,90274,90275,90276,90278"
           }
@@ -285,6 +311,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "rec5HrdtVmO2dPK0h",
         "gtfs_data_exchange": "palos-verdes-peninsula-transit-authority"
       },
       "operators": [
@@ -299,6 +326,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recO3X2ot0GH9a5sg",
             "us_ntd_id": "90287",
             "wikidata_id": "Q7128670"
           }
@@ -317,6 +345,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recQiWHhvE6MxozGV",
         "gtfs_data_exchange": "kern-regional-transit"
       },
       "operators": [
@@ -333,6 +362,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "reczIiFqdL5AXTpm1",
             "twitter_general": "KernTransit",
             "us_ntd_id": "91059",
             "wikidata_id": "Q6394141"
@@ -351,6 +381,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recRgOm7kn0l1uLvI",
         "gtfs_data_exchange": "san-benito-county-express"
       },
       "operators": [
@@ -364,6 +395,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recvUNSLR7o56gsyl",
             "twitter_general": "CountyExpress",
             "us_ntd_id": "91009",
             "wikidata_id": "Q7413407"
@@ -388,6 +420,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recNeVOEwWUtYe8xm",
             "us_ntd_id": "91078"
           }
         }
@@ -431,6 +464,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "reciwNziu0HYaQcVY"
+      },
       "operators": [
         {
           "onestop_id": "o-9qb-laketransit",
@@ -445,6 +481,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recPwXKbGLL4aIqXV",
             "us_ntd_id": "91053",
             "wikidata_id": "Q6478146"
           }
@@ -462,6 +499,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recxvrgxNkScGIidy",
         "gtfs_data_exchange": "mendocino-transit-authority"
       },
       "operators": [
@@ -476,6 +514,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recpWBEjXzLHqCjhE",
             "us_ntd_id": "91047",
             "wikidata_id": "Q6816698"
           }
@@ -493,6 +532,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recX4LuyZsMBVngah",
         "gtfs_data_exchange": "el-dorado-transit"
       },
       "operators": [
@@ -506,6 +546,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recEDVdKwYUSkGBRd",
             "twitter_general": "eldoradotransit",
             "us_ntd_id": "90229",
             "wikidata_id": "Q5351201"
@@ -526,6 +567,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "reclUxmuws84qZ0n7"
+      },
       "operators": [
         {
           "onestop_id": "o-9qc-placercountytransit",
@@ -537,6 +581,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recDD2rnkl2m7IV8u",
             "twitter_general": "pctpa",
             "us_ntd_id": "90196",
             "wikidata_id": "Q7200309"
@@ -545,41 +590,19 @@
       ]
     },
     {
-      "id": "f-9qc-yubasutter~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/yubasutter-ca-us/yubasutter-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qc-yuba~suttertransit",
-          "name": "Yuba-Sutter Transit",
-          "website": "https://www.yubasuttertransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "77"
-            }
-          ],
-          "tags": {
-            "twitter_general": "yubacounty",
-            "us_ntd_id": "90061",
-            "wikidata_id": "Q8060099"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-9qcy-nevadacountygoldcountrystage",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/goldcountrystage-ca-us/goldcountrystage-ca-us.zip"
+        "static_current": "https://gtfs.remix.com/nevada_county_connects.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/goldcountrystage-ca-us/goldcountrystage-ca-us.zip"
+        ]
       },
       "license": {
         "url": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      "tags": {
+        "calitp_dataset_id": "rec8MDKQELYNltiEo"
       },
       "operators": [
         {
@@ -599,6 +622,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "reczUcQgqgtMpkpKC",
             "twitter_general": "NevadaCountyCA",
             "us_ntd_id": "91095"
           }
@@ -645,12 +669,16 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recrDZjzCpX3UOaVt"
+      },
       "operators": [
         {
           "onestop_id": "o-9qdd-maderaareaexpress",
           "name": "Madera Metro",
           "website": "https://www.madera.gov/home/departments/transit/",
           "tags": {
+            "calitp_organization_id": "rec2DteW2sfmBJRsH",
             "us_ntd_id": "90199"
           }
         }
@@ -667,6 +695,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recYb4Yoqr6zzqMd5",
         "gtfs_data_exchange": "amador-transit"
       },
       "operators": [
@@ -680,6 +709,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recSBFiK95hJnJuYx",
             "twitter_general": "amadortransit",
             "us_ntd_id": "91000",
             "wikidata_id": "Q13429190"
@@ -698,6 +728,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recekJNW9RMN9P7j9",
         "gtfs_data_exchange": "calaveras-transit"
       },
       "operators": [
@@ -711,6 +742,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recFqVabH8109u70q",
             "us_ntd_id": "99442"
           }
         }
@@ -725,6 +757,9 @@
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "calitp_dataset_id": "rectpGbo8b7ThDd5h"
       },
       "operators": [
         {
@@ -745,6 +780,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "904"
+            },
+            {
+              "feed_onestop_id": "f-tahoe~truckee~regional~transportation~tart~connect~dial~a~ride~placer~tart~paratransit~flex"
             }
           ],
           "tags": {
@@ -765,6 +803,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recMYUJ97orCuEVpG",
         "gtfs_data_exchange": "corona-cruiser"
       },
       "operators": [
@@ -778,6 +817,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recOkSEcrVmWdQ8e1",
             "us_ntd_id": "90052"
           }
         }
@@ -794,6 +834,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "rec3JrHgwN8mvOhm4",
         "gtfs_data_exchange": "beaumont-pass-transit"
       },
       "operators": [
@@ -813,6 +854,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "reciWrBgYsAIm9eKK",
             "wikidata_id": "Q7142408"
           }
         }
@@ -856,6 +898,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recQIIfYLsYVUGxxn"
+      },
       "operators": [
         {
           "onestop_id": "o-9r-sagestage",
@@ -867,6 +912,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "rec5Q3mEXcHPpQ8bn",
             "us_ntd_id": "91008"
           }
         }
@@ -883,13 +929,17 @@
       "id": "f-9r0-trinity~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/weaverville-ca-us/weaverville-ca-us.zip"
+        "static_current": "https://gtfs.remix.com/trinity_county_ca.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/weaverville-ca-us/weaverville-ca-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "rec6lTnr7i0Hkrakp",
         "gtfs_data_exchange": "trinity-transit"
       },
       "operators": [
@@ -903,6 +953,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recK5xIowqx4sGVMT",
             "us_ntd_id": "91035",
             "wikidata_id": "Q7842993"
           }
@@ -960,6 +1011,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recnscU4EQGyt9xhF",
         "gtfs_data_exchange": "siskiyou-transit-and-general-express"
       },
       "operators": [
@@ -974,6 +1026,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recBBqHJqX8xzj9P4",
             "us_ntd_id": "91048"
           }
         }
@@ -990,6 +1043,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recP4qFhiAZrq7Iha",
         "gtfs_data_exchange": "lassen-rural-bus"
       },
       "operators": [
@@ -1001,9 +1055,13 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "81"
+            },
+            {
+              "feed_onestop_id": "f-lassen~rural~busand~dial~a~ride~flex"
             }
           ],
           "tags": {
+            "calitp_organization_id": "rec78KctfPkBZC5IJ",
             "us_ntd_id": "91098"
           }
         }
@@ -1020,6 +1078,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "rec5AIu50d5GUeSFW",
         "gtfs_data_exchange": "plumas-transit"
       },
       "operators": [
@@ -1033,6 +1092,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recbMtOZTPh8dnUEZ",
             "us_ntd_id": "91119"
           }
         }
@@ -1948,6 +2008,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recnAiZYHWBxUwH0F"
+      },
       "operators": [
         {
           "onestop_id": "o-9qhb-cityofbanningtransit",
@@ -1963,7 +2026,10 @@
             {
               "feed_onestop_id": "f-banning~pass~transit~rt~alerts"
             }
-          ]
+          ],
+          "tags": {
+            "calitp_organization_id": "recuGkFhN2WXGK67H"
+          }
         }
       ]
     },
@@ -1978,7 +2044,10 @@
       "id": "f-bay~transit~va",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/baytransit-va-us/baytransit-va-us.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/baytransit-va-us/baytransit-va-us--flex-v2.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/baytransit-va-us/baytransit-va-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
@@ -2202,6 +2271,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "recYZeAXBaKj3RKrD",
         "status": "outdated"
       },
       "operators": [
@@ -2209,6 +2279,7 @@
           "onestop_id": "o-blossomexpress~ca~us",
           "name": "Blossom Express",
           "tags": {
+            "calitp_organization_id": "reccEj7tecw0n60FO",
             "us_ntd_id": "90316"
           }
         }
@@ -2244,7 +2315,10 @@
       "id": "f-breckenridgefreeride~co~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/breckenridgefreeride-co-us/breckenridgefreeride-co-us.zip"
+        "static_current": "https://mybreckfreeride.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/breckenridgefreeride-co-us/breckenridgefreeride-co-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
@@ -2367,7 +2441,8 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/browncounty-mn-us/browncounty-mn-us--flex-v2.zip",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/browncounty-mn-us/browncounty-mn-us.zip"
+          "https://data.trilliumtransit.com/gtfs/browncounty-mn-us/browncounty-mn-us.zip",
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/browncounty-mn-us/brown_county.zip"
         ]
       },
       "operators": [
@@ -2750,7 +2825,8 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/cctbus-mn-us/cctbus-mn-us--flex-v2.zip",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/cctbus-mn-us/cctbus-mn-us.zip"
+          "https://data.trilliumtransit.com/gtfs/cctbus-mn-us/cctbus-mn-us.zip",
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/cctbus-mn-us/cct_bus.zip"
         ]
       },
       "operators": [
@@ -3108,6 +3184,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recdNb9NmTdEhRPBj"
+      },
       "operators": [
         {
           "onestop_id": "o-delano~ca~us",
@@ -3120,6 +3199,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recROsnN85RlZziSj",
             "us_ntd_id": "90238"
           }
         }
@@ -3655,7 +3735,10 @@
       "id": "f-dp1b-terrehautetransit~in~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/terrehautetransit-in-us/terrehautetransit-in-us.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13594/terrehaute_in_gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/terrehautetransit-in-us/terrehautetransit-in-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
@@ -4030,12 +4113,28 @@
           "name": "Estuary Transit District",
           "short_name": "River Valley Transit (RVT)",
           "website": "https://rivervalleytransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-drke-ninetown~connecticut~us~flex"
+            }
+          ],
           "tags": {
             "us_ntd_id": "10140",
             "wikidata_id": "Q5401887"
           }
         }
       ]
+    },
+    {
+      "id": "f-drke-ninetown~connecticut~us~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/ninetown-connecticut-us/ninetown-connecticut-us--flex-v2.zip"
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      }
     },
     {
       "id": "f-drm-blockislandferry~ri~us",
@@ -4277,12 +4376,19 @@
       "operators": [
         {
           "onestop_id": "o-drq-capecodregionaltransitauthorityccrta",
+          "supersedes_ids": [
+            "o-drm-capecodregionaltransitauthority"
+          ],
           "name": "Cape Cod Regional Transit Authority",
           "short_name": "CCRTA",
           "website": "https://www.capecodrta.org/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "446"
+            },
+            {
+              "gtfs_agency_id": "3",
+              "feed_onestop_id": "f-drt-mbta"
             }
           ],
           "tags": {
@@ -4378,6 +4484,7 @@
           ],
           "tags": {
             "twitter_general": "hylinecruises",
+            "us_ntd_id": "11239",
             "wikidata_id": "Q14715606"
           }
         }
@@ -4578,16 +4685,22 @@
         },
         {
           "onestop_id": "o-drt3pb-massport",
+          "supersedes_ids": [
+            "o-drt3p-massport"
+          ],
           "name": "Massport",
           "website": "http://www.massport.com/logan-airport/to-from-logan/transportation-options/on-airport-shuttle/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "2272"
+            },
+            {
+              "gtfs_agency_id": "2",
+              "feed_onestop_id": "f-drt-mbta"
             }
           ],
           "tags": {
             "twitter_general": "Massport",
-            "us_ntd_id": "909983",
             "wikidata_id": "Q2777980"
           }
         }
@@ -4940,10 +5053,25 @@
     },
     {
       "id": "f-elwhatransit~wa~us",
+      "supersedes_ids": [
+        "f-lower~elwha~klallam~tribe"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/elwhatransit-wa-us/elwhatransit-wa-us.zip"
-      }
+        "static_current": "https://data.trilliumtransit.com/gtfs/elwhatransit-wa-us/elwhatransit-wa-us.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11730/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lower~elwha~klallam~tribe",
+          "name": "Lower Elwha Klallam Tribe",
+          "tags": {
+            "us_ntd_id": "00401"
+          }
+        }
+      ]
     },
     {
       "id": "f-emerygo~round~rt",
@@ -5398,7 +5526,7 @@
           "name": "HopeSource",
           "website": "https://www.hopesource.us/transportation",
           "tags": {
-            "us_ntd_id": "312"
+            "us_ntd_id": "00312"
           }
         }
       ]
@@ -5407,7 +5535,10 @@
       "id": "f-hubbardcounty~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/hubbardcounty-mn-us/hubbardcounty-mn-us--flex-v2.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/hubbardcounty-mn-us/hubbardcounty-mn-us--flex-v2.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/hubbardcounty-mn-us/heartland_express.zip"
+        ]
       },
       "operators": [
         {
@@ -5480,7 +5611,10 @@
       "id": "f-kimballcountytransit~ne~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/kimballcountytransit-ne-us/kimballcountytransit-ne-us.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/kimballcountytransit-ne-us/kimballcountytransit-ne-us--flex-v2.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/kimballcountytransit-ne-us/kimballcountytransit-ne-us.zip"
+        ]
       },
       "operators": [
         {
@@ -5667,6 +5801,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recuXPqUmp5dus9vL"
+      },
       "operators": [
         {
           "onestop_id": "o-9qd-maderacountyconnection",
@@ -5685,6 +5822,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recWLwvtjXhiVWjKt",
             "twitter_general": "maderacounty",
             "us_ntd_id": "91005"
           }
@@ -5712,7 +5850,7 @@
           "onestop_id": "o-makah~tribal~council",
           "name": "Makah Tribal Council",
           "tags": {
-            "us_ntd_id": "36"
+            "us_ntd_id": "00036"
           }
         }
       ]
@@ -5780,29 +5918,6 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/moccasinexpress-wa-us/moccasinexpress-wa-us.zip"
       }
-    },
-    {
-      "id": "f-morongo~basin",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/morongobasin-ca-us/morongobasin-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9qj-morongobasintransitauthority",
-          "name": "Morongo Basin Transit Authority",
-          "short_name": "Basin Transit",
-          "website": "https://basin-transit.com/",
-          "tags": {
-            "us_ntd_id": "91090",
-            "wikidata_id": "Q6913253"
-          }
-        }
-      ]
     },
     {
       "id": "f-mountadams~wa~us",
@@ -5898,6 +6013,9 @@
         "static_historic": [
           "https://gtfs.calitp.org/production/MOVEStanislausVetsvanFlex.zip"
         ]
+      },
+      "tags": {
+        "notes": "The Caltrans copy carries 1 route and 1 trip against 3 and 3 here, and its trip is contained in this one. This is the fuller of the two."
       }
     },
     {
@@ -5910,6 +6028,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recihmkhgREB2Lvxt"
+      },
       "operators": [
         {
           "onestop_id": "o-9qnqp-needlesareatransit",
@@ -5921,6 +6042,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "rec2nYLvujeMxCVJW",
             "us_ntd_id": "91020",
             "wikidata_id": "Q6986643"
           }
@@ -6063,7 +6185,10 @@
       "id": "f-paulbunyantransit~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/paulbunyantransit-mn-us/paulbunyantransit-mn-us--flex-v2.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/paulbunyantransit-mn-us/paulbunyantransit-mn-us--flex-v2.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/paulbunyantransit-mn-us/paul_bunyan.zip"
+        ]
       },
       "operators": [
         {
@@ -6181,7 +6306,8 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/prairiefive-mn-us/prairiefive-mn-us--flex-v2.zip",
         "static_historic": [
-          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/prairefive-mn-us/praire_five.zip"
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/prairefive-mn-us/praire_five.zip",
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/prairiefive-mn-us/prairie_five.zip"
         ]
       },
       "operators": [
@@ -6222,7 +6348,10 @@
       "id": "f-prairielakes~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/prairielakes-mn-us/prairielakes-mn-us--flex-v2.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/prairielakes-mn-us/prairielakes-mn-us--flex-v2.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/prairielakes-mn-us/prairie_lakes.zip"
+        ]
       },
       "operators": [
         {
@@ -6239,7 +6368,10 @@
       "id": "f-prairielandtransit~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/prairielandtransit-mn-us/prairielandtransit-mn-us--flex-v2.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/prairielandtransit-mn-us/prairielandtransit-mn-us--flex-v2.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/prairielandtransit-mn-us/prarieland_transit.zip"
+        ]
       },
       "operators": [
         {
@@ -6261,6 +6393,9 @@
     },
     {
       "id": "f-psesd~wa~us~flex",
+      "supersedes_ids": [
+        "f-puget~sound~educational~service~district~wsdot"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/psesd-wa-us/psesd-wa-us--flex-v2.zip"
@@ -6288,7 +6423,10 @@
             {
               "feed_onestop_id": "f-pueblo~co~us~flex"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "80007"
+          }
         }
       ]
     },
@@ -6530,11 +6668,17 @@
       "id": "f-sheridan~wy~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/sheridan-wy-us/sheridan-wy-us.zip"
+        "static_current": "https://thehubsheridan.org/wp-content/uploads/2026/03/gct_wy_gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/sheridan-wy-us/sheridan-wy-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -6551,7 +6695,10 @@
             {
               "feed_onestop_id": "f-goose~creek~transit~rt~alerts"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "80193"
+          }
         }
       ]
     },
@@ -6568,7 +6715,8 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/smart-mn-us/smart-mn-us--flex-v2.zip",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/smart-mn-us/smart-mn-us.zip"
+          "https://data.trilliumtransit.com/gtfs/smart-mn-us/smart-mn-us.zip",
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/smart-mn-us/smart.zip"
         ]
       },
       "operators": [
@@ -6742,11 +6890,17 @@
       "id": "f-tahoe~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/tahoe-ca-us/tahoe-ca-us.zip"
+        "static_current": "https://tahoe.syncromatics.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/tahoe-ca-us/tahoe-ca-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "calitp_dataset_id": "recAFSynoBmVNer8r"
       },
       "operators": [
         {
@@ -6765,6 +6919,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "rec3u4aMplqObcoTR",
             "us_ntd_id": "91092",
             "wikidata_id": "Q7568609"
           }
@@ -6806,7 +6961,10 @@
       "id": "f-threerivers~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/threerivers-mn-us/threerivers-mn-us--flex-v2.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/threerivers-mn-us/threerivers-mn-us--flex-v2.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/threerivers-mn-us/hiawathaland_transit.zip"
+        ]
       },
       "operators": [
         {
@@ -6853,6 +7011,9 @@
         "static_historic": [
           "https://gtfs.calitp.org/production/TracyTRACERPlusandParatransitFlex.zip"
         ]
+      },
+      "tags": {
+        "notes": "The Caltrans copy carries the same 2 routes and 7 trips but shares no trip IDs, so the two are the same service published through different ID spaces rather than different coverage."
       }
     },
     {
@@ -6873,7 +7034,10 @@
       "id": "f-tricap~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/tricap-mn-us/tricap-mn-us--flex-v2.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/tricap-mn-us/tricap-mn-us--flex-v2.zip",
+        "static_historic": [
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/tricap-mn-us/tricap.zip"
+        ]
       },
       "operators": [
         {
@@ -6997,6 +7161,9 @@
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "rec8p8aIgJ66XnuqS"
+      },
       "operators": [
         {
           "onestop_id": "o-9qdj3-turlocktransit",
@@ -7014,6 +7181,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "recmQVsPDG6sLtD6j",
             "us_ntd_id": "90201"
           }
         }
@@ -7024,6 +7192,9 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/turlock-ca-us/service_alerts.proto"
+      },
+      "tags": {
+        "calitp_dataset_id": "recK1lpq0TtCgWSwD"
       }
     },
     {
@@ -7058,7 +7229,8 @@
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/unitedcap-mn-us/unitedcap-mn-us--flex-v2.zip",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/unitedcap-mn-us/unitedcap-mn-us.zip"
+          "https://data.trilliumtransit.com/gtfs/unitedcap-mn-us/unitedcap-mn-us.zip",
+          "https://hub-mndot-prod.camsys-apps.com/static/v1/gtfs/unitedcap-mn-us/united_community.zip"
         ]
       },
       "operators": [
@@ -7073,17 +7245,26 @@
       ]
     },
     {
+      "id": "f-university~of~maryland~shuttle~um~md~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/shuttleum-md-us/shuttleum-md-us.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-university~of~maryland~shuttle~um~md~us",
+          "name": "University of Maryland Shuttle-UM",
+          "tags": {
+            "us_ntd_id": "30208"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-vailskishuttles~co~us",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/vailskishuttles-co-us/vailskishuttles-co-us.zip"
-      }
-    },
-    {
-      "id": "f-valleyexpress~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/valleyexpress-ca-us/valleyexpress-ca-us.zip"
       }
     },
     {

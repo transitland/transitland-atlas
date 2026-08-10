@@ -2,6 +2,22 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-cherokeecountytransit~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Cherokee%20County_39/Cherokee.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cherokeecountytransit~nc~us",
+          "name": "Cherokee County Transit",
+          "tags": {
+            "us_ntd_id": "41069"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnk-haywoodtransit",
       "spec": "gtfs",
       "urls": {
@@ -25,10 +41,11 @@
       "id": "f-dnk8-maconcountync",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Macon%20County_113/Macon.zip",
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Macon%20County_113/MaconCounty.zip",
         "static_historic": [
           "https://gtfs.transitportal.org/CurrentGTFS/Macon%20County_113/Macon_20231101.zip",
-          "https://gtfs.transitportal.org/CurrentGTFS/Macon%20County_113/Macon_20181220.zip"
+          "https://gtfs.transitportal.org/CurrentGTFS/Macon%20County_113/Macon_20181220.zip",
+          "https://gtfs.transitportal.org/CurrentGTFS/Macon%20County_113/Macon.zip"
         ]
       },
       "operators": [
@@ -46,11 +63,12 @@
       "id": "f-dnkc-jacksoncountync",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Jackson%20County_99/JacksonTrolley.zip",
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Jackson%20County_99/JacksonTrolly.zip",
         "static_historic": [
           "https://gtfs.transitportal.org/CurrentGTFS/Jackson%20County_99/JacksonTrolley_20231026.zip",
           "https://gtfs.transitportal.org/CurrentGTFS/Jackson%20County_99/JacksonTrolley_20220428.zip",
-          "https://gtfs.transitportal.org/CurrentGTFS/Jackson%20County_99/Jackson_20180904.zip"
+          "https://gtfs.transitportal.org/CurrentGTFS/Jackson%20County_99/Jackson_20180904.zip",
+          "https://gtfs.transitportal.org/CurrentGTFS/Jackson%20County_99/JacksonTrolley.zip"
         ]
       },
       "operators": [
@@ -243,10 +261,11 @@
       "id": "f-dnr-pats",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Person%20County_145/PATS/",
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Person%20County_145/PATS.zip",
         "static_historic": [
           "https://gtfs.transitportal.org/CurrentGTFS/Person%20County_145/PATS_20231121.zip",
-          "https://gtfs.transitportal.org/CurrentGTFS/Person%20County_145/PATS_20220217.zip"
+          "https://gtfs.transitportal.org/CurrentGTFS/Person%20County_145/PATS_20220217.zip",
+          "https://gtfs.transitportal.org/CurrentGTFS/Person%20County_145/PATS/"
         ]
       },
       "tags": {
@@ -377,11 +396,13 @@
       "id": "f-mountain~mobility~nc~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Buncombe%20County_21/Buncombe%20County.zip",
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Buncombe%20County_21/Buncombe.zip",
         "static_historic": [
           "https://gtfs.transitportal.org/CurrentGTFS/Buncombe%20County_21/Buncombe%20County%20-%20Mountain%20Mobility.zip",
           "https://www.buncombecounty.org/common/transportation/gtfs.zip",
-          "https://gtfs.transitportal.org/CurrentGTFS/Buncombe%20County_21/Buncombe%202014%20GIS%20Files.zip"
+          "https://gtfs.transitportal.org/CurrentGTFS/Buncombe%20County_21/Buncombe%202014%20GIS%20Files.zip",
+          "https://gtfs.transitportal.org/CurrentGTFS/Buncombe%20County_21/Buncombe%20County.zip",
+          "https://www.buncombenc.gov/DocumentCenter/View/2215/GTFS-Data-ZIP"
         ]
       },
       "operators": [
@@ -391,6 +412,22 @@
           "website": "https://www.buncombecounty.org/governing/depts/transportation/default.aspx",
           "tags": {
             "us_ntd_id": "40224"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-ocracoketram~nc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.transitportal.org/CurrentGTFS/Ocracoke%20Tram_%208/OcracokeTram.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ocracoketram~nc~us",
+          "name": "Ocracoke Tram",
+          "tags": {
+            "us_ntd_id": "44947"
           }
         }
       ]

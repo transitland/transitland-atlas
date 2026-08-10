@@ -8,7 +8,8 @@
         "f-9q56-thousandoaks~ca~us",
         "f-kananshuttle~ca~us",
         "f-moorpark~city~transit",
-        "f-9q5d-simivalleytransit"
+        "f-9q5d-simivalleytransit",
+        "f-valleyexpress~ca~us"
       ],
       "spec": "gtfs",
       "urls": {
@@ -16,6 +17,9 @@
       },
       "license": {
         "url": "https://gtfs-directory.syncromatics.com/"
+      },
+      "tags": {
+        "calitp_dataset_id": "recrAG7e0oOiR6FiP"
       }
     },
     {
@@ -28,13 +32,22 @@
       },
       "license": {
         "url": "https://gtfs-directory.syncromatics.com/"
+      },
+      "tags": {
+        "calitp_dataset_id": "rec37qY9WKaWHZ39F,recCizLhhTdSBZVmx,reczNXHrjEHJjVQ90"
       }
     },
     {
       "id": "f-9q5-vctc~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/vctc-ca-us/vctc-ca-us.zip"
+        "static_current": "https://www.goventura.org/wp-content/uploads/2026/02/20260213-GMV_Schedule.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/vctc-ca-us/vctc-ca-us.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
       }
     },
     {
@@ -122,6 +135,7 @@
         }
       ],
       "tags": {
+        "notes": "Service is carried by the regional Ventura County feed under gtfs_agency_id 153, to which this operator is associated. A standalone Caltrans file exists holding exactly those two routes; registering it would duplicate coverage.",
         "us_ntd_id": "90163"
       }
     },

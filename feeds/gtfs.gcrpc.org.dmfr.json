@@ -1,0 +1,37 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-goldencrescent~commuter~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.gcrpc.org/gtfs/commuter/GCRPC-Commuter.zip"
+      }
+    },
+    {
+      "id": "f-victoriatransit~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.gcrpc.org/gtfs/GCRPC-Fixed.zip"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-goldencrescentrpc~tx~us",
+      "name": "Golden Crescent Regional Planning Commission",
+      "website": "https://www.gcrpc.org/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-goldencrescent~commuter~tx~us"
+        },
+        {
+          "feed_onestop_id": "f-victoriatransit~tx~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "60095"
+      }
+    }
+  ]
+}

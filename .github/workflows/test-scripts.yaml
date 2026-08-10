@@ -1,0 +1,31 @@
+name: Test scripts
+
+# Only when scripts/ changes: the tests cover the helpers in that directory and
+# nothing else, so a feed-only PR has no reason to run them.
+#
+# Only on push, which means only on branches in this repository. Fork pull
+# requests deliberately do not run here: this executes code from scripts/, and
+# the Validate workflow rejects fork PRs that touch that directory for the same
+# reason. A fork's own pushes run in the fork.
+on:
+  push:
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/test-scripts.yaml'
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      # atlas_registry.load() builds its index by shelling out to `transitland
+      # sync`, so the registry tests need the binary even though everything
+      # else in the suite is pure.
+      - name: Install transitland-lib
+        run: scripts/install-transitland-lib.sh
+      # Run from the repository root so uv resolves pyproject.toml, where the
+      # test dependencies are declared rather than in the test files.
+      - name: Run tests
+        run: uv run --with pytest pytest scripts/ -q

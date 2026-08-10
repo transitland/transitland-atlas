@@ -21,10 +21,17 @@
           "website": "http://www.academybus.com/",
           "associated_feeds": [
             {
+              "gtfs_agency_id": "20122",
+              "feed_onestop_id": "f-academy~bus~nj"
+            },
+            {
               "gtfs_agency_id": "10",
               "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "20122"
+          }
         }
       ]
     },
@@ -710,7 +717,10 @@
       "id": "f-middletown~ny~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/middletown-ny-us/middletown-ny-us.zip"
+        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/TransitOrange_-_Middletown_Area_Transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/middletown-ny-us/middletown-ny-us.zip"
+        ]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -1179,7 +1189,10 @@
       "id": "f-watertown~citibus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Watertown_Citibus.zip"
+        "static_current": "https://passio3.com/watertown/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://s3.amazonaws.com/datatools-511ny/public/Watertown_Citibus.zip"
+        ]
       },
       "license": {
         "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
@@ -1187,7 +1200,17 @@
         "create_derived_product": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-watertown~citibus~ny~us",
+          "name": "City of Watertown CitiBus",
+          "website": "https://www.watertown-ny.gov/271/Citibus",
+          "tags": {
+            "us_ntd_id": "20215"
+          }
+        }
+      ]
     },
     {
       "id": "f-yates~transit~service",
@@ -1231,7 +1254,10 @@
           "gtfs_agency_id": "64",
           "feed_onestop_id": "f-utel~uiuc~intercity~bus"
         }
-      ]
+      ],
+      "tags": {
+        "us_ntd_id": "20177"
+      }
     },
     {
       "onestop_id": "o-fullington~trailways",

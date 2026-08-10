@@ -1,0 +1,35 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-dqc7-charlescountyvango",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://charlescounty.tripshot.com/v1/gtfs/feed/VanGO",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/Charles_GTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "http://www.mdtrip.org/commuter-tools/developer-resources/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Central Maryland Regional Transit",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqc7-charlescountyvango",
+          "name": "Charles County VanGo",
+          "website": "http://www.charlescountymd.gov/cs/vango/vango",
+          "tags": {
+            "twitter_general": "charlescomd",
+            "us_ntd_id": "30088"
+          }
+        }
+      ]
+    }
+  ]
+}

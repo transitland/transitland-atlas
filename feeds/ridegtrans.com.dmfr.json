@@ -10,19 +10,40 @@
           "https://data.trilliumtransit.com/gtfs/gtrans-ca-us/gtrans-ca-us.zip"
         ]
       },
+      "tags": {
+        "calitp_dataset_id": "reciKWkJ953NSPTtj"
+      },
       "operators": [
         {
           "onestop_id": "o-9q5b-gtrans",
           "name": "City of Gardena",
           "short_name": "GTrans",
           "website": "http://ridegtrans.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-gtrans~ca~us~rt"
+            }
+          ],
           "tags": {
+            "calitp_organization_id": "recX4nQfupRQf3xGD",
             "twitter_general": "RideGTrans",
             "us_ntd_id": "90042",
             "wikidata_id": "Q5522428"
           }
         }
       ]
+    },
+    {
+      "id": "f-gtrans~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://mygtbus.ridegtrans.com/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://mygtbus.ridegtrans.com/gtfsrt/trips",
+        "realtime_alerts": "https://mygtbus.ridegtrans.com/gtfsrt/alerts"
+      },
+      "tags": {
+        "calitp_dataset_id": "recjlTECMkHPYmTUU,recSmbV8PV8tGP6om,recbhOkSD1gSBYFrH"
+      }
     }
   ]
 }

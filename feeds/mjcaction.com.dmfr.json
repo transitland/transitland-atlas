@@ -162,44 +162,44 @@
       ]
     },
     {
-      "id": "f-dqcm2-dcstreetcar",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mjcaction.com/MJC_GTFS_Public/dcstreetcar_gtfs.zip",
-        "static_historic": [
-          "http://data.trilliumtransit.com/gtfs/dcstreetcar-dc-us/dcstreetcar-dc-us.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqcm2-dcstreetcar",
-          "name": "DC Streetcar",
-          "website": "http://www.dcstreetcar.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "dc-streetcar"
-            },
-            {
-              "feed_onestop_id": "f-dcstreetcar~rt"
-            },
-            {
-              "feed_onestop_id": "f-dcstreetcar~rt~alerts"
-            }
-          ],
-          "tags": {
-            "twitter_general": "dcstreetcar",
-            "us_ntd_id": "30012",
-            "wikidata_id": "Q3537231"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-gallup~express",
       "spec": "gtfs",
       "urls": {
         "static_current": "http://mjcaction.com/MJC_GTFS_Public/gallupexpress_google_transit.zip"
       }
+    },
+    {
+      "id": "f-ihanktowantransit~sd~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mjcaction.com/MJC_GTFS_Public/ihanktowan_sd_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ihanktowantransit~sd~us",
+          "name": "Ihanktowan Transit",
+          "tags": {
+            "us_ntd_id": "88194"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-mountainexpress~crestedbutte~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mjcaction.com/MJC_GTFS_Public/MountainExpress_google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mountainexpress~crestedbutte~co~us",
+          "name": "Mountain Express",
+          "website": "https://www.mtnexp.org/",
+          "tags": {
+            "us_ntd_id": "80159"
+          }
+        }
+      ]
     },
     {
       "id": "f-mountain~express",
@@ -239,7 +239,10 @@
       "id": "f-santa~fe~trails",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://mjcaction.com/MJC_GTFS_Public/santafetrails_google_transit.zip"
+        "static_current": "https://santafenm.gov/media/files/public_works/gtfs.zip",
+        "static_historic": [
+          "http://mjcaction.com/MJC_GTFS_Public/santafetrails_google_transit.zip"
+        ]
       },
       "operators": [
         {
@@ -267,6 +270,9 @@
           "http://mjcaction.com/MJC_GTFS_Public/syvt_google_transit.zip"
         ]
       },
+      "tags": {
+        "calitp_dataset_id": "recuWhPXfxMatv6rL"
+      },
       "operators": [
         {
           "onestop_id": "o-9q4s-a11214029",
@@ -278,6 +284,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "reckp33bhAuZlmO1M",
             "twitter_general": "cityofsolvang",
             "us_ntd_id": "91028"
           }
@@ -322,6 +329,22 @@
           "tags": {
             "us_ntd_id": "66283",
             "wikidata_id": "Q107335262"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-utetribepublictransit~ut~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mjcaction.com/MJC_GTFS_Public/utetribe_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-utetribepublictransit~ut~us",
+          "name": "Ute Tribe Public Transit",
+          "tags": {
+            "us_ntd_id": "88200"
           }
         }
       ]
