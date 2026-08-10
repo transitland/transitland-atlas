@@ -1,16 +1,22 @@
 #!/usr/bin/env -S uv run
 
-import subprocess
 import sys
 import os
-import sqlite3
 import json
 import glob
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import atlas_registry
+
+# Resolved from this file rather than from the working directory, so the script
+# runs from anywhere. It previously globbed "../feeds/*" and so only worked when
+# invoked from inside scripts/.
+FEEDS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "feeds")
 
 fail_the_build = False
 
 # check that all files in feeds/ have a .dmfr.json extension
-all_feed_files = glob.glob("../feeds/*")
+all_feed_files = glob.glob(os.path.join(FEEDS_DIR, "*"))
 for file_path in all_feed_files:
     if os.path.isfile(file_path) and not file_path.endswith(".dmfr.json"):
         print(f"ERROR: {file_path} does not have a .dmfr.json extension (all files under feeds/ must end in .dmfr.json)")
@@ -20,7 +26,7 @@ for file_path in all_feed_files:
 # Get schema version from environment variable, default to v0.6.0
 dmfr_schema_version = os.environ.get('DMFR_SCHEMA_VERSION', 'v0.6.0')
 EXPECTED_SCHEMA = f"https://dmfr.transit.land/json-schema/dmfr.schema-{dmfr_schema_version}.json"
-dmfr_files = glob.glob("../feeds/*.dmfr.json")
+dmfr_files = glob.glob(os.path.join(FEEDS_DIR, "*.dmfr.json"))
 
 for file_path in dmfr_files:
     try:
@@ -49,18 +55,14 @@ if not fail_the_build and len(dmfr_files) > 0:
     print(f"All {len(dmfr_files)} DMFR files use the correct schema version ({dmfr_schema_version})")
 
 # load dmfr to database
-db_filename = 'feed-validation.db'
-os.system(f"rm -f {db_filename}")
-sync_command = f"transitland sync --hide-unseen --hide-unseen-operators --dburl=sqlite3://{db_filename} ../feeds/*.dmfr.json"
-sync_log = subprocess.check_output(sync_command, shell=True)
+sync_log = []
+db_conn = atlas_registry.load(FEEDS_DIR, sync_log=sync_log)
+c = db_conn.cursor()
 
-for log_line in sync_log.splitlines():
-  log_line = log_line.decode("utf-8")
-  if log_line.find("updated feed") > -1:
+for log_line in sync_log:
+  if "updated feed" in log_line:
     print(f"ERROR: duplicate feed found at: {log_line}")
     fail_the_build = True
-db_conn = sqlite3.connect(db_filename)
-c = db_conn.cursor()
 
 # check feed onestop_id uniqueness
 c.execute('''
@@ -69,20 +71,9 @@ c.execute('''
 onestop_ids = c.fetchall()
 for row in onestop_ids:
   osid = row[0] or ''
-  valid = True
-  dashcount = osid.count("-")
-  if len(osid) == 0:
-    valid = False
-  if dashcount == 0 or dashcount > 2:
-    valid = False
-  if len(osid) > 0 and osid[0] != "f":
-    valid = False
-  if osid != osid.lower():
-    valid = False
-  if osid.endswith("~"):
-    valid = False
-  if not valid:
-    print(f"ERROR: improperly formatted Feed Onestop ID: {osid}")
+  problems = atlas_registry.onestop_id_problems(osid, "feed")
+  if problems:
+    print(f"ERROR: improperly formatted Feed Onestop ID: {osid} ({'; '.join(problems)})")
     fail_the_build = True
 
 # check uniqueness of urls.static_current
@@ -103,20 +94,10 @@ c.execute('''
 onestop_ids = c.fetchall()
 for row in onestop_ids:
   osid = row[0] or ''
-  valid = True
-  dashcount = osid.count("-")
-  if len(osid) == 0:
-    valid = False
-  if dashcount == 0 or dashcount > 2:
-    valid = False
-  if len(osid) > 0 and osid[0] != "o":
-    valid = False
-  if '' in osid.split('-'):
-    valid = False
-  if osid.endswith("~"):
-    valid = False
-  if not valid:
-    print(f"ERROR: improperly formatted Operator Onestop ID: {osid}")
+  # Case is not enforced here; see onestop_id_problems for why.
+  problems = atlas_registry.onestop_id_problems(osid, "operator", require_lowercase=False)
+  if problems:
+    print(f"ERROR: improperly formatted Operator Onestop ID: {osid} ({'; '.join(problems)})")
     fail_the_build = True
 
 # check associated_feeds[].feed_onstop_id format
@@ -130,23 +111,14 @@ for o in operators:
   if operator_onestop_id == None or associated_feeds == None:
     continue
   for associated_feed in associated_feeds:
-    valid = True
     associated_feed_onestop_id = associated_feed['feed_onestop_id']
     if not associated_feed_onestop_id:
       print(f"ERROR: missing feed Onestop ID in the associated_feeds block for operator {operator_onestop_id}")
       fail_the_build = True
       continue
-    dashcount = associated_feed_onestop_id.count("-")
-    if len(associated_feed_onestop_id) == 0:
-      valid = False
-    if dashcount == 0 or dashcount > 2:
-      valid = False
-    if len(associated_feed_onestop_id) > 0 and associated_feed_onestop_id[0] != "f":
-      valid = False
-    if associated_feed_onestop_id.endswith("~"):
-      valid = False
-    if not valid:
-      print(f"ERROR: improperly formatted feed Onestop ID: {associated_feed_onestop_id} in the associated_feeds block for operator {operator_onestop_id}")
+    problems = atlas_registry.onestop_id_problems(associated_feed_onestop_id, "feed")
+    if problems:
+      print(f"ERROR: improperly formatted feed Onestop ID: {associated_feed_onestop_id} in the associated_feeds block for operator {operator_onestop_id} ({'; '.join(problems)})")
       fail_the_build = True
 
 if fail_the_build:

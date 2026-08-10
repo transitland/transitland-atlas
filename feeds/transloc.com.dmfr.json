@@ -34,8 +34,7 @@
         "static_current": "https://api.transloc.com/gtfs/vvta.zip",
         "static_historic": [
           "https://ontime.vvta.org/gtfs",
-          "https://data.trilliumtransit.com/gtfs/victorville-ca-us/victorville-ca-us.zip",
-          "https://api.transloc.com/gtfs/vvta.zip"
+          "https://data.trilliumtransit.com/gtfs/victorville-ca-us/victorville-ca-us.zip"
         ]
       },
       "license": {
@@ -43,7 +42,8 @@
         "url": "https://vvta.org/developers/"
       },
       "tags": {
-        "notes": "VVTA says their official static feed is served by Transloc; Synchromatics also serves a Trillium-created static feed go with RT, but static feed contents are quite different"
+        "calitp_dataset_id": "recTxj46r25YgMi9V",
+        "notes": "VVTA says their official static feed is served by TransLoc, which is why this is registered over the AVL vendor's own build at ontime.vvta.org/gtfs. The two builds are not in fact very different: 32 routes against 31, 1699 trips against 1719, and stop_times within a fifth of a percent. What differs is trip ID formatting, the vendor padding to five characters where TransLoc does not, which is why the vendor realtime resolves only partly against this feed"
       },
       "operators": [
         {
@@ -52,6 +52,8 @@
           "short_name": "VVTA",
           "website": "https://www.vvta.org",
           "tags": {
+            "calitp_organization_id": "recJcXMNC5MUm2uDe",
+            "notes": "The agency states TransLoc serves its official static, which is why that is registered rather than the AVL vendor's own build at ontime.vvta.org. The two are near-identical; what differs is trip ID formatting, the vendor padding to five characters, so the vendor realtime resolves 151 of 180 trips against the registered feed and 25 of the 29 misses recover if a leading zero is stripped. Switching the static would fix resolution but override a stated agency preference; the padding is the agency's to correct.",
             "twitter_general": "VVTransit",
             "us_ntd_id": "90148",
             "wikidata_id": "Q7926418"
@@ -130,10 +132,16 @@
       "urls": {
         "static_current": "https://aceshuttles.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
       },
+      "tags": {
+        "calitp_dataset_id": "recMC7iGIqsEBhSoS"
+      },
       "operators": [
         {
           "onestop_id": "o-ace~shuttles~san",
-          "name": "ACE Parking"
+          "name": "ACE Parking",
+          "tags": {
+            "calitp_organization_id": "recfbLFdDnCxgIfAB"
+          }
         }
       ]
     },
@@ -324,18 +332,7 @@
         "static_historic": [
           "https://api.transloc.com/gtfs/davenportcitibus.zip"
         ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9zrs-citibus",
-          "name": "Citibus",
-          "tags": {
-            "twitter_general": "cityofdavenport",
-            "us_ntd_id": "70009",
-            "wikidata_id": "Q5230228"
-          }
-        }
-      ]
+      }
     },
     {
       "id": "f-dn5fv-cherokeeareatransportationsystemcats",
@@ -442,6 +439,9 @@
           "https://www.fairfaxva.gov/home/showpublisheddocument/19191/638017594116830000"
         ]
       },
+      "tags": {
+        "notes": "The city publishes its own copy at fairfaxva.gov with the same four routes, 200 stops, 189 trips and calendar. Directory checksums differ only because the vendor rebuilds the archive per request. Earlier city paths are already in this feed's history, so the copy resurfaces whenever the site is reorganised."
+      },
       "operators": [
         {
           "onestop_id": "o-dqcj1-fairfaxcue",
@@ -508,7 +508,7 @@
           "onestop_id": "o-glacier~valley",
           "name": "Glacier Valley Transit",
           "tags": {
-            "us_ntd_id": "345"
+            "us_ntd_id": "00345"
           }
         }
       ]
@@ -592,7 +592,10 @@
       "id": "f-lagunabeachtransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://lagunabeachtransit.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+        "static_current": "https://lagunabeach.tripshot.com/v1/gtfs.zip",
+        "static_historic": [
+          "https://lagunabeachtransit.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+        ]
       },
       "operators": [
         {
@@ -620,12 +623,34 @@
       "urls": {
         "static_current": "https://laxflyaway.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
       },
+      "tags": {
+        "calitp_dataset_id": "recGnwEunRxjF50Fb",
+        "notes": "laxtransportation.ridesystems.net serves a separate vehicle-position endpoint for the wider LAX ground transportation system, carrying routes TL-3, TL-4 and TL-7, which are absent here. This feed covers TL-1, TL-2 and TL-6. Different routes rather than a duplicate producer."
+      },
       "operators": [
         {
           "onestop_id": "o-laxflyaway",
-          "name": "LAX Flyaway"
+          "name": "LAX Flyaway",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-laxflyaway~rt"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "recdLxGPqFmJLG21a"
+          }
         }
       ]
+    },
+    {
+      "id": "f-laxflyaway~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://laxflyaway.transloc.com/subscriptions/gtfsrt/vehicles.ashx"
+      },
+      "tags": {
+        "calitp_dataset_id": "reciF2EDo8HWQNDXx"
+      }
     },
     {
       "id": "f-life~ga~us",
@@ -896,17 +921,7 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://ssabus.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-ssabus~ma~us",
-          "name": "Woods Hole, Martha's Vineyard and Nantucket Steamship Authority",
-          "website": "https://www.steamshipauthority.com/",
-          "tags": {
-            "us_ntd_id": "10183"
-          }
-        }
-      ]
+      }
     },
     {
       "id": "f-the~gas~company~tower",

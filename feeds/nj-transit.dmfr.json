@@ -2,6 +2,76 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-academy~bus~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/Academy_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      }
+    },
+    {
+      "id": "f-atlantic~county~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/AtlanticCo_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-atlanticcounty~nj",
+          "name": "Atlantic County",
+          "website": "https://www.atlanticcountynj.gov/",
+          "tags": {
+            "us_ntd_id": "20199"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-burlington~county~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/BurlingtonShuttles_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-crosscountyconnection",
+          "name": "Cross County Connection",
+          "website": "http://www.driveless.com/burlink/",
+          "tags": {
+            "us_ntd_id": "20208"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-cumberland~county~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/Cumberland_Co_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cumberlandcounty~nj",
+          "name": "Cumberland County Division of Employment and Training",
+          "website": "https://www.cumberlandcountynj.gov/transport-services",
+          "tags": {
+            "us_ntd_id": "20201"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dr5-nj~transit~bus",
       "spec": "gtfs",
       "urls": {
@@ -26,6 +96,172 @@
       "tags": {
         "gtfs_data_exchange": "new-jersey-transit"
       }
+    },
+    {
+      "id": "f-gloucester~county~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/Gloucester_Co_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gloucestercounty~nj",
+          "name": "Gloucester County",
+          "website": "https://gloucestercountynj.gov/",
+          "tags": {
+            "us_ntd_id": "20195"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-hunterdon~county~link",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/Hunterdon_Co_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hunterdoncountylink",
+          "name": "Hunterdon County LINK Transportation System",
+          "website": "https://www.ridethelink.com/",
+          "tags": {
+            "us_ntd_id": "20212"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-lakelandbuslines~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/LakelandBusLines_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lakelandbuslines",
+          "name": "Lakeland Bus Lines",
+          "website": "https://www.lakelandbus.com/",
+          "tags": {
+            "us_ntd_id": "20163"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-somerset~county~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/SomersetCounty_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-somersetcounty~nj",
+          "name": "Somerset County",
+          "website": "https://www.co.somerset.nj.us/",
+          "tags": {
+            "us_ntd_id": "20209"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-southjerseytransportationauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/SJTA_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-southjerseytransportationauthority",
+          "name": "South Jersey Transportation Authority",
+          "website": "https://www.sjta.com/",
+          "tags": {
+            "us_ntd_id": "20200"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-sussex~county~skylandsride",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/sussexcounty_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sussexcountyskylandsride",
+          "name": "Sussex County Skylands Ride",
+          "website": "https://www.sussex.nj.us/",
+          "tags": {
+            "us_ntd_id": "20950"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-trans~bridge~lines",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/Trans-Bridge_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-transbridgelines",
+          "name": "Trans-Bridge Lines",
+          "website": "https://transbridgelines.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "43",
+              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "20169"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-warren~county~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.njtransit.com/WCT_bus_data.zip"
+      },
+      "license": {
+        "url": "https://www.njtransit.com/developer-tools"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-warrencountytransportation~nj",
+          "name": "Warren County Transportation",
+          "website": "https://www.warrencountynj.gov/",
+          "tags": {
+            "us_ntd_id": "20928"
+          }
+        }
+      ]
     }
   ],
   "operators": [

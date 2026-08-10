@@ -43,6 +43,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "calitp_dataset_id": "reck5oNvonO2H8iQo",
         "gtfs_data_exchange": "fresno-county-rural-transit-agency"
       },
       "operators": [
@@ -51,6 +52,7 @@
           "name": "Fresno County Rural Transit Agency",
           "short_name": "FCRTA",
           "tags": {
+            "calitp_organization_id": "rec3d3ltF8TijTaTx",
             "us_ntd_id": "91007"
           }
         }
@@ -60,14 +62,18 @@
       "id": "f-9qh1f-elmontetransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11664/GTFS.zip",
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11664/Google_Transit.zip",
         "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/elmonte-ca-us/elmonte-ca-us.zip"
+          "https://data.trilliumtransit.com/gtfs/elmonte-ca-us/elmonte-ca-us.zip",
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11664/GTFS.zip"
         ]
       },
       "license": {
         "spdx_identifier": "ODC-By-1.0",
         "use_without_attribution": "no"
+      },
+      "tags": {
+        "calitp_dataset_id": "receynwUoiJr3xpS1"
       },
       "operators": [
         {
@@ -75,6 +81,7 @@
           "name": "El Monte Transit",
           "website": "https://www.ci.el-monte.ca.us/326/Transportation-Division",
           "tags": {
+            "calitp_organization_id": "recoRzMb9zCV1Ta0x",
             "us_ntd_id": "90265",
             "wikidata_id": "Q5351636"
           }
@@ -126,19 +133,18 @@
       ]
     },
     {
-      "id": "f-albany~ga~us",
+      "id": "f-accessjohnsoncounty~in~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11834/ats_albany_ga_us(2).zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/14841/AJCPT_GTFS.zip"
       },
       "operators": [
         {
-          "onestop_id": "o-albany~ga~us",
-          "name": "Albany Transit System",
-          "short_name": "ATS",
-          "website": "https://www.albanyga.gov/about-us/city-departments/albany-transit-system",
+          "onestop_id": "o-accessjohnsoncounty~in~us",
+          "name": "Access Johnson County",
+          "website": "https://www.accessjohnsoncounty.org/",
           "tags": {
-            "us_ntd_id": "40021"
+            "us_ntd_id": "50256"
           }
         }
       ]
@@ -165,7 +171,10 @@
       "id": "f-archuleta~county",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11523/met_gtfs.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11813/met_gtfs.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11523/met_gtfs.zip"
+        ]
       },
       "operators": [
         {
@@ -237,6 +246,22 @@
           "name": "Autonomous Municipality of Ponce",
           "tags": {
             "us_ntd_id": "40234"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-autonomousmunicipalityofvegaalta~pr~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/VEGAALTAGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-autonomousmunicipalityofvegaalta~pr~us",
+          "name": "Autonomous Municipality of Vega Alta",
+          "tags": {
+            "us_ntd_id": "40199"
           }
         }
       ]
@@ -460,12 +485,16 @@
           "https://data.trilliumtransit.com/gtfs/carson-ca-us/carson-ca-us.zip"
         ]
       },
+      "tags": {
+        "calitp_dataset_id": "rec3hTxP1LeMnRwR7"
+      },
       "operators": [
         {
           "onestop_id": "o-9q5b-carsoncircuit",
           "name": "Carson Circuit",
           "website": "https://ci.carson.ca.us/communityservices/carson_circuit.aspx",
           "tags": {
+            "calitp_organization_id": "recgsY5iTcDhjK0Ju",
             "us_ntd_id": "90258",
             "wikidata_id": "Q5046916"
           }
@@ -1042,7 +1071,10 @@
       "id": "f-cityofsanjuan~pr~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/GTFSSJ.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/SANJUANGTFS.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/GTFSSJ.zip"
+        ]
       },
       "operators": [
         {
@@ -1189,7 +1221,10 @@
       "id": "f-craigtribalassociation~ak~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12007/cta_ak_gtfs(2).zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13783/cta_ak_gtfs.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12007/cta_ak_gtfs(2).zip"
+        ]
       },
       "operators": [
         {
@@ -1217,6 +1252,39 @@
           "website": "https://www.cranberryisles-me.gov/public-services/transportation/",
           "tags": {
             "us_ntd_id": "10153"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-crownation~mt~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13358/crownation_mt_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-crownation~mt~us",
+          "name": "Crow Nation Transit",
+          "tags": {
+            "us_ntd_id": "88188"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dart~douglascounty~nv~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/14782/DART_douglas_co_nv_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dart~douglascounty~nv~us",
+          "name": "Douglas County Rural Transit",
+          "website": "https://www.douglascountynv.gov/",
+          "tags": {
+            "us_ntd_id": "91064"
           }
         }
       ]
@@ -1417,6 +1485,36 @@
       ]
     },
     {
+      "id": "f-dqcv-queenannescountyride",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13182/qac_gftsnew.zip",
+        "static_historic": [
+          "https://github.com/mobilityequity/maryland-local-gtfs/raw/master/QA_GTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "https://github.com/mobilityequity/maryland-local-gtfs/blob/master/README.md",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_instructions": "when using MTI data or software in projects, maps, etc.; you agree to acknowledge MTI as a data source (https://mti.umd.edu/)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dqcv-queenannescountyride",
+          "name": "Queen Anne's County",
+          "short_name": "County Ride",
+          "website": "http://www.qac.org/181/County-Ride",
+          "tags": {
+            "twitter_general": "qacgov",
+            "us_ntd_id": "30192"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dr09-washingtoncountycommuter",
       "spec": "gtfs",
       "urls": {
@@ -1482,7 +1580,7 @@
           "website": "http://www.ridepatco.org",
           "tags": {
             "twitter_general": "ridepatco",
-            "us_ntd_id": "20098",
+            "us_ntd_id": "20075",
             "wikidata_id": "Q2043730"
           }
         }
@@ -1616,24 +1714,6 @@
       ]
     },
     {
-      "id": "f-evansville~in~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11867/METS_GTFS.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-evansville~in~us",
-          "name": "Metropolitan Evansville Transit System",
-          "short_name": "METS",
-          "website": "https://www.evansvillegov.org/city/department/index.php?structureid=225",
-          "tags": {
-            "us_ntd_id": "50043"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-fallonpaiuteshoshonetribe~nv~us",
       "spec": "gtfs",
       "urls": {
@@ -1645,24 +1725,6 @@
           "name": "Fallon Paiute-Shoshone Tribe",
           "tags": {
             "us_ntd_id": "99322"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-fayette~madison~transit~oh~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13277/FMT_GTFS.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-fayette~madison~transit~oh~us",
-          "name": "Fayette Madison Transit",
-          "short_name": "FMT",
-          "website": "https://www.cacfayettecounty.org/transportation/",
-          "tags": {
-            "us_ntd_id": "50410"
           }
         }
       ]
@@ -1784,7 +1846,10 @@
       "id": "f-gila~river~indian~community",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5788/GoogleFeed.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/14817/gilariver_AZ_gtfs.zip",
+        "static_historic": [
+          "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5788/GoogleFeed.zip"
+        ]
       },
       "operators": [
         {
@@ -1834,7 +1899,10 @@
       "id": "f-grant~county",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11404/CorreCaminosDec23.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11404/CC_NM_GTFS.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11404/CorreCaminosDec23.zip"
+        ]
       },
       "operators": [
         {
@@ -1998,7 +2066,10 @@
       "id": "f-isabella~county~transportation~commission",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11707/GoogleTR.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11499/ICTC_MI_GTFS.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11707/GoogleTR.zip"
+        ]
       },
       "operators": [
         {
@@ -2146,7 +2217,10 @@
       "id": "f-logan~county~historical~society",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11544/fct_gtfs.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11544/fct_gtfs(8).zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11544/fct_gtfs.zip"
+        ]
       },
       "operators": [
         {
@@ -2160,26 +2234,13 @@
       ]
     },
     {
-      "id": "f-lower~elwha~klallam~tribe",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11730/google_transit.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-lower~elwha~klallam~tribe",
-          "name": "Lower Elwha Klallam Tribe",
-          "tags": {
-            "us_ntd_id": "401"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-lower~savannah~cog",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7972/BFE_GTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13670/BFE_GTFS.zip",
+        "static_historic": [
+          "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7972/BFE_GTFS.zip"
+        ]
       },
       "operators": [
         {
@@ -2267,7 +2328,10 @@
       "id": "f-marion~in~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11837/MTS_Upload.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11856/MTS_Upload.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11837/MTS_Upload.zip"
+        ]
       },
       "operators": [
         {
@@ -2406,7 +2470,10 @@
       "id": "f-municipalityofcaborojo~pr~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/CRGTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/CABOROJOGTFS.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/CRGTFS.zip"
+        ]
       },
       "operators": [
         {
@@ -2478,6 +2545,22 @@
           "name": "Municipality of Coamo",
           "tags": {
             "us_ntd_id": "44942"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-municipalityofcorozal~pr~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/COROZALGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-municipalityofcorozal~pr~us",
+          "name": "Municipality of Corozal",
+          "tags": {
+            "us_ntd_id": "40280"
           }
         }
       ]
@@ -2878,7 +2961,10 @@
       "id": "f-northernmarianascommonwealthofficeoftransitauthority~mp~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13292/CNMI_v04-20250217T063812Z-f44e2e82-c111-4a65-b7d9-a46d9911349f-6f916c96-dc9b-4ec5-806b-8325a0e52ffa.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13790/CNMI_v05_updated_service_dates_2026-08-31.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13292/CNMI_v04-20250217T063812Z-f44e2e82-c111-4a65-b7d9-a46d9911349f-6f916c96-dc9b-4ec5-806b-8325a0e52ffa.zip"
+        ]
       },
       "operators": [
         {
@@ -2991,7 +3077,10 @@
       "id": "f-pikecountycommunityactiontransitsystem~oh~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13277/cats_gtfs(1).zip"
+        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/14836/cats_gtfs.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13277/cats_gtfs(1).zip"
+        ]
       },
       "operators": [
         {
@@ -3007,7 +3096,10 @@
       "id": "f-plaqueminesportharborandterminaldistrict~la~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13377/LGP_GTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13377/PPHTD_GTFS.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13377/LGP_GTFS.zip"
+        ]
       },
       "operators": [
         {
@@ -3015,6 +3107,22 @@
           "name": "Plaquemines Port, Harbor and Terminal District",
           "tags": {
             "us_ntd_id": "60276"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-portarthurtransit~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13725/PortArthurGTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-portarthurtransit~tx~us",
+          "name": "Port Arthur Transit",
+          "tags": {
+            "us_ntd_id": "60013"
           }
         }
       ]
@@ -3039,7 +3147,10 @@
       "id": "f-potomac~valley~transit~authority",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12017/PVTA_WV_GTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12017/feed.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12017/PVTA_WV_GTFS.zip"
+        ]
       },
       "license": {
         "url": "https://www.potomacvalleytransit.org/gtfs-feed/"
@@ -3214,7 +3325,10 @@
       "id": "f-san~marcos~tx~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11568/San_Marcos_GTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13164/feed.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11568/San_Marcos_GTFS.zip"
+        ]
       },
       "operators": [
         {
@@ -3239,6 +3353,22 @@
           "website": "https://www.cityofscottsville.org/Blog/4/city-transit",
           "tags": {
             "us_ntd_id": "44944"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-setran~co~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13753/SETran_CO_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-setran~co~us",
+          "name": "Southeast Colorado Enterprise Development",
+          "tags": {
+            "us_ntd_id": "88308"
           }
         }
       ]
@@ -3380,7 +3510,10 @@
       "id": "f-south~central~illinois~mass~transit~district",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11388/gtfs.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11388/SCT-GTFS.zip",
+        "static_historic": [
+          "http://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11388/gtfs.zip"
+        ]
       },
       "operators": [
         {
@@ -3431,23 +3564,6 @@
             "twitter_general": "SARTAonline",
             "us_ntd_id": "50011",
             "wikidata_id": "Q7601948"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-steel~valley~regional~transit~authority",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5972/svrta_draft.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-steel~valley~regional~transit~authority",
-          "name": "Steel Valley Regional Transit Authority",
-          "short_name": "SVRTA",
-          "tags": {
-            "us_ntd_id": "50142"
           }
         }
       ]
@@ -3766,6 +3882,23 @@
           "name": "Waldo Community Action Partners",
           "tags": {
             "us_ntd_id": "10169"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-waygo~oh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13597/WayGo_OH_GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-waygo~oh~us",
+          "name": "WayGo",
+          "website": "https://waygotransit.org/",
+          "tags": {
+            "us_ntd_id": "55681"
           }
         }
       ]

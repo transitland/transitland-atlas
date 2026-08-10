@@ -10,6 +10,9 @@
           "http://data.trilliumtransit.com/gtfs/kcapta-ca-us/kcapta-ca-us.zip"
         ]
       },
+      "tags": {
+        "calitp_dataset_id": "recwzZhQIinNX1KRp"
+      },
       "operators": [
         {
           "onestop_id": "o-9q6-kingsarearuraltransit",
@@ -22,6 +25,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "rec5MLJKrAgeM8f6H",
             "developer_site": "https://www.kartbus.org/developers/",
             "us_ntd_id": "90200"
           }
@@ -55,6 +59,7 @@
             }
           ],
           "tags": {
+            "calitp_organization_id": "reciakGBN1DP9dK9N",
             "twitter_general": "slortatransit",
             "us_ntd_id": "90206",
             "wikidata_id": "Q16984346"
@@ -69,6 +74,52 @@
         "realtime_vehicle_positions": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
         "realtime_trip_updates": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://slo.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      },
+      "tags": {
+        "calitp_dataset_id": "rec0CzaliC97HFNNB,recOZYdFKqsZN9Wm3,recWgGsSBMZtQ1weh"
+      }
+    },
+    {
+      "id": "f-9q60w-cityofsanluisobispotransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://slocity.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "https://app.mecatran.com/urb/ws/feed/c2l0ZT1zbG90cmFuc2l0O2NsaWVudD1zZWxmO2V4cGlyZT07dHlwZT1ndGZzO2tleT0zZTMwMzM1OTRiMTE2NzA0N2IxNjQwNjA0ZjQwMGMzMzdiM2E1MTQ0"
+        ]
+      },
+      "tags": {
+        "calitp_dataset_id": "rec0EeeizKvsEDfRQ"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q60w-cityofsanluisobispotransit",
+          "name": "City of San Luis Obispo Transit",
+          "short_name": "SLO",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q60w-cityofsanluisobispotransit~rt"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "recMM99msxjmc6PPv",
+            "twitter_general": "SloTransit",
+            "us_ntd_id": "90156",
+            "wikidata_id": "Q7390980"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9q60w-cityofsanluisobispotransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://slocity.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://slocity.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://slocity.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      },
+      "tags": {
+        "calitp_dataset_id": "recK11OotowkFQx6I,recjZCV4lEyW3kE4b,recbcEi1SRUgcXpnn"
       }
     },
     {
@@ -263,11 +314,25 @@
           "onestop_id": "o-gatlinburg~tn~us",
           "name": "City of Gatlinburg Trolley",
           "website": "http://www.gatlinburgtrolley.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-gatlinburg~tn~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "41102"
           }
         }
       ]
+    },
+    {
+      "id": "f-gatlinburg~tn~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://gatlinburg.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
     },
     {
       "id": "f-kingsarearuraltransit~rt",
@@ -276,6 +341,9 @@
         "realtime_vehicle_positions": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
         "realtime_trip_updates": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
         "realtime_alerts": "http://kart.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      },
+      "tags": {
+        "calitp_dataset_id": "rec6hxEPTcBpIFWFX,recJeKrreKQLpuZyn,recRJR8m0zlyHgLme"
       }
     },
     {
@@ -334,11 +402,25 @@
           "onestop_id": "o-pigeon~forge~tn~us",
           "name": "Pigeon Forge Mass Transit",
           "website": "https://www.cityofpigeonforge.com/trolley.aspx",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-pigeon~forge~tn~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "41136"
           }
         }
       ]
+    },
+    {
+      "id": "f-pigeon~forge~tn~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://pigeonforge.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
     }
   ]
 }

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-silver~rider~laughlin~nv~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://silverrider.net/wp-content/uploads/2026/03/LaughlinVegasExpress-.zip"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-silver~rider~mesquite~nv~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://silverrider.net/wp-content/uploads/2026/03/MesquiteVegasExpress.zip"
+      },
+      "tags": {
+        "unstable_url": "true"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-southernnevadatransitcoalition~nv~us",
+      "name": "Southern Nevada Transit Coalition",
+      "short_name": "Silver Rider",
+      "website": "https://silverrider.net/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-silver~rider~laughlin~nv~us"
+        },
+        {
+          "feed_onestop_id": "f-silver~rider~mesquite~nv~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "91072,91107"
+      }
+    }
+  ]
+}

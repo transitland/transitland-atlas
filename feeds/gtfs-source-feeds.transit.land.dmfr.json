@@ -32,9 +32,10 @@
       "id": "f-augusta~ga~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/augusta-ga-us.zip",
+        "static_current": "https://gismap.augustaga.gov/AugGAgis/GISWebLinks/Transit/GTFS/google_transit.zip",
         "static_historic": [
-          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/augusta-ga-us.zip"
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/augusta-ga-us.zip",
+          "http://gtfs-source-feeds.transit.land/augusta-ga-us.zip"
         ]
       },
       "authorization": {
@@ -110,11 +111,15 @@
         "type": "query_param",
         "param_name": "token"
       },
+      "tags": {
+        "calitp_dataset_id": "recvN6b3aP9UXfqe3"
+      },
       "operators": [
         {
           "onestop_id": "o-9q5bv-comptonrenaissancetransit",
           "name": "Compton Renaissance Transit",
           "tags": {
+            "calitp_organization_id": "recwTLLx2Qq4yzwWH",
             "us_ntd_id": "90260"
           }
         }
@@ -155,10 +160,11 @@
       "id": "f-dr5r-path~nj~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/path-nj-us.zip",
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/14843/PATHGTFS.zip",
         "static_historic": [
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/path-nj-us.zip",
-          "https://data.trilliumtransit.com/gtfs/path-nj-us/path-nj-us.zip"
+          "https://data.trilliumtransit.com/gtfs/path-nj-us/path-nj-us.zip",
+          "http://gtfs-source-feeds.transit.land/path-nj-us.zip"
         ]
       },
       "authorization": {

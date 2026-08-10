@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-steel~valley~regional~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://svrta.com/wp-content/uploads/2025/12/svrta-steubenville-oh-us-2.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5972/svrta_draft.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-steel~valley~regional~transit~authority",
+          "name": "Steel Valley Regional Transit Authority",
+          "short_name": "SVRTA",
+          "tags": {
+            "us_ntd_id": "50142"
+          }
+        }
+      ]
+    }
+  ]
+}
