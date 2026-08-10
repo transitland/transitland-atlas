@@ -2,6 +2,27 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-oseth~thessaloniki~gr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.gov.gr/dataset/42c9a7da-c86c-48b1-914c-f340e8bef00d/resource/8edcc617-7d0e-4832-9804-96c9811fabfd/download/20260717_gtfs.zip"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-oseth~thessaloniki~gr",
+          "name": "Οργανισμός Συγκοινωνιακού Έργου Θεσσαλονίκης - Thessaloniki Transport Authority",
+          "short_name": "ΟΣΕΘ",
+          "website": "https://oseth.com.gr",
+          "tags": {
+            "wikidata_id": "Q40209345"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-stasy~urbanrailtransport~gr",
       "spec": "gtfs",
       "urls": {
