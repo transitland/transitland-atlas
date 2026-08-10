@@ -2,41 +2,57 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-sgg5z-gr~προστιακόςσιδηρόδρομοςπατρών",
+      "id": "f-sgg5z-gr~προαστιακόςσιδηρόδρομοςπατρών",
       "supersedes_ids": [
-        "f-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών"
+        "f-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών",
+        "f-sgg5z-gr~προστιακόςσιδηρόδρομοςπατρών"
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://datahub.io/angelou/proastiakos-patras-gtfs-20171128/r/prostiakos-patras-gtfs-20171128.zip"
+        "static_historic": [
+          "https://datahub.io/angelou/proastiakos-patras-gtfs-20171128/r/prostiakos-patras-gtfs-20171128.zip"
+        ]
       },
       "operators": [
         {
-          "onestop_id": "o-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών",
-          "name": "Προστιακός Σιδηρόδρομος Πατρών",
+          "onestop_id": "o-sgg5z-gr~προαστιακόςσιδηρόδρομοςπατρών",
+          "supersedes_ids": [
+            "o-sgg5z-gr~ΠροστιακόςΣιδηρόδρομοςΠατρών",
+            "o-sgg5z-gr~προστιακόςσιδηρόδρομοςπατρών"
+          ],
+          "name": "Προαστιακός Σιδηρόδρομος Πατρών",
           "short_name": "Suburban Railway of Patras",
-          "website": "https://www.trainose.gr/en/passenger-activity/suburban-railway/patras-suburban-railway/",
+          "website": "https://www.hellenictrain.gr/en/patras-suburban-railway",
           "associated_feeds": [
             {
               "gtfs_agency_id": "ProastiakosPatras"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q3536559"
+          }
         }
       ]
     },
     {
-      "id": "f-sqz-greece~κτελνzακυνθουαε",
+      "id": "f-sqz-greece~κτελνζακυνθουαε",
       "supersedes_ids": [
-        "f-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ"
+        "f-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ",
+        "f-sqz-greece~κτελνzακυνθουαε"
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://datahub.io/angelou/ktel-zakynthou-gtfs-20171128/r/ktel-zakynthou-gtfs-20171128.zip"
+        "static_historic": [
+          "https://datahub.io/angelou/ktel-zakynthou-gtfs-20171128/r/ktel-zakynthou-gtfs-20171128.zip"
+        ]
       },
       "operators": [
         {
-          "onestop_id": "o-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ",
-          "name": "ΚΤΕΛ Ν. ZΑΚΥΝΘΟΥ Α.Ε.",
+          "onestop_id": "o-sqz-greece~κτελνζακυνθουαε",
+          "supersedes_ids": [
+            "o-sqz-greece~ΚΤΕΛΝzΑΚΥΝΘΟΥΑΕ"
+          ],
+          "name": "ΚΤΕΛ Ν. ΖΑΚΥΝΘΟΥ Α.Ε.",
           "website": "http://ktel-zakynthos.gr/",
           "associated_feeds": [
             {
@@ -53,11 +69,16 @@
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://datahub.io/angelou/ktel-thesprotias-gtfs-20171128/r/ktel-thesprotias-gtfs-20171128.zip"
+        "static_historic": [
+          "https://datahub.io/angelou/ktel-thesprotias-gtfs-20171128/r/ktel-thesprotias-gtfs-20171128.zip"
+        ]
       },
       "operators": [
         {
-          "onestop_id": "o-sqz-greece~ΥΠΕΡΑΣΤΙΚΟΚΤΕΛΝΘΕΣΠΡΩΤΙΑΣ",
+          "onestop_id": "o-sqz-greece~υπεραστικοκτελνθεσπρωτιας",
+          "supersedes_ids": [
+            "o-sqz-greece~ΥΠΕΡΑΣΤΙΚΟΚΤΕΛΝΘΕΣΠΡΩΤΙΑΣ"
+          ],
           "name": "ΥΠΕΡΑΣΤΙΚΟ ΚΤΕΛ Ν. ΘΕΣΠΡΩΤΙΑΣ",
           "website": "https://www.ktel-thesprotias.gr/",
           "associated_feeds": [

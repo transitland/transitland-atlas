@@ -2,21 +2,26 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-swb-οργανισμόςαστικώνσυγκοινωνιώνοασα~αthensurbantransportorga",
+      "id": "f-swb-οργανισμόςαστικώνσυγκοινωνιώνοασα~athensurbantransportorga",
       "supersedes_ids": [
-        "f-swb-ΟργανισμόςΑστικώνΣυγκοινωνιώνΟΑΣΑ~Αthensurbantransportorga"
+        "f-swb-ΟργανισμόςΑστικώνΣυγκοινωνιώνΟΑΣΑ~Αthensurbantransportorga",
+        "f-swb-οργανισμόςαστικώνσυγκοινωνιώνοασα~αthensurbantransportorga"
       ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://catalog.growthfund.gr/dataset/956ed989-1e5c-4766-8289-a27373071f0f/resource/70120dd5-928a-476a-a2b5-b6bbef26253f/download/-.zip",
+        "static_current": "https://data.gov.gr/dataset/fb049bb1-aea6-4443-95fa-8b941dd6a057/resource/119db488-16ea-4c76-b560-41c472872390/download/osy_gtfs.zip",
         "static_historic": [
-          "http://geodata.gov.gr/dataset/244cfb87-21a0-4f9f-90af-25e9a232af41/resource/d94179a0-a2bd-432f-8c5e-e05eae2886cf/download/googletransit.zip"
+          "http://geodata.gov.gr/dataset/244cfb87-21a0-4f9f-90af-25e9a232af41/resource/d94179a0-a2bd-432f-8c5e-e05eae2886cf/download/googletransit.zip",
+          "https://catalog.growthfund.gr/dataset/956ed989-1e5c-4766-8289-a27373071f0f/resource/70120dd5-928a-476a-a2b5-b6bbef26253f/download/-.zip"
         ]
       },
       "operators": [
         {
-          "onestop_id": "o-swb-ΟργανισμόςΑστικώνΣυγκοινωνιώνΟΑΣΑ~Αthensurbantransportorga",
-          "name": "Οργανισμός Αστικών Συγκοινωνιών ΟΑΣΑ - Αthens Urban Transport Organisation",
+          "onestop_id": "o-swb-οργανισμόςαστικώνσυγκοινωνιώνοασα~athensurbantransportorga",
+          "supersedes_ids": [
+            "o-swb-ΟργανισμόςΑστικώνΣυγκοινωνιώνΟΑΣΑ~Αthensurbantransportorga"
+          ],
+          "name": "Οργανισμός Αστικών Συγκοινωνιών ΟΑΣΑ - Athens Urban Transport Organisation",
           "website": "http://www.oasa.gr"
         }
       ]
