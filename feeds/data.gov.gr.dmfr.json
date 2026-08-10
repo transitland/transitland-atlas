@@ -2,6 +2,29 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-stasy~urbanrailtransport~gr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.gov.gr/dataset/4e897a75-975a-4ce7-af65-f32ea01f93b9/resource/5e3858ee-d9ba-48c2-9015-744ea160976d/download/stasy_gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-stasy~urbanrailtransport~gr",
+          "name": "Σταθερές Συγκοινωνίες ΣΤΑΣΥ - Urban Rail Transport",
+          "short_name": "ΣΤΑΣΥ",
+          "website": "https://www.stasy.gr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q109331635"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-swb-οργανισμόςαστικώνσυγκοινωνιώνοασα~athensurbantransportorga",
       "supersedes_ids": [
         "f-swb-ΟργανισμόςΑστικώνΣυγκοινωνιώνΟΑΣΑ~Αthensurbantransportorga",
