@@ -1,0 +1,31 @@
+
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.3.0.json",
+  "feeds": [
+    {
+      "spec": "gtfs",
+      "id": "f-sttunatal",
+      "urls": {
+        "static_current": "https://s3-sa-east-1.amazonaws.com/dados.natal.br/"
+      },
+      "feed_namespace_id": "o-sttunatal",
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sttunatal",
+          "name": "Secretaria Municipal de Mobilidade Urbana de Natal",
+          "short_name": "STTU Natal",
+          "website": "http://www.bhtrans.pbh.gov.br?version=16.06.21",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "STTU"
+            }
+          ]
+        }
+      ]
+    },
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
