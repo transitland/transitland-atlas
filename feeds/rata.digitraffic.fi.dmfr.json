@@ -1,0 +1,31 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-vr~fi",
+      "name": "Finnish passenger rail (Digitraffic)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rata.digitraffic.fi/api/v1/trains/gtfs-passenger.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.digitraffic.fi/en/terms-of-service/",
+        "attribution_text": "Traffic data source Fintraffic / digitraffic.fi, license CC BY 4.0"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-vr~fi",
+          "name": "VR-Yhtymä Oyj",
+          "short_name": "VR",
+          "website": "https://www.vr.fi",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
