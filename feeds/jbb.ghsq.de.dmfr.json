@@ -1,0 +1,102 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-bdz~bg",
+      "name": "Bulgarian State Railways (BDŽ)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jbb.ghsq.de/gtfs/bg-bdz.gtfs.zip"
+      },
+      "license": {
+        "url": "https://jbb.ghsq.de/gtfs-feeds"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-bdz~bg",
+          "name": "БДЖ – Пътнически превози",
+          "short_name": "БДЖ",
+          "website": "https://www.bdz.bg",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "EFZ:52____:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-hellenic~train~gr",
+      "name": "Hellenic Train",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jbb.ghsq.de/gtfs/gr-hellenic-train.gtfs.zip"
+      },
+      "license": {
+        "url": "https://jbb.ghsq.de/gtfs-feeds"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hellenic~train~gr",
+          "name": "Hellenic Train",
+          "website": "https://www.hellenictrain.gr",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "hellenic-train"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-si~nap",
+      "name": "Slovenia national public transport (NAP)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jbb.ghsq.de/gtfs/si-nap.gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-SA-4.0",
+        "url": "https://jbb.ghsq.de/gtfs-feeds"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sz~si",
+          "name": "SŽ - Potniški promet, d.o.o.",
+          "short_name": "SŽ",
+          "website": "https://potniski.sz.si",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1161"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zpcg~me",
+      "name": "Željeznički prevoz Crne Gore",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://jbb.ghsq.de/gtfs/me-zpcg.gtfs.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://jbb.ghsq.de/gtfs-feeds"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zpcg~me",
+          "name": "Željeznički prevoz Crne Gore",
+          "short_name": "ŽPCG",
+          "website": "https://zpcg.me",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "zpcg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
