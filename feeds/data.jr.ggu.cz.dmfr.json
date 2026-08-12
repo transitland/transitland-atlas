@@ -1,0 +1,63 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-czptt~cz",
+      "name": "Czech national railway timetables (CZPTT)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.jr.ggu.cz/results/latest/CZPTT_GTFS.zip"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://data.jr.ggu.cz/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-arrivavlaky~cz",
+          "name": "ARRIVA vlaky s.r.o.",
+          "short_name": "ARRIVA vlaky",
+          "website": "https://www.arriva.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "-CZPTTA-3189"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ceskedrahy~cz",
+          "name": "České dráhy, a.s.",
+          "short_name": "ČD",
+          "website": "https://www.cd.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "-CZPTTA-1154"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-leoexpress~cz",
+          "name": "Leo Express s.r.o.",
+          "short_name": "Leo Express",
+          "website": "https://www.leoexpress.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "-CZPTTA-3616"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-regiojet~cz",
+          "name": "RegioJet a.s.",
+          "short_name": "RegioJet",
+          "website": "https://regiojet.cz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "-CZPTTA-3246"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
