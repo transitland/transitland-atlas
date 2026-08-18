@@ -1,0 +1,77 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-cfm~md",
+      "name": "Calea Ferată din Moldova",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hoermalmeister.github.io/gtfs-rehost/cfm/cfm.zip"
+      },
+      "license": {
+        "url": "https://github.com/hoermalmeister/gtfs-rehost"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cfm~md",
+          "name": "Calea Ferată din Moldova",
+          "short_name": "CFM",
+          "website": "http://cfm.md",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "CFM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-trainkos~xk",
+      "name": "Trainkos",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hoermalmeister.github.io/gtfs-rehost/trainkos/trainkos.zip"
+      },
+      "license": {
+        "url": "https://github.com/hoermalmeister/gtfs-rehost"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-trainkos~xk",
+          "name": "Trainkos Sh.A.",
+          "short_name": "Trainkos",
+          "website": "https://www.trainkos.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KOS"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zrsm~mk",
+      "name": "ŽRSM Transport",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hoermalmeister.github.io/gtfs-rehost/mzi/mzi.zip"
+      },
+      "license": {
+        "url": "https://github.com/hoermalmeister/gtfs-rehost"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zrsm~mk",
+          "name": "ŽRSM Transport a.d.",
+          "short_name": "ŽRSM",
+          "website": "https://mzt.mk/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ZRSM"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
