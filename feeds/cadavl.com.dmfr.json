@@ -2,6 +2,44 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-9ynm-centralarkansastransitauthority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.rrmetro.cadavl.com/RRMETRO/GTFS/GTFS_RRMETRO.zip",
+        "static_historic": [
+          "https://rrmetro.org/gtfs.zip",
+          "https://rrmetrotrack.org/gtfs.zip",
+          "http://metroplan.org/maps/transit/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9ynm-centralarkansastransitauthority",
+          "name": "Rock Region Metro",
+          "website": "https://rrmetro.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9ynm-centralarkansastransitauthority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "rrmetro",
+            "us_ntd_id": "60033",
+            "wikidata_id": "Q5060353"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9ynm-centralarkansastransitauthority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsrt.rrmetro.cadavl.com/ProfilGtfsRt2_0RSProducer-RRMETRO/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.rrmetro.cadavl.com/ProfilGtfsRt2_0RSProducer-RRMETRO/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.rrmetro.cadavl.com/ProfilGtfsRt2_0RSProducer-RRMETRO/Alert.pb"
+      }
+    },
+    {
       "id": "f-corpus~christi~regional~transportation~authority",
       "spec": "gtfs",
       "urls": {
