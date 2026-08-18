@@ -121,6 +121,47 @@ for o in operators:
       print(f"ERROR: improperly formatted feed Onestop ID: {associated_feed_onestop_id} in the associated_feeds block for operator {operator_onestop_id} ({'; '.join(problems)})")
       fail_the_build = True
 
+# check that every associated_feeds reference names a feed that exists
+#
+# A reference to a feed that is not in the registry is silently ignored on sync,
+# so an operator can look associated and not be. These accumulate when a feed is
+# renamed or retired and the operator that referenced it is not updated.
+c.execute('''
+  SELECT o.onestop_id, o.associated_feeds
+  FROM current_operators o
+  WHERE o.associated_feeds IS NOT NULL
+''')
+known_feeds = {row[0] for row in db_conn.cursor().execute('SELECT onestop_id FROM current_feeds')}
+for operator_onestop_id, associated_feeds in c.fetchall():
+  for associated_feed in (json.loads(associated_feeds) or []):
+    fid = associated_feed.get('feed_onestop_id')
+    if fid and fid not in known_feeds:
+      print(f"ERROR: operator {operator_onestop_id} is associated with {fid}, which is not a feed in this registry")
+      fail_the_build = True
+
+# report realtime feeds that no operator claims
+#
+# A gtfs-rt feed with no operator is invisible in the platform's operator view,
+# and easy to create by accident when the realtime lives in a vendor-named file
+# separate from the agency's static. Reported rather than enforced while the
+# existing ones are worked through; make it fail once the count reaches zero.
+c.execute('''
+  SELECT f.onestop_id
+  FROM current_feeds f
+  WHERE f.spec = 'gtfs-rt'
+    AND f.onestop_id NOT IN (
+      SELECT json_extract(value, '$.feed_onestop_id')
+      FROM current_operators, json_each(current_operators.associated_feeds)
+      WHERE json_extract(value, '$.feed_onestop_id') IS NOT NULL
+    )
+  ORDER BY f.onestop_id
+''')
+unclaimed = [row[0] for row in c.fetchall()]
+if unclaimed:
+  print(f"WARNING: {len(unclaimed)} gtfs-rt feed(s) have no operator associated with them:")
+  for osid in unclaimed:
+    print(f"  {osid}")
+
 if fail_the_build:
   sys.exit(1)
 else:

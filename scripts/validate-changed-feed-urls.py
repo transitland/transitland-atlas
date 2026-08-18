@@ -46,7 +46,7 @@ RT_KINDS: dict[str, str] = {
     "alerts": "realtime_alerts",
 }
 
-UrlTuple = tuple[str, str, str, str]  # (file, feed_id, url_type, url)
+UrlTuple = tuple[str, str, str]  # (file, url_type, url)
 
 
 def slugify(s: str) -> str:
@@ -140,14 +140,20 @@ def base_dmfr(file_path: str, base_ref: str) -> Optional[dict]:
 
 
 def url_tuples(dmfr: dict, file_path: str) -> set[UrlTuple]:
+    """The URLs a file proposes, keyed without the feed id.
+
+    Keying on the feed id too would make renaming a feed look like proposing
+    every URL on it afresh, so a change that touches no URL at all would fetch
+    them and fail on any that had been dead for years. What this check is for
+    is URLs a pull request introduces, and a rename introduces none.
+    """
     out: set[UrlTuple] = set()
     for feed in dmfr.get("feeds") or []:
-        fid = feed.get("id")
-        if not fid:
+        if not feed.get("id"):
             continue
         for k, v in (feed.get("urls") or {}).items():
             if isinstance(v, str):
-                out.add((file_path, fid, k, v))
+                out.add((file_path, k, v))
     return out
 
 
@@ -157,6 +163,26 @@ def feed_by_id(dmfr: Optional[dict], feed_id: str) -> Optional[dict]:
     for feed in dmfr.get("feeds") or []:
         if feed.get("id") == feed_id:
             return feed
+    return None
+
+
+def base_feed_for(dmfr: Optional[dict], head_feed: dict) -> Optional[dict]:
+    """The base version of a feed, following a rename.
+
+    A renamed feed carries its former ids in supersedes_ids, so looking it up
+    by the new id alone finds nothing and every advisory that compares against
+    the base silently does nothing. That is worst on exactly the change most
+    likely to need them.
+    """
+    fid = head_feed.get("id")
+    if fid:
+        found = feed_by_id(dmfr, fid)
+        if found:
+            return found
+    for former in head_feed.get("supersedes_ids") or []:
+        found = feed_by_id(dmfr, former)
+        if found:
+            return found
     return None
 
 
@@ -453,7 +479,7 @@ def main() -> int:
             outcomes: list[Outcome] = []
 
             static_url = urls.get("static_current")
-            if isinstance(static_url, str) and (fp, fid, "static_current", static_url) in changed:
+            if isinstance(static_url, str) and (fp, "static_current", static_url) in changed:
                 if auth_type:
                     outcomes.append(Outcome(
                         bullet=f"- ⚪ static — skipped (auth: `{auth_type}`); validated by tlv2 — `{static_url}`",
@@ -466,7 +492,7 @@ def main() -> int:
                 rt_url = urls.get(dmfr_key)
                 if not isinstance(rt_url, str):
                     continue
-                if (fp, fid, dmfr_key, rt_url) not in changed:
+                if (fp, dmfr_key, rt_url) not in changed:
                     continue
                 if auth_type:
                     outcomes.append(Outcome(
@@ -481,7 +507,7 @@ def main() -> int:
 
             # Style advisories — appended after URL outcomes, scoped to feeds
             # that already have some change in this PR.
-            base_feed = feed_by_id(base, fid)
+            base_feed = base_feed_for(base, feed)
             for advisory in (
                 advisory_static_history(feed, base_feed),
                 advisory_rt_operator_association(feed, base_feed, operator_feed_ids),
