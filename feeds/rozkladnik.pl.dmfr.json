@@ -1,0 +1,25 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u8bh-jaroslaw",
+      "name": "Jarosław GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/rozkladnik/gtfs-pwik-jaroslaw/releases/latest/download/gtfs.zip"
+      },
+      "license": {
+        "url": "https://github.com/rozkladnik/gtfs-pwik-jaroslaw",
+        "attribution_text": "GTFS built by Rozkładnik from PWiK Jarosław timetables."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u8bh-pwik~jaroslaw",
+          "name": "Przedsiębiorstwo Wodociągów i Kanalizacji w Jarosławiu Sp. z o.o.",
+          "short_name": "PWiK Jarosław",
+          "website": "https://pwik-jaroslaw.pl/"
+        }
+      ]
+    }
+  ]
+}

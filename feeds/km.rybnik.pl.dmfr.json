@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u2vh-rybnik",
+      "name": "Rybnik GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://km.rybnik.pl/download/attachment/629/gtfs_01082026.zip",
+        "static_historic": [
+          "https://mkuran.pl/gtfs/rybnik.zip"
+        ]
+      },
+      "license": {
+        "url": "https://bip.km.rybnik.pl/"
+      },
+      "tags": {
+        "unstable_url": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2vh-km~rybnik",
+          "supersedes_ids": [
+            "o-u2vh-ztz~rybnik"
+          ],
+          "name": "Komunikacja Miejska Rybnik Sp. z o.o.",
+          "short_name": "KM Rybnik",
+          "website": "https://km.rybnik.pl/"
+        }
+      ]
+    }
+  ]
+}

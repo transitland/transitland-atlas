@@ -2,65 +2,69 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-pkp~intercity~pl",
-      "name": "PKP Intercity GTFS",
+      "id": "f-polish~trains",
+      "supersedes_ids": [
+        "f-pkp~intercity~pl",
+        "f-pol~regio~pl",
+        "f-u3-kolejemazowieckie"
+      ],
+      "name": "Polish Trains GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/pkpic.zip"
+        "static_current": "https://mkuran.pl/gtfs/polish_trains.zip",
+        "static_historic": [
+          "https://mkuran.pl/gtfs/pkpic.zip",
+          "https://mkuran.pl/gtfs/polregio.zip",
+          "https://mkuran.pl/gtfs/kolejemazowieckie.zip"
+        ]
       },
       "license": {
-        "spdx_identifier": "CC0-1.0",
         "url": "https://mkuran.pl/gtfs/",
-        "attribution_text": "Stop positions (stop_lat and stop_lon) are based on data by © OpenStreetMap contributors"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3-pkp~intercity~pl",
-          "name": "PKP Intercity",
-          "short_name": "PKP IC",
-          "website": "https://www.intercity.pl/"
-        }
-      ]
-    },
-    {
-      "id": "f-pol~regio~pl",
-      "name": "PolRegio GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/polregio.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC0-1.0",
-        "url": "https://mkuran.pl/gtfs/"
+        "attribution_instructions": "Expose all attributions from attributions.txt: PKP Polskie Linie Kolejowe S.A. and Koleje Mazowieckie for the schedule data, Mikołaj Kuranowski for the GTFS."
       },
       "operators": [
         {
           "onestop_id": "o-pol~regio",
           "name": "PolRegio",
-          "website": "https://polregio.pl/"
-        }
-      ]
-    },
-    {
-      "id": "f-u2vh-rybnik",
-      "name": "Rybnik GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/rybnik.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC0-1.0",
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "operators": [
+          "website": "https://polregio.pl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "PR"
+            }
+          ]
+        },
         {
-          "onestop_id": "o-u2vh-ztz~rybnik",
-          "name": "Zarząd Transportu Zbiorowego w Rybniku",
-          "short_name": "ZTZ Rybnik",
-          "website": "http://www.ztz.rybnik.pl/"
+          "onestop_id": "o-u3-pkp~intercity~pl",
+          "name": "PKP Intercity",
+          "short_name": "PKP IC",
+          "website": "https://www.intercity.pl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "IC"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3q-kolejemazowieckie",
+          "name": "Koleje Mazowieckie",
+          "short_name": "KM",
+          "website": "http://www.mazowieckie.com.pl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KM"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3q-skm~warszawa",
+          "name": "Szybka Kolej Miejska sp. z o.o. (Warszawa)",
+          "short_name": "SKM Warszawa",
+          "website": "https://www.skm.warszawa.pl/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SKM"
+            }
+          ]
         }
       ]
     },
@@ -75,7 +79,8 @@
         "static_current": "https://mkuran.pl/gtfs/rzeszow.zip"
       },
       "license": {
-        "url": "https://bip.erzeszow.pl/pl/319-informacja-publiczna-ponowne-wykorzystywanie-informacji-sektora-publicznego/4570-zasady-dostepu-do-informacji-publicznej.html"
+        "url": "https://bip.erzeszow.pl/pl/319-informacja-publiczna-ponowne-wykorzystywanie-informacji-sektora-publicznego/4570-zasady-dostepu-do-informacji-publicznej.html",
+        "use_without_attribution": "no"
       },
       "operators": [
         {
@@ -87,24 +92,29 @@
       ]
     },
     {
-      "id": "f-u3-kolejemazowieckie",
-      "supersedes_ids": [
-        "f-u3q-ztmwarszawa~kolejemazowieckie~warszawskakolejdojazdowa"
-      ],
-      "name": "Koleje Mazowieckie GTFS",
+      "id": "f-u36g-gorzow~wielkopolski",
+      "name": "Gorzów Wielkopolski GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/kolejemazowieckie.zip"
+        "static_current": "https://mkuran.pl/gtfs/gorzow_wlkp.zip",
+        "static_historic": [
+          "https://bip.mzk-gorzow.com.pl/files/file_add/download/44_gtfs_gw.zip",
+          "https://przyjazdy.pl/latest/gorzow.zip"
+        ]
       },
       "license": {
-        "url": "https://bip.mazowieckie.com.pl/pl/ponowne-wykorzystywanie-informacji-sektora-publicznego"
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes",
+        "commercial_use_allowed": "yes"
       },
       "operators": [
         {
-          "onestop_id": "o-u3q-kolejemazowieckie",
-          "name": "Koleje Mazowieckie",
-          "short_name": "KM",
-          "website": "http://www.mazowieckie.com.pl/"
+          "onestop_id": "o-u36g-mzk~gorzow",
+          "name": "Miejski Zakład Komunikacji w Gorzowie Wielkopolskim sp. z o.o.",
+          "short_name": "MZK Gorzów",
+          "website": "https://mzk-gorzow.com.pl/"
         }
       ]
     },
@@ -151,29 +161,6 @@
           "name": "Zarząd Dróg Miejskich i Komunikacji Publicznej w Bydgoszczy",
           "short_name": "ZDMiKP Bydgoszcz",
           "website": "https://www.zdmikp.bydgoszcz.pl/"
-        }
-      ]
-    },
-    {
-      "id": "f-u3me-wloclawek",
-      "name": "Włocławek GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/wloclawek.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC0-1.0",
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-f3me-mpk~wloclawek",
-          "name": "Miejskie Przedsiębiorstwo Komunikacyjne Sp. z o.o. (Włocławek)",
-          "short_name": "MPK Włocławek",
-          "website": "https://mpk.com.pl/"
         }
       ]
     },
@@ -325,39 +312,6 @@
       }
     },
     {
-      "id": "f-u3qc-komunikacjamiejskałomiankispzoo",
-      "supersedes_ids": [
-        "f-u3qc-komunikacjamiejskaŁomiankispzoo"
-      ],
-      "name": "Łomianki GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/lomianki.zip",
-        "static_historic": [
-          "https://mkuran.pl/feed/kml/kml-latest.zip"
-        ]
-      },
-      "license": {
-        "spdx_identifier": "CC0-1.0",
-        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-u3qc-komunikacjamiejskałomianki",
-          "supersedes_ids": [
-            "o-u3qc-komunikacjamiejskaŁomiankispzoo",
-            "o-u3qc-komunikacjamiejskaŁomianki"
-          ],
-          "name": "Komunikacja Miejska Łomianki",
-          "short_name": "KMŁ",
-          "website": "http://kmlomianki.info/"
-        }
-      ]
-    },
-    {
       "id": "f-u3rw-lomza",
       "name": "Łomża GTFS",
       "spec": "gtfs",
@@ -402,18 +356,6 @@
           "website": "https://mzkwejherowo.pl/"
         }
       ]
-    },
-    {
-      "id": "f-u3t-gdansk~gdynia",
-      "name": "Trójmiasto (Gdańsk, Gdynia, Sopot) combined GTFS",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://mkuran.pl/gtfs/tricity.zip"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "http://opendefinition.org/licenses/cc-by/"
-      }
     },
     {
       "id": "f-u3tu-elblag",
