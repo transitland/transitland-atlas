@@ -5,12 +5,21 @@
       "id": "f-u0-openov~lu",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://openov.lu/data/gtfs/gtfs-openov-lu.zip"
+        "static_current": "https://download.data.public.lu/resources/horaires-et-arrets-des-transport-publics-gtfs/20260813-044823/gtfs-20260812-20261011.zip",
+        "static_historic": [
+          "http://openov.lu/data/gtfs/gtfs-openov-lu.zip"
+        ]
       },
       "license": {
-        "url": "http://openov.lu/data/gtfs/LICENSE.TXT",
-        "use_without_attribution": "yes",
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://data.public.lu/en/datasets/horaires-et-arrets-des-transport-publics-gtfs/",
+        "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "udata_dataset": "horaires-et-arrets-des-transport-publics-gtfs",
+        "udata_host": "data.public.lu",
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -20,7 +29,10 @@
           "website": "http://cfl.lu",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "11"
+            },
+            {
+              "gtfs_agency_id": "171"
             }
           ]
         },
@@ -31,7 +43,7 @@
           "website": "http://mobiliteit.lu",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "3"
+              "gtfs_agency_id": "1"
             }
           ]
         },
@@ -42,7 +54,7 @@
           "website": "http://tice.lu",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "4"
+              "gtfs_agency_id": "16"
             }
           ]
         },
@@ -53,9 +65,23 @@
           "website": "http://autobus.lu",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "6"
             }
           ]
+        },
+        {
+          "onestop_id": "o-u0u6-luxtram",
+          "name": "Luxtram S.A.",
+          "short_name": "Luxtram",
+          "website": "https://www.luxtram.lu",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "111"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q108822589"
+          }
         }
       ]
     }
