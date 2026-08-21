@@ -9,14 +9,32 @@
       },
       "tags": {
         "gtfs_data_exchange": "cotral"
-      },
-      "operators": [
+      }
+    },
+    {
+      "id": "f-cotral~train~lazio~italia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://travel.mob.cotralspa.it:4443/GTFS/GTFS_FERRO.zip"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-cotral~lazio",
+      "name": "COTRAL",
+      "website": "https://cotralspa.it",
+      "associated_feeds": [
         {
-          "onestop_id": "o-cotral~lazio",
-          "name": "COTRAL",
-          "website": "http://cotralspa.it"
+          "feed_onestop_id": "f-cotral~lazio~italia"
+        },
+        {
+          "feed_onestop_id": "f-cotral~train~lazio~italia"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q2989759"
+      }
     }
   ]
 }
