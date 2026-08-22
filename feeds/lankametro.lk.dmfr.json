@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-lanka~metro~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transit.seyone.dev/api/v1/gtfs/download?agency=LMT"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lanka~metro~transit",
+          "name": "Lanka Metro Transit",
+          "short_name": "LMT",
+          "website": "https://lankametro.lk",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-lanka~metro~transit~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-lanka~metro~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.transit.seyone.dev/api/v1/realtime/vehicle-positions?agency=LMT",
+        "realtime_trip_updates": "https://api.transit.seyone.dev/api/v1/realtime/trip-updates?agency=LMT",
+        "realtime_alerts": "https://api.transit.seyone.dev/api/v1/realtime/alerts?agency=LMT"
+      }
+    }
+  ]
+}
