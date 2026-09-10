@@ -6,14 +6,32 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://opengis.regina.ca/reginagtfs/google_transit.zip"
-      },
-      "operators": [
+      }
+    },
+    {
+      "id": "f-c8vx-thecityofregina~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://transitlive.com/gtfs-rt/alerts.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-c8vx-thecityofregina",
+      "name": "The City of Regina",
+      "website": "http://www.regina.ca",
+      "associated_feeds": [
         {
-          "onestop_id": "o-c8vx-thecityofregina",
-          "name": "The City of Regina",
-          "website": "http://www.regina.ca"
+          "feed_onestop_id": "f-c8vx-thecityofregina"
+        },
+        {
+          "feed_onestop_id": "f-c8vx-thecityofregina~rt"
         }
-      ]
+      ],
+      "tags": {
+        "wikidata_id": "Q7308547"
+      }
     }
   ]
 }
