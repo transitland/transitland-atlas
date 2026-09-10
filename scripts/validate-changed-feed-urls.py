@@ -190,6 +190,12 @@ def load_operator_associated_feed_ids(feeds_dir: Path) -> set[str]:
     """Return the set of feed_onestop_ids referenced by any operator's
     associated_feeds[] across every *.dmfr.json file under feeds_dir.
 
+    Operators appear in two places in DMFR: the registry-level `operators`
+    array, and nested inside a feed as `feeds[].operators`. Both are in use
+    across the registry and `transitland sync` honours both, so both are
+    read here — missing the nested form made this advise that correctly
+    associated RT feeds were unassociated.
+
     Reads from the working tree, so it captures both pre-existing
     associations and ones added in the same PR (regardless of which dmfr
     file they live in).
@@ -203,7 +209,10 @@ def load_operator_associated_feed_ids(feeds_dir: Path) -> set[str]:
                 data = json.load(f)
         except (OSError, json.JSONDecodeError):
             continue
-        for op in data.get("operators") or []:
+        operators = list(data.get("operators") or [])
+        for feed in data.get("feeds") or []:
+            operators.extend(feed.get("operators") or [])
+        for op in operators:
             for af in op.get("associated_feeds") or []:
                 fid = af.get("feed_onestop_id")
                 if fid:
