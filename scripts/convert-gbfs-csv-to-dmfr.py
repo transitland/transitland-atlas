@@ -3,20 +3,34 @@
 
 import csv
 import json
-import re
 import requests
 from collections import OrderedDict
+
+
+def mint_id(name, location):
+    """A Onestop ID name component: alphanumerics from any script, '~' between.
+
+    The scheme allows no other punctuation. `\\W` was used here before, which
+    keeps underscores because Python counts them as word characters, so
+    system names like "VAG_Rad" produced `f-vag_rad~nuremberg~gbfs`. Dropping
+    empty words also removes the `~~` that a trailing "(DE)" or "Mark," left
+    behind.
+
+    These ids are derived from the system's name on every run and are not
+    maintained across upstream renames, so no supersedes record is kept.
+    """
+    text = f"{name} {location}".lower()
+    text = "".join(c if c.isalnum() else " " for c in text)
+    words = [w for w in text.split() if w]
+    return "f-" + "~".join(OrderedDict.fromkeys(words)) + "~gbfs"
+
 
 r = requests.get("https://raw.githubusercontent.com/mobilitydata/gbfs/master/systems.csv")
 decoded_content = r.content.decode("utf-8")
 cr = csv.DictReader(decoded_content.splitlines(), delimiter=",")
 feeds = []
 for row in list(cr):
-    name = (row["Name"] + ' ' + row["Location"]).lower()
-    name = re.sub(r'\W+', ' ', name) # Replace all non-alphanumeric characters with spaces
-    names = re.split(r'\s+', name) # Split on whitespace
-    id = '~'.join(OrderedDict.fromkeys(names))
-    onestop_id = f"f-{id}~gbfs"
+    onestop_id = mint_id(row["Name"], row["Location"])
     if onestop_id in [f["id"] for f in feeds]:
         # if Onestop ID will collide, we'll just skip this feed for now
         # because of https://github.com/NABSA/gbfs/pull/373

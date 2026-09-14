@@ -69,10 +69,15 @@ def remove_duplicate_urls(data):
 
 def create_dmfr_record(feed_url, label, license_name, new_dmfr):
     label = label.strip().lower()
-    label = re.sub(r'\(.*?\)|\[.*?\]', '', label)  # remove [gtfs-data], [HODaP], and (HODaP)
-    label = re.sub(r'[()\[\]（）「」『』、。“”‘’]', '', label)
-    label = re.sub(r'\s+|・|〜', '~', label)
-    label = label.strip('~')
+    # bracketed annotations, in ASCII and fullwidth forms: [gtfs-data], （HODaP）, ［HODaP］
+    label = re.sub(r'\(.*?\)|\[.*?\]|（.*?）|［.*?］', '', label)
+    # The name component of a Onestop ID allows alphanumerics from any script
+    # and '~', and nothing else. Enumerating punctuation to strip missed the
+    # fullwidth forms — ～ (U+FF5E) is a different character from 〜 (U+301C),
+    # so ＊, ．and ［］ all reached published ids. Treat anything that is not
+    # alphanumeric as a word break instead.
+    label = ''.join(c if c.isalnum() else '~' for c in label)
+    label = re.sub(r'~+', '~', label).strip('~')
     onestop_id = f"f-{label}"
 
     # Ensure there are no duplicate IDs by appending a tilde and digit if necessary
