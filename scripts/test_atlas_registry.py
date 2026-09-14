@@ -229,6 +229,36 @@ def test_non_geohash_middle_segment_is_reported(osid):
     assert any("geohash" in p for p in problems), problems
 
 
+# --- geohash length ---------------------------------------------------------
+# The alphabet check misses a name that happens to avoid a, i, l and o. The
+# longest geohash in the registry is seven characters; eight locates a point
+# to about forty metres, which no feed or operator focal point needs.
+
+@pytest.mark.parametrize("osid", [
+    "f-s-atpnuoro",                          # one character, in use
+    "f-gc0v8gh-corkcountycouncil",           # seven, the longest in the registry
+    "f-u0nh-autolineevaresine~trasporto",
+])
+def test_geohashes_in_use_are_accepted(osid):
+    assert atlas_registry.onestop_id_problems(osid, "feed") == []
+
+
+@pytest.mark.parametrize("osid", [
+    "f-westchesterbee-ny",                   # a name using only geohash letters
+    "f-becherbrewery-cz",
+])
+def test_overlong_geohash_is_reported(osid):
+    problems = atlas_registry.onestop_id_problems(osid, "feed")
+    assert problems, f"expected {osid!r} to be rejected"
+    assert any("characters, over the" in p for p in problems), problems
+
+
+def test_length_and_alphabet_are_not_reported_twice():
+    # A long segment with a bad character is one fault, not two.
+    problems = atlas_registry.onestop_id_problems("f-societe~de~transport-x", "feed")
+    assert sum("geohash" in p or "not a geohash" in p for p in problems) == 1, problems
+
+
 # --- name punctuation -------------------------------------------------------
 # The scheme allows alphanumerics from any script and '~'. This was reported
 # without failing while the sync jobs still minted underscores and full-width

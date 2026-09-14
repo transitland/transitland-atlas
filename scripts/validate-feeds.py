@@ -139,6 +139,44 @@ for operator_onestop_id, associated_feeds in c.fetchall():
       print(f"ERROR: operator {operator_onestop_id} is associated with {fid}, which is not a feed in this registry")
       fail_the_build = True
 
+# check that no superseded Onestop ID is also a live one
+#
+# Read from the files rather than the database: transitland sync does not carry
+# supersedes_ids into current_feeds or current_operators, so this is invisible
+# to every other check here. A record that lists its own id supersedes itself,
+# which is how ridesystems.net shipped one from its first commit, and a rename
+# that records the old id while leaving it live means both resolve.
+live_ids = set()
+superseded_ids = {}
+for file_path in dmfr_files:
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        continue
+
+    def note(entity, osid):
+        if not osid:
+            return
+        live_ids.add(osid)
+        for old in entity.get('supersedes_ids') or []:
+            superseded_ids.setdefault(old, (osid, os.path.basename(file_path)))
+
+    for operator in data.get('operators') or []:
+        note(operator, operator.get('onestop_id'))
+    for feed in data.get('feeds') or []:
+        note(feed, feed.get('id'))
+        for operator in feed.get('operators') or []:
+            note(operator, operator.get('onestop_id'))
+
+for old, (by, where) in sorted(superseded_ids.items()):
+    if old in live_ids:
+        if old == by:
+            print(f"ERROR: {where}: {old} lists itself in supersedes_ids")
+        else:
+            print(f"ERROR: {where}: {by} supersedes {old}, which is still a live Onestop ID")
+        fail_the_build = True
+
 # report realtime feeds that no operator claims
 #
 # A gtfs-rt feed with no operator is invisible in the platform's operator view,

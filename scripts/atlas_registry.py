@@ -68,6 +68,13 @@ ONESTOP_PREFIX = {"feed": "f", "operator": "o"}
 # it, which silently re-parses as geohash + name.
 GEOHASH_ALPHABET = frozenset("0123456789bcdefghjkmnpqrstuvwxyz")
 
+# Eight characters locates a point to about 40 metres, far finer than the
+# focal point of a feed, operator or route needs; the longest in the registry
+# is seven. The cap is a second line of defence for the case the alphabet
+# misses: a name that happens to avoid a, i, l and o, where "westchesterbee"
+# would otherwise read as a fourteen-character geohash.
+GEOHASH_MAX_LENGTH = 8
+
 
 def _name_component(osid: str) -> str:
     """The name is the last component: third when a geohash is present, else second."""
@@ -118,6 +125,11 @@ def onestop_id_problems(osid: str, kind: str, require_lowercase: bool = True) ->
             problems.append(
                 f"middle segment {parts[1]!r} is not a geohash "
                 f"(disallowed: {''.join(bad)!r}); a hyphen in the name splits it here"
+            )
+        elif len(parts[1]) > GEOHASH_MAX_LENGTH:
+            problems.append(
+                f"geohash {parts[1]!r} is {len(parts[1])} characters, over the "
+                f"{GEOHASH_MAX_LENGTH} allowed; a hyphen in the name splits it here"
             )
     return problems
 
