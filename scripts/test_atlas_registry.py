@@ -200,6 +200,71 @@ def test_operator_case_is_not_enforced():
     assert atlas_registry.onestop_id_problems(greek, "operator") != []
 
 
+# --- geohash component ------------------------------------------------------
+# A hyphen inside the name re-parses the id as geohash + name, so the name is
+# silently truncated and the "geohash" is nonsense. This shipped in
+# f-rouyn~noranda~qc~ca-rt and nothing caught it.
+
+@pytest.mark.parametrize("osid", [
+    "f-9q5-metro",              # ordinary geohash
+    "f-9-flixbus",              # one character is a legitimate continental geohash
+    "f-c3j-757",                # digits only
+    "f-taft~ca~us",             # two-part, no geohash to check
+    "f-galesburg~il~us",
+])
+def test_valid_geohash_components_pass(osid):
+    assert atlas_registry.onestop_id_problems(osid, "feed") == []
+
+
+@pytest.mark.parametrize("osid", [
+    "f-rouyn~noranda~qc~ca-rt",                 # the id that prompted this check
+    "f-moose~jaw-sk~ca",
+    "f-hubup~saint-hyacinthe",
+    "f-eo0-zssk",                               # 'o' is not in geohash base32
+    "f-ail-somewhere",                          # a, i and l are not either
+])
+def test_non_geohash_middle_segment_is_reported(osid):
+    problems = atlas_registry.onestop_id_problems(osid, "feed")
+    assert problems, f"expected {osid!r} to be rejected"
+    assert any("geohash" in p for p in problems), problems
+
+
+def test_every_grandfathered_id_is_actually_malformed():
+    """The exemption list must not accumulate ids that are fine.
+
+    An id that stops being reported should leave the list rather than sit
+    there granting an exemption nobody needs.
+    """
+    for osid in atlas_registry.LEGACY_MALFORMED_ONESTOP_IDS:
+        kind = "feed" if osid.startswith("f-") else "operator"
+        assert atlas_registry.onestop_id_problems(osid, kind, require_lowercase=False), \
+            f"{osid} is in LEGACY_MALFORMED_ONESTOP_IDS but has no problems"
+
+
+# --- name advisories --------------------------------------------------------
+
+@pytest.mark.parametrize("osid", ["f-9q5-metro", "f-taft~ca~us", "o-xn39-瑞浪市"])
+def test_conforming_names_have_no_advisories(osid):
+    assert atlas_registry.onestop_id_name_advisories(osid) == []
+
+
+@pytest.mark.parametrize("osid,ch", [
+    ("f-vag_rad~nuremberg~gbfs", "_"),
+    ("f-仙台市営バス2026.3.2～", "."),
+    ("f-［hodap］~占冠村コミュニティ", "［"),
+])
+def test_unusual_name_punctuation_is_advised(osid, ch):
+    advisories = atlas_registry.onestop_id_name_advisories(osid)
+    assert advisories and ch in advisories[0], advisories
+
+
+def test_name_advisories_are_not_problems():
+    # These ride in sync-generated ids, so they are reported and never fatal.
+    osid = "f-vag_rad~nuremberg~gbfs"
+    assert atlas_registry.onestop_id_problems(osid, "feed") == []
+    assert atlas_registry.onestop_id_name_advisories(osid) != []
+
+
 def test_sync_log_is_returned_when_asked(feeds_dir):
     # validate-feeds.py detects a duplicate feed id from a line in this log,
     # because transitland sync reports it as "updated feed" rather than failing.

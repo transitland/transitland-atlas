@@ -15,6 +15,11 @@ FEEDS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 
 fail_the_build = False
 
+# Collected while walking ids, reported together at the end so one malformed
+# id does not bury the rest.
+legacy_malformed = []
+name_advisories = []
+
 # check that all files in feeds/ have a .dmfr.json extension
 all_feed_files = glob.glob(os.path.join(FEEDS_DIR, "*"))
 for file_path in all_feed_files:
@@ -73,8 +78,12 @@ for row in onestop_ids:
   osid = row[0] or ''
   problems = atlas_registry.onestop_id_problems(osid, "feed")
   if problems:
-    print(f"ERROR: improperly formatted Feed Onestop ID: {osid} ({'; '.join(problems)})")
-    fail_the_build = True
+    if osid in atlas_registry.LEGACY_MALFORMED_ONESTOP_IDS:
+      legacy_malformed.append(osid)
+    else:
+      print(f"ERROR: improperly formatted Feed Onestop ID: {osid} ({'; '.join(problems)})")
+      fail_the_build = True
+  name_advisories.extend((osid, a) for a in atlas_registry.onestop_id_name_advisories(osid))
 
 # check uniqueness of urls.static_current
 c.execute('''
@@ -97,8 +106,12 @@ for row in onestop_ids:
   # Case is not enforced here; see onestop_id_problems for why.
   problems = atlas_registry.onestop_id_problems(osid, "operator", require_lowercase=False)
   if problems:
-    print(f"ERROR: improperly formatted Operator Onestop ID: {osid} ({'; '.join(problems)})")
-    fail_the_build = True
+    if osid in atlas_registry.LEGACY_MALFORMED_ONESTOP_IDS:
+      legacy_malformed.append(osid)
+    else:
+      print(f"ERROR: improperly formatted Operator Onestop ID: {osid} ({'; '.join(problems)})")
+      fail_the_build = True
+  name_advisories.extend((osid, a) for a in atlas_registry.onestop_id_name_advisories(osid))
 
 # check associated_feeds[].feed_onstop_id format
 c.execute('''
@@ -117,7 +130,7 @@ for o in operators:
       fail_the_build = True
       continue
     problems = atlas_registry.onestop_id_problems(associated_feed_onestop_id, "feed")
-    if problems:
+    if problems and associated_feed_onestop_id not in atlas_registry.LEGACY_MALFORMED_ONESTOP_IDS:
       print(f"ERROR: improperly formatted feed Onestop ID: {associated_feed_onestop_id} in the associated_feeds block for operator {operator_onestop_id} ({'; '.join(problems)})")
       fail_the_build = True
 
@@ -161,6 +174,17 @@ if unclaimed:
   print(f"WARNING: {len(unclaimed)} gtfs-rt feed(s) have no operator associated with them:")
   for osid in unclaimed:
     print(f"  {osid}")
+
+if legacy_malformed:
+  print(f"NOTE: {len(legacy_malformed)} Onestop ID(s) predate this check and are "
+        f"grandfathered in atlas_registry.LEGACY_MALFORMED_ONESTOP_IDS; ids are "
+        f"immutable, so these stay as they are.")
+
+if name_advisories:
+  print(f"WARNING: {len(name_advisories)} Onestop ID(s) carry punctuation the scheme "
+        f"does not list (the scheme allows alphanumerics and '~'):")
+  for osid, advisory in sorted(name_advisories):
+    print(f"  {osid} — {advisory}")
 
 if fail_the_build:
   sys.exit(1)
