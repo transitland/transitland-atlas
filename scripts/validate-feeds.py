@@ -15,10 +15,6 @@ FEEDS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 
 fail_the_build = False
 
-# Gathered while walking feed and operator ids, then printed as one block at
-# the end rather than interleaved with the errors above.
-name_advisories = []
-
 # check that all files in feeds/ have a .dmfr.json extension
 all_feed_files = glob.glob(os.path.join(FEEDS_DIR, "*"))
 for file_path in all_feed_files:
@@ -79,7 +75,6 @@ for row in onestop_ids:
   if problems:
     print(f"ERROR: improperly formatted Feed Onestop ID: {osid} ({'; '.join(problems)})")
     fail_the_build = True
-  name_advisories.extend((osid, a) for a in atlas_registry.onestop_id_name_advisories(osid))
 
 # check uniqueness of urls.static_current
 c.execute('''
@@ -104,7 +99,6 @@ for row in onestop_ids:
   if problems:
     print(f"ERROR: improperly formatted Operator Onestop ID: {osid} ({'; '.join(problems)})")
     fail_the_build = True
-  name_advisories.extend((osid, a) for a in atlas_registry.onestop_id_name_advisories(osid))
 
 # check associated_feeds[].feed_onstop_id format
 c.execute('''
@@ -167,12 +161,6 @@ if unclaimed:
   print(f"WARNING: {len(unclaimed)} gtfs-rt feed(s) have no operator associated with them:")
   for osid in unclaimed:
     print(f"  {osid}")
-
-if name_advisories:
-  print(f"WARNING: {len(name_advisories)} Onestop ID(s) carry punctuation the scheme "
-        f"does not list (the scheme allows alphanumerics and '~'):")
-  for osid, advisory in sorted(name_advisories):
-    print(f"  {osid} — {advisory}")
 
 if fail_the_build:
   sys.exit(1)

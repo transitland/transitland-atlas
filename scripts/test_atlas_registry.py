@@ -229,28 +229,29 @@ def test_non_geohash_middle_segment_is_reported(osid):
     assert any("geohash" in p for p in problems), problems
 
 
-# --- name advisories --------------------------------------------------------
+# --- name punctuation -------------------------------------------------------
+# The scheme allows alphanumerics from any script and '~'. This was reported
+# without failing while the sync jobs still minted underscores and full-width
+# punctuation; once they stopped and the existing ids were renamed, it became
+# a hard check.
 
-@pytest.mark.parametrize("osid", ["f-9q5-metro", "f-taft~ca~us", "o-xn39-瑞浪市"])
-def test_conforming_names_have_no_advisories(osid):
-    assert atlas_registry.onestop_id_name_advisories(osid) == []
+@pytest.mark.parametrize("osid", ["f-9q5-metro", "f-taft~ca~us", "o-xn39-瑞浪市",
+                                  "f-dott~wołomin~gbfs"])
+def test_conforming_names_pass(osid):
+    kind = "feed" if osid.startswith("f-") else "operator"
+    assert atlas_registry.onestop_id_problems(osid, kind, require_lowercase=False) == []
 
 
 @pytest.mark.parametrize("osid,ch", [
-    ("f-vag_rad~nuremberg~gbfs", "_"),
+    ("f-vag_rad~nuremberg~gbfs", "_"),          # \W keeps '_', so the GBFS job minted it
     ("f-仙台市営バス2026.3.2～", "."),
-    ("f-［hodap］~占冠村コミュニティ", "［"),
+    ("f-［hodap］~占冠村コミュニティ", "［"),          # fullwidth brackets, not the ASCII pair
+    ("f-さかわ~おち花＊花ループバス", "＊"),
 ])
-def test_unusual_name_punctuation_is_advised(osid, ch):
-    advisories = atlas_registry.onestop_id_name_advisories(osid)
-    assert advisories and ch in advisories[0], advisories
-
-
-def test_name_advisories_are_not_problems():
-    # These ride in sync-generated ids, so they are reported and never fatal.
-    osid = "f-vag_rad~nuremberg~gbfs"
-    assert atlas_registry.onestop_id_problems(osid, "feed") == []
-    assert atlas_registry.onestop_id_name_advisories(osid) != []
+def test_name_punctuation_is_reported(osid, ch):
+    problems = atlas_registry.onestop_id_problems(osid, "feed")
+    assert problems, f"expected {osid!r} to be rejected"
+    assert any(ch in p for p in problems), problems
 
 
 def test_sync_log_is_returned_when_asked(feeds_dir):
