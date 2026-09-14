@@ -28,4 +28,6 @@ jobs:
       # Run from the repository root so uv resolves pyproject.toml, where the
       # test dependencies are declared rather than in the test files.
       - name: Run tests
-        run: uv run --with pytest pytest scripts/ -q
+        # external-data-for-reference holds the sync jobs that mint Onestop
+        # ids for the Japanese and Spanish feeds, so their tests run here too.
+        run: uv run --with pytest pytest scripts/ external-data-for-reference/ -q
