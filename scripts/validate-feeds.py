@@ -15,8 +15,8 @@ FEEDS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file_
 
 fail_the_build = False
 
-# Collected while walking ids, reported together at the end so one malformed
-# id does not bury the rest.
+# Gathered while walking feed and operator ids, then printed as one block at
+# the end rather than interleaved with the errors above.
 name_advisories = []
 
 # check that all files in feeds/ have a .dmfr.json extension

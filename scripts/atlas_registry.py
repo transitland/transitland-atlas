@@ -68,6 +68,13 @@ ONESTOP_PREFIX = {"feed": "f", "operator": "o"}
 # it, which silently re-parses as geohash + name.
 GEOHASH_ALPHABET = frozenset("0123456789bcdefghjkmnpqrstuvwxyz")
 
+
+def _name_component(osid: str) -> str:
+    """The name is the last component: third when a geohash is present, else second."""
+    parts = osid.split("-")
+    return parts[2] if len(parts) == 3 else parts[-1]
+
+
 def onestop_id_name_advisories(osid: str) -> list[str]:
     """Punctuation in the name component that the scheme does not list.
 
@@ -80,9 +87,7 @@ def onestop_id_name_advisories(osid: str) -> list[str]:
     """
     if not osid:
         return []
-    parts = osid.split("-")
-    name = parts[2] if len(parts) == 3 else parts[-1]
-    odd = sorted({c for c in name if not (c.isalnum() or c == "~")})
+    odd = sorted({c for c in _name_component(osid) if not (c.isalnum() or c == "~")})
     if odd:
         return [f"name has punctuation outside the scheme: {''.join(odd)!r}"]
     return []
@@ -107,17 +112,17 @@ def onestop_id_problems(osid: str, kind: str, require_lowercase: bool = True) ->
     if not osid:
         return ["empty"]
     problems = []
-    if osid.count("-") not in (1, 2):
+    parts = osid.split("-")
+    if len(parts) not in (2, 3):
         problems.append("needs one or two dashes")
     if osid[0] != prefix:
         problems.append(f"must start with {prefix!r}")
     if require_lowercase and osid != osid.lower():
         problems.append("must be lowercase")
-    if "" in osid.split("-"):
+    if "" in parts:
         problems.append("has an empty dash-separated segment")
     if osid.endswith("~"):
         problems.append("ends with a tilde")
-    parts = osid.split("-")
     if len(parts) == 3 and parts[1]:
         bad = sorted({c for c in parts[1].lower() if c not in GEOHASH_ALPHABET})
         if bad:
