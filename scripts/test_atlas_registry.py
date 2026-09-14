@@ -229,18 +229,6 @@ def test_non_geohash_middle_segment_is_reported(osid):
     assert any("geohash" in p for p in problems), problems
 
 
-def test_every_grandfathered_id_is_actually_malformed():
-    """The exemption list must not accumulate ids that are fine.
-
-    An id that stops being reported should leave the list rather than sit
-    there granting an exemption nobody needs.
-    """
-    for osid in atlas_registry.LEGACY_MALFORMED_ONESTOP_IDS:
-        kind = "feed" if osid.startswith("f-") else "operator"
-        assert atlas_registry.onestop_id_problems(osid, kind, require_lowercase=False), \
-            f"{osid} is in LEGACY_MALFORMED_ONESTOP_IDS but has no problems"
-
-
 # --- name advisories --------------------------------------------------------
 
 @pytest.mark.parametrize("osid", ["f-9q5-metro", "f-taft~ca~us", "o-xn39-瑞浪市"])

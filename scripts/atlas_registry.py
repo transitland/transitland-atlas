@@ -68,30 +68,6 @@ ONESTOP_PREFIX = {"feed": "f", "operator": "o"}
 # it, which silently re-parses as geohash + name.
 GEOHASH_ALPHABET = frozenset("0123456789bcdefghjkmnpqrstuvwxyz")
 
-# Onestop IDs are immutable, so the malformed ones already in the registry
-# cannot be renamed to satisfy this check. They are listed here so that new
-# ones fail while these stay. Do not add to this list to make a check pass:
-# fix the id before it is published.
-LEGACY_MALFORMED_ONESTOP_IDS = frozenset({
-    "f-avecbili~mrc~nicolet-yamaska",
-    "o-avecbili~mrc~nicolet-yamaska",
-    "f-eo0-zssk",
-    "o-eo0-zssk",
-    "f-hubup~saint-hyacinthe",
-    "f-hubup~saint-hyacinthe~rt",
-    "o-hubup~saint-hyacinthe",
-    "f-nouvelle-calédonie~tanéo",
-    "f-point~or-us",
-    "f-societe~de~transport~de~trois-rivieres",
-    "f-stc~pierre-de~saurel",
-    "f-stc~pierre~de-saurel~rt",
-    "o-zenbus~stc~pierre-de~saurel",
-    "f-下津井電鉄株式会社路線バス~gtfs-ruライセンス版",
-    "f-下津井電鉄株式会社路線バス~gtfs-ruライセンス版~1",
-    "f-桑名市~k-バス",
-})
-
-
 def onestop_id_name_advisories(osid: str) -> list[str]:
     """Punctuation in the name component that the scheme does not list.
 
