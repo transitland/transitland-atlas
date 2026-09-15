@@ -1467,6 +1467,62 @@
       }
     },
     {
+      "id": "f-tosadentraffic~airportbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TosadenTraffic/Airportbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tosadentraffic~airportbus~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosadenTraffic_Airportbus_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosadenTraffic_Airportbus_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosadenTraffic_Airportbus_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "Airportbus",
+        "odpt_organization_id": "TosadenTraffic"
+      }
+    },
+    {
+      "id": "f-tosadentraffic~regularbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/TosadenTraffic/Regularbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-tosadentraffic~regularbus~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosadenTraffic_Regularbus_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosadenTraffic_Regularbus_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_TosadenTraffic_Regularbus_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "Regularbus",
+        "odpt_organization_id": "TosadenTraffic"
+      }
+    },
+    {
       "id": "f-transportationbureau~cityofkawasaki~alllines~jp",
       "spec": "gtfs",
       "urls": {
@@ -2366,6 +2422,25 @@
         },
         {
           "feed_onestop_id": "f-tosacity~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-tosadentraffic",
+      "name": "とさでん交通株式会社",
+      "short_name": "Tosaden Traffic CO.,LTD",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-tosadentraffic~airportbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-tosadentraffic~airportbus~jp~rt"
+        },
+        {
+          "feed_onestop_id": "f-tosadentraffic~regularbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-tosadentraffic~regularbus~jp~rt"
         }
       ]
     },
