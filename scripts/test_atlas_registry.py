@@ -200,6 +200,90 @@ def test_operator_case_is_not_enforced():
     assert atlas_registry.onestop_id_problems(greek, "operator") != []
 
 
+# --- geohash component ------------------------------------------------------
+# A hyphen inside the name re-parses the id as geohash + name, so the name is
+# silently truncated and the "geohash" is nonsense. This shipped in
+# f-rouyn~noranda~qc~ca-rt and nothing caught it.
+
+@pytest.mark.parametrize("osid", [
+    "f-9q5-metro",              # ordinary geohash
+    "f-9-flixbus",              # one character is a legitimate continental geohash
+    "f-c3j-757",                # digits only
+    "f-taft~ca~us",             # two-part, no geohash to check
+    "f-galesburg~il~us",
+])
+def test_valid_geohash_components_pass(osid):
+    assert atlas_registry.onestop_id_problems(osid, "feed") == []
+
+
+@pytest.mark.parametrize("osid", [
+    "f-rouyn~noranda~qc~ca-rt",                 # the id that prompted this check
+    "f-moose~jaw-sk~ca",
+    "f-hubup~saint-hyacinthe",
+    "f-eo0-zssk",                               # 'o' is not in geohash base32
+    "f-ail-somewhere",                          # a, i and l are not either
+])
+def test_non_geohash_middle_segment_is_reported(osid):
+    problems = atlas_registry.onestop_id_problems(osid, "feed")
+    assert problems, f"expected {osid!r} to be rejected"
+    assert any("geohash" in p for p in problems), problems
+
+
+# --- geohash length ---------------------------------------------------------
+# The alphabet check misses a name that happens to avoid a, i, l and o. The
+# longest geohash in the registry is seven characters; eight locates a point
+# to about forty metres, which no feed or operator focal point needs.
+
+@pytest.mark.parametrize("osid", [
+    "f-s-atpnuoro",                          # one character, in use
+    "f-gc0v8gh-corkcountycouncil",           # seven, the longest in the registry
+    "f-u0nh-autolineevaresine~trasporto",
+])
+def test_geohashes_in_use_are_accepted(osid):
+    assert atlas_registry.onestop_id_problems(osid, "feed") == []
+
+
+@pytest.mark.parametrize("osid", [
+    "f-westchesterbee-ny",                   # a name using only geohash letters
+    "f-becherbrewery-cz",
+])
+def test_overlong_geohash_is_reported(osid):
+    problems = atlas_registry.onestop_id_problems(osid, "feed")
+    assert problems, f"expected {osid!r} to be rejected"
+    assert any("characters, over the" in p for p in problems), problems
+
+
+def test_length_and_alphabet_are_not_reported_twice():
+    # A long segment with a bad character is one fault, not two.
+    problems = atlas_registry.onestop_id_problems("f-societe~de~transport-x", "feed")
+    assert sum("geohash" in p or "not a geohash" in p for p in problems) == 1, problems
+
+
+# --- name punctuation -------------------------------------------------------
+# The scheme allows alphanumerics from any script and '~'. This was reported
+# without failing while the sync jobs still minted underscores and full-width
+# punctuation; once they stopped and the existing ids were renamed, it became
+# a hard check.
+
+@pytest.mark.parametrize("osid", ["f-9q5-metro", "f-taft~ca~us", "o-xn39-瑞浪市",
+                                  "f-dott~wołomin~gbfs"])
+def test_conforming_names_pass(osid):
+    kind = "feed" if osid.startswith("f-") else "operator"
+    assert atlas_registry.onestop_id_problems(osid, kind, require_lowercase=False) == []
+
+
+@pytest.mark.parametrize("osid,ch", [
+    ("f-vag_rad~nuremberg~gbfs", "_"),          # \W keeps '_', so the GBFS job minted it
+    ("f-仙台市営バス2026.3.2～", "."),
+    ("f-［hodap］~占冠村コミュニティ", "［"),          # fullwidth brackets, not the ASCII pair
+    ("f-さかわ~おち花＊花ループバス", "＊"),
+])
+def test_name_punctuation_is_reported(osid, ch):
+    problems = atlas_registry.onestop_id_problems(osid, "feed")
+    assert problems, f"expected {osid!r} to be rejected"
+    assert any(ch in p for p in problems), problems
+
+
 def test_sync_log_is_returned_when_asked(feeds_dir):
     # validate-feeds.py detects a duplicate feed id from a line in this log,
     # because transitland sync reports it as "updated feed" rather than failing.

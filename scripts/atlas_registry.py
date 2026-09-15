@@ -62,6 +62,25 @@ def load(feeds_dir: str, db_path: str | None = None,
 
 ONESTOP_PREFIX = {"feed": "f", "operator": "o"}
 
+# Geohash base32 omits a, i, l and o to avoid visual confusion. A three-part
+# Onestop ID puts a geohash in the middle, so a middle segment carrying any
+# other character is not a geohash — most often it is a name with a hyphen in
+# it, which silently re-parses as geohash + name.
+GEOHASH_ALPHABET = frozenset("0123456789bcdefghjkmnpqrstuvwxyz")
+
+# Eight characters locates a point to about 40 metres, far finer than the
+# focal point of a feed, operator or route needs; the longest in the registry
+# is seven. The cap is a second line of defence for the case the alphabet
+# misses: a name that happens to avoid a, i, l and o, where "westchesterbee"
+# would otherwise read as a fourteen-character geohash.
+GEOHASH_MAX_LENGTH = 8
+
+
+def _name_component(osid: str) -> str:
+    """The name is the last component: third when a geohash is present, else second."""
+    parts = osid.split("-")
+    return parts[2] if len(parts) == 3 else parts[-1]
+
 
 def onestop_id_problems(osid: str, kind: str, require_lowercase: bool = True) -> list[str]:
     """Why this Onestop ID is malformed, or an empty list if it is fine.
@@ -82,16 +101,36 @@ def onestop_id_problems(osid: str, kind: str, require_lowercase: bool = True) ->
     if not osid:
         return ["empty"]
     problems = []
-    if osid.count("-") not in (1, 2):
+    parts = osid.split("-")
+    if len(parts) not in (2, 3):
         problems.append("needs one or two dashes")
     if osid[0] != prefix:
         problems.append(f"must start with {prefix!r}")
     if require_lowercase and osid != osid.lower():
         problems.append("must be lowercase")
-    if "" in osid.split("-"):
+    if "" in parts:
         problems.append("has an empty dash-separated segment")
     if osid.endswith("~"):
         problems.append("ends with a tilde")
+    # The scheme allows alphanumerics from any script and '~', nothing else.
+    # This was reported without failing while the sync jobs still minted
+    # underscores and full-width punctuation; they no longer do, and the
+    # registry carries none, so a new one is a fault rather than a backlog.
+    odd = sorted({c for c in _name_component(osid) if not (c.isalnum() or c == "~")})
+    if odd:
+        problems.append(f"name has punctuation outside the scheme: {''.join(odd)!r}")
+    if len(parts) == 3 and parts[1]:
+        bad = sorted({c for c in parts[1].lower() if c not in GEOHASH_ALPHABET})
+        if bad:
+            problems.append(
+                f"middle segment {parts[1]!r} is not a geohash "
+                f"(disallowed: {''.join(bad)!r}); a hyphen in the name splits it here"
+            )
+        elif len(parts[1]) > GEOHASH_MAX_LENGTH:
+            problems.append(
+                f"geohash {parts[1]!r} is {len(parts[1])} characters, over the "
+                f"{GEOHASH_MAX_LENGTH} allowed; a hyphen in the name splits it here"
+            )
     return problems
 
 
