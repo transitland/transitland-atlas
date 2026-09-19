@@ -2,6 +2,22 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-75cj-mobi~rio~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://dados.mobilidade.rio/gtfs/realtime"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.rio/documents/PCRJ::transporte-rodovi%C3%A1rio-api-gtfs-rt-vehicle-positions-brt-beta-1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "BRT fleet only, not the SPPO buses. Every trip_id and route_id in a sample resolved against f-rioonibus~br, so the two pair without an ID translation. SMTR labels the API beta; the upstream tracking comes from SONDA on the fleet MOBI-Rio operates."
+      }
+    },
+    {
       "id": "f-rioonibus~br",
       "spec": "gtfs",
       "urls": {
@@ -42,6 +58,19 @@
           ]
         },
         {
+          "onestop_id": "o-75cj-mobi~rio",
+          "name": "MOBI-Rio",
+          "website": "https://mobi-rio.prefeitura.rio/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "20001"
+            },
+            {
+              "feed_onestop_id": "f-75cj-mobi~rio~rt"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-75cj-santacruz",
           "name": "Santa Cruz",
           "website": "http://www.rioonibus.com/",
@@ -60,37 +89,8 @@
               "gtfs_agency_id": "22004"
             }
           ]
-        },
-        {
-          "onestop_id": "o-75cj-mobi~rio",
-          "name": "MOBI-Rio",
-          "website": "https://mobi-rio.prefeitura.rio/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "20001"
-            },
-            {
-              "feed_onestop_id": "f-75cj-mobi~rio~rt"
-            }
-          ]
         }
       ]
-    },
-    {
-      "id": "f-75cj-mobi~rio~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://dados.mobilidade.rio/gtfs/realtime"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.data.rio/documents/PCRJ::transporte-rodovi%C3%A1rio-api-gtfs-rt-vehicle-positions-brt-beta-1",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "notes": "BRT fleet only, not the SPPO buses. Every trip_id and route_id in a sample resolved against f-rioonibus~br, so the two pair without an ID translation. SMTR labels the API beta; the upstream tracking comes from SONDA on the fleet MOBI-Rio operates."
-      }
     }
   ]
 }

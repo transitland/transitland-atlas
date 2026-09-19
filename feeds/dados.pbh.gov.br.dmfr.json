@@ -52,6 +52,26 @@
       ]
     },
     {
+      "id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://realtime4.mobilibus.com/web/4ch6j/vehicle-positions?accesskey=982a57efd77a9462bf1665696fb25984",
+        "realtime_trip_updates": "http://realtime4.mobilibus.com/web/4ch6j/trip-updates?accesskey=982a57efd77a9462bf1665696fb25984",
+        "realtime_alerts": "http://realtime4.mobilibus.com/web/4ch6j/alerts?accesskey=982a57efd77a9462bf1665696fb25984"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://dados.pbh.gov.br/dataset/gtfs-rt",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
+      },
+      "tags": {
+        "notes": "accesskey is a fixed string PBH publishes openly on its own open data portal, so it is in the URL rather than held as a secret. Every trip_id in a sample resolved against the combined static; the RT route_ids are line codes that do not match static route_id, so join on trip_id. Alerts responds with a valid header and no entities when nothing is active."
+      }
+    },
+    {
       "id": "f-bhtrans~suplementar",
       "spec": "gtfs",
       "urls": {
@@ -70,26 +90,6 @@
       "tags": {
         "notes": "PBH marked this dataset '(Desativado)' and folded the suplementar system into the combined build registered as f-7h2w-empresadetransportesetransitodebelohorizontes~a, where it is agency 39102. The URL still resolves to GTFSBHTRANSSUP.zip, so this is a publisher consolidation rather than a dead link.",
         "status": "archived"
-      }
-    },
-    {
-      "id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "http://realtime4.mobilibus.com/web/4ch6j/trip-updates?accesskey=982a57efd77a9462bf1665696fb25984",
-        "realtime_vehicle_positions": "http://realtime4.mobilibus.com/web/4ch6j/vehicle-positions?accesskey=982a57efd77a9462bf1665696fb25984",
-        "realtime_alerts": "http://realtime4.mobilibus.com/web/4ch6j/alerts?accesskey=982a57efd77a9462bf1665696fb25984"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://dados.pbh.gov.br/dataset/gtfs-rt",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "redistribution_allowed": "yes",
-        "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
-      },
-      "tags": {
-        "notes": "accesskey is a fixed string PBH publishes openly on its own open data portal, so it is in the URL rather than held as a secret. Every trip_id in a sample resolved against the combined static; the RT route_ids are line codes that do not match static route_id, so join on trip_id. Alerts responds with a valid header and no entities when nothing is active."
       }
     }
   ]
