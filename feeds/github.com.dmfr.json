@@ -2,6 +2,31 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-6gkz-urbs",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/benaytms/urbs-gtfs/releases/download/latest/gtfs_curitiba.zip"
+      },
+      "license": {
+        "spdx_identifier": "Apache-2.0",
+        "url": "https://github.com/benaytms/urbs-gtfs"
+      },
+      "tags": {
+        "unofficial": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-6gkz-urbs",
+          "name": "Urbanização de Curitiba S/A",
+          "short_name": "URBS",
+          "website": "https://www.urbs.curitiba.pr.gov.br/",
+          "tags": {
+            "wikidata_id": "Q10386176"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-aquabus~bc~ca",
       "spec": "gtfs",
       "urls": {

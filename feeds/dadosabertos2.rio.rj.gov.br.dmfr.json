@@ -5,21 +5,24 @@
       "id": "f-75cj-fetranspor",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://dadosabertos2.rio.rj.gov.br/dadoaberto/google-transit/google_transit.zip"
+        "static_historic": [
+          "http://dadosabertos2.rio.rj.gov.br/dadoaberto/google-transit/google_transit.zip"
+        ]
       },
       "license": {
         "url": "http://data.rio/dataset/onibus-gtfs/resource/2de80207-ae46-4955-8adb-9eee0c89febb"
+      },
+      "tags": {
+        "status": "archived"
       },
       "operators": [
         {
           "onestop_id": "o-75cj-fetranspor",
           "name": "Fetranspor",
           "website": "http://www.fetranspor.com.br/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "148"
-            }
-          ]
+          "tags": {
+            "wikidata_id": "Q10282038"
+          }
         }
       ]
     }

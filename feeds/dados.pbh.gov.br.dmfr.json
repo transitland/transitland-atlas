@@ -3,48 +3,70 @@
   "feeds": [
     {
       "id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a",
+      "supersedes_ids": [
+        "f-bhtrans~suplementar"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://ckan.pbh.gov.br/dataset/77764a7e-63fc-4111-ace3-fb7d3037953a/resource/f0fa78dc-74c3-49fa-8971-c310a76a07fa/download/gtfsfiles.zip"
+        "static_current": "https://s3.amazonaws.com/mobilibus-uploads/gtfs/GTFSBHTRANS.zip",
+        "static_historic": [
+          "https://ckan.pbh.gov.br/dataset/77764a7e-63fc-4111-ace3-fb7d3037953a/resource/f0fa78dc-74c3-49fa-8971-c310a76a07fa/download/gtfsfiles.zip",
+          "https://ckan.pbh.gov.br/dataset/af0c47bb-5a82-4ae1-874f-e45dea1397ff/resource/b2a9341e-4471-45cc-a8c0-11be805590bc/download/gtfsfiles.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://dados.pbh.gov.br/dataset/gtfs-estatico-do-sistema-convencional",
+        "url": "https://dados.pbh.gov.br/dataset/gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
-        "attribution_text": "Empresa de Transportes e Trânsito de Belo Horizonte (BHTRANS)"
-      },
-      "tags": {
-        "unstable_url": "true"
+        "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
       },
       "operators": [
         {
           "onestop_id": "o-7h2w-empresadetransportesetransitodebelohorizontes~a",
-          "name": "Empresa de Transportes e Transito de Belo Horizonte",
-          "short_name": "BHTRANS",
-          "website": "http://www.bhtrans.pbh.gov.br?version=16.06.21",
+          "name": "Superintendência de Mobilidade Urbana de Belo Horizonte",
+          "short_name": "SUMOB",
+          "website": "https://prefeitura.pbh.gov.br/sumob",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BHTRANS"
+              "gtfs_agency_id": "37926"
+            },
+            {
+              "feed_onestop_id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10272546"
+          }
+        },
+        {
+          "onestop_id": "o-7h2w-empresadetransportesetransitodebelohorizontes~a~suplementar",
+          "name": "Superintendência de Mobilidade Urbana de Belo Horizonte - Suplementar",
+          "website": "https://prefeitura.pbh.gov.br/sumob",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "39102"
             }
           ]
         }
       ]
     },
     {
-      "id": "f-bhtrans~suplementar",
-      "spec": "gtfs",
+      "id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://ckan.pbh.gov.br/dataset/af0c47bb-5a82-4ae1-874f-e45dea1397ff/resource/b2a9341e-4471-45cc-a8c0-11be805590bc/download/gtfsfiles.zip"
+        "realtime_vehicle_positions": "http://realtime4.mobilibus.com/web/4ch6j/vehicle-positions?accesskey=982a57efd77a9462bf1665696fb25984",
+        "realtime_trip_updates": "http://realtime4.mobilibus.com/web/4ch6j/trip-updates?accesskey=982a57efd77a9462bf1665696fb25984",
+        "realtime_alerts": "http://realtime4.mobilibus.com/web/4ch6j/alerts?accesskey=982a57efd77a9462bf1665696fb25984"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://dados.pbh.gov.br/dataset/feed-gtfs-estatico-do-sistema-suplementar",
+        "url": "https://dados.pbh.gov.br/dataset/gtfs-rt",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
-        "attribution_text": "Empresa de Transportes e Trânsito de Belo Horizonte (BHTRANS)"
+        "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
       }
     }
   ]

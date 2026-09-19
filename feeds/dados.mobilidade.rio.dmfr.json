@@ -1,0 +1,98 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-75cj-mobi~rio~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://dados.mobilidade.rio/gtfs/realtime"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.rio/documents/PCRJ::transporte-rodovi%C3%A1rio-api-gtfs-rt-vehicle-positions-brt-beta-1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      }
+    },
+    {
+      "id": "f-rioonibus~br",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dados.mobilidade.rio/gtfs/schedule",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/8ffe62ad3b2f42e49814bf941654ea6c/data"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.rio/documents/PCRJ::gtfs-do-rio-de-janeiro-1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "mdb_source_id": "1792"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-75cj-internorte",
+          "name": "Internorte",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22003"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q18480910"
+          }
+        },
+        {
+          "onestop_id": "o-75cj-intersul",
+          "name": "Intersul",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22002"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q18480916"
+          }
+        },
+        {
+          "onestop_id": "o-75cj-mobi~rio",
+          "name": "MOBI-Rio",
+          "website": "https://mobi-rio.prefeitura.rio/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "20001"
+            },
+            {
+              "feed_onestop_id": "f-75cj-mobi~rio~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-75cj-santacruz",
+          "name": "Santa Cruz",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22005"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-75cj-transcarioca",
+          "name": "Transcarioca",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22004"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

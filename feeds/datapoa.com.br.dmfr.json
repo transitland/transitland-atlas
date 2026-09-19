@@ -3,11 +3,15 @@
   "feeds": [
     {
       "id": "f-6fes-empresapublicadetransportesecirculação",
+      "supersedes_ids": [
+        "f-poa~br"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://dadosabertos.poa.br/dataset/1fe9c2c1-9fbe-48ea-841b-61e30597ecd6/resource/b3bce61f-78ee-49eb-be57-6236d82bd5e0/download/arquivo-gtfs.zip",
         "static_historic": [
-          "http://datapoa.com.br/storage/f/2019-01-24T14%3A10%3A20.266Z/outputfiles.zip"
+          "http://datapoa.com.br/storage/f/2019-01-24T14%3A10%3A20.266Z/outputfiles.zip",
+          "https://dadosabertos.poa.br/dataset/1fe9c2c1-9fbe-48ea-841b-61e30597ecd6/resource/b3bce61f-78ee-49eb-be57-6236d82bd5e0/download/outputfiles.zip"
         ]
       },
       "license": {
@@ -16,17 +20,19 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "status": "outdated",
+        "unstable_url": "true"
+      },
       "operators": [
         {
           "onestop_id": "o-6fes-empresapublicadetransportesecirculação",
           "name": "Empresa Publica de Transportes e Circulação",
           "short_name": "EPTC",
           "website": "http://www.eptc.com.br",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "EPTC"
-            }
-          ]
+          "tags": {
+            "wikidata_id": "Q10272524"
+          }
         }
       ]
     }
