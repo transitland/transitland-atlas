@@ -12,9 +12,6 @@
         "url": "https://www.data.rio/documents/PCRJ::transporte-rodovi%C3%A1rio-api-gtfs-rt-vehicle-positions-brt-beta-1",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
-      },
-      "tags": {
-        "notes": "BRT fleet only, not the SPPO buses. Every trip_id and route_id in a sample resolved against f-rioonibus~br, so the two pair without an ID translation. SMTR labels the API beta; the upstream tracking comes from SONDA on the fleet MOBI-Rio operates."
       }
     },
     {
@@ -33,8 +30,7 @@
         "create_derived_product": "yes"
       },
       "tags": {
-        "mdb_source_id": "1792",
-        "notes": "SMTR publishes this at dados.mobilidade.rio; the ArcGIS item the feed used to point at now returns 403 to everyone, so the old URL is not a fetch failure to retry. Covers the four SPPO bus consortia plus MOBI-Rio's BRT. data.rio lists the dataset as 'GTFS do Rio de Janeiro' and is where a moved URL would be announced."
+        "mdb_source_id": "1792"
       },
       "operators": [
         {

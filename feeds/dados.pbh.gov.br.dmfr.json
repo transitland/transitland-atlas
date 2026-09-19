@@ -18,9 +18,6 @@
         "redistribution_allowed": "yes",
         "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
       },
-      "tags": {
-        "notes": "PBH renamed the two per-system datasets '(Desativado)' and publishes one combined build instead, which is what this points at: 326 routes against 303 in the convencional-only file, the extra 23 being the suplementar system that f-bhtrans~suplementar used to carry on its own. Both CKAN resources redirect here anyway, so this is the vendor URL the portal resolves to rather than a third-party mirror. Built by Bus2 (formerly Mobilibus) and refreshed weekly."
-      },
       "operators": [
         {
           "onestop_id": "o-7h2w-empresadetransportesetransitodebelohorizontes~a",
@@ -34,10 +31,7 @@
             {
               "feed_onestop_id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt"
             }
-          ],
-          "tags": {
-            "notes": "BHTRANS was absorbed into SUMOB; the Onestop ID keeps the old name. The feed's agency_id moved from 'BHTRANS' to the numeric 37926 when PBH switched builder to Bus2."
-          }
+          ]
         },
         {
           "onestop_id": "o-7h2w-empresadetransportesetransitodebelohorizontes~a~suplementar",
@@ -66,9 +60,6 @@
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
         "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
-      },
-      "tags": {
-        "notes": "accesskey is a fixed string PBH publishes openly on its own open data portal, so it is in the URL rather than held as a secret. Every trip_id in a sample resolved against the combined static; the RT route_ids are line codes that do not match static route_id, so join on trip_id. Alerts responds with a valid header and no entities when nothing is active."
       }
     },
     {
@@ -88,7 +79,7 @@
         "attribution_text": "Empresa de Transportes e Trânsito de Belo Horizonte (BHTRANS)"
       },
       "tags": {
-        "notes": "PBH marked this dataset '(Desativado)' and folded the suplementar system into the combined build registered as f-7h2w-empresadetransportesetransitodebelohorizontes~a, where it is agency 39102. The URL still resolves to GTFSBHTRANSSUP.zip, so this is a publisher consolidation rather than a dead link.",
+        "notes": "Archived because PBH folded the suplementar system into the combined build registered as f-7h2w-empresadetransportesetransitodebelohorizontes~a, where it is agency 39102. The URL still resolves, so this is consolidation rather than a dead link.",
         "status": "archived"
       }
     }
