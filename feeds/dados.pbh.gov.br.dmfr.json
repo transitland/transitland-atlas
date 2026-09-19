@@ -5,28 +5,47 @@
       "id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://ckan.pbh.gov.br/dataset/77764a7e-63fc-4111-ace3-fb7d3037953a/resource/f0fa78dc-74c3-49fa-8971-c310a76a07fa/download/gtfsfiles.zip"
+        "static_current": "https://s3.amazonaws.com/mobilibus-uploads/gtfs/GTFSBHTRANS.zip",
+        "static_historic": [
+          "https://ckan.pbh.gov.br/dataset/77764a7e-63fc-4111-ace3-fb7d3037953a/resource/f0fa78dc-74c3-49fa-8971-c310a76a07fa/download/gtfsfiles.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://dados.pbh.gov.br/dataset/gtfs-estatico-do-sistema-convencional",
+        "url": "https://dados.pbh.gov.br/dataset/gtfs",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
-        "attribution_text": "Empresa de Transportes e Trânsito de Belo Horizonte (BHTRANS)"
+        "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
       },
       "tags": {
-        "unstable_url": "true"
+        "notes": "PBH renamed the two per-system datasets '(Desativado)' and publishes one combined build instead, which is what this points at: 326 routes against 303 in the convencional-only file, the extra 23 being the suplementar system that f-bhtrans~suplementar used to carry on its own. Both CKAN resources redirect here anyway, so this is the vendor URL the portal resolves to rather than a third-party mirror. Built by Bus2 (formerly Mobilibus) and refreshed weekly."
       },
       "operators": [
         {
           "onestop_id": "o-7h2w-empresadetransportesetransitodebelohorizontes~a",
-          "name": "Empresa de Transportes e Transito de Belo Horizonte",
-          "short_name": "BHTRANS",
-          "website": "http://www.bhtrans.pbh.gov.br?version=16.06.21",
+          "name": "Superintendência de Mobilidade Urbana de Belo Horizonte",
+          "short_name": "SUMOB",
+          "website": "https://prefeitura.pbh.gov.br/sumob",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BHTRANS"
+              "gtfs_agency_id": "37926"
+            },
+            {
+              "feed_onestop_id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt"
+            }
+          ],
+          "tags": {
+            "notes": "BHTRANS was absorbed into SUMOB; the Onestop ID keeps the old name. The feed's agency_id moved from 'BHTRANS' to the numeric 37926 when PBH switched builder to Bus2."
+          }
+        },
+        {
+          "onestop_id": "o-7h2w-empresadetransportesetransitodebelohorizontes~a~suplementar",
+          "name": "Superintendência de Mobilidade Urbana de Belo Horizonte - Suplementar",
+          "website": "https://prefeitura.pbh.gov.br/sumob",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "39102"
             }
           ]
         }
@@ -36,7 +55,9 @@
       "id": "f-bhtrans~suplementar",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://ckan.pbh.gov.br/dataset/af0c47bb-5a82-4ae1-874f-e45dea1397ff/resource/b2a9341e-4471-45cc-a8c0-11be805590bc/download/gtfsfiles.zip"
+        "static_historic": [
+          "https://ckan.pbh.gov.br/dataset/af0c47bb-5a82-4ae1-874f-e45dea1397ff/resource/b2a9341e-4471-45cc-a8c0-11be805590bc/download/gtfsfiles.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
@@ -45,6 +66,30 @@
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
         "attribution_text": "Empresa de Transportes e Trânsito de Belo Horizonte (BHTRANS)"
+      },
+      "tags": {
+        "notes": "PBH marked this dataset '(Desativado)' and folded the suplementar system into the combined build registered as f-7h2w-empresadetransportesetransitodebelohorizontes~a, where it is agency 39102. The URL still resolves to GTFSBHTRANSSUP.zip, so this is a publisher consolidation rather than a dead link.",
+        "status": "archived"
+      }
+    },
+    {
+      "id": "f-7h2w-empresadetransportesetransitodebelohorizontes~a~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "http://realtime4.mobilibus.com/web/4ch6j/trip-updates?accesskey=982a57efd77a9462bf1665696fb25984",
+        "realtime_vehicle_positions": "http://realtime4.mobilibus.com/web/4ch6j/vehicle-positions?accesskey=982a57efd77a9462bf1665696fb25984",
+        "realtime_alerts": "http://realtime4.mobilibus.com/web/4ch6j/alerts?accesskey=982a57efd77a9462bf1665696fb25984"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://dados.pbh.gov.br/dataset/gtfs-rt",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "attribution_text": "Superintendência de Mobilidade Urbana de Belo Horizonte (SUMOB)"
+      },
+      "tags": {
+        "notes": "accesskey is a fixed string PBH publishes openly on its own open data portal, so it is in the URL rather than held as a secret. Every trip_id in a sample resolved against the combined static; the RT route_ids are line codes that do not match static route_id, so join on trip_id. Alerts responds with a valid header and no entities when nothing is active."
       }
     }
   ]

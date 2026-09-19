@@ -2,6 +2,34 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-6gkz-urbs",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://github.com/benaytms/urbs-gtfs/releases/download/latest/gtfs_curitiba.zip"
+      },
+      "license": {
+        "spdx_identifier": "Apache-2.0",
+        "url": "https://github.com/benaytms/urbs-gtfs"
+      },
+      "tags": {
+        "notes": "Curitiba publishes the URBS network as raw JSON, not GTFS: the city's open data entry describes the GTFS file as coming from a credentialed WebService, and the open archive it links at dadosabertos.c3sl.ufpr.br/curitibaurbs carries only the webservice dumps (linhas, pontosLinha, shapeLinha, tabelaLinha) in daily .xz files. This build derives GTFS from those, rebuilt daily to a fixed 'latest' release path. Register the agency's own feed ahead of this one if URBS ever opens it.",
+        "unofficial": "true"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-6gkz-urbs",
+          "name": "Urbanização de Curitiba S/A",
+          "short_name": "URBS",
+          "website": "https://www.urbs.curitiba.pr.gov.br/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "f-aquabus~bc~ca",
       "spec": "gtfs",
       "urls": {

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-rioonibus~br",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://dados.mobilidade.rio/gtfs/schedule",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/8ffe62ad3b2f42e49814bf941654ea6c/data"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.rio/documents/PCRJ::gtfs-do-rio-de-janeiro-1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "mdb_source_id": "1792",
+        "notes": "SMTR publishes this at dados.mobilidade.rio; the ArcGIS item the feed used to point at now returns 403 to everyone, so the old URL is not a fetch failure to retry. Covers the four SPPO bus consortia plus MOBI-Rio's BRT. data.rio lists the dataset as 'GTFS do Rio de Janeiro' and is where a moved URL would be announced."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-75cj-internorte",
+          "name": "Internorte",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22003"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-75cj-intersul",
+          "name": "Intersul",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22002"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-75cj-santacruz",
+          "name": "Santa Cruz",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22005"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-75cj-transcarioca",
+          "name": "Transcarioca",
+          "website": "http://www.rioonibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22004"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-75cj-mobi~rio",
+          "name": "MOBI-Rio",
+          "website": "https://mobi-rio.prefeitura.rio/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "20001"
+            },
+            {
+              "feed_onestop_id": "f-75cj-mobi~rio~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-75cj-mobi~rio~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://dados.mobilidade.rio/gtfs/realtime"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.data.rio/documents/PCRJ::transporte-rodovi%C3%A1rio-api-gtfs-rt-vehicle-positions-brt-beta-1",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "notes": "BRT fleet only, not the SPPO buses. Every trip_id and route_id in a sample resolved against f-rioonibus~br, so the two pair without an ID translation. SMTR labels the API beta; the upstream tracking comes from SONDA on the fleet MOBI-Rio operates."
+      }
+    }
+  ]
+}
