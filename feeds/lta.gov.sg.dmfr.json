@@ -1,0 +1,125 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-w21z-lta~bus",
+      "name": "Singapore buses",
+      "description": "Frequency-based GTFS converted by Interline from the LTA DataMall BusStops, BusServices and BusRoutes endpoints.",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/singapore-lta-bus.zip"
+      },
+      "license": {
+        "url": "https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Contains information from LTA DataMall, which is made available under the terms of the Singapore Open Data Licence version 1.0."
+      },
+      "tags": {
+        "notes": "Converted by Interline from the LTA DataMall bus APIs, which publish headway ranges and first/last bus times rather than a timetable; the feed is therefore frequency-based."
+      }
+    },
+    {
+      "id": "f-w21z-lta~rail",
+      "supersedes_ids": [
+        "f-w21z-lta"
+      ],
+      "name": "Singapore MRT and LRT",
+      "description": "Official static train schedule published by the Land Transport Authority through the LTA DataMall GTFSScheduleTrain endpoint.",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://datamall.lta.gov.sg/content/datamall/en/dynamic-data.html"
+      },
+      "license": {
+        "url": "https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Contains information from LTA DataMall, which is made available under the terms of the Singapore Open Data Licence version 1.0."
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "AccountKey",
+        "info_url": "https://datamall.lta.gov.sg/content/datamall/en/request-for-api.html"
+      },
+      "tags": {
+        "notes": "Transitland fetches this feed using a custom script. The DataMall endpoint requires an AccountKey header and returns a presigned S3 link that expires after 15 minutes, so there is no stable URL to fetch directly."
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-w21z-gas",
+      "name": "Go-Ahead Singapore",
+      "short_name": "GAS",
+      "website": "https://www.go-aheadsingapore.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "GAS",
+          "feed_onestop_id": "f-w21z-lta~bus"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-w21z-sbst",
+      "name": "SBS Transit",
+      "short_name": "SBST",
+      "website": "https://www.sbstransit.com.sg/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SBST",
+          "feed_onestop_id": "f-w21z-lta~bus"
+        },
+        {
+          "gtfs_agency_id": "SBST",
+          "feed_onestop_id": "f-w21z-lta~rail"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-w21z-singapore~landtransportauthority",
+      "name": "Land Transport Authority",
+      "short_name": "LTA",
+      "website": "https://www.lta.gov.sg",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "LTA",
+          "feed_onestop_id": "f-w21z-lta~rail"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-w21z-smrt",
+      "name": "SMRT Corporation",
+      "short_name": "SMRT",
+      "website": "https://www.smrt.com.sg/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SMRT",
+          "feed_onestop_id": "f-w21z-lta~bus"
+        },
+        {
+          "gtfs_agency_id": "SMRT",
+          "feed_onestop_id": "f-w21z-lta~rail"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-w21z-tts",
+      "name": "Tower Transit Singapore",
+      "short_name": "TTS",
+      "website": "https://towertransit.sg/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "TTS",
+          "feed_onestop_id": "f-w21z-lta~bus"
+        }
+      ]
+    }
+  ]
+}
