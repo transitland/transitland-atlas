@@ -2,15 +2,15 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-w21z-lta~rail",
+      "id": "f-w21z-lta~bus",
       "supersedes_ids": [
         "f-w21z-lta"
       ],
-      "name": "Singapore MRT and LRT",
-      "description": "Official train schedule from LTA DataMall, with shapes added by Interline.",
+      "name": "Singapore buses",
+      "description": "Frequency-based GTFS built by Interline from the LTA DataMall bus APIs.",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://datamall2.mytransport.sg/ltaodataservice/GTFSScheduleTrain"
+        "static_current": "http://gtfs-source-feeds.transit.land/singapore-lta-bus.zip"
       },
       "license": {
         "url": "https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html",
@@ -22,9 +22,33 @@
         "attribution_text": "Contains information from LTA DataMall, made available under the Singapore Open Data Licence version 1.0. Contains shapes derived from OpenStreetMap, (c) OpenStreetMap contributors, available under the Open Database License."
       },
       "authorization": {
-        "type": "header",
-        "param_name": "AccountKey",
-        "info_url": "https://datamall.lta.gov.sg/content/datamall/en/request-for-api.html"
+        "type": "query_param",
+        "param_name": "token"
+      }
+    },
+    {
+      "id": "f-w21z-lta~rail",
+      "supersedes_ids": [
+        "f-w21z-lta"
+      ],
+      "name": "Singapore MRT and LRT",
+      "description": "Official train schedule from LTA DataMall, with shapes added by Interline.",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/singapore-lta-rail.zip"
+      },
+      "license": {
+        "url": "https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no",
+        "attribution_text": "Contains information from LTA DataMall, made available under the Singapore Open Data Licence version 1.0. Contains shapes derived from OpenStreetMap, (c) OpenStreetMap contributors, available under the Open Database License."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
       }
     }
   ],
