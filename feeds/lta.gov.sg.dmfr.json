@@ -7,7 +7,7 @@
         "f-w21z-lta"
       ],
       "name": "Singapore MRT and LRT",
-      "description": "Official static train schedule published by the Land Transport Authority through the LTA DataMall GTFSScheduleTrain endpoint.",
+      "description": "Official train schedule from LTA DataMall, with shapes added by Interline.",
       "spec": "gtfs",
       "urls": {
         "static_current": "https://datamall.lta.gov.sg/content/datamall/en/dynamic-data.html"
@@ -19,7 +19,7 @@
         "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
-        "attribution_text": "Contains information from LTA DataMall, which is made available under the terms of the Singapore Open Data Licence version 1.0."
+        "attribution_text": "Contains information from LTA DataMall, made available under the Singapore Open Data Licence version 1.0."
       },
       "authorization": {
         "type": "header",
@@ -27,17 +27,33 @@
         "info_url": "https://datamall.lta.gov.sg/content/datamall/en/request-for-api.html"
       },
       "tags": {
-        "notes": "Transitland fetches this feed using a custom script. The DataMall endpoint requires an AccountKey header and returns a presigned S3 link that expires after 15 minutes, so there is no stable URL to fetch directly."
+        "notes": "Fetched by script; the endpoint returns a short-lived signed link."
       }
     }
   ],
   "operators": [
+    {
+      "onestop_id": "o-w21z-gas",
+      "name": "Go-Ahead Singapore",
+      "short_name": "GAS",
+      "website": "https://www.go-aheadsingapore.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "GAS",
+          "feed_onestop_id": "f-w21z-lta~bus"
+        }
+      ]
+    },
     {
       "onestop_id": "o-w21z-sbst",
       "name": "SBS Transit",
       "short_name": "SBST",
       "website": "https://www.sbstransit.com.sg/",
       "associated_feeds": [
+        {
+          "gtfs_agency_id": "SBST",
+          "feed_onestop_id": "f-w21z-lta~bus"
+        },
         {
           "gtfs_agency_id": "SBST",
           "feed_onestop_id": "f-w21z-lta~rail"
@@ -64,7 +80,23 @@
       "associated_feeds": [
         {
           "gtfs_agency_id": "SMRT",
+          "feed_onestop_id": "f-w21z-lta~bus"
+        },
+        {
+          "gtfs_agency_id": "SMRT",
           "feed_onestop_id": "f-w21z-lta~rail"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-w21z-tts",
+      "name": "Tower Transit Singapore",
+      "short_name": "TTS",
+      "website": "https://www.towertransit.sg/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "TTS",
+          "feed_onestop_id": "f-w21z-lta~bus"
         }
       ]
     }

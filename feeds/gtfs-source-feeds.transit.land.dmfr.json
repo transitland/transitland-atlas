@@ -425,6 +425,31 @@
       }
     },
     {
+      "id": "f-w21z-lta~bus",
+      "supersedes_ids": [
+        "f-w21z-lta"
+      ],
+      "name": "Singapore buses",
+      "description": "Frequency-based GTFS built by Interline from the LTA DataMall bus APIs.",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/singapore-lta-bus.zip"
+      },
+      "license": {
+        "url": "https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "yes",
+        "attribution_text": "Contains information from LTA DataMall, made available under the Singapore Open Data Licence version 1.0."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      }
+    },
+    {
       "id": "f-wcb4-cebu~dotc",
       "spec": "gtfs",
       "urls": {
