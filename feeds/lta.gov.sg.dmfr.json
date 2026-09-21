@@ -10,7 +10,7 @@
       "description": "Official train schedule from LTA DataMall, with shapes added by Interline.",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://datamall.lta.gov.sg/content/datamall/en/dynamic-data.html"
+        "static_current": "https://datamall2.mytransport.sg/ltaodataservice/GTFSScheduleTrain"
       },
       "license": {
         "url": "https://datamall.lta.gov.sg/content/datamall/en/SingaporeOpenDataLicence.html",
@@ -20,6 +20,11 @@
         "commercial_use_allowed": "yes",
         "share_alike_optional": "no",
         "attribution_text": "Contains information from LTA DataMall, made available under the Singapore Open Data Licence version 1.0. Contains shapes derived from OpenStreetMap, (c) OpenStreetMap contributors, available under the Open Database License."
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "AccountKey",
+        "info_url": "https://datamall.lta.gov.sg/content/datamall/en/request-for-api.html"
       }
     }
   ],
