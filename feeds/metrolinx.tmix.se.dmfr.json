@@ -17,6 +17,21 @@
       }
     },
     {
+      "id": "f-owen-sound~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://metrolinx.tmix.se/gtfs/gtfs-owensound.zip"
+      }
+    },
+    {
+      "id": "f-owen-sound~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-owensound/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-owensound/alerts.pb"
+      }
+    },
+    {
       "id": "f-bowvalley~ab~ca~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -134,7 +149,7 @@
       "id": "f-sarnia~on~ca~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-sarnia/tripupdates.pb",
+        "realtime_vehicle_positions": "https://metrolinx.tmix.se/gtfs-realtime-sarnia/vehicleupdates.pb",
         "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-sarnia/tripupdates.pb",
         "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-sarnia/alerts.pb"
       }
@@ -241,6 +256,22 @@
         },
         {
           "feed_onestop_id": "f-belleville~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-owen-sound~on~ca",
+      "name": "Owen Sound Transit",
+      "website": "https://www.owensound.ca/roads-transportation/public-transit/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-owen-sound~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-owen-sound~on~ca~rt"
         },
         {
           "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
