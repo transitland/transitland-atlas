@@ -16,6 +16,22 @@
         "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-belleville/alerts.pb"
       }
     },
+    [
+    {
+      "id": "f-owensound~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://metrolinx.tmix.se/gtfs/gtfs-owensound.zip"
+      }
+    },
+    {
+      "id": "f-owensound~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-owensound/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-owensound/alerts.pb"
+      }
+    },
     {
       "id": "f-bowvalley~ab~ca~rt",
       "spec": "gtfs-rt",
@@ -241,6 +257,23 @@
         },
         {
           "feed_onestop_id": "f-belleville~on~ca~rt"
+        },
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        }
+      ]
+    },
+    [
+    {
+      "onestop_id": "o-owensound~on~ca",
+      "name": "Owen Sound Transit",
+      "website": "https://www.owensound.ca/living-here/public-transit/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-owen~sound~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-owen~sound~on~ca~rt"
         },
         {
           "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
