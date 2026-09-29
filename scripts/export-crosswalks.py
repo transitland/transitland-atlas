@@ -238,6 +238,7 @@ def datapackage(registries: list[dict]) -> dict:
             "encoding": "utf-8",
             "description": (f"Transitland Onestop IDs crosswalked to `{registry['tag']}` "
                             f"values tagged on {entity} records."),
+            "dialect": {"lineTerminator": "\n"},
             "schema": {
                 "fields": [_field(c) for c in columns_for(registry)],
                 "primaryKey": ["external_id", "onestop_id"],
