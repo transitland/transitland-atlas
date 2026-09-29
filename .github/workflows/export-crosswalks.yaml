@@ -13,6 +13,9 @@ on:
     paths:
       - 'feeds/**'
       - 'scripts/export-crosswalks.py'
+      # The export reads tags, ids and associations through this, so a change
+      # here can change the output.
+      - 'scripts/atlas_registry.py'
       - '.github/workflows/export-crosswalks.yaml'
   # Still daily: wikidata.csv's wikipedia_url comes from Wikidata sitelinks, so
   # an article created or renamed there changes the export with no commit here.

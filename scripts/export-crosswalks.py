@@ -35,6 +35,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 import time
 import urllib.parse
@@ -76,6 +77,10 @@ SEPARATOR = ";"
 
 # wbgetentities takes at most 50 ids per call.
 WIKIDATA_BATCH = 50
+
+# Not str.isdigit(), which accepts non-ASCII digits and superscripts. One of
+# those reaching the API is rejected as no-such-entity, which fails the batch.
+QID_RE = re.compile(r"Q[1-9][0-9]*")
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 USER_AGENT = "transitland-atlas crosswalk export (https://github.com/transitland/transitland-atlas)"
 
@@ -97,7 +102,11 @@ def rows_for(db, registry):
         secondary = ""
         if registry.get("secondary"):
             secondary = SEPARATOR.join(atlas_registry.split_ids(tags.get(registry["secondary"])))
-        for external_id in atlas_registry.split_ids(tags[registry["tag"]]):
+        external_ids = atlas_registry.split_ids(tags[registry["tag"]])
+        if not external_ids:
+            print(f"warning: {onestop_id} has {registry['tag']} = "
+                  f"{tags[registry['tag']]!r}, which holds no id", file=sys.stderr)
+        for external_id in external_ids:
             if registry["tag"] == "us_ntd_id":
                 external_id = atlas_registry.normalize_ntd_id(external_id) or external_id
             record = {
@@ -111,7 +120,17 @@ def rows_for(db, registry):
                 record[registry["secondary"]] = secondary
             out.append(record)
     out.sort(key=lambda r: (r["external_id"], r["onestop_id"]))
-    return out
+    # Normalization can map two written forms onto one id, and the descriptor
+    # declares (external_id, onestop_id) a primary key, so collapse the pair
+    # rather than publish a file that contradicts its own schema.
+    seen = set()
+    unique_rows = []
+    for row in out:
+        key = (row["external_id"], row["onestop_id"])
+        if key not in seen:
+            seen.add(key)
+            unique_rows.append(row)
+    return unique_rows
 
 
 def wikipedia_urls(qids: list[str]) -> dict[str, str]:
@@ -122,7 +141,7 @@ def wikipedia_urls(qids: list[str]) -> dict[str, str]:
     the column.
     """
     out: dict[str, str] = {}
-    unique = sorted({q for q in qids if q.startswith("Q") and q[1:].isdigit()})
+    unique = sorted({q for q in qids if QID_RE.fullmatch(q)})
     for i in range(0, len(unique), WIKIDATA_BATCH):
         batch = unique[i:i + WIKIDATA_BATCH]
         params = urllib.parse.urlencode({
@@ -134,7 +153,21 @@ def wikipedia_urls(qids: list[str]) -> dict[str, str]:
                                      headers={"User-Agent": USER_AGENT})
         with urllib.request.urlopen(req, timeout=60) as resp:
             data = json.loads(resp.read().decode())
-        for qid, entity in (data.get("entities") or {}).items():
+        # wbgetentities answers 200 with a top-level `error` and no `entities`
+        # at all when any one id in the batch is unresolvable, so urlopen does
+        # not raise and a bare .get("entities") would drop fifty articles
+        # without a word. One deleted Q-item would otherwise empty a batch and
+        # commit the result.
+        if "error" in data:
+            raise RuntimeError(f"wikidata rejected a batch of {len(batch)}: "
+                               f"{data['error'].get('info', data['error'])}")
+        entities = data.get("entities")
+        if entities is None:
+            raise RuntimeError(f"wikidata returned no entities for a batch of {len(batch)}")
+        missing = set(batch) - set(entities)
+        if missing:
+            raise RuntimeError(f"wikidata did not answer for {sorted(missing)[:5]}")
+        for qid, entity in entities.items():
             title = ((entity or {}).get("sitelinks") or {}).get("enwiki", {}).get("title")
             if title:
                 path = urllib.parse.quote(title.replace(" ", "_"), safe="/:,")

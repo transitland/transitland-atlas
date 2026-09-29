@@ -147,3 +147,23 @@ def test_entity_field_is_constrained_to_the_two_kinds():
     d = export_crosswalks.datapackage([registry])
     entity = next(f for f in d["resources"][0]["schema"]["fields"] if f["name"] == "entity")
     assert entity["constraints"]["enum"] == ["operator", "feed"]
+
+
+def test_a_tag_holding_only_separators_is_reported_not_swallowed(capsys):
+    # split_ids returns [] for ";", so the record would simply vanish from the
+    # CSV with exit 0. A typo in a tag should be visible.
+    db = _db()
+    db.execute("INSERT INTO current_operators VALUES (1, 'o-typo', 'Typo', ?)",
+               ('{"us_ntd_id": ";"}',))
+    assert rows_for_ntd(db) == []
+    assert "holds no id" in capsys.readouterr().err
+
+
+def test_two_written_forms_of_one_ntd_id_do_not_break_the_primary_key():
+    # normalize_ntd_id maps "307" and "00307" onto the same value, and the
+    # descriptor declares (external_id, onestop_id) unique.
+    db = _db()
+    db.execute("INSERT INTO current_operators VALUES (1, 'o-x', 'X', ?)",
+               ('{"us_ntd_id": "307,00307"}',))
+    rows = rows_for_ntd(db)
+    assert [r["external_id"] for r in rows] == ["00307"]
