@@ -291,3 +291,74 @@ def test_sync_log_is_returned_when_asked(feeds_dir):
     atlas_registry.load(feeds_dir, sync_log=log)
     assert log, "expected sync output to be captured"
     assert any("feed" in line for line in log)
+
+
+# Tag helpers. tagged_records was extracted from four functions that each read a
+# tag column, parsed its JSON and skipped records without the key. Three of the
+# four return nothing on the registry as it stands, so comparing real output
+# across the extraction proved little; these use synthetic rows.
+
+import sqlite3  # noqa: E402
+
+def _tag_db():
+    db = sqlite3.connect(":memory:")
+    db.row_factory = sqlite3.Row
+    db.executescript("""
+        CREATE TABLE current_operators (id INTEGER PRIMARY KEY, onestop_id TEXT,
+            name TEXT, operator_tags TEXT);
+        CREATE TABLE current_feeds (id INTEGER PRIMARY KEY, onestop_id TEXT,
+            name TEXT, feed_tags TEXT);
+    """)
+    return db
+
+
+def _tag_operator(db, i, osid, tags, name="X"):
+    db.execute("INSERT INTO current_operators VALUES (?, ?, ?, ?)", (i, osid, name, tags))
+
+
+def test_skips_records_whose_tag_blob_is_not_json():
+    db = _tag_db()
+    _tag_operator(db, 1, "o-broken", "{not json")
+    _tag_operator(db, 2, "o-ok", '{"us_ntd_id": "00001"}')
+    assert [r["onestop_id"] for r, _ in
+            atlas_registry.tagged_records(db, "operator", "us_ntd_id")] == ["o-ok"]
+
+
+def test_skips_a_tag_present_but_empty():
+    # The behavior the extracted `if not raw: continue` had. An empty value is
+    # not an identifier, and indexing it would key the crosswalk on "".
+    db = _tag_db()
+    _tag_operator(db, 1, "o-empty", '{"us_ntd_id": ""}')
+    assert list(atlas_registry.tagged_records(db, "operator", "us_ntd_id")) == []
+    assert atlas_registry.operators_by_ntd_id(db) == {}
+
+
+def test_skips_a_json_blob_that_is_not_an_object():
+    db = _tag_db()
+    _tag_operator(db, 1, "o-list", '["us_ntd_id"]')
+    assert list(atlas_registry.tagged_records(db, "operator", "us_ntd_id")) == []
+
+
+def test_malformed_ntd_ids_still_finds_unpadded_values():
+    # Zero entries in the registry today, so the refactor of this one could not
+    # be checked against real data.
+    db = _tag_db()
+    _tag_operator(db, 1, "o-short", '{"us_ntd_id": "307"}')
+    _tag_operator(db, 2, "o-padded", '{"us_ntd_id": "00307"}')
+    assert atlas_registry.malformed_ntd_ids(db) == [("o-short", "307")]
+
+
+def test_operator_names_skips_operators_without_one():
+    db = _tag_db()
+    _tag_operator(db, 1, "o-named", None, name="Named")
+    db.execute("INSERT INTO current_operators VALUES (2, 'o-unnamed', NULL, NULL)")
+    assert atlas_registry.operator_names(db) == {"o-named": "Named"}
+
+
+def test_unknown_entity_is_rejected_rather_than_silently_empty():
+    db = _tag_db()
+    try:
+        list(atlas_registry.tagged_records(db, "route", "us_ntd_id"))
+    except ValueError:
+        return
+    raise AssertionError("expected ValueError")

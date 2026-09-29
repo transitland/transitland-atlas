@@ -1,0 +1,528 @@
+{
+  "$schema": "https://datapackage.org/profiles/2.0/datapackage.json",
+  "name": "transitland-id-crosswalks",
+  "id": "https://github.com/transitland/transitland-atlas",
+  "title": "Transitland ID crosswalks",
+  "description": "Crosswalks between Transitland Onestop IDs and the identifiers the same operators and feeds carry in other transit data systems. Built from the tags on the DMFR records in this repository.",
+  "homepage": "https://www.transit.land/data/id-crosswalks",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "resources": [
+    {
+      "name": "us-ntd",
+      "path": "us-ntd.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `us_ntd_id` values tagged on operator records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "wikidata",
+      "path": "wikidata.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `wikidata_id` values tagged on operator records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          },
+          {
+            "name": "wikipedia_url",
+            "type": "string",
+            "description": "English Wikipedia article for the Wikidata entity, where it has one.",
+            "format": "uri"
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "calitp-organization",
+      "path": "calitp-organization.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `calitp_organization_id` values tagged on operator records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "calitp-dataset",
+      "path": "calitp-dataset.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `calitp_dataset_id` values tagged on feed records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "mobility-database",
+      "path": "mobility-database.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `mdb_source_id` values tagged on feed records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "gtfs-data-exchange",
+      "path": "gtfs-data-exchange.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `gtfs_data_exchange` values tagged on feed records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "odpt",
+      "path": "odpt.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `odpt_organization_id` values tagged on feed records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          },
+          {
+            "name": "odpt_dataset_id",
+            "type": "string",
+            "description": "Value of the `odpt_dataset_id` tag on the same record."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "gtfs-data-jp",
+      "path": "gtfs-data-jp.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `gtfs_data_jp_organization_id` values tagged on operator records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "es-nap",
+      "path": "es-nap.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `es_nap_fichero_id` values tagged on feed records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    },
+    {
+      "name": "omd",
+      "path": "omd.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Transitland Onestop IDs crosswalked to `omd_provider_id` values tagged on operator records.",
+      "dialect": {
+        "lineTerminator": "\n"
+      },
+      "schema": {
+        "fields": [
+          {
+            "name": "external_id",
+            "type": "string",
+            "description": "The identifier this record carries in the external system."
+          },
+          {
+            "name": "onestop_id",
+            "type": "string",
+            "description": "The Transitland operator or feed the identifier belongs to."
+          },
+          {
+            "name": "entity",
+            "type": "string",
+            "description": "Which kind of Transitland record carries the tag.",
+            "constraints": {
+              "enum": [
+                "operator",
+                "feed"
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "description": "Operator name, for readability. Not an identifier."
+          },
+          {
+            "name": "related",
+            "type": "string",
+            "description": "Onestop IDs on the other side of the association, semicolon separated: a tagged operator's feeds, or a tagged feed's operators."
+          }
+        ],
+        "primaryKey": [
+          "external_id",
+          "onestop_id"
+        ]
+      }
+    }
+  ]
+}

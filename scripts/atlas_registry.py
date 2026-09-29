@@ -273,6 +273,30 @@ def historic_urls(db) -> dict[str, set[str]]:
     return _url_index(db, historic=True)
 
 
+def tagged_records(db, entity: str, tag: str):
+    """Yield (row, tags) for every operator or feed carrying `tag`.
+
+    Tags are stored as a JSON blob per record, so every question about them
+    starts the same way: read the right column, parse it, skip records that do
+    not carry the key. `entity` is "operator" or "feed".
+    """
+    if entity == "operator":
+        sql = ("SELECT onestop_id, name, operator_tags AS tags FROM current_operators "
+               "WHERE operator_tags IS NOT NULL")
+    elif entity == "feed":
+        sql = ("SELECT onestop_id, name, feed_tags AS tags FROM current_feeds "
+               "WHERE feed_tags IS NOT NULL")
+    else:
+        raise ValueError(f"unknown entity {entity!r}")
+    for row in db.execute(sql):
+        try:
+            tags = json.loads(row["tags"])
+        except (TypeError, ValueError):
+            continue
+        if isinstance(tags, dict) and tags.get(tag):
+            yield row, tags
+
+
 def operators_by_ntd_id(db) -> dict[str, set[str]]:
     """Normalized `us_ntd_id` -> operators carrying it.
 
@@ -280,16 +304,8 @@ def operators_by_ntd_id(db) -> dict[str, set[str]]:
     reporters, so each id is indexed separately. See `split_ids`.
     """
     out: dict[str, set[str]] = {}
-    for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
-                          "WHERE operator_tags IS NOT NULL"):
-        try:
-            tags = json.loads(row["operator_tags"])
-        except (TypeError, ValueError):
-            continue
-        raw = tags.get("us_ntd_id") if isinstance(tags, dict) else None
-        if not raw:
-            continue
-        for part in split_ids(raw):
+    for row, tags in tagged_records(db, "operator", "us_ntd_id"):
+        for part in split_ids(tags["us_ntd_id"]):
             key = normalize_ntd_id(part)
             if key:
                 out.setdefault(key, set()).add(row["onestop_id"])
@@ -303,13 +319,8 @@ def feeds_by_calitp_dataset(db) -> dict[str, set[str]]:
     each endpoint as its own dataset while a feed here holds all three.
     """
     out: dict[str, set[str]] = {}
-    for row in db.execute("SELECT onestop_id, feed_tags FROM current_feeds WHERE feed_tags IS NOT NULL"):
-        try:
-            tags = json.loads(row["feed_tags"])
-        except (TypeError, ValueError):
-            continue
-        raw = tags.get("calitp_dataset_id") if isinstance(tags, dict) else None
-        for part in split_ids(raw):
+    for row, tags in tagged_records(db, "feed", "calitp_dataset_id"):
+        for part in split_ids(tags["calitp_dataset_id"]):
             out.setdefault(part, set()).add(row["onestop_id"])
     return out
 
@@ -317,14 +328,8 @@ def feeds_by_calitp_dataset(db) -> dict[str, set[str]]:
 def operators_by_calitp_org(db) -> dict[str, set[str]]:
     """Cal-ITP organization record id -> operators carrying it."""
     out: dict[str, set[str]] = {}
-    for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
-                          "WHERE operator_tags IS NOT NULL"):
-        try:
-            tags = json.loads(row["operator_tags"])
-        except (TypeError, ValueError):
-            continue
-        raw = tags.get("calitp_organization_id") if isinstance(tags, dict) else None
-        for part in split_ids(raw):
+    for row, tags in tagged_records(db, "operator", "calitp_organization_id"):
+        for part in split_ids(tags["calitp_organization_id"]):
             out.setdefault(part, set()).add(row["onestop_id"])
     return out
 
@@ -337,18 +342,24 @@ def malformed_ntd_ids(db) -> list[tuple[str, str]]:
     the source, since anything joining on the raw tag misses them.
     """
     bad = []
-    for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
-                          "WHERE operator_tags IS NOT NULL"):
-        try:
-            tags = json.loads(row["operator_tags"])
-        except (TypeError, ValueError):
-            continue
-        raw = tags.get("us_ntd_id") if isinstance(tags, dict) else None
+    for row, tags in tagged_records(db, "operator", "us_ntd_id"):
+        raw = tags["us_ntd_id"]
         for part in split_ids(raw):
             if part.isdigit() and len(part) != NTD_WIDTH:
                 bad.append((row["onestop_id"], str(raw)))
                 break
     return sorted(bad)
+
+
+def operator_names(db) -> dict[str, str]:
+    """Onestop ID -> operator name, for every operator that has one.
+
+    One query rather than one per lookup: a feed-keyed crosswalk borrows a name
+    from an associated operator for every row, and the per-row form was several
+    hundred queries per export.
+    """
+    return {r["onestop_id"]: r["name"] for r in
+            db.execute("SELECT onestop_id, name FROM current_operators WHERE name IS NOT NULL")}
 
 
 def file_of_feed(db) -> dict[str, str]:

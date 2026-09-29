@@ -1,0 +1,68 @@
+name: Export ID crosswalks
+
+on:
+  workflow_dispatch:
+  # Rebuild when feeds/ lands on main, rather than leaving the published CSVs a
+  # day behind the tags. auto-pr.sh reuses one PR, so this updates it.
+  #
+  # The path filter is required, not an optimization: without it the auto-PR's
+  # own merge would touch crosswalks/ and trigger this again.
+  push:
+    branches:
+      - main
+    paths:
+      - 'feeds/**'
+      - 'scripts/export-crosswalks.py'
+      # The export reads tags, ids and associations through this, so a change
+      # here can change the output.
+      - 'scripts/atlas_registry.py'
+      - '.github/workflows/export-crosswalks.yaml'
+  # Still daily: wikidata.csv's wikipedia_url comes from Wikidata sitelinks, so
+  # an article created or renamed there changes the export with no commit here.
+  schedule:
+    - cron: '0 10 * * *'
+
+concurrency:
+  group: export-crosswalks
+  cancel-in-progress: true
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+      id: app-token
+      with:
+        app-id: ${{ secrets.GH_BOT_APP_ID }}
+        private-key: ${{ secrets.GH_BOT_APP_PRIVATE_KEY }}
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      with:
+        token: ${{ steps.app-token.outputs.token }}
+    - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+      with:
+        python-version: '3.11'
+    - name: Install uv
+      uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      with:
+        cache-dependency-glob: uv.lock
+    - name: Install transitland-lib
+      run: scripts/install-transitland-lib.sh
+    - name: Export each crosswalk to crosswalks/
+      run: uv run --locked scripts/export-crosswalks.py
+    # The descriptor names a profile; this makes that claim load-bearing rather
+    # than decorative. Same tool and pattern as the DMFR check in validate.yaml.
+    - name: Validate the Data Package descriptor
+      run: |
+        profile="$(mktemp)"
+        wget -q https://datapackage.org/profiles/2.0/datapackage.json -O "$profile"
+        uv run --locked check-jsonschema --schemafile "$profile" crosswalks/datapackage.json
+    - name: Open or update auto-PR if anything changed
+      env:
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+      run: |
+        scripts/auto-pr.sh \
+          --branch-name "auto/crosswalk-exports" \
+          --pr-title "Automatic update of ID crosswalk exports" \
+          --pr-body "Rebuilt crosswalks/*.csv from the tags in feeds/. These files are what www.transit.land links to from each ID crosswalk page." \
+          --commit-message "Updated ID crosswalk exports at $(date -u)" \
+          --trigger-workflow ""
