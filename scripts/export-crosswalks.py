@@ -24,6 +24,10 @@ English sitelink, which needs the network. A failed lookup exits non-zero
 rather than writing blanks, which would be indistinguishable from an entity
 with no article.
 
+A Frictionless Data Package v2 descriptor is written alongside them at
+crosswalks/datapackage.json, so the columns, their types and the primary key
+are machine readable rather than only described in prose.
+
 Requires the `transitland` binary on PATH, same as validate-feeds.py.
 """
 
@@ -147,6 +151,76 @@ def wikipedia_urls(qids: list[str]) -> dict[str, str]:
     return out
 
 
+# Frictionless Data Package v2. `profile` is the v1 property and is not used.
+DATAPACKAGE_PROFILE = "https://datapackage.org/profiles/2.0/datapackage.json"
+
+FIELD_DESCRIPTIONS = {
+    "external_id": "The identifier this record carries in the external system.",
+    "onestop_id": "The Transitland operator or feed the identifier belongs to.",
+    "entity": "Which kind of Transitland record carries the tag.",
+    "name": "Operator name, for readability. Not an identifier.",
+    "related": ("Onestop IDs on the other side of the association, semicolon "
+                "separated: a tagged operator's feeds, or a tagged feed's operators."),
+    "wikipedia_url": "English Wikipedia article for the Wikidata entity, where it has one.",
+}
+
+
+def _field(name: str) -> dict:
+    """One Table Schema field. Every column is a string; none is arithmetic."""
+    field = {"name": name, "type": "string"}
+    description = FIELD_DESCRIPTIONS.get(name)
+    if description:
+        field["description"] = description
+    if name == "entity":
+        field["constraints"] = {"enum": ["operator", "feed"]}
+    if name == "wikipedia_url":
+        field["format"] = "uri"
+    if name not in FIELD_DESCRIPTIONS:
+        field["description"] = f"Value of the `{name}` tag on the same record."
+    return field
+
+
+def datapackage(written: list[tuple[str, list[str], str]]) -> dict:
+    """The descriptor for crosswalks/, as a Data Package v2 dict.
+
+    Deliberately carries no timestamp. The file is committed, and auto-pr.sh
+    opens a PR only when something changed, so a `created` that moves every run
+    would mean a daily pull request saying nothing.
+    """
+    resources = []
+    for registry, columns, path in written:
+        entity = registry["entity"]
+        resources.append({
+            "name": registry["name"],
+            "path": os.path.basename(path),
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "description": (f"Transitland Onestop IDs crosswalked to `{registry['tag']}` "
+                            f"values tagged on {entity} records."),
+            "schema": {
+                "fields": [_field(c) for c in columns],
+                "primaryKey": ["external_id", "onestop_id"],
+            },
+        })
+    return {
+        "$schema": DATAPACKAGE_PROFILE,
+        "name": "transitland-id-crosswalks",
+        "id": "https://github.com/transitland/transitland-atlas",
+        "title": "Transitland ID crosswalks",
+        "description": ("Crosswalks between Transitland Onestop IDs and the identifiers the "
+                        "same operators and feeds carry in other transit data systems. Built "
+                        "from the tags on the DMFR records in this repository."),
+        "homepage": "https://www.transit.land/data/id-crosswalks",
+        "licenses": [{
+            "name": "CC-BY-4.0",
+            "path": "https://creativecommons.org/licenses/by/4.0/",
+            "title": "Creative Commons Attribution 4.0",
+        }],
+        "resources": resources,
+    }
+
+
 def write_csv(path: str, rows: list[dict], columns: list[str]) -> None:
     with open(path, "w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=columns, extrasaction="ignore")
@@ -165,6 +239,7 @@ def main() -> int:
     db = atlas_registry.load(args.feeds_dir)
     os.makedirs(args.out_dir, exist_ok=True)
 
+    written: list[tuple[dict, list[str], str]] = []
     for registry in REGISTRIES:
         rows = rows_for(db, registry)
         columns = list(COLUMNS)
@@ -179,7 +254,14 @@ def main() -> int:
             columns.append("wikipedia_url")
         path = os.path.join(args.out_dir, f"{registry['name']}.csv")
         write_csv(path, rows, columns)
+        written.append((registry, columns, path))
         print(f"{path}: {len(rows)} rows")
+
+    descriptor = os.path.join(args.out_dir, "datapackage.json")
+    with open(descriptor, "w", encoding="utf-8") as fh:
+        json.dump(datapackage(written), fh, indent=2, ensure_ascii=False)
+        fh.write("\n")
+    print(f"{descriptor}: {len(written)} resources")
     return 0
 
 

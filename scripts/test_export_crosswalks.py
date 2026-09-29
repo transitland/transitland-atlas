@@ -102,3 +102,35 @@ def test_every_registry_name_is_url_safe():
     for registry in export_crosswalks.REGISTRIES:
         assert registry["name"].replace("-", "").isalnum()
         assert registry["name"].islower()
+
+
+def test_descriptor_is_data_package_v2_not_v1():
+    d = export_crosswalks.datapackage([])
+    assert d["$schema"] == "https://datapackage.org/profiles/2.0/datapackage.json"
+    # `profile` is the v1 property; carrying it would make consumers read this
+    # against the older spec.
+    assert "profile" not in d
+    # No timestamp: the file is committed, and auto-pr.sh opens a PR only when
+    # something changed, so a `created` that moves every run means a daily PR
+    # that says nothing.
+    assert "created" not in d
+
+
+def test_descriptor_declares_the_columns_each_csv_actually_has():
+    # The descriptor and the data disagreeing is the failure mode that makes a
+    # schema worse than none, so this walks the same column list the writer does.
+    registry = {"name": "odpt", "tag": "odpt_organization_id", "entity": "feed",
+                "secondary": "odpt_dataset_id"}
+    columns = export_crosswalks.COLUMNS + ["odpt_dataset_id"]
+    d = export_crosswalks.datapackage([(registry, columns, "crosswalks/odpt.csv")])
+    resource = d["resources"][0]
+    assert resource["path"] == "odpt.csv"
+    assert [f["name"] for f in resource["schema"]["fields"]] == columns
+    assert resource["schema"]["primaryKey"] == ["external_id", "onestop_id"]
+
+
+def test_entity_field_is_constrained_to_the_two_kinds():
+    registry = {"name": "us-ntd", "tag": "us_ntd_id", "entity": "operator"}
+    d = export_crosswalks.datapackage([(registry, export_crosswalks.COLUMNS, "us-ntd.csv")])
+    entity = next(f for f in d["resources"][0]["schema"]["fields"] if f["name"] == "entity")
+    assert entity["constraints"]["enum"] == ["operator", "feed"]
