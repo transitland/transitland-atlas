@@ -11,6 +11,11 @@ export_crosswalks = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(export_crosswalks)
 
 
+def rows_for_ntd(db):
+    return export_crosswalks.rows_for(
+        db, {"name": "us-ntd", "tag": "us_ntd_id", "entity": "operator"})
+
+
 def _db():
     db = sqlite3.connect(":memory:")
     db.row_factory = sqlite3.Row
@@ -67,6 +72,20 @@ def test_feed_rows_borrow_an_operator_name():
     assert rows[0]["name"] == "Akiha Bus Service"
     assert rows[0]["related"] == "o-x"
     assert rows[0]["odpt_dataset_id"] == "AllLines"
+
+
+def test_several_related_ids_are_semicolon_joined():
+    # Not a space: split_ids already treats a semicolon as the separator for
+    # several ids in one string, and a comma would need the row quoted.
+    db = _db()
+    db.execute("INSERT INTO current_operators VALUES (1, 'o-x', 'X', ?)",
+               ('{"us_ntd_id": "00001"}',))
+    db.execute("INSERT INTO current_feeds VALUES (1, 'f-b', NULL, 'gtfs', NULL)")
+    db.execute("INSERT INTO current_feeds VALUES (2, 'f-a', NULL, 'gtfs', NULL)")
+    db.execute("INSERT INTO current_operators_in_feed VALUES (1, 1, 1)")
+    db.execute("INSERT INTO current_operators_in_feed VALUES (2, 1, 2)")
+    rows = rows_for_ntd(db)
+    assert rows[0]["related"] == "f-a;f-b"
 
 
 def test_rows_are_sorted_so_a_diff_shows_what_changed():

@@ -11,8 +11,10 @@ One row per (external id, Onestop ID) pair:
 
     external_id,onestop_id,entity,name,related
 
-`related` holds the Onestop IDs on the other side of the association, space
-separated: a tagged operator's feeds, or a tagged feed's operators.
+`related` holds the Onestop IDs on the other side of the association: a tagged
+operator's feeds, or a tagged feed's operators. Several are joined with a
+semicolon, the same separator split_ids already accepts in a tag, and one that
+needs no CSV quoting because no Onestop ID contains it.
 
 Rows are sorted, so a commit diff shows what changed rather than how the
 registry happened to be walked.
@@ -63,6 +65,11 @@ REGISTRIES = [
 
 COLUMNS = ["external_id", "onestop_id", "entity", "name", "related"]
 
+# Joins several ids inside one cell. A comma would need the row quoted and can
+# break a naive reader that splits on the delimiter; a semicolon needs neither,
+# and split_ids already accepts it wherever a tag carries more than one id.
+SEPARATOR = ";"
+
 # wbgetentities takes at most 50 ids per call.
 WIKIDATA_BATCH = 50
 WIKIDATA_API = "https://www.wikidata.org/w/api.php"
@@ -83,7 +90,7 @@ def rows_for(db, registry):
             name = row["name"] or _first_operator_name(db, related)
         secondary = ""
         if registry.get("secondary"):
-            secondary = " ".join(atlas_registry.split_ids(tags.get(registry["secondary"])))
+            secondary = SEPARATOR.join(atlas_registry.split_ids(tags.get(registry["secondary"])))
         for external_id in atlas_registry.split_ids(tags[registry["tag"]]):
             if registry["tag"] == "us_ntd_id":
                 external_id = atlas_registry.normalize_ntd_id(external_id) or external_id
@@ -92,7 +99,7 @@ def rows_for(db, registry):
                 "onestop_id": onestop_id,
                 "entity": registry["entity"],
                 "name": name,
-                "related": " ".join(sorted(related)),
+                "related": SEPARATOR.join(sorted(related)),
             }
             if registry.get("secondary"):
                 record[registry["secondary"]] = secondary
