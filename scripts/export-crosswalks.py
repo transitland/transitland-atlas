@@ -3,25 +3,24 @@
 """
 Export each ID crosswalk to a CSV under crosswalks/.
 
-A crosswalk is a tag: `us_ntd_id` on an operator, `mdb_source_id` on a feed,
-and so on. Those tags are already here, in the DMFR files, so the export reads
-them from the registry rather than from an API -- this repository is the source
-of what the crosswalk says, and a file built from it cannot disagree with it.
+A crosswalk is a tag: `us_ntd_id` on an operator, `mdb_source_id` on a feed. The
+tags are in the DMFR files here, so the export reads them from the registry
+rather than from an API, and cannot disagree with them.
 
-Output is one row per (external id, Onestop ID) pair:
+One row per (external id, Onestop ID) pair:
 
     external_id,onestop_id,entity,name,related
 
-`related` holds the Onestop IDs on the other side of the association -- a
-tagged operator's feeds, or a tagged feed's operators -- space separated.
+`related` holds the Onestop IDs on the other side of the association, space
+separated: a tagged operator's feeds, or a tagged feed's operators.
 
-Rows are sorted, so a commit diff shows what changed about the crosswalk rather
-than how the registry happened to be walked.
+Rows are sorted, so a commit diff shows what changed rather than how the
+registry happened to be walked.
 
-The Wikidata export carries a trailing `wikipedia_url` resolved from each
-entity's English sitelink, which needs the network. A failed lookup exits
-non-zero rather than writing a column of blanks, because a blank column is
-indistinguishable from an entity that genuinely has no article.
+The Wikidata export carries a trailing `wikipedia_url` from each entity's
+English sitelink, which needs the network. A failed lookup exits non-zero
+rather than writing blanks, which would be indistinguishable from an entity
+with no article.
 
 Requires the `transitland` binary on PATH, same as validate-feeds.py.
 """
@@ -43,14 +42,11 @@ import urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import atlas_registry  # noqa: E402
 
-# The crosswalks, and which tag each one publishes.
-#
-# This list is a contract with www-transit-land-v2's shared/crosswalks.ts: the
-# website links to crosswalks/<name>.csv for every registry it knows, so a name
-# here that differs from a name there is a broken download button. `entity`
-# decides whether the tag is read from operators or feeds, and `secondary` is a
-# second tag carried in a trailing column, for a registry whose identifier is
-# not one value (ODPT names a feed by operator *and* dataset).
+# A contract with shared/crosswalks.ts in www-transit-land-v2, which links
+# crosswalks/<name>.csv for every registry it knows: a name that differs there
+# is a broken download here. `entity` picks operators or feeds. `secondary` is a
+# second tag in a trailing column, for a registry whose identifier is not one
+# value (ODPT names a feed by operator and dataset).
 REGISTRIES = [
     {"name": "us-ntd", "tag": "us_ntd_id", "entity": "operator"},
     {"name": "wikidata", "tag": "wikidata_id", "entity": "operator", "wikipedia": True},
@@ -73,35 +69,17 @@ WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 USER_AGENT = "transitland-atlas crosswalk export (https://github.com/transitland/transitland-atlas)"
 
 
-def _tagged(db, registry):
-    """Every record carrying this registry's tag, with what a row needs."""
-    if registry["entity"] == "operator":
-        sql = ("SELECT onestop_id, name, operator_tags AS tags "
-               "FROM current_operators WHERE operator_tags IS NOT NULL")
-    else:
-        sql = ("SELECT onestop_id, name, feed_tags AS tags "
-               "FROM current_feeds WHERE feed_tags IS NOT NULL")
-    for row in db.execute(sql):
-        try:
-            tags = json.loads(row["tags"])
-        except (TypeError, ValueError):
-            continue
-        if isinstance(tags, dict) and tags.get(registry["tag"]):
-            yield row, tags
-
-
 def rows_for(db, registry):
     """The crosswalk's rows, sorted, one per (external id, Onestop ID)."""
     out = []
-    for row, tags in _tagged(db, registry):
+    for row, tags in atlas_registry.tagged_records(db, registry["entity"], registry["tag"]):
         onestop_id = row["onestop_id"]
         if registry["entity"] == "operator":
             related = atlas_registry.operator_feeds(db, onestop_id)
             name = row["name"] or ""
         else:
             related = atlas_registry.operators_of(db, onestop_id)
-            # A feed rarely names itself, so borrow an associated operator's:
-            # a crosswalk with a blank name column is unreadable.
+            # A feed rarely names itself, so borrow an associated operator's.
             name = row["name"] or _first_operator_name(db, related)
         secondary = ""
         if registry.get("secondary"):
@@ -135,9 +113,9 @@ def _first_operator_name(db, onestop_ids) -> str:
 def wikipedia_urls(qids: list[str]) -> dict[str, str]:
     """English Wikipedia article URL per Q-item, from its enwiki sitelink.
 
-    Entities with no English article are simply absent, which is what the
-    caller wants: a missing key writes an empty cell. A failed request raises,
-    so a transient outage does not silently empty the whole column.
+    Entities with no English article are absent, and a missing key writes an
+    empty cell. A failed request raises, so an outage does not silently empty
+    the column.
     """
     out: dict[str, str] = {}
     unique = sorted({q for q in qids if q.startswith("Q") and q[1:].isdigit()})

@@ -2,13 +2,11 @@ name: Export ID crosswalks
 
 on:
   workflow_dispatch:
-  # The export is derived from feeds/, so rebuild when that lands on main
-  # rather than leaving the published CSVs a day behind the tags they claim to
-  # export. auto-pr.sh reuses one PR, so this updates it rather than opening
-  # another.
+  # Rebuild when feeds/ lands on main, rather than leaving the published CSVs a
+  # day behind the tags. auto-pr.sh reuses one PR, so this updates it.
   #
-  # The path filter is load-bearing, not an optimisation: without it the
-  # auto-PR's own merge would touch crosswalks/ and trigger this again.
+  # The path filter is required, not an optimization: without it the auto-PR's
+  # own merge would touch crosswalks/ and trigger this again.
   push:
     branches:
       - main
@@ -16,9 +14,8 @@ on:
       - 'feeds/**'
       - 'scripts/export-crosswalks.py'
       - '.github/workflows/export-crosswalks.yaml'
-  # Still daily, because wikidata.csv's wikipedia_url depends on Wikidata
-  # sitelinks. An article created or renamed there changes the export with no
-  # commit here to trigger it.
+  # Still daily: wikidata.csv's wikipedia_url comes from Wikidata sitelinks, so
+  # an article created or renamed there changes the export with no commit here.
   schedule:
     - cron: '0 10 * * *'
 
