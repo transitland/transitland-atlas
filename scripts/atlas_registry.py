@@ -342,18 +342,24 @@ def malformed_ntd_ids(db) -> list[tuple[str, str]]:
     the source, since anything joining on the raw tag misses them.
     """
     bad = []
-    for row in db.execute("SELECT onestop_id, operator_tags FROM current_operators "
-                          "WHERE operator_tags IS NOT NULL"):
-        try:
-            tags = json.loads(row["operator_tags"])
-        except (TypeError, ValueError):
-            continue
-        raw = tags.get("us_ntd_id") if isinstance(tags, dict) else None
+    for row, tags in tagged_records(db, "operator", "us_ntd_id"):
+        raw = tags["us_ntd_id"]
         for part in split_ids(raw):
             if part.isdigit() and len(part) != NTD_WIDTH:
                 bad.append((row["onestop_id"], str(raw)))
                 break
     return sorted(bad)
+
+
+def operator_names(db) -> dict[str, str]:
+    """Onestop ID -> operator name, for every operator that has one.
+
+    One query rather than one per lookup: a feed-keyed crosswalk borrows a name
+    from an associated operator for every row, and the per-row form was several
+    hundred queries per export.
+    """
+    return {r["onestop_id"]: r["name"] for r in
+            db.execute("SELECT onestop_id, name FROM current_operators WHERE name IS NOT NULL")}
 
 
 def file_of_feed(db) -> dict[str, str]:

@@ -42,6 +42,13 @@ jobs:
       run: scripts/install-transitland-lib.sh
     - name: Export each crosswalk to crosswalks/
       run: uv run --locked scripts/export-crosswalks.py
+    # The descriptor names a profile; this makes that claim load-bearing rather
+    # than decorative. Same tool and pattern as the DMFR check in validate.yaml.
+    - name: Validate the Data Package descriptor
+      run: |
+        wget -q https://datapackage.org/profiles/2.0/datapackage.json -O datapackage.profile.json
+        uv run --locked check-jsonschema --schemafile datapackage.profile.json crosswalks/datapackage.json
+        rm datapackage.profile.json
     - name: Open or update auto-PR if anything changed
       env:
         GH_TOKEN: ${{ steps.app-token.outputs.token }}

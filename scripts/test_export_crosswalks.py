@@ -118,19 +118,32 @@ def test_descriptor_is_data_package_v2_not_v1():
 
 def test_descriptor_declares_the_columns_each_csv_actually_has():
     # The descriptor and the data disagreeing is the failure mode that makes a
-    # schema worse than none, so this walks the same column list the writer does.
+    # schema worse than none. Both sides read columns_for, so this compares the
+    # descriptor against the same function the writer uses rather than against
+    # a second hand-written list.
     registry = {"name": "odpt", "tag": "odpt_organization_id", "entity": "feed",
                 "secondary": "odpt_dataset_id"}
-    columns = export_crosswalks.COLUMNS + ["odpt_dataset_id"]
-    d = export_crosswalks.datapackage([(registry, columns, "crosswalks/odpt.csv")])
+    d = export_crosswalks.datapackage([registry])
     resource = d["resources"][0]
     assert resource["path"] == "odpt.csv"
-    assert [f["name"] for f in resource["schema"]["fields"]] == columns
+    assert [f["name"] for f in resource["schema"]["fields"]] == export_crosswalks.columns_for(registry)
     assert resource["schema"]["primaryKey"] == ["external_id", "onestop_id"]
+
+
+def test_columns_for_appends_the_optional_columns_in_order():
+    base = {"name": "x", "tag": "t", "entity": "feed"}
+    assert export_crosswalks.columns_for(base) == export_crosswalks.COLUMNS
+    assert export_crosswalks.columns_for({**base, "secondary": "s"})[-1] == "s"
+    assert export_crosswalks.columns_for({**base, "wikipedia": True})[-1] == "wikipedia_url"
+
+
+def test_every_registry_has_a_resource():
+    d = export_crosswalks.datapackage(export_crosswalks.REGISTRIES)
+    assert [r["name"] for r in d["resources"]] == [r["name"] for r in export_crosswalks.REGISTRIES]
 
 
 def test_entity_field_is_constrained_to_the_two_kinds():
     registry = {"name": "us-ntd", "tag": "us_ntd_id", "entity": "operator"}
-    d = export_crosswalks.datapackage([(registry, export_crosswalks.COLUMNS, "us-ntd.csv")])
+    d = export_crosswalks.datapackage([registry])
     entity = next(f for f in d["resources"][0]["schema"]["fields"] if f["name"] == "entity")
     assert entity["constraints"]["enum"] == ["operator", "feed"]

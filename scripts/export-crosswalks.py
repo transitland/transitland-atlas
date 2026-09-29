@@ -31,11 +31,6 @@ are machine readable rather than only described in prose.
 Requires the `transitland` binary on PATH, same as validate-feeds.py.
 """
 
-# /// script
-# requires-python = ">=3.10"
-# dependencies = []
-# ///
-
 import argparse
 import csv
 import json
@@ -47,6 +42,11 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import atlas_registry  # noqa: E402
+
+# Resolved from this file rather than the working directory, so the script runs
+# from anywhere. validate-feeds.py carries the same note after being caught by
+# the relative form.
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # A contract with shared/crosswalks.ts in www-transit-land-v2, which links
 # crosswalks/<name>.csv for every registry it knows: a name that differs there
@@ -82,6 +82,7 @@ USER_AGENT = "transitland-atlas crosswalk export (https://github.com/transitland
 
 def rows_for(db, registry):
     """The crosswalk's rows, sorted, one per (external id, Onestop ID)."""
+    names = atlas_registry.operator_names(db) if registry["entity"] == "feed" else {}
     out = []
     for row, tags in atlas_registry.tagged_records(db, registry["entity"], registry["tag"]):
         onestop_id = row["onestop_id"]
@@ -91,7 +92,8 @@ def rows_for(db, registry):
         else:
             related = atlas_registry.operators_of(db, onestop_id)
             # A feed rarely names itself, so borrow an associated operator's.
-            name = row["name"] or _first_operator_name(db, related)
+            name = row["name"] or next(
+                (names[o] for o in sorted(related) if names.get(o)), "")
         secondary = ""
         if registry.get("secondary"):
             secondary = SEPARATOR.join(atlas_registry.split_ids(tags.get(registry["secondary"])))
@@ -110,15 +112,6 @@ def rows_for(db, registry):
             out.append(record)
     out.sort(key=lambda r: (r["external_id"], r["onestop_id"]))
     return out
-
-
-def _first_operator_name(db, onestop_ids) -> str:
-    for osid in sorted(onestop_ids):
-        row = db.execute("SELECT name FROM current_operators WHERE onestop_id = ?",
-                         (osid,)).fetchone()
-        if row and row["name"]:
-            return row["name"]
-    return ""
 
 
 def wikipedia_urls(qids: list[str]) -> dict[str, str]:
@@ -167,20 +160,34 @@ FIELD_DESCRIPTIONS = {
 
 def _field(name: str) -> dict:
     """One Table Schema field. Every column is a string; none is arithmetic."""
-    field = {"name": name, "type": "string"}
-    description = FIELD_DESCRIPTIONS.get(name)
-    if description:
-        field["description"] = description
+    field = {
+        "name": name,
+        "type": "string",
+        "description": FIELD_DESCRIPTIONS.get(
+            name, f"Value of the `{name}` tag on the same record."),
+    }
     if name == "entity":
         field["constraints"] = {"enum": ["operator", "feed"]}
     if name == "wikipedia_url":
         field["format"] = "uri"
-    if name not in FIELD_DESCRIPTIONS:
-        field["description"] = f"Value of the `{name}` tag on the same record."
     return field
 
 
-def datapackage(written: list[tuple[str, list[str], str]]) -> dict:
+def columns_for(registry: dict) -> list[str]:
+    """The CSV columns this registry produces, in order.
+
+    Read by both the writer and the descriptor, so the file and the schema
+    describing it cannot list different columns.
+    """
+    columns = list(COLUMNS)
+    if registry.get("secondary"):
+        columns.append(registry["secondary"])
+    if registry.get("wikipedia"):
+        columns.append("wikipedia_url")
+    return columns
+
+
+def datapackage(registries: list[dict]) -> dict:
     """The descriptor for crosswalks/, as a Data Package v2 dict.
 
     Deliberately carries no timestamp. The file is committed, and auto-pr.sh
@@ -188,18 +195,18 @@ def datapackage(written: list[tuple[str, list[str], str]]) -> dict:
     would mean a daily pull request saying nothing.
     """
     resources = []
-    for registry, columns, path in written:
+    for registry in registries:
         entity = registry["entity"]
         resources.append({
             "name": registry["name"],
-            "path": os.path.basename(path),
+            "path": f"{registry['name']}.csv",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
             "description": (f"Transitland Onestop IDs crosswalked to `{registry['tag']}` "
                             f"values tagged on {entity} records."),
             "schema": {
-                "fields": [_field(c) for c in columns],
+                "fields": [_field(c) for c in columns_for(registry)],
                 "primaryKey": ["external_id", "onestop_id"],
             },
         })
@@ -223,45 +230,39 @@ def datapackage(written: list[tuple[str, list[str], str]]) -> dict:
 
 def write_csv(path: str, rows: list[dict], columns: list[str]) -> None:
     with open(path, "w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=columns, extrasaction="ignore")
+        # Without lineterminator the csv module writes CRLF, which would put
+        # 3,800 lines of \r into an LF repository and leave a stray \r on the
+        # last field of every row for anything not using a CSV reader.
+        writer = csv.DictWriter(fh, fieldnames=columns, extrasaction="ignore",
+                                lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--feeds-dir", default="feeds")
-    parser.add_argument("--out-dir", default="crosswalks")
-    parser.add_argument("--skip-wikipedia", action="store_true",
-                        help="leave wikipedia_url empty; for offline runs")
+    parser.add_argument("--feeds-dir", default=os.path.join(REPO_ROOT, "feeds"))
+    parser.add_argument("--out-dir", default=os.path.join(REPO_ROOT, "crosswalks"))
     args = parser.parse_args()
 
     db = atlas_registry.load(args.feeds_dir)
     os.makedirs(args.out_dir, exist_ok=True)
 
-    written: list[tuple[dict, list[str], str]] = []
     for registry in REGISTRIES:
         rows = rows_for(db, registry)
-        columns = list(COLUMNS)
-        if registry.get("secondary"):
-            columns.append(registry["secondary"])
-        if registry.get("wikipedia") and not args.skip_wikipedia:
+        if registry.get("wikipedia"):
             articles = wikipedia_urls([r["external_id"] for r in rows])
             for row in rows:
                 row["wikipedia_url"] = articles.get(row["external_id"], "")
-            columns.append("wikipedia_url")
-        elif registry.get("wikipedia"):
-            columns.append("wikipedia_url")
         path = os.path.join(args.out_dir, f"{registry['name']}.csv")
-        write_csv(path, rows, columns)
-        written.append((registry, columns, path))
+        write_csv(path, rows, columns_for(registry))
         print(f"{path}: {len(rows)} rows")
 
     descriptor = os.path.join(args.out_dir, "datapackage.json")
     with open(descriptor, "w", encoding="utf-8") as fh:
-        json.dump(datapackage(written), fh, indent=2, ensure_ascii=False)
+        json.dump(datapackage(REGISTRIES), fh, indent=2, ensure_ascii=False)
         fh.write("\n")
-    print(f"{descriptor}: {len(written)} resources")
+    print(f"{descriptor}: {len(REGISTRIES)} resources")
     return 0
 
 
