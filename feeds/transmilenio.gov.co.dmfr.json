@@ -5,8 +5,9 @@
       "id": "f-d2g6-transmilenio~troncal~transmilenio~alimentadores~transmile",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://storage.googleapis.com/gtfs-estaticos/GTFS-2024-02-21.zip",
+        "static_current": "https://storage.googleapis.com/gtfs-estaticos/GTFS_20260929.zip",
         "static_historic": [
+          "https://storage.googleapis.com/gtfs-estaticos/GTFS-2024-02-21.zip",
           "https://storage.googleapis.com/gtfs-estaticos/GTFS-2023-10-01.zip",
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/sdm-bogota-co.zip",
           "https://storage.googleapis.com/gtfs-estaticos/GTFS-2022-10-13.zip",
@@ -17,78 +18,50 @@
         "url": "https://www.arcgis.com/home/item.html?id=23ca762178a94b23a5e227ce60e2b08e"
       },
       "tags": {
+        "mdb_source_id": "3358",
         "unstable_url": "true"
       },
       "operators": [
         {
-          "onestop_id": "o-d2g6-transmilenio~alimentadores",
-          "name": "Transmilenio - Alimentadores (feeders)",
-          "website": "http://www.sitp.gov.co",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "4"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-d2g6-transmilenio~cable",
-          "name": "Transmilenio - Cable",
-          "website": "https://www.transmilenio.gov.co/TransMiCable/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "7"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-d2g6-transmilenio~complementaria",
-          "name": "Transmilenio - Complementaria",
-          "website": "http://www.sitp.gov.co",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-d2g6-transmilenio~dual",
-          "name": "Transmilenio - Dual (doors on both sides)",
-          "website": "http://www.sitp.gov.co",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-d2g6-transmilenio~especial",
-          "name": "Transmilenio - Especial",
-          "website": "http://www.sitp.gov.co",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "6"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-d2g6-transmilenio~troncal",
-          "name": "Transmilenio - Troncal (trunk)",
-          "website": "http://www.sitp.gov.co",
+          "onestop_id": "o-d2g6-transmilenio",
+          "supersedes_ids": [
+            "o-d2g6-transmilenio~alimentadores",
+            "o-d2g6-transmilenio~cable",
+            "o-d2g6-transmilenio~complementaria",
+            "o-d2g6-transmilenio~dual",
+            "o-d2g6-transmilenio~especial",
+            "o-d2g6-transmilenio~troncal",
+            "o-d2g6-transmilenio~urbana"
+          ],
+          "name": "TransMilenio",
+          "short_name": "SITP",
+          "website": "https://www.transmilenio.gov.co/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-d2g6-transmilenio~urbana",
-          "name": "Transmilenio - Urbana (city)",
-          "website": "http://www.sitp.gov.co",
-          "associated_feeds": [
+            },
+            {
+              "gtfs_agency_id": "2"
+            },
             {
               "gtfs_agency_id": "3"
+            },
+            {
+              "gtfs_agency_id": "4"
+            },
+            {
+              "gtfs_agency_id": "5"
+            },
+            {
+              "gtfs_agency_id": "6"
+            },
+            {
+              "gtfs_agency_id": "7"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q429748"
+          }
         }
       ]
     }
