@@ -1,0 +1,163 @@
+name: Compare repointed static feed URLs
+
+# When a PR changes an existing feed's static_current URL, fetch both the old
+# and new URL, compare them side by side, and post the result as a PR comment.
+# Advisory only: this never fails the check.
+#
+# Both jobs run the base branch's copy of scripts/ and read the PR's DMFR
+# files through git. `probe` fetches and validates the URLs; `comment` renders
+# the result, using TRANSITLAND_API_KEY from the transitland-api environment
+# for the archive lookup.
+on:
+  pull_request_target:
+    paths:
+      - 'feeds/*.dmfr.json'
+    types: [opened, synchronize, reopened]
+
+permissions: {}
+
+concurrency:
+  group: compare-feed-urls-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      # Full history for merge-base, but blobless: only the DMFR files that
+      # are actually read get downloaded.
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+
+      - name: Fetch PR head
+        id: revs
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags origin "pull/$PR_NUMBER/head"
+          # Diff against the merge base so commits landed on main since the
+          # branch was cut are not attributed to the PR.
+          # Assigned on its own line so a failure stops the step rather than
+          # producing an empty diff that reads as "nothing changed".
+          base=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
+          echo "base=$base" >> "$GITHUB_OUTPUT"
+
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      - name: Install transitland-lib
+        run: scripts/install-transitland-lib.sh
+
+      - name: Fetch and validate old and new static_current URLs
+        env:
+          BASE: ${{ steps.revs.outputs.base }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          mkdir -p reports
+          changed=$(git diff --name-only "$BASE" "$HEAD" -- 'feeds/*.dmfr.json')
+          mapfile -t files < <(printf '%s\n' "$changed" | sed '/^$/d')
+          uv run scripts/compare-changed-feed-urls.py probe \
+            --base "$BASE" --head "$HEAD" "${files[@]}" > reports/probes.json
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: feed-url-probes
+          path: reports/probes.json
+
+  comment:
+    needs: probe
+    runs-on: ubuntu-latest
+    environment: transitland-api
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+          sparse-checkout: scripts
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: feed-url-probes
+          path: reports
+
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+
+      - name: Render comparison
+        env:
+          TRANSITLAND_API_KEY: ${{ secrets.TRANSITLAND_API_KEY }}
+        run: |
+          uv run scripts/compare-changed-feed-urls.py render reports/probes.json > reports/compare.md
+          # The step summary is capped at 1 MiB; the artifact below has it all.
+          if [ "$(wc -c < reports/compare.md)" -lt 1000000 ]; then
+            cat reports/compare.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: feed-url-comparison
+          path: reports/compare.md
+
+      - name: Comment on PR
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '<!-- feed-url-comparison -->';
+            // GitHub caps comment bodies at 65536 characters. Drop whole feed
+            // sections past the budget, so no table or <details> is cut open.
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const sections = fs.readFileSync('reports/compare.md', 'utf8').trim()
+              .split(/\n(?=### )/).filter(Boolean);
+            const kept = [];
+            let size = 0;
+            for (const s of sections) {
+              if (size + s.length > 60000) break;
+              kept.push(s);
+              size += s.length + 1;
+            }
+            let summary = kept.join('\n');
+            if (kept.length < sections.length) {
+              summary += `\n\n**${sections.length - kept.length} more feeds not shown.** ` +
+                `The full comparison is attached to the [workflow run](${runUrl}) as an artifact.`;
+            }
+
+            const existing = await github.paginate(github.rest.issues.listComments, {
+              issue_number: context.issue.number,
+              owner: context.repo.owner, repo: context.repo.repo,
+            });
+            const prior = existing.find(c => c.user.type === 'Bot' && c.body.includes(marker));
+
+            let body;
+            if (summary) {
+              body =
+                `${marker}\n## Static feed URL comparison\n\n` +
+                `This PR changes the \`static_current\` URL of an existing feed. ` +
+                `Here is how the current and proposed URLs compare right now:\n\n` +
+                `${summary}\n\n` +
+                `<sub>Advisory only; does not block merging. Recommendations are ` +
+                `based on what each URL serves at the time of this run. ` +
+                `"Contents SHA1" hashes the feed's files independent of zip ` +
+                `packaging, so matching values mean the same data.</sub>`;
+            } else if (prior) {
+              body = `${marker}\n## Static feed URL comparison\n\n` +
+                `✅ The latest push no longer changes any existing feed's \`static_current\` URL.`;
+            } else {
+              return;
+            }
+
+            const params = { owner: context.repo.owner, repo: context.repo.repo, body };
+            if (prior) {
+              await github.rest.issues.updateComment({ ...params, comment_id: prior.id });
+            } else {
+              await github.rest.issues.createComment({ ...params, issue_number: context.issue.number });
+            }
