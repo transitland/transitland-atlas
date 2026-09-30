@@ -1,0 +1,40 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-saguenay~qc~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://saguenay.tmix.se/Tmix.Cap.TdExport.WebApi/gtfs/"
+      }
+    },
+    {
+      "id": "f-saguenay~qc~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://saguenay.tmix.se/gtfs-realtime/vehicleupdates.pb",
+        "realtime_trip_updates": "https://saguenay.tmix.se/gtfs-realtime/tripupdates.pb",
+        "realtime_alerts": "https://saguenay.tmix.se/gtfs-realtime/alerts.pb"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-saguenay~qc~ca",
+      "name": "Société de transport du Saguenay",
+      "short_name": "STS",
+      "website": "https://sts.saguenay.ca/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-saguenay~qc~ca"
+        },
+        {
+          "feed_onestop_id": "f-saguenay~qc~ca~rt"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q3488036"
+      }
+    }
+  ]
+}
