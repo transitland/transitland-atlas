@@ -1,4 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run
+# /// script
+# requires-python = ">=3.11"
+# dependencies = []
+# ///
 """
 Compare the old and new static_current URL of every feed a PR repoints.
 
@@ -19,12 +23,14 @@ the transitland binary fetching untrusted URLs:
           also reports whether each file is already in the Transitland
           archive.
 
-Standard library only. Advisory: always exits 0 unless invoked incorrectly.
+Standard library only: the empty inline dependency list above makes `uv run`
+skip syncing the project environment. Advisory: always exits 0 unless
+invoked incorrectly.
 
 Usage:
-    python3 scripts/compare-changed-feed-urls.py probe --base <rev> --head <rev> \\
+    uv run scripts/compare-changed-feed-urls.py probe --base <rev> --head <rev> \\
         feeds/foo.dmfr.json feeds/bar.dmfr.json > probes.json
-    python3 scripts/compare-changed-feed-urls.py render probes.json > compare.md
+    uv run scripts/compare-changed-feed-urls.py render probes.json > compare.md
 """
 
 import argparse
