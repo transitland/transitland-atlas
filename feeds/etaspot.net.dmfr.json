@@ -352,6 +352,40 @@
       }
     },
     {
+      "id": "f-pee~dee~sc~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/pdtransit.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://whereispdrta.com/gtfs"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-pee~dee~sc~us",
+          "name": "Pee Dee Regional Transportation Authority",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-pee~dee~sc~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "40056",
+            "wikidata_id": "Q7160112"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-pee~dee~sc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/pdtransit.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/pdtransit.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/pdtransit.etaspot.net/alerts.pb"
+      }
+    },
+    {
       "id": "f-richland~county~transit",
       "spec": "gtfs",
       "urls": {
