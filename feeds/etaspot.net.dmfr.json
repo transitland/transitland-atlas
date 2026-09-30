@@ -386,6 +386,49 @@
       }
     },
     {
+      "id": "f-qline~mi~rt",
+      "supersedes_ids": [
+        "f-qline~mi~rt~alerts"
+      ],
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/alerts.pb"
+      }
+    },
+    {
+      "id": "f-qline~mi~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/qline-mi-us/qline-mi-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpsbv-qlinedetroit",
+          "name": "QLine",
+          "website": "https://qlinedetroit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-qline~mi~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "qlinedetroit",
+            "us_ntd_id": "50213",
+            "wikidata_id": "Q5265966"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-richland~county~transit",
       "spec": "gtfs",
       "urls": {
@@ -401,6 +444,74 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-stony~brook~university~ny~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/stonybrook.etaspot.net/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-stony~brook~university~ny~us",
+          "name": "Stony Brook University",
+          "website": "https://www.stonybrook.edu/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-stony~brook~university~ny~us~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-stony~brook~university~ny~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/stonybrook.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/stonybrook.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/stonybrook.etaspot.net/alerts.pb"
+      }
+    },
+    {
+      "id": "f-texas~state~san~marcos",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.amazonaws.com/etatransit.gtfs/bobcatshuttle.etaspot.net/gtfs.zip",
+        "static_historic": [
+          "https://docs.gato.txst.edu/357013/gtfs.zip",
+          "https://gato-docs.its.txstate.edu/jcr:7afa7719-3973-4804-a666-61036a025185/TXST-20230117-v1_5-Static-Final.zip",
+          "https://gato-docs.its.txstate.edu/jcr:7afa7719-3973-4804-a666-61036a025185/Texas_State-20221118T180619Z-91e06767-3b45-473c-a296-d9e716028dda-f4ec3f53-4c22-400c-928d-cfb29198b6b4.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.shuttle.txst.edu/about/gtfs.html"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-texas~state~san~marcos",
+          "name": "Bobcat Transit",
+          "website": "https://www.shuttle.txst.edu/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-texas~state~san~marcos~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "TXST_Transport",
+            "us_ntd_id": "60269"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-texas~state~san~marcos~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/bobcatshuttle.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/bobcatshuttle.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/bobcatshuttle.etaspot.net/alerts.pb"
+      }
     },
     {
       "id": "f-toledo~area~regional~transit~authority",
