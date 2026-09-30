@@ -20,27 +20,16 @@ _spec.loader.exec_module(ccfu)
 TODAY = date(2026, 9, 29)
 
 
-def feed(fid, url, historic=None, **extra):
-    urls = {"static_current": url}
-    if historic is not None:
-        urls["static_historic"] = historic
-    return {"id": fid, "spec": "gtfs", "urls": urls, **extra}
+def feed(fid, url, **extra):
+    return {"id": fid, "spec": "gtfs", "urls": {"static_current": url}, **extra}
 
 
-def test_repointed_feeds_finds_changed_url_and_historic_flag():
+def test_repointed_feeds_finds_only_changed_urls():
     base = {"feeds": [feed("f-a", "https://old/a.zip"), feed("f-b", "https://same/b.zip")]}
-    head = {"feeds": [feed("f-a", "https://new/a.zip", ["https://old/a.zip"]),
-                      feed("f-b", "https://same/b.zip")]}
+    head = {"feeds": [feed("f-a", "https://new/a.zip"), feed("f-b", "https://same/b.zip")]}
     got = ccfu.repointed_feeds(base, head)
-    assert [(p.feed_id, p.old_url, p.new_url, p.old_in_historic) for p in got] == [
-        ("f-a", "https://old/a.zip", "https://new/a.zip", True)]
-
-
-def test_repointed_feeds_flags_missing_historic():
-    base = {"feeds": [feed("f-a", "https://old/a.zip")]}
-    head = {"feeds": [feed("f-a", "https://new/a.zip")]}
-    (p,) = ccfu.repointed_feeds(base, head)
-    assert p.old_in_historic is False
+    assert [(p.feed_id, p.old_url, p.new_url) for p in got] == [
+        ("f-a", "https://old/a.zip", "https://new/a.zip")]
 
 
 def test_repointed_feeds_ignores_new_feeds_and_new_files():
@@ -64,7 +53,7 @@ def test_repointed_feeds_carries_auth():
 
 
 def probe(**kw):
-    defaults = dict(url="u", ok=True, dir_sha1="d", sha1="s", agencies=("A",),
+    defaults = dict(url="u", ok=True, dir_sha1="d", sha1="s", agencies=["A"],
                     routes=10, earliest="2026-01-01", latest="2026-12-31")
     return ccfu.Probe(**{**defaults, **kw})
 
@@ -84,7 +73,7 @@ def test_recommend_branches():
 
 def test_recommend_notes():
     old = probe(routes=40)
-    new = probe(dir_sha1="x", agencies=("B",), routes=5, latest="2026-09-01")
+    new = probe(dir_sha1="x", agencies=["B"], routes=5, latest="2026-09-01")
     _, notes = ccfu.recommend(old, new, TODAY)
     text = " ".join(notes)
     assert "No agency names in common" in text
@@ -107,9 +96,9 @@ def test_short_error_keeps_cause():
 
 
 def test_probe_json_round_trip():
-    p = probe(route_types=(("Bus", 3), ("Tram", 1)))
-    back = ccfu.probe_from_json(json.loads(json.dumps(ccfu.asdict(p))))
-    assert back == p
+    """render rebuilds probes with Probe(**d), so every field must survive JSON."""
+    p = probe(route_types={"Bus": 3, "Tram": 1})
+    assert ccfu.Probe(**json.loads(json.dumps(ccfu.asdict(p)))) == p
 
 
 def test_lookup_archive_refuses_malformed_sha1(monkeypatch):
@@ -122,3 +111,15 @@ def test_lookup_archive_refuses_malformed_sha1(monkeypatch):
     for bad in ("", "abc", "../../x", "0" * 40 + "?x=1", "G" * 40):
         assert ccfu.lookup_archive(bad, "key") is None
     assert ccfu.lookup_archive("0" * 40, "") is None
+
+
+def test_summarize_uses_the_shared_pass_rule():
+    """Both workflows judge a URL by vcfu.static_failure, so they can't disagree."""
+    no_agency = {"success": True, "details": {"files": [{"name": "stops.txt", "rows": 3}],
+                                              "agencies": [{"agency_name": "A"}]}}
+    p = ccfu.summarize("u", no_agency, None)
+    assert (p.ok, p.error) == (False, "no agency records")
+    good = {"success": True, "details": {"files": [{"name": "agency.txt", "rows": 1},
+                                                   {"name": "routes.txt", "rows": 7}]}}
+    p = ccfu.summarize("u", good, None)
+    assert (p.ok, p.routes, p.route_types) == (True, 7, {})

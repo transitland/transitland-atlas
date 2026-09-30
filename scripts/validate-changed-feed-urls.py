@@ -125,18 +125,31 @@ def parse_dmfr_file(path: Path) -> Optional[dict]:
         return None
 
 
-def base_dmfr(file_path: str, base_ref: str) -> Optional[dict]:
-    """Return the parsed base version of file_path, or None if unavailable."""
-    spec = f"origin/{base_ref}:{file_path}"
-    if subprocess.run(["git", "cat-file", "-e", spec], capture_output=True).returncode != 0:
-        return None
-    show = subprocess.run(["git", "show", spec], capture_output=True, text=True)
+def dmfr_at(rev: str, file_path: str) -> Optional[dict]:
+    """Return the parsed file_path at git revision rev, or None if unavailable."""
+    show = subprocess.run(["git", "show", f"{rev}:{file_path}"], capture_output=True, text=True)
     if show.returncode != 0:
         return None
     try:
         return json.loads(show.stdout)
     except json.JSONDecodeError:
         return None
+
+
+def base_dmfr(file_path: str, base_ref: str) -> Optional[dict]:
+    """Return the parsed base version of file_path, or None if unavailable."""
+    return dmfr_at(f"origin/{base_ref}", file_path)
+
+
+def static_failure(report: dict) -> Optional[str]:
+    """Why a `transitland validate` report fails the minimum bar, or None.
+
+    The bar is: the feed parses and has at least one agency record.
+    """
+    rows = {f.get("name"): f.get("rows") for f in report.get("details", {}).get("files") or []}
+    if report.get("success") and (rows.get("agency.txt") or 0) >= 1:
+        return None
+    return report.get("failure_reason") or "no agency records"
 
 
 def url_tuples(dmfr: dict, file_path: str) -> set[UrlTuple]:
@@ -278,11 +291,11 @@ def run_validate_static(url: str, report_path: Path) -> Outcome:
     file_count = len(files)
     earliest = data.get("details", {}).get("earliest_calendar_date") or "?"
     latest = data.get("details", {}).get("latest_calendar_date") or "?"
-    success = data.get("success")
     errors = data.get("errors") or {}
     warnings = data.get("warnings") or {}
 
-    if not success or agencies < 1:
+    reason = static_failure(data)
+    if reason:
         # An outer zip that contains only nested .zip files (SEPTA, Victoria AU
         # patterns) makes the validator return success with zero files —
         # transitland-lib only resolves nested zips when a fragment ending in
@@ -300,7 +313,6 @@ def run_validate_static(url: str, report_path: Path) -> Outcome:
                     bullet=head + "\n" + render_prefix_suggestions(url, nested),
                     blocker=True,
                 )
-        reason = data.get("failure_reason") or "no agency records"
         return Outcome(
             bullet=f"- ❌ static — `{url}` — {reason}",
             blocker=True,

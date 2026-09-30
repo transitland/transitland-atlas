@@ -1,4 +1,4 @@
-#!/usr/bin/env -S uv run
+#!/usr/bin/env python3
 """
 Compare the old and new static_current URL of every feed a PR repoints.
 
@@ -14,19 +14,17 @@ workflow can run this from a trusted checkout of the base branch.
 Runs in two stages so the API key never shares a process, or a CI job, with
 the transitland binary fetching untrusted URLs:
 
-  probe   fetches and validates the URLs and writes JSON. Needs no secrets.
+  probe   fetches and validates the URLs and prints JSON. Needs no secrets.
   render  turns that JSON into Markdown. With TRANSITLAND_API_KEY set, it
           also reports whether each file is already in the Transitland
-          archive. Standard library only.
+          archive.
 
-Advisory only: always exits 0 unless it is invoked incorrectly.
+Standard library only. Advisory: always exits 0 unless invoked incorrectly.
 
 Usage:
-    uv run scripts/compare-changed-feed-urls.py probe \\
-        --base <rev> --head <rev> --out reports/probes.json \\
-        feeds/foo.dmfr.json feeds/bar.dmfr.json
-    python3 scripts/compare-changed-feed-urls.py render \\
-        --probes reports/probes.json --summary-out reports/compare.md
+    python3 scripts/compare-changed-feed-urls.py probe --base <rev> --head <rev> \\
+        feeds/foo.dmfr.json feeds/bar.dmfr.json > probes.json
+    python3 scripts/compare-changed-feed-urls.py render probes.json > compare.md
 """
 
 import argparse
@@ -39,13 +37,13 @@ import subprocess
 import sys
 import urllib.error
 import urllib.request
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
 from typing import Optional
 
 # validate-changed-feed-urls.py has a hyphenated name, so it cannot be
-# imported by name. Its DMFR helpers (rename-aware feed lookup) are reused.
+# imported by name. Its DMFR helpers and pass rule are shared with it.
 _spec = importlib.util.spec_from_file_location(
     "validate_changed_feed_urls",
     Path(__file__).resolve().parent / "validate-changed-feed-urls.py",
@@ -54,7 +52,7 @@ vcfu = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(vcfu)
 
 TRANSITLAND_API_BASE = "https://transit.land/api/v2/rest"
-VALIDATE_TIMEOUT = 300
+TIMEOUT = 300
 SHA1_RE = re.compile(r"[0-9a-f]{40}")
 
 ROUTE_TYPE_NAMES = {
@@ -66,48 +64,27 @@ ROUTE_TYPE_NAMES = {
 
 # --- Revisions -------------------------------------------------------------
 
-def dmfr_at(rev: str, path: str) -> Optional[dict]:
-    """Parsed DMFR file at a git revision, or None if absent or invalid."""
-    show = subprocess.run(["git", "show", f"{rev}:{path}"], capture_output=True, text=True)
-    if show.returncode != 0:
-        return None
-    try:
-        return json.loads(show.stdout)
-    except json.JSONDecodeError:
-        return None
-
-
 @dataclass
 class Pair:
     feed_id: str
     old_url: str
     new_url: str
     auth_type: Optional[str]
-    old_in_historic: bool
 
 
 def repointed_feeds(base: Optional[dict], head: Optional[dict]) -> list[Pair]:
     """Feeds present in both revisions whose static_current URL changed."""
     pairs: list[Pair] = []
-    if not head:
-        return pairs
-    for feed in head.get("feeds") or []:
+    for feed in (head or {}).get("feeds") or []:
         fid = feed.get("id")
         base_feed = vcfu.base_feed_for(base, feed)
         if not fid or not base_feed:
             continue
-        urls = feed.get("urls") or {}
-        new_url = urls.get("static_current")
+        new_url = (feed.get("urls") or {}).get("static_current")
         old_url = (base_feed.get("urls") or {}).get("static_current")
         if not isinstance(new_url, str) or not isinstance(old_url, str) or new_url == old_url:
             continue
-        pairs.append(Pair(
-            feed_id=fid,
-            old_url=old_url,
-            new_url=new_url,
-            auth_type=(feed.get("authorization") or {}).get("type"),
-            old_in_historic=old_url in (urls.get("static_historic") or []),
-        ))
+        pairs.append(Pair(fid, old_url, new_url, (feed.get("authorization") or {}).get("type")))
     return pairs
 
 
@@ -129,12 +106,10 @@ def short_error(stderr: str) -> str:
 def validate_feed(url: str) -> dict:
     """`transitland validate` report for url, or {"_error": ...}."""
     try:
-        res = subprocess.run(
-            ["transitland", "validate", "-o", "-",
-             "--include-entities", "--include-service-levels", url],
-            capture_output=True, text=True, timeout=VALIDATE_TIMEOUT)
+        res = subprocess.run(["transitland", "validate", "-o", "-", "--include-entities", url],
+                             capture_output=True, text=True, timeout=TIMEOUT)
     except subprocess.TimeoutExpired:
-        return {"_error": f"timed out after {VALIDATE_TIMEOUT}s"}
+        return {"_error": f"timed out after {TIMEOUT}s"}
     except FileNotFoundError:
         return {"_error": "'transitland' command not found in PATH"}
     if res.returncode != 0 and not res.stdout.strip():
@@ -150,41 +125,15 @@ def dir_sha1(url: str) -> Optional[str]:
 
     The zip SHA1 changes whenever a server rebuilds the archive, even with
     identical data, so this is the one that answers "is this the same feed".
+    `transitland validate` computes it but does not report it, so this
+    downloads the feed a second time.
     """
     try:
         res = subprocess.run(["transitland", "checksum", "--raw-dir-sha1", url],
-                             capture_output=True, text=True, timeout=VALIDATE_TIMEOUT)
+                             capture_output=True, text=True, timeout=TIMEOUT)
     except (subprocess.TimeoutExpired, FileNotFoundError):
         return None
-    out = res.stdout.strip() if res.returncode == 0 else ""
-    return out or None
-
-
-def lookup_archive(sha1: Optional[str], api_key: str) -> Optional[dict]:
-    """The archived feed version with this zip SHA1, {} if none, None if unknown.
-
-    The SHA1 comes from the probe output, which is produced from untrusted
-    feeds, so it is checked before it goes into a request that carries the key.
-    """
-    if not sha1 or not api_key or not SHA1_RE.fullmatch(sha1):
-        return None
-    req = urllib.request.Request(
-        f"{TRANSITLAND_API_BASE}/feed_versions/{sha1}?apikey={api_key}",
-        headers={"Accept": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            fvs = json.loads(resp.read()).get("feed_versions") or []
-    except urllib.error.HTTPError as e:
-        return {} if e.code == 404 else None
-    except Exception:
-        return None
-    if not fvs:
-        return {}
-    fv = fvs[0]
-    return {
-        "feed_onestop_id": (fv.get("feed") or {}).get("onestop_id"),
-        "fetched_at": (fv.get("fetched_at") or "").split("T")[0],
-    }
+    return (res.stdout.strip() if res.returncode == 0 else "") or None
 
 
 @dataclass
@@ -194,10 +143,9 @@ class Probe:
     error: str = ""
     sha1: str = ""
     dir_sha1: Optional[str] = None
-    archive: Optional[dict] = None
-    agencies: tuple[str, ...] = ()
-    routes: int = 0
-    route_types: tuple[tuple[str, int], ...] = ()
+    agencies: list[str] = field(default_factory=list)
+    routes: Optional[int] = None
+    route_types: dict[str, int] = field(default_factory=dict)
     stops: Optional[int] = None
     trips: Optional[int] = None
     earliest: Optional[str] = None
@@ -211,27 +159,26 @@ class Probe:
 def summarize(url: str, report: dict, dsha1: Optional[str]) -> Probe:
     if report.get("_error"):
         return Probe(url=url, ok=False, error=report["_error"], dir_sha1=dsha1)
+    failure = vcfu.static_failure(report)
+    if failure:
+        return Probe(url=url, ok=False, error=failure, dir_sha1=dsha1)
     d = report.get("details") or {}
-    rows = {f.get("name"): f.get("rows") for f in (d.get("files") or []) if f.get("name")}
-    agencies = tuple(sorted(a.get("agency_name") or "?" for a in (d.get("agencies") or [])))
-    routes = d.get("routes") or []
+    rows = {f.get("name"): f.get("rows") for f in d.get("files") or []}
     types: dict[str, int] = {}
-    for r in routes:
+    for r in d.get("routes") or []:
         name = ROUTE_TYPE_NAMES.get(r.get("route_type"), f"Type {r.get('route_type')}")
         types[name] = types.get(name, 0) + 1
     fi = (d.get("feed_infos") or [{}])[0] or {}
-    ok = bool(report.get("success")) and (bool(agencies) or (rows.get("agency.txt") or 0) > 0)
     return Probe(
         url=url,
-        ok=ok,
-        error="" if ok else (report.get("failure_reason") or "no agency records"),
-        sha1=d.get("sha1") or report.get("sha1") or "",
+        ok=True,
+        sha1=d.get("sha1") or "",
         dir_sha1=dsha1,
-        agencies=agencies,
-        # The entity arrays can come back empty for a feed that has rows, so
-        # fall back to the per-file row count rather than reporting zero.
-        routes=len(routes) or (rows.get("routes.txt") or 0),
-        route_types=tuple(sorted(types.items())),
+        agencies=sorted(a.get("agency_name") or "?" for a in d.get("agencies") or []),
+        # Counts come from file rows: the entity arrays can come back empty
+        # for a feed that has rows, so they are used only for the breakdown.
+        routes=rows.get("routes.txt"),
+        route_types=dict(sorted(types.items())),
         stops=rows.get("stops.txt"),
         trips=rows.get("trips.txt"),
         earliest=d.get("earliest_calendar_date"),
@@ -243,19 +190,30 @@ def summarize(url: str, report: dict, dsha1: Optional[str]) -> Probe:
     )
 
 
-def probe(url: str) -> Probe:
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as ex:
-        rep_f = ex.submit(validate_feed, url)
-        dir_f = ex.submit(dir_sha1, url)
-        return summarize(url, rep_f.result(), dir_f.result())
+def lookup_archive(sha1: str, api_key: str) -> Optional[dict]:
+    """The archived feed version with this zip SHA1, {} if none, None if unknown.
 
-
-def probe_from_json(d: dict) -> Probe:
-    """Rebuild a Probe from `probe` output; JSON turns its tuples into lists."""
-    d = dict(d)
-    d["agencies"] = tuple(d.get("agencies") or ())
-    d["route_types"] = tuple(tuple(rt) for rt in d.get("route_types") or ())
-    return Probe(**d)
+    The SHA1 comes from the probe output, which is produced from untrusted
+    feeds, so it is checked before it goes into a request that carries the key.
+    """
+    if not api_key or not SHA1_RE.fullmatch(sha1):
+        return None
+    req = urllib.request.Request(
+        f"{TRANSITLAND_API_BASE}/feed_versions/{sha1}?apikey={api_key}",
+        headers={"Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            fvs = json.loads(resp.read()).get("feed_versions") or []
+    except urllib.error.HTTPError as e:
+        return {} if e.code == 404 else None
+    except Exception:
+        return None
+    if not fvs:
+        return {}
+    return {
+        "feed_onestop_id": (fvs[0].get("feed") or {}).get("onestop_id"),
+        "fetched_at": (fvs[0].get("fetched_at") or "").split("T")[0],
+    }
 
 
 # --- Rendering -------------------------------------------------------------
@@ -270,40 +228,41 @@ def code(s: str) -> str:
     return f"<code>{md(s)}</code>"
 
 
-def calendar_status(earliest: Optional[str], latest: Optional[str],
-                    today: date) -> str:
-    if not earliest or not latest:
-        return "—"
+def parse_date(s: Optional[str]) -> Optional[date]:
     try:
-        e, l = date.fromisoformat(earliest), date.fromisoformat(latest)
+        return date.fromisoformat(s) if s else None
     except ValueError:
-        return f"{md(earliest)} → {md(latest)}"
+        return None
+
+
+def calendar_cell(p: Probe, today: date) -> str:
+    e, l = parse_date(p.earliest), parse_date(p.latest)
+    if not e or not l:
+        return "—"
     if today < e:
         status = f"starts in {(e - today).days}d"
     elif today > l:
         status = f"**expired {(today - l).days}d ago**"
     else:
         span = (l - e).days
-        status = f"active, {int(100 * (today - e).days / span) if span else 0}% through"
-    return f"{earliest} → {latest}<br>({status})"
+        status = f"active, {100 * (today - e).days // span if span else 0}% through"
+    return f"{e} → {l}<br>({status})"
 
 
-def archive_cell(p: Probe, has_key: bool) -> str:
-    if not has_key or not p.sha1 or p.archive is None:
+def archive_cell(entry: Optional[dict]) -> str:
+    if entry is None:
         return "—"
-    if not p.archive:
+    if not entry:
         return "not yet archived"
-    fid = p.archive.get("feed_onestop_id") or "?"
-    return f"yes: {code(fid)}, fetched {md(p.archive.get('fetched_at') or '?')}"
+    return (f"yes: {code(entry.get('feed_onestop_id') or '?')}, "
+            f"fetched {md(entry.get('fetched_at') or '?')}")
 
 
-def list_cell(items: tuple[str, ...], limit: int = 6) -> str:
-    if not items:
-        return "—"
+def lines_cell(items: list[str], limit: int = 6) -> str:
     shown = [md(i) for i in items[:limit]]
     if len(items) > limit:
         shown.append(f"…+{len(items) - limit} more")
-    return f"{len(items)}: " + "<br>".join(shown)
+    return "<br>".join(shown) or "—"
 
 
 def num(n: Optional[int]) -> str:
@@ -320,94 +279,78 @@ def delta(old: Optional[int], new: Optional[int]) -> str:
 
 def recommend(old: Probe, new: Probe, today: date) -> tuple[str, list[str]]:
     """(headline, supporting notes) for the pair."""
-    notes: list[str] = []
     if not new.ok and not old.ok:
-        return "⚠️ **Neither URL validated.** A maintainer will need to check this by hand.", notes
+        return "⚠️ **Neither URL validated.** A maintainer will need to check this by hand.", []
     if not new.ok:
         return ("❌ **Keep the current URL.** The proposed URL did not validate, "
-                "but the current one still does."), notes
+                "but the current one still does."), []
     if not old.ok:
         return ("✅ **Switch to the proposed URL.** The current URL no longer "
-                "validates; the proposed one does."), notes
+                "validates; the proposed one does."), []
     if old.dir_sha1 and old.dir_sha1 == new.dir_sha1:
         same = "byte-for-byte identical" if old.sha1 == new.sha1 else "the same feed data, repackaged"
-        return f"✅ **Safe to switch.** Both URLs currently serve {same}.", notes
+        return f"✅ **Safe to switch.** Both URLs currently serve {same}.", []
 
-    headline = "🔎 **Feeds differ; review the details below.**"
-    if old.latest and new.latest:
-        if new.latest > old.latest:
-            headline = (f"✅ **Proposed URL looks newer.** Its service runs through "
-                        f"{new.latest}, vs {old.latest} for the current URL.")
-        elif new.latest < old.latest:
-            headline = (f"⚠️ **Proposed URL looks older.** Its service ends "
-                        f"{new.latest}, vs {old.latest} for the current URL.")
-        else:
-            headline = ("🔎 **Feeds differ, but cover the same dates.** "
-                        "Review the details below.")
+    old_end, new_end = parse_date(old.latest), parse_date(new.latest)
+    if not old_end or not new_end:
+        headline = "🔎 **Feeds differ; review the details below.**"
+    elif new_end > old_end:
+        headline = (f"✅ **Proposed URL looks newer.** Its service runs through "
+                    f"{new_end}, vs {old_end} for the current URL.")
+    elif new_end < old_end:
+        headline = (f"⚠️ **Proposed URL looks older.** Its service ends "
+                    f"{new_end}, vs {old_end} for the current URL.")
+    else:
+        headline = "🔎 **Feeds differ, but cover the same dates.** Review the details below."
 
+    notes = []
     if old.agencies and new.agencies and not set(old.agencies) & set(new.agencies):
         notes.append("No agency names in common. Confirm that this is the same "
                      "service and not a different feed that belongs in its own record.")
-    if old.routes and new.routes < old.routes // 2:
+    if old.routes and new.routes is not None and new.routes < old.routes // 2:
         notes.append(f"Route count drops from {old.routes:,} to {new.routes:,}. "
                      "Check that the proposed feed is complete.")
-    if new.latest:
-        try:
-            if date.fromisoformat(new.latest) < today:
-                notes.append("The proposed feed's service calendar has already expired.")
-        except ValueError:
-            pass
+    if new_end and new_end < today:
+        notes.append("The proposed feed's service calendar has already expired.")
     return headline, notes
 
 
-def render_pair(pair: Pair, old: Probe, new: Probe, has_key: bool, today: date) -> str:
+def render_pair(pair: Pair, old: Probe, new: Probe, today: date,
+                archive: Optional[dict[str, Optional[dict]]]) -> str:
     headline, notes = recommend(old, new, today)
 
-    def status(p: Probe) -> str:
-        return "✅ valid" if p.ok else f"❌ {md(p.error)}"
+    def side(p: Probe) -> list[str]:
+        """Cells that describe one URL on its own, in row order."""
+        return [
+            code(p.url),
+            "✅ valid" if p.ok else f"❌ {md(p.error)}",
+            calendar_cell(p, today),
+            f"{len(p.agencies)}: {lines_cell(p.agencies)}" if p.agencies else "—",
+            lines_cell([f"{k}: {v}" for k, v in p.route_types.items()]),
+            lines_cell([x for x in (p.publisher, p.feed_version) if x]),
+            f"{p.errors} errors, {p.warnings} warnings" if p.ok else "—",
+            code(p.dir_sha1[:12]) if p.dir_sha1 else "—",
+        ] + ([archive_cell(archive.get(p.sha1))] if archive is not None else [])
 
-    def fv(p: Probe) -> str:
-        parts = [md(x) for x in (p.publisher, p.feed_version) if x]
-        return "<br>".join(parts) or "—"
-
-    rows = [
-        ("URL", code(old.url), code(new.url)),
-        ("Status", status(old), status(new)),
-    ]
-    if old.ok or new.ok:
-        rows += [
-            ("Service dates", calendar_status(old.earliest, old.latest, today),
-             calendar_status(new.earliest, new.latest, today)),
-            ("Agencies", list_cell(old.agencies), list_cell(new.agencies)),
-            ("Routes", num(old.routes) if old.ok else "—",
-             delta(old.routes if old.ok else None, new.routes) if new.ok else "—"),
-            ("Route types",
-             "<br>".join(f"{md(k)}: {v}" for k, v in old.route_types) or "—",
-             "<br>".join(f"{md(k)}: {v}" for k, v in new.route_types) or "—"),
-            ("Stops", num(old.stops), delta(old.stops, new.stops)),
-            ("Trips", num(old.trips), delta(old.trips, new.trips)),
-            ("feed_info", fv(old), fv(new)),
-            ("Validation", f"{old.errors} errors, {old.warnings} warnings" if old.ok else "—",
-             f"{new.errors} errors, {new.warnings} warnings" if new.ok else "—"),
-            ("Contents SHA1", code(old.dir_sha1[:12]) if old.dir_sha1 else "—",
-             code(new.dir_sha1[:12]) if new.dir_sha1 else "—"),
-        ]
-        if has_key:
-            rows.append(("In Transitland", archive_cell(old, has_key), archive_cell(new, has_key)))
+    labels = ["URL", "Status", "Service dates", "Agencies", "Route types",
+              "feed_info", "Validation", "Contents SHA1"]
+    if archive is not None:
+        labels.append("In Transitland")
+    rows = list(zip(labels, side(old), side(new)))
+    if not old.ok and not new.ok:
+        rows = rows[:2]
+    else:
+        rows[4:4] = [("Routes", num(old.routes), delta(old.routes, new.routes)),
+                     ("Stops", num(old.stops), delta(old.stops, new.stops)),
+                     ("Trips", num(old.trips), delta(old.trips, new.trips))]
 
     table = ["| | Current | Proposed |", "|---|---|---|"]
     table += [f"| **{a}** | {b} | {c} |" for a, b, c in rows]
-
-    out = [f"### {code(pair.feed_id)}", "", headline, ""]
-    out += [f"- {n}" for n in notes]
-    if not pair.old_in_historic:
-        out.append("- 💡 The current URL is not in `urls.static_historic[]`; "
-                   "consider moving it there.")
-    if out[-1] != "":
-        out.append("")
-    out += ["<details><summary>Side-by-side comparison</summary>", "", *table, "",
-            "</details>", ""]
-    return "\n".join(out)
+    bullets = "".join(f"- {n}\n" for n in notes)
+    return (f"### {code(pair.feed_id)}\n\n{headline}\n\n"
+            + (f"{bullets}\n" if bullets else "")
+            + "<details><summary>Side-by-side comparison</summary>\n\n"
+            + "\n".join(table) + "\n\n</details>\n")
 
 
 def render_skipped(pair: Pair) -> str:
@@ -418,72 +361,58 @@ def render_skipped(pair: Pair) -> str:
 
 # --- Main ------------------------------------------------------------------
 
-def cmd_probe(args: argparse.Namespace) -> int:
+def cmd_probe(args: argparse.Namespace) -> None:
     pairs: list[Pair] = []
     for fp in args.files:
-        pairs += repointed_feeds(dmfr_at(args.base, fp), dmfr_at(args.head, fp))
+        pairs += repointed_feeds(vcfu.dmfr_at(args.base, fp), vcfu.dmfr_at(args.head, fp))
 
     urls = sorted({u for p in pairs if not p.auth_type for u in (p.old_url, p.new_url)})
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
-        probes = dict(zip(urls, ex.map(probe, urls)))
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+        reports = ex.map(validate_feed, urls)
+        dir_sha1s = ex.map(dir_sha1, urls)
+        probes = {u: summarize(u, r, d) for u, r, d in zip(urls, reports, dir_sha1s)}
 
-    out = {"pairs": [asdict(p) for p in pairs],
-           "probes": {u: asdict(p) for u, p in probes.items()}}
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(out, indent=1))
-    return 0
+    json.dump({"pairs": [asdict(p) for p in pairs],
+               "probes": {u: asdict(p) for u, p in probes.items()}},
+              sys.stdout, indent=1)
 
 
-def cmd_render(args: argparse.Namespace) -> int:
+def cmd_render(args: argparse.Namespace) -> None:
     api_key = os.environ.get("TRANSITLAND_API_KEY", "")
-    today = date.today()
-
     data = json.loads(args.probes.read_text())
-    pairs = [Pair(**p) for p in data.get("pairs") or []]
-    probes = {u: probe_from_json(p) for u, p in (data.get("probes") or {}).items()}
+    pairs = [Pair(**p) for p in data["pairs"]]
+    probes = {u: Probe(**p) for u, p in data["probes"].items()}
 
-    sha1s = sorted({p.sha1 for p in probes.values() if p.sha1})
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
-        archive = dict(zip(sha1s, ex.map(lambda s: lookup_archive(s, api_key), sha1s)))
-    for p in probes.values():
-        p.archive = archive.get(p.sha1)
+    archive = None
+    if api_key:
+        sha1s = sorted({p.sha1 for p in probes.values() if p.sha1})
+        with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
+            archive = dict(zip(sha1s, ex.map(lambda s: lookup_archive(s, api_key), sha1s)))
 
-    sections = []
-    for p in pairs:
-        if p.auth_type:
-            sections.append(render_skipped(p))
-        elif p.old_url in probes and p.new_url in probes:
-            sections.append(render_pair(p, probes[p.old_url], probes[p.new_url],
-                                        bool(api_key), today))
-    summary = "\n".join(sections)
-    if args.summary_out:
-        args.summary_out.parent.mkdir(parents=True, exist_ok=True)
-        args.summary_out.write_text(summary)
-    else:
-        sys.stdout.write(summary)
-    return 0
+    today = date.today()
+    sys.stdout.write("\n".join(
+        render_skipped(p) if p.auth_type
+        else render_pair(p, probes[p.old_url], probes[p.new_url], today, archive)
+        for p in pairs))
 
 
-def main() -> int:
+def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="cmd", required=True)
 
-    p = sub.add_parser("probe", help="Fetch and validate old and new URLs; write JSON.")
+    p = sub.add_parser("probe", help="Fetch and validate old and new URLs; print JSON.")
     p.add_argument("--base", required=True, help="Git revision of the base branch.")
     p.add_argument("--head", required=True, help="Git revision of the PR head.")
-    p.add_argument("--out", type=Path, required=True, help="Where to write the probe JSON.")
     p.add_argument("files", nargs="*", help="Changed DMFR file paths.")
     p.set_defaults(func=cmd_probe)
 
-    r = sub.add_parser("render", help="Render probe JSON as Markdown.")
-    r.add_argument("--probes", type=Path, required=True, help="Probe JSON from the probe step.")
-    r.add_argument("--summary-out", type=Path, default=None,
-                   help="Write Markdown here; defaults to stdout. Empty if nothing was repointed.")
+    r = sub.add_parser("render", help="Print probe JSON as Markdown; empty if nothing was repointed.")
+    r.add_argument("probes", type=Path, help="JSON printed by the probe command.")
     r.set_defaults(func=cmd_render)
 
     args = parser.parse_args()
-    return args.func(args)
+    args.func(args)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()

@@ -30,10 +30,13 @@ jobs:
     permissions:
       contents: read
     steps:
+      # Full history for merge-base, but blobless: only the DMFR files that
+      # are actually read get downloaded.
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           fetch-depth: 0
+          filter: blob:none
           persist-credentials: false
 
       - name: Fetch PR head
@@ -47,21 +50,19 @@ jobs:
           # Diff against the merge base so commits landed on main since the
           # branch was cut are not attributed to the PR.
           echo "base=$(git merge-base "$BASE_SHA" "$HEAD_SHA")" >> "$GITHUB_OUTPUT"
-          echo "head=$HEAD_SHA" >> "$GITHUB_OUTPUT"
 
-      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
 
       - name: Fetch and validate old and new static_current URLs
         env:
           BASE: ${{ steps.revs.outputs.base }}
-          HEAD: ${{ steps.revs.outputs.head }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
+          mkdir -p reports
           mapfile -t files < <(git diff --name-only "$BASE" "$HEAD" -- 'feeds/*.dmfr.json')
-          uv run --locked scripts/compare-changed-feed-urls.py probe \
-            --base "$BASE" --head "$HEAD" --out reports/probes.json \
-            "${files[@]}"
+          python3 scripts/compare-changed-feed-urls.py probe \
+            --base "$BASE" --head "$HEAD" "${files[@]}" > reports/probes.json
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
@@ -91,8 +92,7 @@ jobs:
         env:
           TRANSITLAND_API_KEY: ${{ secrets.TRANSITLAND_API_KEY }}
         run: |
-          python3 scripts/compare-changed-feed-urls.py render \
-            --probes reports/probes.json --summary-out reports/compare.md
+          python3 scripts/compare-changed-feed-urls.py render reports/probes.json > reports/compare.md
           cat reports/compare.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Comment on PR
