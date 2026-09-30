@@ -351,12 +351,24 @@
           "onestop_id": "o-coast~rta~sc~us",
           "name": "Waccamaw Regional Transportation Authority",
           "short_name": "Coast RTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-coast~rta~sc~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "40102",
             "wikidata_id": "Q5138200"
           }
         }
       ]
+    },
+    {
+      "id": "f-coast~rta~sc~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://coastrta.transloc.com/subscriptions/gtfsrt/vehicles.ashx"
+      }
     },
     {
       "id": "f-dn5b-georgiatechtrolley~stingershuttles",
