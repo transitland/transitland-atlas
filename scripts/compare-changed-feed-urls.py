@@ -15,8 +15,7 @@ so this works whether or not the contributor moved it into static_historic.
 Both revisions are read through git rather than the working tree, so the
 workflow can run this from a trusted checkout of the base branch.
 
-Runs in two stages so the API key never shares a process, or a CI job, with
-the transitland binary fetching untrusted URLs:
+Runs in two stages:
 
   probe   fetches and validates the URLs and prints JSON. Needs no secrets.
   render  turns that JSON into Markdown. With TRANSITLAND_API_KEY set, it
@@ -78,19 +77,29 @@ class Pair:
     auth_type: Optional[str]
 
 
+def obj(d: dict, key: str) -> dict:
+    """d[key] if it is an object, else {}; tolerates malformed DMFR records."""
+    v = d.get(key)
+    return v if isinstance(v, dict) else {}
+
+
 def repointed_feeds(base: Optional[dict], head: Optional[dict]) -> list[Pair]:
     """Feeds present in both revisions whose static_current URL changed."""
     pairs: list[Pair] = []
     for feed in (head or {}).get("feeds") or []:
+        if not isinstance(feed, dict):
+            continue
         fid = feed.get("id")
         base_feed = vcfu.base_feed_for(base, feed)
         if not fid or not base_feed:
             continue
-        new_url = (feed.get("urls") or {}).get("static_current")
-        old_url = (base_feed.get("urls") or {}).get("static_current")
+        new_url = obj(feed, "urls").get("static_current")
+        old_url = obj(base_feed, "urls").get("static_current")
         if not isinstance(new_url, str) or not isinstance(old_url, str) or new_url == old_url:
             continue
-        pairs.append(Pair(fid, old_url, new_url, (feed.get("authorization") or {}).get("type")))
+        # Either version needing a key means one of the URLs can't be fetched here.
+        auth = obj(feed, "authorization").get("type") or obj(base_feed, "authorization").get("type")
+        pairs.append(Pair(fid, old_url, new_url, auth))
     return pairs
 
 
@@ -113,11 +122,11 @@ def validate_feed(url: str) -> dict:
     """`transitland validate` report for url, or {"_error": ...}."""
     try:
         res = subprocess.run(["transitland", "validate", "-o", "-", "--include-entities", url],
-                             capture_output=True, text=True, timeout=TIMEOUT)
+                             capture_output=True, text=True, errors="replace", timeout=TIMEOUT)
     except subprocess.TimeoutExpired:
         return {"_error": f"timed out after {TIMEOUT}s"}
-    except FileNotFoundError:
-        return {"_error": "'transitland' command not found in PATH"}
+    except (OSError, ValueError) as e:  # e.g. binary missing, NUL byte in the URL
+        return {"_error": f"could not run the validator: {e}"}
     if res.returncode != 0 and not res.stdout.strip():
         return {"_error": short_error(res.stderr)}
     try:
@@ -136,8 +145,8 @@ def dir_sha1(url: str) -> Optional[str]:
     """
     try:
         res = subprocess.run(["transitland", "checksum", "--raw-dir-sha1", url],
-                             capture_output=True, text=True, timeout=TIMEOUT)
-    except (subprocess.TimeoutExpired, FileNotFoundError):
+                             capture_output=True, text=True, errors="replace", timeout=TIMEOUT)
+    except (subprocess.TimeoutExpired, OSError, ValueError):
         return None
     return (res.stdout.strip() if res.returncode == 0 else "") or None
 
@@ -197,11 +206,7 @@ def summarize(url: str, report: dict, dsha1: Optional[str]) -> Probe:
 
 
 def lookup_archive(sha1: str, api_key: str) -> Optional[dict]:
-    """The archived feed version with this zip SHA1, {} if none, None if unknown.
-
-    The SHA1 comes from the probe output, which is produced from untrusted
-    feeds, so it is checked before it goes into a request that carries the key.
-    """
+    """The archived feed version with this zip SHA1, {} if none, None if unknown."""
     if not api_key or not SHA1_RE.fullmatch(sha1):
         return None
     req = urllib.request.Request(
@@ -224,14 +229,26 @@ def lookup_archive(sha1: str, api_key: str) -> Optional[dict]:
 
 # --- Rendering -------------------------------------------------------------
 
+# Characters with meaning to GitHub Markdown, as HTML entities. Backslash
+# escapes are not enough: they leave #123 references working. `:` and `.`
+# stop bare URLs from being autolinked. @ and # get a zero-width space after
+# them, so text from a feed can't mention people or link issues.
+MD_ENTITIES = {c: f"&#{ord(c)};" for c in "\\`*_~[]!|<>:."} | {
+    "&": "&amp;", "@": "@&#8203;", "#": "#&#8203;"}
+
+
 def md(s: str) -> str:
-    """Make untrusted text safe inside a Markdown table cell."""
-    return (s.replace("\\", "\\\\").replace("|", "\\|").replace("<", "&lt;")
-             .replace(">", "&gt;").replace("\n", " ").replace("`", "'"))
+    """Render s as literal text in a Markdown table cell."""
+    return "".join(MD_ENTITIES.get(c, c) for c in " ".join(s.split()))
 
 
 def code(s: str) -> str:
-    return f"<code>{md(s)}</code>"
+    """s as an inline code span: literal, and never autolinked or mentioned.
+
+    Entities would show up verbatim in here, so only the characters a code
+    span can't hold are changed.
+    """
+    return "`" + " ".join(s.split()).replace("`", "'").replace("|", "\\|") + "`"
 
 
 def parse_date(s: Optional[str]) -> Optional[date]:
@@ -259,7 +276,7 @@ def archive_cell(entry: Optional[dict]) -> str:
     if entry is None:
         return "—"
     if not entry:
-        return "not yet archived"
+        return "no"
     return (f"yes: {code(entry.get('feed_onestop_id') or '?')}, "
             f"fetched {md(entry.get('fetched_at') or '?')}")
 
@@ -290,14 +307,24 @@ def recommend(old: Probe, new: Probe, today: date) -> tuple[str, list[str]]:
     if not new.ok:
         return ("❌ **Keep the current URL.** The proposed URL did not validate, "
                 "but the current one still does."), []
+
+    # About the proposed feed alone, so they apply whatever the verdict.
+    calendar_notes = []
+    new_start, new_end = parse_date(new.earliest), parse_date(new.latest)
+    if new_end and new_end < today:
+        calendar_notes.append("The proposed feed's service calendar has already expired.")
+    elif new_start and new_start > today:
+        calendar_notes.append(f"The proposed feed's service doesn't start until {new_start}. "
+                              "Switching now may leave a gap in current service.")
+
     if not old.ok:
         return ("✅ **Switch to the proposed URL.** The current URL no longer "
-                "validates; the proposed one does."), []
+                "validates; the proposed one does."), calendar_notes
     if old.dir_sha1 and old.dir_sha1 == new.dir_sha1:
         same = "byte-for-byte identical" if old.sha1 == new.sha1 else "the same feed data, repackaged"
-        return f"✅ **Safe to switch.** Both URLs currently serve {same}.", []
+        return f"✅ **Safe to switch.** Both URLs currently serve {same}.", calendar_notes
 
-    old_end, new_end = parse_date(old.latest), parse_date(new.latest)
+    old_end = parse_date(old.latest)
     if not old_end or not new_end:
         headline = "🔎 **Feeds differ; review the details below.**"
     elif new_end > old_end:
@@ -316,9 +343,7 @@ def recommend(old: Probe, new: Probe, today: date) -> tuple[str, list[str]]:
     if old.routes and new.routes is not None and new.routes < old.routes // 2:
         notes.append(f"Route count drops from {old.routes:,} to {new.routes:,}. "
                      "Check that the proposed feed is complete.")
-    if new_end and new_end < today:
-        notes.append("The proposed feed's service calendar has already expired.")
-    return headline, notes
+    return headline, notes + calendar_notes
 
 
 def render_pair(pair: Pair, old: Probe, new: Probe, today: date,
@@ -334,14 +359,16 @@ def render_pair(pair: Pair, old: Probe, new: Probe, today: date,
             f"{len(p.agencies)}: {lines_cell(p.agencies)}" if p.agencies else "—",
             lines_cell([f"{k}: {v}" for k, v in p.route_types.items()]),
             lines_cell([x for x in (p.publisher, p.feed_version) if x]),
-            f"{p.errors} errors, {p.warnings} warnings" if p.ok else "—",
+            f"{p.errors} error groups, {p.warnings} warning groups" if p.ok else "—",
             code(p.dir_sha1[:12]) if p.dir_sha1 else "—",
         ] + ([archive_cell(archive.get(p.sha1))] if archive is not None else [])
 
     labels = ["URL", "Status", "Service dates", "Agencies", "Route types",
               "feed_info", "Validation", "Contents SHA1"]
     if archive is not None:
-        labels.append("In Transitland")
+        # Keyed by zip SHA1, so a server that rebuilds its zip on each request
+        # shows "no" even when Transitland has the same data.
+        labels.append("This exact zip in Transitland")
     rows = list(zip(labels, side(old), side(new)))
     if not old.ok and not new.ok:
         rows = rows[:2]
@@ -373,7 +400,7 @@ def cmd_probe(args: argparse.Namespace) -> None:
         pairs += repointed_feeds(vcfu.dmfr_at(args.base, fp), vcfu.dmfr_at(args.head, fp))
 
     urls = sorted({u for p in pairs if not p.auth_type for u in (p.old_url, p.new_url)})
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
         reports = ex.map(validate_feed, urls)
         dir_sha1s = ex.map(dir_sha1, urls)
         probes = {u: summarize(u, r, d) for u, r, d in zip(urls, reports, dir_sha1s)}

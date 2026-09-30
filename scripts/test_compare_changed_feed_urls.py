@@ -45,6 +45,21 @@ def test_repointed_feeds_follows_rename():
     assert (p.feed_id, p.old_url) == ("f-new-id", "https://old/a.zip")
 
 
+def test_repointed_feeds_takes_auth_from_either_version():
+    """Dropping authorization in the PR still means the old URL needs a key."""
+    base = {"feeds": [feed("f-a", "https://old/a.zip", authorization={"type": "query_param"})]}
+    head = {"feeds": [feed("f-a", "https://new/a.zip")]}
+    (p,) = ccfu.repointed_feeds(base, head)
+    assert p.auth_type == "query_param"
+
+
+def test_repointed_feeds_tolerates_malformed_records():
+    base = {"feeds": [feed("f-a", "https://old/a.zip")]}
+    head = {"feeds": ["junk", feed("f-a", "https://new/a.zip", authorization="x")]}
+    (p,) = ccfu.repointed_feeds(base, head)
+    assert (p.feed_id, p.auth_type) == ("f-a", None)
+
+
 def test_repointed_feeds_carries_auth():
     base = {"feeds": [feed("f-a", "https://old/a.zip")]}
     head = {"feeds": [feed("f-a", "https://new/a.zip", authorization={"type": "query_param"})]}
@@ -81,10 +96,17 @@ def test_recommend_notes():
     assert "expired" in text
 
 
-def test_md_escapes_untrusted_cell_text():
-    s = ccfu.md("a|b<script>`x`\nnext")
-    assert "|" not in s.replace("\\|", "")
-    assert "<" not in s and "`" not in s and "\n" not in s
+def test_md_neutralizes_markdown_mentions_and_references():
+    s = ccfu.md("@drewda #2160 [x](https://e) ![i](https://e/p.png) *b* _i_ a~b~c a|b <s>\r\nnext")
+    for bad in ("@d", "#2", "[", "]", "!", "*", "_", "~", "|", "<", ">", "\r", "\n"):
+        assert bad not in s, bad
+    # Single pass: the entities md() inserts are not themselves re-escaped.
+    assert ccfu.md("#") == "#&#8203;"
+
+
+def test_code_is_a_literal_span():
+    assert ccfu.code("f-9q8yy-a~ca~us") == "`f-9q8yy-a~ca~us`"
+    assert ccfu.code("https://x/a|b`c\nd") == "`https://x/a\\|b'c d`"
 
 
 def test_short_error_keeps_cause():
@@ -123,3 +145,18 @@ def test_summarize_uses_the_shared_pass_rule():
                                                    {"name": "routes.txt", "rows": 7}]}}
     p = ccfu.summarize("u", good, None)
     assert (p.ok, p.routes, p.route_types) == (True, 7, {})
+
+
+def test_calendar_notes_apply_whatever_the_verdict():
+    bad = probe(ok=False, error="boom")
+    expired = probe(dir_sha1="x", latest="2026-01-01")
+    headline, notes = ccfu.recommend(bad, expired, TODAY)
+    assert "Switch" in headline and any("expired" in n for n in notes)
+    future = probe(dir_sha1="x", earliest="2026-11-01", latest="2027-06-01")
+    _, notes = ccfu.recommend(probe(), future, TODAY)
+    assert any("doesn't start until 2026-11-01" in n for n in notes)
+
+
+def test_validate_feed_reports_unrunnable_urls_instead_of_raising():
+    assert "could not run" in ccfu.validate_feed("https://x/\0")["_error"]
+    assert ccfu.dir_sha1("https://x/\0") is None
