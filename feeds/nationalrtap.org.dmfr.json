@@ -1145,11 +1145,27 @@
           "onestop_id": "o-city~of~kokomo",
           "name": "City of Kokomo",
           "website": "https://www.cityofkokomo.org/residents/public_transportation_city_line_trolley.php",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-city~of~kokomo~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "50145"
           }
         }
       ]
+    },
+    {
+      "id": "f-city~of~kokomo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://drive.google.com/uc?export=download&id=12OWJm28dWakSVM3TnmajNWmUrmcytZPq",
+        "realtime_trip_updates": "https://drive.google.com/uc?export=download&id=1Ytg04NVUpr7b069y7GOn1kzdawhkemXm"
+      },
+      "tags": {
+        "mdb_source_id": "3430,3431"
+      }
     },
     {
       "id": "f-city~of~st~joseph~mo",
@@ -1670,11 +1686,28 @@
           "name": "El Paso Transportation Authority",
           "short_name": "ETA",
           "website": "http://www.elpasotransportationauthority.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-el~paso~county~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "60179"
           }
         }
       ]
+    },
+    {
+      "id": "f-el~paso~county~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://data.peaktransit.com/gtfsrt/193/VehiclePosition.pb",
+        "realtime_trip_updates": "https://data.peaktransit.com/gtfsrt/193/TripUpdate.pb",
+        "realtime_alerts": "https://data.peaktransit.com/gtfsrt/193/ServiceAlert.pb"
+      },
+      "tags": {
+        "mdb_source_id": "3203,3204,3420"
+      }
     },
     {
       "id": "f-epta~wv",

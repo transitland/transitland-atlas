@@ -3963,13 +3963,22 @@
         ]
       },
       "tags": {
-        "gtfs_data_exchange": "ny-waterway"
+        "gtfs_data_exchange": "ny-waterway",
+        "notes": "Ferries and buses. Ferries overlap f-dr7-nywaterway~rtt, whose trip_ids the Connexionz realtime uses."
       },
       "operators": [
         {
           "onestop_id": "o-dr7-nywaterway",
           "name": "NY Waterway",
           "website": "http://www.nywaterway.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dr7-nywaterway~rt"
+            },
+            {
+              "feed_onestop_id": "f-dr7-nywaterway~rtt"
+            }
+          ],
           "tags": {
             "twitter_general": "ridetheferry",
             "us_ntd_id": "20190",
@@ -7294,13 +7303,17 @@
       "id": "f-virginia~breeze",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/virginiabreeze-va-us/virginiabreeze-va-us.zip",
+        "static_current": "https://maps.tds.ai/download-feed/virginia-breeze-gtfs",
         "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/virginiabreeze-va-us/virginiabreeze-va-us.zip",
           "https://virginiabreeze.org/wp-content/uploads/2020/10/GTFSFiles.zip"
         ]
       },
       "license": {
         "url": "https://drpt.virginia.gov/data/gtfs-feed-clearinghouse/"
+      },
+      "tags": {
+        "mdb_source_id": "3506"
       },
       "operators": [
         {
@@ -7311,6 +7324,14 @@
             {
               "gtfs_agency_id": "54",
               "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+            },
+            {
+              "gtfs_agency_id": "424",
+              "feed_onestop_id": "f-virginia~breeze"
+            },
+            {
+              "gtfs_agency_id": "354",
+              "feed_onestop_id": "f-virginia~breeze"
             }
           ]
         }
