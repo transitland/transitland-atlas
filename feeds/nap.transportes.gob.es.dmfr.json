@@ -118,9 +118,26 @@
         {
           "onestop_id": "o-la~regional",
           "name": "La Regional",
-          "website": "https://www.autocareslaregional.com/"
+          "website": "https://www.autocareslaregional.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-arroyobus~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-arroyobus~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://enzeyiwpoomhlxmcjivn.supabase.co/functions/v1/gtfs-rt",
+        "realtime_trip_updates": "https://enzeyiwpoomhlxmcjivn.supabase.co/functions/v1/gtfs-rt-trip-updates",
+        "realtime_alerts": "https://enzeyiwpoomhlxmcjivn.supabase.co/functions/v1/gtfs-rt-alerts"
+      },
+      "tags": {
+        "mdb_source_id": "3509,3510,3511"
+      }
     },
     {
       "id": "f-autobuses~cinco~villas",

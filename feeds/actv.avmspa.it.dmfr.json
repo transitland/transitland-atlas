@@ -9,6 +9,17 @@
       }
     },
     {
+      "id": "f-u20-actvspa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tpl.actv.it/aut/GTFSRT/vehiclePositions",
+        "realtime_trip_updates": "https://tpl.actv.it/aut/GTFSRT/tripUpdates"
+      },
+      "tags": {
+        "mdb_source_id": "3423,3424"
+      }
+    },
+    {
       "id": "f-u20f-actvspa",
       "spec": "gtfs",
       "urls": {
@@ -26,6 +37,9 @@
         {
           "gtfs_agency_id": "ACTV S.p.a",
           "feed_onestop_id": "f-u20-actvspa"
+        },
+        {
+          "feed_onestop_id": "f-u20-actvspa~rt"
         },
         {
           "gtfs_agency_id": "ACTV S.p.a",

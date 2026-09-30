@@ -5,34 +5,30 @@
       "id": "f-u30u-de~leipziger~mitteldeutscher",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://opendata.leipzig.de/dataset/8803f612-2ce1-4643-82d1-213434889200/resource/b38955c4-431c-4e8b-a4ef-9964a3a2c95d/download/gtfsmdvlvb.zip"
+        "static_current": "https://www.mdv.de/media/file/f36bb2e5",
+        "static_historic": [
+          "https://opendata.leipzig.de/dataset/8803f612-2ce1-4643-82d1-213434889200/resource/b38955c4-431c-4e8b-a4ef-9964a3a2c95d/download/gtfsmdvlvb.zip"
+        ]
       },
       "license": {
-        "url": "https://www.govdata.de/dl-de/by-2-0",
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://www.mdv.de/service/downloads",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
-        "attribution_text": "License Name"
+        "attribution_text": "Mitteldeutscher Verkehrsverbund GmbH"
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
           "onestop_id": "o-u30u-de~leipziger~verkehrsbetriebe",
           "name": "Leipziger Verkehrsbetriebe",
           "short_name": "LVB",
-          "website": "http://www.lvb.de",
+          "website": "https://www.l.de/verkehrsbetriebe",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "LVBUS_"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u30u-de~mitteldeutscher~verkehrsbund",
-          "name": "Mitteldeutscher Verkehrsbund",
-          "short_name": "MDV",
-          "website": "http://www.mdv.de",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "LVTRAM"
+              "gtfs_agency_id": "01150"
             }
           ]
         }
