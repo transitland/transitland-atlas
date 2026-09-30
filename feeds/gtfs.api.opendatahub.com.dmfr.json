@@ -1,0 +1,45 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-sta~altoadige",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.api.opendatahub.com/v1/dataset/sta-time-tables/raw"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://gtfs.api.opendatahub.com/v1/dataset"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sta~altoadige",
+          "name": "STA - Strutture Trasporto Alto Adige",
+          "short_name": "südtirolmobil",
+          "website": "https://www.suedtirolmobil.info",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sta~altoadige~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q21971377"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-sta~altoadige~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs.api.opendatahub.com/v1/realtime/sta-time-tables/vehicle-positions",
+        "realtime_trip_updates": "https://gtfs.api.opendatahub.com/v1/realtime/sta-time-tables/trip-updates",
+        "realtime_alerts": "https://gtfs.api.opendatahub.com/v1/realtime/sta-time-tables/service-alerts"
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://gtfs.api.opendatahub.com/v1/dataset"
+      }
+    }
+  ]
+}
