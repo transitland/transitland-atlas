@@ -386,6 +386,18 @@
       }
     },
     {
+      "id": "f-qline~mi~rt",
+      "supersedes_ids": [
+        "f-qline~mi~rt~alerts"
+      ],
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/qline.etaspot.net/alerts.pb"
+      }
+    },
+    {
       "id": "f-qline~mi~us",
       "spec": "gtfs",
       "urls": {
@@ -406,9 +418,6 @@
           "associated_feeds": [
             {
               "feed_onestop_id": "f-qline~mi~rt"
-            },
-            {
-              "feed_onestop_id": "f-qline~mi~rt~alerts"
             }
           ],
           "tags": {
