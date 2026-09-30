@@ -2,21 +2,842 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-xtrafik~se",
+      "id": "f-u-se",
+      "supersedes_ids": [
+        "f-xtrafik~se"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://opendata.samtrafiken.se/gtfs/xt/xt.zip"
+        "static_current": "https://opendata.samtrafiken.se/gtfs-sweden/sweden.zip",
+        "static_historic": [
+          "https://api.resrobot.se/gtfs/sweden.zip",
+          "https://opendata.samtrafiken.se/gtfs/xt/xt.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC0-1.0",
+        "url": "https://www.trafiklab.se/api/gtfs-datasets/gtfs-sweden/#licence",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key",
+        "info_url": "https://www.trafiklab.se/api/gtfs-datasets/gtfs-sweden/"
       },
       "operators": [
         {
+          "onestop_id": "o-u3-kombardoexpressen",
+          "name": "Kombardo Expressen",
+          "website": "https://www.kombardoexpressen.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000184"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u3c-skånetrafiken",
+          "name": "Skånetrafiken",
+          "website": "https://www.skanetrafiken.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000012"
+            },
+            {
+              "gtfs_agency_id": "500000000000000790"
+            },
+            {
+              "gtfs_agency_id": "500000000000000154"
+            },
+            {
+              "feed_onestop_id": "f-u-se~skane~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1934330"
+          }
+        },
+        {
+          "onestop_id": "o-u3cjf-ventrafiken",
+          "name": "Ventrafiken",
+          "website": "https://ventrafiken.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000108"
+            },
+            {
+              "feed_onestop_id": "f-u-se~skane~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10713996"
+          }
+        },
+        {
+          "onestop_id": "o-u3cp-bergkvarabuss",
+          "name": "Bergkvara Buss",
+          "website": "https://bergkvara.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000133"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10428434"
+          }
+        },
+        {
+          "onestop_id": "o-u3f-blekingetrafiken",
+          "name": "Blekingetrafiken",
+          "website": "https://www.blekingetrafiken.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000010"
+            },
+            {
+              "feed_onestop_id": "f-u-se~blekinge~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10431249"
+          }
+        },
+        {
+          "onestop_id": "o-u6-btbuss",
+          "name": "BT Buss",
+          "website": "https://www.bergslagstaget.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000111"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u6-dalatrafik",
+          "name": "Dalatrafik",
+          "website": "https://www.dalatrafik.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000020"
+            },
+            {
+              "feed_onestop_id": "f-u-se~dt~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10466087"
+          }
+        },
+        {
+          "onestop_id": "o-u6-flygbussarna",
+          "name": "Flygbussarna",
+          "website": "https://www.flygbussarna.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000107"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q775247"
+          }
+        },
+        {
+          "onestop_id": "o-u6-mtrexpress",
+          "name": "VR Snabbtåg",
+          "website": "https://vrresa.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000159"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q19060208"
+          }
+        },
+        {
+          "onestop_id": "o-u6-mälartåg",
+          "name": "Mälartåg",
+          "website": "https://www.malardalstrafik.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000174"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q49099096"
+          }
+        },
+        {
+          "onestop_id": "o-u6-silverlinjen",
+          "name": "Silverlinjen",
+          "website": "https://silverlinjen.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000123"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u6-trafikverketfärjerederiet",
+          "name": "Trafikverket Färjerederiet",
+          "website": "https://www.trafikverket.se/resa-och-trafik/farjetrafik/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000639"
+            },
+            {
+              "gtfs_agency_id": "505000000000000103"
+            },
+            {
+              "feed_onestop_id": "f-u-se~jlt~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10701061"
+          }
+        },
+        {
+          "onestop_id": "o-u6-tågab",
+          "name": "Tågåkeriet i Bergslagen",
+          "short_name": "Tågab",
+          "website": "https://www.tagab.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000137"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1138983"
+          }
+        },
+        {
+          "onestop_id": "o-u6-värmlandstrafik",
+          "name": "Värmlandstrafik",
+          "website": "https://www.varmlandstrafik.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000017"
+            },
+            {
+              "feed_onestop_id": "f-u-se~varm~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7944363"
+          }
+        },
+        {
+          "onestop_id": "o-u6-västervikexpress",
+          "name": "Västervik Express",
+          "website": "https://vastervikexpress.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000161"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q64013791"
+          }
+        },
+        {
+          "onestop_id": "o-u61-hallandstrafiken",
+          "name": "Hallandstrafiken",
+          "website": "https://www.hallandstrafiken.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000013"
+            },
+            {
+              "feed_onestop_id": "f-u-se~halland~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10516339"
+          }
+        },
+        {
+          "onestop_id": "o-u62-kungälvskommun",
+          "name": "Kungälvs kommun",
+          "website": "https://www.kungalv.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000635"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q511394"
+          }
+        },
+        {
+          "onestop_id": "o-u627-uddevallaskärgårdsbåtar",
+          "name": "Uddevalla Skärgårdsbåtar",
+          "website": "https://skargardsbatarna.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000158"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u64-jlt",
+          "name": "Jönköpings Länstrafik",
+          "short_name": "JLT",
+          "website": "https://www.jlt.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000006"
+            },
+            {
+              "feed_onestop_id": "f-u-se~jlt~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10542127"
+          }
+        },
+        {
+          "onestop_id": "o-u64-krösatågen",
+          "supersedes_ids": [
+            "o-u64-krösatågensyd",
+            "o-u67-krösatågen"
+          ],
+          "name": "Krösatågen",
+          "website": "https://www.krosatagen.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000785"
+            },
+            {
+              "gtfs_agency_id": "500000000000000770"
+            },
+            {
+              "gtfs_agency_id": "500000000000000793"
+            },
+            {
+              "gtfs_agency_id": "500000000000000800"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10549741"
+          }
+        },
+        {
+          "onestop_id": "o-u64-länstrafikenkronoberg",
+          "name": "Länstrafiken Kronoberg",
+          "website": "https://lanstrafikenkron.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000007"
+            },
+            {
+              "feed_onestop_id": "f-u-se~krono~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10571992"
+          }
+        },
+        {
+          "onestop_id": "o-u65-klt",
+          "name": "Kalmar Länstrafik",
+          "short_name": "KLT",
+          "website": "https://kalmarlanstrafik.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000008"
+            },
+            {
+              "gtfs_agency_id": "500000000000000189"
+            },
+            {
+              "feed_onestop_id": "f-u-se~klt~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10542824"
+          }
+        },
+        {
+          "onestop_id": "o-u65x-tjfsmalspåret",
+          "name": "TJF Smalspåret",
+          "website": "https://smalsparet.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000129"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u67-östgötatrafiken",
+          "name": "Östgötatrafiken",
+          "website": "https://www.ostgotatrafiken.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000005"
+            },
+            {
+              "feed_onestop_id": "f-u-se~otraf~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10728215"
+          }
+        },
+        {
+          "onestop_id": "o-u6d-länstrafikenörebro",
+          "name": "Länstrafiken Örebro",
+          "website": "https://www.lanstrafiken.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000018"
+            },
+            {
+              "feed_onestop_id": "f-u-se~orebro~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10571998"
+          }
+        },
+        {
+          "onestop_id": "o-u6e-masexpressen",
+          "name": "Masexpressen",
+          "website": "https://masexpressen.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000122"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u6e-sörmlandstrafiken",
+          "name": "Sörmlandstrafiken",
+          "website": "https://www.sormlandstrafiken.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000004"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10571995"
+          }
+        },
+        {
+          "onestop_id": "o-u6e-tågibergslagen",
+          "name": "Tåg i Bergslagen",
+          "website": "https://tagibergslagen.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000182"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2463757"
+          }
+        },
+        {
+          "onestop_id": "o-u6e-vl",
+          "name": "Västmanlands Lokaltrafik",
+          "short_name": "VL",
+          "website": "https://www.vl.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000019"
+            },
+            {
+              "feed_onestop_id": "f-u-se~vastmanland~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10718177"
+          }
+        },
+        {
+          "onestop_id": "o-u6j-regiongotland",
+          "name": "Gotlands kollektivtrafik",
+          "website": "https://gotlandskollektivtrafik.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000009"
+            },
+            {
+              "feed_onestop_id": "f-u-se~gotland~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q18291303"
+          }
+        },
+        {
+          "onestop_id": "o-u6k-destinationgotland",
+          "name": "Destination Gotland",
+          "website": "https://www.destinationgotland.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000106"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q4354304"
+          }
+        },
+        {
+          "onestop_id": "o-u6k-trosabussen",
+          "name": "Trosabussen",
+          "website": "https://trosabussen.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000140"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u6s-sl",
+          "name": "Storstockholms Lokaltrafik",
+          "short_name": "SL",
+          "website": "https://sl.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000001"
+            },
+            {
+              "gtfs_agency_id": "505000000000000605"
+            },
+            {
+              "feed_onestop_id": "f-u-se~sl~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q970452"
+          }
+        },
+        {
+          "onestop_id": "o-u6s-ul",
+          "name": "UL",
+          "website": "https://www.ul.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000003"
+            },
+            {
+              "feed_onestop_id": "f-u-se~ul~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7899151"
+          }
+        },
+        {
+          "onestop_id": "o-u6sc-strömma",
+          "name": "Strömma Turism & Sjöfart",
+          "website": "https://www.stromma.com/sv-se/stockholm/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000147"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10682201"
+          }
+        },
+        {
+          "onestop_id": "o-u6sc7-resselsrederi",
+          "name": "Ressel Rederi",
+          "website": "https://ressel.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000141"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q112134184"
+          }
+        },
+        {
+          "onestop_id": "o-u6sc7ue-stockholmsstad",
+          "name": "Sjöstadstrafiken",
+          "website": "https://ressel.se/sjostadstrafiken/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000168"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10516846"
+          }
+        },
+        {
+          "onestop_id": "o-u6sf-arlandaexpress",
+          "name": "Arlanda Express",
+          "website": "https://www.arlandaexpress.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000783"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q731921"
+          }
+        },
+        {
+          "onestop_id": "o-u6ss-lennakatten",
+          "name": "Lennakatten",
+          "website": "https://lennakatten.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000116"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q4412566"
+          }
+        },
+        {
+          "onestop_id": "o-u6t-waxholmsbolaget",
+          "name": "Waxholmsbolaget",
+          "website": "https://waxholmsbolaget.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000114"
+            },
+            {
+              "feed_onestop_id": "f-u-se~sl~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7975717"
+          }
+        },
+        {
+          "onestop_id": "o-u6t3-roslagenssjötrafik",
+          "name": "Roslagens sjötrafik",
+          "website": "https://www.roslagenssjotrafik.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000145"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u6t3-stavsnäsbåttaxi",
+          "name": "Stavsnäs båttaxi",
+          "website": "https://battaxi.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000173"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q136218953"
+          }
+        },
+        {
+          "onestop_id": "o-u7-dintur",
+          "name": "Din Tur",
+          "website": "https://www.dintur.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000022"
+            },
+            {
+              "feed_onestop_id": "f-u-se~dintur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q136732957"
+          }
+        },
+        {
+          "onestop_id": "o-u7-härjedalingen",
+          "name": "Härjedalingen",
+          "website": "https://www.mohlinsexpressbuss.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000124"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u7-länstrafikenjämtland",
+          "name": "Länstrafiken Jämtland",
+          "website": "https://ltr.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000023"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q6842703"
+          }
+        },
+        {
+          "onestop_id": "o-u7-länstrafikennorrbotten",
+          "name": "Länstrafiken Norrbotten",
+          "website": "https://lanstrafikennorrbotten.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000025"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10571994"
+          }
+        },
+        {
+          "onestop_id": "o-u7-länstrafikenvästerbotten",
+          "name": "Länstrafiken Västerbotten",
+          "website": "https://www.tabussen.nu/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000024"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10571997"
+          }
+        },
+        {
+          "onestop_id": "o-u7-y~buss",
+          "name": "Y-Buss",
+          "website": "https://www.ybuss.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000120"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u7v-falcksomnibus",
+          "name": "Falcks Omnibus",
+          "website": "https://falcksomnibus.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000175"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u7wb-skelleftebuss",
+          "name": "Skellefteåbuss",
+          "website": "https://www.skebuss.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000706"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q420750"
+          }
+        },
+        {
+          "onestop_id": "o-u7x7-piteålokaltrafik",
+          "name": "Piteå stadstrafik",
+          "website": "https://piteastadsbuss.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000146"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u7xq-bodenstadstrafik",
+          "name": "Boden stadstrafik",
+          "website": "https://citybussboden.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000148"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u7xt-luleålokaltrafik",
+          "name": "Luleå Lokaltrafik",
+          "website": "https://www.llt.lulea.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000696"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10570634"
+          }
+        },
+        {
+          "onestop_id": "o-u7yw-gällivarestadstrafik",
+          "name": "Gällivare stadstrafik",
+          "website": "https://citybussgallivare.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000105"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ue8q-kalixstadstrafik",
+          "name": "Kalix stadstrafik",
+          "website": "https://www.kalix.se/Samhalle/Trafik-och-gator",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000162"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ue9nt-haparandalokaltrafik",
+          "name": "Haparanda stadstrafik",
+          "website": "https://www.haparanda.se/boende-och-miljo/resa",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000144"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ukj-kirunabuss",
+          "name": "Kiruna Buss",
+          "website": "https://kirunabuss.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000193"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ukn-nikkaluoktaexpressen",
+          "name": "Nikkaluoktaexpressen",
+          "website": "https://nikkaluoktaexpressen.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "500000000000000130"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-ukn3-kirunastadstrafik",
+          "name": "Kiruna stadstrafik",
+          "website": "https://kiruna.se/trafik--resor/buss-flyg-och-tag.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "505000000000000152"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-xtrafik~se",
-          "name": "X-trafix (Region Gävleborg)",
+          "name": "X-trafik",
           "website": "https://xtrafik.se/",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-xtrafik~se~rt"
+              "gtfs_agency_id": "505000000000000021"
+            },
+            {
+              "feed_onestop_id": "f-u-se~xt~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q10720781"
+          }
         }
       ]
     }
