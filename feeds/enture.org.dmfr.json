@@ -134,19 +134,6 @@
           }
         },
         {
-          "onestop_id": "o-u4-kringom",
-          "name": "Skyss",
-          "website": "https://www.skyss.no",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "SOF:Authority:17"
-            },
-            {
-              "feed_onestop_id": "f-entur~rt"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u4-nor~waybussekspressas",
           "name": "NOR-WAY Bussekspress",
           "website": "https://nor-way.no",
@@ -164,11 +151,17 @@
         },
         {
           "onestop_id": "o-u4-skyss",
+          "supersedes_ids": [
+            "o-u4-kringom"
+          ],
           "name": "Skyss",
           "website": "https://skyss.no/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "SKY:Authority:SKY"
+            },
+            {
+              "gtfs_agency_id": "SOF:Authority:17"
             },
             {
               "feed_onestop_id": "f-entur~rt"
@@ -196,6 +189,9 @@
         },
         {
           "onestop_id": "o-u4-vy",
+          "supersedes_ids": [
+            "o-u4v1c-vy"
+          ],
           "name": "Vy",
           "website": "https://www.vy.no/",
           "associated_feeds": [
@@ -204,6 +200,9 @@
             },
             {
               "gtfs_agency_id": "VYG:Authority:VYT"
+            },
+            {
+              "gtfs_agency_id": "VYG:Authority:FLB"
             },
             {
               "feed_onestop_id": "f-entur~rt"
@@ -256,7 +255,10 @@
             {
               "feed_onestop_id": "f-entur~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q1425780"
+          }
         },
         {
           "onestop_id": "o-u4ez9-beffen",
@@ -405,19 +407,6 @@
           }
         },
         {
-          "onestop_id": "o-u4v1c-vy",
-          "name": "Vy",
-          "website": "https://www.vy.no/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "VYG:Authority:FLB"
-            },
-            {
-              "feed_onestop_id": "f-entur~rt"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-u4v4-norwaysbest",
           "name": "Norway's best",
           "website": "https://www.norwaysbest.com/",
@@ -547,7 +536,10 @@
             {
               "feed_onestop_id": "f-entur~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q20953352"
+          }
         },
         {
           "onestop_id": "o-u4x-østfoldkollektivtrafikk",
@@ -792,7 +784,10 @@
             {
               "feed_onestop_id": "f-entur~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q12003965"
+          }
         },
         {
           "onestop_id": "o-u6-sjab",
