@@ -6,8 +6,7 @@ name: Compare repointed static feed URLs
 #
 # Both jobs run the base branch's copy of scripts/ and read the PR's DMFR
 # files through git. `probe` fetches and validates the URLs; `comment` renders
-# the result, using TRANSITLAND_API_KEY from the transitland-api environment
-# for the archive lookup.
+# the result, using the TRANSITLAND_API_KEY secret for the archive lookup.
 on:
   pull_request_target:
     paths:
@@ -74,7 +73,6 @@ jobs:
   comment:
     needs: probe
     runs-on: ubuntu-latest
-    environment: transitland-api
     permissions:
       contents: read
       pull-requests: write
