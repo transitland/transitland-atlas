@@ -1173,7 +1173,9 @@
       "id": "f-cleburne~tx~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11726/cct_gtfs.zip"
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11726/cct_gtfs.zip"
+        ]
       },
       "operators": [
         {
@@ -3113,6 +3115,9 @@
     },
     {
       "id": "f-portarthurtransit~tx~us",
+      "supersedes_ids": [
+        "f-portarthur~tx~us"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13725/PortArthurGTFS.zip"

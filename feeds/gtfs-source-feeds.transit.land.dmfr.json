@@ -5,15 +5,15 @@
       "id": "f-amarillo~city~transit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/amarillo-tx-us.zip",
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/12076/ACT_GTFS_24.zip",
         "static_historic": [
+          "http://gtfs-source-feeds.transit.land/amarillo-tx-us.zip",
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/amarillo-tx-us.zip",
           "https://code.amarillo.gov/gtfs/gtfs.zip"
         ]
       },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token"
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
