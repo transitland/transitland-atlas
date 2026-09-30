@@ -1,0 +1,496 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-busone~actv~aut~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/actv-aut/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/actv-aut/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~actv~nav~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/actv-nav/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/actv-nav/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~arriva~brescia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/arriva/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~arriva~brescia~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/arriva/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/arriva/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~busitalia~veneto",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/biv/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~busitalia~veneto~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/biv/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/biv/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~cotral~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/cotral/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/cotral/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~gtt~rt",
+      "name": "GTT normalized realtime feed by BusOne",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/gtt/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/gtt/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~italo",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/italo/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~italo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/italo/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/italo/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~seta~modena",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/seta-mo/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~seta~modena~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/seta-mo/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/seta-mo/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~seta~piacenza",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/seta-pc/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~seta~piacenza~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/seta-pc/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/seta-pc/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~seta~reggio~emilia",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/seta-re/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~seta~reggio~emilia~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/seta-re/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/seta-re/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~sta",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/sta/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~sta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/sta/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/sta/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~tep",
+      "name": "TEP enhanced static feed by BusOne",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/tep/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~tep~rt",
+      "name": "TEP enhanced realtime feed by BusOne",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/tep/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/tep/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~toscana~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/toscana/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/toscana/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~trenitalia",
+      "name": "Trenitalia national feed by BusOne",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/trenitalia/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~trenitalia~rt",
+      "name": "Trenitalia national realtime feed by BusOne",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/trenitalia/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/trenitalia/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~trentino",
+      "name": "Trentino Trasporti consolidated feed by BusOne",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://proxy.busone.app/trentino/gtfs.zip"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    },
+    {
+      "id": "f-busone~trentino~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.busone.app/trentino/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://proxy.busone.app/trentino/gtfs-rt/trip-updates.pb"
+      },
+      "license": {
+        "url": "https://proxy.busone.app/#data-terms",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "attribution_text": "BusOne (https://busone.app) and the original data source"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-altoadigemobilita",
+      "name": "altoadigemobilità",
+      "short_name": "südtirolmobil",
+      "website": "https://www.suedtirolmobil.info/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "altoadigemobilità",
+          "feed_onestop_id": "f-busone~sta"
+        },
+        {
+          "feed_onestop_id": "f-busone~sta~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-arriva~italia~brescia",
+      "name": "Arriva Italia · SIA Brescia",
+      "short_name": "Arriva",
+      "website": "https://brescia.arriva.it/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SIA",
+          "feed_onestop_id": "f-busone~arriva~brescia"
+        },
+        {
+          "feed_onestop_id": "f-busone~arriva~brescia~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-busitalia~veneto",
+      "name": "Busitalia Veneto",
+      "short_name": "Busitalia Veneto",
+      "website": "https://www.fsbusitalia.it/content/fsbusitalia/it/veneto.html",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "10",
+          "feed_onestop_id": "f-busone~busitalia~veneto"
+        },
+        {
+          "gtfs_agency_id": "TPD_11",
+          "feed_onestop_id": "f-busone~busitalia~veneto"
+        },
+        {
+          "feed_onestop_id": "f-busone~busitalia~veneto~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-italo",
+      "name": "Nuovo Trasporto Viaggiatori",
+      "short_name": "Italo",
+      "website": "https://www.italotreno.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "ITALO",
+          "feed_onestop_id": "f-busone~italo"
+        },
+        {
+          "feed_onestop_id": "f-busone~italo~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-seta",
+      "name": "SETA S.p.A.",
+      "short_name": "SETA",
+      "website": "https://www.setaweb.it/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SETA",
+          "feed_onestop_id": "f-busone~seta~modena"
+        },
+        {
+          "feed_onestop_id": "f-busone~seta~modena~rt"
+        },
+        {
+          "gtfs_agency_id": "SETA",
+          "feed_onestop_id": "f-busone~seta~piacenza"
+        },
+        {
+          "feed_onestop_id": "f-busone~seta~piacenza~rt"
+        },
+        {
+          "gtfs_agency_id": "SETA",
+          "feed_onestop_id": "f-busone~seta~reggio~emilia"
+        },
+        {
+          "feed_onestop_id": "f-busone~seta~reggio~emilia~rt"
+        }
+      ]
+    }
+  ]
+}
