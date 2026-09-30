@@ -2,10 +2,12 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-u4-ruter~flybussen~stfoldkollektivtrafikk~hedmarktrafikk~oppla",
-      "spec": "gtfs",
+      "id": "f-entur~rt",
+      "spec": "gtfs-rt",
       "urls": {
-        "static_current": "https://storage.googleapis.com/marduk-production/outbound/gtfs/rb_norway-aggregated-gtfs.zip"
+        "realtime_vehicle_positions": "https://api.entur.io/realtime/v1/gtfs-rt/vehicle-positions",
+        "realtime_trip_updates": "https://api.entur.io/realtime/v1/gtfs-rt/trip-updates",
+        "realtime_alerts": "https://api.entur.io/realtime/v1/gtfs-rt/alerts"
       },
       "license": {
         "spdx_identifier": "NLOD-1.0",
@@ -14,6 +16,1012 @@
         "create_derived_product": "yes",
         "attribution_text": "Contains data under the Norwegian licence for Open Government data (NLOD) distributed by Entur"
       }
+    },
+    {
+      "id": "f-u4-ruter~flybussen~stfoldkollektivtrafikk~hedmarktrafikk~oppla",
+      "supersedes_ids": [
+        "f-u4k-kolumbus"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://storage.googleapis.com/marduk-production/outbound/gtfs/rb_norway-aggregated-gtfs.zip",
+        "static_historic": [
+          "http://www.rkt.no/gt/google_transit.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "NLOD-1.0",
+        "url": "https://developer.entur.org/stops-and-timetable-data",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Contains data under the Norwegian licence for Open Government data (NLOD) distributed by Entur"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u-avinor",
+          "name": "Avinor",
+          "website": "https://www.avinor.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AVI:Authority:Avinor"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q791050"
+          }
+        },
+        {
+          "onestop_id": "o-u-snälltåget",
+          "name": "Snälltåget",
+          "website": "https://snalltaget.se",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SNT:Authority:52a66664-3548-5ce8-9ddc-a95c68fc4962"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q24088927"
+          }
+        },
+        {
+          "onestop_id": "o-u3-öresundståg",
+          "name": "Öresundståg",
+          "website": "https://www.oresundstag.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SAM:Authority:300"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q903625"
+          }
+        },
+        {
+          "onestop_id": "o-u4-fjordline",
+          "name": "Fjord Line",
+          "website": "https://fjordline.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FJL:Authority:FJL"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1422444"
+          }
+        },
+        {
+          "onestop_id": "o-u4-go~aheadnordic",
+          "name": "Go-Ahead Norge AS",
+          "website": "https://www.go-ahead.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GOA:Authority:GOA"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q58041853"
+          }
+        },
+        {
+          "onestop_id": "o-u4-innlandstrafikk",
+          "name": "Innlandstrafikk",
+          "website": "https://innlandstrafikk.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "INN:Authority:INN_ID"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q104061672"
+          }
+        },
+        {
+          "onestop_id": "o-u4-nor~waybussekspressas",
+          "name": "NOR-WAY Bussekspress",
+          "website": "https://nor-way.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NWY:Authority:d1ea7af1-3c2a-4825-893f-21408ef08480"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q262762"
+          }
+        },
+        {
+          "onestop_id": "o-u4-skyss",
+          "supersedes_ids": [
+            "o-u4-kringom"
+          ],
+          "name": "Skyss",
+          "website": "https://skyss.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SKY:Authority:SKY"
+            },
+            {
+              "gtfs_agency_id": "SOF:Authority:17"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q4568733"
+          }
+        },
+        {
+          "onestop_id": "o-u4-unibuss",
+          "name": "Unibuss",
+          "website": "https://www.unibuss.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "UNI:Authority:UNI"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7884629"
+          }
+        },
+        {
+          "onestop_id": "o-u4-vy",
+          "supersedes_ids": [
+            "o-u4v1c-vy"
+          ],
+          "name": "Vy",
+          "website": "https://www.vy.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VYG:Authority:VY"
+            },
+            {
+              "gtfs_agency_id": "VYG:Authority:VYT"
+            },
+            {
+              "gtfs_agency_id": "VYG:Authority:FLB"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q83825"
+          }
+        },
+        {
+          "onestop_id": "o-u4-vybuss",
+          "name": "Vy Buss",
+          "website": "http://www.vybuss.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VYX:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7000460"
+          }
+        },
+        {
+          "onestop_id": "o-u4eb-fjord1asa",
+          "name": "Fjord1 ASA",
+          "website": "https://www.fjord1.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KOL:Authority:30"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q697074"
+          }
+        },
+        {
+          "onestop_id": "o-u4ez6r-ulriken",
+          "name": "Ulriken",
+          "website": "https://ulriken643.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ULR:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1425780"
+          }
+        },
+        {
+          "onestop_id": "o-u4ez9-beffen",
+          "name": "Beffen",
+          "website": "https://www.facebook.com/Beffen/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BEF:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4k-kolumbus",
+          "name": "Kolumbus",
+          "website": "https://www.kolumbus.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KOL:Authority:8"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q6427938"
+          }
+        },
+        {
+          "onestop_id": "o-u4knkf-borealnorgeas",
+          "name": "Boreal Norge",
+          "website": "https://www.boreal.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BOR:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q4944779"
+          }
+        },
+        {
+          "onestop_id": "o-u4kr-gofjords",
+          "name": "Go Fjords",
+          "website": "http://www.gofjords.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "GOF:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4kr44-høgsfjordferja",
+          "name": "Høgsfjordferja",
+          "website": "https://www.hogsfjordferja.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HOG:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4m-agderkollektivtrafikkas",
+          "name": "Agder Kollektivtrafikk AS",
+          "short_name": "AKT",
+          "website": "https://www.akt.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AKT:Authority:AKT_ID"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q4691685"
+          }
+        },
+        {
+          "onestop_id": "o-u4qhx-hyke",
+          "name": "Hyke",
+          "website": "https://hydroliftsmartcityferries.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HYK:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4qw4-mføisang",
+          "name": "MF Øisang",
+          "website": "http://www.oisangferga.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OIS:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4s35-norledas",
+          "name": "Norled AS",
+          "website": "https://www.norled.no/ferje/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "KOL:Authority:26"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7051397"
+          }
+        },
+        {
+          "onestop_id": "o-u4u9-fjordtours",
+          "name": "Fjord Tours",
+          "website": "https://www.fjordtours.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FJT:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q98398260"
+          }
+        },
+        {
+          "onestop_id": "o-u4v4-norwaysbest",
+          "name": "Norway's best",
+          "website": "https://www.norwaysbest.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NWB:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4vht-lustrabaatane",
+          "name": "Lustrabaatane",
+          "website": "https://www.lustrabaatane.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SOF:Authority:26"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4w-brakar",
+          "name": "Brakar",
+          "website": "https://www.brakar.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BRA:Authority:4"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q17522158"
+          }
+        },
+        {
+          "onestop_id": "o-u4w-farte",
+          "name": "Farte",
+          "website": "https://www.farte.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TEL:Authority:TFK_ID"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q63332462"
+          }
+        },
+        {
+          "onestop_id": "o-u4w-telemarkskanalen",
+          "name": "Telemarkskanalen",
+          "website": "https://telemarkskanalen.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TEL:Authority:91"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q99639282"
+          }
+        },
+        {
+          "onestop_id": "o-u4w09h-fjonesundet",
+          "name": "Fjonesundet",
+          "website": "https://fjoneferga.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TEL:Authority:89"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4x-flytoget",
+          "name": "Flytoget",
+          "website": "https://flytoget.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FLT:Authority:FLT"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q18325550"
+          }
+        },
+        {
+          "onestop_id": "o-u4x-ruter",
+          "name": "Ruter",
+          "website": "https://ruter.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RUT:Authority:RUT"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q750292"
+          }
+        },
+        {
+          "onestop_id": "o-u4x-vkt",
+          "name": "VKT",
+          "website": "https://www.vkt.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VKT:Authority:VKT_ID"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q20953352"
+          }
+        },
+        {
+          "onestop_id": "o-u4x-østfoldkollektivtrafikk",
+          "name": "Østfold kollektivtrafikk",
+          "website": "https://www.ostfold-kollektiv.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OST:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q8079265"
+          }
+        },
+        {
+          "onestop_id": "o-u4xb-fredrikstadkommune",
+          "name": "Fredrikstad kommune",
+          "website": "https://www.fredrikstad.kommune.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OST:Authority:155"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q107135"
+          }
+        },
+        {
+          "onestop_id": "o-u4xd-torghattensør",
+          "name": "Torghatten Sør",
+          "website": "https://www.torghatten.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BFO:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4xe3x-fergeruteroscarsborg",
+          "name": "Forsvarsbygg Oscarsborgfergen",
+          "short_name": "Oscarsborgfergen",
+          "website": "http://billett.forsvarsbygg.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BRA:Authority:27"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4xsu-bygdøyfergen",
+          "name": "Bygdøyfergen",
+          "website": "https://nyc.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NYC:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4xt-flybussennorgesbuss",
+          "name": "Flybussen Connect",
+          "website": "https://www.connectbus.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NBU:Authority:002"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u4yj-jotunheimenogvaldresrutenbilselskap",
+          "name": "Jotunheimen og Valdresruten Bilselskap",
+          "short_name": "JVB",
+          "website": "https://jvb.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VYX:Authority:JVB"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q6294495"
+          }
+        },
+        {
+          "onestop_id": "o-u4zkq-visitlillehammer",
+          "name": "Rada Reiseliv",
+          "website": "https://radareiseliv.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VIL:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u5-atb",
+          "name": "AtB",
+          "website": "https://www.atb.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ATB:Authority:2"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q11686899"
+          }
+        },
+        {
+          "onestop_id": "o-u5-fram",
+          "name": "FRAM",
+          "website": "https://frammr.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MOR:Authority:MOR"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q22268903"
+          }
+        },
+        {
+          "onestop_id": "o-u5-tideas",
+          "name": "Tide AS",
+          "short_name": "Flybussen",
+          "website": "https://flybussen.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TID:Authority:TID"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1779936"
+          }
+        },
+        {
+          "onestop_id": "o-u55c-ambupendlerrute",
+          "name": "AMBU Pendlerrute",
+          "website": "https://www.sande-mr.kommune.no/tenester/veg-vatn-og-miljo/veg/ambu/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MOR:Authority:AM008"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u5h7e-ålesundturvognservice",
+          "name": "Ålesund Turvogn Service",
+          "website": "https://www.turvogna.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ATU:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u5j1-fjordx",
+          "name": "Fjord X",
+          "website": "https://www.fjordx.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FJX:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u5j1-thefjords",
+          "name": "The Fjords",
+          "website": "https://www.thefjords.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TFJ:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q25434025"
+          }
+        },
+        {
+          "onestop_id": "o-u5j1-vestlandske",
+          "name": "Vestlandske",
+          "website": "https://www.vestlandske.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VLA:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u5jx01-sundbåten",
+          "name": "Sundbåten",
+          "website": "https://www.sundbaten.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MOR:Authority:SUND"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q12003965"
+          }
+        },
+        {
+          "onestop_id": "o-u6-sjab",
+          "name": "SJ",
+          "website": "https://www.sj.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SJV:Authority:SJV"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q8301325"
+          }
+        },
+        {
+          "onestop_id": "o-u6-vytravel",
+          "name": "VY Bus4You",
+          "website": "https://bus4you.se",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VYB:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q17086042"
+          }
+        },
+        {
+          "onestop_id": "o-u6-vytåg",
+          "name": "Vy Tåg",
+          "website": "https://www.vy.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VYG:Authority:TAG"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1503354"
+          }
+        },
+        {
+          "onestop_id": "o-u680-västtrafikab",
+          "name": "Västtrafik AB",
+          "website": "https://www.vasttrafik.se/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "OST:Authority:264"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q928178"
+          }
+        },
+        {
+          "onestop_id": "o-u7-havila",
+          "name": "Havila",
+          "website": "https://www.havilavoyages.com/nb/havn-til-havn",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HAV:Authority:999523587"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q61832341"
+          }
+        },
+        {
+          "onestop_id": "o-u7-hurtigruten",
+          "name": "Hurtigruten",
+          "website": "http://www.hurtigruten.no/havn-til-havn",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "HUR:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q838725"
+          }
+        },
+        {
+          "onestop_id": "o-u7-nordlandfylkeskommune",
+          "name": "Nordland fylkeskommune",
+          "short_name": "Reis Nordland",
+          "website": "https://www.reisnordland.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "NOR:Authority:12"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7050827"
+          }
+        },
+        {
+          "onestop_id": "o-u7-norrtåg",
+          "name": "Norrtåg",
+          "website": "https://www.norrtagab.se",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "VYS:Authority:513"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q10602972"
+          }
+        },
+        {
+          "onestop_id": "o-u7-sjnord",
+          "name": "SJ Nord",
+          "website": "https://www.sj.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SJN:Authority:SJN"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q50291920"
+          }
+        },
+        {
+          "onestop_id": "o-uk-bestarcticgroup",
+          "name": "Best Arctic Group",
+          "website": "https://bestarctic.com/the-arctic-route/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BAR:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-uk-tromsfylkestrafikk",
+          "name": "Svipper",
+          "website": "https://svipper.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TRO:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q19393113"
+          }
+        },
+        {
+          "onestop_id": "o-uk5-torghatten",
+          "name": "Torghatten",
+          "website": "https://www.torghatten-buss.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "TTS:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1771156"
+          }
+        },
+        {
+          "onestop_id": "o-ukmkr-bussring",
+          "name": "Bussring",
+          "website": "https://www.bussring.no/bussring-airport-express/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BSR:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-us-snelandia",
+          "name": "Snelandia",
+          "website": "https://www.snelandia.no",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "FIN:Authority:FIN_ID"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q41561711"
+          }
+        },
+        {
+          "onestop_id": "o-us8-arcticseahotel~apartments",
+          "name": "Arctic Sea Hotel & Apartments",
+          "website": "https://arcticseahotel.no/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ASH:Authority:1"
+            },
+            {
+              "feed_onestop_id": "f-entur~rt"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
