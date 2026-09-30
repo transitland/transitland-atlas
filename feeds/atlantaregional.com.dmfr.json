@@ -21,6 +21,11 @@
           "name": "Cobb Community Transit",
           "short_name": "CCT",
           "website": "http://www.cobbcct.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dn5b-cobbavl~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "cobbdot",
             "us_ntd_id": "40078",
@@ -28,6 +33,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dn5b-cobbavl~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cobb.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://cobb.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://cobb.rideralerts.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      },
+      "tags": {
+        "mdb_source_id": "3194,3195,3196"
+      }
     }
   ]
 }

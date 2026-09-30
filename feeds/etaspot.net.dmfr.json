@@ -243,6 +243,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-dqb0q-charlottesvilleareatransit~rt"
             }
           ],
           "tags": {
@@ -253,6 +256,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dqb0q-charlottesvilleareatransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/catpublic.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/catpublic.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/catpublic.etaspot.net/alerts.pb"
+      }
     },
     {
       "id": "f-dutchess~county~ny",

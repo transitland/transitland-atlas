@@ -304,6 +304,29 @@
       ]
     },
     {
+      "id": "f-dr7-nywaterway~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://nywaterway.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://nywaterway.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://nywaterway.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      },
+      "tags": {
+        "mdb_source_id": "3197,3198,3199"
+      }
+    },
+    {
+      "id": "f-dr7-nywaterway~rtt",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nywaterway.connexionz.net/rtt/public/resource/gtfs.zip"
+      },
+      "tags": {
+        "mdb_source_id": "3192",
+        "notes": "Ferries only, overlapping f-dr7-nywaterway. Registered because f-dr7-nywaterway~rt uses its trip_ids."
+      }
+    },
+    {
       "id": "f-gatlinburg~tn~us",
       "spec": "gtfs",
       "urls": {

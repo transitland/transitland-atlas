@@ -5,12 +5,16 @@
       "id": "f-9r88-rogue~valley~transportation~district",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rvtd.org/wp-content/uploads/2026/05/rvtd-or-us.zip",
+        "static_current": "https://gtfs.rvtd.cadavl.com/RVTD/GTFS/GTFS_RVTD.zip",
         "static_historic": [
+          "https://rvtd.org/wp-content/uploads/2026/05/rvtd-or-us.zip",
           "https://rvtd.org/wp-content/uploads/2026/03/rvtd-or-us.zip",
           "https://data.trilliumtransit.com/gtfs/rvtd-or-us/rvtd-or-us.zip",
           "https://oregon-gtfs.trilliumtransit.com/gtfs_data/rvtd-or-us/rvtd-or-us.zip"
         ]
+      },
+      "tags": {
+        "mdb_source_id": "3219"
       },
       "operators": [
         {
@@ -35,8 +39,12 @@
       "id": "f-rogue~valley~transportation~district~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "http://gtfsrt.rvtd.org:8085/ProfilGtfsRt2_0RSProducer-RVTD/TripUpdate.pb",
-        "realtime_alerts": "http://gtfsrt.rvtd.org:8085/ProfilGtfsRt2_0RSProducer-RVTD/Alert.pb"
+        "realtime_vehicle_positions": "https://gtfsrt.rvtd.cadavl.com/ProfilGtfsRt2_0RSProducer-RVTD/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsrt.rvtd.cadavl.com/ProfilGtfsRt2_0RSProducer-RVTD/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsrt.rvtd.cadavl.com/ProfilGtfsRt2_0RSProducer-RVTD/Alert.pb"
+      },
+      "tags": {
+        "mdb_source_id": "3456,3457,3458"
       }
     }
   ]
