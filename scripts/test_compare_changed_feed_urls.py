@@ -4,6 +4,7 @@ Run: uv run --with pytest pytest scripts/test_compare_changed_feed_urls.py -q
 """
 
 import importlib.util
+import json
 import os
 from datetime import date
 
@@ -103,3 +104,21 @@ def test_short_error_keeps_cause():
     assert ccfu.short_error(stderr) == "tls: failed to verify certificate: x509: certificate has expired"
     assert ccfu.short_error("Error: could not open reader 'https://x/f': file does not exist") == "file does not exist"
     assert ccfu.short_error("") == "command failed"
+
+
+def test_probe_json_round_trip():
+    p = probe(route_types=(("Bus", 3), ("Tram", 1)))
+    back = ccfu.probe_from_json(json.loads(json.dumps(ccfu.asdict(p))))
+    assert back == p
+
+
+def test_lookup_archive_refuses_malformed_sha1(monkeypatch):
+    """The SHA1 comes from untrusted probe output and goes into a request
+    that carries the API key, so anything but 40 hex digits is dropped
+    before any request is made."""
+    def boom(*a, **kw):
+        raise AssertionError("request made")
+    monkeypatch.setattr(ccfu.urllib.request, "urlopen", boom)
+    for bad in ("", "abc", "../../x", "0" * 40 + "?x=1", "G" * 40):
+        assert ccfu.lookup_archive(bad, "key") is None
+    assert ccfu.lookup_archive("0" * 40, "") is None

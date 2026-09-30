@@ -11,16 +11,22 @@ so this works whether or not the contributor moved it into static_historic.
 Both revisions are read through git rather than the working tree, so the
 workflow can run this from a trusted checkout of the base branch.
 
+Runs in two stages so the API key never shares a process, or a CI job, with
+the transitland binary fetching untrusted URLs:
+
+  probe   fetches and validates the URLs and writes JSON. Needs no secrets.
+  render  turns that JSON into Markdown. With TRANSITLAND_API_KEY set, it
+          also reports whether each file is already in the Transitland
+          archive. Standard library only.
+
 Advisory only: always exits 0 unless it is invoked incorrectly.
 
 Usage:
-    uv run scripts/compare-changed-feed-urls.py \\
-        --base <rev> --head <rev> \\
-        --summary-out reports/compare.md \\
+    uv run scripts/compare-changed-feed-urls.py probe \\
+        --base <rev> --head <rev> --out reports/probes.json \\
         feeds/foo.dmfr.json feeds/bar.dmfr.json
-
-Set TRANSITLAND_API_KEY to also report whether each URL's current file is
-already in the Transitland archive.
+    python3 scripts/compare-changed-feed-urls.py render \\
+        --probes reports/probes.json --summary-out reports/compare.md
 """
 
 import argparse
@@ -33,7 +39,7 @@ import subprocess
 import sys
 import urllib.error
 import urllib.request
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from datetime import date
 from pathlib import Path
 from typing import Optional
@@ -49,6 +55,7 @@ _spec.loader.exec_module(vcfu)
 
 TRANSITLAND_API_BASE = "https://transit.land/api/v2/rest"
 VALIDATE_TIMEOUT = 300
+SHA1_RE = re.compile(r"[0-9a-f]{40}")
 
 ROUTE_TYPE_NAMES = {
     0: "Tram", 1: "Subway/Metro", 2: "Rail", 3: "Bus", 4: "Ferry",
@@ -154,8 +161,12 @@ def dir_sha1(url: str) -> Optional[str]:
 
 
 def lookup_archive(sha1: Optional[str], api_key: str) -> Optional[dict]:
-    """The archived feed version with this zip SHA1, {} if none, None if unknown."""
-    if not sha1 or not api_key:
+    """The archived feed version with this zip SHA1, {} if none, None if unknown.
+
+    The SHA1 comes from the probe output, which is produced from untrusted
+    feeds, so it is checked before it goes into a request that carries the key.
+    """
+    if not sha1 or not api_key or not SHA1_RE.fullmatch(sha1):
         return None
     req = urllib.request.Request(
         f"{TRANSITLAND_API_BASE}/feed_versions/{sha1}?apikey={api_key}",
@@ -232,13 +243,19 @@ def summarize(url: str, report: dict, dsha1: Optional[str]) -> Probe:
     )
 
 
-def probe(url: str, api_key: str) -> Probe:
+def probe(url: str) -> Probe:
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as ex:
         rep_f = ex.submit(validate_feed, url)
         dir_f = ex.submit(dir_sha1, url)
-        p = summarize(url, rep_f.result(), dir_f.result())
-    p.archive = lookup_archive(p.sha1, api_key)
-    return p
+        return summarize(url, rep_f.result(), dir_f.result())
+
+
+def probe_from_json(d: dict) -> Probe:
+    """Rebuild a Probe from `probe` output; JSON turns its tuples into lists."""
+    d = dict(d)
+    d["agencies"] = tuple(d.get("agencies") or ())
+    d["route_types"] = tuple(tuple(rt) for rt in d.get("route_types") or ())
+    return Probe(**d)
 
 
 # --- Rendering -------------------------------------------------------------
@@ -401,31 +418,43 @@ def render_skipped(pair: Pair) -> str:
 
 # --- Main ------------------------------------------------------------------
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--base", required=True, help="Git revision of the base branch.")
-    parser.add_argument("--head", required=True, help="Git revision of the PR head.")
-    parser.add_argument("--summary-out", type=Path, default=None,
-                        help="Write Markdown here; defaults to stdout. Empty if nothing was repointed.")
-    parser.add_argument("files", nargs="*", help="Changed DMFR file paths.")
-    args = parser.parse_args()
-
-    api_key = os.environ.get("TRANSITLAND_API_KEY", "")
-    today = date.today()
-
+def cmd_probe(args: argparse.Namespace) -> int:
     pairs: list[Pair] = []
     for fp in args.files:
         pairs += repointed_feeds(dmfr_at(args.base, fp), dmfr_at(args.head, fp))
 
     urls = sorted({u for p in pairs if not p.auth_type for u in (p.old_url, p.new_url)})
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
-        probes = dict(zip(urls, ex.map(lambda u: probe(u, api_key), urls)))
+        probes = dict(zip(urls, ex.map(probe, urls)))
 
-    sections = [
-        render_skipped(p) if p.auth_type
-        else render_pair(p, probes[p.old_url], probes[p.new_url], bool(api_key), today)
-        for p in pairs
-    ]
+    out = {"pairs": [asdict(p) for p in pairs],
+           "probes": {u: asdict(p) for u, p in probes.items()}}
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(out, indent=1))
+    return 0
+
+
+def cmd_render(args: argparse.Namespace) -> int:
+    api_key = os.environ.get("TRANSITLAND_API_KEY", "")
+    today = date.today()
+
+    data = json.loads(args.probes.read_text())
+    pairs = [Pair(**p) for p in data.get("pairs") or []]
+    probes = {u: probe_from_json(p) for u, p in (data.get("probes") or {}).items()}
+
+    sha1s = sorted({p.sha1 for p in probes.values() if p.sha1})
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
+        archive = dict(zip(sha1s, ex.map(lambda s: lookup_archive(s, api_key), sha1s)))
+    for p in probes.values():
+        p.archive = archive.get(p.sha1)
+
+    sections = []
+    for p in pairs:
+        if p.auth_type:
+            sections.append(render_skipped(p))
+        elif p.old_url in probes and p.new_url in probes:
+            sections.append(render_pair(p, probes[p.old_url], probes[p.new_url],
+                                        bool(api_key), today))
     summary = "\n".join(sections)
     if args.summary_out:
         args.summary_out.parent.mkdir(parents=True, exist_ok=True)
@@ -433,6 +462,27 @@ def main() -> int:
     else:
         sys.stdout.write(summary)
     return 0
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    p = sub.add_parser("probe", help="Fetch and validate old and new URLs; write JSON.")
+    p.add_argument("--base", required=True, help="Git revision of the base branch.")
+    p.add_argument("--head", required=True, help="Git revision of the PR head.")
+    p.add_argument("--out", type=Path, required=True, help="Where to write the probe JSON.")
+    p.add_argument("files", nargs="*", help="Changed DMFR file paths.")
+    p.set_defaults(func=cmd_probe)
+
+    r = sub.add_parser("render", help="Render probe JSON as Markdown.")
+    r.add_argument("--probes", type=Path, required=True, help="Probe JSON from the probe step.")
+    r.add_argument("--summary-out", type=Path, default=None,
+                   help="Write Markdown here; defaults to stdout. Empty if nothing was repointed.")
+    r.set_defaults(func=cmd_render)
+
+    args = parser.parse_args()
+    return args.func(args)
 
 
 if __name__ == "__main__":

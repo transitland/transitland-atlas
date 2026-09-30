@@ -4,25 +4,31 @@ name: Compare repointed static feed URLs
 # and new URL, compare them side by side, and post the result as a PR comment.
 # Advisory only: this never fails the check.
 #
-# Runs the base branch's copy of scripts/ and reads the PR's DMFR files through
-# git, so nothing from the PR is executed.
+# Nothing from the PR is executed: both jobs run the base branch's copy of
+# scripts/ and read the PR's DMFR files through git.
+#
+# The work is split so TRANSITLAND_API_KEY never shares a job with the
+# transitland binary fetching arbitrary URLs. `probe` does all the fetching
+# with no secrets and a read-only token. `comment` gets the key from the
+# transitland-api environment, which only main can use, and runs a
+# standard-library script over probe's JSON output.
 on:
   pull_request_target:
     paths:
       - 'feeds/*.dmfr.json'
     types: [opened, synchronize, reopened]
 
-permissions:
-  pull-requests: write
-  contents: read
+permissions: {}
 
 concurrency:
   group: compare-feed-urls-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
-  compare:
+  probe:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
@@ -47,22 +53,46 @@ jobs:
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
 
-      - name: Compare old and new static_current URLs
+      - name: Fetch and validate old and new static_current URLs
         env:
           BASE: ${{ steps.revs.outputs.base }}
           HEAD: ${{ steps.revs.outputs.head }}
-          # Optional: adds an "already in the Transitland archive?" row.
+        run: |
+          mapfile -t files < <(git diff --name-only "$BASE" "$HEAD" -- 'feeds/*.dmfr.json')
+          uv run --locked scripts/compare-changed-feed-urls.py probe \
+            --base "$BASE" --head "$HEAD" --out reports/probes.json \
+            "${files[@]}"
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: feed-url-probes
+          path: reports/probes.json
+
+  comment:
+    needs: probe
+    runs-on: ubuntu-latest
+    environment: transitland-api
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+          sparse-checkout: scripts
+
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: feed-url-probes
+          path: reports
+
+      - name: Render comparison
+        env:
           TRANSITLAND_API_KEY: ${{ secrets.TRANSITLAND_API_KEY }}
         run: |
-          mkdir -p reports
-          mapfile -t files < <(git diff --name-only "$BASE" "$HEAD" -- 'feeds/*.dmfr.json')
-          : > reports/compare.md
-          if [ ${#files[@]} -gt 0 ]; then
-            uv run --locked scripts/compare-changed-feed-urls.py \
-              --base "$BASE" --head "$HEAD" \
-              --summary-out reports/compare.md \
-              "${files[@]}"
-          fi
+          python3 scripts/compare-changed-feed-urls.py render \
+            --probes reports/probes.json --summary-out reports/compare.md
           cat reports/compare.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Comment on PR
