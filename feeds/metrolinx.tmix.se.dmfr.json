@@ -16,22 +16,6 @@
         "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-belleville/alerts.pb"
       }
     },
-    [
-    {
-      "id": "f-owensound~on~ca",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://metrolinx.tmix.se/gtfs/gtfs-owensound.zip"
-      }
-    },
-    {
-      "id": "f-owensound~on~ca~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-owensound/tripupdates.pb",
-        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-owensound/alerts.pb"
-      }
-    },
     {
       "id": "f-bowvalley~ab~ca~rt",
       "spec": "gtfs-rt",
@@ -137,6 +121,21 @@
       "urls": {
         "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-orillia/tripupdates.pb",
         "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-orillia/alerts.pb"
+      }
+    },
+    {
+      "id": "f-owensound~on~ca",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://metrolinx.tmix.se/gtfs/gtfs-owensound.zip"
+      }
+    },
+    {
+      "id": "f-owensound~on~ca~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://metrolinx.tmix.se/gtfs-realtime-owensound/tripupdates.pb",
+        "realtime_alerts": "https://metrolinx.tmix.se/gtfs-realtime-owensound/alerts.pb"
       }
     },
     {
@@ -263,23 +262,6 @@
         }
       ]
     },
-    [
-    {
-      "onestop_id": "o-owensound~on~ca",
-      "name": "Owen Sound Transit",
-      "website": "https://www.owensound.ca/living-here/public-transit/",
-      "associated_feeds": [
-        {
-          "feed_onestop_id": "f-owen~sound~on~ca"
-        },
-        {
-          "feed_onestop_id": "f-owen~sound~on~ca~rt"
-        },
-        {
-          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
-        }
-      ]
-    },
     {
       "onestop_id": "o-c3j-roamtransit",
       "name": "Bow Valley Regional Transit Services Commission",
@@ -373,6 +355,25 @@
           "feed_onestop_id": "f-orillia~on~ca~rt"
         }
       ]
+    },
+    {
+      "onestop_id": "o-owensound~on~ca",
+      "name": "Owen Sound Transit",
+      "website": "https://www.owensound.ca/living-here/public-transit/",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-metrolinx~gtfs~rt~vehicles"
+        },
+        {
+          "feed_onestop_id": "f-owensound~on~ca"
+        },
+        {
+          "feed_onestop_id": "f-owensound~on~ca~rt"
+        }
+      ],
+      "tags": {
+        "wikidata_id": "Q7114643"
+      }
     },
     {
       "onestop_id": "o-sarnia~on~ca",
