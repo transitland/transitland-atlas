@@ -160,3 +160,8 @@ def test_calendar_notes_apply_whatever_the_verdict():
 def test_validate_feed_reports_unrunnable_urls_instead_of_raising():
     assert "could not run" in ccfu.validate_feed("https://x/\0")["_error"]
     assert ccfu.dir_sha1("https://x/\0") is None
+
+
+def test_render_skipped_shows_auth_type_literally():
+    out = ccfu.render_skipped(ccfu.Pair("f-a~b~c", "https://o", "https://n", "query_param"))
+    assert "`query_param`" in out and "&#" not in out

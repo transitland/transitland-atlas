@@ -388,7 +388,7 @@ def render_pair(pair: Pair, old: Probe, new: Probe, today: date,
 
 def render_skipped(pair: Pair) -> str:
     return (f"### {code(pair.feed_id)}\n\n⚪ Skipped: this feed requires "
-            f"authorization (`{md(pair.auth_type or '')}`), so the URLs can't be "
+            f"authorization ({code(pair.auth_type or '')}), so the URLs can't be "
             f"fetched here.\n")
 
 
