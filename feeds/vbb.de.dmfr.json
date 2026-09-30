@@ -5,11 +5,14 @@
       "id": "f-u3-günterangergüterverkehrsgmbh~coomnibusvermietungkg~fritzbeh",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.vbb.de/fileadmin/user_upload/VBB/Dokumente/API-Datensaetze/gtfs-mastscharf/GTFS.zip"
+        "static_current": "https://unternehmen.vbb.de/gtfs",
+        "static_historic": [
+          "https://www.vbb.de/fileadmin/user_upload/VBB/Dokumente/API-Datensaetze/gtfs-mastscharf/GTFS.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
-        "url": "https://www.vbb.de/vbb-services/api-open-data/datensaetze/",
+        "url": "https://unternehmen.vbb.de/digitale-services/datensaetze/",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
       },
@@ -20,7 +23,11 @@
           "website": "http://www.bahn.de/brandenburg",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "N01---,N04---,N51---,NBB---"
+              "gtfs_agency_id": "108"
+            },
+            {
+              "gtfs_agency_id": "108",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -30,18 +37,11 @@
           "website": "http://www.odeg.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ODBUS_,ODEN__,ODRE2_,ODRE4_,ODSNN_"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u31-bayerischeoberlandbahngmbh",
-          "name": "Bayerische Oberlandbahn",
-          "short_name": "BOB",
-          "website": "http://www.bayerischeoberlandbahn.de",
-          "associated_feeds": [
+              "gtfs_agency_id": "731"
+            },
             {
-              "gtfs_agency_id": "BOB---"
+              "gtfs_agency_id": "731",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -51,7 +51,11 @@
           "website": "http://www.vgosl.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "VGOSL_"
+              "gtfs_agency_id": "346"
+            },
+            {
+              "gtfs_agency_id": "346",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -61,7 +65,15 @@
           "website": "http://www.verkehrsmanagement-elbeelster.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ENVB__"
+              "gtfs_agency_id": "341"
+            },
+            {
+              "gtfs_agency_id": "341",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
+            {
+              "gtfs_agency_id": "341",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -71,7 +83,11 @@
           "website": "http://www.hanseatische-eisenbahn.de/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "HANS--"
+              "gtfs_agency_id": "751"
+            },
+            {
+              "gtfs_agency_id": "751",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -82,27 +98,15 @@
           "website": "http://www.orp-busse.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ORPN--"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u32-prignitzbus",
-          "name": "prignitzbus",
-          "website": "http://www.prignitz-bus.de",
-          "associated_feeds": [
+              "gtfs_agency_id": "726"
+            },
             {
-              "gtfs_agency_id": "PRG---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u32-verkehrsgesellschaftbelzigmbh",
-          "name": "Verkehrsgesellschaft Belzig ",
-          "website": "http://www.vgbelzig.de",
-          "associated_feeds": [
+              "gtfs_agency_id": "726",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
             {
-              "gtfs_agency_id": "VGB---"
+              "gtfs_agency_id": "726",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -112,7 +116,11 @@
           "website": "http://www.busreisen-glaser.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "GLA---"
+              "gtfs_agency_id": "480"
+            },
+            {
+              "gtfs_agency_id": "480",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -122,7 +130,11 @@
           "website": "http://www.lange-tours.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "LANGE-"
+              "gtfs_agency_id": "781"
+            },
+            {
+              "gtfs_agency_id": "781",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -133,7 +145,11 @@
           "website": "http://www.vbbr.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BRB---,BRT---"
+              "gtfs_agency_id": "47"
+            },
+            {
+              "gtfs_agency_id": "47",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -144,7 +160,15 @@
           "website": "http://www.bbg-eberswalde.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BTS___"
+              "gtfs_agency_id": "241"
+            },
+            {
+              "gtfs_agency_id": "241",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
+            {
+              "gtfs_agency_id": "241",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -154,7 +178,11 @@
           "website": "http://www.havelbus.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "HVG---"
+              "gtfs_agency_id": "92"
+            },
+            {
+              "gtfs_agency_id": "92",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -165,7 +193,11 @@
           "website": "http://www.neb.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "NEB---,NEV---"
+              "gtfs_agency_id": "596"
+            },
+            {
+              "gtfs_agency_id": "596",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -176,7 +208,15 @@
           "website": "http://www.ovg-online.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "OVG---"
+              "gtfs_agency_id": "32"
+            },
+            {
+              "gtfs_agency_id": "32",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
+            {
+              "gtfs_agency_id": "32",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -187,7 +227,15 @@
           "website": "http://www.rvs-lds.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "RVS---"
+              "gtfs_agency_id": "251"
+            },
+            {
+              "gtfs_agency_id": "251",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
+            {
+              "gtfs_agency_id": "251",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -197,7 +245,11 @@
           "website": "http://www.s-bahn-berlin.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "DBS---,SEV---"
+              "gtfs_agency_id": "1"
+            },
+            {
+              "gtfs_agency_id": "1",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -208,7 +260,15 @@
           "website": "http://www.uvg-online.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "UVGG__"
+              "gtfs_agency_id": "93"
+            },
+            {
+              "gtfs_agency_id": "93",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
+            {
+              "gtfs_agency_id": "93",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -219,17 +279,15 @@
           "website": "http://www.vtf-online.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "VTF---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33-wetzel",
-          "name": "Wetzel",
-          "website": "http://www.wetzel-cammer.de",
-          "associated_feeds": [
+              "gtfs_agency_id": "246"
+            },
             {
-              "gtfs_agency_id": "WEZ---"
+              "gtfs_agency_id": "246",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
+            {
+              "gtfs_agency_id": "246",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -239,7 +297,11 @@
           "website": "http://www.a-reich.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "REI---"
+              "gtfs_agency_id": "606"
+            },
+            {
+              "gtfs_agency_id": "606",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -249,7 +311,11 @@
           "website": "http://www.vbb.de/de/article/verkehrsunternehmen-im-vbb/sabinchen-touristik-gmbh/6613.html",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "STG---"
+              "gtfs_agency_id": "706"
+            },
+            {
+              "gtfs_agency_id": "706",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -259,7 +325,11 @@
           "website": "http://www.behrendt-touristik.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BEH---"
+              "gtfs_agency_id": "476"
+            },
+            {
+              "gtfs_agency_id": "476",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -270,6 +340,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "846"
+            },
+            {
+              "gtfs_agency_id": "846",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -280,17 +354,11 @@
           "website": "http://www.anger-busvermietung.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "ANG---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u336-harureisenohghansrudek",
-          "name": "Haru-Reisen",
-          "website": "http://www.harureisen.de",
-          "associated_feeds": [
+              "gtfs_agency_id": "138"
+            },
             {
-              "gtfs_agency_id": "Haru--"
+              "gtfs_agency_id": "138",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -300,17 +368,11 @@
           "website": "http://www.vip-potsdam.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "VIB---,VIF---,VIT---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33b0-tropicalislands",
-          "name": "Tropical Islands",
-          "website": "http://www.tropical-islands.de",
-          "associated_feeds": [
+              "gtfs_agency_id": "150"
+            },
             {
-              "gtfs_agency_id": "TI----"
+              "gtfs_agency_id": "150",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -321,7 +383,11 @@
           "website": "http://www.bvg.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BVB---,BVF---,BVU---,BVT---"
+              "gtfs_agency_id": "796"
+            },
+            {
+              "gtfs_agency_id": "796",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -331,17 +397,11 @@
           "website": "http://www.srs-tram.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SRS---"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-u33f2-woltersdorferstraßenbahngmbh",
-          "name": "Woltersdorfer Straßenbahn",
-          "website": "http://www.woltersdorfer-strassenbahn.com",
-          "associated_feeds": [
+              "gtfs_agency_id": "486"
+            },
             {
-              "gtfs_agency_id": "WS----"
+              "gtfs_agency_id": "486",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -351,17 +411,25 @@
           "website": "http://www.strausberger-eisenbahn.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "STE---,STF---"
+              "gtfs_agency_id": "487"
+            },
+            {
+              "gtfs_agency_id": "487",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
         {
           "onestop_id": "o-u34-dbregiobusostgmbh",
-          "name": "Spree-Neiße-Bus",
-          "website": "http://www.bahn.de/spreeneissebus/view/index.shtml",
+          "name": "DB Regio Bus Ost",
+          "website": "https://www.dbregiobus-ost.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "SNB___"
+              "gtfs_agency_id": "772"
+            },
+            {
+              "gtfs_agency_id": "772",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -371,18 +439,30 @@
           "website": "http://www.cottbusverkehr.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "CNB---,CNT---"
+              "gtfs_agency_id": "516"
+            },
+            {
+              "gtfs_agency_id": "516",
+              "feed_onestop_id": "f-u3-vbb~flex"
+            },
+            {
+              "gtfs_agency_id": "516",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
         {
           "onestop_id": "o-u36-busverkehrmärkisch~oderlandgmbh",
-          "name": "Busverkehr Märkisch-Oderland",
-          "short_name": "BMO",
-          "website": "http://www.busmol.de",
+          "name": "mobus Märkisch-Oderland Bus",
+          "short_name": "mobus",
+          "website": "https://www.mo-bus.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BMO---"
+              "gtfs_agency_id": "841"
+            },
+            {
+              "gtfs_agency_id": "841",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -393,7 +473,11 @@
           "website": "http://www.bos-fw.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "BON---"
+              "gtfs_agency_id": "566"
+            },
+            {
+              "gtfs_agency_id": "566",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         },
@@ -404,7 +488,11 @@
           "website": "http://www.svf-ffo.de",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "FFB---,FFT---"
+              "gtfs_agency_id": "84"
+            },
+            {
+              "gtfs_agency_id": "84",
+              "feed_onestop_id": "f-u3-vbb~rt"
             }
           ]
         }
@@ -414,10 +502,26 @@
       "id": "f-u3-vbb~flex",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://unternehmen.vbb.de/fileadmin/user_upload/VBB/Dokumente/API-Datensaetze/gtfs-flex.zip"
+        "static_current": "https://unternehmen.vbb.de/gtfs-flex",
+        "static_historic": [
+          "https://unternehmen.vbb.de/fileadmin/user_upload/VBB/Dokumente/API-Datensaetze/gtfs-flex.zip"
+        ]
       },
       "tags": {
         "mdb_source_id": "3234"
+      }
+    },
+    {
+      "id": "f-u3-vbb~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://production.gtfsrt.vbb.de/data"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://production.gtfsrt.vbb.de/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
       }
     }
   ]
