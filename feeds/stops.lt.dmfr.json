@@ -15,6 +15,18 @@
       }
     },
     {
+      "id": "f-u3z-klaipėdoskeleivinistransportas~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.stops.lt/klaipeda/gtfs_realtime.pb",
+        "realtime_trip_updates": "https://www.stops.lt/klaipeda/trip_updates.pb",
+        "realtime_alerts": "https://www.stops.lt/klaipeda/service_alerts.pb"
+      },
+      "tags": {
+        "mdb_source_id": "3440,3441"
+      }
+    },
+    {
       "id": "f-u3zf-taurage",
       "spec": "gtfs",
       "urls": {
@@ -144,6 +156,9 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-u3z-klaipėdoskeleivinistransportas"
+        },
+        {
+          "feed_onestop_id": "f-u3z-klaipėdoskeleivinistransportas~rt"
         },
         {
           "feed_onestop_id": "f-visimarsrutai~lt~all"

@@ -29,6 +29,40 @@
       }
     },
     {
+      "id": "f-hubup~rivercat",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-rt.infra-hubup.fr/rivercat/current/gtfs"
+      },
+      "tags": {
+        "mdb_source_id": "3470"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u09vb-rivercat",
+          "name": "Marne Bois Bateau Bus",
+          "short_name": "Rivercat",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-hubup~rivercat~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-hubup~rivercat~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/rivercat/vehicle_positions",
+        "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/rivercat/trip_updates",
+        "realtime_alerts": "https://gtfs-rt.infra-hubup.fr/rivercat/service_alert"
+      },
+      "tags": {
+        "mdb_source_id": "3467,3468,3469"
+      }
+    },
+    {
       "id": "f-hubup~saint~hyacinthe",
       "supersedes_ids": [
         "f-hubup~saint-hyacinthe"

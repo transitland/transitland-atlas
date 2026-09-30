@@ -16,9 +16,72 @@
           "onestop_id": "o-u2z-pks~rzeszow",
           "name": "PKS w Rzeszowie S.A.",
           "short_name": "PKS Rzeszów",
-          "website": "https://pks.rzeszow.pl/"
+          "website": "https://pks.rzeszow.pl/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u2z-pks~rzeszow~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-u2z-pks~rzeszow~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.mpkrzeszow.pl/gtfs-pks/rt/gtfsrt.pb",
+        "realtime_trip_updates": "https://www.mpkrzeszow.pl/gtfs-pks/rt/gtfsrt.pb",
+        "realtime_alerts": "https://www.mpkrzeszow.pl/gtfs-pks/rt/gtfsrt.pb"
+      },
+      "tags": {
+        "mdb_source_id": "3428"
+      }
+    },
+    {
+      "id": "f-u2zs-rzeszow",
+      "supersedes_ids": [
+        "f-u2zs-mpk~rzeszówspzoo"
+      ],
+      "name": "Rzeszów GTFS",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.mpkrzeszow.pl/gtfs/latest.zip",
+        "static_historic": [
+          "https://mkuran.pl/gtfs/rzeszow.zip"
+        ]
+      },
+      "license": {
+        "url": "https://bip.erzeszow.pl/pl/319-informacja-publiczna-ponowne-wykorzystywanie-informacji-sektora-publicznego/4570-zasady-dostepu-do-informacji-publicznej.html",
+        "use_without_attribution": "no"
+      },
+      "tags": {
+        "mdb_source_id": "3156"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2zs-mpk~rzeszówspzoo",
+          "name": "Zarząd Transportu Miejskiego w Rzeszowie",
+          "short_name": "ZTM Rzeszów",
+          "website": "https://ztm.rzeszow.pl/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u2zs-rzeszow~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u2zs-rzeszow~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://www.mpkrzeszow.pl/gtfs/rt/gtfsrt.pb",
+        "realtime_trip_updates": "https://www.mpkrzeszow.pl/gtfs/rt/gtfsrt.pb",
+        "realtime_alerts": "https://www.mpkrzeszow.pl/gtfs/rt/gtfsrt.pb"
+      },
+      "tags": {
+        "mdb_source_id": "3429"
+      }
     }
   ]
 }
