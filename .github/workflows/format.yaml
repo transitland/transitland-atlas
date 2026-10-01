@@ -1,5 +1,5 @@
 name: Comment on PRs that need DMFR formatting changes
-on: 
+on:
   pull_request_target:
     paths:
       - 'feeds/**'
@@ -8,23 +8,34 @@ permissions:
   pull-requests: write
   contents: read
 
+# A new push to the PR supersedes the check still running for the last one.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   format:
     name: Check DMFR Formatting
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 15
+
     steps:
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
+        # PR code under pull_request_target; keep the token out of .git/config.
+        persist-credentials: false
 
     # Only needed for fork PRs - security check
     - name: Security check for fork PRs
       if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+      env:
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
       run: |
-        # Check if PR modifies .github or scripts directories
-        if git diff --name-only ${{ github.event.pull_request.head.sha }} ${{ github.event.pull_request.base.sha }} | grep -q -E "^\.github/|^scripts/"; then
+        # Three-dot diff: only what the PR itself changes.
+        if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -q -E "^\.github/|^scripts/"; then
           echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
           exit 1
         fi
@@ -32,14 +43,13 @@ jobs:
     - name: Install transitland-lib
       id: install
       run: scripts/install-transitland-lib.sh
-      continue-on-error: false
-    
+
     - name: Format DMFR files
       id: format
       run: |
         set -euo pipefail  # Fail on any error
         find ./feeds -type f -name "*.dmfr.json" -exec transitland dmfr format --save {} \;
-    
+
     - name: Check for formatting changes
       id: git-diff
       run: |
@@ -57,13 +67,17 @@ jobs:
           echo "$git_status_output"
           echo "Git diff:"
           git diff
-          echo "git_diff<<EOF" >> "$GITHUB_OUTPUT"
-          git diff >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          # Random delimiter, so no line of the diff can end the block early.
+          delim="DIFF_$(openssl rand -hex 8)"
+          {
+            echo "git_diff<<$delim"
+            git diff
+            echo "$delim"
+          } >> "$GITHUB_OUTPUT"
         fi
-    
+
     - name: Comment on PR
-      uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
       env:
         DIFF: ${{ steps.git-diff.outputs.git_diff }}
       with:

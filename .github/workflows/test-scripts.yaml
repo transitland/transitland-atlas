@@ -14,12 +14,22 @@ on:
       - '.github/workflows/test-scripts.yaml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+# A new push to a branch supersedes the test run still going for the last one;
+# main is left to finish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 jobs:
   pytest:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       # atlas_registry.load() builds its index by shelling out to `transitland
       # sync`, so the registry tests need the binary even though everything
       # else in the suite is pure.
