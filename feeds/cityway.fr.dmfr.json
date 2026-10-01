@@ -16,11 +16,14 @@
       "id": "f-orizo~grand~avignon",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://exs.tcra2.cityway.fr/gtfs.aspx?key=UID&operatorCode=TCRA"
+        "static_current": "https://api.maas-fr.cityway.fr/dataflow/offre-tc/download?provider=ORIZO&dataFormat=GTFS&dataProfil=OPENDATA",
+        "static_historic": [
+          "https://exs.tcra2.cityway.fr/gtfs.aspx?key=UID&operatorCode=TCRA"
+        ]
       },
       "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/gtfs-et-gtfs-rt-reseau-orizo-grand-avignon"
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-orizo-grand-avignon"
       },
       "operators": [
         {
@@ -43,7 +46,8 @@
       "id": "f-orizo~grand~avignon~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://export.tcra2.cityway.fr/GtfsRt/GtfsRT.TCRA.pb"
+        "realtime_vehicle_positions": "https://api.maas-fr.cityway.fr/dataflow/vehicule-tc-tr/download?provider=ORIZO&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.maas-fr.cityway.fr/dataflow/horaire-tc-tr/download?provider=ORIZO&dataFormat=gtfs-rt"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",

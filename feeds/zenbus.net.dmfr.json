@@ -152,12 +152,19 @@
       "id": "f-zenbus~alesy",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=alesy"
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b9a0f32e-4386-454c-8759-b82653fa861e",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=alesy"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/",
         "share_alike_optional": "no"
+      },
+      "tags": {
+        "udata_dataset": "horaires-theoriques-des-lignes-urbaines-et-interurbaines-sur-le-reseau-alesy-gtfs",
+        "udata_host": "www.data.gouv.fr"
       },
       "operators": [
         {
@@ -176,8 +183,8 @@
       "id": "f-zenbus~alesy~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=alesy",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=alesy"
+        "realtime_vehicle_positions": "https://alesy.plateforme-2cloud.com/api/gtfsrt/2.0/vehiclepositions/ALESY-6574-4401-7572/bin",
+        "realtime_trip_updates": "https://alesy.plateforme-2cloud.com/api/gtfsrt/2.0/tripupdates/ALESY-6574-4401-7572/bin"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -226,7 +233,10 @@
       "id": "f-zenbus~arche",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=lr11-arche"
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=TAIN_TOURNON&dataFormat=GTFS&dataProfil=OPENDATA",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=lr11-arche"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -762,7 +772,10 @@
       "id": "f-zenbus~mendois",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tum"
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=MAX",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=tum"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -786,8 +799,8 @@
       "id": "f-zenbus~mendois~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tum",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tum"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=MAX",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=MAX"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -849,7 +862,10 @@
       "id": "f-zenbus~moselle~et~madon",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=moselle-et-madon"
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=TMM",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=moselle-et-madon"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -1335,12 +1351,19 @@
       "id": "f-zenbus~tempobus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=16i2434229"
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/c1415ff3-7457-4b51-aead-aacbf03a474e",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=16i2434229"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/",
         "share_alike_optional": "no"
+      },
+      "tags": {
+        "udata_dataset": "agen-gtfs-urbain",
+        "udata_host": "www.data.gouv.fr"
       },
       "operators": [
         {
@@ -1359,8 +1382,8 @@
       "id": "f-zenbus~tempobus~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=16i2434229",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=16i2434229"
+        "realtime_vehicle_positions": "https://api.pysae.com/api/v4/groups/agen/gtfs-rt",
+        "realtime_trip_updates": "https://api.pysae.com/api/v4/groups/agen/gtfs-rt"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
