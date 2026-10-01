@@ -81,11 +81,20 @@
       "operators": [
         {
           "onestop_id": "o-corolis~beauvais~fr",
-          "name": "Corolis urbain",
+          "name": "Corolis",
           "website": "https://www.corolis.fr",
           "associated_feeds": [
             {
               "feed_onestop_id": "f-corolis~beauvais~fr~rt"
+            },
+            {
+              "feed_onestop_id": "f-corolis~interurbain~fr"
+            },
+            {
+              "feed_onestop_id": "f-corolis~interurbain~fr~rt"
+            },
+            {
+              "feed_onestop_id": "f-corolis~tad~fr"
             }
           ],
           "tags": {
@@ -115,19 +124,7 @@
       "license": {
         "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-corolis-interurbain-communaute-dagglomeration-du-beauvaisis"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-corolis~interurbain~fr",
-          "name": "Corolis interurbain",
-          "website": "https://www.oise-mobilite.fr/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-corolis~interurbain~fr~rt"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "f-corolis~interurbain~fr~rt",
