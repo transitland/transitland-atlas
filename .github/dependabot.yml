@@ -4,3 +4,24 @@ updates:
    directory: "/"
    schedule:
      interval: weekly
+ # Keeps the pinned action SHAs (and their version comments) current.
+ - package-ecosystem: "github-actions"
+   directory: "/"
+   schedule:
+     interval: weekly
+   # Same reasoning as exclude-newer in pyproject.toml: let a release age a
+   # week before adopting it.
+   cooldown:
+     default-days: 7
+   groups:
+     actions:
+       patterns: ["*"]
+ - package-ecosystem: "uv"
+   directory: "/"
+   schedule:
+     interval: weekly
+   cooldown:
+     default-days: 7
+   groups:
+     python:
+       patterns: ["*"]

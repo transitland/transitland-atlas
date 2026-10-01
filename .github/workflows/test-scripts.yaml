@@ -2,27 +2,45 @@ name: Test scripts
 
 # Only when scripts/ changes: the tests cover the helpers in that directory and
 # nothing else, so a feed-only PR has no reason to run them.
-#
-# Only on push, which means only on branches in this repository. Fork pull
-# requests deliberately do not run here: this executes code from scripts/, and
-# the Validate workflow rejects fork PRs that touch that directory for the same
-# reason. A fork's own pushes run in the fork.
 on:
-  push:
-    paths:
+  pull_request:
+    paths: &paths
       - 'scripts/**'
+      - 'external-data-for-reference/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
       - '.github/workflows/test-scripts.yaml'
+  push:
+    branches: [main]
+    paths: *paths
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A new push to a PR supersedes the test run still going for the last one;
+# main is left to finish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   pytest:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       # atlas_registry.load() builds its index by shelling out to `transitland
       # sync`, so the registry tests need the binary even though everything
       # else in the suite is pure.
+      - name: Cache transitland binary
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/transitland
+          key: transitland-${{ runner.os }}-${{ hashFiles('scripts/install-transitland-lib.sh') }}
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
       # Run from the repository root so uv resolves pyproject.toml, where the

@@ -5,25 +5,40 @@ on:
   schedule:
     - cron: '0 9 * * *'
 
+# GITHUB_TOKEN only needs to read; pushes and PRs go through the app token.
+permissions:
+  contents: read
+
+# Two runs would race to update the same auto-PR branch; let the first finish.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   scheduled:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
-    - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
+    - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
       id: app-token
       with:
         app-id: ${{ secrets.GH_BOT_APP_ID }}
         private-key: ${{ secrets.GH_BOT_APP_PRIVATE_KEY }}
-    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        # auto-pr.sh only pushes a branch and opens or updates its PR.
+        permission-contents: write
+        permission-pull-requests: write
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
         token: ${{ steps.app-token.outputs.token }}
-    - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
-      with:
-        python-version: '3.10'
     - name: Install uv
-      uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+      uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       with:
         cache-dependency-glob: uv.lock
+    - name: Cache transitland binary
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ~/.cache/transitland
+        key: transitland-${{ runner.os }}-${{ hashFiles('scripts/install-transitland-lib.sh') }}
     - name: Install transitland-lib
       run: scripts/install-transitland-lib.sh
     - name: Fetch latest Spanish NAP data
@@ -48,4 +63,3 @@ jobs:
           --pr-body "Automatically updated Spanish NAP feeds from nap.transportes.gob.es" \
           --commit-message "Updated Spanish NAP feeds from nap.transportes.gob.es at $(date -u)" \
           --trigger-workflow ""
-
