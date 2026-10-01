@@ -51,6 +51,11 @@ jobs:
           echo "base=$base" >> "$GITHUB_OUTPUT"
 
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - name: Cache transitland binary
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/transitland
+          key: transitland-${{ runner.os }}-${{ hashFiles('scripts/install-transitland-lib.sh') }}
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
 
