@@ -43,17 +43,31 @@
     },
     {
       "id": "f-keolis~orleans~fr",
+      "supersedes_ids": [
+        "f-taoorlans~seau~tao~fr"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://chouette.enroute.mobi/api/v1/datas/keolis_orleans.gtfs.zip"
       },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-netex-et-gtfs-rt-reseau-tao-orleans-metropole"
+      },
       "operators": [
         {
-          "onestop_id": "o-keolis~orleans~gr",
+          "onestop_id": "o-keolis~orleans~fr",
+          "supersedes_ids": [
+            "o-keolis~orleans~gr"
+          ],
           "name": "Transports de l'agglomération orléanaise",
           "short_name": "TAO Orléans",
           "website": "https://www.tao-mobilites.fr",
           "associated_feeds": [
+            {
+              "gtfs_agency_id": "ORLEANS:Operator:TAO (Orléans)",
+              "feed_onestop_id": "f-filbleutours~agr~gat~fr"
+            },
             {
               "feed_onestop_id": "f-keolis~orleans~fr~rt"
             }
@@ -66,6 +80,10 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_trip_updates": "https://ara-api.enroute.mobi/tao/gtfs/trip-updates"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-netex-et-gtfs-rt-reseau-tao-orleans-metropole"
       }
     },
     {
