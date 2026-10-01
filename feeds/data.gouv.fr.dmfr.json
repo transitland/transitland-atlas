@@ -301,7 +301,18 @@
         "udata_dataset": "aravis-bus-hiver-2025-2026",
         "udata_host": "www.data.gouv.fr",
         "udata_resource_title": "HIVER"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-aravis~bus~fr",
+          "name": "Aravis Bus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-aravis~bus~ete~fr"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-artis~arras~fr",
@@ -794,6 +805,11 @@
         {
           "onestop_id": "o-citalis~reunion~fr",
           "name": "Citalis",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-papang~reunion~fr"
+            }
+          ],
           "tags": {
             "wikidata_id": "Q2974407"
           }
@@ -1566,7 +1582,21 @@
         "udata_dataset": "offre-de-transports-du-grand-albigeois-gtfs",
         "udata_host": "www.data.gouv.fr",
         "udata_resource_title": "reseau-urbain"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-libea~albi~fr",
+          "name": "libéA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-libea~navettes~fr"
+            },
+            {
+              "feed_onestop_id": "f-libea~periurbain~fr"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-libea~navettes~fr",
@@ -4507,7 +4537,21 @@
       "tags": {
         "udata_dataset": "reseau-vai-embrun",
         "udata_host": "www.data.gouv.fr"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spute-vaï",
+          "name": "Vaï",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-vai~chorges~fr"
+            },
+            {
+              "feed_onestop_id": "f-vai~stations~hiver~fr"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-viabastia~seau~via~fr",
