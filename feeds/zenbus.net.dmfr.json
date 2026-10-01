@@ -2,6 +2,41 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-lisatis~lavaur~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=lavaur"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-lisatis"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lisatis~lavaur~fr",
+          "name": "Lisatis",
+          "website": "https://www.tarn.fr/mon-territoire/me-deplacer/transports",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-lisatis~lavaur~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-lisatis~lavaur~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=lavaur",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=lavaur"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-lisatis"
+      }
+    },
+    {
       "id": "f-mont~tremblant~qc~ca",
       "spec": "gtfs",
       "urls": {
@@ -103,6 +138,41 @@
       }
     },
     {
+      "id": "f-saint~sulpice~la~pointe~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=saint-sulpice-la-pointe"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-de-la-ville-de-st-sulpice-la-pointe"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-saint~sulpice~la~pointe~fr",
+          "name": "Transport urbain Saint-Sulpice-la-Pointe",
+          "website": "https://www.tarn.fr/mon-territoire/me-deplacer/transports",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-saint~sulpice~la~pointe~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-saint~sulpice~la~pointe~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=saint-sulpice-la-pointe",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=saint-sulpice-la-pointe"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-de-la-ville-de-st-sulpice-la-pointe"
+      }
+    },
+    {
       "id": "f-stc~pierre~de~saurel",
       "supersedes_ids": [
         "f-stc~pierre-de~saurel"
@@ -146,6 +216,40 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/",
         "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-u~vagabondu~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=speluncaliamone"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/u-vagabondu"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u~vagabondu~fr",
+          "name": "U Vagabondu",
+          "website": "https://spelunca-liamone.corsica/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u~vagabondu~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u~vagabondu~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://zenbus.net/gtfs/rt/poll.proto?dataset=speluncaliamone"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/u-vagabondu"
       }
     },
     {

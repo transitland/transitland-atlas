@@ -11,7 +11,133 @@
         ]
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-au-format-gtfs-et-horaires-temps-reel-au-format-gtfs-rt-du-reseau-car-jaune-a-la-reunion"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mhp-carjaune",
+          "name": "CAR JAUNE",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cars~jaunes~reunion~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-cars~jaunes~reunion~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://pysae.com/api/v2/groups/car-jaune/gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-au-format-gtfs-et-horaires-temps-reel-au-format-gtfs-rt-du-reseau-car-jaune-a-la-reunion"
+      }
+    },
+    {
+      "id": "f-cmonbus~cavaillon~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://app.pysae.com/api/v2/groups/cavaillon/gtfs/pub"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-reseau-cmonbus"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cmonbus~cavaillon~fr",
+          "name": "C'mon Bus",
+          "website": "https://www.luberonmontsdevaucluse.fr/agglomeration/c-mon-bus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cmonbus~cavaillon~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-cmonbus~cavaillon~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://app.pysae.com/api/v2/groups/cavaillon/gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/gtfs-reseau-cmonbus"
+      }
+    },
+    {
+      "id": "f-ozcar~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.pysae.com/api/v4/groups/lr-coeurduvar/gtfs/pub"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/ozcar-navette-intercommunale"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ozcar~fr",
+          "name": "Oz'car",
+          "website": "https://www.groupe-beltrame.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-ozcar~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-ozcar~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.pysae.com/api/v4/groups/lr-coeurduvar/gtfs-rt",
+        "realtime_trip_updates": "https://api.pysae.com/api/v4/groups/lr-coeurduvar/gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/ozcar-navette-intercommunale"
+      }
+    },
+    {
+      "id": "f-papillon~cosne~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.pysae.com/api/v4/groups/coeur-de-loire/gtfs/pub"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-du-reseau-de-bus-papillon-a-cosne-cours-sur-loire"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-papillon~cosne~fr",
+          "name": "Bus Papillon",
+          "website": "https://www.coeurdeloire.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-papillon~cosne~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-papillon~cosne~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://api.pysae.com/api/v4/groups/coeur-de-loire/gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-du-reseau-de-bus-papillon-a-cosne-cours-sur-loire"
       }
     }
   ]

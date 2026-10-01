@@ -1,0 +1,39 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-t2c~clermont~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://opendata.clermontmetropole.eu/api/v2/catalog/datasets/gtfs-smtc/alternative_exports/gtfs"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/syndicat-mixte-des-transports-en-commun-de-lagglomeration-clermontoise-smtc-ac-reseau-t2c-gtfs-gtfs-rt"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-t2c~clermont~fr",
+          "name": "T2C",
+          "website": "https://www.t2c.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-t2c~clermont~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-t2c~clermont~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/t2c-clermont-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/syndicat-mixte-des-transports-en-commun-de-lagglomeration-clermontoise-smtc-ac-reseau-t2c-gtfs-gtfs-rt"
+      }
+    }
+  ]
+}

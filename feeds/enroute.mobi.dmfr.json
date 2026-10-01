@@ -12,7 +12,7 @@
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/angers-loire-metropole-reseau-irigo-gtfs-gtfs-rt",
+        "url": "https://transport.data.gouv.fr/datasets/angers-loire-metropole-reseau-irigo-gtfs-gtfs-rt-siri",
         "share_alike_optional": "no"
       },
       "operators": [
@@ -97,7 +97,8 @@
         ]
       },
       "license": {
-        "url": "https://transport.data.gouv.fr/datasets/export-quotidien-au-format-gtfs-du-reseau-de-transport-lignes-d-azur",
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-statiques-et-dynamiques-du-reseau-de-transport-lignes-dazur",
         "use_without_attribution": "no"
       },
       "tags": {
@@ -107,9 +108,26 @@
         {
           "onestop_id": "o-spv-lignesdazur",
           "name": "Lignes d'Azur",
-          "website": "http://www.lignesdazur.com/"
+          "website": "http://www.lignesdazur.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-spv-lignesdazur~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-spv-lignesdazur~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ara-api.enroute.mobi/rla/gtfs/vehicle-positions",
+        "realtime_trip_updates": "https://ara-api.enroute.mobi/rla/gtfs/trip-updates"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-statiques-et-dynamiques-du-reseau-de-transport-lignes-dazur"
+      }
     }
   ]
 }

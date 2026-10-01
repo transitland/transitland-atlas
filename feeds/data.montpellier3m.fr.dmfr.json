@@ -26,10 +26,26 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-spfb-tam~montpellier~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-spfb-tam~montpellier~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsproxy.e-tam.fr/COMMON/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsproxy.e-tam.fr/COMMON/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsproxy.e-tam.fr/COMMON/Alert.pb"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-tam-en-temps-reel-gtfs-rt-urbain-et-suburbain"
+      }
     }
   ]
 }

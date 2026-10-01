@@ -8,7 +8,56 @@
         "static_current": "https://www.datasud.fr/fr/dataset/datasets/3743/resource/5153/download/"
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/lignes-des-reseaux-transport-zou-provence-alpes-cote-d-azur-express-3-3"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-interurbain~express~zou",
+          "name": "Zou !",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "MCN:5241"
+            },
+            {
+              "feed_onestop_id": "f-interurbain~express~zou~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-interurbain~express~zou~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy-data.zou.maregionsud.fr/GTFS-RT/GTFS-RT_trips_ZOU_express.pb",
+        "realtime_alerts": "https://proxy-data.zou.maregionsud.fr/GTFS-RT/GTFS-RT_SA_ZOU_express.pb"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/lignes-des-reseaux-transport-zou-provence-alpes-cote-d-azur-express-3-3"
+      }
+    },
+    {
+      "id": "f-monten~bus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.datasud.fr/fr/dataset/datasets/4680/resource/6527/download/"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-monten-bus"
+      }
+    },
+    {
+      "id": "f-mouvenbus~brignoles~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.datasud.fr/fr/dataset/datasets/1311/resource/5230/download/"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-transport-mouv-enbus-agglomeration-provence-verte"
       }
     },
     {
@@ -18,7 +67,88 @@
         "static_current": "https://www.datasud.fr/fr/dataset/datasets/3745/resource/5016/download/"
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/lignes-des-reseaux-transport-zou-provence-alpes-cote-d-azur-proximite-3-3"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-spu-zouproximité",
+          "name": "ZOU ! Proximité",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-proximité~zou~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-proximité~zou~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy-data.zou.maregionsud.fr/GTFS-RT/GTFS-RT_trips_ZOU_proximite.pb",
+        "realtime_alerts": "https://proxy-data.zou.maregionsud.fr/GTFS-RT/GTFS-RT_SA_ZOU_proximite.pb"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/lignes-des-reseaux-transport-zou-provence-alpes-cote-d-azur-proximite-3-3"
+      }
+    },
+    {
+      "id": "f-sorgen~bus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.datasud.fr/fr/dataset/datasets/4681/resource/6528/download/"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-sorgen-bus"
+      }
+    },
+    {
+      "id": "f-tedbus~draguignan~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.datasud.fr/fr/dataset/datasets/1760/resource/2210/download/"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-tedbus-lignes-regulieres-dracenie-provence-verdon-agglomeration"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tedbus~draguignan~fr",
+          "name": "TedBus",
+          "website": "http://www.tedbus.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tedbus~draguignan~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-tedbus~draguignan~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://pysae.com/api/v2/groups/draguignan/gtfs-rt",
+        "realtime_trip_updates": "https://pysae.com/api/v2/groups/draguignan/gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-tedbus-lignes-regulieres-dracenie-provence-verdon-agglomeration"
+      }
+    },
+    {
+      "id": "f-transcove~carpentras~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.datasud.fr/fr/dataset/datasets/2268/resource/7220/download/"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-transcove-de-la-communaute-dagglomeration-ventoux-comtat-venaissin"
       }
     }
   ]

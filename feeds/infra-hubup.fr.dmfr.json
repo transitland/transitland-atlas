@@ -2,6 +2,41 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-agglo~en~bus~gap~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-rt.infra-hubup.fr/cagtd/current/gtfs"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reels-du-reseau-de-transports-lagglo-en-bus-communaute-dagglomeration-gap-tallard-durance"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-agglo~en~bus~gap~fr",
+          "name": "L'Agglo en bus",
+          "website": "https://www.gap-tallard-durance.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-agglo~en~bus~gap~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-agglo~en~bus~gap~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/cagtd/realtime",
+        "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/cagtd/realtime"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reels-du-reseau-de-transports-lagglo-en-bus-communaute-dagglomeration-gap-tallard-durance"
+      }
+    },
+    {
       "id": "f-hubup~mrc~haut~saint~laurent",
       "spec": "gtfs",
       "urls": {
@@ -97,6 +132,10 @@
       "urls": {
         "realtime_vehicle_positions": "https://gtfs-rt.infra-hubup.fr/lpdlestd/realtime",
         "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/toutenbus/realtime"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel"
       }
     },
     {
@@ -109,6 +148,7 @@
         ]
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel"
       },
       "operators": [
@@ -132,6 +172,7 @@
         "realtime_trip_updates": "https://gtfs-rt.infra-hubup.fr/toutenbus/realtime"
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel"
       }
     }

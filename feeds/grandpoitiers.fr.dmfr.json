@@ -13,6 +13,31 @@
       "license": {
         "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/mobilite-offre-de-transport-du-reseau-bus-gtfs-gtfs-rt"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-grand~poitiers~vitalis",
+          "name": "VITALIS",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-grand~poitiers~vitalis~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-grand~poitiers~vitalis~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://data.grandpoitiers.fr/data-fair/api/v1/datasets/offre-de-transport-du-reseau-vitalis/metadata-attachments/poitiers.pbf"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/mobilite-offre-de-transport-du-reseau-bus-gtfs-gtfs-rt"
       }
     }
   ]

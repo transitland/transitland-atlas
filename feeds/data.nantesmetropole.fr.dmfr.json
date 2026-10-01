@@ -28,10 +28,25 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-gbqu-semitan~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-gbqu-semitan~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/naolib-nantes-gtfs-rt-trip-update",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/naolib-nantes-gtfs-rt-alerts"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transports-collectifs-naolib"
+      }
     }
   ]
 }

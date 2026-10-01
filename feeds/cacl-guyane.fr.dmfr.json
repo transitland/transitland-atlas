@@ -18,6 +18,29 @@
         "udata_dataset": "agence-agglobus",
         "udata_host": "www.data.gouv.fr",
         "udata_resource_title": "SEMOP"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-agglobus~guyane",
+          "name": "Agglo'bus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-agglobus~guyane~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-agglobus~guyane~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cacl.plateforme-2cloud.com/api/gtfsrt/2.0/vehiclepositions/CACL-1823-7594-1349/bin",
+        "realtime_trip_updates": "https://cacl.plateforme-2cloud.com/api/gtfsrt/2.0/tripupdates/CACL-1823-7594-1349/bin"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/agence-agglobus"
       }
     }
   ]

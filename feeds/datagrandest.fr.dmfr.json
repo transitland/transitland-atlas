@@ -11,6 +11,29 @@
         ]
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-du-reseau-grand-reims-mobilites-communaute-urbaine-du-grand-reims"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0fb-transdevreims",
+          "name": "Transdev Reims",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-citura~grand~reims~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-citura~grand~reims~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-citura-reims-gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-du-reseau-grand-reims-mobilites-communaute-urbaine-du-grand-reims"
       }
     },
@@ -131,6 +154,30 @@
         "static_current": "https://www.datagrandest.fr/metadata/fluo-grand-est/FR-200052264-T0014-0000/fluo-grand-est-sitram-gtfs.zip"
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0014-0000-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0mp-solea",
+          "name": "SOLEA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-fluo~grand~est~solea~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-fluo~grand~est~solea~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/solea-mulhouse-gtfs-rt",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/solea-mulhouse-gtfs-rt-service-alert"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0014-0000-1"
       }
     },

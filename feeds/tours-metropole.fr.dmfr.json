@@ -19,9 +19,27 @@
           "onestop_id": "o-filbleu~tours~fr",
           "name": "Syndicat des Mobilités de Touraine",
           "short_name": "Fil Bleu",
-          "website": "https://www.filbleu.fr/"
+          "website": "https://www.filbleu.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-filbleu~tours~fr~rt"
+            }
+          ]
         }
       ]
+    },
+    {
+      "id": "f-filbleu~tours~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://data.filbleu.fr/ws-tr/gtfs-rt/opendata/vehicle-positions",
+        "realtime_trip_updates": "https://data.filbleu.fr/ws-tr/gtfs-rt/opendata/trip-updates",
+        "realtime_alerts": "https://data.filbleu.fr/ws-tr/gtfs-rt/opendata/service-alerts"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fil-bleu-syndicat-des-mobilites-gtfs-gtfs-rt"
+      }
     }
   ]
 }

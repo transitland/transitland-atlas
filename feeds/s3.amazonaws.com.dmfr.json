@@ -8,7 +8,67 @@
         "static_current": "https://s3.eu-west-1.amazonaws.com/files.orchestra.ratpdev.com/networks/boulogne/exports/medias.zip"
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-de-transport-marineo"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u110-marineo",
+          "name": "Marineo",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-boulonnais~marinéo~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-boulonnais~marinéo~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/marineo-boulonnais-gtfs-rt-trip-update",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/marineo-boulonnais-gtfs-rt-alerts"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-theoriques-et-temps-reel-du-reseau-de-transport-marineo"
+      }
+    },
+    {
+      "id": "f-citibus~narbonne~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.eu-west-1.amazonaws.com/files.orchestra.ratpdev.com/networks/narbonne/exports/scolaires-sans-tad.zip"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-communaute-dagglomeration-le-grand-narbonne"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-citibus~narbonne~fr",
+          "name": "Citibus",
+          "website": "https://www.citibus.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-citibus~narbonne~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-citibus~narbonne~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://feed-citibus-narbonne.ratpdev.com/GTFS-RT/gtfs-rt.bin",
+        "realtime_trip_updates": "https://feed-citibus-narbonne.ratpdev.com/GTFS-RT/gtfs-rt.bin",
+        "realtime_alerts": "https://notifytest.ratpdev.com/api/networks/RD%20GRAND%20NARBONNE/alerts/gtfsrt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-communaute-dagglomeration-le-grand-narbonne"
       }
     },
     {
@@ -43,9 +103,8 @@
         ]
       },
       "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-impulsyon-a-la-roche-sur-yon",
-        "share_alike_optional": "no"
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-impulsyon-a-la-roche-sur-yon"
       },
       "operators": [
         {
@@ -65,6 +124,10 @@
       "spec": "gtfs-rt",
       "urls": {
         "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/la-roche-sur-yon-ct-gtfs-rt-alerts"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-impulsyon-a-la-roche-sur-yon"
       }
     },
     {
@@ -110,6 +173,41 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-tbk~quimperle~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://s3.eu-west-1.amazonaws.com/files.orchestra.ratpdev.com/networks/tbk/exports/export-pan.zip"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/tbk-offre-theorique-et-temps-reel-du-reseau-de-transports-du-pays-de-quimperle"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tbk~quimperle~fr",
+          "name": "TBK",
+          "website": "http://www.giro.ca",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tbk~quimperle~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-tbk~quimperle~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://pysae.com/api/v2/groups/quimperle/gtfs-rt",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/tbk-quimperle-communaute-gtfs-rt-alerts"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/tbk-offre-theorique-et-temps-reel-du-reseau-de-transports-du-pays-de-quimperle"
+      }
     }
   ]
 }

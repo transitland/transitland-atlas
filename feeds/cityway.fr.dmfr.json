@@ -2,6 +2,17 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-allotic~compiegne~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=ALLOTIC&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-du-reseau-de-transport-a-la-demande-allotic-communaute-dagglomeration-de-la-region-de-compiegne-et-de-la-basse-automne"
+      }
+    },
+    {
       "id": "f-auvergne~rhône~alpes~oùra",
       "spec": "gtfs",
       "urls": {
@@ -10,6 +21,350 @@
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/agregat-oura"
+      }
+    },
+    {
+      "id": "f-cabus~sarreguemines~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=CABUS"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0001-0000-1"
+      }
+    },
+    {
+      "id": "f-colibri~toul~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=MOVIA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0027-0000-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-colibri~toul~fr",
+          "name": "Colibri",
+          "website": "https://www.reseau-colibri.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-colibri~toul~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-colibri~toul~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-colibri-terres-touloises-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0027-0000-1"
+      }
+    },
+    {
+      "id": "f-corolis~beauvais~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=COROLIS_URB&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-corolis-urbain-communaute-dagglomeration-du-beauvaisis"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-corolis~beauvais~fr",
+          "name": "Corolis urbain",
+          "website": "https://www.corolis.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-corolis~beauvais~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-corolis~beauvais~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=COROLIS_URB&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=COROLIS_URB&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-corolis-urbain-communaute-dagglomeration-du-beauvaisis"
+      }
+    },
+    {
+      "id": "f-corolis~interurbain~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=COROLIS_INT&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-corolis-interurbain-communaute-dagglomeration-du-beauvaisis"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-corolis~interurbain~fr",
+          "name": "Corolis interurbain",
+          "website": "https://www.oise-mobilite.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-corolis~interurbain~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-corolis~interurbain~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=COROLIS_INT&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=COROLIS_INT&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-corolis-interurbain-communaute-dagglomeration-du-beauvaisis"
+      }
+    },
+    {
+      "id": "f-corolis~tad~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/tad/download?provider=COROLIS_INT&dataFormat=gtfs"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-corolis-interurbain-communaute-dagglomeration-du-beauvaisis"
+      }
+    },
+    {
+      "id": "f-cypre~valois~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=CYPRE&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-mobi-communaute-de-communes-du-pays-de-valois"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-cypre~valois~fr",
+          "name": "Cypré",
+          "website": "https://www.oise-mobilite.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cypre~valois~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-cypre~valois~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=CYPRE&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=CYPRE&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-mobi-communaute-de-communes-du-pays-de-valois"
+      }
+    },
+    {
+      "id": "f-isibus~sarrebourg~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=ISIBUS"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0026-0000-1"
+      }
+    },
+    {
+      "id": "f-le~bus~clermontois~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=LEBUS&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-le-bus-communaute-de-communes-du-clermontois"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-le~bus~clermontois~fr",
+          "name": "Le Bus Clermontois",
+          "website": "https://www.oise-mobilite.fr/group/6?overridden_route_name=entity.group.canonical&base_route_name=entity.group.canonical&page_manager_page=group_view&page_manager_page_variant=group_view-panels_variant-0&page_manager_page_variant_weight=0",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-le~bus~clermontois~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-le~bus~clermontois~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=LEBUS&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=LEBUS&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-le-bus-communaute-de-communes-du-clermontois"
+      }
+    },
+    {
+      "id": "f-le~bus~clermontois~tad~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/tad/download?provider=LEBUS&dataFormat=gtfs"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-le-bus-communaute-de-communes-du-clermontois"
+      }
+    },
+    {
+      "id": "f-le~bus~pont~a~mousson~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=LEBUS"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0023-0000-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-le~bus~pont~a~mousson~fr",
+          "name": "Le Bus Pont-à-Mousson",
+          "website": "http://fluo.grandest.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-le~bus~pont~a~mousson~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-le~bus~pont~a~mousson~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-lebus-pontamousson-gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0023-0000-1"
+      }
+    },
+    {
+      "id": "f-le~sit~pompey~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=LESIT"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0022-0000-1"
+      }
+    },
+    {
+      "id": "f-libbus~noyon~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=LIBBUS&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-libbus-communaute-de-communes-du-pays-noyonnais"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-libbus~noyon~fr",
+          "name": "Lib'Bus",
+          "website": "http://www.cap80.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-libbus~noyon~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-libbus~noyon~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=LIBBUS&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=LIBBUS&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-libbus-communaute-de-communes-du-pays-noyonnais"
+      }
+    },
+    {
+      "id": "f-libellule~liancourt~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=LELIBELLULE&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-le-libellule-communaute-du-liancourtois-la-vallee-doree"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-libellule~liancourt~fr",
+          "name": "Le Libellule",
+          "website": "https://www.oise-mobilite.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-libellule~liancourt~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-libellule~liancourt~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=LELIBELLULE&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=LELIBELLULE&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-le-libellule-communaute-du-liancourtois-la-vallee-doree"
+      }
+    },
+    {
+      "id": "f-libellule~tad~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/tad/download?provider=LELIBELLULE&dataFormat=gtfs"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-le-libellule-communaute-du-liancourtois-la-vallee-doree"
       }
     },
     {
@@ -50,8 +405,54 @@
         "realtime_trip_updates": "https://api.maas-fr.cityway.fr/dataflow/horaire-tc-tr/download?provider=ORIZO&dataFormat=gtfs-rt"
       },
       "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/gtfs-et-gtfs-rt-reseau-orizo-grand-avignon"
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-orizo-grand-avignon"
+      }
+    },
+    {
+      "id": "f-pass~thelle~bus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=PASSTHELLE&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-pass-thelle-bus-communaute-de-communes-thelloise"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-pass~thelle~bus~fr",
+          "name": "Pass'Thelle Bus",
+          "website": "https://www.oise-mobilite.fr/pass-thelle-bus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-pass~thelle~bus~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-pass~thelle~bus~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=PASSTHELLE&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=PASSTHELLE&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-pass-thelle-bus-communaute-de-communes-thelloise"
+      }
+    },
+    {
+      "id": "f-pass~thelle~bus~tad~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/tad/download?provider=PASSTHELLE&dataFormat=gtfs"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-pass-thelle-bus-communaute-de-communes-thelloise"
       }
     },
     {
@@ -142,6 +543,189 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-savoie-73",
         "share_alike_optional": "no"
+      }
+    },
+    {
+      "id": "f-sablons~bus~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/offre-tc/download?provider=SABLONS&dataFormat=GTFS&dataProfil=OPENDATA"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-sablons-bus-communaute-de-communes-des-sablons"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sablons~bus~fr",
+          "name": "Sablons Bus",
+          "website": "https://www.oise-mobilite.fr/#",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sablons~bus~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sablons~bus~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.oisemob.cityway.fr/dataflow/vehicule-tc-tr/download?provider=SABLONS&dataFormat=gtfs-rt",
+        "realtime_trip_updates": "https://api.oisemob.cityway.fr/dataflow/horaire-tc-tr/download?provider=SABLONS&dataFormat=gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-sablons-bus-communaute-de-communes-des-sablons"
+      }
+    },
+    {
+      "id": "f-sablons~bus~tad~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.oisemob.cityway.fr/dataflow/tad/download?provider=SABLONS&dataFormat=gtfs"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/donnees-theoriques-et-temps-reel-du-reseau-sablons-bus-communaute-de-communes-des-sablons"
+      }
+    },
+    {
+      "id": "f-sitac~chalons~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=CEC"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0005-0000-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sitac~chalons~fr",
+          "name": "Sitac",
+          "website": "http://www.businfo-groupe.com",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sitac~chalons~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sitac~chalons~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-sitac-chalons-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0005-0000-1"
+      }
+    },
+    {
+      "id": "f-sylvia~saint~die~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=DEOBUS"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0016-0000-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sylvia~saint~die~fr",
+          "name": "Sylvia",
+          "website": "http://www.sylvia-mobilite.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sylvia~saint~die~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-sylvia~saint~die~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-sylvia-stdie-des-vosges-gtfs-rt-trip-update",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/fluo-sylvia-stdie-des-vosges-gtfs-rt-service-alert"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0016-0000-1"
+      }
+    },
+    {
+      "id": "f-tac~charleville~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=CHM"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0002-0000-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tac~charleville~fr",
+          "name": "TAC Ardenne Métropole",
+          "website": "https://www.bustac.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tac~charleville~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-tac~charleville~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-tac-ardenne-gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0002-0000-1"
+      }
+    },
+    {
+      "id": "f-tub~bar~le~duc~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=TUB"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0003-0000-1"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-tub~bar~le~duc~fr",
+          "name": "TUB Bar-le-Duc",
+          "website": "http://fluo.grandest.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tub~bar~le~duc~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-tub~bar~le~duc~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-tub-bar-le-duc-gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0003-0000-1"
       }
     }
   ]
