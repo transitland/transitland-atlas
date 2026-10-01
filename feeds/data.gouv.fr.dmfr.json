@@ -546,12 +546,19 @@
       "id": "f-keolischateauthierry~seau~fablio",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/f56b6c9c-0a25-4d87-a1b1-4b108e3d0a22"
+        "static_current": "https://static.data.gouv.fr/resources/gtfs-reseau-fablio-lignes-regulieres/20260108-145743/gtfs-2026-fablio.zip",
+        "static_historic": [
+          "https://www.data.gouv.fr/api/1/datasets/r/f56b6c9c-0a25-4d87-a1b1-4b108e3d0a22"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/gtfs-reseau-fablio-lignes-regulieres",
         "share_alike_optional": "no"
+      },
+      "tags": {
+        "udata_dataset": "gtfs-reseau-fablio-lignes-regulieres",
+        "udata_host": "www.data.gouv.fr"
       }
     },
     {
@@ -593,18 +600,6 @@
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/gtfs-diviamobilites"
-      }
-    },
-    {
-      "id": "f-keolis~seau~tan~fr",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/0b65dda9-51d3-4d84-811b-8a11629a5e55"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/versions-des-horaires-theoriques-des-lignes-du-reseau-de-bus-au-format-gtfs",
-        "share_alike_optional": "no"
       }
     },
     {
@@ -1024,6 +1019,45 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-gtfs-du-reseau-routier-regional-de-transport-scolaire-80-somme"
+      }
+    },
+    {
+      "id": "f-rlv~riom~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/90846819-b970-48db-967b-8eb7d2da3e2c"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-rlv-mobilites"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rlv~riom~fr",
+          "name": "RLV Mobilités",
+          "website": "https://rlv-mobilites.fr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "RIOM:Network:1:LOC",
+              "feed_onestop_id": "f-auvergne~rhône~alpes~oùra"
+            },
+            {
+              "feed_onestop_id": "f-rlv~riom~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-rlv~riom~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.transport.data.gouv.fr/resource/riom-rlv-mobilites-gtfs-rt-vehicle-position",
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/riom-rlv-mobilites-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-rlv-mobilites"
       }
     },
     {
@@ -1556,24 +1590,15 @@
     },
     {
       "id": "f-tanéo~fr",
+      "supersedes_ids": [
+        "f-keolis~seau~tan~fr"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.data.gouv.fr/fr/datasets/r/0b65dda9-51d3-4d84-811b-8a11629a5e55"
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/versions-des-horaires-theoriques-des-lignes-du-reseau-de-bus-au-format-gtfs"
-      }
-    },
-    {
-      "id": "f-taoorlans~seau~tao~fr",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/824c3fc5-7631-4147-990a-3621e2786093"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/gtfs-et-gtfs-rt-reseau-tao-orleans-metropole-1",
-        "share_alike_optional": "no"
       }
     },
     {
@@ -1924,6 +1949,41 @@
       },
       "license": {
         "url": "https://transport.data.gouv.fr/datasets/ce-jeu-de-donnees-contient-la-liste-des-arrets-des-horaires-et-des-parcours-theoriques-du-reseau-de-transport-urbain-et-interurbain-de-vrm"
+      }
+    },
+    {
+      "id": "f-zest~menton~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/72609821-2459-47fb-a63b-3dbbc0d96c92"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-reseau-zest"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-zest~menton~fr",
+          "name": "Zest",
+          "website": "https://www.zestbus.fr",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-zest~menton~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-zest~menton~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.transport.data.gouv.fr/resource/zest-menton-riviera-gtfs-rt-vehicle-position",
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/zest-menton-riviera-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/horaires-reseau-zest"
       }
     },
     {
