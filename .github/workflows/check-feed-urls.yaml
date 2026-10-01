@@ -34,8 +34,8 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
           # Three-dot diff: only what the PR itself changes.
-          if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -q -E "^\.github/|^scripts/"; then
-            echo "Error: PR contains changes to .github or scripts directories"
+          if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -q -E "^\.github/|^scripts/|^pyproject\.toml$|^uv\.lock$|^\.python-version$"; then
+            echo "Error: PR changes .github/, scripts/ or the Python environment files"
             exit 1
           fi
 

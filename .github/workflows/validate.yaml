@@ -1,15 +1,18 @@
 name: Validate
-on: [push, pull_request_target, workflow_dispatch]
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
 
-# A new push to a PR or branch supersedes the run still going for the previous
-# one. Runs on main are left to finish so every merged commit gets a result.
-# Under pull_request_target github.ref is the base branch, hence the event test.
+# A new push to a PR supersedes the run still going for the previous one.
+# Runs on main are left to finish so every merged commit gets a result.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request_target' || github.ref != 'refs/heads/main' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
@@ -20,25 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
-        ref: ${{ github.event.pull_request.head.sha }}
-        fetch-depth: 0
-        # This checks out PR code under pull_request_target; keep the token out
-        # of .git/config where that code could read it.
         persist-credentials: false
-
-    # Only needed for fork PRs - security check
-    - name: Security check for fork PRs
-      if: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository }}
-      env:
-        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        BASE_SHA: ${{ github.event.pull_request.base.sha }}
-      run: |
-        # Three-dot diff: only what the PR itself changes, not commits that
-        # landed on the base branch after it was cut.
-        if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -q -E "^\.github/|^scripts/"; then
-          echo "Error: PR contains changes to .github or scripts directories, which is not allowed for security reasons"
-          exit 1
-        fi
     - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
     - name: Cache transitland binary
       uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
