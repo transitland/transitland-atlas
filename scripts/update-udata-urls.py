@@ -18,8 +18,24 @@ A feed opts in by carrying both of these tags:
     }
 
 For each tagged feed this queries https://<udata_host>/api/1/datasets/<slug>/,
-picks the most recently published zip resource, and rewrites `static_current`
-if it has moved. `static_historic` is deliberately left alone -- Luxembourg
+picks the most recently published GTFS resource, and rewrites `static_current`
+if it has moved.
+
+Which resources count as GTFS depends on the portal. udata itself does not
+know: a GTFS zip and a NeTEx zip both arrive as format "zip" (or
+"octet-stream", or nothing). On data.gouv.fr the national access point,
+transport.data.gouv.fr, validates every resource and labels it, so there the
+candidates are exactly the resources it calls GTFS. Elsewhere any zip counts.
+data.gouv.fr resources are pinned by their /api/1/datasets/r/<id> permalink,
+which survives in-place updates, so the pin moves only when the publisher
+mints a new resource.
+
+A dataset can also carry several GTFS resources at once -- winter and summer
+timetables, school and regular lines -- that are separate feeds in Atlas. An
+optional third tag narrows the candidates to resources whose title matches a
+case-insensitive regular expression:
+
+      "udata_resource_title": "hiver" `static_historic` is deliberately left alone -- Luxembourg
 alone has 300+ superseded snapshots and listing them is not useful.
 
 Two rules keep a bad resolve from being committed unattended:
@@ -48,6 +64,7 @@ Usage:
 import argparse
 import json
 import logging
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -57,6 +74,9 @@ REPO_ROOT = Path(__file__).parent.parent
 FEEDS_DIR = REPO_ROOT / "feeds"
 
 DATASET_API = "https://{host}/api/1/datasets/{slug}/"
+# transport.data.gouv.fr is not a udata portal; it is asked only which of a
+# data.gouv.fr dataset's resources are GTFS. It accepts the udata dataset id.
+TDG_DATASET_API = "https://transport.data.gouv.fr/api/datasets/{dataset_id}"
 TIMEOUT = 60
 
 # udata portals this job is allowed to contact. See the note above: this list
@@ -66,10 +86,13 @@ ALLOWED_HOSTS = frozenset(
         "data.public.lu",
         "data.gouv.fr",
         "www.data.gouv.fr",
-        "transport.data.gouv.fr",
         "data.gov.rs",
     }
 )
+
+# Portals whose resources transport.data.gouv.fr classifies.
+DATA_GOUV_HOSTS = frozenset({"data.gouv.fr", "www.data.gouv.fr"})
+DATA_GOUV_PERMALINK = "https://www.data.gouv.fr/api/1/datasets/r/{resource_id}"
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
@@ -118,31 +141,67 @@ def _published_at(resource):
     return datetime.min.replace(tzinfo=timezone.utc)
 
 
-def zip_resources(session, host, slug):
-    """Return the dataset's zip resources, each guaranteed to carry a URL."""
+def tdg_gtfs_resource_ids(session, dataset_id):
+    """Return the ids of the resources transport.data.gouv.fr labels GTFS.
+
+    Raises if the dataset is unknown there or the lookup fails: without the
+    labels there is no telling GTFS from NeTEx, and guessing is how a feed
+    ends up pinned to the wrong file.
+    """
+    r = session.get(TDG_DATASET_API.format(dataset_id=dataset_id), timeout=TIMEOUT)
+    r.raise_for_status()
+    return {
+        res["datagouv_id"]
+        for res in r.json().get("resources") or []
+        if res.get("format") == "GTFS" and res.get("datagouv_id")
+    }
+
+
+def _is_zip(res):
+    return (res.get("format") or "").lower() == "zip" or res["url"].lower().endswith(
+        ".zip"
+    )
+
+
+def zip_resources(session, host, slug, title_pattern=None):
+    """Return the dataset's GTFS resources, each guaranteed to carry a URL.
+
+    The name predates the data.gouv.fr support: on those hosts a candidate is
+    whatever transport.data.gouv.fr calls GTFS, zip-shaped or not.
+    """
     if host not in ALLOWED_HOSTS:
         raise ValueError(f"{host} is not an allowed udata host")
     r = session.get(DATASET_API.format(host=host, slug=slug), timeout=TIMEOUT)
     r.raise_for_status()
-    resources = r.json().get("resources") or []
-    zips = [
-        res
-        for res in resources
-        # A resource with no URL cannot be pinned, whatever its format says.
-        if (res.get("url") or "").strip()
-        and (
-            (res.get("format") or "").lower() == "zip"
-            or res["url"].lower().endswith(".zip")
-        )
+    dataset = r.json()
+    # A resource with no URL cannot be pinned, whatever its format says.
+    resources = [
+        res for res in dataset.get("resources") or [] if (res.get("url") or "").strip()
     ]
+    if host in DATA_GOUV_HOSTS:
+        gtfs_ids = tdg_gtfs_resource_ids(session, dataset.get("id") or slug)
+        # Pin the resource's permalink, not the file it currently points at.
+        # Publishers that replace a file in place get a new dated
+        # static.data.gouv.fr URL with every upload, which would otherwise
+        # move the pin -- and open an auto-PR -- each time.
+        zips = [
+            {**res, "url": DATA_GOUV_PERMALINK.format(resource_id=res["id"])}
+            for res in resources
+            if res.get("id") in gtfs_ids
+        ]
+    else:
+        zips = [res for res in resources if _is_zip(res)]
+    if title_pattern:
+        pattern = re.compile(title_pattern, re.IGNORECASE)
+        zips = [res for res in zips if pattern.search(res.get("title") or "")]
     if not zips:
-        raise ValueError(f"no zip resources in {host}/{slug}")
+        raise ValueError(f"no GTFS resources in {host}/{slug}")
     return zips
 
 
-def newest_zip(session, host, slug):
-    """Return the most recently modified zip resource for a udata dataset."""
-    return max(zip_resources(session, host, slug), key=_published_at)
+def newest_zip(session, host, slug, title_pattern=None):
+    """Return the most recently published GTFS resource for a udata dataset."""
+    return max(zip_resources(session, host, slug, title_pattern), key=_published_at)
 
 
 def pick_target(zips, current_url):
@@ -219,7 +278,7 @@ def main():
         feed_id = feed.get("id", "?")
 
         try:
-            zips = zip_resources(session, host, slug)
+            zips = zip_resources(session, host, slug, tags.get("udata_resource_title"))
         except Exception as e:
             # Deliberately broad: one malformed resource or unexpected payload
             # shape should cost this feed, not every other feed in the run.
