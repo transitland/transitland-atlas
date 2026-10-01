@@ -129,7 +129,7 @@ def test_resource_without_a_url_is_skipped():
 
 def test_dataset_of_only_urlless_resources_raises():
     session = resources({"format": "zip"}, {"format": "zip", "url": ""})
-    with pytest.raises(ValueError, match="no zip resources"):
+    with pytest.raises(ValueError, match="no GTFS resources"):
         uu.newest_zip(session, HOST, "s")
 
 
@@ -256,3 +256,93 @@ def test_only_fully_tagged_feeds_are_selected(feeds_dir):
     unparseable nor an undecodable file stops the scan."""
     found = [feed["id"] for _, _, feed in uu.tagged_feeds(feeds_dir)]
     assert found == ["f-tagged"]
+
+
+# --- data.gouv.fr: transport.data.gouv.fr decides what is GTFS --------------
+
+DG = "www.data.gouv.fr"
+
+
+class RoutingSession:
+    """Answers each URL from its own payload, for the two-portal lookup."""
+
+    def __init__(self, routes):
+        self._routes = routes
+        self.requested = []
+
+    def get(self, url, timeout=None):
+        self.requested.append(url)
+        return FakeResponse(self._routes[url])
+
+
+def data_gouv(resources_, tdg_resources):
+    return RoutingSession({
+        f"https://{DG}/api/1/datasets/s/": {"id": "ds1", "resources": resources_},
+        "https://transport.data.gouv.fr/api/datasets/ds1": {"resources": tdg_resources},
+    })
+
+
+def test_data_gouv_skips_a_newer_netex_zip():
+    """Both are .zip to udata; only transport.data.gouv.fr knows which is GTFS."""
+    session = data_gouv(
+        [
+            zip_res("https://x/gtfs.zip", None, id="g", created_at="2026-01-01T00:00:00+00:00"),
+            zip_res("https://x/netex.zip", None, id="n", created_at="2026-06-01T00:00:00+00:00"),
+        ],
+        [{"datagouv_id": "g", "format": "GTFS"}, {"datagouv_id": "n", "format": "NeTEx"}],
+    )
+    assert uu.newest_zip(session, DG, "s")["id"] == "g"
+    assert session.requested[1] == "https://transport.data.gouv.fr/api/datasets/ds1"
+
+
+def test_data_gouv_accepts_gtfs_that_is_not_zip_shaped():
+    """Publishers label GTFS octet-stream and serve it from API exports."""
+    session = data_gouv(
+        [zip_res("https://x/export?format=gtfs", None, fmt="octet-stream", id="g")],
+        [{"datagouv_id": "g", "format": "GTFS"}],
+    )
+    assert uu.newest_zip(session, DG, "s")["id"] == "g"
+
+
+def test_data_gouv_without_gtfs_raises():
+    session = data_gouv(
+        [zip_res("https://x/netex.zip", None, id="n")],
+        [{"datagouv_id": "n", "format": "NeTEx"}],
+    )
+    with pytest.raises(ValueError, match="no GTFS resources"):
+        uu.newest_zip(session, DG, "s")
+
+
+def test_title_pattern_separates_seasonal_resources():
+    session = data_gouv(
+        [
+            zip_res("https://x/hiver.zip", None, id="h", title="GTFS Hiver 2026",
+                    created_at="2026-01-01T00:00:00+00:00"),
+            zip_res("https://x/ete.zip", None, id="e", title="GTFS Été 2026",
+                    created_at="2026-06-01T00:00:00+00:00"),
+        ],
+        [{"datagouv_id": "h", "format": "GTFS"}, {"datagouv_id": "e", "format": "GTFS"}],
+    )
+    assert uu.newest_zip(session, DG, "s")["id"] == "e"
+    assert uu.newest_zip(session, DG, "s", "hiver")["id"] == "h"
+
+
+def test_title_pattern_applies_on_other_portals_too():
+    session = resources(
+        zip_res("https://x/a.zip", "2026-08-20T00:00:00+00:00", title="School"),
+        zip_res("https://x/b.zip", "2026-08-13T00:00:00+00:00", title="Regular"),
+    )
+    assert uu.newest_zip(session, HOST, "s", "^regular$")["url"] == "https://x/b.zip"
+
+
+def test_data_gouv_pins_the_permalink_not_the_dated_file():
+    """An in-place update changes the dated static URL on every upload; the
+    permalink does not, so pinning it keeps the job quiet until a new
+    resource is actually minted."""
+    session = data_gouv(
+        [zip_res("https://static.data.gouv.fr/resources/x/20261001-040014/gtfs.zip", None, id="g")],
+        [{"datagouv_id": "g", "format": "GTFS"}],
+    )
+    zips = uu.zip_resources(session, DG, "s")
+    assert zips[0]["url"] == "https://www.data.gouv.fr/api/1/datasets/r/g"
+    assert uu.pick_target(zips, "https://www.data.gouv.fr/api/1/datasets/r/g")[1] == "current"

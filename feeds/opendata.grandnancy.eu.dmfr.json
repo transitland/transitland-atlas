@@ -5,14 +5,16 @@
       "id": "f-u0sk-réseaustan",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://hstan.g-ny.eu/gtfs/gtfs_stan.zip",
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=STAN",
         "static_historic": [
+          "https://hstan.g-ny.eu/gtfs/gtfs_stan.zip",
           "https://www.data.gouv.fr/fr/datasets/r/e7e78cd7-e186-4923-a272-9713fbc28b45",
           "http://opendata.grandnancy.eu/?eID=ics_od_datastoredownload&file=333"
         ]
       },
       "license": {
-        "url": "https://transport.data.gouv.fr/datasets/arrets-horaires-et-parcours-theoriques-du-reseau-stan-gtfs/?locale=en"
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0034-0000-1"
       },
       "operators": [
         {
@@ -22,10 +24,27 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "STAN"
+            },
+            {
+              "feed_onestop_id": "f-u0sk-réseaustan~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q3480395"
+          }
         }
       ]
+    },
+    {
+      "id": "f-u0sk-réseaustan~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/fluo-stan-nancy-gtfs-rt-trip-update"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fr-200052264-t0034-0000-1"
+      }
     }
   ]
 }

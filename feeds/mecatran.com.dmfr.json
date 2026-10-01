@@ -2,6 +2,17 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-aleop~tad~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://app.mecatran.com/utw/ws/gtfsfeed/static/pdlFlex?apiKey=19496e1c0c0e42607d54444b2a191b61533b3634"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/transports-a-la-demande-en-pays-de-la-loire-gtfs-flex-aleop"
+      }
+    },
+    {
       "id": "f-lio~fr",
       "spec": "gtfs",
       "urls": {
@@ -11,6 +22,32 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/reseau-lio-occitanie",
         "share_alike_optional": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lio~fr",
+          "name": "liO",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "109"
+            },
+            {
+              "feed_onestop_id": "f-lio~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-lio~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://lio.2cloud.app/api/gtfsrt/2.0/vehiclepositions/LIO65-6765-2617-7480/bin",
+        "realtime_trip_updates": "https://lio.2cloud.app/api/gtfsrt/2.0/tripupdates/LIO65-6765-2617-7480/bin"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-lio-occitanie"
       }
     },
     {

@@ -2,6 +2,41 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-lisatis~lavaur~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=lavaur"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-lisatis"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lisatis~lavaur~fr",
+          "name": "Lisatis",
+          "website": "https://www.tarn.fr/mon-territoire/me-deplacer/transports",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-lisatis~lavaur~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-lisatis~lavaur~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=lavaur",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=lavaur"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-lisatis"
+      }
+    },
+    {
       "id": "f-mont~tremblant~qc~ca",
       "spec": "gtfs",
       "urls": {
@@ -103,6 +138,41 @@
       }
     },
     {
+      "id": "f-saint~sulpice~la~pointe~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=saint-sulpice-la-pointe"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-de-la-ville-de-st-sulpice-la-pointe"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-saint~sulpice~la~pointe~fr",
+          "name": "Transport urbain Saint-Sulpice-la-Pointe",
+          "website": "https://www.tarn.fr/mon-territoire/me-deplacer/transports",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-saint~sulpice~la~pointe~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-saint~sulpice~la~pointe~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?dataset=saint-sulpice-la-pointe",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?dataset=saint-sulpice-la-pointe"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-de-transport-urbain-de-la-ville-de-st-sulpice-la-pointe"
+      }
+    },
+    {
       "id": "f-stc~pierre~de~saurel",
       "supersedes_ids": [
         "f-stc~pierre-de~saurel"
@@ -149,15 +219,56 @@
       }
     },
     {
+      "id": "f-u~vagabondu~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=speluncaliamone"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/u-vagabondu"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u~vagabondu~fr",
+          "name": "U Vagabondu",
+          "website": "https://spelunca-liamone.corsica/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u~vagabondu~fr~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-u~vagabondu~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://zenbus.net/gtfs/rt/poll.proto?dataset=speluncaliamone"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/u-vagabondu"
+      }
+    },
+    {
       "id": "f-zenbus~alesy",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=alesy"
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/b9a0f32e-4386-454c-8759-b82653fa861e",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=alesy"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/",
         "share_alike_optional": "no"
+      },
+      "tags": {
+        "udata_dataset": "horaires-theoriques-des-lignes-urbaines-et-interurbaines-sur-le-reseau-alesy-gtfs",
+        "udata_host": "www.data.gouv.fr"
       },
       "operators": [
         {
@@ -176,8 +287,8 @@
       "id": "f-zenbus~alesy~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=alesy",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=alesy"
+        "realtime_vehicle_positions": "https://alesy.plateforme-2cloud.com/api/gtfsrt/2.0/vehiclepositions/ALESY-6574-4401-7572/bin",
+        "realtime_trip_updates": "https://alesy.plateforme-2cloud.com/api/gtfsrt/2.0/tripupdates/ALESY-6574-4401-7572/bin"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -226,7 +337,10 @@
       "id": "f-zenbus~arche",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=lr11-arche"
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=TAIN_TOURNON&dataFormat=GTFS&dataProfil=OPENDATA",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=lr11-arche"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -572,43 +686,6 @@
       }
     },
     {
-      "id": "f-zenbus~ile~de~re",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=iledere-rna"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/",
-        "share_alike_optional": "no"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-zenbus~ile~de~re",
-          "name": "Transports Nouvelle-Aquitaine",
-          "website": "https://transports.nouvelle-aquitaine.fr/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~ile~de~re~rt"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-zenbus~ile~de~re~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=iledere-rna",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=iledere-rna"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/",
-        "share_alike_optional": "no"
-      }
-    },
-    {
       "id": "f-zenbus~laurentides",
       "spec": "gtfs",
       "urls": {
@@ -762,7 +839,10 @@
       "id": "f-zenbus~mendois",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=tum"
+        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=MAX",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=tum"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -778,7 +858,10 @@
             {
               "feed_onestop_id": "f-zenbus~mendois~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q58994855"
+          }
         }
       ]
     },
@@ -786,8 +869,8 @@
       "id": "f-zenbus~mendois~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=tum",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=tum"
+        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=MAX",
+        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=MAX"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -849,7 +932,10 @@
       "id": "f-zenbus~moselle~et~madon",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=moselle-et-madon"
+        "static_current": "https://api.grandest2.cityway.fr/exs/GTFS?Key=OPENDATA&OperatorCode=TMM",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=moselle-et-madon"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -866,7 +952,10 @@
             {
               "feed_onestop_id": "f-zenbus~moselle~et~madon~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q3537813"
+          }
         }
       ]
     },
@@ -1335,12 +1424,19 @@
       "id": "f-zenbus~tempobus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=16i2434229"
+        "static_current": "https://www.data.gouv.fr/api/1/datasets/r/c1415ff3-7457-4b51-aead-aacbf03a474e",
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=16i2434229"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
         "url": "http://opendatacommons.org/licenses/odbl/summary/",
         "share_alike_optional": "no"
+      },
+      "tags": {
+        "udata_dataset": "agen-gtfs-urbain",
+        "udata_host": "www.data.gouv.fr"
       },
       "operators": [
         {
@@ -1351,7 +1447,10 @@
             {
               "feed_onestop_id": "f-zenbus~tempobus~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q3537931"
+          }
         }
       ]
     },
@@ -1359,8 +1458,8 @@
       "id": "f-zenbus~tempobus~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=16i2434229",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=16i2434229"
+        "realtime_vehicle_positions": "https://api.pysae.com/api/v4/groups/agen/gtfs-rt",
+        "realtime_trip_updates": "https://api.pysae.com/api/v4/groups/agen/gtfs-rt"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",

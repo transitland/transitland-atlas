@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-agglobus~cavem~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.esterelcotedazur-lebus.fr/uploads/gtfs/"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-transport-urbain-le-bus"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-agglobus~cavem~fr",
+          "name": "Agglobus Cavem",
+          "website": "https://www.esterelcotedazur-lebus.fr/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-agglobus~cavem~fr~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q86664442"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-agglobus~cavem~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://api.pysae.com/api/v4/groups/agglobus-cavem/gtfs-rt"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-transport-urbain-le-bus"
+      }
+    }
+  ]
+}

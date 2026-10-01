@@ -11,6 +11,7 @@
         ]
       },
       "license": {
+        "spdx_identifier": "etalab-2.0",
         "url": "https://transport.data.gouv.fr/datasets/fichiers-gtfs-eurometropole-de-metz"
       },
       "operators": [
@@ -21,10 +22,26 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "TAMM"
+            },
+            {
+              "feed_onestop_id": "f-u0sr-lemet~proxis~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-u0sr-lemet~proxis~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://proxy.transport.data.gouv.fr/resource/lemet-metz-gtfs-rt-vehicle-position",
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/lemet-metz-gtfs-rt-trip-update",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/lemet-metz-gtfs-rt-service-alert"
+      },
+      "license": {
+        "spdx_identifier": "etalab-2.0",
+        "url": "https://transport.data.gouv.fr/datasets/fichiers-gtfs-eurometropole-de-metz"
+      }
     }
   ]
 }

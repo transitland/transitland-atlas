@@ -2,10 +2,44 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-ogalo~saumur~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mobi-iti-pdl.okina.fr/static/mobiiti_saumur_val_de_loire/gtfs_imported-id_saumur.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/lignes-arrets-et-horaires-theorique-du-reseau-de-transport-gtfs-netex-saumur-val-de-loire-agglomeration"
+      }
+    },
+    {
+      "id": "f-oleane~sables~d~olonne~fr",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://mobi-iti-pdl.okina.fr/static/mobiiti_les_sables_d_olonne/gtfs_imported-id_oleane.zip"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/lignes-arrets-et-horaires-theorique-du-reseau-de-transport-gtfs-et-netex-les-sables-dolonne-agglomeration"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-oleane~sables~d~olonne~fr",
+          "name": "Oléane",
+          "tags": {
+            "wikidata_id": "Q21008239"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-reseau~interurbain~cars~region~allier",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mobi-iti-ara.okina.fr/static/mobiiti_allier/gtfs.zip"
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=ALLIER&dataFormat=GTFS&dataProfil=OPENDATA",
+        "static_historic": [
+          "https://mobi-iti-ara.okina.fr/static/mobiiti_allier/gtfs.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -17,7 +51,10 @@
       "id": "f-reseau~interurbain~cars~region~cantal",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mobi-iti-ara.okina.fr/static/mobiiti_cantal/gtfs.zip"
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=CAR_REGION_CANTAL&dataFormat=GTFS&dataProfil=OPENDATA",
+        "static_historic": [
+          "https://mobi-iti-ara.okina.fr/static/mobiiti_cantal/gtfs.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -29,7 +66,10 @@
       "id": "f-reseau~interurbain~cars~region~haute~loire",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mobi-iti-ara.okina.fr/static/mobiiti_haute_loire/gtfs.zip"
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=HAUTE_LOIRE&dataFormat=GTFS&dataProfil=OPENDATA",
+        "static_historic": [
+          "https://mobi-iti-ara.okina.fr/static/mobiiti_haute_loire/gtfs.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -41,7 +81,10 @@
       "id": "f-reseau~interurbain~cars~region~puy~de~dome",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mobi-iti-ara.okina.fr/static/mobiiti_puy_de_dome/gtfs.zip"
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=PUY_DE_DOME&dataFormat=GTFS&dataProfil=OPENDATA",
+        "static_historic": [
+          "https://mobi-iti-ara.okina.fr/static/mobiiti_puy_de_dome/gtfs.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",

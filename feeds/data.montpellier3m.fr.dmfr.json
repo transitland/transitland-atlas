@@ -5,10 +5,14 @@
       "id": "f-spfb-tam~montpellier",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_GTFS.zip"
+        "static_current": "https://gtfsproxy.e-tam.fr/COMMON/GTFS.zip",
+        "static_historic": [
+          "https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_GTFS.zip"
+        ]
       },
       "license": {
-        "url": "https://data.montpellier3m.fr/dataset/offre-de-transport-tam-en-gtfs",
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-tam-en-temps-reel-gtfs-rt-urbain-et-suburbain",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "Montpellier Mediterranée Métropole"
@@ -22,10 +26,29 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-spfb-tam~montpellier~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q3537922"
+          }
         }
       ]
+    },
+    {
+      "id": "f-spfb-tam~montpellier~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfsproxy.e-tam.fr/COMMON/VehiclePosition.pb",
+        "realtime_trip_updates": "https://gtfsproxy.e-tam.fr/COMMON/TripUpdate.pb",
+        "realtime_alerts": "https://gtfsproxy.e-tam.fr/COMMON/Alert.pb"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/offre-de-transport-tam-en-temps-reel-gtfs-rt-urbain-et-suburbain"
+      }
     }
   ]
 }

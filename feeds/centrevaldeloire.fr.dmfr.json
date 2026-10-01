@@ -11,6 +11,32 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/agglobus-offre-theorique-mobilite-reseau-urbain-de-bourges",
         "share_alike_optional": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u03e-agglobusbourges",
+          "name": "Agglobus (Bourges)",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-agglobus~bourges~fr~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q3537943"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-agglobus~bourges~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_trip_updates": "https://proxy.transport.data.gouv.fr/resource/agglobus-bourges-gtfs-rt-trip-update",
+        "realtime_alerts": "https://proxy.transport.data.gouv.fr/resource/agglobus-bourges-gtfs-rt-alerts"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/agglobus-offre-theorique-mobilite-reseau-urbain-de-bourges"
       }
     },
     {
@@ -23,6 +49,32 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/agglopolys-offre-theorique-mobilite-reseau-urbain-azalys-de-blois",
         "share_alike_optional": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u02y-azalysblois",
+          "name": "Azalys (Blois)",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-azalys~blois~fr~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q24936087"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-azalys~blois~fr~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://app.mecatran.com/utw/ws/gtfsfeed/realtime/blois?apiKey=7a0d1031460836674e76041e7a78011813347f04",
+        "realtime_trip_updates": "https://app.mecatran.com/utw/ws/gtfsfeed/realtime/blois?apiKey=7a0d1031460836674e76041e7a78011813347f04"
+      },
+      "license": {
+        "spdx_identifier": "ODbL-1.0",
+        "url": "https://transport.data.gouv.fr/datasets/agglopolys-offre-theorique-mobilite-reseau-urbain-azalys-de-blois"
       }
     },
     {
@@ -35,7 +87,18 @@
         "spdx_identifier": "ODbL-1.0",
         "url": "https://transport.data.gouv.fr/datasets/remi-offre-theorique-mobilite-reseau-interurbain-regional",
         "share_alike_optional": "no"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-remi~fr",
+          "name": "Rémi - Réseau de Mobilité Interurbaine CVDL",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "REMI36:Operator:ratpdev_sti_centre"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

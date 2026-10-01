@@ -5,11 +5,14 @@
       "id": "f-cars~région~fr",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.itinisere.fr/fr/donnees-open-data/169/OpenData/Download?fileName=CG38.GTFS.zip"
+        "static_current": "https://api.oura3.cityway.fr/dataflow/offre-tc/download?provider=ISERE&dataFormat=gtfs",
+        "static_historic": [
+          "https://www.itinisere.fr/fr/donnees-open-data/169/OpenData/Download?fileName=CG38.GTFS.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/reseau-cars-region-isere-38",
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-isere-38-1",
         "share_alike_optional": "no"
       },
       "operators": [
@@ -20,7 +23,10 @@
             {
               "feed_onestop_id": "f-cars~région~fr~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q3456857"
+          }
         }
       ]
     },
@@ -28,11 +34,12 @@
       "id": "f-cars~région~fr~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://www.itinisere.fr/ftp/GtfsRT/GtfsRT.CG38.pb"
+        "realtime_trip_updates": "https://api.oura3.cityway.fr/dataflow/horaire-tr/download?provider=ISERE&dataFormat=GTFS-RT&dataProfil=OPENDATA",
+        "realtime_alerts": "https://api.oura3.cityway.fr/dataflow/info-transport/download?provider=ISERE&dataFormat=GTFS-RT&dataProfil=OPENDATA"
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
-        "url": "https://transport.data.gouv.fr/datasets/reseau-cars-region-isere-38"
+        "url": "https://transport.data.gouv.fr/datasets/reseau-interurbain-cars-region-isere-38-1"
       }
     }
   ]
