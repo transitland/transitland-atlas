@@ -32,11 +32,33 @@
           "website": "https://www.transport.act.gov.au",
           "associated_feeds": [
             {
+              "feed_onestop_id": "f-r3dp-wwwactionactgovau~lightrail~rt"
+            },
+            {
               "feed_onestop_id": "f-r3dp-wwwactionactgovau~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-r3dp-wwwactionactgovau~lightrail~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://files.transport.act.gov.au/feeds/lightrail.pb",
+        "realtime_trip_updates": "http://files.transport.act.gov.au/feeds/lightrail.pb",
+        "realtime_alerts": "http://files.transport.act.gov.au/feeds/lightrail.pb"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "ACT Government"
+      },
+      "tags": {
+        "mdb_source_id": "1423"
+      }
     },
     {
       "id": "f-r3dp-wwwactionactgovau~rt",
