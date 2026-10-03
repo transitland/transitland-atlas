@@ -28,10 +28,9 @@ jobs:
 
     - name: Check out the PR's feeds/
       env:
-        PR_NUMBER: ${{ github.event.pull_request.number }}
         HEAD_SHA: ${{ github.event.pull_request.head.sha }}
       run: |
-        git fetch --no-tags --depth=1 origin "pull/$PR_NUMBER/head"
+        git fetch --no-tags --depth=1 origin "$HEAD_SHA"
         # --no-overlay also drops files the PR deletes.
         git checkout --no-overlay "$HEAD_SHA" -- feeds
 
