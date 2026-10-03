@@ -20,24 +20,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
+      # Run the base branch's workflow and scripts; take only feeds/ from the PR.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.base.sha }}
           fetch-depth: 0
-          # PR code under pull_request_target; keep the token out of .git/config.
           persist-credentials: false
 
-      - name: Security check for fork PRs
-        if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+      - name: Check out the PR's feeds/
         env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
-          # Three-dot diff: only what the PR itself changes.
-          if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -q -E "^\.github/|^scripts/|^pyproject\.toml$|^uv\.lock$|^\.python-version$"; then
-            echo "Error: PR changes .github/, scripts/ or the Python environment files"
-            exit 1
-          fi
+          git fetch --no-tags origin "pull/$PR_NUMBER/head"
+          # --no-overlay also drops files the PR deletes.
+          git checkout --no-overlay "$HEAD_SHA" -- feeds
 
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
       - name: Cache transitland binary
