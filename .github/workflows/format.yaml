@@ -20,34 +20,24 @@ jobs:
     timeout-minutes: 15
 
     steps:
+    # Run the base branch's workflow and scripts; take only feeds/ from the PR.
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       with:
-        ref: ${{ github.event.pull_request.head.sha }}
-        fetch-depth: 0
-        # PR code under pull_request_target; keep the token out of .git/config.
+        ref: ${{ github.event.pull_request.base.sha }}
         persist-credentials: false
 
-    # Only needed for fork PRs - security check
-    - name: Security check for fork PRs
-      if: ${{ github.event.pull_request.head.repo.full_name != github.repository }}
+    - name: Check out the PR's feeds/
       env:
         HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        BASE_SHA: ${{ github.event.pull_request.base.sha }}
       run: |
-        # Three-dot diff: only what the PR itself changes.
-        if git diff --name-only "$BASE_SHA...$HEAD_SHA" | grep -q -E "^\.github/|^scripts/|^pyproject\.toml$|^uv\.lock$|^\.python-version$"; then
-          echo "Error: PR changes .github/, scripts/ or the Python environment files, which is not allowed for security reasons"
-          exit 1
-        fi
+        git fetch --no-tags --depth=1 origin "$HEAD_SHA"
+        # --no-overlay also drops files the PR deletes.
+        git checkout --no-overlay "$HEAD_SHA" -- feeds
 
     - name: Cache transitland binary
-
       uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-
       with:
-
         path: ~/.cache/transitland
-
         key: transitland-${{ runner.os }}-${{ hashFiles('scripts/install-transitland-lib.sh') }}
 
     - name: Install transitland-lib
@@ -64,17 +54,15 @@ jobs:
       id: git-diff
       run: |
         set -euo pipefail  # Fail on any error
-        git_status_output="$(git status --porcelain)" || {
-          echo "Error running git status: $?"
-          exit 1
-        }
-        
-        if [ -z "$git_status_output" ]; then
+        # The PR's feeds/ are staged, so the unstaged diff is only formatting.
+        changed_files="$(git diff --name-only)"
+
+        if [ -z "$changed_files" ]; then
           echo "No formatting changes needed"
         else
           echo "Formatting changes required"
-          echo "Git status:"
-          echo "$git_status_output"
+          echo "Changed files:"
+          echo "$changed_files"
           echo "Git diff:"
           git diff
           # Random delimiter, so no line of the diff can end the block early.
