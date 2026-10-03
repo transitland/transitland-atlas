@@ -21,6 +21,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "2"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         },
@@ -31,6 +34,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "41"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         },
@@ -41,8 +47,14 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "4"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q7565318"
+          }
         },
         {
           "onestop_id": "o-r1f9-adelaidemetroindustrialservice~lightcitybuses",
@@ -51,6 +63,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "72"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         },
@@ -61,6 +76,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "7"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         },
@@ -71,6 +89,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "71"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         },
@@ -81,6 +102,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "51"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         },
@@ -91,6 +115,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "5"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         },
@@ -101,10 +128,31 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "52"
+            },
+            {
+              "feed_onestop_id": "f-r1f-adelaidemetrocomau~rt"
             }
           ]
         }
       ]
+    },
+    {
+      "id": "f-r1f-adelaidemetrocomau~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gtfs.adelaidemetro.com.au/v1/realtime/vehicle_positions",
+        "realtime_trip_updates": "https://gtfs.adelaidemetro.com.au/v1/realtime/trip_updates",
+        "realtime_alerts": "https://gtfs.adelaidemetro.com.au/v1/realtime/service_alerts"
+      },
+      "license": {
+        "url": "http://creativecommons.org/licenses/by/4.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Department of Planning, Transport and Infrastructure, Government of South Australia"
+      },
+      "tags": {
+        "mdb_source_id": "1772,1773,1774"
+      }
     }
   ]
 }
