@@ -127,13 +127,19 @@
       "id": "f-r7h-translink",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfsrt.api.translink.com.au/GTFS/SEQ_GTFS.zip"
+        "static_current": "https://gtfsrt.api.translink.com.au/gtfs/SEQ_SCH_GTFS.zip",
+        "static_historic": [
+          "https://gtfsrt.api.translink.com.au/GTFS/SEQ_GTFS.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-seq/resource/be7f19e5-3ee8-4396-b9eb-46f6b4ce8039",
         "use_without_attribution": "no",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "mdb_source_id": "3048"
       }
     },
     {

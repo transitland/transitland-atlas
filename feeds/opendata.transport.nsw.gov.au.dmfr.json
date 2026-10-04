@@ -22,6 +22,28 @@
       }
     },
     {
+      "id": "f-nsw~ferries",
+      "name": "Sydney Ferries",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transport.nsw.gov.au/v1/gtfs/schedule/ferries/sydneyferries"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Transport for NSW"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://opendata.transport.nsw.gov.au/developers/userguide"
+      },
+      "tags": {
+        "notes": "Overlaps the complete feed; f-nsw~ferries~rt trip_ids match this feed only."
+      }
+    },
+    {
       "id": "f-nsw~ferries~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -59,8 +81,8 @@
       "id": "f-nsw~lightrail~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://api.transport.nsw.gov.au/v1/gtfs/vehiclepos/lightrail/innerwest",
-        "realtime_trip_updates": "https://api.transport.nsw.gov.au/v1/gtfs/realtime/lightrail/innerwest",
+        "realtime_vehicle_positions": "https://api.transport.nsw.gov.au/v2/gtfs/vehiclepos/lightrail/innerwest",
+        "realtime_trip_updates": "https://api.transport.nsw.gov.au/v2/gtfs/realtime/lightrail/innerwest",
         "realtime_alerts": "https://api.transport.nsw.gov.au/v2/gtfs/alerts/lightrail"
       },
       "license": {
@@ -116,6 +138,28 @@
       }
     },
     {
+      "id": "f-nsw~trains",
+      "name": "Sydney Trains",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.transport.nsw.gov.au/v1/gtfs/schedule/sydneytrains"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "Transport for NSW"
+      },
+      "authorization": {
+        "type": "header",
+        "param_name": "Authorization",
+        "info_url": "https://opendata.transport.nsw.gov.au/developers/userguide"
+      },
+      "tags": {
+        "notes": "Overlaps the complete feed; f-nsw~trains~rt trip_ids match this feed only."
+      }
+    },
+    {
       "id": "f-nsw~trains~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -154,6 +198,9 @@
         "type": "header",
         "param_name": "Authorization",
         "info_url": "https://opendata.transport.nsw.gov.au/developers/userguide"
+      },
+      "tags": {
+        "notes": "Sydney Trains and Sydney Ferries also in f-nsw~trains and f-nsw~ferries, for RT matching."
       },
       "operators": [
         {
@@ -1428,6 +1475,10 @@
               "gtfs_agency_id": "x0001"
             },
             {
+              "gtfs_agency_id": "SydneyTrains",
+              "feed_onestop_id": "f-nsw~trains"
+            },
+            {
               "feed_onestop_id": "f-nsw~trains~rt"
             }
           ],
@@ -1514,6 +1565,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "SF"
+            },
+            {
+              "feed_onestop_id": "f-nsw~ferries"
             },
             {
               "feed_onestop_id": "f-nsw~ferries~rt"
