@@ -106,6 +106,7 @@
       "id": "f-u0g-tec~rt",
       "spec": "gtfs-rt",
       "urls": {
+        "realtime_vehicle_positions": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/tec/rt/vehicle-position?format=protobuf",
         "realtime_trip_updates": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/tec/rt/trip-update?format=protobuf",
         "realtime_alerts": "https://api-management-opendata-production.azure-api.net/api/gtfs/feed/tec/rt/alert?format=protobuf"
       },
@@ -202,31 +203,9 @@
           "onestop_id": "o-u151-stib",
           "name": "Société des Transports Intercommunaux de Bruxelles/Maatschappij voor het Intercommunaal Vervoer te Brussel",
           "short_name": "STIB/MIVB",
-          "website": "http://www.stib.be/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-u151-stib~rt"
-            }
-          ]
+          "website": "http://www.stib.be/"
         }
       ]
-    },
-    {
-      "id": "f-u151-stib~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://api-management-opendata-production.azure-api.net/api/datasets/stibmivb/rt/VehiclePositions"
-      },
-      "license": {
-        "spdx_identifier": "CC-BY-4.0",
-        "url": "https://data.belgianmobility.io/en/terms.html",
-        "attribution_instructions": " Any reuse of data must include, at a minimum, the following attribution: Source: [PTO Name] - Open Data - [Date of dataset update]"
-      },
-      "authorization": {
-        "type": "header",
-        "param_name": "Ocp-Apim-Subscription-Key",
-        "info_url": "https://data.belgianmobility.io"
-      }
     }
   ]
 }
