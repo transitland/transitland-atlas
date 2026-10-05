@@ -1,0 +1,39 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-9qd-yosemite~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.planeteria.com/gtfs/yosemite-ca-us/yosemite-ca-us-gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/yosemite-ca-us/yosemite-ca-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://yarts.com/yarts-gtfs-data/"
+      },
+      "tags": {
+        "calitp_dataset_id": "recoUttMLUvnkaz57"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qd-yosemitearearegionaltransportationsystem",
+          "name": "Yosemite Area Regional Transportation System",
+          "short_name": "YARTS",
+          "website": "http://www.yarts.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "114"
+            }
+          ],
+          "tags": {
+            "twitter_general": "rideyarts",
+            "us_ntd_id": "91070",
+            "wikidata_id": "Q8055918"
+          }
+        }
+      ]
+    }
+  ]
+}
