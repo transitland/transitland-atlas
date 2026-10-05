@@ -1,0 +1,30 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-9r1-tehama~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.sparelabs.com/v1/fixedRoute/public/9f992f53-d237-407a-8608-3190ab250853/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/tehama-ca-us/tehama-ca-us.zip"
+        ]
+      },
+      "tags": {
+        "calitp_dataset_id": "recDVSj4XcCQCNFyG"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r1h-tehamaruralareaexpress",
+          "name": "Tehama Rural Area Express",
+          "short_name": "TRAX",
+          "website": "https://taketrax.com/",
+          "tags": {
+            "calitp_organization_id": "recEtov4XTJZDjtuj",
+            "us_ntd_id": "91089"
+          }
+        }
+      ]
+    }
+  ]
+}

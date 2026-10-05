@@ -2,6 +2,47 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-9pr-delnorte~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/redwoodcoast.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/delnorte-ca-us/delnorte-ca-us.zip"
+        ]
+      },
+      "tags": {
+        "calitp_dataset_id": "recBt2fwFf4WSGc0K",
+        "gtfs_data_exchange": "redwood-coast-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9pr-redwoodcoasttransit",
+          "name": "Redwood Coast Transit",
+          "short_name": "RCT",
+          "website": "http://redwoodcoasttransit.org/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "19"
+            },
+            {
+              "feed_onestop_id": "f-redwood~coast~del~norte~flex"
+            },
+            {
+              "feed_onestop_id": "f-redwood~coast~transit~rt"
+            },
+            {
+              "feed_onestop_id": "f-redwood~coast~transit~rt~alerts"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "recOnKhqF25crJt4q",
+            "us_ntd_id": "91097",
+            "wikidata_id": "Q96401429"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-albany~ga~us",
       "spec": "gtfs",
       "urls": {

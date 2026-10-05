@@ -571,6 +571,11 @@
           "name": "City of Tracy",
           "short_name": "TRACER",
           "website": "https://www.cityoftracy.org/our-city/departments/mobility-and-housing/transportation/tracer-bus-service",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-tracy~tracer~rt"
+            }
+          ],
           "tags": {
             "calitp_organization_id": "recdtVOFdFyypMSUL",
             "twitter_general": "cityoftracy",
@@ -579,6 +584,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-tracy~tracer~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/tracer.etaspot.net/alerts.pb"
+      },
+      "tags": {
+        "calitp_dataset_id": "receEwZlSjBC63vAY,rec2G6mAvDqhqYDBF,recTqNGOWq7qMh1iY"
+      }
     },
     {
       "id": "f-valleyride~rt",

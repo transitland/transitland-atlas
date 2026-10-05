@@ -2,6 +2,38 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-9qc-placercountytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://feed.actionfigure.ai/placer-county-transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/placercounty-ca-us/placercounty-ca-us.zip",
+          "http://iportal.sacrt.com/gtfs/PCT/20080914/google_transit.zip"
+        ]
+      },
+      "tags": {
+        "calitp_dataset_id": "reclUxmuws84qZ0n7"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qc-placercountytransit",
+          "name": "Placer County Transit",
+          "website": "https://selahwa.gov/transit/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "874"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "recDD2rnkl2m7IV8u",
+            "twitter_general": "pctpa",
+            "us_ntd_id": "90196",
+            "wikidata_id": "Q7200309"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-shuttleum~md~us",
       "spec": "gtfs",
       "urls": {

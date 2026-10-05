@@ -21,12 +21,29 @@
           "onestop_id": "o-9q5cz-alhambracommunitytransit",
           "name": "Alhambra Community Transit",
           "short_name": "ACT",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-alhambra~ca~us~rt"
+            }
+          ],
           "tags": {
             "calitp_organization_id": "recNaKvzVQhGX1puu",
             "us_ntd_id": "90247"
           }
         }
       ]
+    },
+    {
+      "id": "f-alhambra~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/alhambraca/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/alhambraca/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/alhambraca/passioTransit/gtfs/realtime/serviceAlerts"
+      },
+      "tags": {
+        "calitp_dataset_id": "recSU0ONiQzKzN3rw,recygwAZOv9pklgfb,rec72alUxsvIfDiL3"
+      }
     }
   ]
 }
