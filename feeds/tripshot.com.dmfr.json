@@ -280,6 +280,43 @@
       }
     },
     {
+      "id": "f-sanpedrotrolley~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://sanpedrotrolleys.tripshot.com/v1/gtfs.zip?regionId=CA558DDC-D7F2-4B48-9CAC-DEEA1134F820"
+      },
+      "tags": {
+        "calitp_dataset_id": "recTVuf4OR6i99gOb"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sanpedrotrolley~ca~us",
+          "name": "San Pedro Trolley",
+          "website": "https://developsanpedro.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-sanpedrotrolley~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "recJM6YEszIqlBbrb"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-sanpedrotrolley~ca~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://sanpedrotrolleys.tripshot.com/v1/gtfs/realtime/vehiclePosition/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+        "realtime_trip_updates": "https://sanpedrotrolleys.tripshot.com/v1/gtfs/realtime/tripUpdate/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820",
+        "realtime_alerts": "https://sanpedrotrolleys.tripshot.com/v1/gtfs/realtime/serviceAlert/CA558DDC-D7F2-4B48-9CAC-DEEA1134F820"
+      },
+      "tags": {
+        "calitp_dataset_id": "rec8MJj6vqUlqTbsK,recWHiVQBkVfEo7fl,recPEuiKSqGtMcaLe"
+      }
+    },
+    {
       "id": "f-ucla~bruinbus",
       "spec": "gtfs",
       "urls": {

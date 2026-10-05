@@ -184,14 +184,17 @@
       "id": "f-9pr-delnorte~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/delnorte-ca-us/delnorte-ca-us.zip"
+        "static_current": "https://gtfs.remix.com/redwoodcoast.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/delnorte-ca-us/delnorte-ca-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
       "tags": {
-        "calitp_dataset_id": "recWJJ4dRk4lHXaWX",
+        "calitp_dataset_id": "recBt2fwFf4WSGc0K",
         "gtfs_data_exchange": "redwood-coast-transit"
       },
       "operators": [
@@ -558,8 +561,9 @@
       "id": "f-9qc-placercountytransit",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/placercounty-ca-us/placercounty-ca-us.zip",
+        "static_current": "https://feed.actionfigure.ai/placer-county-transit.zip",
         "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/placercounty-ca-us/placercounty-ca-us.zip",
           "http://iportal.sacrt.com/gtfs/PCT/20080914/google_transit.zip"
         ]
       },
@@ -633,12 +637,18 @@
       "id": "f-9qd-yosemite~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/yosemite-ca-us/yosemite-ca-us.zip"
+        "static_current": "https://www.planeteria.com/gtfs/yosemite-ca-us/yosemite-ca-us-gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/yosemite-ca-us/yosemite-ca-us.zip"
+        ]
       },
       "license": {
         "url": "https://yarts.com/yarts-gtfs-data/",
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
+      },
+      "tags": {
+        "calitp_dataset_id": "recoUttMLUvnkaz57"
       },
       "operators": [
         {
@@ -964,37 +974,26 @@
       "id": "f-9r1-tehama~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/tehama-ca-us/tehama-ca-us.zip"
+        "static_current": "https://api.sparelabs.com/v1/fixedRoute/public/9f992f53-d237-407a-8608-3190ab250853/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/tehama-ca-us/tehama-ca-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
         "create_derived_product": "yes"
       },
+      "tags": {
+        "calitp_dataset_id": "recDVSj4XcCQCNFyG"
+      },
       "operators": [
-        {
-          "onestop_id": "o-9r1-susanvilleindianrancheriapublictransportationprogram",
-          "name": "Susanville Indian Rancheria Public Transportation Program",
-          "website": "https://taketrax.com/updates/susanville-indian-rancheria-public-transportation-program/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "62"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "99256"
-          }
-        },
         {
           "onestop_id": "o-9r1h-tehamaruralareaexpress",
           "name": "Tehama Rural Area Express",
           "short_name": "TRAX",
           "website": "https://taketrax.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "21"
-            }
-          ],
           "tags": {
+            "calitp_organization_id": "recEtov4XTJZDjtuj",
             "us_ntd_id": "91089"
           }
         }
