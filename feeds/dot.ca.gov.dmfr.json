@@ -329,7 +329,10 @@
       "id": "f-yurok~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/YurokGTFS.zip"
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/YurokTribeTransitServiceGTFS.zip",
+        "static_historic": [
+          "https://gtfs.dds.dot.ca.gov/gtfs_files/YurokGTFS.zip"
+        ]
       },
       "license": {
         "url": "https://dot.ca.gov/cal-itp/california-minimum-general-transit-feed-specification-gtfs-guidelines"
@@ -343,12 +346,30 @@
           "name": "Yurok Tribe",
           "short_name": "Yurok Transit",
           "website": "https://www.yuroktribe.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-yurok~riverotterferry~ca~us"
+            }
+          ],
           "tags": {
             "calitp_organization_id": "rec4Vi2TfrtSAgp8i",
             "us_ntd_id": "99262"
           }
         }
       ]
+    },
+    {
+      "id": "f-yurok~riverotterferry~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.dds.dot.ca.gov/gtfs_files/YurokRiverOtterFerryGTFS.zip"
+      },
+      "license": {
+        "url": "https://dot.ca.gov/cal-itp/california-minimum-general-transit-feed-specification-gtfs-guidelines"
+      },
+      "tags": {
+        "calitp_dataset_id": "rec5BjbBS1PwNjPsW"
+      }
     }
   ]
 }
