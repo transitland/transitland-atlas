@@ -542,6 +542,11 @@
           "onestop_id": "o-dpks-toledoarearegionaltransitauthority",
           "name": "Toledo Area Regional Transit Authority",
           "short_name": "TARTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-toledo~area~regional~transit~authority~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "TARTA_Toledo",
             "us_ntd_id": "50022",
@@ -549,6 +554,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-toledo~area~regional~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/tarta.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/tarta.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/tarta.etaspot.net/alerts.pb"
+      }
     },
     {
       "id": "f-tracy~tracer",
