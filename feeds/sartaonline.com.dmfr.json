@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-stark~area~regional~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://pinpoint.sartaonline.com/InfoPoint/GTFS-Zip.ashx",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11346/gtfs.zip",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/stark-area-regional-transit-authority.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpq-sarta",
+          "name": "Stark Area Regional Transit Authority",
+          "short_name": "SARTA",
+          "website": "https://www.sartaonline.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-stark~area~regional~transit~authority~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "SARTAonline",
+            "us_ntd_id": "50011",
+            "wikidata_id": "Q7601948"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-stark~area~regional~transit~authority~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://pinpoint.sartaonline.com/InfoPoint/GTFS-Realtime.ashx?Type=VehiclePosition",
+        "realtime_trip_updates": "https://pinpoint.sartaonline.com/InfoPoint/GTFS-Realtime.ashx?Type=TripUpdate",
+        "realtime_alerts": "https://pinpoint.sartaonline.com/InfoPoint/GTFS-Realtime.ashx?Type=Alert"
+      }
+    }
+  ]
+}
