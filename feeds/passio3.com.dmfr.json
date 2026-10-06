@@ -1872,6 +1872,40 @@
       }
     },
     {
+      "id": "f-macog",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/macog/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "http://macog.com/google/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-macog",
+          "name": "Interurban Trolley",
+          "website": "http://www.interurbantrolley.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-macog~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "50149"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-macog~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/macog/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/macog/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/macog/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-mercy~college",
       "spec": "gtfs",
       "urls": {
