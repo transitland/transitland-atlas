@@ -2,6 +2,13 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-silver~rider~laughlin~local~nv~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://silverrider.net/wp-content/uploads/2026/03/Laughlin-Feed.zip"
+      }
+    },
+    {
       "id": "f-silver~rider~laughlin~nv~us",
       "spec": "gtfs",
       "urls": {
@@ -9,6 +16,13 @@
       },
       "tags": {
         "unstable_url": "true"
+      }
+    },
+    {
+      "id": "f-silver~rider~mesquite~local~nv~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://silverrider.net/wp-content/uploads/2026/03/Mesquite-Feed.zip"
       }
     },
     {
@@ -30,14 +44,20 @@
       "website": "https://silverrider.net/",
       "associated_feeds": [
         {
+          "feed_onestop_id": "f-silver~rider~laughlin~local~nv~us"
+        },
+        {
           "feed_onestop_id": "f-silver~rider~laughlin~nv~us"
+        },
+        {
+          "feed_onestop_id": "f-silver~rider~mesquite~local~nv~us"
         },
         {
           "feed_onestop_id": "f-silver~rider~mesquite~nv~us"
         }
       ],
       "tags": {
-        "us_ntd_id": "91072,91107"
+        "us_ntd_id": "91072,91100,91107"
       }
     }
   ]
