@@ -2608,33 +2608,6 @@
       ]
     },
     {
-      "id": "f-c28-islandtransit",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/islandtransit-wa-us/islandtransit-wa-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c28-islandtransit",
-          "name": "Island Transit",
-          "website": "http://www.islandtransit.org/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2271"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "00298",
-            "wikidata_id": "Q16980701"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-c427-cityandboroughofjuneau~ak~us",
       "spec": "gtfs",
       "urls": {
@@ -6101,31 +6074,6 @@
       }
     },
     {
-      "id": "f-piercecountyferries~wa~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/piercecountyferries-wa-us/piercecountyferries-wa-us.zip",
-        "static_historic": [
-          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/piercecountyferries-wa-us.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-c22u3-piercecountyferries",
-          "name": "Pierce County Ferries",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1777"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "00028",
-            "wikidata_id": "Q7606736"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-piercecounty~wa~us",
       "spec": "gtfs",
       "urls": {
@@ -6575,7 +6523,10 @@
             {
               "gtfs_agency_id": "1824"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00317,00015"
+          }
         }
       ]
     },
@@ -6632,7 +6583,17 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/squaxinisland-wa-us/squaxinisland-wa-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-squaxinisland~wa~us",
+          "name": "Squaxin Island Transit",
+          "website": "https://squaxinisland.org/transit/",
+          "tags": {
+            "us_ntd_id": "00103"
+          }
+        }
+      ]
     },
     {
       "id": "f-srda~co~us~flex",

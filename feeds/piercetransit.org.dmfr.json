@@ -1,0 +1,42 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-c22-piercetransit~soundtransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://prod.piercetransit.org/GTFS/gtfs.zip",
+        "static_historic": [
+          "https://www.soundtransit.org/GTFS-PT/gtfs.zip",
+          "https://gtfs.sound.obaweb.org/prod/3_gtfs.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22u-piercetransit",
+          "name": "Pierce Transit",
+          "website": "http://www.piercetransit.org",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "3",
+              "feed_onestop_id": "f-c22-piercetransit~soundtransit"
+            },
+            {
+              "feed_onestop_id": "f-piercetransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "PierceTransit",
+            "us_ntd_id": "00003",
+            "wikidata_id": "Q7191834"
+          }
+        }
+      ]
+    }
+  ]
+}

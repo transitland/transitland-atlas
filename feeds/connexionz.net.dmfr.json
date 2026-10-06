@@ -415,6 +415,41 @@
       }
     },
     {
+      "id": "f-piercecountyferries~wa~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://hbwest.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/piercecountyferries-wa-us/piercecountyferries-wa-us.zip",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/piercecountyferries-wa-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c22u3-piercecountyferries",
+          "name": "Pierce County Ferries",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-piercecountyferries~wa~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00028",
+            "wikidata_id": "Q7606736"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-piercecountyferries~wa~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://hbwest.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://hbwest.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate",
+        "realtime_alerts": "https://hbwest.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/alert"
+      }
+    },
+    {
       "id": "f-pigeon~forge~tn~us",
       "spec": "gtfs",
       "urls": {
