@@ -189,6 +189,43 @@
       }
     },
     {
+      "id": "f-danville~il~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://danvillemasstransit.tripshot.com/v1/gtfs.zip",
+        "static_historic": [
+          "https://www.ridedmt.org/home/showpublisheddocument/1979/638712314709900000",
+          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/danville-il-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-danville~il~us",
+          "name": "Danville Mass Transit",
+          "short_name": "DMT",
+          "website": "https://www.ridedmt.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-danville~il~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "50174",
+            "wikidata_id": "Q115938980"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-danville~il~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://danvillemasstransit.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+        "realtime_trip_updates": "https://danvillemasstransit.tripshot.com/v1/gtfs/realtime/tripUpdate",
+        "realtime_alerts": "https://danvillemasstransit.tripshot.com/v1/gtfs/realtime/serviceAlert"
+      }
+    },
+    {
       "id": "f-dj6m-okaloosacountytransit~fl~us",
       "spec": "gtfs",
       "urls": {
