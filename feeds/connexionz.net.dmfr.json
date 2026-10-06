@@ -273,6 +273,45 @@
       }
     },
     {
+      "id": "f-dpsk-masstransportationauthorityflint",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://flint.connexionz.net/rtt/public/resource/gtfs.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5191/google_transit.zip",
+          "https://www.mtaflint.org/wp-content/media/google_transit_2023.zip",
+          "https://www.mtaflint.org/wp-content/media/stops.zip",
+          "https://www.mtaflint.org/wp-content/media/google_transit.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpsk-masstransportationauthorityflint",
+          "name": "Mass Transportation Authority Flint",
+          "short_name": "MTA Flint",
+          "website": "http://www.mtaflint.org",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpsk-masstransportationauthorityflint~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "MTAflint",
+            "us_ntd_id": "50032",
+            "wikidata_id": "Q5459534"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dpsk-masstransportationauthorityflint~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://flint.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/vehicleposition",
+        "realtime_trip_updates": "https://flint.connexionz.net/rtt/public/utility/gtfsrealtime.aspx/tripupdate"
+      }
+    },
+    {
       "id": "f-dr5r-nycferry",
       "spec": "gtfs",
       "urls": {
