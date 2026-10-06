@@ -1963,7 +1963,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "60072"
+            "us_ntd_id": "60072",
+            "wikidata_id": "Q7116506"
           }
         }
       ]
@@ -2535,11 +2536,25 @@
           "onestop_id": "o-universityofarkansas~ar~us",
           "name": "University of Arkansas",
           "website": "https://parking.uark.edu/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-universityofarkansas~ar~us~rt"
+            }
+          ],
           "tags": {
             "us_ntd_id": "60062"
           }
         }
       ]
+    },
+    {
+      "id": "f-universityofarkansas~ar~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/UofArkansas/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/UofArkansas/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/UofArkansas/passioTransit/gtfs/realtime/serviceAlerts"
+      }
     },
     {
       "id": "f-universityofsandiegotram~ca~us",
