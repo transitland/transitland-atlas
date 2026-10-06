@@ -51,6 +51,11 @@
           "name": "Sioux Area Metro",
           "short_name": "SAM",
           "website": "https://siouxareametro.info/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9zep-siouxareametro~sd~us~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "citysiouxfalls",
             "us_ntd_id": "80002",
@@ -58,6 +63,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9zep-siouxareametro~sd~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/siouxareametro.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/siouxareametro.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/siouxareametro.etaspot.net/alerts.pb"
+      }
     },
     {
       "id": "f-auburn~university",
