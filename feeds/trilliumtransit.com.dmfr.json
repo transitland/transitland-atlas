@@ -4335,7 +4335,10 @@
       "id": "f-drs-thebus~vt~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/thebus-vt-us/thebus-vt-us.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/thebus-vt-us/thebus-vt-us--flex-v2.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/thebus-vt-us/thebus-vt-us.zip"
+        ]
       },
       "license": {
         "url": "https://vermont-gtfs.org/",
@@ -4406,7 +4409,10 @@
       "id": "f-drsh-dvtamoover~vt~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/sevt-vt-us/sevt-vt-us.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/sevt-vt-us/sevt-vt-us--flex-v2.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/sevt-vt-us/sevt-vt-us.zip"
+        ]
       },
       "license": {
         "url": "https://vermont-gtfs.org/",
@@ -4415,29 +4421,19 @@
       },
       "operators": [
         {
-          "onestop_id": "o-drs-thecurrent",
-          "name": "Rockingham MOOver",
-          "website": "https://www.moover.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "232"
-            },
-            {
-              "feed_onestop_id": "f-dvtamoover~vt~rt"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "10144",
-            "wikidata_id": "Q28448928"
-          }
-        },
-        {
           "onestop_id": "o-drsh-moover",
-          "name": "Wilmington MOOver",
+          "supersedes_ids": [
+            "o-drs-thecurrent"
+          ],
+          "name": "Southeast Vermont Transit",
+          "short_name": "MOOver",
           "website": "https://www.moover.com/",
           "associated_feeds": [
             {
               "gtfs_agency_id": "218"
+            },
+            {
+              "gtfs_agency_id": "232"
             },
             {
               "feed_onestop_id": "f-dvtamoover~vt~rt"
@@ -4740,7 +4736,8 @@
           ],
           "tags": {
             "twitter_general": "actransitvt",
-            "us_ntd_id": "1R06-10143,1R06-10168"
+            "us_ntd_id": "10143,10168",
+            "wikidata_id": "Q16973953"
           }
         }
       ]
@@ -4777,7 +4774,8 @@
             }
           ],
           "tags": {
-            "twitter_general": "vttranslines"
+            "twitter_general": "vttranslines",
+            "wikidata_id": "Q19865819"
           }
         }
       ]
