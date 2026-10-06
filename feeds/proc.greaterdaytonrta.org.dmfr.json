@@ -15,6 +15,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "1"
+            },
+            {
+              "feed_onestop_id": "f-dph4-greaterdaytonrta~rt"
             }
           ],
           "tags": {
@@ -24,6 +27,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dph4-greaterdaytonrta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://ridetime.greaterdaytonrta.org/gtfsrt/vehicles",
+        "realtime_trip_updates": "https://ridetime.greaterdaytonrta.org/gtfsrt/trips",
+        "realtime_alerts": "https://ridetime.greaterdaytonrta.org/gtfsrt/alerts"
+      }
     }
   ]
 }
