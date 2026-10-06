@@ -1,0 +1,43 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-c290-everetttransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://everett.mapstrat.com/current/google_transit.zip",
+        "static_historic": [
+          "https://gtfs.sound.obaweb.org/prod/97_gtfs.zip"
+        ]
+      },
+      "tags": {
+        "gtfs_data_exchange": "everett-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c290-everetttransit",
+          "name": "Everett Transit",
+          "website": "http://www.everetttransit.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-everetttransit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00005",
+            "wikidata_id": "Q5417075"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-everetttransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://everett.mapstrat.com/current/gtfrealtime_VehiclePositions.bin",
+        "realtime_trip_updates": "https://everett.mapstrat.com/current/gtfrealtime_TripUpdates.bin",
+        "realtime_alerts": "https://everett.mapstrat.com/current/gtfrealtime_ServiceAlerts.bin"
+      }
+    }
+  ]
+}

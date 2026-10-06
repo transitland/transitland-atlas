@@ -1,0 +1,51 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-c23-soundtransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.soundtransit.org/GTFS-rail/40_gtfs.zip",
+        "static_historic": [
+          "https://gtfs.sound.obaweb.org/prod/40_gtfs.zip"
+        ]
+      },
+      "license": {
+        "url": "https://www.soundtransit.org/help-contacts/business-information/open-transit-data-otd/transit-data-terms-use",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "tags": {
+        "gtfs_data_exchange": "sound-transit"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c23-soundtransit",
+          "name": "Sound Transit",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "40",
+              "feed_onestop_id": "f-c22-piercetransit~soundtransit"
+            },
+            {
+              "gtfs_agency_id": "40",
+              "feed_onestop_id": "f-c23-metrokingcounty"
+            },
+            {
+              "gtfs_agency_id": "40",
+              "feed_onestop_id": "f-c29-communitytransit"
+            },
+            {
+              "feed_onestop_id": "f-soundtransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "SoundTransit",
+            "us_ntd_id": "00040",
+            "wikidata_id": "Q3965367"
+          }
+        }
+      ]
+    }
+  ]
+}

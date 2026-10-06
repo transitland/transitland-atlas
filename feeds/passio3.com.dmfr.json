@@ -589,6 +589,41 @@
       }
     },
     {
+      "id": "f-c28-islandtransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/islandtransit/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/islandtransit-wa-us/islandtransit-wa-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-c28-islandtransit",
+          "name": "Island Transit",
+          "website": "http://www.islandtransit.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-c28-islandtransit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "00298",
+            "wikidata_id": "Q16980701"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-c28-islandtransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/islandtransit/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/islandtransit/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/islandtransit/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-c2qft-udash~mt~us",
       "spec": "gtfs",
       "urls": {

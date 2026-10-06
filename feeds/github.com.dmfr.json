@@ -37,7 +37,9 @@
       "id": "f-c23n-microsoftshuttles",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://github.com/cookieguru/microsoft-gtfs/releases/download/20150518150359/gtfs_20150518150359.zip"
+        "static_historic": [
+          "https://github.com/cookieguru/microsoft-gtfs/releases/download/20150518150359/gtfs_20150518150359.zip"
+        ]
       },
       "tags": {
         "source": "unofficial"
@@ -269,7 +271,18 @@
         "static_historic": [
           "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/raw/master/seattlemonorail-wa-us.zip"
         ]
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-seattlemonorail~wa~us",
+          "name": "Seattle Center Monorail",
+          "website": "https://www.seattlemonorail.com/",
+          "tags": {
+            "us_ntd_id": "00023",
+            "wikidata_id": "Q2618100"
+          }
+        }
+      ]
     },
     {
       "id": "f-stq4-nationalauthorityfortunnels",

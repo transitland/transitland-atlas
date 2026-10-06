@@ -5,22 +5,15 @@
       "id": "f-c23-metrokingcounty",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://metro.kingcounty.gov/GTFS/google_transit.zip"
+        "static_current": "https://metro.kingcounty.gov/GTFS/google_transit.zip",
+        "static_historic": [
+          "http://metro.kingcounty.gov/GTFS/google_transit.zip"
+        ]
       },
       "license": {
-        "url": "http://www.kingcounty.gov/transportation/kcdot/MetroTransit/Developers/TermsOfUse.aspx"
+        "url": "https://kingcounty.gov/en/dept/metro/rider-tools/mobile-and-web-apps#toc-transit-data-terms-of-use"
       },
       "operators": [
-        {
-          "onestop_id": "o-c22y-kingcountymarinedivison",
-          "name": "King County Marine Divison",
-          "website": "http://www.kingcounty.gov/transportation/kcdot/Marine.aspx",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "KMD"
-            }
-          ]
-        },
         {
           "onestop_id": "o-c23-metrotransit",
           "name": "King County Metro",
@@ -28,7 +21,7 @@
           "website": "http://metro.kingcounty.gov",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "KCM"
+              "gtfs_agency_id": "1"
             },
             {
               "feed_onestop_id": "f-kingcountymetro~rt"
@@ -47,17 +40,30 @@
           "website": "http://seattlestreetcar.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "EOS"
+              "gtfs_agency_id": "23"
             },
             {
-              "feed_onestop_id": "f-seattlestreetcar~rt"
+              "feed_onestop_id": "f-kingcountymetro~rt"
             }
           ],
           "tags": {
-            "us_ntd_id": "00023"
+            "us_ntd_id": "00023",
+            "wikidata_id": "Q763309"
           }
         }
       ]
+    },
+    {
+      "id": "f-kingcountymetro~rt",
+      "supersedes_ids": [
+        "f-seattlestreetcar~rt"
+      ],
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/kcm-alerts-realtime-prod/vehiclepositions.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/kcm-alerts-realtime-prod/tripupdates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/kcm-alerts-realtime-prod/alerts.pb"
+      }
     }
   ]
 }
