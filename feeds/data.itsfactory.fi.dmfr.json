@@ -5,22 +5,26 @@
       "id": "f-udb-tampereenjoukkoliikenne",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://data.itsfactory.fi/journeys/files/gtfs/latest/gtfs_tampere.zip"
+        "static_current": "https://data.itsfactory.fi/journeys/files/gtfs/latest/gtfs_tampere.zip",
+        "static_historic": [
+          "https://data.itsfactory.fi/journeys/files/gtfs/latest/gtfs_tampere.zip"
+        ]
       },
       "license": {
-        "url": "http://creativecommons.org/licenses/by/4.0/deed.fi",
-        "use_without_attribution": "yes",
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/deed.fi",
+        "use_without_attribution": "no",
         "create_derived_product": "yes"
       },
       "operators": [
         {
           "onestop_id": "o-udb-tampereenjoukkoliikenne",
           "name": "Tampereen joukkoliikenne",
-          "short_name": "NYSSE",
-          "website": "http://joukkoliikenne.tampere.fi/",
+          "short_name": "Nysse",
+          "website": "https://nysse.fi",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "JOLI"
+              "gtfs_agency_id": "Nysse"
             }
           ]
         }
