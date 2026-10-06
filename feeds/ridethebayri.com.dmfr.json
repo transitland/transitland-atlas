@@ -1,0 +1,27 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-ridethebay~ri~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.ridethebayri.com/RIDOT-GTFS.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-ridethebay~ri~us",
+          "name": "Ride the Bay",
+          "website": "https://www.ridethebayri.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "ridot"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "11147"
+          }
+        }
+      ]
+    }
+  ]
+}
