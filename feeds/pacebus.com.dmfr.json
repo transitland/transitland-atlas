@@ -27,15 +27,27 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "PACE"
+            },
+            {
+              "feed_onestop_id": "f-dp3-pace~rt"
             }
           ],
           "tags": {
             "twitter_general": "PaceSuburbanBus",
-            "us_ntd_id": "50113",
+            "us_ntd_id": "50113,50182",
             "wikidata_id": "Q3360030"
           }
         }
       ]
+    },
+    {
+      "id": "f-dp3-pace~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tmweb.pacebus.com/TMGTFSRealTimeWebService/vehicle/VehiclePositions.pb",
+        "realtime_trip_updates": "https://tmweb.pacebus.com/TMGTFSRealTimeWebService/tripupdate/tripupdates.pb",
+        "realtime_alerts": "https://tmweb.pacebus.com/TMGTFSRealTimeWebService/alert/alerts.pb"
+      }
     }
   ]
 }
