@@ -2,7 +2,8 @@
 #
 # Open or update an automated PR on the current repo.
 #
-# If the working tree has no changes, exits 0 silently.
+# If the working tree has no changes, closes any open PR from
+# --branch-name (it is stale) and exits 0.
 #
 # Otherwise:
 #   - If an open PR already exists with --branch-name as its head:
@@ -79,12 +80,19 @@ if [ -z "$COMMIT_MESSAGE" ];  then echo "Error: --commit-message is required"  >
 git config user.name "$GIT_USER_NAME"
 git config user.email "$GIT_USER_EMAIL"
 
+EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')
+
 if [ -z "$(git status --porcelain)" ]; then
   echo "Working tree is clean — nothing to commit."
+  # Main already matches a fresh run, so any open PR is stale — e.g. one
+  # opened by a run that started just before the previous auto-PR merged.
+  if [ -n "$EXISTING_PR" ]; then
+    echo "Closing stale PR #$EXISTING_PR"
+    gh pr close "$EXISTING_PR" --delete-branch \
+      --comment "Closing: a fresh run against main produced no changes."
+  fi
   exit 0
 fi
-
-EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')
 
 if [ -n "$EXISTING_PR" ]; then
   echo "Found existing open PR #$EXISTING_PR — updating branch $BRANCH_NAME"
