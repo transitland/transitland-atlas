@@ -75,4 +75,5 @@ jobs:
           --pr-title "Automatic update of ID crosswalk exports" \
           --pr-body "Rebuilt crosswalks/*.csv from the tags in feeds/. These files are what www.transit.land links to from each ID crosswalk page." \
           --commit-message "Updated ID crosswalk exports at $(date -u)" \
-          --trigger-workflow ""
+          --trigger-workflow "" \
+          --close-if-clean
