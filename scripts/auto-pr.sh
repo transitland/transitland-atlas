@@ -2,8 +2,8 @@
 #
 # Open or update an automated PR on the current repo.
 #
-# If the working tree has no changes, closes any open PR from
-# --branch-name (it is stale) and exits 0.
+# If the working tree has no changes, exits 0 silently. With
+# --close-if-clean, it first closes any open PR from --branch-name.
 #
 # Otherwise:
 #   - If an open PR already exists with --branch-name as its head:
@@ -35,6 +35,7 @@ BASE_BRANCH="main"
 GIT_USER_NAME="Automated Bot"
 GIT_USER_EMAIL="info@interline.io"
 TRIGGER_WORKFLOW="validate.yaml"
+CLOSE_IF_CLEAN=""
 
 usage() {
   cat >&2 <<EOF
@@ -53,6 +54,9 @@ Options:
   --trigger-workflow FILE  Workflow file to run on the pushed branch
                            after commit (default: $TRIGGER_WORKFLOW;
                            pass empty string to skip)
+  --close-if-clean         When there are no changes, close any open PR
+                           from --branch-name as stale. Only for jobs that
+                           fail loudly when their inputs can't be fetched.
 EOF
   exit 1
 }
@@ -67,6 +71,7 @@ while [ $# -gt 0 ]; do
     --git-user-name) GIT_USER_NAME="$2"; shift 2;;
     --git-user-email) GIT_USER_EMAIL="$2"; shift 2;;
     --trigger-workflow) TRIGGER_WORKFLOW="$2"; shift 2;;
+    --close-if-clean) CLOSE_IF_CLEAN=1; shift;;
     -h|--help) usage;;
     *) echo "Unknown argument: $1" >&2; usage;;
   esac
@@ -80,19 +85,25 @@ if [ -z "$COMMIT_MESSAGE" ];  then echo "Error: --commit-message is required"  >
 git config user.name "$GIT_USER_NAME"
 git config user.email "$GIT_USER_EMAIL"
 
-EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')
-
 if [ -z "$(git status --porcelain)" ]; then
   echo "Working tree is clean — nothing to commit."
-  # Main already matches a fresh run, so any open PR is stale — e.g. one
-  # opened by a run that started just before the previous auto-PR merged.
-  if [ -n "$EXISTING_PR" ]; then
-    echo "Closing stale PR #$EXISTING_PR"
-    gh pr close "$EXISTING_PR" --delete-branch \
-      --comment "Closing: a fresh run against main produced no changes."
+  # The base branch already matches a fresh run, so any open PR is stale —
+  # e.g. one opened by a run that started just before the previous auto-PR
+  # merged. Only trust that when the run actually checked out the base
+  # branch, and never fail a no-op run over it.
+  if [ -n "$CLOSE_IF_CLEAN" ] && [ "$(git rev-parse --abbrev-ref HEAD)" = "$BASE_BRANCH" ]; then
+    STALE_PR=$(gh pr list --head "$BRANCH_NAME" --base "$BASE_BRANCH" --state open \
+      --json number --jq '.[0].number // empty' || true)
+    if [ -n "$STALE_PR" ]; then
+      echo "Closing stale PR #$STALE_PR"
+      gh pr close "$STALE_PR" \
+        --comment "Closing: a fresh run against $BASE_BRANCH produced no changes." || true
+    fi
   fi
   exit 0
 fi
+
+EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')
 
 if [ -n "$EXISTING_PR" ]; then
   echo "Found existing open PR #$EXISTING_PR — updating branch $BRANCH_NAME"
