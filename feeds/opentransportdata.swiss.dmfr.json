@@ -7,6 +7,9 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.opentransportdata.swiss/en/dataset/timetable-2026-gtfs2020/permalink",
+        "static_planned": [
+          "https://data.opentransportdata.swiss/en/dataset/timetable-2027-gtfs2020/permalink"
+        ],
         "static_historic": [
           "https://data.opentransportdata.swiss/en/dataset/timetable-2025-gtfs2020/permalink",
           "https://opentransportdata.swiss/en/dataset/timetable-2024-gtfs2020/permalink",
@@ -28,6 +31,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "000801"
+            },
+            {
+              "gtfs_agency_id": "801",
+              "feed_onestop_id": "f-u0-switzerland~flex"
             }
           ]
         },
@@ -43,6 +50,9 @@
             {
               "gtfs_agency_id": "1185",
               "feed_onestop_id": "f-sncf~fr"
+            },
+            {
+              "feed_onestop_id": "f-u0-switzerland~rt"
             }
           ]
         },
@@ -74,6 +84,10 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "000881"
+            },
+            {
+              "gtfs_agency_id": "881",
+              "feed_onestop_id": "f-u0-switzerland~flex"
             }
           ]
         },
@@ -206,6 +220,22 @@
           ]
         }
       ]
+    },
+    {
+      "id": "f-u0-switzerland~flex",
+      "name": "SKI+ Switzerland GTFS-Flex (demand-responsive transport)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.opentransportdata.swiss/en/dataset/gtfsflex/permalink"
+      },
+      "license": {
+        "url": "https://opentransportdata.swiss/en/terms-of-use/",
+        "use_without_attribution": "no",
+        "attribution_instructions": "The URL opentransportdata.swiss must be cited as the source for raw data in publications and analyses that make use of ODPCH data"
+      },
+      "tags": {
+        "mdb_source_id": "2053"
+      }
     }
   ]
 }
