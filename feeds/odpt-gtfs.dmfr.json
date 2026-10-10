@@ -684,6 +684,94 @@
       }
     },
     {
+      "id": "f-kochiseinantraffic~express~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KochiSeinanTraffic/Express.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kochiseinantraffic~localbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KochiSeinanTraffic/Localbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kochiseinantraffic~localbus~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KochiSeinanTraffic_Localbus_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KochiSeinanTraffic_Localbus_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KochiSeinanTraffic_Localbus_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "Localbus",
+        "odpt_organization_id": "KochiSeinanTraffic"
+      }
+    },
+    {
+      "id": "f-kochiseinantraffic~loopbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KochiSeinanTraffic/Loopbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kochiseinantraffic~riverbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KochiSeinanTraffic/Riverbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-kochiseinantraffic~shimaashibus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/KochiSeinanTraffic/Shimaashibus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
       "id": "f-kokubunjicity~kokubunji~city~bunbus~jp",
       "spec": "gtfs",
       "urls": {
@@ -2002,6 +2090,31 @@
         },
         {
           "feed_onestop_id": "f-kiyosecity~kiyobus~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kochiseinantraffic",
+      "name": "高知西南交通株式会社",
+      "short_name": "Kochi Seinan Traffic Co.,Ltd",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kochiseinantraffic~express~jp"
+        },
+        {
+          "feed_onestop_id": "f-kochiseinantraffic~localbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-kochiseinantraffic~localbus~jp~rt"
+        },
+        {
+          "feed_onestop_id": "f-kochiseinantraffic~loopbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-kochiseinantraffic~riverbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-kochiseinantraffic~shimaashibus~jp"
         }
       ]
     },
