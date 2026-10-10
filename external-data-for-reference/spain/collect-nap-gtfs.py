@@ -7,7 +7,10 @@ Query the Spanish National Access Point (NAP) API and generate DMFR file.
 This script will:
 1. Query the NAP API to get all GTFS feeds
 2. Transform the data into DMFR format
-3. Save a single DMFR file to feeds/nap.transportes.gob.es.dmfr.json
+3. Update those feeds in feeds/gtfs-source-feeds.transit.land.dmfr.json
+
+That file is shared with other feeds. This script only manages the feeds tagged
+es_nap_fichero_id; every other feed and top-level field in it is left untouched.
 
 See https://nap.transportes.gob.es/Account/InstruccionesAPI
 
@@ -16,6 +19,7 @@ Usage:
     uv run collect-nap-gtfs.py [--save-api-response]
 """
 
+import copy
 import os
 import json
 import logging
@@ -37,6 +41,25 @@ logger = logging.getLogger(__name__)
 # Transitland Atlas repo paths
 REPO_ROOT = Path(__file__).parent.parent.parent
 FEEDS_DIR = REPO_ROOT / "feeds"
+
+# The shared DMFR file these feeds live in, and the tag that marks the ones
+# this script manages. Feeds without the tag are never touched.
+DMFR_FILE = FEEDS_DIR / "gtfs-source-feeds.transit.land.dmfr.json"
+MANAGED_TAG = "es_nap_fichero_id"
+# Above this many removals in one run (or a tenth of the managed feeds, if
+# larger), the script stops instead of writing; see save_dmfr_file.
+MAX_REMOVED_FEEDS = 5
+FEED_URL_TEMPLATE = "https://gtfs-source-feeds.transit.land/es-nap-{fichero_id}.zip"
+
+# NAP ficheros deliberately not registered, though NAP still lists them. Without
+# this list each run would add them back.
+EXCLUDED_FICHERO_IDS = {
+    "1163": "Cercanías Madrid: an empty stub; Cercanías Renfe (1130) covers it",
+    "1132": "VAC-232 Madrid-Málaga-Algeciras: expired 2023, not republished",
+    "1711": "VAC-231 Madrid-Piedrabuena-Agudo: expired 2023, not republished",
+    "1712": "VAC-245 Huesca-Barcelona: expired 2024, not republished",
+    "1713": "VAC-124 Huesca-Lleida: expired 2024, not republished",
+}
 
 # API configuration
 API_BASE_URL = "https://nap.transportes.gob.es/api"
@@ -191,12 +214,8 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
         logger.error(f"Could not find ficheroId in data: {feed_data}")
         raise ValueError("File ID not found in data")
     
-    try:
-        feed_url = f"{API_BASE_URL}/Fichero/download/{fichero_id}"
-    except Exception as e:
-        logger.error(f"Error getting feed URL for ID {fichero_id}: {e}")
-        raise ValueError(f"Could not get feed URL: {e}")
-    
+    feed_url = FEED_URL_TEMPLATE.format(fichero_id=fichero_id)
+
     # Create basic feed record
     dmfr_feed = {
         "id": feed_id,
@@ -207,8 +226,7 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     }
 
     dmfr_feed["tags"] = {
-        "es_nap_fichero_id": str(fichero_id),
-        "notes": "Fetched by transitland-gtfs-scraper (NAP requires two-stage /api/Fichero/downloadLink flow)"
+        MANAGED_TAG: str(fichero_id),
     }
 
     # Add license
@@ -223,10 +241,9 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     }
 
     dmfr_feed["authorization"] = {
-        "type": "header",
-        "param_name": "ApiKey",
-        "info_url": "https://nap.transportes.gob.es/"
-      }
+        "type": "query_param",
+        "param_name": "token",
+    }
 
     # operators
 
@@ -254,31 +271,23 @@ def create_dmfr_feed(feed_data: Dict) -> Dict:
     return dmfr_feed
 
 def save_dmfr_file(feeds: List[Dict]):
-    """Save all feeds to a single DMFR file, preserving existing records."""
-    dmfr_file = FEEDS_DIR / "nap.transportes.gob.es.dmfr.json"
-    
-    # Try to read existing file
-    existing_dmfr = {
-        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
-        "feeds": [],
-        "license_spdx_identifier": "CDLA-Permissive-1.0"
-    }
-    try:
-        if dmfr_file.exists():
-            with open(dmfr_file, 'r', encoding='utf-8') as f:
-                existing_dmfr = json.load(f)
-                logger.info(f"Found existing DMFR file with {len(existing_dmfr.get('feeds', []))} feeds")
-    except Exception as e:
-        logger.warning(f"Error reading existing DMFR file: {e}")
-    
+    """Update the NAP feeds in the shared DMFR file, preserving everything else."""
+    dmfr_file = DMFR_FILE
+
+    # The file is shared with feeds this script does not manage, so it must be
+    # read successfully. Starting from an empty file would drop all of them.
+    with open(dmfr_file, 'r', encoding='utf-8') as f:
+        existing_dmfr = json.load(f)
+    logger.info(f"Found existing DMFR file with {len(existing_dmfr.get('feeds', []))} feeds")
+
     # Create lookup of existing feeds by fichero_id
     existing_feeds_by_id = {}
-    feeds_to_preserve = []  # Feeds that should be preserved (no fichero_id = manually added or from other sources)
-    
+    feeds_to_preserve = []  # Feeds this script does not manage: no MANAGED_TAG
+
     for feed in existing_dmfr.get('feeds', []):
-        fichero_id = feed.get('tags', {}).get('es_nap_fichero_id')
-        
-        # Preserve feeds that don't have es_nap_fichero_id tag (manually added or from other sources)
+        fichero_id = feed.get('tags', {}).get(MANAGED_TAG)
+
+        # Preserve feeds without the tag (other sources sharing this file)
         if not fichero_id:
             feeds_to_preserve.append(feed)
         else:
@@ -289,94 +298,71 @@ def save_dmfr_file(feeds: List[Dict]):
     new_feeds_by_id = {}
     
     for feed in feeds:
-        fichero_id = feed.get('tags', {}).get('es_nap_fichero_id')
+        fichero_id = feed.get('tags', {}).get(MANAGED_TAG)
         if not fichero_id:
             logger.warning(f"Feed missing fichero_id, skipping: {feed.get('id')}")
             continue
         new_feeds_by_id[fichero_id] = feed
     
-    # Track counts for logging
+    # A managed feed that is missing from the API listing gets removed. Name
+    # each one, and refuse to remove an implausible share at once: a partial
+    # listing or a relabelled transport type should not silently delete records.
+    removed = [f for fid, f in existing_feeds_by_id.items() if fid not in new_feeds_by_id]
+    for feed in removed:
+        logger.warning(f"Removing {feed.get('id')} (fichero {feed['tags'][MANAGED_TAG]}): no longer in the NAP listing")
+    max_removed = max(MAX_REMOVED_FEEDS, len(existing_feeds_by_id) // 10)
+    if len(removed) > max_removed:
+        logger.error(f"{len(removed)} managed feeds would be removed (limit {max_removed}); aborting without writing")
+        raise SystemExit(1)
+
+    # Existing feeds still in the API: start from the existing record, so its
+    # Onestop ID and any hand-curated fields (operators, supersedes_ids,
+    # static_historic, extra tags, name, ...) survive, and overlay only what the
+    # API provides. Operators come from the API only if the record has none.
     existing_matched_count = 0
-    
-    # First add all existing feeds that are still present in new data
-    # Merge API updates (URLs, etc.) while preserving operators and other manually-curated fields
     for fichero_id, existing_feed in existing_feeds_by_id.items():
-        if fichero_id in new_feeds_by_id:
-            new_feed = new_feeds_by_id[fichero_id]
-            
-            # Preserve the existing feed's Onestop ID for stability (same fichero_id = same feed)
-            # Also preserve operators from existing feed (they may be manually curated or from previous runs)
-            existing_feed_id = existing_feed.get('id')
-            
-            if 'operators' in existing_feed and existing_feed['operators']:
-                # Keep existing operators, but update other fields from API
-                # The Onestop ID is already preserved in the copy
-                merged_feed = existing_feed.copy()
-                # Update URLs from API
-                # Note: Since fichero_id is in the URL, if fichero_id stays the same, URL won't change
-                # So we just preserve any existing static_historic arrays
-                if 'urls' in new_feed:
-                    if 'urls' not in merged_feed:
-                        merged_feed['urls'] = {}
-                    # Update static_current from API
-                    if 'static_current' in new_feed['urls']:
-                        merged_feed['urls']['static_current'] = new_feed['urls']['static_current']
-                    # Preserve existing static_historic if it exists
-                    if 'static_historic' in existing_feed.get('urls', {}):
-                        merged_feed['urls']['static_historic'] = existing_feed['urls']['static_historic']
-                # Update other API-provided fields while preserving manually-curated ones
-                if 'license' in new_feed:
-                    merged_feed['license'] = new_feed['license']
-                if 'authorization' in new_feed:
-                    merged_feed['authorization'] = new_feed['authorization']
-                # Merge tags (preserve existing tags, update with new ones from API)
-                # This ensures manually-added tags are preserved while API tags are updated
-                if 'tags' not in merged_feed:
-                    merged_feed['tags'] = {}
-                if 'tags' in new_feed:
-                    # Update with new tags (this will overwrite matching keys like es_nap_fichero_id,
-                    # but preserve any manually-added tags that aren't in the new feed)
-                    merged_feed['tags'].update(new_feed['tags'])
-                updated_feeds.append(merged_feed)
-            else:
-                # No existing operators, use new feed but preserve the existing Onestop ID
-                merged_feed = new_feed.copy()
-                merged_feed['id'] = existing_feed_id
-                # Preserve supersedes_ids if it exists in the existing feed
-                if 'supersedes_ids' in existing_feed:
-                    merged_feed['supersedes_ids'] = existing_feed['supersedes_ids']
-                # Preserve existing static_historic if it exists
-                if 'urls' in existing_feed and 'static_historic' in existing_feed['urls']:
-                    if 'urls' not in merged_feed:
-                        merged_feed['urls'] = {}
-                    merged_feed['urls']['static_historic'] = existing_feed['urls']['static_historic']
-                updated_feeds.append(merged_feed)
-            
-            existing_matched_count += 1
-            del new_feeds_by_id[fichero_id]  # Remove from new feeds since we've processed it
-    
-    # Then add all new feeds
-    new_count = len(new_feeds_by_id)
-    updated_feeds.extend(new_feeds_by_id.values())
-    
+        if fichero_id not in new_feeds_by_id:
+            continue
+        new_feed = new_feeds_by_id.pop(fichero_id)
+        merged_feed = copy.deepcopy(existing_feed)
+        urls = merged_feed.setdefault('urls', {})
+        old_url, new_url = urls.get('static_current'), new_feed['urls']['static_current']
+        # A replaced source URL goes to static_historic; a scheme-only change
+        # (http -> https) is the same source and is not recorded.
+        if old_url and old_url.split('://', 1)[-1] != new_url.split('://', 1)[-1]:
+            historic = urls.setdefault('static_historic', [])
+            if old_url not in historic:
+                historic.append(old_url)
+        urls['static_current'] = new_url
+        for key in ('license', 'authorization'):
+            if key in new_feed:
+                merged_feed[key] = new_feed[key]
+        merged_feed.setdefault('tags', {}).update(new_feed.get('tags', {}))
+        if not merged_feed.get('operators') and new_feed.get('operators'):
+            merged_feed['operators'] = new_feed['operators']
+        updated_feeds.append(merged_feed)
+        existing_matched_count += 1
+
+    # Then add new feeds, unless their generated Onestop ID is already taken:
+    # the file is shared, and a duplicate would fail validation for every feed.
+    taken_ids = {f.get('id') for f in updated_feeds} | {f.get('id') for f in feeds_to_preserve}
+    new_count = 0
+    for fichero_id, feed in new_feeds_by_id.items():
+        if feed['id'] in taken_ids:
+            logger.error(f"Skipping new fichero {fichero_id}: Onestop ID {feed['id']} already exists in {dmfr_file.name}")
+            continue
+        taken_ids.add(feed['id'])
+        updated_feeds.append(feed)
+        new_count += 1
+
     # Finally, add feeds that should be preserved (GTFS-RT, manually added, etc.)
     preserved_count = len(feeds_to_preserve)
     updated_feeds.extend(feeds_to_preserve)
     
-    # Create final DMFR data
-    dmfr_data = {
-        "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
-        "feeds": updated_feeds,
-        "license_spdx_identifier": "CDLA-Permissive-1.0"
-    }
-    
-    # Preserve top-level operators if they exist in the existing file
-    if 'operators' in existing_dmfr:
-        dmfr_data['operators'] = existing_dmfr['operators']
-        logger.info(f"Preserved {len(existing_dmfr['operators'])} top-level operators")
-
-    # Ensure feeds directory exists
-    FEEDS_DIR.mkdir(parents=True, exist_ok=True)
+    # Replace only the feed list; every other top-level field ($schema,
+    # operators, ...) is carried over from the existing file unchanged.
+    dmfr_data = dict(existing_dmfr)
+    dmfr_data["feeds"] = updated_feeds
 
     # Save file with consistent formatting
     with open(dmfr_file, 'w', encoding='utf-8') as f:
@@ -406,6 +392,10 @@ def main():
     # Transform all feeds to DMFR format
     dmfr_feeds = []
     for feed in feeds_data:
+        fichero_id = str((feed.get("fichero") or {}).get("ficheroId", ""))
+        if fichero_id in EXCLUDED_FICHERO_IDS:
+            logger.info(f"Skipping excluded fichero {fichero_id}: {EXCLUDED_FICHERO_IDS[fichero_id]}")
+            continue
         try:
             dmfr_feed = create_dmfr_feed(feed)
             dmfr_feeds.append(dmfr_feed)
