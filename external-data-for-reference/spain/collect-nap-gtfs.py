@@ -49,7 +49,7 @@ MANAGED_TAG = "es_nap_fichero_id"
 # Above this many removals in one run (or a tenth of the managed feeds, if
 # larger), the script stops instead of writing; see save_dmfr_file.
 MAX_REMOVED_FEEDS = 5
-FEED_URL_TEMPLATE = "http://gtfs-source-feeds.transit.land/es-nap-{fichero_id}.zip"
+FEED_URL_TEMPLATE = "https://gtfs-source-feeds.transit.land/es-nap-{fichero_id}.zip"
 
 # NAP ficheros deliberately not registered, though NAP still lists them. Without
 # this list each run would add them back.
@@ -325,7 +325,15 @@ def save_dmfr_file(feeds: List[Dict]):
             continue
         new_feed = new_feeds_by_id.pop(fichero_id)
         merged_feed = copy.deepcopy(existing_feed)
-        merged_feed.setdefault('urls', {})['static_current'] = new_feed['urls']['static_current']
+        urls = merged_feed.setdefault('urls', {})
+        old_url, new_url = urls.get('static_current'), new_feed['urls']['static_current']
+        # A replaced source URL goes to static_historic; a scheme-only change
+        # (http -> https) is the same source and is not recorded.
+        if old_url and old_url.split('://', 1)[-1] != new_url.split('://', 1)[-1]:
+            historic = urls.setdefault('static_historic', [])
+            if old_url not in historic:
+                historic.append(old_url)
+        urls['static_current'] = new_url
         for key in ('license', 'authorization'):
             if key in new_feed:
                 merged_feed[key] = new_feed[key]
