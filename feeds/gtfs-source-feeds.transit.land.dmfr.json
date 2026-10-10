@@ -2159,36 +2159,6 @@
       ]
     },
     {
-      "id": "f-cercanías~madrid",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/es-nap-1163.zip"
-      },
-      "license": {
-        "url": "https://nap.transportes.gob.es/licencia-datos",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "Powered by MITRAMS",
-        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token"
-      },
-      "tags": {
-        "es_nap_fichero_id": "1163"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-consorcio~regional~de~transportes~de~madrid",
-          "name": "Consorcio Regional de Transportes de Madrid",
-          "website": "https://www.crtm.es"
-        }
-      ]
-    },
-    {
       "id": "f-cercanías~renfe",
       "supersedes_ids": [
         "f-ez-renfecercanias"
@@ -3692,6 +3662,9 @@
     },
     {
       "id": "f-metrotenerife",
+      "supersedes_ids": [
+        "f-eth3v-metropolitanodetenerife"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "http://gtfs-source-feeds.transit.land/es-nap-1690.zip"
@@ -3714,8 +3687,12 @@
       },
       "operators": [
         {
-          "onestop_id": "o-metropolitano~de~tenerife",
+          "onestop_id": "o-eth3v-metropolitanodetenerife",
+          "supersedes_ids": [
+            "o-metropolitano~de~tenerife"
+          ],
           "name": "Metropolitano de Tenerife",
+          "short_name": "Tranvía de Tenerife",
           "website": "http://www.metrotenerife.com"
         }
       ]
@@ -5196,126 +5173,6 @@
           "onestop_id": "o-tolosa~hiribusa",
           "name": "Tolosa Hiribusa",
           "website": "https://udala.tolosa.eus/es/node/3627"
-        }
-      ]
-    },
-    {
-      "id": "f-vac~124~huesca~lleida~con~hijuelas",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/es-nap-1713.zip"
-      },
-      "license": {
-        "url": "https://nap.transportes.gob.es/licencia-datos",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "Powered by MITRAMS",
-        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token"
-      },
-      "tags": {
-        "es_nap_fichero_id": "1713"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-avanza~división~norte",
-          "name": "Avanza División Norte",
-          "website": "https://avanzagrupo.com"
-        }
-      ]
-    },
-    {
-      "id": "f-vac~231~madrid~piedrabuena~ciudad~real~y~agudo~ciudad~real",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/es-nap-1711.zip"
-      },
-      "license": {
-        "url": "https://nap.transportes.gob.es/licencia-datos",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "Powered by MITRAMS",
-        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token"
-      },
-      "tags": {
-        "es_nap_fichero_id": "1711"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-interurbana~de~autobuses~s~a",
-          "name": "INTERURBANA DE AUTOBUSES  S.A.",
-          "website": "https://www.interbus.es"
-        }
-      ]
-    },
-    {
-      "id": "f-vac~232~madrid~málaga~y~algeciras~cádiz",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/es-nap-1132.zip"
-      },
-      "license": {
-        "url": "https://nap.transportes.gob.es/licencia-datos",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "Powered by MITRAMS",
-        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token"
-      },
-      "tags": {
-        "es_nap_fichero_id": "1132"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-interurbana~de~autobuses~s~a",
-          "name": "INTERURBANA DE AUTOBUSES  S.A.",
-          "website": "https://www.interbus.es"
-        }
-      ]
-    },
-    {
-      "id": "f-vac~245~huesca~barcelona",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "http://gtfs-source-feeds.transit.land/es-nap-1712.zip"
-      },
-      "license": {
-        "url": "https://nap.transportes.gob.es/licencia-datos",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "Powered by MITRAMS",
-        "attribution_instructions": "Must include attribution text and a link to https://www.transportes.gob.es/"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "token"
-      },
-      "tags": {
-        "es_nap_fichero_id": "1712"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-avanza~división~norte",
-          "name": "Avanza División Norte",
-          "website": "https://avanzagrupo.com"
         }
       ]
     },

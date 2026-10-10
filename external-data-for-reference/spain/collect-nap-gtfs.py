@@ -47,6 +47,16 @@ DMFR_FILE = FEEDS_DIR / "gtfs-source-feeds.transit.land.dmfr.json"
 MANAGED_TAG = "es_nap_fichero_id"
 FEED_URL_TEMPLATE = "http://gtfs-source-feeds.transit.land/es-nap-{fichero_id}.zip"
 
+# NAP ficheros deliberately not registered, though NAP still lists them. Without
+# this list each run would add them back.
+EXCLUDED_FICHERO_IDS = {
+    "1163": "Cercanías Madrid: an empty stub; Cercanías Renfe (1130) covers it",
+    "1132": "VAC-232 Madrid-Málaga-Algeciras: expired 2023, not republished",
+    "1711": "VAC-231 Madrid-Piedrabuena-Agudo: expired 2023, not republished",
+    "1712": "VAC-245 Huesca-Barcelona: expired 2024, not republished",
+    "1713": "VAC-124 Huesca-Lleida: expired 2024, not republished",
+}
+
 # API configuration
 API_BASE_URL = "https://nap.transportes.gob.es/api"
 API_KEY = os.environ.get("SPANISH_NAP_API_KEY")
@@ -391,6 +401,10 @@ def main():
     # Transform all feeds to DMFR format
     dmfr_feeds = []
     for feed in feeds_data:
+        fichero_id = str((feed.get("fichero") or {}).get("ficheroId", ""))
+        if fichero_id in EXCLUDED_FICHERO_IDS:
+            logger.info(f"Skipping excluded fichero {fichero_id}: {EXCLUDED_FICHERO_IDS[fichero_id]}")
+            continue
         try:
             dmfr_feed = create_dmfr_feed(feed)
             dmfr_feeds.append(dmfr_feed)
