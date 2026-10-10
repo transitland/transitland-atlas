@@ -323,6 +323,50 @@
       ]
     },
     {
+      "id": "f-tdx~tw",
+      "supersedes_ids": [
+        "f-bus~new~taipei~tdx~tw",
+        "f-bus~taipei~tdx~tw",
+        "f-thsr~tdx~tw",
+        "f-tra~tdx~tw",
+        "f-trtc~tdx~tw",
+        "f-wsj-yl員林客運公總~yl臺西客運公總",
+        "f-wsm-ch中鹿客運公總~ch彰化客運公總~ch員林客運公總",
+        "f-wsm-nt總達客運公總~nt全航客運公總~nt南投客運公總",
+        "f-wsm-tc豐原客運~tc台中客運~tc仁友客運~tc統聯客運~tc巨業交通~tc全航客運~tc和欣客運~tc東南客運~tc",
+        "f-wsq-ml新竹客運公總~ml苗栗客運公總"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "http://gtfs-source-feeds.transit.land/taiwan-tdx.zip",
+        "static_historic": [
+          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/NewTaipei/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/Bus/City/Taipei/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/THSR/gtfs",
+          "https://tdx.transportdata.tw/api/premium/v2/GTFS/Static/TRA/gtfs",
+          "https://tdx.transportdata.tw/api/gtfs/V3/Map/GTFS/Static/Rail/TRTC",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/yl/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/ch/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/nt/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/tc/latest",
+          "http://gtfs.taichung.gov.tw/bnb/api/gtfs/ml/latest"
+        ]
+      },
+      "license": {
+        "url": "https://tdx.transportdata.tw/term",
+        "use_without_attribution": "no",
+        "attribution_text": "Ministry of Transportation and Communications Transportation Data Circulation Service Platform"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "notes": "Taiwan's national GTFS, covering every mode. Authorization requires an initial HTTP request to get a token, so Transitland uses a custom script to fetch this feed, which also removes two oversized GTFS-Fares v2 tables."
+      }
+    },
+    {
       "id": "f-tf34-metropolitantransportcorporation",
       "spec": "gtfs",
       "urls": {
