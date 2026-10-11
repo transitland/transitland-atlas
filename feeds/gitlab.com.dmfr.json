@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-srbijavoz~rs",
+      "name": "Srbija Voz",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gitlab.com/api/v4/projects/vekejsn%2Fgtfs-generators/packages/generic/srbijavoz-merged-gtfs/latest/srbijavoz_merged.zip"
+      },
+      "license": {
+        "url": "https://gitlab.com/vekejsn/gtfs-generators"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-srbijavoz~rs",
+          "name": "Srbija Voz a.d.",
+          "short_name": "Srbija Voz",
+          "website": "https://srbijavoz.rs",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "EFZ:72____:"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
