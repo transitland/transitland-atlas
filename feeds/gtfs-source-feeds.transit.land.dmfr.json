@@ -3396,6 +3396,104 @@
       ]
     },
     {
+      "id": "f-kaerntnerlinien~at",
+      "name": "Verkehrsverbund Kärntner Linien",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-55.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "55"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u23-kaerntenbus",
+          "name": "Kärnten Bus",
+          "website": "https://www.kaernten-bus.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "05"
+            },
+            {
+              "gtfs_agency_id": "25"
+            },
+            {
+              "gtfs_agency_id": "21"
+            },
+            {
+              "gtfs_agency_id": "22"
+            },
+            {
+              "gtfs_agency_id": "23"
+            },
+            {
+              "gtfs_agency_id": "26"
+            },
+            {
+              "gtfs_agency_id": "24"
+            },
+            {
+              "gtfs_agency_id": "28"
+            },
+            {
+              "gtfs_agency_id": "27"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u23f-badkleinkirchheimerbergbahnen",
+          "name": "Bad Kleinkirchheimer Bergbahnen",
+          "website": "https://www.badkleinkirchheim.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "37"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q107662851"
+          }
+        },
+        {
+          "onestop_id": "o-u261-klagenfurtmobil",
+          "name": "Klagenfurt Mobil",
+          "website": "https://www.stw.at/privat/mobilitaet/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "01"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q74051078"
+          }
+        },
+        {
+          "onestop_id": "o-u261-woertherseeschifffahrt",
+          "name": "Wörtherseeschifffahrt",
+          "website": "https://www.woertherseeschifffahrt.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q67198497"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-kbus~urbano~de~barakaldo",
       "spec": "gtfs",
       "urls": {
@@ -3518,6 +3616,39 @@
           "onestop_id": "o-lejoan~busa",
           "name": "Lejoan Busa",
           "website": "http://lejoanbusa.eus/es/"
+        }
+      ]
+    },
+    {
+      "id": "f-linzag~at",
+      "name": "Linz AG Linien",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-69.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "69"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2d4-linzlinien",
+          "name": "Linz Linien",
+          "website": "https://www.linzag.at",
+          "tags": {
+            "wikidata_id": "Q49842804"
+          }
         }
       ]
     },
@@ -4182,6 +4313,176 @@
       }
     },
     {
+      "id": "f-oebb~at",
+      "name": "Austrian rail (ÖBB and other rail operators)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-66.zip",
+        "static_historic": [
+          "https://static.oebb.at/open-data/soll-fahrplan-gtfs/GTFS_OP_2024_obb.zip",
+          "https://static.web.oebb.at/open-data/soll-fahrplan-gtfs/GTFS_OP_2025_obb.zip",
+          "https://static.web.oebb.at/open-data/soll-fahrplan-gtfs/GTFS_Fahrplan_2026.zip"
+        ]
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "66"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0rh0-montafonerbahnag",
+          "name": "Montafonerbahn",
+          "website": "https://www.montafonerbahn.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "10"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q351860"
+          }
+        },
+        {
+          "onestop_id": "o-u2-westbahn",
+          "name": "WESTbahn",
+          "website": "https://westbahn.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "02"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q266280"
+          }
+        },
+        {
+          "onestop_id": "o-u26-slovenskezeleznice",
+          "name": "Slovenske železnice",
+          "short_name": "SŽ",
+          "website": "https://potniski.sz.si",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "79"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q766616"
+          }
+        },
+        {
+          "onestop_id": "o-u2e-raaberbahn",
+          "name": "Raaberbahn",
+          "short_name": "GYSEV",
+          "website": "https://www.raaberbahn.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "03"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q181697"
+          }
+        },
+        {
+          "onestop_id": "o-u2e9-cityairterminalbetriebsgesellschaftmbh",
+          "name": "City Airport Train",
+          "short_name": "CAT",
+          "website": "https://www.cityairporttrain.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "08"
+            },
+            {
+              "gtfs_agency_id": "06",
+              "feed_onestop_id": "f-vor~at"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q694029"
+          }
+        },
+        {
+          "onestop_id": "o-u2k-mav",
+          "name": "Magyar Államvasutak",
+          "short_name": "MÁV",
+          "website": "https://www.mavcsoport.hu",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "55"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q168082"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-ooevv~at",
+      "name": "Oberösterreichischer Verkehrsverbund (OÖVV)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-56.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "56"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u29-sternhafferl",
+          "name": "Stern & Hafferl",
+          "website": "https://www.stern-verkehr.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "22"
+            },
+            {
+              "gtfs_agency_id": "722"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2345645"
+          }
+        },
+        {
+          "onestop_id": "o-u2d-sabtours",
+          "name": "Sabtours",
+          "website": "https://www.sabtours.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "300"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1548910"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-orlando~airport~people~mover",
       "spec": "gtfs",
       "urls": {
@@ -4720,6 +5021,60 @@
           "onestop_id": "o-salamanca~de~transportes~s~a",
           "name": "Salamanca de Transportes S.A",
           "website": "http://salamancadetransportes.com/"
+        }
+      ]
+    },
+    {
+      "id": "f-salzburgverkehr~at",
+      "name": "Salzburger Verkehrsverbund",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-54.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "54"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u23-albus",
+          "name": "Albus",
+          "website": "https://www.albus.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "164"
+            },
+            {
+              "gtfs_agency_id": "165"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1397005"
+          }
+        },
+        {
+          "onestop_id": "o-u23r-obussalzburg",
+          "name": "Obus Salzburg",
+          "website": "https://www.salzburg-ag.at/verkehr/obus",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "323"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q460645"
+          }
         }
       ]
     },
@@ -5631,6 +5986,110 @@
       ]
     },
     {
+      "id": "f-verbundlinie~at",
+      "name": "Verkehrsverbund Steiermark (Verbund Linie)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-53.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "53"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2-steiermarkbahn",
+          "name": "Steiermarkbahn und Bus",
+          "website": "https://www.steiermarkbahn.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "36"
+            },
+            {
+              "gtfs_agency_id": "87"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q139765864"
+          }
+        },
+        {
+          "onestop_id": "o-u26-gkb",
+          "name": "Graz-Köflacher Bahn und Busbetrieb",
+          "short_name": "GKB",
+          "website": "https://www.gkb.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "37"
+            },
+            {
+              "gtfs_agency_id": "86"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1544069"
+          }
+        },
+        {
+          "onestop_id": "o-u26-grazlinien",
+          "name": "Graz Linien",
+          "website": "https://www.holding-graz.at/de/mobilitaet/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "38"
+            },
+            {
+              "gtfs_agency_id": "33"
+            },
+            {
+              "gtfs_agency_id": "35"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q876786"
+          }
+        },
+        {
+          "onestop_id": "o-u26-mvg",
+          "name": "Mürztaler Verkehrs-Gesellschaft",
+          "short_name": "MVG",
+          "website": "https://www.mvg-kapfenberg.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "52"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1277979"
+          }
+        },
+        {
+          "onestop_id": "o-u26t-stadtwerkeleoben",
+          "name": "Stadtwerke Leoben Verkehrsbetriebe",
+          "website": "https://www.stadtwerke-leoben.at/verkehr/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "53"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q105755942"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-viagón~autocares",
       "spec": "gtfs",
       "urls": {
@@ -5660,6 +6119,523 @@
           "onestop_id": "o-viagon~autocares~sl",
           "name": "VIAGON AUTOCARES SL",
           "website": "http://www.autocaresviagon.com/"
+        }
+      ]
+    },
+    {
+      "id": "f-vmobil~at",
+      "name": "Verkehrsverbund Vorarlberg (VMOBIL)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-58.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "58"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0q-landbusunterland",
+          "name": "Landbus Unterland",
+          "website": "https://www.vmobil.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "33"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1448137"
+          }
+        },
+        {
+          "onestop_id": "o-u0qu-stadtbusbludenz",
+          "name": "Stadtbus Bludenz",
+          "website": "https://www.vmobil.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "49"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q113485293"
+          }
+        },
+        {
+          "onestop_id": "o-u0qu-stadtbusfeldkirch",
+          "name": "Stadtbus Feldkirch",
+          "website": "https://www.vmobil.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "48"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q113485294"
+          }
+        },
+        {
+          "onestop_id": "o-u0qv-stadtbusdornbirn",
+          "name": "Stadtbus Dornbirn",
+          "website": "https://www.vmobil.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "29"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2326978"
+          }
+        },
+        {
+          "onestop_id": "o-u0qy-stadtbusbregenz",
+          "name": "Stadtbus Bregenz",
+          "website": "https://www.vmobil.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "38"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q100909690"
+          }
+        },
+        {
+          "onestop_id": "o-u0r-landbusbregenzerwald",
+          "name": "Landbus Bregenzerwald",
+          "website": "https://www.vmobil.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "46"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1801977"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-vor~at",
+      "supersedes_ids": [
+        "f-u2ed-wienerlinien~wlb"
+      ],
+      "name": "Verkehrsverbund Ost-Region (VOR)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-52.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "52"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u0qym-öbb~postbus",
+          "name": "Postbus",
+          "website": "https://www.postbus.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "12"
+            },
+            {
+              "gtfs_agency_id": "02",
+              "feed_onestop_id": "f-kaerntnerlinien~at"
+            },
+            {
+              "gtfs_agency_id": "896",
+              "feed_onestop_id": "f-oebb~at"
+            },
+            {
+              "gtfs_agency_id": "1",
+              "feed_onestop_id": "f-ooevv~at"
+            },
+            {
+              "gtfs_agency_id": "110",
+              "feed_onestop_id": "f-salzburgverkehr~at"
+            },
+            {
+              "gtfs_agency_id": "107",
+              "feed_onestop_id": "f-salzburgverkehr~at"
+            },
+            {
+              "gtfs_agency_id": "108",
+              "feed_onestop_id": "f-salzburgverkehr~at"
+            },
+            {
+              "gtfs_agency_id": "109",
+              "feed_onestop_id": "f-salzburgverkehr~at"
+            },
+            {
+              "gtfs_agency_id": "106",
+              "feed_onestop_id": "f-salzburgverkehr~at"
+            },
+            {
+              "gtfs_agency_id": "101",
+              "feed_onestop_id": "f-salzburgverkehr~at"
+            },
+            {
+              "gtfs_agency_id": "97",
+              "feed_onestop_id": "f-verbundlinie~at"
+            },
+            {
+              "gtfs_agency_id": "40",
+              "feed_onestop_id": "f-verbundlinie~at"
+            },
+            {
+              "gtfs_agency_id": "101",
+              "feed_onestop_id": "f-vmobil~at"
+            },
+            {
+              "gtfs_agency_id": "51",
+              "feed_onestop_id": "f-vmobil~at"
+            },
+            {
+              "gtfs_agency_id": "01",
+              "feed_onestop_id": "f-vmobil~at"
+            },
+            {
+              "gtfs_agency_id": "107",
+              "feed_onestop_id": "f-vmobil~at"
+            },
+            {
+              "gtfs_agency_id": "201",
+              "feed_onestop_id": "f-vmobil~at"
+            },
+            {
+              "gtfs_agency_id": "202",
+              "feed_onestop_id": "f-vmobil~at"
+            },
+            {
+              "gtfs_agency_id": "01",
+              "feed_onestop_id": "f-vvt~at"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q14912709"
+          }
+        },
+        {
+          "onestop_id": "o-u2-drrichard",
+          "name": "Dr. Richard",
+          "website": "https://www.richard.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "26"
+            },
+            {
+              "gtfs_agency_id": "16"
+            },
+            {
+              "gtfs_agency_id": "03",
+              "feed_onestop_id": "f-kaerntnerlinien~at"
+            },
+            {
+              "gtfs_agency_id": "30",
+              "feed_onestop_id": "f-kaerntnerlinien~at"
+            },
+            {
+              "gtfs_agency_id": "31",
+              "feed_onestop_id": "f-kaerntnerlinien~at"
+            },
+            {
+              "gtfs_agency_id": "662",
+              "feed_onestop_id": "f-ooevv~at"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1254031"
+          }
+        },
+        {
+          "onestop_id": "o-u2-vbb",
+          "name": "Verkehrsbetriebe Burgenland",
+          "short_name": "VBB",
+          "website": "https://www.verkehrsbetriebe-burgenland.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "30"
+            },
+            {
+              "gtfs_agency_id": "91VBB",
+              "feed_onestop_id": "f-verbundlinie~at"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q124418940"
+          }
+        },
+        {
+          "onestop_id": "o-u27-retter",
+          "name": "Retter",
+          "website": "https://www.retter-linien.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "61"
+            },
+            {
+              "gtfs_agency_id": "44",
+              "feed_onestop_id": "f-verbundlinie~at"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-u27q-vor",
+          "name": "Verkehrsverbund Ost-Region",
+          "short_name": "VOR",
+          "website": "https://www.vor.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "99"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2516485"
+          }
+        },
+        {
+          "onestop_id": "o-u27r-oeglb",
+          "name": "Österreichische Gesellschaft für Lokalbahnen",
+          "short_name": "ÖGLB",
+          "website": "https://www.lokalbahnen.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "74"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q123435143"
+          }
+        },
+        {
+          "onestop_id": "o-u27x-wnsks",
+          "name": "Wiener Neustädter Stadtwerke",
+          "website": "https://www.wiener-neustadt.at/de/service/verkehrsbetrieb",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "20"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q2569033"
+          }
+        },
+        {
+          "onestop_id": "o-u2e-blaguss",
+          "name": "Blaguss",
+          "website": "https://www.blaguss.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "14"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q881089"
+          }
+        },
+        {
+          "onestop_id": "o-u2e-gschwindl",
+          "name": "Gschwindl",
+          "website": "https://www.gschwindl.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "38"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1552488"
+          }
+        },
+        {
+          "onestop_id": "o-u2e-noebahnen",
+          "name": "Niederösterreich Bahnen",
+          "website": "https://www.niederoesterreichbahnen.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "81"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q131409427"
+          }
+        },
+        {
+          "onestop_id": "o-u2e-zuklinbus",
+          "name": "Zuklinbus",
+          "website": "https://www.zuklinbus.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "21"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q125416357"
+          }
+        },
+        {
+          "onestop_id": "o-u2e9-wlb",
+          "name": "Wiener Lokalbahnen",
+          "short_name": "WLB",
+          "website": "https://www.wlb.at/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "03"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q335971"
+          }
+        },
+        {
+          "onestop_id": "o-u2ed-wienerlinien",
+          "name": "Wiener Linien",
+          "website": "https://www.wienerlinien.at/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "04"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q668849"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-vvt~at",
+      "name": "Verkehrsverbund Tirol (VVT)",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/at-mvo-57.zip"
+      },
+      "license": {
+        "url": "https://mobilitaetsverbuende.atlassian.net/wiki/spaces/DBP/pages/185237505/Terms+of+Use",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_text": "Data source: Mobilitätsverbünde Österreich OG - data.mobilitaetsverbuende.at"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "at_mvo_dataset_id": "57"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u2-oetztaler",
+          "name": "Ötztaler Verkehrsgesellschaft",
+          "website": "https://www.oetztaler.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "35"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q108281190"
+          }
+        },
+        {
+          "onestop_id": "o-u22-ivb",
+          "name": "Innsbrucker Verkehrsbetriebe",
+          "short_name": "IVB",
+          "website": "https://www.ivb.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "19"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1664245"
+          }
+        },
+        {
+          "onestop_id": "o-u22-ledermair",
+          "name": "Ledermair",
+          "website": "https://www.ledermair.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "21"
+            },
+            {
+              "gtfs_agency_id": "53"
+            },
+            {
+              "gtfs_agency_id": "24"
+            },
+            {
+              "gtfs_agency_id": "42"
+            },
+            {
+              "gtfs_agency_id": "09"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q131765733"
+          }
+        },
+        {
+          "onestop_id": "o-u22-vvt",
+          "name": "Verkehrsverbund Tirol",
+          "short_name": "VVT",
+          "website": "https://www.vvt.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "113"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1668732"
+          }
+        },
+        {
+          "onestop_id": "o-u22-zillertalerverkehrsbetriebe",
+          "name": "Zillertaler Verkehrsbetriebe",
+          "website": "https://www.zillertalbahn.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "11"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q107689313"
+          }
+        },
+        {
+          "onestop_id": "o-u22q-achenseeschifffahrt",
+          "name": "Achenseeschifffahrt",
+          "website": "https://achenseeschifffahrt.at",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "101"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q47086880"
+          }
         }
       ]
     },
