@@ -48,6 +48,12 @@ ODPT_RT_API_BASE = "https://api.odpt.org/api/v4/gtfs/realtime"
 REQUEST_TIMEOUT = 30  # seconds
 MAX_FEEDS_TO_LOG = 10  # Number of feeds to show in summary
 # Matches the organization and dataset labels in an ODPT file URL.
+# Feeds on api.odpt.org need this consumer key; api-public.odpt.org needs none.
+ODPT_AUTHORIZATION = {
+    "type": "query_param",
+    "param_name": "acl:consumerKey",
+    "info_url": "https://developer.odpt.org/"
+}
 FILE_URL_RE = re.compile(r"odpt\.org/api/v4/files/odpt/([^/]+)/([^/?]+)\.zip", re.IGNORECASE)
 
 # Transitland Atlas repo paths
@@ -147,40 +153,36 @@ class ODPTGTFSCollector:
         
         return base_url
     
+    def any_responds(self, urls) -> bool:
+        """Whether any of urls answers with HTTP 200, following redirects."""
+        for url in urls:
+            try:
+                if self.session.get(url, timeout=REQUEST_TIMEOUT).status_code == 200:
+                    return True
+            except requests.RequestException:
+                pass
+        return False
+
     def get_gtfsrt_urls(self, feed_info: Dict, include_access_token: bool = False) -> Dict[str, str]:
-        """Extract GTFS-RT URLs from feed information"""
+        """Extract GTFS-RT URLs from feed information.
+
+        ODPT writes a placeholder where the consumer key goes. Without
+        include_access_token the parameter is dropped entirely; the record's
+        authorization block tells Transitland to add it back.
+        """
         rt_urls = {}
-        
-        # Vehicle position
-        vehicle_position = feed_info.get('vehicle_position')
-        if vehicle_position and isinstance(vehicle_position, dict) and vehicle_position.get('is_operated'):
-            url = vehicle_position.get('url', '')
+        for source, dmfr_key in (('vehicle_position', 'realtime_vehicle_positions'),
+                                 ('trip_update', 'realtime_trip_updates'),
+                                 ('alert', 'realtime_alerts')):
+            endpoint = feed_info.get(source)
+            if not (isinstance(endpoint, dict) and endpoint.get('is_operated')):
+                continue
+            url = endpoint.get('url', '')
             if include_access_token and self.access_token:
                 url = url.replace('[アクセストークン/YOUR_ACCESS_TOKEN]', self.access_token)
             else:
-                url = url.replace('[アクセストークン/YOUR_ACCESS_TOKEN]', '')
-            rt_urls['realtime_vehicle_positions'] = url
-        
-        # Trip updates
-        trip_update = feed_info.get('trip_update')
-        if trip_update and isinstance(trip_update, dict) and trip_update.get('is_operated'):
-            url = trip_update.get('url', '')
-            if include_access_token and self.access_token:
-                url = url.replace('[アクセストークン/YOUR_ACCESS_TOKEN]', self.access_token)
-            else:
-                url = url.replace('[アクセストークン/YOUR_ACCESS_TOKEN]', '')
-            rt_urls['realtime_trip_updates'] = url
-        
-        # Alerts
-        alert = feed_info.get('alert')
-        if alert and isinstance(alert, dict) and alert.get('is_operated'):
-            url = alert.get('url', '')
-            if include_access_token and self.access_token:
-                url = url.replace('[アクセストークン/YOUR_ACCESS_TOKEN]', self.access_token)
-            else:
-                url = url.replace('[アクセストークン/YOUR_ACCESS_TOKEN]', '')
-            rt_urls['realtime_alerts'] = url
-        
+                url = re.sub(r'([?&])acl:consumerKey=[^&]*&?', r'\1', url).rstrip('?&')
+            rt_urls[dmfr_key] = url
         return rt_urls
 
 class TransitlandAtlasAnalyzer:
@@ -313,11 +315,7 @@ class DMFRGenerator:
             "urls": {
                 "static_current": download_url
             },
-            "authorization": {
-              "type": "query_param",
-              "param_name": "acl:consumerKey",
-              "info_url": "https://developer.odpt.org/"
-            }
+            "authorization": dict(ODPT_AUTHORIZATION)
         }
         
         # Add license
@@ -365,8 +363,71 @@ class DMFRGenerator:
                 "odpt_dataset_id": dataset_id,
             }
         }
+        if needs_key(rt_urls):
+            dmfr_record["authorization"] = dict(ODPT_AUTHORIZATION)
         
         return dmfr_record
+
+def needs_key(urls: Dict[str, str]) -> bool:
+    return any(urlparse(u).hostname == 'api.odpt.org' for u in urls.values())
+
+
+def sync_realtime(dmfr: Dict, feeds: List[Dict], collector: 'ODPTGTFSCollector') -> List[str]:
+    """Bring the RT record of each static feed in dmfr in line with what ODPT
+    lists now: add it if ODPT has started offering RT, update its URLs and
+    authorization if they've moved, remove it if ODPT stopped. The RT record
+    is "<static id>~rt" and shares the static feed's operator. Returns the
+    ids of RT records that changed.
+
+    ODPT sometimes lists RT before serving it, so a new keyless record is
+    added only once one of its URLs responds; a later run picks it up. Keyed
+    URLs can't be checked without a consumer key and are added as listed."""
+    by_key = {(f['organization_id'].lower(), f['dataset_id'].lower()): f for f in feeds}
+    records = {f['id']: f for f in dmfr.get('feeds', [])}
+    operators = dmfr.setdefault('operators', [])
+    changed = []
+    for static in [f for f in dmfr.get('feeds', []) if f.get('spec') == 'gtfs']:
+        m = FILE_URL_RE.search(static.get('urls', {}).get('static_current') or '')
+        feed_info = m and by_key.get((m.group(1).lower(), m.group(2).lower()))
+        if not feed_info:
+            continue
+        rt_id = f"{static['id']}~rt"
+        rt_urls = collector.get_gtfsrt_urls(feed_info) if feed_info.get('is_gtfsrt') else {}
+        existing = records.get(rt_id)
+        if existing and not rt_urls:
+            dmfr['feeds'].remove(existing)
+            for op in operators:
+                op['associated_feeds'] = [a for a in op.get('associated_feeds', [])
+                                          if a.get('feed_onestop_id') != rt_id]
+            logger.info(f"Removing RT feed ODPT no longer offers: {rt_id}")
+            changed.append(rt_id)
+        elif existing:
+            authorization = dict(ODPT_AUTHORIZATION) if needs_key(rt_urls) else None
+            if existing.get('urls') != rt_urls or existing.get('authorization') != authorization:
+                existing['urls'] = rt_urls
+                if authorization:
+                    existing['authorization'] = authorization
+                else:
+                    existing.pop('authorization', None)
+                logger.info(f"Updating RT feed URLs or authorization: {rt_id}")
+                changed.append(rt_id)
+        elif rt_urls:
+            if not needs_key(rt_urls) and not collector.any_responds(rt_urls.values()):
+                logger.info(f"Not adding {rt_id} yet: ODPT lists it but none of its URLs respond")
+                continue
+            record = DMFRGenerator.create_realtime_gtfs_record(feed_info, rt_urls)
+            record['id'] = rt_id
+            dmfr['feeds'].append(record)
+            op = next((o for o in operators if any(
+                a.get('feed_onestop_id') == static['id'] for a in o.get('associated_feeds', []))), None)
+            if op:
+                op['associated_feeds'].append({'feed_onestop_id': rt_id})
+            else:
+                logger.warning(f"No operator lists {static['id']}; {rt_id} added without one")
+            logger.info(f"Adding RT feed: {rt_id}")
+            changed.append(rt_id)
+    return changed
+
 
 def main():
     """Main function to collect and analyze ODPT GTFS feeds"""
@@ -479,11 +540,12 @@ def main():
         return (m.group(1).lower(), m.group(2).lower()) in listed_keys
 
     removed = prune_feeds(existing_dmfr, is_listed) if listed_keys else []
+    rt_changed = sync_realtime(existing_dmfr, feeds, collector)
     existing_records = existing_dmfr.get('feeds', [])
     existing_operators = existing_dmfr.get('operators', [])
 
     # Generate DMFR file for new feeds
-    if new_static_feeds or new_rt_feeds or removed:
+    if new_static_feeds or new_rt_feeds or removed or rt_changed:
         # Create new operators for new feeds
         new_operators = []
         
@@ -611,6 +673,7 @@ def main():
     logger.info(f"New GTFS feeds to add: {len(new_static_feeds)}")
     logger.info(f"New GTFS-RT feeds to add: {len(new_rt_feeds)}")
     logger.info(f"Feeds removed (no longer listed): {len(removed)}")
+    logger.info(f"RT feeds added, updated or removed: {len(rt_changed)}")
     
     if new_static_feeds:
         logger.info("\nNew GTFS feeds to consider adding:")
