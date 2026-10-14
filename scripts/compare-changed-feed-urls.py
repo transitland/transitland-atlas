@@ -22,12 +22,17 @@ Runs in two stages:
           also reports whether each file is already in the Transitland
           archive.
 
+With --limit, compares at most that many feeds, spread across hosts; with
+--time-budget, stops starting new fetches after that many seconds. At most
+HOST_CONCURRENCY fetches run against one host at a time.
+
 Standard library only: the empty inline dependency list above makes `uv run`
 skip syncing the project environment. Advisory: always exits 0 unless
 invoked incorrectly.
 
 Usage:
     uv run scripts/compare-changed-feed-urls.py probe --base <rev> --head <rev> \\
+        [--limit 25] [--time-budget 1200] \\
         feeds/foo.dmfr.json feeds/bar.dmfr.json > probes.json
     uv run scripts/compare-changed-feed-urls.py render probes.json > compare.md
 """
@@ -40,6 +45,8 @@ import os
 import re
 import subprocess
 import sys
+import threading
+import time
 import urllib.error
 import urllib.request
 from dataclasses import asdict, dataclass, field
@@ -58,6 +65,7 @@ _spec.loader.exec_module(vcfu)
 
 TRANSITLAND_API_BASE = "https://transit.land/api/v2/rest"
 TIMEOUT = 300
+HOST_CONCURRENCY = 2
 SHA1_RE = re.compile(r"[0-9a-f]{40}")
 
 ROUTE_TYPE_NAMES = {
@@ -386,6 +394,12 @@ def render_pair(pair: Pair, old: Probe, new: Probe, today: date,
             + "\n".join(table) + "\n\n</details>\n")
 
 
+def render_not_compared(count: int) -> str:
+    feeds = "1 repointed feed was" if count == 1 else f"{count} repointed feeds were"
+    return (f"{feeds} not compared, to keep this job short. Add the "
+            f"`validate-all` label to compare every feed.\n")
+
+
 def render_skipped(pair: Pair) -> str:
     return (f"### {code(pair.feed_id)}\n\n⚪ Skipped: this feed requires "
             f"authorization ({code(pair.auth_type or '')}), so the URLs can't be "
@@ -399,11 +413,24 @@ def cmd_probe(args: argparse.Namespace) -> None:
     for fp in args.files:
         pairs += repointed_feeds(vcfu.dmfr_at(args.base, fp), vcfu.dmfr_at(args.head, fp))
 
-    urls = sorted({u for p in pairs if not p.auth_type for u in (p.old_url, p.new_url)})
+    chosen = vcfu.sample([p for p in pairs if not p.auth_type], args.limit,
+                         key=lambda p: p.feed_id, host=lambda p: vcfu.url_host(p.new_url))
+    urls = sorted({u for p in chosen for u in (p.old_url, p.new_url)})
+    deadline = time.monotonic() + args.time_budget if args.time_budget > 0 else None
+    host_slots: dict[str, threading.Semaphore] = {}
+    lock = threading.Lock()
+
+    def probe(url: str) -> Optional[Probe]:
+        if deadline is not None and time.monotonic() > deadline:
+            return None
+        host = vcfu.url_host(url)
+        with lock:
+            slot = host_slots.setdefault(host, threading.Semaphore(HOST_CONCURRENCY))
+        with slot:
+            return summarize(url, validate_feed(url), dir_sha1(url))
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
-        reports = ex.map(validate_feed, urls)
-        dir_sha1s = ex.map(dir_sha1, urls)
-        probes = {u: summarize(u, r, d) for u, r, d in zip(urls, reports, dir_sha1s)}
+        probes = {u: p for u, p in zip(urls, ex.map(probe, urls)) if p}
 
     json.dump({"pairs": [asdict(p) for p in pairs],
                "probes": {u: asdict(p) for u, p in probes.items()}},
@@ -423,10 +450,15 @@ def cmd_render(args: argparse.Namespace) -> None:
             archive = dict(zip(sha1s, ex.map(lambda s: lookup_archive(s, api_key), sha1s)))
 
     today = date.today()
-    sys.stdout.write("\n".join(
-        render_skipped(p) if p.auth_type
-        else render_pair(p, probes[p.old_url], probes[p.new_url], today, archive)
-        for p in pairs))
+    # Pairs left out by --limit or --time-budget have no probes.
+    compared = [p for p in pairs if p.auth_type or (p.old_url in probes and p.new_url in probes)]
+    sections = [render_skipped(p) if p.auth_type
+                else render_pair(p, probes[p.old_url], probes[p.new_url], today, archive)
+                for p in compared]
+    if len(compared) < len(pairs):
+        # Ahead of the feed sections, so trimming the comment can't drop it.
+        sections.insert(0, render_not_compared(len(pairs) - len(compared)))
+    sys.stdout.write("\n".join(sections))
 
 
 def main() -> None:
@@ -436,6 +468,9 @@ def main() -> None:
     p = sub.add_parser("probe", help="Fetch and validate old and new URLs; print JSON.")
     p.add_argument("--base", required=True, help="Git revision of the base branch.")
     p.add_argument("--head", required=True, help="Git revision of the PR head.")
+    p.add_argument("--limit", type=int, default=0, help="Compare at most this many feeds; 0 compares all.")
+    p.add_argument("--time-budget", type=int, default=0,
+                   help="Stop starting new fetches after this many seconds; 0 for no limit.")
     p.add_argument("files", nargs="*", help="Changed DMFR file paths.")
     p.set_defaults(func=cmd_probe)
 

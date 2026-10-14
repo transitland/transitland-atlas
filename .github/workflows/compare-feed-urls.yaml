@@ -11,16 +11,20 @@ on:
   pull_request_target:
     paths:
       - 'feeds/*.dmfr.json'
-    types: [opened, synchronize, reopened]
+    # labeled: adding the validate-all label reruns with no limits.
+    types: [opened, synchronize, reopened, labeled]
 
 permissions: {}
 
+# Any label other than validate-all gets a group of its own, so it can't
+# cancel a run.
 concurrency:
-  group: compare-feed-urls-${{ github.event.pull_request.number }}
+  group: compare-feed-urls-${{ (github.event.action == 'labeled' && github.event.label.name != 'validate-all') && github.run_id || github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
   probe:
+    if: github.event.action != 'labeled' || github.event.label.name == 'validate-all'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -63,12 +67,16 @@ jobs:
         env:
           BASE: ${{ steps.revs.outputs.base }}
           HEAD: ${{ github.event.pull_request.head.sha }}
+          # Large PRs are sampled to keep the job short; validate-all lifts this.
+          LIMIT: ${{ contains(github.event.pull_request.labels.*.name, 'validate-all') && '0' || '25' }}
+          TIME_BUDGET: ${{ contains(github.event.pull_request.labels.*.name, 'validate-all') && '0' || '1200' }}
         run: |
           mkdir -p reports
           changed=$(git diff --name-only "$BASE" "$HEAD" -- 'feeds/*.dmfr.json')
           mapfile -t files < <(printf '%s\n' "$changed" | sed '/^$/d')
           uv run scripts/compare-changed-feed-urls.py probe \
-            --base "$BASE" --head "$HEAD" "${files[@]}" > reports/probes.json
+            --base "$BASE" --head "$HEAD" --limit "$LIMIT" --time-budget "$TIME_BUDGET" \
+            "${files[@]}" > reports/probes.json
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:

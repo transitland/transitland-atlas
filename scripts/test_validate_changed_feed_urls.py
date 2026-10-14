@@ -58,3 +58,24 @@ def test_associated_feed_ids_tolerates_missing_and_malformed(tmp_path):
 
     assert vcfu.load_operator_associated_feed_ids(pathlib.Path(tmp_path)) == set()
     assert vcfu.load_operator_associated_feed_ids(pathlib.Path(tmp_path / "nope")) == set()
+
+
+def test_sample_takes_everything_under_the_limit():
+    items = ["https://a/1", "https://a/2"]
+    assert vcfu.sample(items, 0, key=str, host=vcfu.url_host) == items
+    assert vcfu.sample(items, 5, key=str, host=vcfu.url_host) == items
+
+
+def test_sample_spreads_across_hosts_and_puts_first_tier_first():
+    """A bulk change on one host shouldn't crowd out other hosts, and new
+    feeds are checked before repointed ones."""
+    items = [f"https://bulk.example/{i}" for i in range(100)] + [
+        "https://other.example/x", "https://third.example/y", "https://new.example/z"]
+    got = vcfu.sample(items, 5, key=str, host=vcfu.url_host,
+                      first=lambda u: "new." in u)
+    assert got[0] == "https://new.example/z"
+    assert {"https://other.example/x", "https://third.example/y"} <= set(got)
+    assert len(got) == 5
+    # Stable between runs.
+    assert got == vcfu.sample(items, 5, key=str, host=vcfu.url_host,
+                              first=lambda u: "new." in u)
