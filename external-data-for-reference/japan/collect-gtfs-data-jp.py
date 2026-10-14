@@ -177,7 +177,8 @@ class TransitlandAtlasAnalyzer:
         feed_id = feed_data.get('feed_id', '')
         if org_id and feed_id:
             # Construct the expected URL pattern for this feed
-            expected_url_pattern = f"api.gtfs-data.jp/v2/organizations/{org_id}/feeds/{feed_id}".lower()
+            # Trailing slash, so feed "a" doesn't match feed "a-b"
+            expected_url_pattern = f"api.gtfs-data.jp/v2/organizations/{org_id}/feeds/{feed_id}/".lower()
             logger.debug(f"Checking if feed {org_id}/{feed_id} exists. Looking for pattern: {expected_url_pattern}")
             
             for existing_url in self.existing_urls:

@@ -17,6 +17,13 @@ other_jp_dmfr_urls = [
 ]
 csv_url = 'https://github.com/tshimada291/gtfs-jp-list-datecheck/raw/refs/heads/main/GTFS_fixedURL_LastModified.csv'
 
+# Feeds at these URLs are managed by collect-odpt-gtfs.py and
+# collect-gtfs-data-jp.py, from each source's own listing. Other paths on the
+# same hosts (e.g. ODPT's /files/Toei/) are not, and stay here.
+SOURCE_COLLECTOR_URL = re.compile(
+    r'^https?://(api|api-public)\.odpt\.org/api/v4/files/odpt/'
+    r'|^https?://api\.gtfs-data\.jp/v2/organizations/', re.IGNORECASE)
+
 existing_feed_urls_to_skip = [
     "http://codeforkobe.github.io/kobe-transit/kobe_subway_gtfs.zip",
     "http://www.city.nomi.ishikawa.jp/data/open/cnt/3/5145/1/GTFSnomi2018.zip",
@@ -59,6 +66,8 @@ def remove_duplicate_urls(data):
             logging.warn(f"URL found with '/next/' and removed: {url}")
         elif '_next.zip' in url:
             logging.warn(f"URL found with '_next.zip' and removed: {url}")
+        elif SOURCE_COLLECTOR_URL.match(url):
+            logging.info(f"URL managed by a source collector and removed: {url}")
         elif url in unique_urls:
             logging.warn(f"Duplicate URL found and removed: {url}")
         else:
