@@ -35,7 +35,7 @@ from typing import Dict, List, Set, Optional, Tuple
 from urllib.parse import urlparse
 from datetime import datetime, timezone
 
-from jp_dmfr_prune import prune_feeds
+from jp_dmfr_prune import MAX_PRUNE_FRACTION, prune_feeds
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
@@ -47,13 +47,15 @@ ODPT_FILE_API_BASE = "https://api.odpt.org/api/v4/files/odpt"
 ODPT_RT_API_BASE = "https://api.odpt.org/api/v4/gtfs/realtime"
 REQUEST_TIMEOUT = 30  # seconds
 MAX_FEEDS_TO_LOG = 10  # Number of feeds to show in summary
-# Matches the organization and dataset labels in an ODPT file URL.
 # Feeds on api.odpt.org need this consumer key; api-public.odpt.org needs none.
 ODPT_AUTHORIZATION = {
     "type": "query_param",
     "param_name": "acl:consumerKey",
     "info_url": "https://developer.odpt.org/"
 }
+# ODPT writes this where the consumer key goes in the URLs it lists.
+ODPT_KEY_PLACEHOLDER = '[アクセストークン/YOUR_ACCESS_TOKEN]'
+# Matches the organization and dataset labels in an ODPT file URL.
 FILE_URL_RE = re.compile(r"odpt\.org/api/v4/files/odpt/([^/]+)/([^/?]+)\.zip", re.IGNORECASE)
 
 # Transitland Atlas repo paths
@@ -146,8 +148,11 @@ class ODPTGTFSCollector:
         if not organization_id or not dataset_id:
             return None
         
+        # Judge by the files valid now, since ODPT can move a dataset between hosts.
+        resources = feed_info.get('data_resources') or []
+        current = [r for r in resources if r.get('is_feed_available_period')] or resources
         public = any(urlparse(r.get('url') or '').hostname == 'api-public.odpt.org'
-                     for r in feed_info.get('data_resources') or [])
+                     for r in current)
         host = 'api-public.odpt.org' if public else 'api.odpt.org'
         base_url = f"https://{host}/api/v4/files/odpt/{organization_id}/{dataset_id}.zip?date=current"
         
@@ -161,8 +166,10 @@ class ODPTGTFSCollector:
         """Whether any of urls answers with HTTP 200, following redirects."""
         for url in urls:
             try:
-                if self.session.get(url, timeout=REQUEST_TIMEOUT).status_code == 200:
-                    return True
+                # Streamed, so only the headers are read.
+                with self.session.get(url, timeout=REQUEST_TIMEOUT, stream=True) as response:
+                    if response.status_code == 200:
+                        return True
             except requests.RequestException:
                 pass
         return False
@@ -183,9 +190,10 @@ class ODPTGTFSCollector:
                 continue
             url = endpoint.get('url', '')
             if include_access_token and self.access_token:
-                url = url.replace('[アクセストークン/YOUR_ACCESS_TOKEN]', self.access_token)
+                url = url.replace(ODPT_KEY_PLACEHOLDER, self.access_token)
             else:
-                url = re.sub(r'([?&])acl:consumerKey=[^&]*&?', r'\1', url).rstrip('?&')
+                url = url.replace(ODPT_KEY_PLACEHOLDER, '')
+                url = re.sub(r'([?&])acl:consumerKey=&?', r'\1', url, flags=re.IGNORECASE).rstrip('?&')
             rt_urls[dmfr_key] = url
         return rt_urls
 
@@ -392,6 +400,7 @@ def sync_realtime(dmfr: Dict, feeds: List[Dict], collector: 'ODPTGTFSCollector')
     records = {f['id']: f for f in dmfr.get('feeds', [])}
     operators = dmfr.setdefault('operators', [])
     changed = []
+    to_remove = []
     for static in [f for f in dmfr.get('feeds', []) if f.get('spec') == 'gtfs']:
         m = FILE_URL_RE.search(static.get('urls', {}).get('static_current') or '')
         feed_info = m and by_key.get((m.group(1).lower(), m.group(2).lower()))
@@ -401,12 +410,7 @@ def sync_realtime(dmfr: Dict, feeds: List[Dict], collector: 'ODPTGTFSCollector')
         rt_urls = collector.get_gtfsrt_urls(feed_info) if feed_info.get('is_gtfsrt') else {}
         existing = records.get(rt_id)
         if existing and not rt_urls:
-            dmfr['feeds'].remove(existing)
-            for op in operators:
-                op['associated_feeds'] = [a for a in op.get('associated_feeds', [])
-                                          if a.get('feed_onestop_id') != rt_id]
-            logger.info(f"Removing RT feed ODPT no longer offers: {rt_id}")
-            changed.append(rt_id)
+            to_remove.append(rt_id)
         elif existing:
             authorization = dict(ODPT_AUTHORIZATION) if needs_key(rt_urls) else None
             if existing.get('urls') != rt_urls or existing.get('authorization') != authorization:
@@ -432,7 +436,21 @@ def sync_realtime(dmfr: Dict, feeds: List[Dict], collector: 'ODPTGTFSCollector')
                 logger.warning(f"No operator lists {static['id']}; {rt_id} added without one")
             logger.info(f"Adding RT feed: {rt_id}")
             changed.append(rt_id)
-    return changed
+
+    # As in prune_feeds, many removals at once more likely mean a bad
+    # metadata response than many publishers stopping RT.
+    rt_count = sum(1 for f in dmfr.get('feeds', []) if f.get('spec') == 'gtfs-rt')
+    if len(to_remove) > MAX_PRUNE_FRACTION * rt_count:
+        logger.error(f"Refusing to remove {len(to_remove)} of {rt_count} RT feeds; "
+                     "ODPT metadata looks incomplete")
+        to_remove = []
+    for rt_id in to_remove:
+        dmfr['feeds'] = [f for f in dmfr['feeds'] if f['id'] != rt_id]
+        for op in operators:
+            op['associated_feeds'] = [a for a in op.get('associated_feeds', [])
+                                      if a.get('feed_onestop_id') != rt_id]
+        logger.info(f"Removing RT feed ODPT no longer offers: {rt_id}")
+    return changed + to_remove
 
 
 def main():
@@ -478,7 +496,7 @@ def main():
         if analyzer.is_feed_new(feed_info):
             # ODPT keeps listing some abolished services, flagged by having no
             # file whose period covers today.
-            if not any(r.get('is_feed_available_period') for r in feed_info['data_resources']):
+            if not any(r.get('is_feed_available_period') for r in feed_info.get('data_resources') or []):
                 logger.info(f"Skipping dataset with no currently valid file: {feed_info['name_ja']} ({feed_info['organization_id']}/{feed_info['dataset_id']})")
                 continue
             # Generate static GTFS record
@@ -501,6 +519,10 @@ def main():
             # Generate GTFS-RT record if available
             if feed_info.get('is_gtfsrt'):
                 rt_urls = collector.get_gtfsrt_urls(feed_info, should_include_token)
+                # Same rule as sync_realtime: keyless RT waits until it responds.
+                if rt_urls and not needs_key(rt_urls) and not collector.any_responds(rt_urls.values()):
+                    logger.info(f"Not adding RT for {feed_info['organization_id']}/{feed_info['dataset_id']} yet: none of its URLs respond")
+                    rt_urls = {}
                 if rt_urls:
                     rt_dmfr_record = DMFRGenerator.create_realtime_gtfs_record(feed_info, rt_urls)
                     if rt_dmfr_record:
