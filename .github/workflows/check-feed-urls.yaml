@@ -4,22 +4,19 @@ on:
   pull_request_target:
     paths:
       - 'feeds/*.dmfr.json'
-    # labeled: adding the validate-all label reruns with no limits.
-    types: [opened, synchronize, reopened, labeled]
+    types: [opened, synchronize, reopened]
 
 permissions:
   pull-requests: write
   contents: read
 
-# A new push to the PR supersedes the validation still running for the last
-# one. Any other label gets a group of its own, so it can't cancel a run.
+# A new push to the PR supersedes the validation still running for the last one.
 concurrency:
-  group: ${{ github.workflow }}-${{ (github.event.action == 'labeled' && github.event.label.name != 'validate-all') && github.run_id || github.event.pull_request.number }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
   validate:
-    if: github.event.action != 'labeled' || github.event.label.name == 'validate-all'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -62,15 +59,32 @@ jobs:
             echo "$delim"
           } >> "$GITHUB_OUTPUT"
 
+      # Large PRs are sampled to keep the job short. Labels are read now,
+      # not from the event, so adding validate-all and re-running the job
+      # checks every feed.
+      - name: Set limits
+        id: limits
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          labels=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/labels" --jq '.[].name')
+          if printf '%s\n' "$labels" | grep -qx validate-all; then
+            echo "limit=0" >> "$GITHUB_OUTPUT"
+            echo "time_budget=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "limit=50" >> "$GITHUB_OUTPUT"
+            echo "time_budget=1200" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Validate URLs proposed in this PR
         id: validate
         if: steps.changed.outputs.files != ''
         env:
           BASE_REF: ${{ github.base_ref }}
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
-          # Large PRs are sampled to keep the job short; validate-all lifts this.
-          LIMIT: ${{ contains(github.event.pull_request.labels.*.name, 'validate-all') && '0' || '50' }}
-          TIME_BUDGET: ${{ contains(github.event.pull_request.labels.*.name, 'validate-all') && '0' || '1200' }}
+          LIMIT: ${{ steps.limits.outputs.limit }}
+          TIME_BUDGET: ${{ steps.limits.outputs.time_budget }}
         run: |
           mkdir -p reports
           mapfile -t files < <(printf '%s\n' "$CHANGED_FILES" | sed '/^$/d')

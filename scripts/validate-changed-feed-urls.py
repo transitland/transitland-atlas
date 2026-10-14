@@ -560,38 +560,42 @@ def main() -> int:
                 work.append(Work(fid, feed, base_feed_for(base, feed),
                                  (feed.get("authorization") or {}).get("type"), checks))
 
-    # 3. Pick which feeds to fetch. Auth-protected feeds are never fetched
-    #    here, so they cost nothing and are always reported.
+    # 3. Pick which feeds to fetch and fetch them, in the order picked, so
+    #    the time budget cuts the least important feeds. Auth-protected feeds
+    #    are never fetched here, so they cost nothing and are always reported.
     fetchable = [w for w in work if not w.auth_type]
-    chosen = {id(w) for w in sample(
-        fetchable, args.limit, key=lambda w: w.fid,
-        host=lambda w: url_host(w.checks[0][1]), first=lambda w: w.base_feed is None)}
+    chosen = sample(fetchable, args.limit, key=lambda w: w.fid,
+                    host=lambda w: url_host(w.checks[0][1]), first=lambda w: w.base_feed is None)
     deadline = time.monotonic() + args.time_budget if args.time_budget > 0 else None
+    results: dict[int, list[Outcome]] = {}
+    for w in chosen:
+        if deadline is not None and time.monotonic() > deadline:
+            break
+        fbase = slugify(w.fid)
+        results[id(w)] = [
+            run_validate_static(url, args.reports_dir / f"{fbase}.static.json") if kind == "static"
+            else run_rt_convert(kind, url, args.reports_dir / f"{fbase}.rt-{kind}.json")
+            for kind, url in w.checks
+        ]
 
-    # 4. Validate, accumulate per-feed outcomes, append style advisories,
-    #    render a <details> block.
+    # 4. In file order: accumulate per-feed outcomes, append style
+    #    advisories, render a <details> block.
     summary_parts: list[str] = []
     unchecked: list[str] = []
     any_blocker = False
 
     for w in work:
-        if not w.auth_type and (id(w) not in chosen or
-                                (deadline is not None and time.monotonic() > deadline)):
+        if w.auth_type:
+            outcomes = [Outcome(
+                bullet=(f"- ⚪ {'static' if kind == 'static' else f'rt:{kind}'} — skipped "
+                        f"(auth: `{w.auth_type}`); validated by tlv2 — `{url}`"),
+                skipped=True,
+            ) for kind, url in w.checks]
+        elif id(w) in results:
+            outcomes = results[id(w)]
+        else:
             unchecked.append(w.fid)
             continue
-        fbase = slugify(w.fid)
-        outcomes: list[Outcome] = []
-        for kind, url in w.checks:
-            label = "static" if kind == "static" else f"rt:{kind}"
-            if w.auth_type:
-                outcomes.append(Outcome(
-                    bullet=f"- ⚪ {label} — skipped (auth: `{w.auth_type}`); validated by tlv2 — `{url}`",
-                    skipped=True,
-                ))
-            elif kind == "static":
-                outcomes.append(run_validate_static(url, args.reports_dir / f"{fbase}.static.json"))
-            else:
-                outcomes.append(run_rt_convert(kind, url, args.reports_dir / f"{fbase}.rt-{kind}.json"))
 
         # Style advisories — appended after URL outcomes, scoped to feeds
         # that already have some change in this PR.
@@ -611,7 +615,7 @@ def main() -> int:
             f"Checked {len(fetchable) - len(unchecked)} of {len(fetchable)} changed feeds; "
             f"{len(unchecked)} {'was' if len(unchecked) == 1 else 'were'} not checked, to keep this job short. They are listed "
             f"in `unchecked.txt` in the reports artifact. Add the `validate-all` label "
-            f"to check every feed.\n"
+            f"and re-run the job to check every feed.\n"
         ))
 
     summary_md = "".join(summary_parts)

@@ -397,7 +397,7 @@ def render_pair(pair: Pair, old: Probe, new: Probe, today: date,
 def render_not_compared(count: int) -> str:
     feeds = "1 repointed feed was" if count == 1 else f"{count} repointed feeds were"
     return (f"{feeds} not compared, to keep this job short. Add the "
-            f"`validate-all` label to compare every feed.\n")
+            f"`validate-all` label and re-run the job to compare every feed.\n")
 
 
 def render_skipped(pair: Pair) -> str:
@@ -415,22 +415,34 @@ def cmd_probe(args: argparse.Namespace) -> None:
 
     chosen = vcfu.sample([p for p in pairs if not p.auth_type], args.limit,
                          key=lambda p: p.feed_id, host=lambda p: vcfu.url_host(p.new_url))
-    urls = sorted({u for p in chosen for u in (p.old_url, p.new_url)})
     deadline = time.monotonic() + args.time_budget if args.time_budget > 0 else None
     host_slots: dict[str, threading.Semaphore] = {}
     lock = threading.Lock()
 
     def probe(url: str) -> Optional[Probe]:
-        if deadline is not None and time.monotonic() > deadline:
-            return None
-        host = vcfu.url_host(url)
         with lock:
-            slot = host_slots.setdefault(host, threading.Semaphore(HOST_CONCURRENCY))
+            slot = host_slots.setdefault(vcfu.url_host(url), threading.Semaphore(HOST_CONCURRENCY))
         with slot:
+            # Checked once the slot is free, since waiting for it can take minutes.
+            if deadline is not None and time.monotonic() > deadline:
+                return None
             return summarize(url, validate_feed(url), dir_sha1(url))
 
+    def probe_pair(pair: Pair) -> dict[str, Probe]:
+        got: dict[str, Probe] = {}
+        for url in (pair.old_url, pair.new_url):
+            p = probe(url)
+            if p is None:
+                return {}  # half a pair can't be compared
+            got[url] = p
+        return got
+
+    # Pairs start in the order sample() picked them, so the time budget cuts
+    # the least important ones.
+    probes: dict[str, Probe] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:
-        probes = {u: p for u, p in zip(urls, ex.map(probe, urls)) if p}
+        for got in ex.map(probe_pair, chosen):
+            probes.update(got)
 
     json.dump({"pairs": [asdict(p) for p in pairs],
                "probes": {u: asdict(p) for u, p in probes.items()}},

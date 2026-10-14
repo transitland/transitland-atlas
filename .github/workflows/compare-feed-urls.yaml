@@ -11,24 +11,21 @@ on:
   pull_request_target:
     paths:
       - 'feeds/*.dmfr.json'
-    # labeled: adding the validate-all label reruns with no limits.
-    types: [opened, synchronize, reopened, labeled]
+    types: [opened, synchronize, reopened]
 
 permissions: {}
 
-# Any label other than validate-all gets a group of its own, so it can't
-# cancel a run.
 concurrency:
-  group: compare-feed-urls-${{ (github.event.action == 'labeled' && github.event.label.name != 'validate-all') && github.run_id || github.event.pull_request.number }}
+  group: compare-feed-urls-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
   probe:
-    if: github.event.action != 'labeled' || github.event.label.name == 'validate-all'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: read
+      pull-requests: read
     steps:
       # Full history for merge-base, but blobless: only the DMFR files that
       # are actually read get downloaded.
@@ -63,13 +60,30 @@ jobs:
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
 
+      # Large PRs are sampled to keep the job short. Labels are read now,
+      # not from the event, so adding validate-all and re-running the job
+      # checks every feed.
+      - name: Set limits
+        id: limits
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          labels=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/labels" --jq '.[].name')
+          if printf '%s\n' "$labels" | grep -qx validate-all; then
+            echo "limit=0" >> "$GITHUB_OUTPUT"
+            echo "time_budget=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "limit=25" >> "$GITHUB_OUTPUT"
+            echo "time_budget=1200" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Fetch and validate old and new static_current URLs
         env:
           BASE: ${{ steps.revs.outputs.base }}
           HEAD: ${{ github.event.pull_request.head.sha }}
-          # Large PRs are sampled to keep the job short; validate-all lifts this.
-          LIMIT: ${{ contains(github.event.pull_request.labels.*.name, 'validate-all') && '0' || '25' }}
-          TIME_BUDGET: ${{ contains(github.event.pull_request.labels.*.name, 'validate-all') && '0' || '1200' }}
+          LIMIT: ${{ steps.limits.outputs.limit }}
+          TIME_BUDGET: ${{ steps.limits.outputs.time_budget }}
         run: |
           mkdir -p reports
           changed=$(git diff --name-only "$BASE" "$HEAD" -- 'feeds/*.dmfr.json')
