@@ -1226,10 +1226,10 @@
       }
     },
     {
-      "id": "f-shichigahamatown~all~gururinko~jp",
+      "id": "f-shimantokotsu~feederbus~jp",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.odpt.org/api/v4/files/odpt/ShichigahamaTown/All_Gururinko.zip?date=current"
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/ShimantoKotsu/Feederbus.zip?date=current"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0"
@@ -1245,6 +1245,21 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://api.odpt.org/api/v4/files/odpt/ShimantoKotsu/Feederbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "acl:consumerKey",
+        "info_url": "https://developer.odpt.org/"
+      }
+    },
+    {
+      "id": "f-shimantokotsu~localbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.odpt.org/api/v4/files/odpt/ShimantoKotsu/Localbus.zip?date=current"
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0"
@@ -1474,36 +1489,6 @@
       },
       "license": {
         "spdx_identifier": "CC-BY-4.0"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "acl:consumerKey",
-        "info_url": "https://developer.odpt.org/"
-      }
-    },
-    {
-      "id": "f-tokyotaitocity~megurin~jp",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyoTaitoCity/megurin.zip?date=current"
-      },
-      "license": {
-        "url": "https://developer.odpt.org/terms/data_basic_license.html"
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "acl:consumerKey",
-        "info_url": "https://developer.odpt.org/"
-      }
-    },
-    {
-      "id": "f-tokyubus~tokyubus~community~jp",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://api.odpt.org/api/v4/files/odpt/TokyuBus/tokyubus_community.zip?date=current"
-      },
-      "license": {
-        "url": "https://developer.odpt.org/terms/data_basic_license.html"
       },
       "authorization": {
         "type": "query_param",
@@ -2414,12 +2399,15 @@
       ]
     },
     {
-      "onestop_id": "o-shichigahamatown",
-      "name": "七ヶ浜町",
-      "short_name": "Shichigahama",
+      "onestop_id": "o-shimantokotsu",
+      "name": "株式会社四万十交通",
+      "short_name": "Shimanto Bus Transport  Co., Ltd",
       "associated_feeds": [
         {
-          "feed_onestop_id": "f-shichigahamatown~all~gururinko~jp"
+          "feed_onestop_id": "f-shimantokotsu~feederbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-shimantokotsu~localbus~jp"
         }
       ]
     },
@@ -2556,9 +2544,6 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-tokyotaitocity~megurinccby40~jp"
-        },
-        {
-          "feed_onestop_id": "f-tokyotaitocity~megurin~jp"
         }
       ]
     },
@@ -2568,9 +2553,6 @@
       "short_name": "Tokyu Bus Corporation",
       "website": "https://www.tokyubus.co.jp/",
       "associated_feeds": [
-        {
-          "feed_onestop_id": "f-tokyubus~tokyubus~community~jp"
-        },
         {
           "feed_onestop_id": "f-tokyubus~tokyubus~community~megurocity~jp"
         },

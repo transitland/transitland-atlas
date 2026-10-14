@@ -29,10 +29,13 @@ import json
 import logging
 import argparse
 import os
+import re
 from pathlib import Path
 from typing import Dict, List, Set, Optional, Tuple
 from urllib.parse import urlparse
 from datetime import datetime, timezone
+
+from jp_dmfr_prune import prune_feeds
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
@@ -44,6 +47,8 @@ ODPT_FILE_API_BASE = "https://api.odpt.org/api/v4/files/odpt"
 ODPT_RT_API_BASE = "https://api.odpt.org/api/v4/gtfs/realtime"
 REQUEST_TIMEOUT = 30  # seconds
 MAX_FEEDS_TO_LOG = 10  # Number of feeds to show in summary
+# Matches the organization and dataset labels in an ODPT file URL.
+FILE_URL_RE = re.compile(r"odpt\.org/api/v4/files/odpt/([^/]+)/([^/?]+)\.zip", re.IGNORECASE)
 
 # Transitland Atlas repo paths
 REPO_ROOT = Path(__file__).parent.parent.parent
@@ -109,6 +114,22 @@ class ODPTGTFSCollector:
             logger.error(f"Failed to parse metadata API response: {e}")
             return []
     
+    def list_dataset_keys(self) -> Optional[Set[Tuple[str, str]]]:
+        """(organization, dataset) labels of every dataset ODPT lists, in any
+        format; a GTFS dataset can be reclassified (e.g. as GTFS-Flex) and
+        still be served. Returns None if the listing can't be fetched."""
+        try:
+            response = self.session.get(ODPT_METADATA_API, timeout=REQUEST_TIMEOUT)
+            response.raise_for_status()
+            return {
+                (org.get('label', '').lower(), dataset.get('label', '').lower())
+                for org in response.json()
+                for dataset in org.get('datasets', [])
+            }
+        except (requests.RequestException, json.JSONDecodeError) as e:
+            logger.error(f"Failed to list ODPT datasets: {e}")
+            return None
+
     def get_gtfs_download_url(self, feed_info: Dict, include_access_token: bool = False) -> str:
         """Generate GTFS download URL for a specific feed using the private API endpoint"""
         organization_id = feed_info.get('organization_id', '')
@@ -445,25 +466,24 @@ def main():
     else:
         logger.info("Skipping detailed analysis file generation.")
     
+    # Load existing DMFR file and drop feeds ODPT no longer lists
+    dmfr_file = FEEDS_DIR / 'odpt-gtfs.dmfr.json'
+    with open(dmfr_file, 'r', encoding='utf-8') as f:
+        existing_dmfr = json.load(f)
+    listed_keys = collector.list_dataset_keys()
+
+    def is_listed(record: Dict) -> Optional[bool]:
+        m = FILE_URL_RE.search(record.get('urls', {}).get('static_current') or '')
+        if not m:
+            return None
+        return (m.group(1).lower(), m.group(2).lower()) in listed_keys
+
+    removed = prune_feeds(existing_dmfr, is_listed) if listed_keys else []
+    existing_records = existing_dmfr.get('feeds', [])
+    existing_operators = existing_dmfr.get('operators', [])
+
     # Generate DMFR file for new feeds
-    if new_static_feeds or new_rt_feeds:
-        # Load existing DMFR file if it exists
-        dmfr_file = FEEDS_DIR / 'odpt-gtfs.dmfr.json'
-        existing_feeds = []
-        existing_operators = []
-        
-        if dmfr_file.exists():
-            try:
-                with open(dmfr_file, 'r', encoding='utf-8') as f:
-                    existing_dmfr = json.load(f)
-                existing_feeds = existing_dmfr.get('feeds', [])
-                existing_operators = existing_dmfr.get('operators', [])
-                logger.info(f"Loaded {len(existing_feeds)} existing feeds and {len(existing_operators)} existing operators")
-            except (json.JSONDecodeError, IOError) as e:
-                logger.warning(f"Failed to load existing DMFR file: {e}")
-                existing_feeds = []
-                existing_operators = []
-        
+    if new_static_feeds or new_rt_feeds or removed:
         # Create new operators for new feeds
         new_operators = []
         
@@ -547,7 +567,7 @@ def main():
                         new_operators.append(operator_record)
         
         # Merge existing and new data
-        all_feeds = existing_feeds + [feed['dmfr_record'] for feed in new_static_feeds + new_rt_feeds]
+        all_feeds = existing_records + [feed['dmfr_record'] for feed in new_static_feeds + new_rt_feeds]
         all_operators = existing_operators + new_operators
         
         dmfr_output = {
@@ -559,8 +579,8 @@ def main():
         with open(dmfr_file, 'w', encoding='utf-8') as f:
             json.dump(dmfr_output, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"Updated DMFR file with {len(new_static_feeds)} new GTFS feeds, {len(new_rt_feeds)} new GTFS-RT feeds, and {len(new_operators)} new operators")
-        logger.info(f"Total feeds: {len(all_feeds)} (was {len(existing_feeds)}, added {len(new_static_feeds + new_rt_feeds)})")
+        logger.info(f"Updated DMFR file with {len(new_static_feeds)} new GTFS feeds, {len(new_rt_feeds)} new GTFS-RT feeds, {len(new_operators)} new operators, and {len(removed)} feeds removed")
+        logger.info(f"Total feeds: {len(all_feeds)} (added {len(new_static_feeds + new_rt_feeds)}, removed {len(removed)})")
         logger.info(f"Total operators: {len(all_operators)} (was {len(existing_operators)}, added {len(new_operators)})")
         
         # Format the DMFR file using transitland CLI
@@ -581,7 +601,7 @@ def main():
             logger.warning(f"Could not run transitland CLI to format DMFR file: {e}")
             logger.info("DMFR file generated but not formatted - run 'transitland dmfr format --save feeds/odpt-gtfs.dmfr.json' manually")
     else:
-        logger.info("No new feeds to add to DMFR file")
+        logger.info("No changes to make to DMFR file")
     
     # Print summary
     logger.info("=" * 50)
@@ -590,7 +610,7 @@ def main():
     logger.info(f"Total feeds found: {len(feeds)}")
     logger.info(f"New GTFS feeds to add: {len(new_static_feeds)}")
     logger.info(f"New GTFS-RT feeds to add: {len(new_rt_feeds)}")
-    logger.info(f"Existing feeds (already in repo): {len(existing_feeds)}")
+    logger.info(f"Feeds removed (no longer listed): {len(removed)}")
     
     if new_static_feeds:
         logger.info("\nNew GTFS feeds to consider adding:")
