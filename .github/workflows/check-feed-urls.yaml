@@ -74,14 +74,9 @@ jobs:
             --reports-dir reports \
             --summary-out reports/summary.md \
             "${files[@]}" || rc=$?
-          # Random delimiter, so no line of the summary can end the block early.
-          delim="SUMMARY_$(openssl rand -hex 8)"
-          {
-            echo "summary<<$delim"
-            cat reports/summary.md 2>/dev/null || true
-            echo "$delim"
-            echo "any_blocker=$([ $rc -eq 0 ] && echo 0 || echo 1)"
-          } >> "$GITHUB_OUTPUT"
+          # The summary is read from reports/summary.md by the comment step;
+          # a large PR's summary is too big to pass as an output or env var.
+          echo "any_blocker=$([ $rc -eq 0 ] && echo 0 || echo 1)" >> "$GITHUB_OUTPUT"
 
       - name: Upload validation reports
         if: steps.changed.outputs.files != ''
@@ -92,11 +87,31 @@ jobs:
 
       - name: Comment on PR
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
-        env:
-          SUMMARY: ${{ steps.validate.outputs.summary }}
         with:
           script: |
-            const summary = (process.env.SUMMARY || '').trim();
+            const fs = require('fs');
+            let summary = '';
+            try { summary = fs.readFileSync('reports/summary.md', 'utf8').trim(); } catch {}
+
+            // GitHub rejects comments over 65,536 characters. Put feeds that
+            // didn't pass first, then cut whole feed sections to fit.
+            const LIMIT = 60000;
+            if (summary.length > LIMIT) {
+              const sections = summary.split(/\n(?=<details>)/);
+              const passed = s => s.includes('<summary>✅');
+              const ordered = [...sections.filter(s => !passed(s)), ...sections.filter(passed)];
+              const kept = [];
+              let length = 0;
+              for (const s of ordered) {
+                if (length + s.length + 1 > LIMIT) break;
+                kept.push(s);
+                length += s.length + 1;
+              }
+              const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+              summary = kept.join('\n') +
+                `\n\n${ordered.length - kept.length} more sections omitted to fit in a comment; ` +
+                `see the feed-url-validation-reports artifact on [this run](${runUrl}).`;
+            }
 
             const existing = await github.paginate(github.rest.issues.listComments, {
               issue_number: context.issue.number,
@@ -138,7 +153,7 @@ jobs:
             }
 
       - name: Fail if any feed URL could not be validated
-        if: steps.validate.outputs.any_blocker == '1'
+        if: always() && steps.validate.outputs.any_blocker == '1'
         run: |
           echo "One or more URLs failed the minimum bar."
           echo "Static: must fetch + parse + have ≥1 agency."
