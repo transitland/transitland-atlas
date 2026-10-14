@@ -1,0 +1,63 @@
+name: Update Austrian MVO feeds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 9 * * *'
+
+# GITHUB_TOKEN only needs to read; pushes and PRs go through the app token.
+permissions:
+  contents: read
+
+# Two runs would race to update the same auto-PR branch; let the first finish.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+    - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+      id: app-token
+      with:
+        app-id: ${{ secrets.GH_BOT_APP_ID }}
+        private-key: ${{ secrets.GH_BOT_APP_PRIVATE_KEY }}
+        # auto-pr.sh only pushes a branch and opens or updates its PR.
+        permission-contents: write
+        permission-pull-requests: write
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        token: ${{ steps.app-token.outputs.token }}
+    - name: Install uv
+      uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      with:
+        cache-dependency-glob: uv.lock
+    - name: Cache transitland binary
+      uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      with:
+        path: ~/.cache/transitland
+        key: transitland-${{ runner.os }}-${{ hashFiles('scripts/install-transitland-lib.sh') }}
+    - name: Install transitland-lib
+      run: scripts/install-transitland-lib.sh
+    - name: Fetch the MVO dataset catalog
+      working-directory: external-data-for-reference/austria
+      run: uv run --locked collect-mvo-gtfs.py
+    - name: Format in the opinionated DMFR format
+      run: transitland dmfr format --save feeds/gtfs-source-feeds.transit.land.dmfr.json
+    - name: Validate feeds
+      working-directory: scripts
+      run: uv run --locked validate-feeds.py
+      env:
+        DMFR_SCHEMA_VERSION: v0.6.0
+    - name: Open or update auto-PR if anything changed
+      env:
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+      run: |
+        scripts/auto-pr.sh \
+          --branch-name "auto/austria-mvo" \
+          --pr-title "Automatic update of Austrian MVO feeds" \
+          --pr-body "Automatically updated Austrian feeds from data.mobilitaetsverbuende.at" \
+          --commit-message "Updated Austrian MVO feeds from data.mobilitaetsverbuende.at at $(date -u)" \
+          --trigger-workflow ""
