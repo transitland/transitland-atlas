@@ -5,63 +5,51 @@
       "id": "f-9q8-samtrans",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SM",
+        "static_current": "https://www.samtrans.com/Assets/GTFS/samtrans/ST-GTFS.zip",
         "static_historic": [
+          "http://api.511.org/transit/datafeeds?operator_id=SM",
           "http://www.samtrans.com/Assets/GTFS/samtrans/ST-GTFS.zip"
         ]
       },
       "license": {
-        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
+        "url": "https://www.samtrans.com/developer",
+        "use_without_attribution": "yes",
+        "create_derived_product": "unknown",
         "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
+        "share_alike_optional": "yes"
       },
       "tags": {
         "calitp_dataset_id": "recfkVrxPHPaWOs4J",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
       "id": "f-9q8y-sfmta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SF",
+        "static_current": "https://muni-gtfs.apps.sfmta.com/data/muni_gtfs-current.zip",
         "static_historic": [
+          "http://api.511.org/transit/datafeeds?operator_id=SF",
           "https://gtfs.sfmta.com/transitdata/google_transit.zip"
         ]
       },
       "license": {
-        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
+        "url": "https://www.sfmta.com/reports/gtfs-transit-data",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
+        "attribution_text": "Reproduced with permission granted by the City and County of San Francisco. The information has been provided by means of a nonexclusive, limited, and revocable license granted by the City and County of San Francisco.",
+        "attribution_instructions": "Derivative versions of the data must bear the attribution text as a notice."
       },
       "tags": {
         "calitp_dataset_id": "recHD22phgJs34JHP",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "san-francisco-municipal-transportation-agency",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
