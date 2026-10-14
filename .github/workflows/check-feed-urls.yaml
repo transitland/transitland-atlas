@@ -93,13 +93,16 @@ jobs:
             let summary = '';
             try { summary = fs.readFileSync('reports/summary.md', 'utf8').trim(); } catch {}
 
-            // GitHub rejects comments over 65,536 characters. Put feeds that
-            // didn't pass first, then cut whole feed sections to fit.
+            // GitHub rejects comments over 65,536 characters. Put failures
+            // first, then skipped feeds, then passes, and cut whole feed
+            // sections to fit. Anything before the first section stays on top.
             const LIMIT = 60000;
             if (summary.length > LIMIT) {
-              const sections = summary.split(/\n(?=<details>)/);
-              const passed = s => s.includes('<summary>✅');
-              const ordered = [...sections.filter(s => !passed(s)), ...sections.filter(passed)];
+              const sections = summary.split(/\n(?=<details[ >])/);
+              const rank = s => s.includes('<summary>❌') ? 1 : s.includes('<summary>⚪') ? 2 :
+                s.includes('<summary>✅') ? 3 : 0;
+              // Array.prototype.sort is stable, so file order holds within a rank.
+              const ordered = [...sections].sort((a, b) => rank(a) - rank(b));
               const kept = [];
               let length = 0;
               for (const s of ordered) {
