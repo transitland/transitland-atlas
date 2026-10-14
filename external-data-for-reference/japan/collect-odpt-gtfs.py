@@ -137,18 +137,22 @@ class ODPTGTFSCollector:
             return None
 
     def get_gtfs_download_url(self, feed_info: Dict, include_access_token: bool = False) -> str:
-        """Generate GTFS download URL for a specific feed using the private API endpoint"""
+        """URL of the dataset's current file. ODPT serves public datasets from
+        api-public.odpt.org, which needs no consumer key; the rest from
+        api.odpt.org, which does."""
         organization_id = feed_info.get('organization_id', '')
         dataset_id = feed_info.get('dataset_id', '')
         
         if not organization_id or not dataset_id:
             return None
         
-        # Always use the private API endpoint for stable URLs
-        base_url = f"https://api.odpt.org/api/v4/files/odpt/{organization_id}/{dataset_id}.zip?date=current"
+        public = any(urlparse(r.get('url') or '').hostname == 'api-public.odpt.org'
+                     for r in feed_info.get('data_resources') or [])
+        host = 'api-public.odpt.org' if public else 'api.odpt.org'
+        base_url = f"https://{host}/api/v4/files/odpt/{organization_id}/{dataset_id}.zip?date=current"
         
         # Include access token if explicitly requested (for testing)
-        if include_access_token and self.access_token:
+        if include_access_token and self.access_token and not public:
             base_url += f"&acl:consumerKey={self.access_token}"
         
         return base_url
@@ -255,7 +259,8 @@ class TransitlandAtlasAnalyzer:
             # Construct the expected URL pattern for this feed
             org_id = feed_info.get('organization_id', '')
             dataset_id = feed_info.get('dataset_id', '')
-            expected_url_pattern = f"odpt/{org_id}/{dataset_id}".lower()
+            # Through ".zip", so dataset "A" doesn't match dataset "AB"
+            expected_url_pattern = f"odpt/{org_id}/{dataset_id}.zip".lower()
             
             # Check if any existing URL matches the pattern
             for existing_url in self.existing_urls:
@@ -314,9 +319,10 @@ class DMFRGenerator:
             "spec": "gtfs",
             "urls": {
                 "static_current": download_url
-            },
-            "authorization": dict(ODPT_AUTHORIZATION)
+            }
         }
+        if needs_key({"static_current": download_url}):
+            dmfr_record["authorization"] = dict(ODPT_AUTHORIZATION)
         
         # Add license
         match license_type:
@@ -470,6 +476,11 @@ def main():
     
     for feed_info in feeds:
         if analyzer.is_feed_new(feed_info):
+            # ODPT keeps listing some abolished services, flagged by having no
+            # file whose period covers today.
+            if not any(r.get('is_feed_available_period') for r in feed_info['data_resources']):
+                logger.info(f"Skipping dataset with no currently valid file: {feed_info['name_ja']} ({feed_info['organization_id']}/{feed_info['dataset_id']})")
+                continue
             # Generate static GTFS record
             download_url = collector.get_gtfs_download_url(
                 feed_info,
