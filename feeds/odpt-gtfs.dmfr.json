@@ -2096,6 +2096,19 @@
       }
     },
     {
+      "id": "f-urbandevelopment~aomoricity~alllines~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_UrbanDevelopment_AomoriCity_AllLines_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_UrbanDevelopment_AomoriCity_AllLines_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_UrbanDevelopment_AomoriCity_AllLines_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "AllLines",
+        "odpt_organization_id": "UrbanDevelopment_AomoriCity"
+      }
+    },
+    {
       "id": "f-uwajimaunyu~alllines~jp",
       "spec": "gtfs",
       "urls": {
@@ -3142,6 +3155,9 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-urbandevelopment~aomoricity~alllines~jp"
+        },
+        {
+          "feed_onestop_id": "f-urbandevelopment~aomoricity~alllines~jp~rt"
         }
       ]
     },
