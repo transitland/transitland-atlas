@@ -2483,14 +2483,20 @@
         "f-germany~long~distance~rail",
         "f-germany~regional~rail",
         "f-germany~urban~transport",
-        "f-u0wt-deutschebahnag",
         "f-nvbw~bwspnv",
         "f-nvbw~rab",
         "f-nvbw~rbs",
         "f-nvbw~rvs",
         "f-nvbw~rxr",
         "f-nvbw~sbg",
-        "f-nvbw~sweg"
+        "f-nvbw~sweg",
+        "f-nvbw~vgf",
+        "f-u0t-karlsruhe~region",
+        "f-u0wt-deutschebahnag",
+        "f-u0xepe-avv",
+        "f-u0y1-rhein~neckar~verkehrgmbhrnv",
+        "f-u281z9-mvv",
+        "f-u30u-de~leipziger~mitteldeutscher"
       ],
       "name": "Germany (DELFI)",
       "description": "DELFI e.V.'s nationwide timetable (public transport in every Land plus long-distance rail), with shapes map-matched by Interline.",
@@ -2500,7 +2506,18 @@
         "static_historic": [
           "https://download.gtfs.de/germany/fv_free/latest.zip",
           "https://download.gtfs.de/germany/rv_free/latest.zip",
-          "https://download.gtfs.de/germany/nv_free/latest.zip"
+          "https://download.gtfs.de/germany/nv_free/latest.zip",
+          "https://www.avv-augsburg.de/fileadmin/user_upload/OpenData/GTFS_AVV.zip",
+          "https://projekte.kvv-efa.de/GTFS/google_transit.zip",
+          "https://www.mvv-muenchen.de/fileadmin/mediapool/developer/opendata/gesamt_gtfs.zip",
+          "https://www.mvv-muenchen.de/fileadmin/mediapool/developer/opendata/mvv_gtfs.zip",
+          "https://www.mvv-muenchen.de/fileadmin/mediapool/02-Fahrplanauskunft/03-Downloads/openData/mvv_gtfs.zip",
+          "https://www.mvv-muenchen.de/fileadmin/mediapool/02-Fahrplanauskunft/03-Downloads/openData/mvv_ohneShape_20241004095702.zip",
+          "https://www.mdv.de/media/file/f36bb2e5",
+          "https://opendata.leipzig.de/dataset/8803f612-2ce1-4643-82d1-213434889200/resource/b38955c4-431c-4e8b-a4ef-9964a3a2c95d/download/gtfsmdvlvb.zip",
+          "https://gtfs-sandbox-dds.rnv-online.de/latest/gtfs.zip",
+          "https://opendata.rnv-online.de/sites/default/files/2021_rnv-GTFS.zip",
+          "https://www.nvbw.de/fileadmin/user_upload/service/open_data/fahrplandaten_ohne_liniennetz/vgf.zip"
         ]
       },
       "license": {
@@ -5406,6 +5423,96 @@
           ],
           "tags": {
             "wikidata_id": "Q2328346"
+          }
+        },
+        {
+          "onestop_id": "o-u0xepe-avv",
+          "name": "Augsburger Verkehrs- und Tarifverbund",
+          "short_name": "AVV",
+          "website": "https://www.avv-augsburg.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7515"
+            },
+            {
+              "gtfs_agency_id": "7529"
+            },
+            {
+              "gtfs_agency_id": "13112"
+            },
+            {
+              "gtfs_agency_id": "14327"
+            },
+            {
+              "gtfs_agency_id": "14328"
+            },
+            {
+              "gtfs_agency_id": "14552"
+            },
+            {
+              "gtfs_agency_id": "14553"
+            },
+            {
+              "gtfs_agency_id": "14554"
+            },
+            {
+              "gtfs_agency_id": "14555"
+            },
+            {
+              "gtfs_agency_id": "14556"
+            },
+            {
+              "gtfs_agency_id": "14557"
+            },
+            {
+              "gtfs_agency_id": "15247"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q760574"
+          }
+        },
+        {
+          "onestop_id": "o-u0y1-rhein~neckar~verkehrgmbhrnv",
+          "name": "Rhein-Neckar-Verkehr",
+          "short_name": "rnv",
+          "website": "http://www.rnv-online.de",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "7909"
+            },
+            {
+              "gtfs_agency_id": "7910"
+            },
+            {
+              "gtfs_agency_id": "7911"
+            },
+            {
+              "gtfs_agency_id": "7913"
+            },
+            {
+              "gtfs_agency_id": "7914"
+            },
+            {
+              "gtfs_agency_id": "7915"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q1650863"
+          }
+        },
+        {
+          "onestop_id": "o-u30u-de~leipziger~verkehrsbetriebe",
+          "name": "Leipziger Verkehrsbetriebe",
+          "short_name": "LVB",
+          "website": "https://www.l.de/verkehrsbetriebe",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "8872"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q884166"
           }
         },
         {
