@@ -2478,6 +2478,46 @@
       ]
     },
     {
+      "id": "f-delfi~de",
+      "supersedes_ids": [
+        "f-germany~long~distance~rail",
+        "f-germany~regional~rail",
+        "f-germany~urban~transport",
+        "f-u0wt-deutschebahnag",
+        "f-nvbw~bwspnv",
+        "f-nvbw~rab",
+        "f-nvbw~rbs",
+        "f-nvbw~rvs",
+        "f-nvbw~rxr",
+        "f-nvbw~sbg",
+        "f-nvbw~sweg"
+      ],
+      "name": "Germany (DELFI)",
+      "description": "DELFI e.V.'s nationwide timetable (public transport in every Land plus long-distance rail), with shapes map-matched by Interline.",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/delfi-germany.zip",
+        "static_historic": [
+          "https://download.gtfs.de/germany/fv_free/latest.zip",
+          "https://download.gtfs.de/germany/rv_free/latest.zip",
+          "https://download.gtfs.de/germany/nv_free/latest.zip"
+        ]
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no",
+        "attribution_text": "Data source: DELFI e.V. (www.delfi.de), via www.opendata-oepnv.de, licensed under CC BY 4.0. Contains shapes derived from OpenStreetMap, (c) OpenStreetMap contributors, available under the Open Database License."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      }
+    },
+    {
       "id": "f-direxis~masats",
       "spec": "gtfs",
       "urls": {
