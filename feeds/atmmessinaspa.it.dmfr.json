@@ -1,0 +1,29 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-sqg1-atm~aziendatrasportidimessina",
+      "supersedes_ids": [
+        "f-sqg1-it~atm~aziendatrasportidimessina"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.atmmessinaspa.it/GTFS/GTFS_ATM_SPA.zip",
+        "static_historic": [
+          "http://www.atm.messina.it/atm_feed_gtfs/atm_feed_gtfs.zip",
+          "http://smartme-data.unime.it/dataset/f9badaf7-3862-4407-a25a-d347d93a32dd/resource/f0393b28-eb72-4c22-bbbe-b52bcea37f3e/download/atmfeedgtfs.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sqg1-atm~aziendatrasportidimessina",
+          "supersedes_ids": [
+            "o-sqg1-it~atm~aziendatrasportidimessina"
+          ],
+          "name": "ATM - Azienda Trasporti di Messina",
+          "website": "https://www.atmmessinaspa.it"
+        }
+      ]
+    }
+  ]
+}
