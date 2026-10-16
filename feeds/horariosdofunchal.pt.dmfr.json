@@ -22,23 +22,15 @@
       "operators": [
         {
           "onestop_id": "o-etgc-hf~urbano",
-          "name": "HF - Urbano",
-          "website": "http://www.horariosdofunchal.pt/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-etgf-hf~interurbano",
-          "name": "HF - Interurbano",
-          "website": "http://www.horariosdofunchal.pt/index.php?option=com_payshop&task=payshop&inter=1&Itemid=386",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "5"
-            }
-          ]
+          "supersedes_ids": [
+            "o-etgf-hf~interurbano"
+          ],
+          "name": "Horários do Funchal",
+          "short_name": "HF",
+          "website": "https://www.horariosdofunchal.pt/",
+          "tags": {
+            "wikidata_id": "Q3572372"
+          }
         }
       ]
     }
