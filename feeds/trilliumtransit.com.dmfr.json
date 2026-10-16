@@ -6361,12 +6361,24 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "exclude_from_global_query": "true",
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg",
         "status": "outdated"
       },
       "operators": [
         {
           "onestop_id": "o-sanleandro~ca~us",
-          "name": "San Leandro Links"
+          "name": "San Leandro Links",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SL",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "SL",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ]
         }
       ]
     },

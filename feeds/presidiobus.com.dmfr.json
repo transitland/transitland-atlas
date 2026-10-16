@@ -8,18 +8,28 @@
         "static_current": "https://presidiobus.com/gtfs"
       },
       "tags": {
-        "calitp_dataset_id": "recvj6iwkUqws5W99"
+        "calitp_dataset_id": "recvj6iwkUqws5W99",
+        "exclude_from_global_query": "true",
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       },
       "operators": [
         {
           "onestop_id": "o-9q8zj-presidigo",
-          "name": "PresidiGo",
+          "name": "Presidio Go",
           "associated_feeds": [
             {
               "gtfs_agency_id": "18"
             },
             {
               "feed_onestop_id": "f-presidigo~ca~us~rt"
+            },
+            {
+              "gtfs_agency_id": "PG",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "PG",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
             }
           ],
           "tags": {
