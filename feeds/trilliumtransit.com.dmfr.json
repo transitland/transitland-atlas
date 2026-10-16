@@ -84,7 +84,7 @@
           "website": "https://hta.org/agencies/redwood-transit-system/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "RTS"
             },
             {
               "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~redwood~rt"
@@ -105,7 +105,7 @@
           "website": "https://hta.org/agencies/eureka-transit-service/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "ETS"
             },
             {
               "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
@@ -117,29 +117,13 @@
           }
         },
         {
-          "onestop_id": "o-9pr8n-samoatransitsystem",
-          "name": "Samoa Transit System",
-          "website": "https://hta.org/samoa-transit-system/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1716"
-            },
-            {
-              "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
-            }
-          ],
-          "tags": {
-            "wikidata_id": "Q5940414"
-          }
-        },
-        {
           "onestop_id": "o-9prb8-arcata~madrivertransitsystem",
           "name": "Arcata & Mad River Transit System",
           "short_name": "AMRTS",
           "website": "https://hta.org/agencies/arcata-and-mad-river/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "3"
+              "gtfs_agency_id": "A&MRTS"
             },
             {
               "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
@@ -148,24 +132,6 @@
           "tags": {
             "us_ntd_id": "91018",
             "wikidata_id": "Q4785261"
-          }
-        },
-        {
-          "onestop_id": "o-9prb9-bluelakerancheriatransitsystem",
-          "name": "Blue Lake Rancheria Transit System",
-          "short_name": "BLRTS",
-          "website": "https://www.bluelakerancheria-nsn.gov/initiatives/transportation/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "972"
-            },
-            {
-              "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "99292",
-            "wikidata_id": "Q96373720"
           }
         }
       ]
@@ -655,16 +621,6 @@
         "calitp_dataset_id": "rectpGbo8b7ThDd5h"
       },
       "operators": [
-        {
-          "onestop_id": "o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired",
-          "name": "North Lake Tahoe Express",
-          "website": "https://www.northlaketahoeexpress.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "16"
-            }
-          ]
-        },
         {
           "onestop_id": "o-9qfx-tahoetruckeearearegionaltransit",
           "name": "Tahoe Truckee Area Regional Transit",
@@ -1428,16 +1384,6 @@
             "us_ntd_id": "70242",
             "wikidata_id": "Q7110024"
           }
-        },
-        {
-          "onestop_id": "o-9zq4g-ottumwatransit",
-          "name": "Ottumwa Transit",
-          "website": "https://www.ottumwa.us/departments/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "751"
-            }
-          ]
         }
       ]
     },
@@ -2184,11 +2130,17 @@
       "operators": [
         {
           "onestop_id": "o-9xh8d-breckenridgefreeride",
+          "supersedes_ids": [
+            "o-9xh8d-upperwarriorsmark"
+          ],
           "name": "Breckenridge Free Ride",
           "website": "https://www.breckfreeride.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1631"
+              "gtfs_agency_id": "103"
+            },
+            {
+              "gtfs_agency_id": "124"
             }
           ],
           "tags": {
@@ -2197,20 +2149,11 @@
           }
         },
         {
-          "onestop_id": "o-9xh8d-upperwarriorsmark",
-          "name": "Upper Warriors Mark",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1706"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-9xh8d-vailskishuttles",
           "name": "Breckenridge Ski Resort",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1705"
+              "gtfs_agency_id": "111"
             }
           ]
         }
@@ -2221,22 +2164,7 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/brightline-fl-us/brightline-fl-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-brightline~fl~us",
-          "name": "Brightline",
-          "website": "https://www.gobrightline.com/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-brightline~fl~us~rt"
-            },
-            {
-              "feed_onestop_id": "f-brightline~fl~us~rt~alerts"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "f-bristol~va~us",
@@ -3515,20 +3443,6 @@
             "twitter_general": "indiantrailsbus",
             "wikidata_id": "Q6021774"
           }
-        },
-        {
-          "onestop_id": "o-dps-detroitannarborexpress",
-          "name": "Detroit Ann Arbor Express",
-          "website": "https://d2a2.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1591"
-            },
-            {
-              "gtfs_agency_id": "5",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
-            }
-          ]
         }
       ]
     },
@@ -4502,10 +4416,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "2272"
-            },
-            {
-              "gtfs_agency_id": "2",
-              "feed_onestop_id": "f-drt-mbta"
             }
           ],
           "tags": {
@@ -5903,7 +5813,14 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/nlte-nv-us/nlte-nv-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired",
+          "name": "North Lake Tahoe Express",
+          "website": "https://www.northlaketahoeexpress.com/"
+        }
+      ]
     },
     {
       "id": "f-northfork~ne~us~flex",
@@ -6385,6 +6302,11 @@
           "name": "San Miguel Authority for Regional Transportation",
           "short_name": "SMART",
           "website": "https://smarttelluride.colorado.gov/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1651"
+            }
+          ],
           "tags": {
             "us_ntd_id": "88294"
           }
