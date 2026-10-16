@@ -160,6 +160,21 @@
       }
     },
     {
+      "id": "f-s-lineeregionali~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://regionetoscana.smartregion.toscana.it/mobility/artifacts/gtfs-rt/vehicle-positions",
+        "realtime_trip_updates": "https://regionetoscana.smartregion.toscana.it/mobility/artifacts/gtfs-rt/trip-updates",
+        "realtime_alerts": "https://regionetoscana.smartregion.toscana.it/mobility/artifacts/gtfs-rt/alerts"
+      },
+      "license": {
+        "url": "https://dati.toscana.it/dataset/rt-oraritr",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "attribution_text": "https://dati.toscana.it/"
+      }
+    },
+    {
       "id": "f-sp-trenitaliaspa",
       "spec": "gtfs",
       "urls": {
@@ -440,6 +455,9 @@
         {
           "gtfs_agency_id": "UAR",
           "feed_onestop_id": "f-s-lineeregionali"
+        },
+        {
+          "feed_onestop_id": "f-s-lineeregionali~rt"
         },
         {
           "feed_onestop_id": "f-srb-atnonscolastico"
