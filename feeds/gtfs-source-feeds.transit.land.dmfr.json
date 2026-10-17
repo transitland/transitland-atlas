@@ -7185,6 +7185,31 @@
       ]
     },
     {
+      "id": "f-hong~kong~en",
+      "name": "Hong Kong public transport (Transport Department)",
+      "description": "Headway-based GTFS from the Hong Kong Transport Department on DATA.GOV.HK, with map-matched shapes added by Interline. Buses, green minibuses, ferries, trams and the Peak Tram; not MTR rail.",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/hong-kong-td.zip",
+        "static_historic": [
+          "https://static.data.gov.hk/td/pt-headway-en/gtfs.zip"
+        ]
+      },
+      "license": {
+        "url": "https://data.gov.hk/en/terms-and-conditions",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "share_alike_optional": "no",
+        "attribution_text": "Contains data from the Transport Department of the Government of the Hong Kong SAR, via DATA.GOV.HK. Contains shapes derived from OpenStreetMap, (c) OpenStreetMap contributors, available under the Open Database License."
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      }
+    },
+    {
       "id": "f-kaerntnerlinien~at",
       "name": "Verkehrsverbund Kärntner Linien",
       "spec": "gtfs",
