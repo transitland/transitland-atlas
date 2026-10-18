@@ -29,6 +29,93 @@ existing_feed_urls_to_skip = [
     "https://www.city.aomori.aomori.jp/kotsu-kanri/koutsu/oshirase/documents/gtfs-aomoricitybus.zip",
 ]
 
+# Feeds at these URLs are superseded by another registered feed for the same
+# agency, usually a gtfs-data.jp record, and no longer fetch or serve a current
+# calendar. The upstream list still carries them.
+superseded_feed_urls = {
+    "http://opendata.sagabus.info/saga-2023-07-01.zip",
+    "http://shimoden.net/busmada/opendata/GTFS-JP.zip",
+    "http://www.city.tokai.aichi.jp/secure/47255/gtfs.zip",
+    "http://www.sentetsu.biz-web.jp/GTFS-JP.zip",
+    "https://ajt-mobusta-gtfs.mcapps.jp/static/14/current_data.zip",
+    "https://ckan.hoda.jp/dataset/24d1dd70-5395-4d6b-b41f-0d83e8eabdb9/resource/c84abf64-f7ba-4d22-8cc1-acac7adbdc6f/download/abashiri_bus.zip",
+    "https://ckan.hoda.jp/dataset/24d1dd70-5395-4d6b-b41f-0d83e8eabdb9/resource/e3bb6e27-d2bb-4925-a42c-adb5f49bb924/download/akan_bus.zip",
+    "https://ckan.open-governmentdata.org/dataset/42e62bc8-cfe8-4f66-9e89-decffff56f23/resource/41dfa7d1-cb07-47b4-b509-5fcbe5c79765/download/401005_odekakekotsugtfs_tashirokawachi.zip",
+    "https://ckan.open-governmentdata.org/dataset/468dc771-10a2-4bab-aad2-191b0fdaffa0/resource/bdbf46fd-870b-4064-9e7f-7bcedf97b526/download/401005_odekakekotsugtfs_edamitsu.zip",
+    "https://ckan.open-governmentdata.org/dataset/950b03df-5142-4f34-b976-43dad98a9540/resource/91059af4-fc56-45e1-8ecd-fd4bcb5e2df1/download/401005_odekakekotsugtfs_okura.zip",
+    "https://ckan.open-governmentdata.org/dataset/ccbc3e6b-d85f-4541-8d6f-2c40d065f836/resource/8d32347f-00a4-497c-b88e-51f413b4b49e/download/401005_odekakekotsugtfs_omadobaru.zip",
+    "https://ckan.open-governmentdata.org/dataset/e3689c3c-d7e4-40a8-9d21-89aa95311bb8/resource/6185c93d-76cd-4287-a306-428216f7a285/download/401005_odekakekotsugtfs_koyanosekusubashihoshigaoka.zip",
+    "https://data.bodik.jp/dataset/6d93f594-6b28-417b-a1df-931e93690a78/resource/6a0eaa15-185b-4156-8b98-9b680a65ad93/download/current_gtfs.zip",
+    "https://hiroshima-opendata.dataeye.jp/resource_download/10045",
+    "https://kan-etsu.net/relays/download/193/2807/433//?file=/files/libs/11049/202305261450561282.zip&file_name=GTFS-JP(kan-etsu)",
+    "https://opendata.pref.saitama.lg.jp/resource_download/3194",
+    "https://opendata.pref.saitama.lg.jp/resource_download/6357",
+    "https://opendata.pref.shizuoka.jp/dataset/9718/resource/65790/sakuragi.ijiri.kurami.higashiyama.awamoto.shigaichijyunkan-minami.zip",
+    "https://opendata.pref.shizuoka.jp/dataset/9718/resource/66109/sakuragi.ijiri.kurami.higashiyama.awamoto.shigaichijyunkan-minami202304.zip",
+    "https://www.akita-bus.or.jp/~akita-gtfs/bus-akitachuoukotsu.zip",
+    "https://www.akita-bus.or.jp/~akita-gtfs/bus-city-semboku.zip",
+    "https://www.city-nakatsu.jp/doc/2019072300060/file_contents/B01_Buzen_Nakatsu.zip",
+    "https://www.city-nakatsu.jp/doc/2019072300060/file_contents/Y010_Kawaraguchi.zip",
+    "https://www.city-nakatsu.jp/doc/2019072300060/file_contents/Y022_Kaminogouchi_Masaki_for_Kaminogouchi.zip",
+    "https://www.city-nakatsu.jp/doc/2019072300060/file_contents/Y031_Hiyamaji_Kamagi_for_Hiyamaji.zip",
+    "https://www.city-nakatsu.jp/doc/2019072300060/file_contents/Y032_Hiyamaji_Kamagi_for_Kamagi.zip",
+    "https://www.city-nakatsu.jp/doc/2019072300060/file_contents/Y110_Tsutami.zip",
+    "https://www.city-nakatsu.jp/doc/2019072300060/file_contents/Y122_Urayabakei_for_Hiyamaji.zip",
+    "https://www.city.ama.aichi.jp/_res/projects/default_project/_page_/001/002/512/ama_GTFS.zip",
+    "https://www.city.chiryu.aichi.jp/ikkrwebBrowse/material/files/group/4/gtfs_data.zip",
+    "https://www.city.hakodate.hokkaido.jp/docs/2020052700015/files/GTFS-JP.zip",
+    "https://www.city.misawa.lg.jp/index.cfm/22%2C45535%2Cc%2Chtml/45535/GTFSJP3.zip",
+    "https://www.city.nagakute.lg.jp/material/files/group/4/Nagakute_Nbus_gtfs_current_data.zip",
+    "https://www.city.nonoichi.lg.jp/img/opendata/notty_current.zip",
+    "https://www.city.takaoka.toyama.jp/joho/shise/opendata/documents/city_takaoka_gtfs.zip",
+    "https://www.city.toyoake.lg.jp/secure/5217/toyoake.zip",
+    "https://www.kotoden.co.jp/publichtm/gtfs/gtfsdata/latest/gtfs_kd.zip",
+    "https://www.pref.fukui.lg.jp/doc/dx-suishin/opendata/gtfs_jp_d/fil/keifuku_bus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFS-Tosaden-Traffic_Airportbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Aki-Genkibus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Geisei-Village.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Hokubu-Traffic_Localbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Ino-InoLoop.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Konan-City.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Koryo-Traffic_Localbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Kuroiwa-Localbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Mihara-Miharabus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Motoyama-Town.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Muroto-City.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Nakatosa-Town.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Nankoku-City.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Pref-Ferry.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Reihoku-Kanko_Localbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Seinan-Expressbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Seinan-Localbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Seinan-Riverbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Seinan-Trolleybus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Shimanto-City.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Shimanto-Town.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Shimanto-Traffic_Feeder.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Shimanto-Traffic_Localbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Sukumo-Ferry.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Sukumo-Yururin-Bus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Susaki-Bus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Susaki-Ferry.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Tano-Town.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Tobu-Traffic_Localbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Tosa-City-Dragonbus.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Tosashimizu-Odekake.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Tsuno-Town.zip",
+    "https://www.pref.kochi.lg.jp/opendata/docs/bosai_anzen_machizukuri/file_contents/GTFSJP-Yasuda-Town.zip",
+    "https://www.pref.wakayama.lg.jp/prefg/062500/kotsu/opendata_d/fil/GTFS_kumano.zip",
+    "https://www.pref.wakayama.lg.jp/prefg/062500/kotsu/opendata_d/fil/GTFS_meiko.zip",
+    "https://www.pref.wakayama.lg.jp/prefg/062500/kotsu/opendata_d/fil/GTFS_rinkan.zip",
+    "https://www.pref.wakayama.lg.jp/prefg/062500/kotsu/opendata_d/fil/GTFS_ryujin.zip",
+    "https://www.pref.yamagata.jp/documents/20978/flower-liner_gtfs.zip",
+    "https://www.pref.yamagata.jp/documents/20978/tozawa_gtfs.zip",
+    "https://www.takubus.com/app/download/10941479479/GTFS_regular_line.zip",
+    "https://www.takubus.com/app/download/11135470279/GTFS_highway_line.zip",
+    "https://www.takubus.com/app/download/11236187979/GTFS_regular_line20230526.zip?t=1685093868",
+    "https://www.takubus.com/app/download/11238066179/GTFS_highway_line20230601.zip?t=1685428757",
+}
+
 # Collection to store created DMFR records
 created_dmfr_records = []
 
@@ -188,7 +275,7 @@ if __name__ == "__main__":
             feed_url = feed.get("urls", {}).get("static_current")
             if not feed_url or feed_url not in csv_urls:
                 continue
-            if feed_url in existing_feed_urls_to_skip:
+            if feed_url in existing_feed_urls_to_skip or feed_url in superseded_feed_urls:
                 continue
             if check_for_feed_url_in_any_dmfr(feed_url, *other_jp_dmfrs):
                 continue
@@ -207,6 +294,8 @@ if __name__ == "__main__":
                 continue
             if feed_url in existing_feed_urls_to_skip:
                 logging.info("Skipping a feed URL that is managed in a different DMFR file")
+                continue
+            if feed_url in superseded_feed_urls:
                 continue
             if check_for_feed_url_in_any_dmfr(feed_url, *other_jp_dmfrs):
                 logging.info(f"Skipping feed URL that exists in another Japanese DMFR file: {feed_url}")
