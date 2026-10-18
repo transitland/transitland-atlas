@@ -2,38 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-ashbourneconnect~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Ashbourne_Connect.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_ashbourneconnect.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
-      "id": "f-corduff~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Corduff_Coaches.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_corduff.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
       "id": "f-dublin~express~ie",
       "spec": "gtfs",
       "urls": {
@@ -1681,20 +1649,6 @@
               "feed_onestop_id": "f-national~transport~authority~ie~rt"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "f-westlink~coaches~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Westlink_Coaches.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcd5-westlinkcoaches",
-          "name": "Westlink Coaches",
-          "website": "http://www.westlinkcoaches.ie"
         }
       ]
     }

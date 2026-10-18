@@ -2,40 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-academy~express~staten~island",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://s3.amazonaws.com/datatools-511ny/public/Academy_Express_-_Staten_Island.zip"
-      },
-      "license": {
-        "url": "https://data.ny.gov/download/77gx-ii52/application/pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes",
-        "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-academy~bus",
-          "name": "Academy Bus",
-          "website": "http://www.academybus.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "20122",
-              "feed_onestop_id": "f-academy~bus~nj"
-            },
-            {
-              "gtfs_agency_id": "10",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "20122"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-adirondack~trailways~fab",
       "spec": "gtfs",
       "urls": {
@@ -1228,6 +1194,24 @@
     }
   ],
   "operators": [
+    {
+      "onestop_id": "o-academy~bus",
+      "name": "Academy Bus",
+      "website": "http://www.academybus.com/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "20122",
+          "feed_onestop_id": "f-academy~bus~nj"
+        },
+        {
+          "gtfs_agency_id": "10",
+          "feed_onestop_id": "f-utel~uiuc~intercity~bus"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "20122"
+      }
+    },
     {
       "onestop_id": "o-adirondack~trailways",
       "name": "Adirondack Trailways",
