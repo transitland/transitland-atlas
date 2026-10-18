@@ -296,6 +296,9 @@
     },
     {
       "id": "f-9q99-sanbenitocountyexpress",
+      "supersedes_ids": [
+        "f-san~benito~county~express~dial~a~ride~paratransit~on~demand~flex"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/sanbenitocounty-ca-us/sanbenitocounty-ca-us.zip"
@@ -1922,36 +1925,10 @@
       ]
     },
     {
-      "id": "f-bentcounty~co~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/bentcounty-co-us/bentcounty-co-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9wy-bentcountytransportation",
-          "name": "Bent County Transit",
-          "website": "https://www.bentcounty.net/residents/transportation.php#.YkObZxBKhxg",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1645"
-            },
-            {
-              "feed_onestop_id": "f-bentcounty~co~us~flex"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "88229"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-bentcounty~co~us~flex",
+      "supersedes_ids": [
+        "f-bentcounty~co~us"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/bentcounty-co-us/bentcounty-co-us--flex-v2.zip"
@@ -5119,29 +5096,6 @@
       }
     },
     {
-      "id": "f-gulfcoastcenter~tx~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/gulfcoastcenter-tx-us/gulfcoastcenter-tx-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gulfcoastcenter~tx~us",
-          "name": "Connect Transit",
-          "website": "https://www.gulfcoasttransitdistrict.com/"
-        }
-      ]
-    },
-    {
       "id": "f-gunnisonvalleyrta~co~us~flex",
       "spec": "gtfs",
       "urls": {
@@ -5698,37 +5652,6 @@
       }
     },
     {
-      "id": "f-mountainvillage~co~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/mountainvillage-co-us/mountainvillage-co-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9werc-townofmountainvillage",
-          "name": "Town of Mountain Village",
-          "website": "https://townofmountainvillage.com/explore/getting-around/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1702"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "80256"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-move~stanislaus~vetsvan~flex",
       "spec": "gtfs",
       "urls": {
@@ -5768,26 +5691,6 @@
             "calitp_organization_id": "rec2nYLvujeMxCVJW",
             "us_ntd_id": "91020",
             "wikidata_id": "Q6986643"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-newburgh~bus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/newburgh-ny-us/newburgh-ny-us.zip",
-        "static_historic": [
-          "https://oc-otp-gtfs.s3.amazonaws.com/newburgh.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-newburgh~transit",
-          "name": "Newburgh Area Transit",
-          "website": "https://www.ridetransitorange.com/middletown",
-          "tags": {
-            "us_ntd_id": "20216"
           }
         }
       ]
@@ -6281,7 +6184,9 @@
     {
       "id": "f-sanmiguelcounty~co~us",
       "supersedes_ids": [
-        "f-sanmiguel~co~us"
+        "f-sanmiguel~co~us",
+        "f-mountainvillage~co~us",
+        "f-telluride~co~us"
       ],
       "spec": "gtfs",
       "urls": {
@@ -6619,37 +6524,6 @@
             "calitp_organization_id": "rec3u4aMplqObcoTR",
             "us_ntd_id": "91092",
             "wikidata_id": "Q7568609"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-telluride~co~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/telluride-co-us/telluride-co-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9werfd-townoftelluride",
-          "name": "Town of Telluride",
-          "website": "https://telluride-co.gov/254/Public-Transportation",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1701"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "88226"
           }
         }
       ]
@@ -7178,6 +7052,62 @@
           "feed_onestop_id": "f-greenride~co~us"
         }
       ]
+    },
+    {
+      "onestop_id": "o-9werc-townofmountainvillage",
+      "name": "Town of Mountain Village",
+      "website": "https://townofmountainvillage.com/explore/getting-around/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "1702",
+          "feed_onestop_id": "f-sanmiguelcounty~co~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "80256"
+      }
+    },
+    {
+      "onestop_id": "o-9werfd-townoftelluride",
+      "name": "Town of Telluride",
+      "website": "https://telluride-co.gov/254/Public-Transportation",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "1701",
+          "feed_onestop_id": "f-sanmiguelcounty~co~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "88226"
+      }
+    },
+    {
+      "onestop_id": "o-9wy-bentcountytransportation",
+      "name": "Bent County Transit",
+      "website": "https://www.bentcounty.net/residents/transportation.php#.YkObZxBKhxg",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "1645",
+          "feed_onestop_id": "f-bentcounty~co~us~flex"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "88229"
+      }
+    },
+    {
+      "onestop_id": "o-newburgh~transit",
+      "name": "Newburgh Area Transit",
+      "website": "https://www.ridetransitorange.com/middletown",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "4997",
+          "feed_onestop_id": "f-transit~orange~ny~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "20216"
+      }
     }
   ]
 }
