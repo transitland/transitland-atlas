@@ -25,13 +25,8 @@ SOURCE_COLLECTOR_URL = re.compile(
     r'|^https?://api\.gtfs-data\.jp/v2/organizations/', re.IGNORECASE)
 
 existing_feed_urls_to_skip = [
-    "http://codeforkobe.github.io/kobe-transit/kobe_subway_gtfs.zip",
-    "http://www.city.nomi.ishikawa.jp/data/open/cnt/3/5145/1/GTFSnomi2018.zip",
-    "https://www.city.aomori.aomori.jp/toshi-seisaku/opendata/documents/siminbus20190401.zip",
     "http://opendata.busmaps.jp/yamanashi.zip",
-    "http://www.city.fukuoka.lg.jp/data/open/cnt/3/59675/1/fukuokasiei_tosen_GTFSfeeds.zip",
     "https://www.city.aomori.aomori.jp/kotsu-kanri/koutsu/oshirase/documents/gtfs-aomoricitybus.zip",
-    "http://www3.unobus.co.jp/opendata/GTFS-JP.zip",
 ]
 
 # Collection to store created DMFR records
