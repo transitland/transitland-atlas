@@ -1,0 +1,41 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.5.1.json",
+  "feeds": [
+    {
+      "id": "f-u9hbc-malyn~city~transport",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://malin.kiev.ua/transport/gtfs.zip"
+      },
+      "languages": ["uk-UA"],
+      "license": {
+        "url": "https://own-net.com/license.html",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "unknown",
+        "share_alike_optional": "no",
+        "attribution_text": "Дані: malin.kiev.ua — Сергій Меренков / ТОВ «Технології» (technologies.llc)",
+        "attribution_instructions": "OwnNet Source License 1.1: free with attribution for people, education, research, municipalities and businesses under USD 100,000 annual revenue; a modified database stays under the same license (share-alike); commercial use above the threshold, paid SaaS or resale needs a written agreement with the licensor (mer.sergei@gmail.com)."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-u9hbc-malyn~city~transport",
+          "name": "Громадський транспорт міста Малина",
+          "short_name": "Малин",
+          "website": "https://malin.kiev.ua/transport",
+          "tags": {
+            "wikidata_id": "Q148997"
+          },
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-u9hbc-malyn~city~transport",
+              "gtfs_agency_id": "malyn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "license_spdx_identifier": "CDLA-Permissive-1.0"
+}
