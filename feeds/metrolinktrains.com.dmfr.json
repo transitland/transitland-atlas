@@ -25,6 +25,9 @@
             },
             {
               "feed_onestop_id": "f-metrolinktrains~rt"
+            },
+            {
+              "feed_onestop_id": "f-metrolinktrains~alerts~rt"
             }
           ],
           "tags": {
@@ -36,12 +39,18 @@
       ]
     },
     {
+      "id": "f-metrolinktrains~alerts~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_alerts": "https://cdn.simplifytransit.com/metrolink/alerts/service-alerts.pb"
+      }
+    },
+    {
       "id": "f-metrolinktrains~rt",
       "spec": "gtfs-rt",
       "urls": {
         "realtime_vehicle_positions": "https://metrolink-gtfsrt.gbsdigital.us/feed/gtfsrt-vehicles",
-        "realtime_trip_updates": "https://metrolink-gtfsrt.gbsdigital.us/feed/gtfsrt-trips",
-        "realtime_alerts": "https://metrolink-gtfsrt.gbsdigital.us/feed/gtfsrt-alerts"
+        "realtime_trip_updates": "https://metrolink-gtfsrt.gbsdigital.us/feed/gtfsrt-trips"
       },
       "authorization": {
         "type": "header",
