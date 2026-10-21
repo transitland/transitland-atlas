@@ -51,7 +51,7 @@ jobs:
           base=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
           echo "base=$base" >> "$GITHUB_OUTPUT"
 
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
       - name: Cache transitland binary
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
@@ -115,7 +115,7 @@ jobs:
           name: feed-url-probes
           path: reports
 
-      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
 
       - name: Render comparison
         env:
