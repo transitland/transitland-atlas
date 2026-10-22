@@ -280,6 +280,34 @@
       ]
     },
     {
+      "id": "f-montclairstate~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://montclair.tripshot.com/v1/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-montclairstate~nj",
+          "name": "Montclair State University",
+          "website": "https://inside.montclair.edu/administration/university-facilities/shuttle-services",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-montclairstate~nj~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-montclairstate~nj~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://montclair.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+        "realtime_trip_updates": "https://montclair.tripshot.com/v1/gtfs/realtime/tripUpdate",
+        "realtime_alerts": "https://montclair.tripshot.com/v1/gtfs/realtime/serviceAlert"
+      }
+    },
+    {
       "id": "f-princeton~tigertransit",
       "spec": "gtfs",
       "urls": {
@@ -314,6 +342,68 @@
       },
       "tags": {
         "calitp_dataset_id": "rec6ZYbM30VjK50bg,recL7GD5aQQMSFx4J,recNmNZ7gq58HboHW"
+      }
+    },
+    {
+      "id": "f-route130connection~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://route130connection.tripshot.com/v1/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-route130connection~nj",
+          "name": "Route 130 Connection",
+          "website": "https://gmtma.org/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-route130connection~nj~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "22944"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-route130connection~nj~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://route130connection.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+        "realtime_trip_updates": "https://route130connection.tripshot.com/v1/gtfs/realtime/tripUpdate",
+        "realtime_alerts": "https://route130connection.tripshot.com/v1/gtfs/realtime/serviceAlert"
+      }
+    },
+    {
+      "id": "f-rutgers~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rutgers.tripshot.com/v1/gtfs.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rutgers~nj",
+          "name": "Rutgers University",
+          "website": "https://ipo.rutgers.edu/dots",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-rutgers~nj~rt"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q7382782"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-rutgers~nj~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://rutgers.tripshot.com/v1/gtfs/realtime/vehiclePosition",
+        "realtime_trip_updates": "https://rutgers.tripshot.com/v1/gtfs/realtime/tripUpdate",
+        "realtime_alerts": "https://rutgers.tripshot.com/v1/gtfs/realtime/serviceAlert"
       }
     },
     {
