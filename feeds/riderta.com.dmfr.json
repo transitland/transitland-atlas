@@ -5,7 +5,7 @@
       "id": "f-dpmg-rta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://www.riderta.com/sites/default/files/gtfs/latest/google_transit.zip"
+        "static_current": "https://www.riderta.com/sites/default/files/gtfs/latest/google_transit.zip"
       },
       "license": {
         "url": "http://www.riderta.com/developers"
@@ -21,6 +21,9 @@
           "associated_feeds": [
             {
               "feed_onestop_id": "f-greaterclevelandregionaltransitauthority~rt"
+            },
+            {
+              "feed_onestop_id": "f-greaterclevelandregionaltransitauthority~rt~alerts"
             }
           ],
           "tags": {
@@ -32,11 +35,9 @@
       ]
     },
     {
-      "id": "f-greaterclevelandregionaltransitauthority~rt",
+      "id": "f-greaterclevelandregionaltransitauthority~rt~alerts",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://gtfs-rt.gcrta.vontascloud.com/TMGTFSRealTimeWebService/Vehicle/VehiclePositions.pb",
-        "realtime_trip_updates": "https://gtfs-rt.gcrta.vontascloud.com/TMGTFSRealTimeWebService/TripUpdate/TripUpdates.pb",
         "realtime_alerts": "https://gtfs-rt.gcrta.vontascloud.com/TMGTFSRealTimeWebService/Alert/Alerts.pb"
       },
       "license": {
