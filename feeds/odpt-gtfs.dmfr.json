@@ -1688,6 +1688,39 @@
       }
     },
     {
+      "id": "f-susakicity~citybus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-public.odpt.org/api/v4/files/odpt/SusakiCity/Citybus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      }
+    },
+    {
+      "id": "f-susakicity~citybus~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SusakiCity_Citybus_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SusakiCity_Citybus_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_SusakiCity_Citybus_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "Citybus",
+        "odpt_organization_id": "SusakiCity"
+      }
+    },
+    {
+      "id": "f-susakicity~cityferry~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-public.odpt.org/api/v4/files/odpt/SusakiCity/Cityferry.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      }
+    },
+    {
       "id": "f-tachikawacity~kururin~bus~alllines~jp",
       "supersedes_ids": [
         "f-立川市~くるりんバス",
@@ -2959,6 +2992,22 @@
       "associated_feeds": [
         {
           "feed_onestop_id": "f-suonadaferry~alllines~jp"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-susakicity",
+      "name": "須崎市企画情報課",
+      "short_name": "Planning　and",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-susakicity~citybus~jp"
+        },
+        {
+          "feed_onestop_id": "f-susakicity~citybus~jp~rt"
+        },
+        {
+          "feed_onestop_id": "f-susakicity~cityferry~jp"
         }
       ]
     },
