@@ -1547,6 +1547,40 @@
       }
     },
     {
+      "id": "f-ewr~airport~shuttles~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/ewrpanynj/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr5px-portauthorityofnewyorkandnewjersey",
+          "name": "Port Authority of New York and New Jersey",
+          "website": "https://www.newarkairport.com/at-airport/airtrain-and-shuttles",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-ewr~airport~shuttles~nj~rt"
+            },
+            {
+              "feed_onestop_id": "f-newark~airtrain~nj"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q908666;Q542145"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-ewr~airport~shuttles~nj~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/ewrpanynj/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/ewrpanynj/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/ewrpanynj/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-florida~gulf~coast~university",
       "spec": "gtfs",
       "urls": {
