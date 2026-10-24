@@ -834,6 +834,29 @@
       }
     },
     {
+      "id": "f-kenkohokubukotsu~localbus~jp",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api-public.odpt.org/api/v4/files/odpt/KenkoHokubuKotsu/Localbus.zip?date=current"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0"
+      }
+    },
+    {
+      "id": "f-kenkohokubukotsu~localbus~jp~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KenkoHokubuKotsu_Localbus_vehicle",
+        "realtime_trip_updates": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KenkoHokubuKotsu_Localbus_trip_update",
+        "realtime_alerts": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_KenkoHokubuKotsu_Localbus_alert"
+      },
+      "tags": {
+        "odpt_dataset_id": "Localbus",
+        "odpt_organization_id": "KenkoHokubuKotsu"
+      }
+    },
+    {
       "id": "f-kiyosecity~kiyobus~jp",
       "supersedes_ids": [
         "f-きよバス清瀬市",
@@ -2576,6 +2599,19 @@
         },
         {
           "feed_onestop_id": "f-keiseitransitbus~alllines~jp~rt"
+        }
+      ]
+    },
+    {
+      "onestop_id": "o-kenkohokubukotsu",
+      "name": "株式会社県交北部交通",
+      "short_name": "Kenko Hokubu Kotsu co.Ltd ",
+      "associated_feeds": [
+        {
+          "feed_onestop_id": "f-kenkohokubukotsu~localbus~jp"
+        },
+        {
+          "feed_onestop_id": "f-kenkohokubukotsu~localbus~jp~rt"
         }
       ]
     },
