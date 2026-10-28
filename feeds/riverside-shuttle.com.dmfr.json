@@ -1,0 +1,25 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-riverside~shuttle~kenya~tanzania",
+      "name": "Riverside Shuttle",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.riverside-shuttle.com/gtfs/riverside.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-riverside~shuttle~kenya~tanzania",
+          "name": "Riverside Shuttle",
+          "website": "https://www.riverside-shuttle.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "riverside"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
