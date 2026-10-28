@@ -27,6 +27,11 @@
           "onestop_id": "o-dn5r-carta",
           "name": "Chattanooga Area Regional Transportation Authority",
           "short_name": "CARTA",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dn5r-carta~incline"
+            }
+          ],
           "tags": {
             "twitter_general": "GoCARTA",
             "us_ntd_id": "40001",
@@ -34,6 +39,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-dn5r-carta~incline",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://www.gocarta.org/wp-content/uploads/routes-and-schedules/InclineGTFS.zip"
+      }
     }
   ]
 }
