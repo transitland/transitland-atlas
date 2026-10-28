@@ -218,8 +218,7 @@
           ],
           "tags": {
             "twitter_general": "UmpquaTransit",
-            "us_ntd_id": "00459",
-            "wikidata_id": "Q7802245"
+            "us_ntd_id": "00459"
           }
         }
       ]
@@ -449,7 +448,10 @@
             {
               "feed_onestop_id": "f-9rbm-linx~rt"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00377"
+          }
         },
         {
           "onestop_id": "o-9rbmy-albanytransitsystem",
@@ -723,7 +725,7 @@
       "id": "f-c20-tillamook~or~us~rt~alerts",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto"
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamookcounty-or-us/service_alerts.proto"
       }
     },
     {
@@ -947,6 +949,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "37"
+            },
+            {
+              "feed_onestop_id": "f-hoodriver~or~us~flex"
             }
           ],
           "tags": {
@@ -1091,6 +1096,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-hoodriver~or~us~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us--flex-v2.zip"
+      }
     },
     {
       "id": "f-lcog~linklane",
@@ -1260,28 +1272,6 @@
           "tags": {
             "calitp_organization_id": "recQRoE5mcCn6kdti",
             "wikidata_id": "Q19877418"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-quailtrail~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/quailtrail-or-us/quailtrail-or-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r9-quailtrail",
-          "name": "Quail Trail Public Transit",
-          "website": "https://klamathtribes.org/quail-trail-bus-schedule/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2304"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "00010"
           }
         }
       ]
