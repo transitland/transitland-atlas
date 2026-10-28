@@ -461,6 +461,13 @@
       ]
     },
     {
+      "id": "f-c26-yakimatransit~route~11",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13648/yakima_wa_rt11_gtfs.zip"
+      }
+    },
+    {
       "id": "f-carson~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -668,11 +675,23 @@
         {
           "onestop_id": "o-cityofconroe~tx~us",
           "name": "City of Conroe",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cityofconroe~tx~us~fixed~route"
+            }
+          ],
           "tags": {
             "us_ntd_id": "60129"
           }
         }
       ]
+    },
+    {
+      "id": "f-cityofconroe~tx~us~fixed~route",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11634/COCFixedRouteFY26.zip"
+      }
     },
     {
       "id": "f-cityofcoralsprings~fl~us",
@@ -1119,11 +1138,23 @@
         {
           "onestop_id": "o-city~of~fort~lauderdale",
           "name": "City of Fort Lauderdale",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-city~of~fort~lauderdale~community~shuttles"
+            }
+          ],
           "tags": {
             "us_ntd_id": "44929"
           }
         }
       ]
+    },
+    {
+      "id": "f-city~of~fort~lauderdale~community~shuttles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11865/CFL_FL_GTFS.zip"
+      }
     },
     {
       "id": "f-city~of~kokomo",
@@ -1413,6 +1444,26 @@
           "website": "https://www.cherokeetransit.com/",
           "tags": {
             "us_ntd_id": "44913"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dnq-salisburytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13035/GTFSExportSource.zip",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/45036cb56c73428db025acd290e7beaa/data"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq-salisburytransit",
+          "name": "Salisbury Transit",
+          "website": "https://salisburync.gov/Government/Transit",
+          "tags": {
+            "us_ntd_id": "40233"
           }
         }
       ]
@@ -2139,6 +2190,27 @@
       ]
     },
     {
+      "id": "f-jackson~tn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11658/jta_tn_gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/jackson-tn-us/jackson-tn-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn2f-jacksontransitauthority",
+          "name": "Jackson Transit Authority",
+          "short_name": "JTA",
+          "website": "https://www.ridejta.com/",
+          "tags": {
+            "us_ntd_id": "40057"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-jalbertleasinginc~nh~us",
       "spec": "gtfs",
       "urls": {
@@ -2489,6 +2561,27 @@
           "website": "https://miamiaz.gov/services/transit-information/",
           "tags": {
             "us_ntd_id": "91069"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-mid~ohio~valley~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13612/MOVTA_GTFS.zip",
+        "static_historic": [
+          "https://easyriderbus.com/wp-content/uploads/2024/11/MOVTA.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mid~ohio~valley~transit~authority",
+          "name": "Mid-Ohio Valley Transit Authority",
+          "short_name": "MOVTA",
+          "website": "https://easyriderbus.com/",
+          "tags": {
+            "us_ntd_id": "30003"
           }
         }
       ]
@@ -3339,6 +3432,26 @@
           "tags": {
             "us_ntd_id": "50159",
             "wikidata_id": "Q7337932"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-roswell~nm~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13693/roswell_nm_gtfs.zip",
+        "static_historic": [
+          "https://www.roswell-nm.gov/DocumentCenter/View/24460/gtfs"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-roswell~nm~us",
+          "name": "Roswell Transit",
+          "website": "https://www.roswell-nm.gov/290/Bus-Routes-Information",
+          "tags": {
+            "us_ntd_id": "60167"
           }
         }
       ]
