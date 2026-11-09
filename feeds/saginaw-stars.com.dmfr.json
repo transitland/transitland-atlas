@@ -3,15 +3,27 @@
   "feeds": [
     {
       "id": "f-stars~fixed~route~mi~us",
+      "supersedes_ids": [
+        "f-saginaw~stars"
+      ],
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://saginaw-stars.com/stars_4_29.zip"
+        "static_current": "https://saginaw-stars.com/gtfs-export-fixed%2010-21.zip",
+        "static_historic": [
+          "https://saginaw-stars.com/stars_4_29.zip"
+        ]
       },
       "operators": [
         {
-          "onestop_id": "o-stars~fixed~route~mi~us",
-          "name": "STARS Fixed Route",
+          "onestop_id": "o-saginaw~stars",
+          "supersedes_ids": [
+            "o-stars~fixed~route~mi~us"
+          ],
+          "name": "Saginaw Transit Authority Regional Services",
+          "short_name": "STARS",
+          "website": "https://saginaw-stars.com",
           "tags": {
+            "developer_site": "https://saginaw-stars.com/gtfs-data/",
             "us_ntd_id": "50039"
           }
         }
