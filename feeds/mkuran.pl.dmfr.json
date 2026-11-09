@@ -6,7 +6,8 @@
       "supersedes_ids": [
         "f-pkp~intercity~pl",
         "f-pol~regio~pl",
-        "f-u3-kolejemazowieckie"
+        "f-u3-kolejemazowieckie",
+        "f-u3~arriva"
       ],
       "name": "Polish Trains GTFS",
       "spec": "gtfs",
@@ -72,6 +73,17 @@
               "gtfs_agency_id": "SKM"
             }
           ]
+        },
+        {
+          "onestop_id": "o-u3~arriva~rp",
+          "name": "Arriva RP Sp. z o.o.",
+          "short_name": "Arriva RP",
+          "website": "https://arriva.pl",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "AR"
+            }
+          ]
         }
       ]
     },
@@ -107,7 +119,10 @@
       "name": "Świnoujście GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/swinoujscie.zip"
+        "static_current": "https://api.zbiorkom.live/api6-open/swinoujscie/gtfs/default",
+        "static_historic": [
+          "https://mkuran.pl/gtfs/swinoujscie.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC0-1.0",
@@ -238,7 +253,7 @@
       "name": "Warszawa GTFS (Alerts)",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://mkuran.pl/gtfs/warsaw/alerts.pb"
+        "realtime_alerts": "https://mkuran.pl/gtfs/warsaw/alerts.pb"
       },
       "license": {
         "spdx_identifier": "CC0-1.0",
@@ -300,7 +315,10 @@
       "name": "Łomża GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/lomza.zip"
+        "static_current": "https://www.mpklomza.pl/dane-otwarte/GTFS-static.zip",
+        "static_historic": [
+          "https://mkuran.pl/gtfs/lomza.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC0-1.0",
@@ -368,7 +386,9 @@
       "name": "Giżycko GTFS",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://mkuran.pl/gtfs/gizycko.zip"
+        "static_historic": [
+          "https://mkuran.pl/gtfs/gizycko.zip"
+        ]
       },
       "license": {
         "spdx_identifier": "CC0-1.0",
