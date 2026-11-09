@@ -16,6 +16,11 @@
           "name": "Rock Island County Metropolitan Mass Transit District",
           "short_name": "MetroLINK",
           "website": "https://www.metroqc.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9zrs-metrorockislandcountymetropolitanmasstransitdistrict~rt"
+            }
+          ],
           "tags": {
             "twitter_general": "qcmetro",
             "us_ntd_id": "50057",
@@ -23,6 +28,14 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-9zrs-metrorockislandcountymetropolitanmasstransitdistrict~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://bustracker.metroqc.com/gtfsrt/vehicles",
+        "realtime_alerts": "https://bustracker.metroqc.com/gtfsrt/alerts"
+      }
     }
   ]
 }
