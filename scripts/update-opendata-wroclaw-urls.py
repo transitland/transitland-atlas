@@ -24,8 +24,9 @@ files covering a day or two -- 30 October only, then 31 October to 1 November
 -- after the full fortnightly file, and pinning one of those would leave the
 feed a day from expiry. So the file chosen is the newest one that is a GTFS
 archive whose service covers today and runs at least MIN_DAYS_AHEAD days
-beyond it. If no file qualifies, the newest one covering today is used, and if
-none covers today the pin is left alone.
+beyond it. If no file qualifies, the covering file that runs longest is used
+(the newest of those on a tie), and if none covers today the pin is left
+alone.
 
 Two rules keep a bad resolve from being committed unattended:
 
@@ -33,13 +34,17 @@ Two rules keep a bad resolve from being committed unattended:
     pull requests from forks, so a tag naming a host would let a contributor
     choose where this job sends requests and whose answer it writes back.
 
-  * The pin never moves to a lower file id than the one already pinned. Ids
-    only grow, so a lower id is an older upload, and the comparison is not
-    fooled by the portal re-listing or re-dating an old file.
+  * While the pinned file still covers today, the pin never moves to a lower
+    file id. Ids only grow, so a lower id is an older upload, and the
+    comparison is not fooled by the portal re-listing or re-dating an old
+    file. Once the pinned file has run out, or has been removed from the
+    listing, older uploads are considered again, so a short file cannot strand
+    the feed after it expires while a longer, older one is still valid.
 
-Exit status is 0 when at least one tagged feed resolved, and 1 only when every
-tagged feed failed, which means the portal or this script is broken rather
-than flaky.
+Exit status is 1 when any tagged feed is left with no file covering today, so
+the scheduled run fails visibly rather than leaving an expired pin in place,
+and when no tagged feed could be resolved at all. One portal request failing
+is otherwise reported and skipped.
 
 Usage:
     uv run scripts/update-opendata-wroclaw-urls.py [--dry-run] [--today YYYY-MM-DD]
@@ -52,6 +57,7 @@ import json
 import logging
 import re
 import zipfile
+import zlib
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -70,6 +76,7 @@ MIN_DAYS_AHEAD = 7
 # nothing qualifies does not download the whole archive.
 MAX_CANDIDATES = 8
 REQUIRED_FILES = ("agency.txt", "stops.txt", "routes.txt", "trips.txt", "stop_times.txt")
+STALE = "no file covers today"
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
@@ -120,44 +127,57 @@ def service_window(data):
     """
     try:
         z = zipfile.ZipFile(io.BytesIO(data))
-    except zipfile.BadZipFile:
-        return None
-    names = set(z.namelist())
-    if not all(n in names for n in REQUIRED_FILES):
-        return None
+        names = set(z.namelist())
+        if not all(n in names for n in REQUIRED_FILES):
+            return None
 
-    def rows(name):
-        if name not in names:
-            return []
-        with z.open(name) as f:
-            return list(csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig")))
+        def rows(name):
+            if name not in names:
+                return []
+            with z.open(name) as f:
+                return list(csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig")))
 
-    dates = []
-    try:
+        dates = []
         for r in rows("calendar.txt"):
             dates += [_parse_date(r["start_date"]), _parse_date(r["end_date"])]
         for r in rows("calendar_dates.txt"):
             if (r.get("exception_type") or "").strip() == "1":
                 dates.append(_parse_date(r["date"]))
-    except (KeyError, ValueError):
+    # A damaged upload fails in many ways besides BadZipFile: a CRC mismatch,
+    # a truncated deflate stream, an unsupported compression method, a
+    # malformed CSV or bad encoding. Any of them makes this file unusable, not
+    # the dataset, so the caller can still fall back to an older upload.
+    except (zipfile.BadZipFile, zlib.error, NotImplementedError, EOFError, OSError,
+            csv.Error, UnicodeDecodeError, KeyError, ValueError):
         return None
     if not dates:
         return None
     return min(dates), max(dates)
 
 
+def covers(window, today):
+    return bool(window) and window[0] <= today <= window[1]
+
+
+def qualifies(window, today, min_days_ahead=MIN_DAYS_AHEAD):
+    """Whether a file can be pinned without falling back: current, and not about to run out."""
+    return covers(window, today) and window[1] >= today + timedelta(days=min_days_ahead)
+
+
 def choose(candidates, today, min_days_ahead=MIN_DAYS_AHEAD):
     """Pick the file to pin from [(file_id, window)], newest first.
 
-    Returns the chosen file id, or None when no file covers today. A file
-    whose window is None (not GTFS, or unreadable) is never chosen.
+    Returns the newest file that qualifies; failing that, the covering file
+    that runs longest, newest first on a tie; failing that, None. A file whose
+    window is None (not GTFS, or unreadable) is never chosen.
     """
-    horizon = today + timedelta(days=min_days_ahead)
-    covering = [(fid, w) for fid, w in candidates if w and w[0] <= today <= w[1]]
-    for fid, (_, last) in covering:
-        if last >= horizon:
+    for fid, window in candidates:
+        if qualifies(window, today, min_days_ahead):
             return fid
-    return covering[0][0] if covering else None
+    covering = [(fid, w) for fid, w in candidates if covers(w, today)]
+    if not covering:
+        return None
+    return max(covering, key=lambda c: (c[1][1], c[0]))[0]
 
 
 def fetch(session, file_id):
@@ -167,13 +187,19 @@ def fetch(session, file_id):
 
 
 def resolve(session, dataset, current_url, today):
-    """Return (url, reason) for one feed; reason is "current", "update" or a refusal."""
+    """Return (url, reason) for one feed.
+
+    reason is "current", "update", or STALE when no listed file covers today.
+    """
     ids = file_ids(session, dataset)
     current = pinned_id(current_url)
+    # A pinned file missing from the listing has been withdrawn; it protects
+    # nothing, so the walk may go below it.
+    pin_holds = current in ids
     candidates = []
     for fid in ids[:MAX_CANDIDATES]:
-        if current is not None and fid < current:
-            break  # never walk back past the pinned upload
+        if current is not None and fid < current and pin_holds:
+            break  # the pin is still current; never walk back past it
         try:
             window = service_window(fetch(session, fid))
         except requests.RequestException as e:
@@ -181,13 +207,15 @@ def resolve(session, dataset, current_url, today):
             window = None
         logger.info("  file %s: service %s", fid, window)
         candidates.append((fid, window))
-        horizon = today + timedelta(days=MIN_DAYS_AHEAD)
-        if window and window[0] <= today <= window[1] and window[1] >= horizon:
+        if fid == current:
+            # Once the pinned upload has run out it no longer guards older ones.
+            pin_holds = covers(window, today)
+        if qualifies(window, today):
             break  # the newest qualifying file; nothing older can beat it
 
     chosen = choose(candidates, today)
     if chosen is None:
-        return None, "no file covers today"
+        return None, STALE
     url = DOWNLOAD_URL.format(file_id=chosen)
     if url == current_url:
         return url, "current"
@@ -211,6 +239,7 @@ def main():
 
     changed_docs = {}
     considered = resolved = updated = 0
+    stale = []
     for path, doc, feed in tagged_feeds(FEEDS_DIR):
         considered += 1
         feed_id = feed.get("id", "?")
@@ -223,12 +252,15 @@ def main():
             # Deliberately broad: one bad payload should cost this feed only.
             logger.error("%s: could not resolve dataset %s: %s", feed_id, dataset, e)
             continue
+        if reason == STALE:
+            # The portal answered, but the feed is left serving an expired
+            # timetable: that needs a person, so it fails the run below.
+            logger.error("%s: %s, leaving as-is", feed_id, reason)
+            stale.append(feed_id)
+            continue
         resolved += 1
         if reason == "current":
             logger.info("%s: already current", feed_id)
-            continue
-        if reason != "update":
-            logger.error("%s: %s, leaving as-is", feed_id, reason)
             continue
         logger.info("%s: %s -> %s", feed_id, current_url, url)
         feed.setdefault("urls", {})["static_current"] = url
@@ -243,6 +275,9 @@ def main():
             logger.info("wrote %s", path.name)
 
     logger.info("%d tagged feed(s), %d resolved, %d updated", considered, resolved, updated)
+    if stale:
+        logger.error("no current file for: %s", ", ".join(stale))
+        return 1
     if considered and not resolved:
         logger.error("no tagged feed could be resolved")
         return 1
