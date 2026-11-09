@@ -5,7 +5,9 @@
       "id": "f-9q9y-escalon~ca~us~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_trip_updates": "https://webservices.umoiq.com/api/gtfs-rt/v1/GTFS/escalon"
+        "realtime_vehicle_positions": "https://webservices.umoiq.com/api/gtfs-rt/v1/vehicle-positions/escalon",
+        "realtime_trip_updates": "https://webservices.umoiq.com/api/gtfs-rt/v1/trip-updates/escalon",
+        "realtime_alerts": "https://webservices.umoiq.com/api/gtfs-rt/v1/service-alerts/escalon"
       },
       "license": {
         "url": "https://www.cityofescalon.org/government/departments/transit_service"
@@ -13,6 +15,9 @@
       "authorization": {
         "type": "query_param",
         "param_name": "key"
+      },
+      "tags": {
+        "calitp_dataset_id": "recxYYcfgSxpq3IQU,rece00cNBcMfS5oNm,rec92vswdxIMBM0m3"
       }
     }
   ]
