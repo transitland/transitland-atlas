@@ -84,7 +84,7 @@
           "website": "https://hta.org/agencies/redwood-transit-system/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1"
+              "gtfs_agency_id": "RTS"
             },
             {
               "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~redwood~rt"
@@ -95,7 +95,7 @@
           ],
           "tags": {
             "us_ntd_id": "91036",
-            "wikidata_id": "Q5940414"
+            "wikidata_id": "Q5940414;Q7306529"
           }
         },
         {
@@ -105,7 +105,7 @@
           "website": "https://hta.org/agencies/eureka-transit-service/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "2"
+              "gtfs_agency_id": "ETS"
             },
             {
               "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
@@ -117,29 +117,13 @@
           }
         },
         {
-          "onestop_id": "o-9pr8n-samoatransitsystem",
-          "name": "Samoa Transit System",
-          "website": "https://hta.org/samoa-transit-system/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1716"
-            },
-            {
-              "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
-            }
-          ],
-          "tags": {
-            "wikidata_id": "Q5940414"
-          }
-        },
-        {
           "onestop_id": "o-9prb8-arcata~madrivertransitsystem",
           "name": "Arcata & Mad River Transit System",
           "short_name": "AMRTS",
           "website": "https://hta.org/agencies/arcata-and-mad-river/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "3"
+              "gtfs_agency_id": "A&MRTS"
             },
             {
               "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
@@ -148,24 +132,6 @@
           "tags": {
             "us_ntd_id": "91018",
             "wikidata_id": "Q4785261"
-          }
-        },
-        {
-          "onestop_id": "o-9prb9-bluelakerancheriatransitsystem",
-          "name": "Blue Lake Rancheria Transit System",
-          "short_name": "BLRTS",
-          "website": "https://www.bluelakerancheria-nsn.gov/initiatives/transportation/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "972"
-            },
-            {
-              "feed_onestop_id": "f-9pp-humboldtcounty~ca~us~rt~alerts"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "99292",
-            "wikidata_id": "Q96373720"
           }
         }
       ]
@@ -212,10 +178,6 @@
             },
             {
               "feed_onestop_id": "f-eastern~sierra~bishop~lone~pine~flex"
-            },
-            {
-              "gtfs_agency_id": "51",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -330,6 +292,9 @@
     },
     {
       "id": "f-9q99-sanbenitocountyexpress",
+      "supersedes_ids": [
+        "f-san~benito~county~express~dial~a~ride~paratransit~on~demand~flex"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/sanbenitocounty-ca-us/sanbenitocounty-ca-us.zip"
@@ -357,29 +322,6 @@
             "twitter_general": "CountyExpress",
             "us_ntd_id": "91009",
             "wikidata_id": "Q7413407"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9q9y-escalon~ca~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/escalon-ca-us/escalon-ca-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9q9y-escalon~ca~us",
-          "name": "City of Escalon eTrans",
-          "website": "https://www.cityofescalon.org/government/departments/transit_service",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-9q9y-escalon~ca~us~rt"
-            }
-          ],
-          "tags": {
-            "calitp_organization_id": "recNeVOEwWUtYe8xm",
-            "us_ntd_id": "91078"
           }
         }
       ]
@@ -572,7 +514,8 @@
           "website": "https://www.madera.gov/home/departments/transit/",
           "tags": {
             "calitp_organization_id": "rec2DteW2sfmBJRsH",
-            "us_ntd_id": "90199"
+            "us_ntd_id": "90199",
+            "wikidata_id": "Q115819942"
           }
         }
       ]
@@ -636,7 +579,8 @@
           ],
           "tags": {
             "calitp_organization_id": "recFqVabH8109u70q",
-            "us_ntd_id": "99442"
+            "us_ntd_id": "99442",
+            "wikidata_id": "Q13448436"
           }
         }
       ]
@@ -655,16 +599,6 @@
         "calitp_dataset_id": "rectpGbo8b7ThDd5h"
       },
       "operators": [
-        {
-          "onestop_id": "o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired",
-          "name": "North Lake Tahoe Express",
-          "website": "https://www.northlaketahoeexpress.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "16"
-            }
-          ]
-        },
         {
           "onestop_id": "o-9qfx-tahoetruckeearearegionaltransit",
           "name": "Tahoe Truckee Area Regional Transit",
@@ -845,6 +779,12 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "34"
+            },
+            {
+              "feed_onestop_id": "f-9r0-trinity~ca~us~rt"
+            },
+            {
+              "feed_onestop_id": "f-9r0-trinity~ca~us~rt~alerts"
             }
           ],
           "tags": {
@@ -1398,7 +1338,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "70092"
+            "us_ntd_id": "70092",
+            "wikidata_id": "Q120756330"
           }
         }
       ]
@@ -1428,16 +1369,6 @@
             "us_ntd_id": "70242",
             "wikidata_id": "Q7110024"
           }
-        },
-        {
-          "onestop_id": "o-9zq4g-ottumwatransit",
-          "name": "Ottumwa Transit",
-          "website": "https://www.ottumwa.us/departments/transit/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "751"
-            }
-          ]
         }
       ]
     },
@@ -1464,7 +1395,8 @@
           ],
           "tags": {
             "twitter_general": "coralville_ia",
-            "us_ntd_id": "70030"
+            "us_ntd_id": "70030",
+            "wikidata_id": "Q108444281"
           }
         }
       ]
@@ -1579,7 +1511,8 @@
           ],
           "tags": {
             "twitter_general": "CityofMuscatine",
-            "us_ntd_id": "70101"
+            "us_ntd_id": "70101",
+            "wikidata_id": "Q125405194"
           }
         }
       ]
@@ -1634,7 +1567,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "70108"
+            "us_ntd_id": "70108",
+            "wikidata_id": "Q120882284"
           }
         }
       ]
@@ -1785,17 +1719,122 @@
       "id": "f-arrowheadatkinscounty~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadatkinscounty-mn-us/arrowheadatkinscounty-mn-us.zip"
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadaitkincounty-mn-us/arrowheadaitkincounty-mn-us.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/arrowheadatkinscounty-mn-us/arrowheadatkinscounty-mn-us.zip"
+        ]
       },
       "operators": [
         {
           "onestop_id": "o-arrowheadatkinscounty~mn~us",
           "name": "Arrowhead Economic Opportunity Agency, Inc.",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-arrowheadcarltoncounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadchisagocounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadcookcounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadisanticounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheaditascacounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadkoochichingcounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadlakecounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadnorthstlouiscounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadpinecounty~mn~us"
+            },
+            {
+              "feed_onestop_id": "f-arrowheadsouthstlouiscounty~mn~us"
+            }
+          ],
           "tags": {
             "us_ntd_id": "50520"
           }
         }
       ]
+    },
+    {
+      "id": "f-arrowheadcarltoncounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadcarltoncounty-mn-us/arrowheadcarltoncounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadchisagocounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadchisagocounty-mn-us/arrowheadchisagocounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadcookcounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadcookcounty-mn-us/arrowheadcookcounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadisanticounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadisanticounty-mn-us/arrowheadisanticounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheaditascacounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheaditascacounty-mn-us/arrowheaditascacounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadkoochichingcounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadkoochichingcounty-mn-us/arrowheadkoochichingcounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadlakecounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadlakecounty-mn-us/arrowheadlakecounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadnorthstlouiscounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadnorthstlouiscounty-mn-us/arrowheadnorthstlouiscounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadpinecounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadpinecounty-mn-us/arrowheadpinecounty-mn-us.zip"
+      }
+    },
+    {
+      "id": "f-arrowheadsouthstlouiscounty~mn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/arrowheadsouthstlouiscounty-mn-us/arrowheadsouthstlouiscounty-mn-us.zip"
+      }
     },
     {
       "id": "f-asotincounty~wa~us",
@@ -1976,36 +2015,10 @@
       ]
     },
     {
-      "id": "f-bentcounty~co~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/bentcounty-co-us/bentcounty-co-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9wy-bentcountytransportation",
-          "name": "Bent County Transit",
-          "website": "https://www.bentcounty.net/residents/transportation.php#.YkObZxBKhxg",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1645"
-            },
-            {
-              "feed_onestop_id": "f-bentcounty~co~us~flex"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "88229"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-bentcounty~co~us~flex",
+      "supersedes_ids": [
+        "f-bentcounty~co~us"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/bentcounty-co-us/bentcounty-co-us--flex-v2.zip"
@@ -2150,13 +2163,6 @@
       }
     },
     {
-      "id": "f-boprc~nz",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/boprc-nz/boprc-nz.zip"
-      }
-    },
-    {
       "id": "f-bouldercounty~co~us",
       "spec": "gtfs",
       "urls": {
@@ -2184,11 +2190,17 @@
       "operators": [
         {
           "onestop_id": "o-9xh8d-breckenridgefreeride",
+          "supersedes_ids": [
+            "o-9xh8d-upperwarriorsmark"
+          ],
           "name": "Breckenridge Free Ride",
           "website": "https://www.breckfreeride.com/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1631"
+              "gtfs_agency_id": "103"
+            },
+            {
+              "gtfs_agency_id": "124"
             }
           ],
           "tags": {
@@ -2197,20 +2209,11 @@
           }
         },
         {
-          "onestop_id": "o-9xh8d-upperwarriorsmark",
-          "name": "Upper Warriors Mark",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1706"
-            }
-          ]
-        },
-        {
           "onestop_id": "o-9xh8d-vailskishuttles",
           "name": "Breckenridge Ski Resort",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "1705"
+              "gtfs_agency_id": "111"
             }
           ]
         }
@@ -2221,22 +2224,7 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/brightline-fl-us/brightline-fl-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-brightline~fl~us",
-          "name": "Brightline",
-          "website": "https://www.gobrightline.com/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-brightline~fl~us~rt"
-            },
-            {
-              "feed_onestop_id": "f-brightline~fl~us~rt~alerts"
-            }
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "f-bristol~va~us",
@@ -2323,7 +2311,10 @@
         {
           "onestop_id": "o-burnspaiutetribaltransit",
           "name": "Burns Paiute Tribal Transit",
-          "website": "https://burnspaiute-nsn.gov/departments/deptadmin/tribal-transit/"
+          "website": "https://burnspaiute-nsn.gov/departments/deptadmin/tribal-transit/",
+          "tags": {
+            "us_ntd_id": "00421"
+          }
         }
       ]
     },
@@ -2861,10 +2852,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "911"
-            },
-            {
-              "gtfs_agency_id": "6",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -3001,7 +2988,8 @@
           ],
           "tags": {
             "calitp_organization_id": "recROsnN85RlZziSj",
-            "us_ntd_id": "90238"
+            "us_ntd_id": "90238",
+            "wikidata_id": "Q5253146"
           }
         }
       ]
@@ -3031,7 +3019,8 @@
           ],
           "tags": {
             "twitter_general": "city_of_keywest",
-            "us_ntd_id": "41060"
+            "us_ntd_id": "41060",
+            "wikidata_id": "Q125405186"
           }
         }
       ]
@@ -3505,30 +3494,12 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "945"
-            },
-            {
-              "gtfs_agency_id": "31",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
             "twitter_general": "indiantrailsbus",
             "wikidata_id": "Q6021774"
           }
-        },
-        {
-          "onestop_id": "o-dps-detroitannarborexpress",
-          "name": "Detroit Ann Arbor Express",
-          "website": "https://d2a2.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1591"
-            },
-            {
-              "gtfs_agency_id": "5",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
-            }
-          ]
         }
       ]
     },
@@ -3662,10 +3633,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "535"
-            },
-            {
-              "gtfs_agency_id": "39",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -3725,10 +3692,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "642"
-            },
-            {
-              "gtfs_agency_id": "71",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ]
         },
@@ -3739,10 +3702,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "641"
-            },
-            {
-              "gtfs_agency_id": "40",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -3997,10 +3956,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "801"
-            },
-            {
-              "gtfs_agency_id": "41",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -4490,7 +4445,10 @@
             {
               "gtfs_agency_id": "2274"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q71737904"
+          }
         },
         {
           "onestop_id": "o-drt3pb-massport",
@@ -4502,10 +4460,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "2272"
-            },
-            {
-              "gtfs_agency_id": "2",
-              "feed_onestop_id": "f-drt-mbta"
             }
           ],
           "tags": {
@@ -4739,10 +4693,6 @@
             },
             {
               "feed_onestop_id": "f-dru-vttranslines~vt~us~rt~alerts"
-            },
-            {
-              "gtfs_agency_id": "29",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -4842,13 +4792,6 @@
       }
     },
     {
-      "id": "f-eastbywest~nz",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/eastbywest-nz/eastbywest-nz.zip"
-      }
-    },
-    {
       "id": "f-eccog~co~us",
       "spec": "gtfs",
       "urls": {
@@ -4883,15 +4826,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "f-emerygo~round~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://egrshuttle.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://egrshuttle.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://egrshuttle.com/gtfs-rt/alerts"
-      }
     },
     {
       "id": "f-estestransit~co~us",
@@ -5169,7 +5103,8 @@
           "short_name": "GET",
           "website": "https://greeleyevanstransit.com/",
           "tags": {
-            "us_ntd_id": "80010"
+            "us_ntd_id": "80010",
+            "wikidata_id": "Q5602131"
           }
         }
       ]
@@ -5218,29 +5153,6 @@
       }
     },
     {
-      "id": "f-gulfcoastcenter~tx~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/gulfcoastcenter-tx-us/gulfcoastcenter-tx-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gulfcoastcenter~tx~us",
-          "name": "Connect Transit",
-          "website": "https://www.gulfcoasttransitdistrict.com/"
-        }
-      ]
-    },
-    {
       "id": "f-gunnisonvalleyrta~co~us~flex",
       "spec": "gtfs",
       "urls": {
@@ -5273,6 +5185,23 @@
           "tags": {
             "us_ntd_id": "30201",
             "wikidata_id": "Q5335009"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-hbrc~nz",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.trilliumtransit.com/gtfs/hbrc-nz/hbrc-nz.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rbv-gobay",
+          "name": "goBay",
+          "website": "https://www.gobay.co.nz",
+          "tags": {
+            "wikidata_id": "Q112189822"
           }
         }
       ]
@@ -5399,25 +5328,8 @@
           ],
           "tags": {
             "twitter_general": "CityOfIowaCity",
-            "us_ntd_id": "70018"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-jackson~tn~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/jackson-tn-us/jackson-tn-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dn2f-jacksontransitauthority",
-          "name": "Jackson Transit Authority",
-          "short_name": "JTA",
-          "website": "https://www.ridejta.com/",
-          "tags": {
-            "us_ntd_id": "40057"
+            "us_ntd_id": "70018",
+            "wikidata_id": "Q108444481"
           }
         }
       ]
@@ -5646,7 +5558,8 @@
           "tags": {
             "calitp_organization_id": "recWLwvtjXhiVWjKt",
             "twitter_general": "maderacounty",
-            "us_ntd_id": "91005"
+            "us_ntd_id": "91005",
+            "wikidata_id": "Q115817039"
           }
         }
       ]
@@ -5797,37 +5710,6 @@
       }
     },
     {
-      "id": "f-mountainvillage~co~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/mountainvillage-co-us/mountainvillage-co-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9werc-townofmountainvillage",
-          "name": "Town of Mountain Village",
-          "website": "https://townofmountainvillage.com/explore/getting-around/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1702"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "80256"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-move~stanislaus~vetsvan~flex",
       "spec": "gtfs",
       "urls": {
@@ -5872,26 +5754,6 @@
       ]
     },
     {
-      "id": "f-newburgh~bus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/newburgh-ny-us/newburgh-ny-us.zip",
-        "static_historic": [
-          "https://oc-otp-gtfs.s3.amazonaws.com/newburgh.zip"
-        ]
-      },
-      "operators": [
-        {
-          "onestop_id": "o-newburgh~transit",
-          "name": "Newburgh Area Transit",
-          "website": "https://www.ridetransitorange.com/middletown",
-          "tags": {
-            "us_ntd_id": "20216"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-nisqually~wa~us",
       "spec": "gtfs",
       "urls": {
@@ -5903,7 +5765,14 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/nlte-nv-us/nlte-nv-us.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired",
+          "name": "North Lake Tahoe Express",
+          "website": "https://www.northlaketahoeexpress.com/"
+        }
+      ]
     },
     {
       "id": "f-northfork~ne~us~flex",
@@ -5994,6 +5863,9 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/paratransitservices-wa-us/paratransitservices-wa-us--flex-v2.zip"
+      },
+      "tags": {
+        "rider_eligibility_restrictions": "true"
       }
     },
     {
@@ -6045,7 +5917,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "30009"
+            "us_ntd_id": "30009",
+            "wikidata_id": "Q7178176"
           }
         }
       ]
@@ -6191,6 +6064,9 @@
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/psesd-wa-us/psesd-wa-us--flex-v2.zip"
+      },
+      "tags": {
+        "rider_eligibility_restrictions": "true"
       }
     },
     {
@@ -6217,7 +6093,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "80007"
+            "us_ntd_id": "80007",
+            "wikidata_id": "Q7258466"
           }
         }
       ]
@@ -6378,14 +6255,19 @@
               "gtfs_agency_id": "SL",
               "feed_onestop_id": "f-sf~bay~area~rg~rt"
             }
-          ]
+          ],
+          "tags": {
+            "wikidata_id": "Q7414676"
+          }
         }
       ]
     },
     {
       "id": "f-sanmiguelcounty~co~us",
       "supersedes_ids": [
-        "f-sanmiguel~co~us"
+        "f-sanmiguel~co~us",
+        "f-mountainvillage~co~us",
+        "f-telluride~co~us"
       ],
       "spec": "gtfs",
       "urls": {
@@ -6397,6 +6279,11 @@
           "name": "San Miguel Authority for Regional Transportation",
           "short_name": "SMART",
           "website": "https://smarttelluride.colorado.gov/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1651"
+            }
+          ],
           "tags": {
             "us_ntd_id": "88294"
           }
@@ -6723,37 +6610,6 @@
       ]
     },
     {
-      "id": "f-telluride~co~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_historic": [
-          "https://data.trilliumtransit.com/gtfs/telluride-co-us/telluride-co-us.zip"
-        ]
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9werfd-townoftelluride",
-          "name": "Town of Telluride",
-          "website": "https://telluride-co.gov/254/Public-Transportation",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1701"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "88226"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-threerivers~mn~us",
       "spec": "gtfs",
       "urls": {
@@ -6971,7 +6827,8 @@
           ],
           "tags": {
             "calitp_organization_id": "recmQVsPDG6sLtD6j",
-            "us_ntd_id": "90201"
+            "us_ntd_id": "90201",
+            "wikidata_id": "Q111952444"
           }
         }
       ]
@@ -7105,7 +6962,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "3R06-30118,3R06-30120,3R06-30125"
+            "us_ntd_id": "3R06-30118,3R06-30120,3R06-30125",
+            "wikidata_id": "Q125405208"
           }
         }
       ]
@@ -7139,10 +6997,6 @@
           "name": "Virginia Breeze",
           "website": "https://us.megabus.com/virginia-breeze",
           "associated_feeds": [
-            {
-              "gtfs_agency_id": "54",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
-            },
             {
               "gtfs_agency_id": "424",
               "feed_onestop_id": "f-virginia~breeze"
@@ -7277,6 +7131,62 @@
           "feed_onestop_id": "f-greenride~co~us"
         }
       ]
+    },
+    {
+      "onestop_id": "o-9werc-townofmountainvillage",
+      "name": "Town of Mountain Village",
+      "website": "https://townofmountainvillage.com/explore/getting-around/",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "1702",
+          "feed_onestop_id": "f-sanmiguelcounty~co~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "80256"
+      }
+    },
+    {
+      "onestop_id": "o-9werfd-townoftelluride",
+      "name": "Town of Telluride",
+      "website": "https://telluride-co.gov/254/Public-Transportation",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "1701",
+          "feed_onestop_id": "f-sanmiguelcounty~co~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "88226"
+      }
+    },
+    {
+      "onestop_id": "o-9wy-bentcountytransportation",
+      "name": "Bent County Transit",
+      "website": "https://www.bentcounty.net/residents/transportation.php#.YkObZxBKhxg",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "1645",
+          "feed_onestop_id": "f-bentcounty~co~us~flex"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "88229"
+      }
+    },
+    {
+      "onestop_id": "o-newburgh~transit",
+      "name": "Newburgh Area Transit",
+      "website": "https://www.ridetransitorange.com/middletown",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "4997",
+          "feed_onestop_id": "f-transit~orange~ny~us"
+        }
+      ],
+      "tags": {
+        "us_ntd_id": "20216"
+      }
     }
   ]
 }

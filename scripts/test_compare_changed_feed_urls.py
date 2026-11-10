@@ -165,3 +165,18 @@ def test_validate_feed_reports_unrunnable_urls_instead_of_raising():
 def test_render_skipped_shows_auth_type_literally():
     out = ccfu.render_skipped(ccfu.Pair("f-a~b~c", "https://o", "https://n", "query_param"))
     assert "`query_param`" in out and "&#" not in out
+
+
+def test_render_notes_feeds_left_out_by_the_limit(tmp_path, capsys, monkeypatch):
+    monkeypatch.delenv("TRANSITLAND_API_KEY", raising=False)
+    pairs = [ccfu.Pair("f-a", "https://o/a.zip", "https://n/a.zip", None),
+             ccfu.Pair("f-b", "https://o/b.zip", "https://n/b.zip", None)]
+    probes = {u: ccfu.Probe(url=u, ok=False, error="x")
+              for u in ("https://o/a.zip", "https://n/a.zip")}
+    path = tmp_path / "probes.json"
+    path.write_text(json.dumps({"pairs": [p.__dict__ for p in pairs],
+                                "probes": {u: p.__dict__ for u, p in probes.items()}}))
+    ccfu.cmd_render(type("Args", (), {"probes": path})())
+    out = capsys.readouterr().out
+    assert out.startswith("1 repointed feed was not compared")
+    assert "f-a" in out and "f-b" not in out

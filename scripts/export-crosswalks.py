@@ -19,10 +19,12 @@ needs no CSV quoting because no Onestop ID contains it.
 Rows are sorted, so a commit diff shows what changed rather than how the
 registry happened to be walked.
 
-The Wikidata export carries a trailing `wikipedia_url` from each entity's
-English sitelink, which needs the network. A failed lookup exits non-zero
-rather than writing blanks, which would be indistinguishable from an entity
-with no article.
+The Wikidata export carries a `primary` column, because the tag is ordered: the
+first id is the operator's own item and the rest are networks or brands it runs,
+and sorting by external id would otherwise lose that. It also carries a trailing
+`wikipedia_url` from each entity's English sitelink, which needs the network. A
+failed lookup exits non-zero rather than writing blanks, which would be
+indistinguishable from an entity with no article.
 
 A Frictionless Data Package v2 descriptor is written alongside them at
 crosswalks/datapackage.json, so the columns, their types and the primary key
@@ -53,10 +55,12 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # crosswalks/<name>.csv for every registry it knows: a name that differs there
 # is a broken download here. `entity` picks operators or feeds. `secondary` is a
 # second tag in a trailing column, for a registry whose identifier is not one
-# value (ODPT names a feed by operator and dataset).
+# value (ODPT names a feed by operator and dataset). `primary` marks the first id
+# in a tag whose order means something.
 REGISTRIES = [
     {"name": "us-ntd", "tag": "us_ntd_id", "entity": "operator"},
-    {"name": "wikidata", "tag": "wikidata_id", "entity": "operator", "wikipedia": True},
+    {"name": "wikidata", "tag": "wikidata_id", "entity": "operator", "primary": True,
+     "wikipedia": True},
     {"name": "calitp-organization", "tag": "calitp_organization_id", "entity": "operator"},
     {"name": "calitp-dataset", "tag": "calitp_dataset_id", "entity": "feed"},
     {"name": "mobility-database", "tag": "mdb_source_id", "entity": "feed"},
@@ -106,7 +110,7 @@ def rows_for(db, registry):
         if not external_ids:
             print(f"warning: {onestop_id} has {registry['tag']} = "
                   f"{tags[registry['tag']]!r}, which holds no id", file=sys.stderr)
-        for external_id in external_ids:
+        for position, external_id in enumerate(external_ids):
             if registry["tag"] == "us_ntd_id":
                 external_id = atlas_registry.normalize_ntd_id(external_id) or external_id
             record = {
@@ -118,6 +122,8 @@ def rows_for(db, registry):
             }
             if registry.get("secondary"):
                 record[registry["secondary"]] = secondary
+            if registry.get("primary"):
+                record["primary"] = "true" if position == 0 else "false"
             out.append(record)
     out.sort(key=lambda r: (r["external_id"], r["onestop_id"]))
     # Normalization can map two written forms onto one id, and the descriptor
@@ -187,12 +193,14 @@ FIELD_DESCRIPTIONS = {
     "name": "Operator name, for readability. Not an identifier.",
     "related": ("Onestop IDs on the other side of the association, semicolon "
                 "separated: a tagged operator's feeds, or a tagged feed's operators."),
+    "primary": ("Whether this is the first id in the tag: the operator's own entity. The "
+                "others are networks or brands the operator runs."),
     "wikipedia_url": "English Wikipedia article for the Wikidata entity, where it has one.",
 }
 
 
 def _field(name: str) -> dict:
-    """One Table Schema field. Every column is a string; none is arithmetic."""
+    """One Table Schema field. Every column is a string except `primary`; none is arithmetic."""
     field = {
         "name": name,
         "type": "string",
@@ -201,6 +209,8 @@ def _field(name: str) -> dict:
     }
     if name == "entity":
         field["constraints"] = {"enum": ["operator", "feed"]}
+    if name == "primary":
+        field["type"] = "boolean"
     if name == "wikipedia_url":
         field["format"] = "uri"
     return field
@@ -215,6 +225,8 @@ def columns_for(registry: dict) -> list[str]:
     columns = list(COLUMNS)
     if registry.get("secondary"):
         columns.append(registry["secondary"])
+    if registry.get("primary"):
+        columns.append("primary")
     if registry.get("wikipedia"):
         columns.append("wikipedia_url")
     return columns

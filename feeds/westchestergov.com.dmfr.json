@@ -5,8 +5,9 @@
       "id": "f-dr7-westchestercountybee~linesystem",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://westchester-gmv.itoworld.com/production/ito_westchester_county_gtfs.zip",
+        "static_current": "https://westchester-win.gmv.com:8443/repository/gtfs-public/GTFS_GMV_WCDOT.zip",
         "static_historic": [
+          "https://westchester-gmv.itoworld.com/production/ito_westchester_county_gtfs.zip",
           "https://planning.westchestergov.com/images/stories/zip/GTFS.zip",
           "https://s3.amazonaws.com/datatools-511ny/public/Westchester_County_Bee-Line_System.zip"
         ]
@@ -39,9 +40,9 @@
       "id": "f-westchestercountybee~linesystem~rt",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://westchester-gmv.itoworld.com/production/vehiclepositions.pb",
-        "realtime_trip_updates": "https://westchester-gmv.itoworld.com/production/tripupdates.pb",
-        "realtime_alerts": "https://westchester-gmv.itoworld.com/production/servicealerts.pb"
+        "realtime_vehicle_positions": "https://westchester.gmv.com/gtfsrtapi/api/vehiclepositions",
+        "realtime_trip_updates": "https://westchester.gmv.com/gtfsrtapi/api/tripupdates",
+        "realtime_alerts": "https://westchester.gmv.com/gtfsrtapi/api/servicealerts"
       },
       "license": {
         "url": "https://planning.westchestercountyny.gov/transportation-planning/gfts-developers-transit-api/transit-api-service-terms-of-service"

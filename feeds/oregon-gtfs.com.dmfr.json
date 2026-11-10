@@ -189,15 +189,6 @@
           "tags": {
             "us_ntd_id": "00059"
           }
-        },
-        {
-          "onestop_id": "o-9r83-roguevalleycommuterline",
-          "name": "Rogue Valley Commuter Line",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "225"
-            }
-          ]
         }
       ]
     },
@@ -227,8 +218,7 @@
           ],
           "tags": {
             "twitter_general": "UmpquaTransit",
-            "us_ntd_id": "00459",
-            "wikidata_id": "Q7802245"
+            "us_ntd_id": "00459"
           }
         }
       ]
@@ -355,10 +345,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "184"
-            },
-            {
-              "gtfs_agency_id": "46",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -412,10 +398,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "187"
-            },
-            {
-              "gtfs_agency_id": "16",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ]
         }
@@ -458,7 +440,10 @@
             {
               "feed_onestop_id": "f-9rbm-linx~rt"
             }
-          ]
+          ],
+          "tags": {
+            "us_ntd_id": "00377"
+          }
         },
         {
           "onestop_id": "o-9rbmy-albanytransitsystem",
@@ -530,10 +515,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "47"
-            },
-            {
-              "gtfs_agency_id": "67",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
@@ -687,7 +668,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "00375"
+            "us_ntd_id": "00375",
+            "wikidata_id": "Q108044460"
           }
         }
       ]
@@ -731,7 +713,7 @@
       "id": "f-c20-tillamook~or~us~rt~alerts",
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamook-or-us/service_alerts.proto"
+        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/tillamookcounty-or-us/service_alerts.proto"
       }
     },
     {
@@ -783,7 +765,8 @@
             }
           ],
           "tags": {
-            "us_ntd_id": "00330"
+            "us_ntd_id": "00330",
+            "wikidata_id": "Q5031301"
           }
         }
       ]
@@ -861,7 +844,8 @@
           ],
           "tags": {
             "twitter_general": "ride_connection",
-            "us_ntd_id": "00376"
+            "us_ntd_id": "00376",
+            "wikidata_id": "Q111165595"
           }
         }
       ]
@@ -953,6 +937,9 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "37"
+            },
+            {
+              "feed_onestop_id": "f-hoodriver~or~us~flex"
             }
           ],
           "tags": {
@@ -1097,6 +1084,13 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-hoodriver~or~us~flex",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/hoodriver-or-us/hoodriver-or-us--flex-v2.zip"
+      }
     },
     {
       "id": "f-lcog~linklane",
@@ -1257,36 +1251,11 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "45"
-            },
-            {
-              "gtfs_agency_id": "19",
-              "feed_onestop_id": "f-utel~uiuc~intercity~bus"
             }
           ],
           "tags": {
-            "calitp_organization_id": "recQRoE5mcCn6kdti"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-quailtrail~or~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://oregon-gtfs.trilliumtransit.com/gtfs_data/quailtrail-or-us/quailtrail-or-us.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9r9-quailtrail",
-          "name": "Quail Trail Public Transit",
-          "website": "https://klamathtribes.org/quail-trail-bus-schedule/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "2304"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "00010"
+            "calitp_organization_id": "recQRoE5mcCn6kdti",
+            "wikidata_id": "Q19877418"
           }
         }
       ]

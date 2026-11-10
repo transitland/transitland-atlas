@@ -2,51 +2,6 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
-      "id": "f-ashbourneconnect~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Ashbourne_Connect.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_ashbourneconnect.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
-      "id": "f-corduff~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Corduff_Coaches.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_corduff.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
-      "id": "f-dublin~express~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_dublinexpress.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
       "id": "f-gc-aircoach",
       "spec": "gtfs",
       "urls": {
@@ -69,41 +24,6 @@
           "onestop_id": "o-gc-aircoach",
           "name": "Aircoach",
           "website": "http://www.aircoach.ie"
-        }
-      ]
-    },
-    {
-      "id": "f-gc-airporthopper~dualwaycoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_dualway.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc-dualwaycoaches",
-          "name": "Dualway Coaches",
-          "website": "https://www.dualway.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "359"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc7r-airporthopper",
-          "name": "Airport Hopper",
-          "website": "http://airporthopper.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "359a"
-            }
-          ]
         }
       ]
     },
@@ -149,12 +69,22 @@
       },
       "operators": [
         {
+          "onestop_id": "o-gc0v8gh-corkcountycouncil",
+          "name": "Dursey Island Cable Car",
+          "website": "http://www.durseyisland.ie/cable-car-timetable.html",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Cable"
+            }
+          ]
+        },
+        {
           "onestop_id": "o-gc0vy9-bereislandferries",
           "name": "Bere Island Ferries",
           "website": "http://www.bereislandferries.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10009"
+              "gtfs_agency_id": "FY-BI"
             }
           ]
         },
@@ -164,7 +94,7 @@
           "website": "http://sherkinisland.eu/ferry",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10017"
+              "gtfs_agency_id": "FY-SI"
             }
           ]
         },
@@ -174,7 +104,7 @@
           "website": "http://www.whiddyferry.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10014"
+              "gtfs_agency_id": "FY-WH"
             }
           ]
         },
@@ -184,7 +114,7 @@
           "website": "http://www.shannonferries.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10008"
+              "gtfs_agency_id": "FY-SH"
             }
           ]
         },
@@ -194,7 +124,7 @@
           "website": "http://www.doolinferries.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10013"
+              "gtfs_agency_id": "FY-DO"
             }
           ]
         },
@@ -204,7 +134,7 @@
           "website": "http://aranislandferries.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10001"
+              "gtfs_agency_id": "FY-AI"
             }
           ]
         },
@@ -214,7 +144,7 @@
           "website": "http://crossriverferries.ie",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "DOYLE"
+              "gtfs_agency_id": "FY-CR"
             }
           ]
         },
@@ -224,7 +154,7 @@
           "website": "http://www.passageferry.ie",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10011"
+              "gtfs_agency_id": "FY-PE"
             }
           ]
         },
@@ -234,7 +164,7 @@
           "website": "http://inishbofinislanddiscovery.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10003"
+              "gtfs_agency_id": "FY-IB"
             }
           ]
         },
@@ -244,7 +174,7 @@
           "website": "http://www.clareislandferry.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10002"
+              "gtfs_agency_id": "FY-CI"
             }
           ]
         },
@@ -254,7 +184,7 @@
           "website": "http://arranmoreferry.com",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10007"
+              "gtfs_agency_id": "FY-AR"
             }
           ]
         },
@@ -264,7 +194,7 @@
           "website": "http://www.toryislandferry.com/AboutUs.htm",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10006"
+              "gtfs_agency_id": "FY-TO"
             }
           ]
         },
@@ -274,550 +204,7 @@
           "website": "https://www.nidirect.gov.uk/articles/strangford-ferry-timetable",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "10021"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc-kenneallysbusservice",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Kenneallys.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_kenneallys.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc-kenneallysbusservice",
-          "name": "Kenneally's Bus Service",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "297"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc-mcnultycoaches~johnodonoghue~sons~patrickgallagherchurchill",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_sro.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc-gobe",
-          "name": "GoBé",
-          "website": "http://gobe.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "830a"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc0v8gh-corkcountycouncil",
-          "name": "Dursey Island Cable Car",
-          "website": "http://www.durseyisland.ie/cable-car-timetable.html",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "CorkCoCo"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc1-donalharrington",
-          "name": "Donal Harrington Coach Service",
-          "short_name": "West Cork Coaches",
-          "website": "http://westcorkcoaches.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "610"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc1yn-davidallman",
-          "name": "David Allman",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "Allman"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc3-johnliston",
-          "name": "John Liston",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "JohnListon"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc30-gerard~maryflynn",
-          "name": "Gerard & Mary Flynn",
-          "short_name": "Flynn's Coaches",
-          "website": "http://flynnscoaches.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "907"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc33-williamkeogh",
-          "name": "William Keogh",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "637"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc3x-buslink",
-          "name": "BusLink",
-          "website": "http://buslink.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "851"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc3z-mountbellewbusco",
-          "name": "Mountbellew Bus Co.",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "441"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc6-gobus",
-          "name": "GoBus",
-          "website": "http://www.gobus.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "830"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc6-hallahansbusandcoachhire",
-          "name": "Hallahans Bus and Coach Hire",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "810"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc6-kellytravel",
-          "name": "Kelly Travel",
-          "website": "http://www.kellytravel.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "801"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc6-reaneysofgalway",
-          "name": "Reaney's of Galway",
-          "website": "http://www.reaneysofgalway.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "918"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc69b-johnodonoghue~sons",
-          "name": "John O'Donoghue & Sons",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "579"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc6xj-brendanobuggy",
-          "name": "Brendan O'Buggy",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "754"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc7-ardcavancoachtours",
-          "name": "Ardcavan Coach Tours",
-          "website": "http://ardcavan.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "214"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc73-nashminibus~coachhire",
-          "name": "Paul Nash Travel - Minibus & Coach Hire",
-          "website": "http://www.paulnashtravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "737"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc7e3-johnroche",
-          "name": "John Roche",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1014"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc7n-glenwhelan",
-          "name": "Glen Whelan Travel",
-          "website": "http://www.glenwhelantravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "852"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc7x69-silverdawntravelservices",
-          "name": "Silver Dawn Travel Services",
-          "website": "http://www.silverdawntravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "397"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc7xd3-eastpoint",
-          "name": "EastPoint",
-          "website": "http://www.eastpoint.ie/Shuttle-Bus-and-Location",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "EAST"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc93-heneghanbushire",
-          "name": "Heneghan Bus Hire",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "818"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc94p-michaelfoy",
-          "name": "Michael Foy",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1006"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc95-mcnultycoaches",
-          "name": "McNulty Coaches",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "217"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc9b-brendanboyle",
-          "name": "Brendan Boyle",
-          "website": "http://bus4u.net",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "814"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc9g-joedoherty",
-          "name": "Joe Doherty Bus Hire",
-          "website": "http://joedohertybushire.weebly.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "495"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcdd-whartontravel",
-          "name": "Whartons Travel",
-          "website": "http://whartonstravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "302"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcde-leydoncoaches",
-          "name": "Leydon Coaches",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1011"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gce-mcconnonsbuses",
-          "name": "McConnon's Buses",
-          "website": "http://www.mcconnonsbuses.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "690"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcf3-patrickgallagherchurchill",
-          "name": "Patrick Gallagher Travel",
-          "website": "http://www.patrickgallaghertravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "312"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gcf9-mcgonaglebusandcoachhire",
-          "name": "McGonagle Bus & Coach Hire",
-          "website": "http://www.mcgonaglebushire.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1030"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc1y3-paradisecoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_paradise.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc1y3-paradisecoaches",
-          "name": "Paradise Coaches",
-          "website": "http://www.paradisecoaches.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "703"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc3-burkesbus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_burkes.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc3-burkesbus",
-          "name": "Burkesbus",
-          "website": "http://www.burkesbus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "200"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc317-traleepeoplesbusservice",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_tralee.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc317-traleepeoplesbusservice",
-          "name": "Tralee Peoples Bus Service",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "499"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc3d-catherinemadigan",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_cmadigan.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc3d-catherinemadigan",
-          "name": "Catherine Madigan",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "619"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc3f-josephfoley~michaeldonegan",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_josfoley.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc3cg-josephfoley",
-          "name": "Joseph Foley",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "593"
-            }
-          ]
-        },
-        {
-          "onestop_id": "o-gc3f-michaeldonegan",
-          "name": "Michael Donegan",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "594"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc3gs-eurobus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_eurobus.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc3gs-eurobus",
-          "name": "Eurobus",
-          "website": "http://www.eurobuslimerick.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "981"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc3q-lallycoachhire",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_lallycoaches.zip",
-        "static_historic": [
-          "https://www.transportforireland.ie/transitData/google_transit_lallycoach.zip"
-        ]
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc3q-lallycoachhire",
-          "name": "Lally Coach Hire",
-          "website": "http://www.lallycoaches.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "408"
+              "gtfs_agency_id": "FY-SL"
             }
           ]
         }
@@ -843,31 +230,6 @@
           "onestop_id": "o-gc3x-citydirect",
           "name": "City Direct",
           "website": "https://citydirect.ie/"
-        }
-      ]
-    },
-    {
-      "id": "f-gc3y-michaelhealy",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_mhealy.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc3y-michaelhealy",
-          "name": "Michael Healy",
-          "website": "http://healybus.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "199"
-            }
-          ]
         }
       ]
     },
@@ -918,12 +280,7 @@
         {
           "onestop_id": "o-gc6-dublincoach",
           "name": "Dublin Coach",
-          "website": "http://dublincoach.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "870"
-            }
-          ]
+          "website": "http://dublincoach.ie"
         }
       ]
     },
@@ -1008,31 +365,6 @@
       ]
     },
     {
-      "id": "f-gc6-m~acoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_manda.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6-m~acoaches",
-          "name": "M&A Coaches",
-          "website": "http://mandacoaches.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "MAC"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-gc6-slievebloomcoachtours",
       "spec": "gtfs",
       "urls": {
@@ -1061,185 +393,6 @@
       ]
     },
     {
-      "id": "f-gc6c-suirway",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_suirway.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6c-suirway",
-          "name": "Suirway",
-          "website": "http://www.suirway.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "298"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc6f-michaelkilbride",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_mkilbride.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6f-michaelkilbride",
-          "name": "Michael Kilbride Coach & Minibus",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "758"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc6k-robertryan",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_rryan.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6k-robertryan",
-          "name": "Robert Ryan",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "629"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc6u-edwardmoore",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_edmoore.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6u-edwardmoore",
-          "name": "Edward Moore",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "454"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc6u-kbuggycoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_buggy.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6u-kbuggycoaches",
-          "name": "K Buggy Coaches",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "197"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc6v-pjmartley",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_pjmartley.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6v-pjmartley",
-          "name": "PJ Martley",
-          "short_name": "Martleys",
-          "website": "http://www.martleys.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "1"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc6y-horanscoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_horan.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc6y-horanscoaches",
-          "name": "Horans Coaches",
-          "website": "http://horanbushire.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "342"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-gc7-wexfordbus",
       "spec": "gtfs",
       "urls": {
@@ -1262,31 +415,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "587"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc76-michaelgray",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_mgray.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc76-michaelgray",
-          "name": "Michael Gray",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "620"
             }
           ]
         }
@@ -1324,59 +452,6 @@
       ]
     },
     {
-      "id": "f-gc7j-southkildarecommunitytransport",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_southkildare.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc7j-southkildarecommunitytransport",
-          "name": "South Kildare Community Transport",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "802"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc7w-finneganbray",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_finnegans.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc7w-finneganbray",
-          "name": "Finnegan Bray",
-          "website": "http://www.finnegan-bray.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "245"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-gc7x-expressbus",
       "spec": "gtfs",
       "urls": {
@@ -1396,28 +471,6 @@
           "onestop_id": "o-gc7x-expressbus",
           "name": "Express Bus",
           "website": "http://www.expressbus.ie"
-        }
-      ]
-    },
-    {
-      "id": "f-gc7x-mortonscoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_mortons.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc7x-mortonscoaches",
-          "name": "Mortons Coaches",
-          "website": "http://www.mortonscoaches.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "305"
-            }
-          ]
         }
       ]
     },
@@ -1478,53 +531,6 @@
       ]
     },
     {
-      "id": "f-gc9-busfedateoranta",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_fedateoranta.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc9-busfedateoranta",
-          "name": "Bus Feda Teoranta",
-          "website": "http://busfeda.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "967"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gc9-farragherinternationaltravelservices",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_farragher.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gc9-farragherinternationaltravelservices",
-          "name": "Farragher International Travel Services",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "351"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "f-gc9-mcgrathcoaches",
       "spec": "gtfs",
       "urls": {
@@ -1547,106 +553,6 @@
           "associated_feeds": [
             {
               "gtfs_agency_id": "363"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gcd-johnmcginley",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_mcginley.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcd-johnmcginley",
-          "name": "John McGinley Coaches",
-          "website": "http://www.johnmcginley.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "609"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gcd-john~michaelmcgeehan",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_mcgeehan.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcd-mcgeehan~coaches",
-          "name": "McGeehan Coaches",
-          "website": "http://mcgeehancoaches.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "219"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gcd9-donnellyspioneerbusservice",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_donnellys.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcd9-donnellyspioneerbusservice",
-          "name": "Donnelly's Pioneer Bus Service",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "289"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gce-collinscoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_collins.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gce-collinscoaches",
-          "name": "Collins Coaches",
-          "website": "http://www.collinscoaches.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "866"
             }
           ]
         }
@@ -1681,135 +587,6 @@
       ]
     },
     {
-      "id": "f-gce7n-halpennytransport",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_halpenny.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gce7n-halpennytransport",
-          "name": "Halpenny Transport",
-          "website": "http://www.halpennytravel.com",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "291"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gceh9-leonardcoaches",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_leonard.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "tags": {
-        "status": "outdated"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gceh9-leonardcoaches",
-          "name": "Leonard Coaches",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "478"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gcf-josephmangan",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_mangan.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcf-josephmangan",
-          "name": "Joseph Mangan",
-          "website": "http://www.mangantours.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "514"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-gcf2-seamusdoherty",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/google_transit_sdoherty.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcf2-seamusdoherty",
-          "name": "Seamus Doherty",
-          "website": "http://www.transportforireland.ie",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "132"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "f-goacommuter~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/GoACommuter.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
-      "id": "f-goaodma~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/GoAODMA.zip"
-      },
-      "license": {
-        "url": "https://data.gov.ie/licence",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
-        "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
-    },
-    {
       "id": "f-national~transport~authority~ie~rt",
       "spec": "gtfs-rt",
       "urls": {
@@ -1827,6 +604,29 @@
     },
     {
       "id": "f-small~operators~ie",
+      "supersedes_ids": [
+        "f-gc-mcnultycoaches~johnodonoghue~sons~patrickgallagherchurchill",
+        "f-ashbourneconnect~ie",
+        "f-corduff~ie",
+        "f-westlink~coaches~ie",
+        "f-gc3-burkesbus",
+        "f-gc3d-catherinemadigan",
+        "f-gc3f-josephfoley~michaeldonegan",
+        "f-gc76-michaelgray",
+        "f-gc9-busfedateoranta",
+        "f-gc9-farragherinternationaltravelservices",
+        "f-gcd-johnmcginley",
+        "f-gcd-john~michaelmcgeehan",
+        "f-gce-collinscoaches",
+        "f-gce7n-halpennytransport",
+        "f-gcf-josephmangan",
+        "f-gcf2-seamusdoherty",
+        "f-gc317-traleepeoplesbusservice",
+        "f-gc6v-pjmartley",
+        "f-gc3y-michaelhealy",
+        "f-gc6u-kbuggycoaches",
+        "f-dublin~express~ie"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Small_Operators.zip"
@@ -1836,7 +636,244 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "Contains Irish Public Sector Data licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence."
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-gc1-donalharrington",
+          "name": "Donal Harrington Coach Service",
+          "short_name": "West Cork Coaches",
+          "website": "http://westcorkcoaches.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "610"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc3-burkesbus",
+          "name": "Burkesbus",
+          "website": "http://www.burkesbus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "200"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc317-traleepeoplesbusservice",
+          "name": "Tralee Peoples Bus Service",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1024"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc3cg-josephfoley",
+          "name": "Joseph Foley",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "593"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc3d-catherinemadigan",
+          "name": "Catherine Madigan",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "619"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc3y-michaelhealy",
+          "name": "Michael Healy",
+          "website": "http://healybus.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1059"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc6v-pjmartley",
+          "name": "PJ Martley",
+          "short_name": "Martleys",
+          "website": "http://www.martleys.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "940"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc6xj-brendanobuggy",
+          "supersedes_ids": [
+            "o-gc6u-kbuggycoaches"
+          ],
+          "name": "K Buggy Coaches",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "754"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc7-ardcavancoachtours",
+          "name": "Ardcavan Coach Tours",
+          "website": "http://ardcavan.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "214"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc76-michaelgray",
+          "name": "Michael Gray",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "620"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc7e3-johnroche",
+          "name": "John Roche",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1014"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc9-busfedateoranta",
+          "name": "Bus Feda Teoranta",
+          "website": "http://busfeda.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "967"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gc9-farragherinternationaltravelservices",
+          "name": "Farragher International Travel Services",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "351"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcd-johnmcginley",
+          "name": "John McGinley Coaches",
+          "website": "http://www.johnmcginley.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "609"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcd-mcgeehan~coaches",
+          "name": "McGeehan Coaches",
+          "website": "http://mcgeehancoaches.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "219"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcde-leydoncoaches",
+          "name": "Leydon Coaches",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1011"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gce-collinscoaches",
+          "name": "Collins Coaches",
+          "website": "http://www.collinscoaches.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "866"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gce-mcconnonsbuses",
+          "name": "McConnon's Buses",
+          "website": "http://www.mcconnonsbuses.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "690"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gce7n-halpennytransport",
+          "name": "Halpenny Transport",
+          "website": "http://www.halpennytravel.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "291"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcf-josephmangan",
+          "name": "Joseph Mangan",
+          "website": "http://www.mangantours.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "514"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcf2-seamusdoherty",
+          "name": "Seamus Doherty",
+          "website": "http://www.transportforireland.ie",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "132"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcf3-patrickgallagherchurchill",
+          "name": "Patrick Gallagher Travel",
+          "website": "http://www.patrickgallaghertravel.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "312"
+            }
+          ]
+        },
+        {
+          "onestop_id": "o-gcf9-mcgonaglebusandcoachhire",
+          "name": "McGonagle Bus & Coach Hire",
+          "website": "http://www.mcgonaglebushire.com",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "1030"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "f-transport~for~ireland~realtime~operators",
@@ -1846,7 +883,9 @@
         "f-gc-busÉireann",
         "f-gc7x-luas",
         "f-gc6-irishrail~irishrail~irishrail~irishrail",
-        "f-waterford~ie"
+        "f-waterford~ie",
+        "f-goacommuter~ie",
+        "f-goaodma~ie"
       ],
       "spec": "gtfs",
       "urls": {
@@ -1868,10 +907,10 @@
           "website": "https://www.buseireann.ie",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "7778008"
+              "gtfs_agency_id": "2"
             },
             {
-              "gtfs_agency_id": "7778020"
+              "gtfs_agency_id": "WFRD"
             },
             {
               "feed_onestop_id": "f-national~transport~authority~ie~rt"
@@ -1884,7 +923,7 @@
           "website": "https://www.irishrail.ie/en-ie/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "7778017"
+              "gtfs_agency_id": "IR"
             },
             {
               "feed_onestop_id": "f-national~transport~authority~ie~rt"
@@ -1897,7 +936,7 @@
           "website": "https://www.dublinbus.ie/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "7778019"
+              "gtfs_agency_id": "1"
             },
             {
               "feed_onestop_id": "f-national~transport~authority~ie~rt"
@@ -1910,7 +949,7 @@
           "website": "https://luas.ie",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "7778014"
+              "gtfs_agency_id": "10000"
             },
             {
               "feed_onestop_id": "f-national~transport~authority~ie~rt"
@@ -1923,29 +962,15 @@
           "website": "https://www.goaheadireland.ie/",
           "associated_feeds": [
             {
-              "gtfs_agency_id": "7778006"
+              "gtfs_agency_id": "3"
             },
             {
-              "gtfs_agency_id": "7778021"
+              "gtfs_agency_id": "03C"
             },
             {
               "feed_onestop_id": "f-national~transport~authority~ie~rt"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "f-westlink~coaches~ie",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://www.transportforireland.ie/transitData/Data/GTFS_Westlink_Coaches.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-gcd5-westlinkcoaches",
-          "name": "Westlink Coaches",
-          "website": "http://www.westlinkcoaches.ie"
         }
       ]
     }

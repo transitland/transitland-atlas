@@ -167,3 +167,22 @@ def test_two_written_forms_of_one_ntd_id_do_not_break_the_primary_key():
                ('{"us_ntd_id": "307,00307"}',))
     rows = rows_for_ntd(db)
     assert [r["external_id"] for r in rows] == ["00307"]
+
+
+def test_primary_marks_the_first_id_in_the_tag_not_the_first_after_sorting():
+    # Rows sort by external_id, so the network Q6593059 lands ahead of the
+    # agency Q7099595; the tag's order is the only record of which is which.
+    db = _db()
+    db.execute("INSERT INTO current_operators VALUES (1, 'o-9mu-octa', 'OCTA', ?)",
+               ('{"wikidata_id": "Q7099595;Q6593059"}',))
+    rows = export_crosswalks.rows_for(db, {"name": "wikidata", "tag": "wikidata_id",
+                                           "entity": "operator", "primary": True})
+    assert [(r["external_id"], r["primary"]) for r in rows] == [
+        ("Q6593059", "false"), ("Q7099595", "true")]
+
+
+def test_primary_is_declared_boolean_before_wikipedia_url():
+    registry = next(r for r in export_crosswalks.REGISTRIES if r["name"] == "wikidata")
+    assert export_crosswalks.columns_for(registry)[-2:] == ["primary", "wikipedia_url"]
+    fields = export_crosswalks.datapackage([registry])["resources"][0]["schema"]["fields"]
+    assert next(f for f in fields if f["name"] == "primary")["type"] == "boolean"

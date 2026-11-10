@@ -2,6 +2,25 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-cta~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://transitdata.transitchicago.com/GtfsRealtime/VehiclePositions.pb",
+        "realtime_trip_updates": "https://transitdata.transitchicago.com/GtfsRealtime/TripUpdates.pb",
+        "realtime_alerts": "https://transitdata.transitchicago.com/GtfsRealtime/ServiceAlerts.pb"
+      },
+      "license": {
+        "url": "https://www.transitchicago.com/developers/terms/",
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "key",
+        "info_url": "https://transitdata.transitchicago.com/"
+      }
+    },
+    {
       "id": "f-dp3-cta",
       "spec": "gtfs",
       "urls": {
@@ -14,19 +33,27 @@
       },
       "tags": {
         "gtfs_data_exchange": "chicago-transit-authority"
-      },
-      "operators": [
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-dp3-chicagotransitauthority",
+      "name": "Chicago Transit Authority",
+      "short_name": "CTA",
+      "associated_feeds": [
         {
-          "onestop_id": "o-dp3-chicagotransitauthority",
-          "name": "Chicago Transit Authority",
-          "short_name": "CTA",
-          "tags": {
-            "twitter_general": "cta",
-            "us_ntd_id": "50066",
-            "wikidata_id": "Q117309"
-          }
+          "feed_onestop_id": "f-cta~rt"
+        },
+        {
+          "feed_onestop_id": "f-dp3-cta"
         }
-      ]
+      ],
+      "tags": {
+        "twitter_general": "cta",
+        "us_ntd_id": "50066",
+        "wikidata_id": "Q117309"
+      }
     }
   ]
 }

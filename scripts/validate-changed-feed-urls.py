@@ -13,15 +13,22 @@ the reports directory. Exits non-zero when any URL fails the minimum bar:
 
 Auth-protected URLs are skipped (validated by tlv2 with private keys).
 
+With --limit, checks at most that many feeds, spread across hosts (a bulk
+change usually repeats one pattern on one host), new feeds first. With
+--time-budget, stops starting new checks after that many seconds. Feeds left
+unchecked are counted in the summary and never fail the run.
+
 Usage:
     uv run scripts/validate-changed-feed-urls.py \\
         --base-ref main \\
         --reports-dir reports \\
         --summary-out reports/summary.md \\
+        [--limit 50] [--time-budget 1200] \\
         feeds/foo.dmfr.json feeds/bar.dmfr.json
 """
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -29,11 +36,14 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
+import urllib.parse
 import urllib.request
 import zipfile
+from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
+from typing import Callable, Optional, TypeVar
 
 # Cap on suggested fragments per advisory (Victoria AU's outer zip has 8+
 # nested feeds; pathological zips could have many more).
@@ -47,6 +57,8 @@ RT_KINDS: dict[str, str] = {
 }
 
 UrlTuple = tuple[str, str, str]  # (file, url_type, url)
+
+T = TypeVar("T")
 
 
 def slugify(s: str) -> str:
@@ -141,6 +153,38 @@ def base_dmfr(file_path: str, base_ref: str) -> Optional[dict]:
     return dmfr_at(f"origin/{base_ref}", file_path)
 
 
+def url_host(url: str) -> str:
+    return (urllib.parse.urlsplit(url).hostname or "").lower()
+
+
+def sample(items: list[T], limit: int, key: Callable[[T], str],
+           host: Callable[[T], str], first: Callable[[T], bool] = lambda _: False) -> list[T]:
+    """Up to limit items, or all of them when limit <= 0.
+
+    Items for which first() is true are taken before the rest. Within each of
+    those tiers, hosts take turns, so every host is represented before any
+    host gets a second pick. Each host's items are taken in a stable
+    pseudo-random order (by key), so a bulk change isn't checked only from the
+    top of the file.
+    """
+    if limit <= 0 or len(items) <= limit:
+        return list(items)
+    picked: list[T] = []
+    for tier in (True, False):
+        groups: dict[str, list[T]] = defaultdict(list)
+        for item in items:
+            if bool(first(item)) == tier:
+                groups[host(item)].append(item)
+        queues = [sorted(g, key=lambda i: hashlib.sha1(key(i).encode()).hexdigest())
+                  for _, g in sorted(groups.items())]
+        while queues and len(picked) < limit:
+            for q in queues:
+                if len(picked) < limit:
+                    picked.append(q.pop(0))
+            queues = [q for q in queues if q]
+    return picked
+
+
 def static_failure(report: dict) -> Optional[str]:
     """Why a `transitland validate` report fails the minimum bar, or None.
 
@@ -231,6 +275,16 @@ def load_operator_associated_feed_ids(feeds_dir: Path) -> set[str]:
                 if fid:
                     associated.add(fid)
     return associated
+
+
+@dataclass
+class Work:
+    """A feed with URLs that are new or changed in this PR."""
+    fid: str
+    feed: dict
+    base_feed: Optional[dict]
+    auth_type: Optional[str]
+    checks: list[tuple[str, str]]  # ("static" or an RT_KINDS short name, url)
 
 
 @dataclass
@@ -452,6 +506,10 @@ def main() -> int:
     parser.add_argument("--summary-out", type=Path, default=None, help="Write Markdown summary here; defaults to stdout.")
     parser.add_argument("--feeds-dir", type=Path, default=Path("feeds"),
                         help="Directory holding all *.dmfr.json files (used for operator-association advisory).")
+    parser.add_argument("--limit", type=int, default=0,
+                        help="Check at most this many feeds; 0 checks all.")
+    parser.add_argument("--time-budget", type=int, default=0,
+                        help="Stop starting new checks after this many seconds; 0 for no limit.")
     parser.add_argument("files", nargs="*", help="Changed DMFR file paths.")
     args = parser.parse_args()
 
@@ -478,12 +536,8 @@ def main() -> int:
         base_set = url_tuples(base, fp) if base else set()
         changed |= (head_set - base_set)
 
-    # 2. Per file, per feed: validate URL types whose tuple is in `changed`,
-    #    accumulate per-feed outcomes, append style advisories, render a
-    #    <details> block.
-    summary_parts: list[str] = []
-    any_blocker = False
-
+    # 2. Per file, per feed: collect the URL types whose tuple is in `changed`.
+    work: list[Work] = []
     for fp in args.files:
         head = head_dmfrs.get(fp)
         if head is None:
@@ -493,51 +547,76 @@ def main() -> int:
             fid = feed.get("id")
             if not fid:
                 continue
-            auth_type = (feed.get("authorization") or {}).get("type")
             urls = feed.get("urls") or {}
-            fbase = slugify(fid)
-
-            outcomes: list[Outcome] = []
-
+            checks: list[tuple[str, str]] = []
             static_url = urls.get("static_current")
             if isinstance(static_url, str) and (fp, "static_current", static_url) in changed:
-                if auth_type:
-                    outcomes.append(Outcome(
-                        bullet=f"- ⚪ static — skipped (auth: `{auth_type}`); validated by tlv2 — `{static_url}`",
-                        skipped=True,
-                    ))
-                else:
-                    outcomes.append(run_validate_static(static_url, args.reports_dir / f"{fbase}.static.json"))
-
+                checks.append(("static", static_url))
             for short, dmfr_key in RT_KINDS.items():
                 rt_url = urls.get(dmfr_key)
-                if not isinstance(rt_url, str):
-                    continue
-                if (fp, dmfr_key, rt_url) not in changed:
-                    continue
-                if auth_type:
-                    outcomes.append(Outcome(
-                        bullet=f"- ⚪ rt:{short} — skipped (auth: `{auth_type}`); validated by tlv2 — `{rt_url}`",
-                        skipped=True,
-                    ))
-                else:
-                    outcomes.append(run_rt_convert(short, rt_url, args.reports_dir / f"{fbase}.rt-{short}.json"))
+                if isinstance(rt_url, str) and (fp, dmfr_key, rt_url) in changed:
+                    checks.append((short, rt_url))
+            if checks:
+                work.append(Work(fid, feed, base_feed_for(base, feed),
+                                 (feed.get("authorization") or {}).get("type"), checks))
 
-            if not outcomes:
-                continue
+    # 3. Pick which feeds to fetch and fetch them, in the order picked, so
+    #    the time budget cuts the least important feeds. Auth-protected feeds
+    #    are never fetched here, so they cost nothing and are always reported.
+    fetchable = [w for w in work if not w.auth_type]
+    chosen = sample(fetchable, args.limit, key=lambda w: w.fid,
+                    host=lambda w: url_host(w.checks[0][1]), first=lambda w: w.base_feed is None)
+    deadline = time.monotonic() + args.time_budget if args.time_budget > 0 else None
+    results: dict[int, list[Outcome]] = {}
+    for w in chosen:
+        if deadline is not None and time.monotonic() > deadline:
+            break
+        fbase = slugify(w.fid)
+        results[id(w)] = [
+            run_validate_static(url, args.reports_dir / f"{fbase}.static.json") if kind == "static"
+            else run_rt_convert(kind, url, args.reports_dir / f"{fbase}.rt-{kind}.json")
+            for kind, url in w.checks
+        ]
 
-            # Style advisories — appended after URL outcomes, scoped to feeds
-            # that already have some change in this PR.
-            base_feed = base_feed_for(base, feed)
-            for advisory in (
-                advisory_static_history(feed, base_feed),
-                advisory_rt_operator_association(feed, base_feed, operator_feed_ids),
-            ):
-                if advisory:
-                    outcomes.append(advisory)
+    # 4. In file order: accumulate per-feed outcomes, append style
+    #    advisories, render a <details> block.
+    summary_parts: list[str] = []
+    unchecked: list[str] = []
+    any_blocker = False
 
-            any_blocker = any_blocker or any(o.blocker for o in outcomes)
-            summary_parts.append(render_feed_block(fid, outcomes))
+    for w in work:
+        if w.auth_type:
+            outcomes = [Outcome(
+                bullet=(f"- ⚪ {'static' if kind == 'static' else f'rt:{kind}'} — skipped "
+                        f"(auth: `{w.auth_type}`); validated by tlv2 — `{url}`"),
+                skipped=True,
+            ) for kind, url in w.checks]
+        elif id(w) in results:
+            outcomes = results[id(w)]
+        else:
+            unchecked.append(w.fid)
+            continue
+
+        # Style advisories — appended after URL outcomes, scoped to feeds
+        # that already have some change in this PR.
+        for advisory in (
+            advisory_static_history(w.feed, w.base_feed),
+            advisory_rt_operator_association(w.feed, w.base_feed, operator_feed_ids),
+        ):
+            if advisory:
+                outcomes.append(advisory)
+
+        any_blocker = any_blocker or any(o.blocker for o in outcomes)
+        summary_parts.append(render_feed_block(w.fid, outcomes))
+
+    if unchecked:
+        (args.reports_dir / "unchecked.txt").write_text("\n".join(unchecked) + "\n")
+        summary_parts.insert(0, (
+            f"Checked {len(fetchable) - len(unchecked)} of {len(fetchable)} changed feeds; "
+            f"{len(unchecked)} {'was' if len(unchecked) == 1 else 'were'} not checked, to keep this job short. They are listed "
+            f"in `unchecked.txt` in the reports artifact. Add the `validate-all` label "
+            f"and re-run the job to check every feed.\n"
+        ))
 
     summary_md = "".join(summary_parts)
     if args.summary_out:

@@ -25,6 +25,7 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+      pull-requests: read
     steps:
       # Full history for merge-base, but blobless: only the DMFR files that
       # are actually read get downloaded.
@@ -59,18 +60,39 @@ jobs:
       - name: Install transitland-lib
         run: scripts/install-transitland-lib.sh
 
+      # Large PRs are sampled to keep the job short. Labels are read now,
+      # not from the event, so adding validate-all and re-running the job
+      # checks every feed.
+      - name: Set limits
+        id: limits
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          labels=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR_NUMBER/labels" --jq '.[].name')
+          if printf '%s\n' "$labels" | grep -qx validate-all; then
+            echo "limit=0" >> "$GITHUB_OUTPUT"
+            echo "time_budget=0" >> "$GITHUB_OUTPUT"
+          else
+            echo "limit=25" >> "$GITHUB_OUTPUT"
+            echo "time_budget=1200" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Fetch and validate old and new static_current URLs
         env:
           BASE: ${{ steps.revs.outputs.base }}
           HEAD: ${{ github.event.pull_request.head.sha }}
+          LIMIT: ${{ steps.limits.outputs.limit }}
+          TIME_BUDGET: ${{ steps.limits.outputs.time_budget }}
         run: |
           mkdir -p reports
           changed=$(git diff --name-only "$BASE" "$HEAD" -- 'feeds/*.dmfr.json')
           mapfile -t files < <(printf '%s\n' "$changed" | sed '/^$/d')
           uv run scripts/compare-changed-feed-urls.py probe \
-            --base "$BASE" --head "$HEAD" "${files[@]}" > reports/probes.json
+            --base "$BASE" --head "$HEAD" --limit "$LIMIT" --time-budget "$TIME_BUDGET" \
+            "${files[@]}" > reports/probes.json
 
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: feed-url-probes
           path: reports/probes.json
@@ -88,7 +110,7 @@ jobs:
           persist-credentials: false
           sparse-checkout: scripts
 
-      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: feed-url-probes
           path: reports
@@ -105,7 +127,7 @@ jobs:
             cat reports/compare.md >> "$GITHUB_STEP_SUMMARY"
           fi
 
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: feed-url-comparison
           path: reports/compare.md

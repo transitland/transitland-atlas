@@ -25,6 +25,17 @@
       "urls": {
         "static_current": "http://actv.avmspa.it/sites/default/files/attachments/opendata/navigazione/actv_nav.zip"
       }
+    },
+    {
+      "id": "f-u20f-actvspa~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tpl.actv.it/nav/GTFSRT/vehiclePositions",
+        "realtime_trip_updates": "https://tpl.actv.it/nav/GTFSRT/tripUpdates"
+      },
+      "tags": {
+        "mdb_source_id": "3421,3422"
+      }
     }
   ],
   "operators": [
@@ -44,6 +55,9 @@
         {
           "gtfs_agency_id": "ACTV S.p.a",
           "feed_onestop_id": "f-u20f-actvspa"
+        },
+        {
+          "feed_onestop_id": "f-u20f-actvspa~rt"
         }
       ]
     }

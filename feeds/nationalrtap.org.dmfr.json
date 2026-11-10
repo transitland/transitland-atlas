@@ -53,7 +53,8 @@
           "short_name": "FCRTA",
           "tags": {
             "calitp_organization_id": "rec3d3ltF8TijTaTx",
-            "us_ntd_id": "91007"
+            "us_ntd_id": "91007",
+            "wikidata_id": "Q113318891"
           }
         }
       ]
@@ -460,6 +461,13 @@
       ]
     },
     {
+      "id": "f-c26-yakimatransit~route~11",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13648/yakima_wa_rt11_gtfs.zip"
+      }
+    },
+    {
       "id": "f-carson~ca~us",
       "spec": "gtfs",
       "urls": {
@@ -667,11 +675,23 @@
         {
           "onestop_id": "o-cityofconroe~tx~us",
           "name": "City of Conroe",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-cityofconroe~tx~us~fixed~route"
+            }
+          ],
           "tags": {
             "us_ntd_id": "60129"
           }
         }
       ]
+    },
+    {
+      "id": "f-cityofconroe~tx~us~fixed~route",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11634/COCFixedRouteFY26.zip"
+      }
     },
     {
       "id": "f-cityofcoralsprings~fl~us",
@@ -1118,11 +1138,23 @@
         {
           "onestop_id": "o-city~of~fort~lauderdale",
           "name": "City of Fort Lauderdale",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-city~of~fort~lauderdale~community~shuttles"
+            }
+          ],
           "tags": {
             "us_ntd_id": "44929"
           }
         }
       ]
+    },
+    {
+      "id": "f-city~of~fort~lauderdale~community~shuttles",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11865/CFL_FL_GTFS.zip"
+      }
     },
     {
       "id": "f-city~of~kokomo",
@@ -1417,6 +1449,26 @@
       ]
     },
     {
+      "id": "f-dnq-salisburytransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13035/GTFSExportSource.zip",
+        "static_historic": [
+          "https://www.arcgis.com/sharing/rest/content/items/45036cb56c73428db025acd290e7beaa/data"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dnq-salisburytransit",
+          "name": "Salisbury Transit",
+          "website": "https://salisburync.gov/Government/Transit",
+          "tags": {
+            "us_ntd_id": "40233"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dnq5-greenwaypublictransportation",
       "spec": "gtfs",
       "urls": {
@@ -1466,11 +1518,6 @@
           "name": "Piedmont Authority for Regional Transportation",
           "short_name": "PART",
           "website": "https://www.partnc.org/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-dnr-piedmontauthorityforregionaltransportation~rt"
-            }
-          ],
           "tags": {
             "twitter_general": "partnc",
             "us_ntd_id": "40173",
@@ -1490,6 +1537,11 @@
           "onestop_id": "o-douglas~az",
           "name": "Douglas Rides",
           "website": "https://www.douglasaz.gov/283/Public-Transportation",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "Douglas"
+            }
+          ],
           "tags": {
             "us_ntd_id": "91052"
           }
@@ -1947,6 +1999,9 @@
     },
     {
       "id": "f-gulfcoasttransitdistrict~tx~us",
+      "supersedes_ids": [
+        "f-gulfcoastcenter~tx~us"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13561/GCTD_TX_GTFS.zip"
@@ -1954,6 +2009,9 @@
       "operators": [
         {
           "onestop_id": "o-gulfcoasttransitdistrict~tx~us",
+          "supersedes_ids": [
+            "o-gulfcoastcenter~tx~us"
+          ],
           "name": "Gulf Coast Transit District",
           "tags": {
             "us_ntd_id": "60275"
@@ -2132,6 +2190,27 @@
       ]
     },
     {
+      "id": "f-jackson~tn~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11658/jta_tn_gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/jackson-tn-us/jackson-tn-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dn2f-jacksontransitauthority",
+          "name": "Jackson Transit Authority",
+          "short_name": "JTA",
+          "website": "https://www.ridejta.com/",
+          "tags": {
+            "us_ntd_id": "40057"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-jalbertleasinginc~nh~us",
       "spec": "gtfs",
       "urls": {
@@ -2302,6 +2381,31 @@
       ]
     },
     {
+      "id": "f-macatawa~area~express",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/14960/MAXGTFS.zip",
+        "static_historic": [
+          "https://catchamax.org/wp-content/maxgtfs/MAXGTFS.zip"
+        ]
+      },
+      "license": {
+        "url": "https://catchamax.org/routes-schedules/"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-macatawa~area~express",
+          "name": "Macatawa Area Express",
+          "short_name": "MAX",
+          "website": "https://catchamax.org/",
+          "tags": {
+            "us_ntd_id": "50184",
+            "wikidata_id": "Q6722682"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-mainedepartmentoftransportation~me~us",
       "spec": "gtfs",
       "urls": {
@@ -2457,6 +2561,27 @@
           "website": "https://miamiaz.gov/services/transit-information/",
           "tags": {
             "us_ntd_id": "91069"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-mid~ohio~valley~transit~authority",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13612/MOVTA_GTFS.zip",
+        "static_historic": [
+          "https://easyriderbus.com/wp-content/uploads/2024/11/MOVTA.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-mid~ohio~valley~transit~authority",
+          "name": "Mid-Ohio Valley Transit Authority",
+          "short_name": "MOVTA",
+          "website": "https://easyriderbus.com/",
+          "tags": {
+            "us_ntd_id": "30003"
           }
         }
       ]
@@ -3221,6 +3346,26 @@
       ]
     },
     {
+      "id": "f-quailtrail~or~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11851/TheKlamathTribesGTFS.zip",
+        "static_historic": [
+          "https://oregon-gtfs.trilliumtransit.com/gtfs_data/quailtrail-or-us/quailtrail-or-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9r9-quailtrail",
+          "name": "Quail Trail Public Transit",
+          "website": "https://klamathtribes.org/quail-trail-bus-schedule/",
+          "tags": {
+            "us_ntd_id": "00010"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-rapid~city~sd~us",
       "spec": "gtfs",
       "urls": {
@@ -3307,6 +3452,26 @@
           "tags": {
             "us_ntd_id": "50159",
             "wikidata_id": "Q7337932"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-roswell~nm~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13693/roswell_nm_gtfs.zip",
+        "static_historic": [
+          "https://www.roswell-nm.gov/DocumentCenter/View/24460/gtfs"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-roswell~nm~us",
+          "name": "Roswell Transit",
+          "website": "https://www.roswell-nm.gov/290/Bus-Routes-Information",
+          "tags": {
+            "us_ntd_id": "60167"
           }
         }
       ]
@@ -3683,6 +3848,9 @@
     },
     {
       "id": "f-the~community~pantry",
+      "supersedes_ids": [
+        "f-gallup~express"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11576/get_gtfs.zip"

@@ -43,6 +43,35 @@
       ]
     },
     {
+      "id": "f-9q9y-escalon~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/escalon_ca.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/escalon-ca-us/escalon-ca-us.zip"
+        ]
+      },
+      "tags": {
+        "calitp_dataset_id": "recMzKv5DM4VyLAdO"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9q9y-escalon~ca~us",
+          "name": "City of Escalon eTrans",
+          "website": "https://www.cityofescalon.org/government/departments/transit_service",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9q9y-escalon~ca~us~rt"
+            }
+          ],
+          "tags": {
+            "calitp_organization_id": "recNeVOEwWUtYe8xm",
+            "us_ntd_id": "91078"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-albany~ga~us",
       "spec": "gtfs",
       "urls": {
@@ -163,6 +192,48 @@
           "tags": {
             "us_ntd_id": "50148",
             "wikidata_id": "Q4930000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-boprc~nz",
+      "supersedes_ids": [
+        "f-baybus~nz"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://au-gtfs.remix.com/boprc-nz-public.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/boprc-nz/boprc-nz.zip"
+        ]
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://faqs.baybus.co.nz/hc/en-nz/articles/360003926075-General-Transit-Feed-Specification",
+        "use_without_attribution": "no"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rcm-baybus",
+          "name": "Baybus",
+          "website": "https://www.baybus.co.nz",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "BP_KINETIC"
+            },
+            {
+              "gtfs_agency_id": "BP_KIWIKABS"
+            },
+            {
+              "gtfs_agency_id": "BP_RITCHIES"
+            },
+            {
+              "gtfs_agency_id": "BP_UZABUS"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q112189811"
           }
         }
       ]
@@ -364,6 +435,23 @@
       ]
     },
     {
+      "id": "f-lathrop~transit~ca~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs.remix.com/cityoflathrop.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-lathrop~transit~ca~us",
+          "name": "Lathrop Transit",
+          "website": "https://www.lathroptransit.com/",
+          "tags": {
+            "us_ntd_id": "99479"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-lorain~county~oh~us",
       "spec": "gtfs",
       "urls": {
@@ -377,6 +465,23 @@
           "tags": {
             "us_ntd_id": "50095",
             "wikidata_id": "Q6678737"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-nrc~nz",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://au-gtfs.remix.com/nrc-nz-public.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-rc-citylinkwhangarei",
+          "name": "CityLink Whangārei",
+          "website": "https://citylinkwhangarei.co.nz",
+          "tags": {
+            "wikidata_id": "Q112189837"
           }
         }
       ]
@@ -417,7 +522,8 @@
           "website": "https://tuolumnecountytransit.com/",
           "tags": {
             "calitp_organization_id": "reclbzT9trIiGwjBB",
-            "us_ntd_id": "91057"
+            "us_ntd_id": "91057",
+            "wikidata_id": "Q14509110"
           }
         }
       ]

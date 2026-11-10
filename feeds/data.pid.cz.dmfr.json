@@ -3,6 +3,9 @@
   "feeds": [
     {
       "id": "f-u2f-pražskáintegrovanádoprava",
+      "supersedes_ids": [
+        "f-u2f-dpp"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "http://data.pid.cz/PID_GTFS.zip"
@@ -16,14 +19,30 @@
       "operators": [
         {
           "onestop_id": "o-u2f-pražskáintegrovanádoprava",
+          "supersedes_ids": [
+            "o-u2f-arrivaprahasro",
+            "o-u2f-csadstrednicechyas",
+            "o-u2f5-arrivastrednicechysro",
+            "o-u2f5-martinuherspolsro",
+            "o-u2fh-prazskebenatkysro",
+            "o-u2fh-probobusas",
+            "o-u2fhxz-vittusgroupsro",
+            "o-u2fj-csadmhdkladnoas",
+            "o-u2fjt-vlastimilslezak",
+            "o-u2fk-aboutmesro",
+            "o-u2fk-dopravnipodnikhlmprahyakciovaspolecnost",
+            "o-u2fk-stenbussro",
+            "o-u2fkbz-prazskaparoplavebnispolecnostas",
+            "o-u2fm4-jaroslavstepanek",
+            "o-u2fs-csadpolkostspolsro",
+            "o-u2fs-okresniautobusovadopravakolinsro"
+          ],
           "name": "Pražská integrovaná doprava",
           "short_name": "PID",
           "website": "https://pid.cz",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "99"
-            }
-          ]
+          "tags": {
+            "wikidata_id": "Q2108171"
+          }
         }
       ]
     }

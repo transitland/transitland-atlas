@@ -21,6 +21,15 @@
           "website": "http://www.sctbus.org",
           "associated_feeds": [
             {
+              "gtfs_agency_id": "262"
+            },
+            {
+              "gtfs_agency_id": "265"
+            },
+            {
+              "gtfs_agency_id": "272"
+            },
+            {
               "feed_onestop_id": "f-drk-ny~suffolkcountytransit~rt"
             }
           ],
@@ -32,6 +41,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-drk-ny~suffolkcountytransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://tracksctbus.org/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://tracksctbus.org/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://tracksctbus.org/gtfs-rt/alerts"
+      }
     }
   ]
 }

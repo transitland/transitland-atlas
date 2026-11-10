@@ -182,7 +182,7 @@
             "calitp_organization_id": "rec2JrGQTZZh54ieL",
             "twitter_general": "clovistransit",
             "us_ntd_id": "90313",
-            "wikidata_id": "Q113396103"
+            "wikidata_id": "Q113396103;Q130391671"
           }
         }
       ]
@@ -568,6 +568,7 @@
               "feed_onestop_id": "f-c214-sandy~or~us~rt"
             },
             {
+              "gtfs_agency_id": "86",
               "feed_onestop_id": "f-sandy~or~us~flex"
             }
           ],
@@ -1378,6 +1379,18 @@
       }
     },
     {
+      "id": "f-dr0b-transitservicesoffrederickcounty~rt",
+      "supersedes_ids": [
+        "f-dr0b-transitservicesoffrederickcounty~rt~alerts"
+      ],
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/frederick/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/frederick/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/frederick/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
       "id": "f-dr1b-harfordtransitlink",
       "supersedes_ids": [
         "f-hartford~county~md"
@@ -1543,6 +1556,40 @@
         "realtime_vehicle_positions": "https://passio3.com/edmond/passioTransit/gtfs/realtime/vehiclePositions",
         "realtime_trip_updates": "https://passio3.com/edmond/passioTransit/gtfs/realtime/tripUpdates",
         "realtime_alerts": "https://passio3.com/edmond/passioTransit/gtfs/realtime/serviceAlerts"
+      }
+    },
+    {
+      "id": "f-ewr~airport~shuttles~nj",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/ewrpanynj/passioTransit/gtfs/google_transit.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr5px-portauthorityofnewyorkandnewjersey",
+          "name": "Port Authority of New York and New Jersey",
+          "website": "https://www.newarkairport.com/at-airport/airtrain-and-shuttles",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-ewr~airport~shuttles~nj~rt"
+            },
+            {
+              "feed_onestop_id": "f-newark~airtrain~nj"
+            }
+          ],
+          "tags": {
+            "wikidata_id": "Q908666;Q542145"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-ewr~airport~shuttles~nj~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/ewrpanynj/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/ewrpanynj/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/ewrpanynj/passioTransit/gtfs/realtime/serviceAlerts"
       }
     },
     {

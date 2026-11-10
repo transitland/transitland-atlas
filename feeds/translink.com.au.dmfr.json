@@ -113,15 +113,7 @@
       },
       "license": {
         "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/254f67be-ea12-4da1-8475-c5424359290e"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-r7g8-qconnect~buslink",
-          "name": "Buslink",
-          "short_name": "Gladstone qconnect",
-          "website": "http://buslink.com.au/your-bus-service/"
-        }
-      ]
+      }
     },
     {
       "id": "f-r7h-translink",
@@ -166,14 +158,7 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/81202b71-e93b-4707-a991-4a03c4c0d3bb"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-r7hw-qconnect~kilcoy",
-          "name": "Christensen's Bus and Coach",
-          "website": "https://www.qld.gov.au/transport/public/transport/timetables/qconnect/kilcoy"
-        }
-      ]
+      }
     },
     {
       "id": "f-r7hx-translinkcomau",
@@ -187,14 +172,7 @@
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "attribution_text": "Queensland Government"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-r7hx-qconnect~glasshousecountrycoaches",
-          "name": "Glasshouse Country Coaches",
-          "website": "https://glasshousecoaches.com.au/"
-        }
-      ]
+      }
     },
     {
       "id": "f-r7ke-qconnect~gympie",
@@ -205,14 +183,7 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/e0366e86-298d-49e5-adbd-7be68c9e4b44"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-r7ke-qconnect~gympie",
-          "name": "Polleys Coaches",
-          "website": "http://www.polleys.com.au"
-        }
-      ]
+      }
     },
     {
       "id": "f-r7s6-qconnect~duffys~stewarts",
@@ -223,14 +194,7 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/699184c3-8c0e-44db-8a83-7e23709aefbe"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-r7s6-qconnect~duffys~stewarts",
-          "name": "Duffy's Buses and Stewarts & Sons Coaches",
-          "website": "https://www.qld.gov.au/transport/public/transport/timetables/qconnect/bundaberg"
-        }
-      ]
+      }
     },
     {
       "id": "f-rhzu-qconnect~transnorth",
@@ -325,14 +289,7 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/2f002735-7373-46f0-b63d-8ba3a0b28f65"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-rk3s-qconnect~whitsundaytransit",
-          "name": "Whitsunday Transit",
-          "website": "http://www.whitsundaytransit.com.au/"
-        }
-      ]
+      }
     },
     {
       "id": "f-rk86-qconnect~sunbus",
@@ -343,14 +300,7 @@
       "license": {
         "spdx_identifier": "CC-BY-4.0",
         "url": "https://www.data.qld.gov.au/dataset/general-transit-feed-specification-gtfs-qconnect/resource/52000300-84cf-4a16-b85f-66c9debdb6b6"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-rk86-qconnect~sunbus",
-          "name": "Townsville Sunbus",
-          "website": "http://www.sunbus.com.au"
-        }
-      ]
+      }
     },
     {
       "id": "f-translink~mackay",
@@ -376,6 +326,15 @@
   "operators": [
     {
       "onestop_id": "o-r-translink",
+      "supersedes_ids": [
+        "o-r7g8-qconnect~buslink",
+        "o-r7hw-qconnect~kilcoy",
+        "o-r7hx-qconnect~glasshousecountrycoaches",
+        "o-r7ke-qconnect~gympie",
+        "o-r7s6-qconnect~duffys~stewarts",
+        "o-rk3s-qconnect~whitsundaytransit",
+        "o-rk86-qconnect~sunbus"
+      ],
       "name": "Translink",
       "website": "http://translink.com.au",
       "associated_feeds": [
@@ -407,6 +366,91 @@
           "feed_onestop_id": "f-r7g8-qconnect~buslink"
         },
         {
+          "gtfs_agency_id": "5",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "4",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "20",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "9",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "8",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "7",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "6",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "21",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "42",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "41",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "40",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "18",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "32",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "30",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "25",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "10",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "11",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "12",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "13",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "14",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "15",
+          "feed_onestop_id": "f-r7h-translink"
+        },
+        {
+          "gtfs_agency_id": "16",
           "feed_onestop_id": "f-r7h-translink"
         },
         {

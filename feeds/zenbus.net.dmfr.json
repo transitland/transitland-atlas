@@ -439,6 +439,9 @@
     },
     {
       "id": "f-zenbus~bigorre~mongie",
+      "supersedes_ids": [
+        "f-villebagneredebigorre~navettes~bagn"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=bigorre-mongie"
@@ -626,7 +629,9 @@
       "id": "f-zenbus~coeur~de~tarentaise",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=coeur-de-tarentaise"
+        "static_historic": [
+          "https://zenbus.net/gtfs/static/download.zip?dataset=coeur-de-tarentaise"
+        ]
       },
       "license": {
         "spdx_identifier": "ODbL-1.0",
@@ -637,27 +642,9 @@
         {
           "onestop_id": "o-zenbus~coeur~de~tarentaise",
           "name": "Navettes Coeur de Tarentaise",
-          "website": "https://www.coeurdetarentaise.fr/navettes/",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-zenbus~coeur~de~tarentaise~rt"
-            }
-          ]
+          "website": "https://coeurdetarentaise.fr/mobilite/"
         }
       ]
-    },
-    {
-      "id": "f-zenbus~coeur~de~tarentaise~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://zenbus.net/gtfs/rt/poll.proto?file=vp&dataset=coeur-de-tarentaise",
-        "realtime_trip_updates": "https://zenbus.net/gtfs/rt/poll.proto?file=tu&dataset=coeur-de-tarentaise"
-      },
-      "license": {
-        "spdx_identifier": "ODbL-1.0",
-        "url": "http://opendatacommons.org/licenses/odbl/summary/",
-        "share_alike_optional": "no"
-      }
     },
     {
       "id": "f-zenbus~granville~rt",
@@ -1543,6 +1530,9 @@
     },
     {
       "id": "f-zenbus~valmorel",
+      "supersedes_ids": [
+        "f-valmorel~navettes~saisonni~fr"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://zenbus.net/gtfs/static/download.zip?dataset=valmorel"
