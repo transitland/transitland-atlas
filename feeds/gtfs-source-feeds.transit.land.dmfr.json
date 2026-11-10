@@ -2,6 +2,27 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-9zv-northfieldlines",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/northfield-lines-mn-us.zip"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "gtfs_source": "interline-created"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9zv-northfieldlines",
+          "name": "Northfield Lines",
+          "website": "https://northfieldlines.com"
+        }
+      ]
+    },
+    {
       "id": "f-alavabus",
       "spec": "gtfs",
       "urls": {
@@ -6346,6 +6367,31 @@
           "onestop_id": "o-dn5bpr-atlanticstationshuttle",
           "name": "Atlantic Station Shuttle",
           "website": "http://asap-plus.com"
+        }
+      ]
+    },
+    {
+      "id": "f-dp8-badgerbus",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gtfs-source-feeds.transit.land/badger-bus-wi-us.zip"
+      },
+      "authorization": {
+        "type": "query_param",
+        "param_name": "token"
+      },
+      "tags": {
+        "gtfs_source": "interline-created"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dp8-badgerbus",
+          "name": "Badger Bus",
+          "website": "https://badgerbus.com",
+          "tags": {
+            "twitter_general": "badgerbus",
+            "wikidata_id": "Q4840840"
+          }
         }
       ]
     },
