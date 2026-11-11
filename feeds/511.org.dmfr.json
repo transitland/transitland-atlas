@@ -5,63 +5,49 @@
       "id": "f-9q8-samtrans",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SM",
+        "static_current": "https://www.samtrans.com/Assets/GTFS/samtrans/ST-GTFS.zip",
         "static_historic": [
+          "http://api.511.org/transit/datafeeds?operator_id=SM",
           "http://www.samtrans.com/Assets/GTFS/samtrans/ST-GTFS.zip"
         ]
       },
       "license": {
-        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
-        "use_without_attribution": "no",
-        "create_derived_product": "yes",
+        "url": "https://www.samtrans.com/developer",
+        "use_without_attribution": "yes",
         "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
-        "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
+        "share_alike_optional": "yes"
       },
       "tags": {
-        "calitp_dataset_id": "recfkVrxPHPaWOs4J",
+        "calitp_dataset_id": "recX90s2FvBpenv2h",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
       "id": "f-9q8y-sfmta",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://api.511.org/transit/datafeeds?operator_id=SF",
+        "static_current": "https://muni-gtfs.apps.sfmta.com/data/muni_gtfs-current.zip",
         "static_historic": [
+          "http://api.511.org/transit/datafeeds?operator_id=SF",
           "https://gtfs.sfmta.com/transitdata/google_transit.zip"
         ]
       },
       "license": {
-        "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
+        "url": "https://www.sfmta.com/reports/gtfs-transit-data",
         "use_without_attribution": "no",
         "create_derived_product": "yes",
         "redistribution_allowed": "yes",
         "commercial_use_allowed": "yes",
         "share_alike_optional": "yes",
-        "attribution_text": "data provided by 511.org",
-        "attribution_instructions": "MUST acknowledge the source of the Provided Data with the tag line \"powered by 511.org,\" or \"data provided by 511.org,\" or a variant approved in writing by MTC, and a link to http://www.511.org.  The acknowledgement must be in visual proximity to the user's access to the Provided Data.  If space allows, Registered Data Disseminators are encouraged to provide the MTC 511 + Design logo with the link to 511.org."
-      },
-      "authorization": {
-        "type": "query_param",
-        "param_name": "api_key",
-        "info_url": "https://511.org/open-data/token"
+        "attribution_text": "Reproduced with permission granted by the City and County of San Francisco. The information has been provided by means of a nonexclusive, limited, and revocable license granted by the City and County of San Francisco.",
+        "attribution_instructions": "Derivative versions of the data must bear the attribution text as a notice, followed by the City and County of San Francisco's warranty disclaimer (license clause 12). Applications must include SFMTA's liability disclaimer in their use agreements (clause 4)."
       },
       "tags": {
-        "calitp_dataset_id": "recHD22phgJs34JHP",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "san-francisco-municipal-transportation-agency",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -77,8 +63,7 @@
       "tags": {
         "calitp_dataset_id": "recYF7Q2jDcnds5p2",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -172,9 +157,9 @@
         "attribution_instructions": "You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use."
       },
       "tags": {
+        "calitp_dataset_id": "reca8NS1B4WihN0UT",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -192,8 +177,7 @@
         "calitp_dataset_id": "recQq3GpyffbkrgT2",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "airbart",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -205,8 +189,7 @@
       "tags": {
         "calitp_dataset_id": "recp9Cu1ijAtvNO5I",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -222,6 +205,11 @@
       "license": {
         "spdx_identifier": "ODC-By-1.0",
         "url": "https://mvgo.org/developers/"
+      },
+      "tags": {
+        "calitp_dataset_id": "recPaoIofwyr3FrdM",
+        "exclude_from_global_query": "true",
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -237,8 +225,7 @@
       "tags": {
         "calitp_dataset_id": "recOdlAUeG1fIkFcr",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -304,8 +291,7 @@
       "tags": {
         "calitp_dataset_id": "rec31HN1JsyDoFxXb",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -364,7 +350,10 @@
       "id": "f-9q9q-wheelsbus",
       "spec": "gtfs",
       "urls": {
-        "static_current": "http://webwatch.lavta.org/TMGTFSRealTimeWebService/GTFS-Static/google_transit.zip"
+        "static_current": "http://38.48.64.101:81/GTFS-Static/lavta_gtfs.zip",
+        "static_historic": [
+          "http://webwatch.lavta.org/TMGTFSRealTimeWebService/GTFS-Static/google_transit.zip"
+        ]
       },
       "license": {
         "url": "http://www.wheelsbus.com/lavta-developer-license-agreement/",
@@ -373,9 +362,9 @@
         "attribution_text": "Visit http://www.wheelsbus.com/ for more information."
       },
       "tags": {
+        "calitp_dataset_id": "reccgOU5kmazwtljC",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -387,25 +376,24 @@
       "tags": {
         "calitp_dataset_id": "recP6Gkpe9D4cPVdw",
         "exclude_from_global_query": "true",
-        "gtfs_data_exchange": "golden-gate-transit"
+        "gtfs_data_exchange": "golden-gate-transit",
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
       "id": "f-9qb-sonomacounty~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/sonomacounty-ca-us/sonomacounty-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "static_current": "https://ridesctransit.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/sonomacounty-ca-us/sonomacounty-ca-us.zip"
+        ]
       },
       "tags": {
-        "calitp_dataset_id": "recS9dL7UTYLgg4r9",
+        "calitp_dataset_id": "recfFVzUtQCW8ea9m",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "cloverdale-transit",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -418,10 +406,10 @@
         ]
       },
       "tags": {
+        "calitp_dataset_id": "recOKNFbyRBuF6OZE",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "marin-transit",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -471,8 +459,7 @@
         "calitp_dataset_id": "recAnCJx2p6FuGcSg",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "citybus",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -491,26 +478,23 @@
       "tags": {
         "calitp_dataset_id": "recIUAJZhamq51hyM",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
       "id": "f-9qc-fairfield~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/fairfield-ca-us/fairfield-ca-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13774/fairfield-ca-us.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/fairfield-ca-us/fairfield-ca-us.zip"
+        ]
       },
       "tags": {
         "calitp_dataset_id": "recI7kYNWSEKTMMiq",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "fairfield-and-suisun-transit",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -553,8 +537,7 @@
       "tags": {
         "calitp_dataset_id": "recIMktb9PQnjrzyw",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -574,8 +557,7 @@
         "calitp_dataset_id": "recGXZ0OHRvNm0pF5",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "soltrans",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -619,8 +601,7 @@
         "calitp_dataset_id": "recLWOfHYFCLluD2S",
         "exclude_from_global_query": "true",
         "gtfs_data_exchange": "rio-vista-delta-breeze",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     },
     {
@@ -746,8 +727,7 @@
       "tags": {
         "calitp_dataset_id": "recTDwQLC6SP0uypH",
         "exclude_from_global_query": "true",
-        "manual_import": "true",
-        "notes": "This individual agency feed is fetched and archived but not imported. Agency is imported from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
       }
     }
   ],
@@ -770,6 +750,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recw3mRsmKDTNnVlT",
         "omd_provider_id": "samtrans",
         "twitter_general": "SamTrans",
         "us_ntd_id": "90009",
@@ -794,10 +775,24 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "rechaapWbeffO33OX",
         "omd_provider_id": "sfmta",
         "twitter_general": "sfmta_muni",
         "us_ntd_id": "90015",
         "wikidata_id": "Q1140138;Q7414072;Q278074"
+      }
+    },
+    {
+      "onestop_id": "o-9q8yn-cityofsouthsanfrancisco",
+      "name": "City of South San Francisco",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SS",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "calitp_organization_id": "recPtsCi89lKcXaTW"
       }
     },
     {
@@ -814,8 +809,22 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recd6X5l7vkBXk9hc",
         "twitter_general": "flySFO",
         "wikidata_id": "Q8688;Q1826452"
+      }
+    },
+    {
+      "onestop_id": "o-9q8yv-sanfranciscorecreationandparks",
+      "name": "San Francisco Recreation and Parks",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "GP",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "calitp_organization_id": "rechaapWbeffO33OX"
       }
     },
     {
@@ -835,6 +844,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recXIO3srSe6F77pC",
         "omd_provider_id": "mission-bay-tma",
         "twitter_general": "MissionBayTMA"
       }
@@ -853,9 +863,38 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recoX7qMhlPrgfuz3",
         "twitter_general": "GGBridge",
         "twitter_service_alerts": "GGBridgeAlerts",
+        "us_ntd_id": "90016",
         "wikidata_id": "Q5579447"
+      }
+    },
+    {
+      "onestop_id": "o-9q8zmw-angelislandtiburonferry",
+      "name": "Angel Island Tiburon Ferry",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "AF",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "calitp_organization_id": "rec0HI0gloltUftYg"
+      }
+    },
+    {
+      "onestop_id": "o-9q8zp-treasureislandferry",
+      "name": "Treasure Island Ferry",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "TF",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "calitp_organization_id": "recnW07VirRBSXgRe",
+        "wikidata_id": "Q113230950"
       }
     },
     {
@@ -868,6 +907,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recQ07Jb5wyTgPzm7",
         "omd_provider_id": "tideline-water-taxi",
         "twitter_general": "tidelinesf"
       }
@@ -893,6 +933,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recpgYVeU3VePMeWx",
         "twitter_general": "ACE_train",
         "us_ntd_id": "90182",
         "wikidata_id": "Q434302"
@@ -916,6 +957,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recOZgevYf7Jimm9L",
         "twitter_general": "rideact",
         "us_ntd_id": "90014",
         "wikidata_id": "Q4353850"
@@ -939,6 +981,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recoQLeNRISCKF8I0",
         "omd_provider_id": "bart",
         "twitter_general": "sfbart",
         "twitter_service_alerts": "SFBARTalert",
@@ -965,10 +1008,28 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recC5CT95EufmQCXr",
         "twitter_general": "VTA",
         "twitter_service_alerts": "VTAservice",
         "us_ntd_id": "90013",
         "wikidata_id": "Q1456861;Q1337235"
+      }
+    },
+    {
+      "onestop_id": "o-9q9ht-mountainviewcommunityshuttle",
+      "name": "Mountain View Community Shuttle",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "MC",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        },
+        {
+          "gtfs_agency_id": "MC",
+          "feed_onestop_id": "f-sf~bay~area~rg~rt"
+        }
+      ],
+      "tags": {
+        "calitp_organization_id": "rec4pDiUorjWbUfvU"
       }
     },
     {
@@ -990,6 +1051,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recIeP8mUucOsbvbz",
         "twitter_general": "MvgoShuttle",
         "wikidata_id": "Q110544427;Q110544414"
       }
@@ -1008,6 +1070,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "reczvlrgxLUDiBgAy",
         "twitter_general": "SMCountyCommute",
         "wikidata_id": "Q7162971"
       }
@@ -1030,6 +1093,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recn8zTmGbYZv1qxV",
         "twitter_general": "rideact",
         "wikidata_id": "Q5313687"
       }
@@ -1051,6 +1115,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recmB4uxrVLRXYF3L",
         "twitter_general": "UnionCityCA_Gov",
         "us_ntd_id": "90161",
         "wikidata_id": "Q7885556"
@@ -1063,6 +1128,9 @@
       "website": "http://www.countyconnection.com/",
       "associated_feeds": [
         {
+          "feed_onestop_id": "f-9q9p-countyconnection"
+        },
+        {
           "gtfs_agency_id": "CC",
           "feed_onestop_id": "f-sf~bay~area~rg"
         },
@@ -1072,6 +1140,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recjnaKVDEgulsko3",
         "twitter_general": "cccta",
         "us_ntd_id": "90078",
         "wikidata_id": "Q5177640"
@@ -1094,10 +1163,24 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recmatCuQAUrNcs8j",
         "twitter_general": "SFBayFerry",
         "twitter_service_alerts": "SFBFBayAlerts",
         "us_ntd_id": "90225",
         "wikidata_id": "Q7413935"
+      }
+    },
+    {
+      "onestop_id": "o-9q9p1-emeryexpress",
+      "name": "Emery Express",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "EE",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "calitp_organization_id": "recMC4gsvf7C5bgx2"
       }
     },
     {
@@ -1118,6 +1201,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "rec75nESVRqpwNiLv",
         "twitter_general": "emeryvilleca",
         "wikidata_id": "Q5370986"
       }
@@ -1140,6 +1224,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recANs4M9yDhvDyob",
         "twitter_general": "wheelsbus",
         "us_ntd_id": "90144",
         "wikidata_id": "Q7950139"
@@ -1164,6 +1249,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recoX7qMhlPrgfuz3",
         "omd_provider_id": "golden-gate-bridge-highway-transportation-district",
         "twitter_general": "GGBridge",
         "twitter_service_alerts": "GGBridgeAlerts",
@@ -1190,6 +1276,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recDupUxInMUgxeiz",
         "twitter_general": "SoCo_TPW",
         "us_ntd_id": "90089",
         "wikidata_id": "Q7562177"
@@ -1213,6 +1300,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recUmm4gcNXaqrwpn",
         "twitter_general": "smarttrain",
         "us_ntd_id": "90299",
         "wikidata_id": "Q7562166"
@@ -1237,6 +1325,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recNOb7pqBRlQVG5e",
         "twitter_general": "marintransit",
         "us_ntd_id": "90234",
         "wikidata_id": "Q6763758"
@@ -1260,6 +1349,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recUbGDXhPdx3494b",
         "twitter_general": "petalumatransit",
         "us_ntd_id": "90213",
         "wikidata_id": "Q7171668"
@@ -1283,6 +1373,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recsNvWvLQwGsoxlE",
         "twitter_general": "SRCITYBUS",
         "us_ntd_id": "90017",
         "wikidata_id": "Q7419876"
@@ -1306,6 +1397,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recvEBkSBc7UxlarC",
         "twitter_general": "CapitolCorridor",
         "wikidata_id": "Q510836"
       }
@@ -1329,6 +1421,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recot6qBamlOoLcrM",
         "twitter_general": "fast_transit",
         "us_ntd_id": "90092",
         "wikidata_id": "Q5430409"
@@ -1353,6 +1446,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "rec9RGrya9SjWYp2p",
         "twitter_general": "vinetransit",
         "us_ntd_id": "90088",
         "wikidata_id": "Q7907027"
@@ -1376,6 +1470,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recIKnsnTdKQ0vsiv",
         "twitter_general": "wccta",
         "us_ntd_id": "90159",
         "wikidata_id": "Q7984179"
@@ -1399,6 +1494,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "reclLbvvKE1V4zsZg",
         "twitter_general": "SolTransRide",
         "us_ntd_id": "90232",
         "wikidata_id": "Q16984743"
@@ -1421,6 +1517,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recEEJVeGrHGoTwgj",
         "twitter_general": "TriDeltaTransit",
         "us_ntd_id": "90162",
         "wikidata_id": "Q7839840"
@@ -1440,6 +1537,7 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recaUmi7EJdPiG067",
         "twitter_general": "cityofriovista",
         "us_ntd_id": "91014",
         "wikidata_id": "Q7335361"
@@ -1459,9 +1557,24 @@
         }
       ],
       "tags": {
+        "calitp_organization_id": "recdujao2F9Hga9Od",
         "twitter_general": "coach_city",
         "us_ntd_id": "90155",
         "wikidata_id": "Q7907915"
+      }
+    },
+    {
+      "onestop_id": "o-9qce-solanotransportationauthority",
+      "name": "Solano Transportation Authority",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "SE",
+          "feed_onestop_id": "f-sf~bay~area~rg"
+        }
+      ],
+      "tags": {
+        "calitp_organization_id": "rec7ShjfgRPLU0yjY",
+        "wikidata_id": "Q112115521"
       }
     }
   ]

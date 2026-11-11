@@ -350,7 +350,10 @@
             {
               "gtfs_agency_id": "953"
             }
-          ]
+          ],
+          "tags": {
+            "calitp_organization_id": "recRb11Rr1VGA7evm"
+          }
         }
       ]
     },
@@ -1986,6 +1989,7 @@
           "short_name": "Bear Transit",
           "website": "http://pt.berkeley.edu/around/transit/routes/",
           "tags": {
+            "calitp_organization_id": "recD9x7GHPrN46v6m",
             "twitter_general": "CalParking",
             "wikidata_id": "Q4876580"
           }
@@ -6238,13 +6242,26 @@
         "create_derived_product": "yes"
       },
       "tags": {
+        "exclude_from_global_query": "true",
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg",
         "status": "outdated"
       },
       "operators": [
         {
           "onestop_id": "o-sanleandro~ca~us",
           "name": "San Leandro Links",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "SL",
+              "feed_onestop_id": "f-sf~bay~area~rg"
+            },
+            {
+              "gtfs_agency_id": "SL",
+              "feed_onestop_id": "f-sf~bay~area~rg~rt"
+            }
+          ],
           "tags": {
+            "calitp_organization_id": "recK0v5G4sHG1gwZc",
             "wikidata_id": "Q7414676"
           }
         }
