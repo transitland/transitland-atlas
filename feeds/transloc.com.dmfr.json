@@ -1068,6 +1068,48 @@
       ]
     },
     {
+      "id": "f-waco~transit",
+      "supersedes_ids": [
+        "f-waco~transit~tx~us"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://wacotransit.transloc.com/secure/admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://wacotransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-waco~transit",
+          "supersedes_ids": [
+            "o-waco~transit~tx~us"
+          ],
+          "name": "Waco Transit System",
+          "short_name": "WTS",
+          "website": "https://www.waco-texas.com/Departments/Transit-System",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-waco~silo~tx~us"
+            },
+            {
+              "feed_onestop_id": "f-waco~transit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60012,66276"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-waco~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://wacotransit.transloc.com/subscriptions/gtfsrt/vehicles.ashx"
+      }
+    },
+    {
       "id": "f-west~chester~university~pa~us",
       "spec": "gtfs",
       "urls": {
