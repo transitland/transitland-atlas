@@ -1012,6 +1012,33 @@
       }
     },
     {
+      "id": "f-dhm-keywest~fl~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://passio3.com/keywest/passioTransit/gtfs/google_transit.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/keywest-fl-us/keywest-fl-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dhm-keywesttransit",
+          "name": "Key West Transit",
+          "website": "https://kwtransit.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-keywesttransit~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "city_of_keywest",
+            "us_ntd_id": "41060",
+            "wikidata_id": "Q125405186"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-dhvrs-bullrunner",
       "spec": "gtfs",
       "urls": {
@@ -1810,6 +1837,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-keywesttransit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://passio3.com/keywest/passioTransit/gtfs/realtime/vehiclePositions",
+        "realtime_trip_updates": "https://passio3.com/keywest/passioTransit/gtfs/realtime/tripUpdates",
+        "realtime_alerts": "https://passio3.com/keywest/passioTransit/gtfs/realtime/serviceAlerts"
+      }
     },
     {
       "id": "f-kootenai~citylink",

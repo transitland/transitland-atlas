@@ -3,6 +3,9 @@
   "feeds": [
     {
       "id": "f-brightline~trails",
+      "supersedes_ids": [
+        "f-brightline~fl~us"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://feed.gobrightline.com/bl_gtfs.zip"
@@ -20,9 +23,6 @@
             },
             {
               "gtfs_agency_id": "EVENT"
-            },
-            {
-              "feed_onestop_id": "f-brightline~fl~us"
             },
             {
               "feed_onestop_id": "f-brightline~trails~rt"
