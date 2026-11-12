@@ -466,7 +466,10 @@
       "id": "f-9qc-capitolcorridor",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://www.capitolcorridor.org/googletransit/GTFS.zip"
+        "static_current": "https://www.capitolcorridor.org/wp-content/uploads/2026/11/GTFS.zip",
+        "static_historic": [
+          "https://www.capitolcorridor.org/googletransit/GTFS.zip"
+        ]
       },
       "license": {
         "url": "https://511.org/sites/default/files/pdfs/511_Data_Agreement_Final.pdf",
@@ -478,7 +481,8 @@
       "tags": {
         "calitp_dataset_id": "recIUAJZhamq51hyM",
         "exclude_from_global_query": "true",
-        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg"
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-sf~bay~area~rg",
+        "unstable_url": "true"
       }
     },
     {
@@ -591,7 +595,9 @@
       "id": "f-9qc3-riovistadeltabreeze",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/riovista-ca-us/riovista-ca-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/riovista-ca-us/riovista-ca-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
