@@ -1391,45 +1391,10 @@
           "onestop_id": "o-9zqv-coralvilletransit",
           "name": "Coralville Transit",
           "website": "https://www.coralville.org/166/Bus-Schedules-Route-Maps",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-iowacitytransitsystem~rt"
-            }
-          ],
           "tags": {
             "twitter_general": "coralville_ia",
             "us_ntd_id": "70030",
             "wikidata_id": "Q108444281"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-9zqvh-cambus~ia~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/cambus-ia-us/cambus-ia-us.zip"
-      },
-      "license": {
-        "url": "https://iowa-gtfs.com/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9zqvh-universityofiowa~cambus",
-          "name": "University of Iowa",
-          "short_name": "CAMBUS",
-          "website": "https://transportation.uiowa.edu/cambus",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-iowacitytransitsystem~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "uiowaparktrans",
-            "us_ntd_id": "70019",
-            "wikidata_id": "Q5025682"
           }
         }
       ]
@@ -2131,7 +2096,9 @@
       "id": "f-bloombus~ma~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/bloombus-ma-us/bloombus-ma-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/bloombus-ma-us/bloombus-ma-us.zip"
+        ]
       }
     },
     {
@@ -2222,13 +2189,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "f-brightline~fl~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/brightline-fl-us/brightline-fl-us.zip"
-      }
     },
     {
       "id": "f-bristol~va~us",
@@ -2641,7 +2601,9 @@
       "id": "f-carts~ak~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/carts-ak-us/carts-ak-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/carts-ak-us/carts-ak-us.zip"
+        ]
       }
     },
     {
@@ -2811,10 +2773,21 @@
     },
     {
       "id": "f-coachatlantic~pe~ca",
+      "supersedes_ids": [
+        "f-f85p5-t3transit"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/coachatlantic-pe-ca/coachatlantic-pe-ca.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-f85p5-t3transit",
+          "name": "T3 Transit",
+          "short_name": "T3",
+          "website": "https://t3transit.ca/"
+        }
+      ]
     },
     {
       "id": "f-coloradosprings~co~us",
@@ -2994,37 +2967,6 @@
             "calitp_organization_id": "recROsnN85RlZziSj",
             "us_ntd_id": "90238",
             "wikidata_id": "Q5253146"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-dhm-keywest~fl~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/keywest-fl-us/keywest-fl-us.zip"
-      },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dhm-keywesttransit",
-          "name": "Key West Transit",
-          "website": "https://kwtransit.com/",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "910"
-            },
-            {
-              "feed_onestop_id": "f-keywesttransit~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "city_of_keywest",
-            "us_ntd_id": "41060",
-            "wikidata_id": "Q125405186"
           }
         }
       ]
@@ -3320,9 +3262,6 @@
               "gtfs_agency_id": "190"
             },
             {
-              "feed_onestop_id": "f-dnm6-asheville~nc~us~alerts"
-            },
-            {
               "feed_onestop_id": "f-dnm6-asheville~nc~us~rt"
             }
           ],
@@ -3333,13 +3272,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "f-dnm6-asheville~nc~us~alerts",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_alerts": "http://gtfs-realtime.trilliumtransit.com/gtfs-realtime/feed/asheville-nc-us/service_alerts.proto"
-      }
     },
     {
       "id": "f-dnn3-thecomet~sc~us",
@@ -3484,7 +3416,9 @@
       "id": "f-dp-945963",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/indiantrails-mi-us/indiantrails-mi-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/indiantrails-mi-us/indiantrails-mi-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
@@ -3623,7 +3557,9 @@
       "id": "f-dps-michiganflyer~mi~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/michiganflyer-mi-us/michiganflyer-mi-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/michiganflyer-mi-us/michiganflyer-mi-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
@@ -4920,7 +4856,9 @@
       "id": "f-gardenofthegods~co~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/gardenofthegods-co-us/gardenofthegods-co-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/gardenofthegods-co-us/gardenofthegods-co-us.zip"
+        ]
       },
       "license": {
         "use_without_attribution": "yes",
@@ -5002,7 +4940,9 @@
       "id": "f-governorsislandferry~ny~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/governorsislandferry-ny-us/governorsislandferry-ny-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/governorsislandferry-ny-us/governorsislandferry-ny-us.zip"
+        ]
       }
     },
     {
@@ -5133,8 +5073,8 @@
       "id": "f-guadalupe~flyer~paratransit~flex",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/guadalupeflyer-ca-us/guadalupeflyer-ca-us.zip",
         "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/guadalupeflyer-ca-us/guadalupeflyer-ca-us.zip",
           "https://gtfs.dds.dot.ca.gov/gtfs_files/production/GuadalupeFlyerParatransitFlex.zip",
           "https://gtfs.calitp.org/production/GuadalupeFlyerParatransitFlex.zip"
         ]
@@ -5307,42 +5247,12 @@
       ]
     },
     {
-      "id": "f-iowa~city~transit",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/iowacitytransit-ia-us/iowacitytransit-ia-us.zip"
-      },
-      "license": {
-        "url": "https://iowa-gtfs.com/",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-9zqu-iowacitytransitsystem",
-          "name": "Iowa City Transit System",
-          "website": "https://www.icgov.org/city-government/departments-and-divisions/transit",
-          "associated_feeds": [
-            {
-              "gtfs_agency_id": "796"
-            },
-            {
-              "feed_onestop_id": "f-iowacitytransitsystem~rt"
-            }
-          ],
-          "tags": {
-            "twitter_general": "CityOfIowaCity",
-            "us_ntd_id": "70018",
-            "wikidata_id": "Q108444481"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-kaltran~wa~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/kaltran-wa-us/kaltran-wa-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/kaltran-wa-us/kaltran-wa-us.zip"
+        ]
       }
     },
     {
@@ -5434,7 +5344,9 @@
       "id": "f-libertylandingferry~ny~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/libertylandingferry-ny-us/libertylandingferry-ny-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/libertylandingferry-ny-us/libertylandingferry-ny-us.zip"
+        ]
       }
     },
     {
@@ -5761,7 +5673,9 @@
       "id": "f-nisqually~wa~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/nisqually-wa-us/nisqually-wa-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/nisqually-wa-us/nisqually-wa-us.zip"
+        ]
       }
     },
     {
@@ -6118,7 +6032,9 @@
       "id": "f-rainbowrider~mn~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/rainbowrider-mn-us/rainbowrider-mn-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/rainbowrider-mn-us/rainbowrider-mn-us.zip"
+        ]
       }
     },
     {
@@ -6915,7 +6831,9 @@
       "id": "f-vailskishuttles~co~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/vailskishuttles-co-us/vailskishuttles-co-us.zip"
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/vailskishuttles-co-us/vailskishuttles-co-us.zip"
+        ]
       }
     },
     {
@@ -7070,10 +6988,25 @@
     },
     {
       "id": "f-winona~mn~us~flex",
+      "supersedes_ids": [
+        "f-winona~mn"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://data.trilliumtransit.com/gtfs/winona-mn-us/winona-mn-us--flex-v2.zip"
-      }
+      },
+      "operators": [
+        {
+          "onestop_id": "o-winona~mn",
+          "name": "Winona Transit Service",
+          "short_name": "WTS",
+          "website": "https://www.winonamn.gov/175/Winona-Transit-Service",
+          "tags": {
+            "us_ntd_id": "50349",
+            "wikidata_id": "Q120396953"
+          }
+        }
+      ]
     },
     {
       "id": "f-wintran~va~us",

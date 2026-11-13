@@ -2,6 +2,17 @@
   "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
   "feeds": [
     {
+      "id": "f-9zvxy-universityofminnesota",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://data.peaktransit.com/staticgtfs/88/gtfs.zip"
+      },
+      "tags": {
+        "exclude_from_global_query": "true",
+        "notes": "This individual agency feed is imported but excluded from global queries. Global queries get this agency from f-9zv-twin~cities~minnesota"
+      }
+    },
+    {
       "id": "f-dr7-ulstercountyareatransit",
       "spec": "gtfs",
       "urls": {

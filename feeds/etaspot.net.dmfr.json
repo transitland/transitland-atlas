@@ -82,6 +82,9 @@
     },
     {
       "id": "f-citibus~ia~us",
+      "supersedes_ids": [
+        "f-davenport~citi~bus"
+      ],
       "spec": "gtfs",
       "urls": {
         "static_current": "https://s3.amazonaws.com/etatransit.gtfs/citibuspublic.etaspot.net/gtfs.zip",
@@ -99,7 +102,7 @@
           "website": "https://www.davenportiowa.com/services/citibus_transit",
           "associated_feeds": [
             {
-              "feed_onestop_id": "f-davenport~citi~bus"
+              "feed_onestop_id": "f-citibus~ia~us~rt"
             }
           ],
           "tags": {
@@ -109,6 +112,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-citibus~ia~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://s3.amazonaws.com/etatransit.gtfs/citibuspublic.etaspot.net/position_updates.pb",
+        "realtime_trip_updates": "https://s3.amazonaws.com/etatransit.gtfs/citibuspublic.etaspot.net/trip_updates.pb",
+        "realtime_alerts": "https://s3.amazonaws.com/etatransit.gtfs/citibuspublic.etaspot.net/alerts.pb"
+      }
     },
     {
       "id": "f-clarksville~tn~us",

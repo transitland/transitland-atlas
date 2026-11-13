@@ -113,6 +113,23 @@
       ]
     },
     {
+      "id": "f-9v4-alamoregionaltransit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11722/2024_feed.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9v4-alamoregionaltransit",
+          "name": "Alamo Regional Transit",
+          "website": "https://aacog.com/alamo-regional-transit",
+          "tags": {
+            "us_ntd_id": "60130"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-9w-navajotransitsystem",
       "spec": "gtfs",
       "urls": {
@@ -262,7 +279,13 @@
       "id": "f-autonomousmunicipalityofvegaalta~pr~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/VEGAALTAGTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/VegaAltaGTFS2026.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/VEGAALTAGTFS.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -905,7 +928,10 @@
       "id": "f-cityoflawton~ok~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11612/google_transit-2025.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11612/google_transit.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11612/google_transit-2025.zip"
+        ]
       },
       "operators": [
         {
@@ -1065,7 +1091,13 @@
       "id": "f-cityofrome~ga~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11649/RTD_GA_GTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11649/RTD_GA_GTFS(4).zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11649/RTD_GA_GTFS.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -1391,22 +1423,6 @@
       ]
     },
     {
-      "id": "f-districtdepartmentoftransportation~dc~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13768/Streetcar.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-districtdepartmentoftransportation~dc~us",
-          "name": "District Department of Transportation",
-          "tags": {
-            "us_ntd_id": "30112"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-djq-sunshinebuscompany~fl~us",
       "spec": "gtfs",
       "urls": {
@@ -1469,32 +1485,6 @@
       ]
     },
     {
-      "id": "f-dnq5-greenwaypublictransportation",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/7944/UpdateGTFS_Feed_Greenway.zip",
-        "static_historic": [
-          "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-greenway.zip?raw=true"
-        ]
-      },
-      "license": {
-        "url": "https://github.com/transitland/gtfs-archives-not-hosted-elsewhere/blob/master/western-piedmont-regional-transit-authority-license.pdf",
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dnq5-greenwaypublictransportation",
-          "name": "Western Piedmont Regional Transit Authority",
-          "short_name": "Greenway Public Transportation",
-          "website": "http://www.mygreenway.org/",
-          "tags": {
-            "us_ntd_id": "40172"
-          }
-        }
-      ]
-    },
-    {
       "id": "f-dnr-piedmontauthorityforregionaltransportation",
       "spec": "gtfs",
       "urls": {
@@ -1545,6 +1535,20 @@
           "tags": {
             "us_ntd_id": "91052"
           }
+        }
+      ]
+    },
+    {
+      "id": "f-dpk-froggytransportation",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11830/T.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpk-froggytransportation",
+          "name": "Froggy Transportation",
+          "website": "https://www.froggytransportation.com/"
         }
       ]
     },
@@ -1647,6 +1651,21 @@
             "us_ntd_id": "20075",
             "wikidata_id": "Q2043730"
           }
+        }
+      ]
+    },
+    {
+      "id": "f-dr4k-uppermerionrambler",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13641/UPPER_MERION_RAMBLER.zip"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dr4k-greatervalleyforgetma",
+          "name": "Greater Valley Forge Transportation Management Association",
+          "short_name": "GVFTMA",
+          "website": "https://www.gvftma.com/"
         }
       ]
     },
@@ -2280,7 +2299,9 @@
       "id": "f-kyriverfoothillsdevelopmentcouncilinc~ky~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11965/KRFDCTransitGTFS.zip"
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11965/KRFDCTransitGTFS.zip"
+        ]
       },
       "operators": [
         {
@@ -2485,7 +2506,10 @@
       "id": "f-marquette~county~transit~authority",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/0/MQT_GTFS.zip"
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/10228/mqt_gtfs.zip",
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/0/MQT_GTFS.zip"
+        ]
       },
       "operators": [
         {
@@ -2628,10 +2652,14 @@
       "id": "f-municipalityofcaborojo~pr~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/CABOROJOGTFS.zip",
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/CRGTFS2026.zip",
         "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/CABOROJOGTFS.zip",
           "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/CRGTFS.zip"
         ]
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -2724,6 +2752,25 @@
       ]
     },
     {
+      "id": "f-municipalityofdorado~pr~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/DoradoGTFS.zip",
+        "static_historic": [
+          "https://irp.cdn-website.com/fca78933/files/uploaded/DORADO%20GTFS.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-municipalityofdorado~pr~us",
+          "name": "Municipality of Dorado",
+          "tags": {
+            "us_ntd_id": "40198"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-municipalityoffajardo~pr~us",
       "spec": "gtfs",
       "urls": {
@@ -2775,7 +2822,13 @@
       "id": "f-municipalityofhumacao~pr~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/HUMACAOGTFS.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/HUMACAOGTFS2026.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13135/HUMACAOGTFS.zip"
+        ]
+      },
+      "tags": {
+        "unstable_url": "true"
       },
       "operators": [
         {
@@ -3726,7 +3779,9 @@
       "id": "f-springfield~oh~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11869/SCAT_GTFS.zip"
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11869/SCAT_GTFS.zip"
+        ]
       },
       "operators": [
         {
@@ -3809,23 +3864,6 @@
           "tags": {
             "us_ntd_id": "60093",
             "wikidata_id": "Q7707353"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f-thecityofcheyenne~wy~us",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5226/CTP_gtfs.zip"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-thecityofcheyenne~wy~us",
-          "name": "Cheyenne Transit Program",
-          "short_name": "CTP",
-          "tags": {
-            "us_ntd_id": "80020"
           }
         }
       ]
@@ -4219,7 +4257,10 @@
       "id": "f-ziatherapycenterinc~nm~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11874/Zia_gtfs.zip"
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/13778/ztrans_nm_gtfs.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/11874/Zia_gtfs.zip"
+        ]
       },
       "operators": [
         {

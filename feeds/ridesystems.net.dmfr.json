@@ -503,20 +503,6 @@
       ]
     },
     {
-      "id": "f-dqcj-montgomerycollege",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://montgomerycollege.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-dqcj-montgomerycollege",
-          "name": "Montgomery College",
-          "website": "https://www.montgomerycollege.edu/"
-        }
-      ]
-    },
-    {
       "id": "f-dr1m-yorkcollegeofpennsylvania",
       "spec": "gtfs",
       "urls": {
@@ -781,7 +767,9 @@
       "id": "f-richmond~airport~va~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://richmond.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+        "static_historic": [
+          "https://richmond.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+        ]
       },
       "operators": [
         {
@@ -896,29 +884,6 @@
       "urls": {
         "static_current": "https://WacoSilo.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
       }
-    },
-    {
-      "id": "f-waco~transit",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://wacotransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
-      },
-      "operators": [
-        {
-          "onestop_id": "o-waco~transit",
-          "name": "Waco Transit System",
-          "short_name": "WTS",
-          "website": "https://www.waco-texas.com/Departments/Transit-System",
-          "associated_feeds": [
-            {
-              "feed_onestop_id": "f-waco~silo~tx~us"
-            }
-          ],
-          "tags": {
-            "us_ntd_id": "60012"
-          }
-        }
-      ]
     }
   ]
 }

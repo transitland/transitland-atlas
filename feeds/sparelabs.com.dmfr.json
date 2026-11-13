@@ -25,6 +25,39 @@
           }
         }
       ]
+    },
+    {
+      "id": "f-thecityofcheyenne~wy~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.sparelabs.com/v1/fixedRoute/public/e599d785-76b9-46df-bb67-e9e99a8d47a7/gtfs.zip",
+        "static_historic": [
+          "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/5226/CTP_gtfs.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-thecityofcheyenne~wy~us",
+          "name": "Cheyenne Transit Program",
+          "short_name": "CTP",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-thecityofcheyenne~wy~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "80020"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-thecityofcheyenne~wy~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.sparelabs.com/v1/fixedRoute/public/e599d785-76b9-46df-bb67-e9e99a8d47a7/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://api.sparelabs.com/v1/fixedRoute/public/e599d785-76b9-46df-bb67-e9e99a8d47a7/gtfs-rt/trip-updates.pb"
+      }
     }
   ]
 }

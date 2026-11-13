@@ -268,8 +268,8 @@
       "id": "f-clemson~university",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://api.transloc.com/gtfs/clemson.zip",
         "static_historic": [
+          "https://api.transloc.com/gtfs/clemson.zip",
           "https://passio3.com/clemson/passioTransit/gtfs/google_transit.zip"
         ]
       }
@@ -295,7 +295,9 @@
       "id": "f-csus~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://csus.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+        "static_historic": [
+          "https://csus.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+        ]
       },
       "operators": [
         {
@@ -323,16 +325,6 @@
           "name": "Case Western Reserve University"
         }
       ]
-    },
-    {
-      "id": "f-davenport~citi~bus",
-      "spec": "gtfs",
-      "urls": {
-        "static_current": "https://data.trilliumtransit.com/gtfs/davenport-ia-us/davenport-ia-us.zip",
-        "static_historic": [
-          "https://api.transloc.com/gtfs/davenportcitibus.zip"
-        ]
-      }
     },
     {
       "id": "f-dn5fv-cherokeeareatransportationsystemcats",
@@ -426,6 +418,32 @@
           "website": "https://parking.duke.edu/"
         }
       ]
+    },
+    {
+      "id": "f-dq8v-universityofrichmond",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://richmond.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dq8v-universityofrichmond",
+          "name": "University of Richmond",
+          "website": "https://www.richmond.edu",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dq8v-universityofrichmond~rt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f-dq8v-universityofrichmond~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://richmond.transloc.com/subscriptions/gtfsrt/vehicles.ashx"
+      }
     },
     {
       "id": "f-dqcj1-fairfaxcue",
@@ -881,7 +899,9 @@
       "id": "f-sjsu~ca~us",
       "spec": "gtfs",
       "urls": {
-        "static_current": "https://sjsu.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+        "static_historic": [
+          "https://sjsu.transloc.com/Secure/Admin/Reports/GTFSDownload.aspx"
+        ]
       },
       "operators": [
         {
@@ -1072,6 +1092,48 @@
           "name": "University of Virginia Health"
         }
       ]
+    },
+    {
+      "id": "f-waco~transit",
+      "supersedes_ids": [
+        "f-waco~transit~tx~us"
+      ],
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://wacotransit.transloc.com/secure/admin/Reports/GTFSDownload.aspx",
+        "static_historic": [
+          "https://wacotransit.ridesystems.net/Secure/Admin/Reports/GTFSDownload.aspx"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-waco~transit",
+          "supersedes_ids": [
+            "o-waco~transit~tx~us"
+          ],
+          "name": "Waco Transit System",
+          "short_name": "WTS",
+          "website": "https://www.waco-texas.com/Departments/Transit-System",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-waco~silo~tx~us"
+            },
+            {
+              "feed_onestop_id": "f-waco~transit~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60012,66276"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-waco~transit~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://wacotransit.transloc.com/subscriptions/gtfsrt/vehicles.ashx"
+      }
     },
     {
       "id": "f-west~chester~university~pa~us",

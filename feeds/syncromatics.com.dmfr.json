@@ -109,6 +109,46 @@
       }
     },
     {
+      "id": "f-9zqvh-cambus~ia~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://cambus.syncromatics.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/cambus-ia-us/cambus-ia-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9zqvh-universityofiowa~cambus",
+          "name": "University of Iowa",
+          "short_name": "CAMBUS",
+          "website": "https://transportation.uiowa.edu/cambus",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-9zqvh-cambus~ia~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "uiowaparktrans",
+            "us_ntd_id": "70019",
+            "wikidata_id": "Q5025682"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-9zqvh-cambus~ia~us~rt",
+      "supersedes_ids": [
+        "f-universityofiowa~cambus~rt"
+      ],
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://cambus.syncromatics.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://cambus.syncromatics.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://cambus.syncromatics.com/gtfs-rt/alerts"
+      }
+    },
+    {
       "id": "f-c20-wilsonville~or~us",
       "spec": "gtfs",
       "urls": {
@@ -362,15 +402,41 @@
     {
       "id": "f-iowacitytransitsystem~rt",
       "supersedes_ids": [
-        "f-universityofiowa~cambus~rt",
         "f-coralvilletransit~rt"
       ],
       "spec": "gtfs-rt",
       "urls": {
-        "realtime_vehicle_positions": "https://iowa.syncromatics.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://iowa.syncromatics.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://iowa.syncromatics.com/gtfs-rt/alerts"
+        "realtime_vehicle_positions": "https://ictransit.syncromatics.com/gtfs-rt/vehiclepositions",
+        "realtime_trip_updates": "https://ictransit.syncromatics.com/gtfs-rt/tripupdates",
+        "realtime_alerts": "https://ictransit.syncromatics.com/gtfs-rt/alerts"
       }
+    },
+    {
+      "id": "f-iowa~city~transit",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://ictransit.syncromatics.com/gtfs",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/iowacitytransit-ia-us/iowacitytransit-ia-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9zqu-iowacitytransitsystem",
+          "name": "Iowa City Transit System",
+          "website": "https://www.icgov.org/city-government/departments-and-divisions/transit",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-iowacitytransitsystem~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "CityOfIowaCity",
+            "us_ntd_id": "70018",
+            "wikidata_id": "Q108444481"
+          }
+        }
+      ]
     },
     {
       "id": "f-kauai",
@@ -436,18 +502,6 @@
         "realtime_vehicle_positions": "https://kenoshatransit.com/gtfs-rt/vehiclepositions",
         "realtime_trip_updates": "https://kenoshatransit.com/gtfs-rt/tripupdates",
         "realtime_alerts": "https://kenoshatransit.com/gtfs-rt/alerts"
-      },
-      "license": {
-        "url": "https://gtfs-directory.syncromatics.com/"
-      }
-    },
-    {
-      "id": "f-keywesttransit~rt",
-      "spec": "gtfs-rt",
-      "urls": {
-        "realtime_vehicle_positions": "https://kwtransit.com/gtfs-rt/vehiclepositions",
-        "realtime_trip_updates": "https://kwtransit.com/gtfs-rt/tripupdates",
-        "realtime_alerts": "https://kwtransit.com/gtfs-rt/alerts"
       },
       "license": {
         "url": "https://gtfs-directory.syncromatics.com/"
