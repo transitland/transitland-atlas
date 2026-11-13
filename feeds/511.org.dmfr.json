@@ -595,13 +595,15 @@
       "id": "f-9qc3-riovistadeltabreeze",
       "spec": "gtfs",
       "urls": {
+        "static_current": "https://api.511.org/transit/datafeeds?operator_id=RV",
         "static_historic": [
           "https://data.trilliumtransit.com/gtfs/riovista-ca-us/riovista-ca-us.zip"
         ]
       },
-      "license": {
-        "use_without_attribution": "yes",
-        "create_derived_product": "yes"
+      "authorization": {
+        "type": "query_param",
+        "param_name": "api_key",
+        "info_url": "https://511.org/open-data/token"
       },
       "tags": {
         "calitp_dataset_id": "recLWOfHYFCLluD2S",
