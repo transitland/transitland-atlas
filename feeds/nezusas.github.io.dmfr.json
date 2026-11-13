@@ -1,0 +1,26 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-cuenca~ecuador~buses~urbanos",
+      "name": "Buses urbanos de Cuenca (Morlaco)",
+      "description": "Urban bus lines of Cuenca, Ecuador, built by the Morlaco open data project from the Cuenca city government's open data portal (Cuenca en Datos): routes and frequencies (2025), route shapes (2022) and registered stops. Frequency-based feed with estimated travel times; not an official feed from the city or EMOV EP.",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://nezusas.github.io/morlaco/datos/gtfs/cuenca-buses.zip"
+      },
+      "languages": [
+        "es"
+      ],
+      "license": {
+        "url": "https://github.com/NezuSas/morlaco#licencia-de-los-datos",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "no",
+        "share_alike_optional": "yes",
+        "attribution_text": "GAD Municipal de Cuenca (Cuenca en Datos), Morlaco"
+      }
+    }
+  ]
+}
