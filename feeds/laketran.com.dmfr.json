@@ -1,0 +1,53 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-dpq-lakecounty~oh~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://rapid.nationalrtap.org/GTFSFileManagement/UserUploadFiles/14786/Laketran_oh_gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/lakecounty-oh-us/lakecounty-oh-us.zip"
+        ]
+      },
+      "license": {
+        "url": "https://laketran.com/about-laketran/use-of-laketran-data/",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_instructions": "Laketran trademarks and logo may not be used in association with the data without written permission from communications@laketran.com. Third-party applications must be presented as such, not as endorsed by or affiliated with Laketran."
+      },
+      "operators": [
+        {
+          "onestop_id": "o-dpq-laketran",
+          "name": "Laketran",
+          "website": "https://laketran.com/",
+          "associated_feeds": [
+            {
+              "feed_onestop_id": "f-dpq-lakecounty~oh~us~rt"
+            }
+          ],
+          "tags": {
+            "twitter_general": "laketran",
+            "us_ntd_id": "50117",
+            "wikidata_id": "Q6479195"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-dpq-lakecounty~oh~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "http://40.87.96.49/GTFS_VehiclePositions.pb",
+        "realtime_trip_updates": "http://40.87.96.49/GTFS_TripUpdates.pb",
+        "realtime_alerts": "http://40.87.96.49/GTFS_ServiceAlerts.pb"
+      },
+      "license": {
+        "url": "https://laketran.com/about-laketran/use-of-laketran-data/",
+        "redistribution_allowed": "yes",
+        "commercial_use_allowed": "yes",
+        "attribution_instructions": "Laketran trademarks and logo may not be used in association with the data without written permission from communications@laketran.com. Third-party applications must be presented as such, not as endorsed by or affiliated with Laketran."
+      }
+    }
+  ]
+}
