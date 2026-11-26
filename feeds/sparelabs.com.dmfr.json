@@ -27,6 +27,43 @@
       ]
     },
     {
+      "id": "f-lubbock~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.us.sparelabs.com/v1/fixedRoute/public/7d762b49-17a7-400a-b4bc-eeb204534a32/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/lubbock-tx-us/lubbock-tx-us.zip"
+        ]
+      },
+      "license": {
+        "use_without_attribution": "yes",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-9tzw-citibus",
+          "name": "Citibus",
+          "website": "https://citibus.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "31"
+            },
+            {
+              "feed_onestop_id": "f-lubbock~tx~us~rt"
+            },
+            {
+              "feed_onestop_id": "f-lubbock~tx~us~rt~alerts"
+            }
+          ],
+          "tags": {
+            "twitter_general": "citibuslubbock",
+            "us_ntd_id": "60010",
+            "wikidata_id": "Q5122457"
+          }
+        }
+      ]
+    },
+    {
       "id": "f-thecityofcheyenne~wy~us",
       "spec": "gtfs",
       "urls": {
