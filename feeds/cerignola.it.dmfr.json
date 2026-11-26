@@ -1,0 +1,33 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-sr76-societàtrasportocerignola",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://raw.githubusercontent.com/Comune-di-Cerignola/trasporti-gtfs/main/Cerignola_static_gtfs.zip",
+        "static_historic": [
+          "https://mazzarino.gq/index.php/s/Fzr4fZcEzaX64Gb/download"
+        ]
+      },
+      "license": {
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "operators": [
+        {
+          "onestop_id": "o-sr76-societàtrasportocerignola",
+          "name": "Società Trasporti Cerignola s.c.a.r.l.",
+          "short_name": "STC",
+          "website": "https://www.busmiccolis.it/tpl-cerignola/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "STC"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
