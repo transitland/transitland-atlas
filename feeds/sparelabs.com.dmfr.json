@@ -58,6 +58,43 @@
         "realtime_vehicle_positions": "https://api.sparelabs.com/v1/fixedRoute/public/e599d785-76b9-46df-bb67-e9e99a8d47a7/gtfs-rt/vehicle-positions.pb",
         "realtime_trip_updates": "https://api.sparelabs.com/v1/fixedRoute/public/e599d785-76b9-46df-bb67-e9e99a8d47a7/gtfs-rt/trip-updates.pb"
       }
+    },
+    {
+      "id": "f-hctd~tx~us",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://api.us.sparelabs.com/v1/fixedRoute/public/a376fec9-97da-4d25-aa03-f0fbc665e4fa/gtfs.zip",
+        "static_historic": [
+          "https://data.trilliumtransit.com/gtfs/hctd-tx-us/hctd-tx-us.zip"
+        ]
+      },
+      "operators": [
+        {
+          "onestop_id": "o-hctd~tx~us",
+          "name": "Hill Country Transit District",
+          "website": "https://www.takethehop.com/",
+          "associated_feeds": [
+            {
+              "gtfs_agency_id": "5052"
+            },
+            {
+              "feed_onestop_id": "f-hctd~tx~us~rt"
+            }
+          ],
+          "tags": {
+            "us_ntd_id": "60091"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f-hctd~tx~us~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://api.us.sparelabs.com/v1/fixedRoute/public/a376fec9-97da-4d25-aa03-f0fbc665e4fa/gtfs-rt/vehicle-positions.pb",
+        "realtime_trip_updates": "https://api.us.sparelabs.com/v1/fixedRoute/public/a376fec9-97da-4d25-aa03-f0fbc665e4fa/gtfs-rt/trip-updates.pb",
+        "realtime_alerts": "https://api.us.sparelabs.com/v1/fixedRoute/public/a376fec9-97da-4d25-aa03-f0fbc665e4fa/gtfs-rt/service-alerts.pb"
+      }
     }
   ]
 }
