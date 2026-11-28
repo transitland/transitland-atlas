@@ -1,0 +1,65 @@
+{
+  "$schema": "https://dmfr.transit.land/json-schema/dmfr.schema-v0.6.0.json",
+  "feeds": [
+    {
+      "id": "f-u8mb-odesa~city~council",
+      "spec": "gtfs",
+      "urls": {
+        "static_current": "https://gw.x24.digital/api/od-all/gtfs/v1/download/static"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://omr.gov.ua/ua/city/departments/dtks/open-data/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "authorization": {
+        "type": "header",
+        "info_url": "https://omr.gov.ua/ua/city/departments/dtks/open-data/"
+      },
+      "tags": {
+        "header": "ApiKey: a8c6d35e-f2c1-4f72-b902-831fa9215009"
+      }
+    },
+    {
+      "id": "f-u8mb-odesa~city~council~rt",
+      "spec": "gtfs-rt",
+      "urls": {
+        "realtime_vehicle_positions": "https://gw.x24.digital/api/od-all/gtfs/v1/download/gtfs-rt-vehicles-pr.pb"
+      },
+      "license": {
+        "spdx_identifier": "CC-BY-4.0",
+        "url": "https://omr.gov.ua/ua/city/departments/dtks/open-data/",
+        "use_without_attribution": "no",
+        "create_derived_product": "yes"
+      },
+      "authorization": {
+        "type": "header",
+        "info_url": "https://omr.gov.ua/ua/city/departments/dtks/open-data/"
+      },
+      "tags": {
+        "header": "ApiKey: a8c6d35e-f2c1-4f72-b902-831fa9215009"
+      }
+    }
+  ],
+  "operators": [
+    {
+      "onestop_id": "o-u8mb-odesmiskelectrotrans",
+      "name": "Odesmiskelectrotrans",
+      "short_name": "OMET",
+      "website": "https://oget.od.ua",
+      "associated_feeds": [
+        {
+          "gtfs_agency_id": "10708",
+          "feed_onestop_id": "f-u8mb-odesa~city~council"
+        },
+        {
+          "feed_onestop_id": "f-u8mb-odesa~city~council~rt"
+        }
+      ],
+      "tags": {
+        "facebook": "https://www.facebook.com/kp.oget"
+      }
+    }
+  ]
+}
